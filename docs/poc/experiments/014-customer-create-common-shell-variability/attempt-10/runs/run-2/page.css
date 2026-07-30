@@ -1,0 +1,151 @@
+.create-page {
+  max-inline-size: 760px;
+  padding: 32px;
+}
+
+.page-heading {
+  margin-block-end: 28px;
+}
+
+.page-heading h1 {
+  font-size: 1.75rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.page-heading p {
+  color: var(--text-muted);
+  margin: 8px 0 0;
+}
+
+.customer-form {
+  margin: 0;
+}
+
+.form-errors {
+  border-inline-start: 4px solid var(--error-foreground);
+  color: var(--error-foreground);
+  font-weight: 700;
+  margin-block-end: 20px;
+  padding-inline-start: 12px;
+}
+
+.field-group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.field-group legend {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-block-end: 18px;
+  padding: 0;
+}
+
+.field {
+  margin-block-end: 18px;
+}
+
+.field label {
+  display: block;
+  font-weight: 700;
+  margin-block-end: 6px;
+}
+
+.required {
+  color: var(--error-foreground);
+  font-size: 0.875em;
+  font-weight: 700;
+}
+
+.optional {
+  color: var(--text-muted);
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  background: var(--surface-background);
+  border: 1px solid var(--border-interactive);
+  border-radius: 0;
+  color: var(--text-primary);
+  font: inherit;
+  inline-size: 100%;
+  padding: 9px 10px;
+}
+
+.field input {
+  block-size: 42px;
+}
+
+.field textarea {
+  min-block-size: 112px;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.form-actions button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: var(--error-foreground);
+}
+
+.field-message {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 5px 0 0;
+  min-block-size: 1.4em;
+}
+
+.field-message.error {
+  color: var(--error-foreground);
+  font-weight: 600;
+}
+
+.form-toolbar {
+  border-block-start: 1px solid var(--border-subtle);
+  margin-block-start: 24px;
+  padding-block-start: 20px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.form-actions button {
+  border: 1px solid var(--border-interactive);
+  border-radius: 0;
+  cursor: pointer;
+  font: inherit;
+  min-block-size: 42px;
+  padding-inline: 18px;
+}
+
+.primary-action {
+  background: var(--action-background);
+  border-color: var(--action-background) !important;
+  color: var(--action-foreground);
+  font-weight: 700;
+}
+
+.secondary-action {
+  background: var(--surface-background);
+  color: var(--text-primary);
+}
+
+@media (max-width: 720px) {
+  .create-page {
+    max-inline-size: none;
+    padding: 24px 16px;
+  }
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="shell.css">
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div class="shared-shell" data-theme="light" data-drawer="open">
+      <header class="shell-header">
+        <button class="shell-icon-button" type="button" data-drawer-toggle aria-controls="workspace-drawer" aria-expanded="true" aria-label="Drawer を閉じる">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <p class="shell-workspace-name">業務ワークスペース</p>
+        <button class="shell-icon-button shell-theme-button" type="button" data-theme-toggle aria-label="ダークモードに切り替える">
+          <span data-theme-icon aria-hidden="true">◐</span>
+        </button>
+      </header>
+
+      <div class="shell-body">
+        <aside class="shell-drawer" id="workspace-drawer" aria-label="業務ワークスペースのナビゲーション">
+          <nav>
+            <ul class="shell-drawer-list">
+              <li><a href="#section-a">セクション A</a></li>
+              <li class="shell-drawer-parent">
+                <a href="#section-b">セクション B</a>
+                <span class="shell-disclosure" aria-label="展開中">⌄</span>
+                <ul class="shell-drawer-children">
+                  <li><a class="current" href="#item-b-1" aria-current="page">項目 B-1</a></li>
+                  <li><a href="#item-b-2">項目 B-2</a></li>
+                </ul>
+              </li>
+              <li><a href="#section-c">セクション C</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <main class="shell-workspace" aria-label="ワークスペース">
+          <section class="customer-create" aria-labelledby="page-title">
+            <header class="customer-create__header">
+              <h1 id="page-title">顧客追加</h1>
+              <p>新しい顧客情報を登録します。</p>
+            </header>
+
+            <form class="customer-create__form" novalidate>
+              <div class="form-error-summary" id="form-error-summary" tabindex="-1" hidden>
+                <h2>入力内容を確認してください</h2>
+                <ul></ul>
+              </div>
+
+              <section class="field-group" aria-labelledby="customer-information-heading">
+                <h2 id="customer-information-heading">顧客情報</h2>
+
+                <div class="field">
+                  <label for="customer-name">氏名 <span class="field-required">必須</span></label>
+                  <input id="customer-name" name="customer-name" autocomplete="name" required aria-describedby="customer-name-message">
+                  <p class="field-message" id="customer-name-message" data-message-for="customer-name" aria-live="polite"></p>
+                </div>
+
+                <div class="field">
+                  <label for="birth-date">生年月日 <span class="field-required">必須</span></label>
+                  <input id="birth-date" name="birth-date" inputmode="numeric" placeholder="YYYY-MM-DD" required aria-describedby="birth-date-message">
+                  <p class="field-message field-message--help" id="birth-date-message" data-message-for="birth-date" data-help="生年月日は YYYY-MM-DD 形式で入力してください。" aria-live="polite">生年月日は YYYY-MM-DD 形式で入力してください。</p>
+                </div>
+
+                <div class="field">
+                  <label for="address">住所 <span class="field-required">必須</span></label>
+                  <input id="address" name="address" autocomplete="street-address" required aria-describedby="address-message">
+                  <p class="field-message" id="address-message" data-message-for="address" aria-live="polite"></p>
+                </div>
+
+                <div class="field">
+                  <label for="telephone">電話番号 <span class="field-required">必須</span></label>
+                  <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" placeholder="000-0000-0000" required aria-describedby="telephone-message">
+                  <p class="field-message field-message--help" id="telephone-message" data-message-for="telephone" data-help="電話番号は 0-9 とハイフンを使用して入力してください。" aria-live="polite">電話番号は 0-9 とハイフンを使用して入力してください。</p>
+                </div>
+
+                <div class="field">
+                  <label for="email">メールアドレス <span class="field-required">必須</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="email-message">
+                  <p class="field-message field-message--help" id="email-message" data-message-for="email" data-help="メールアドレスは name@example.com 形式で入力してください。" aria-live="polite">メールアドレスは name@example.com 形式で入力してください。</p>
+                </div>
+
+                <div class="field">
+                  <label for="notes">備考 <span class="field-optional">任意</span></label>
+                  <textarea id="notes" name="notes" rows="4" aria-describedby="notes-message"></textarea>
+                  <p class="field-message" id="notes-message" data-message-for="notes" aria-live="polite"></p>
+                </div>
+              </section>
+
+              <div class="form-actions" aria-label="顧客追加の操作">
+                <button class="button button--primary" type="submit">保存</button>
+                <button class="button button--secondary" type="button">キャンセル</button>
+              </div>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="shell.js"></script>
+    <script src="page.js"></script>
+  </body>
+</html>

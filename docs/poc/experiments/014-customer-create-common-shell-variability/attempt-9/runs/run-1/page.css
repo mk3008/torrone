@@ -1,0 +1,171 @@
+.create-page {
+  inline-size: min(100%, 44rem);
+  margin: 0;
+  padding: 2rem;
+}
+
+.create-page-heading {
+  margin-block-end: 2rem;
+}
+
+.create-page-heading h1,
+.create-page-heading p,
+.customer-fields,
+.form-field,
+.form-field label,
+.form-error-summary p,
+.field-message {
+  margin: 0;
+}
+
+.create-page-heading h1 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.create-page-heading p {
+  color: var(--text-muted);
+  margin-block-start: 0.5rem;
+}
+
+.form-error-summary {
+  border-inline-start: 0.25rem solid var(--error-foreground);
+  color: var(--error-foreground);
+  margin-block-end: 1.5rem;
+  padding-inline-start: 0.75rem;
+}
+
+.form-error-summary p {
+  font-weight: 700;
+}
+
+.form-error-summary ul {
+  margin: 0.5rem 0 0;
+  padding-inline-start: 1.25rem;
+}
+
+.form-error-summary a {
+  color: inherit;
+}
+
+.customer-fields {
+  border: 0;
+  min-inline-size: 0;
+  padding: 0;
+}
+
+.customer-fields legend {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-block-end: 1.25rem;
+  padding: 0;
+}
+
+.form-field {
+  margin-block-end: 1rem;
+}
+
+.form-field label {
+  color: var(--text-primary);
+  display: block;
+  font-weight: 700;
+  margin-block-end: 0.375rem;
+}
+
+.required-marker {
+  color: var(--error-foreground);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.optional-marker {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.form-field input,
+.form-field textarea {
+  background: var(--surface-background);
+  border: 1px solid var(--border-interactive);
+  border-radius: 0;
+  color: var(--text-primary);
+  font: inherit;
+  inline-size: 100%;
+  padding: 0.625rem 0.75rem;
+}
+
+.form-field input {
+  block-size: 2.75rem;
+}
+
+.form-field textarea {
+  min-block-size: 7rem;
+  resize: vertical;
+}
+
+.form-field input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+  border-color: var(--error-foreground);
+}
+
+.field-message {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  min-block-size: 1.25rem;
+  padding-block-start: 0.25rem;
+}
+
+.field-message--error {
+  color: var(--error-foreground);
+  font-weight: 700;
+}
+
+.form-action-toolbar {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  margin-block-start: 1.25rem;
+}
+
+.button {
+  border: 1px solid var(--border-interactive);
+  border-radius: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  min-block-size: 2.75rem;
+  padding-inline: 1rem;
+}
+
+.button--primary {
+  background: var(--action-background);
+  border-color: var(--action-background);
+  color: var(--action-foreground);
+}
+
+.button--secondary {
+  background: var(--surface-background);
+  color: var(--text-primary);
+}
+
+@media (max-width: 44rem) {
+  .create-page {
+    padding: 1.25rem;
+  }
+}

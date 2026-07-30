@@ -46,13 +46,6 @@ from `text_primary`. `page_background` is the workspace layer, not a Grid
 header or ordinary Grid-body fill. These are fixed role-to-element mappings,
 not optional visual variations or per-screen theme choices.
 
-For an editable field's shared helper-or-error message region, use
-`text_muted` while it shows completion-critical helper text and
-`error_foreground` while it shows a validation error. Do not use
-`warning_foreground` for invalid required or malformed input: warning is for
-a non-blocking exception, whereas validation prevents completion until the
-user corrects the supplied value.
-
 In a CSS custom-property implementation, declare the values corresponding to
 the active palette before the component renders, then apply exactly:
 
@@ -76,8 +69,7 @@ tbody td {
 Selectors are implementation choices. When CSS custom properties are used,
 the shared-shell root must define the canonical role variables
 `--action-background`, `--action-foreground`, `--table-header-background`,
-`--table-header-foreground`, `--surface-background`, `--text-primary`,
-`--text-muted`, and `--error-foreground`
+`--table-header-foreground`, `--surface-background`, and `--text-primary`
 from the active resolved palette. Page-specific CSS must consume those
 canonical variables directly. Do not copy a palette value into a page-local
 custom property, create page-local aliases such as `--grid-surface-background`, or place

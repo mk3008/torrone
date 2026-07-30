@@ -43,11 +43,6 @@ does not add an outer card or panel merely to contain its fields. A group
 heading is not a panel title: it does not add a fill, card, inset padding, or
 horizontal rule below itself.
 
-When a native `fieldset` provides useful group semantics, retain that semantic
-relationship but reset its browser-default border, padding, and outer margin.
-The fieldset remains an unboxed structural group; it must not introduce a
-visible rectangle or extra inset space around the fields.
-
 Use an I-shaped single-column reading path as the maintainable default for
 create and edit. It keeps unrelated fields, help, and errors in one predictable
 vertical order. Put two or three fields on one row only when the product binding
@@ -84,25 +79,6 @@ action-oriented sentence in the same grammatical form; for example,
 such as "You can use..." with entry instructions for the same form. Replace
 the helper text with a field-specific error only when validation fails, and
 use that same error text in the screen summary.
-
-Give every editable field one message region immediately after its control.
-Reserve that region's one-line block space whether or not the field has helper
-text, so showing a normal one-line validation error does not move the next
-field, its label, or the form action row. The field's helper text, when
-needed, and its validation error occupy this same region; they are mutually
-exclusive rather than stacked. Keep both messages concise enough for the
-reserved one-line region at the accepted viewport. A product-supplied message
-that genuinely needs more room may wrap and expand the region, but it must
-not be shortened into an unclear error merely to preserve geometry.
-
-Show helper text only when the label and control do not already tell a user
-how to complete the field. Use it for a required format, accepted value, or
-other completion-critical instruction; do not add generic restatements such
-as "Enter the address." Render helper text with the resolved `text_muted`
-role. When validation fails, replace the helper text in that region with a
-specific correction message using `error_foreground`; validation is an error,
-not a warning. Associate the active message region with its control and do
-not rely on its color alone to convey the state.
 
 For Japanese format help, use either `［field］は［format］形式で入力してください。`
 or `［field］は［characters］を使用して入力してください。` The sentence tells the
