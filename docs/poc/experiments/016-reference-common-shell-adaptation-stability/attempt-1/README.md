@@ -1,7 +1,7 @@
 ---
 type: PoC stability experiment
 title: Reference common-shell adaptation stability
-status: frozen-input preparation
+status: blocked before implementation
 source: authored
 ---
 
@@ -41,3 +41,16 @@ human-review material are added only after all three Runs complete.
 
 Do not change the Reference, the frozen Manifest snapshot, the application
 input, or the review contract while this Attempt is active.
+
+## Attempt result
+
+The three isolated Runs all stopped before implementation because the frozen
+input check compared platform-transformed working-tree bytes with hashes made
+from a different line-ending representation. No Reference, Manifest, guidance,
+validation, or implementation artifact was changed to bypass that condition.
+
+- [Blocked experiment assessment](blocked-experiment-assessment.md)
+- [Human review material](human-review-blocked.md)
+- Run reports: [Run 1](runs/run-1/initial-worker-report.md),
+  [Run 2](runs/run-2/initial-worker-report.md), and
+  [Run 3](runs/run-3/initial-worker-report.md)
