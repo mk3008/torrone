@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "9cd19321e53f6279e956df8a6d1fe562c3360544",
+  "baseline_tag": "reference-common-shell-v0.1",
+  "target_roots": [
+    "docs/poc/experiments/015-reference-first-common-shell",
+    "templates/business-app/design-manifest"
+  ],
+  "fixed_file_count": 52,
+  "files": [
+    {
+      "path": "docs/poc/experiments/015-reference-first-common-shell/README.md",
+      "blob": "dc51b8ff48e2171b265c01cabeb9d71c17fe56b6"
+    },
+    {
+      "path": "docs/poc/experiments/015-reference-first-common-shell/app.js",
+      "blob": "0bb72e0b4bebc1921726131b1929b5386dac73c0"
+    },
+    {
+      "path": "docs/poc/experiments/015-reference-first-common-shell/check-reference.ps1",
+      "blob": "c87bf33d0df4c197a1cda2440a52d175d3cddad4"
+    },
+    {
+      "path": "docs/poc/experiments/015-reference-first-common-shell/index.html",
+      "blob": "df40e304bdccf1a06a6dc4a4b6a0ff0bdda28462"
+    },
+    {
+      "path": "docs/poc/experiments/015-reference-first-common-shell/reference-contract.md",
+      "blob": "267c388ecce48dc46fef10ce855b2ac27308599a"
+    },
+    {
+      "path": "docs/poc/experiments/015-reference-first-common-shell/styles.css",
+      "blob": "06bb364cc5fa037888232558696285e7513144f6"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/breadcrumb.md",
+      "blob": "a4b4a2f9d54343d0a2fd063a7e695ec12abd1c3a"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/confirmation.md",
+      "blob": "2da922a8c01d4684193738185cdbef345fd490ee"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/dashboard-panel.md",
+      "blob": "19b5d9bf71df13a24f0530af0645b98a0742314a"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/dialog.md",
+      "blob": "7dc2c005a6b8006242a8034b047b36f359d00646"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/drawer.md",
+      "blob": "2da704fece4fcc11242d37329f08abaddeb3c21b"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/environment-notice.md",
+      "blob": "b6f53a6a9aed9a295c9760a9d2bb7d748f156afc"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/header.md",
+      "blob": "ccf1ca09b7dee84036ac1e701bd1955bd6cebb27"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/index.md",
+      "blob": "b1aa75eca1631de76b55fbccc96993c092c3d3c8"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/page-header.md",
+      "blob": "6ca55a47c410ba5e46d9585e478726cb13d9d671"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/pagination.md",
+      "blob": "40c6ad501a5ecce796d5e85147b28b843789de98"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/record-fields.md",
+      "blob": "b5d3bdc01613299ea06fe35eee64fdf2818f0afc"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/result-card.md",
+      "blob": "d9d3f99788759678d0b22d754cf3ea694826a398"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/result-grid.md",
+      "blob": "d802e565a852261216768ee76eb5d2a13b506bdd"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/search-conditions.md",
+      "blob": "fce80c6908aea95ca5492a3f3e6135eeb5926a25"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/status-badge.md",
+      "blob": "eb9cd34ae006eeedced3bb86a4edd6a042f98bfd"
+    },
+    {
+      "path": "templates/business-app/design-manifest/components/step-indicator.md",
+      "blob": "892d0fdb855a0339b46cb87c8de6a587157bd10a"
+    },
+    {
+      "path": "templates/business-app/design-manifest/configuration/index.md",
+      "blob": "b669ae94fa25e229d03920d102692cbfc010f7db"
+    },
+    {
+      "path": "templates/business-app/design-manifest/configuration/record-list-options.md",
+      "blob": "8395a5962a8dcefe091d14826c2228ad58cd3f29"
+    },
+    {
+      "path": "templates/business-app/design-manifest/configuration/theme-colors.default.yaml",
+      "blob": "4d3a23eb198e8fcc51341d644b1cb233b07ffa93"
+    },
+    {
+      "path": "templates/business-app/design-manifest/configuration/theme-colors.md",
+      "blob": "62e81550e7c9f8d835921c9b8c5c095e0d9d887a"
+    },
+    {
+      "path": "templates/business-app/design-manifest/flows/index.md",
+      "blob": "7146819911dd2ec6e4e418ac823bb90ddee1dc08"
+    },
+    {
+      "path": "templates/business-app/design-manifest/flows/list-to-detail.md",
+      "blob": "e6f9bb2cf8a0ce5e43c4aea80a2584965723ef79"
+    },
+    {
+      "path": "templates/business-app/design-manifest/flows/record-lifecycle.md",
+      "blob": "a5e90c5f266685d238c186dbf8879aa24c1a4e49"
+    },
+    {
+      "path": "templates/business-app/design-manifest/flows/screen-transition.md",
+      "blob": "9096bc3375b2c17412dac149f2a3d052c50ee3fd"
+    },
+    {
+      "path": "templates/business-app/design-manifest/flows/wizard-progress.md",
+      "blob": "0a8fa09452622a047fbc70e37a6ac580970b8975"
+    },
+    {
+      "path": "templates/business-app/design-manifest/foundations/accessible-work-surface.md",
+      "blob": "12dfa94041303f320e0cc2a85f2a2d3da3348557"
+    },
+    {
+      "path": "templates/business-app/design-manifest/foundations/color-and-theme.md",
+      "blob": "d23b94dc2970e00ee2090d62f001c5475e13f438"
+    },
+    {
+      "path": "templates/business-app/design-manifest/foundations/compact-work-surface.md",
+      "blob": "29a64022175853c5def5d111d2d5e9f789f33025"
+    },
+    {
+      "path": "templates/business-app/design-manifest/foundations/iconography.md",
+      "blob": "7c641ed2d8ee2606cdadab77e7058ea771838c14"
+    },
+    {
+      "path": "templates/business-app/design-manifest/foundations/index.md",
+      "blob": "8d47d8d21635af062c1199fce76951b61e023e7c"
+    },
+    {
+      "path": "templates/business-app/design-manifest/foundations/layout-panes.md",
+      "blob": "a779af7c33dab0e7c86c88ed6d3be47e01f6cf6b"
+    },
+    {
+      "path": "templates/business-app/design-manifest/index.md",
+      "blob": "493fcde9e2a17555ff87db74d8a330cc2ebd87ca"
+    },
+    {
+      "path": "templates/business-app/design-manifest/manifest.md",
+      "blob": "5744ec65a0fd5bb63800b438a5d7be1f99a3a3e6"
+    },
+    {
+      "path": "templates/business-app/design-manifest/policies/confirm-consequential-action.md",
+      "blob": "cd3ecbb68bc1cfe5ffeb465bbf5db810879c766d"
+    },
+    {
+      "path": "templates/business-app/design-manifest/policies/confirm-destructive-action.md",
+      "blob": "79fc353cf8218df872435e85e8a2f98337fda91b"
+    },
+    {
+      "path": "templates/business-app/design-manifest/policies/index.md",
+      "blob": "3b75bb54dcd5954b48a89acaac11f23e9dc464da"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/dashboard.md",
+      "blob": "d42ddc7e34108e3be48053fa319a7fc25d472508"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/index.md",
+      "blob": "9015c8e82f29357e69c2c964db471349ccba0f7d"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/record-create.md",
+      "blob": "b9885108d07762d572f50c4ff145460f791d8fd7"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/record-delete.md",
+      "blob": "f234a4dfa8cda17ad25ec97a9fee5ce70dfc031d"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/record-detail.md",
+      "blob": "eadb13718da0e3960b2b5112c67c4c8d96691e51"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/record-edit.md",
+      "blob": "49ec350b68e377d5d8870489d5f467e260e00f0b"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/record-list.md",
+      "blob": "a231086863a91db4cd6b9e8b85d800c43e61f0e8"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/search-with-cards.md",
+      "blob": "34ff7b4275338e6406eebacab7cc2a0abf673451"
+    },
+    {
+      "path": "templates/business-app/design-manifest/screen-patterns/wizard.md",
+      "blob": "9cc5b3d1ff4a33f4a20c8b7121554a4879533b3b"
+    },
+    {
+      "path": "templates/business-app/design-manifest/variability.md",
+      "blob": "994425222f3b3b34d19399c74fec67c37d07471f"
+    }
+  ]
+}
