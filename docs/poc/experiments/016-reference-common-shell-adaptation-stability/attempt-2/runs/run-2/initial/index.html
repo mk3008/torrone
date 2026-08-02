@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operations workspace</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="application-shell" data-palette="light">
+      <header class="topbar">
+        <button class="header-action drawer-toggle" type="button" aria-controls="primary-drawer">
+          <span class="drawer-symbol" aria-hidden="true"></span>
+          <span class="visually-hidden">Toggle navigation</span>
+        </button>
+        <div class="application-identity">
+          <span class="identity-kicker">Operations</span>
+          <strong>Operations workspace</strong>
+        </div>
+        <button class="header-action palette-toggle" type="button">
+          <span class="palette-symbol" aria-hidden="true">◐</span>
+          <span class="visually-hidden">Toggle palette</span>
+        </button>
+      </header>
+
+      <div class="shell-content">
+        <aside class="navigation-drawer" id="primary-drawer" aria-label="Application navigation">
+          <div class="navigation-tools">
+            <label for="navigation-filter">Search navigation</label>
+            <div class="search-field">
+              <span aria-hidden="true">⌕</span>
+              <input id="navigation-filter" type="search" placeholder="Find an item" autocomplete="off" />
+            </div>
+          </div>
+          <nav class="navigation-scroll" aria-label="Workspace navigation"></nav>
+        </aside>
+
+        <main class="main-workspace" tabindex="-1">
+          <section class="workspace-inner" aria-labelledby="content-title">
+            <p class="eyebrow">Workspace fixture</p>
+            <h1 id="content-title">Neutral workspace content</h1>
+            <p class="intro">This fixture provides neutral content for observing the shell's overflow behavior.</p>
+            <ol class="numbered-fixture" aria-label="Numbered fixture items"></ol>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
