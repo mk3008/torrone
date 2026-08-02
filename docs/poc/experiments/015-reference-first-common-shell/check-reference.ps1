@@ -34,6 +34,8 @@ foreach ($needle in $requiredHtml) {
 
 $requiredCss = @(
   '.shell.drawer-hidden .drawer { display: none; }',
+  '.shell {',
+  'color: var(--text-primary);',
   '.navigation-list {',
   'overflow-y: auto;',
   '.workspace {',
@@ -42,6 +44,10 @@ $requiredCss = @(
 
 foreach ($needle in $requiredCss) {
   if (-not $css.Contains($needle)) { throw "Reference CSS lacks: $needle" }
+}
+
+if ($css -notmatch '(?s)\.shell\s*\{[^}]*color:\s*var\(--text-primary\);') {
+  throw 'Reference shell must inherit the active palette primary text color.'
 }
 
 $requiredScript = @(

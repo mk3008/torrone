@@ -43,6 +43,7 @@ button, input { font: inherit; }
   height: 100vh;
   grid-template-rows: 3.75rem minmax(0, 1fr);
   background: var(--page-background);
+  color: var(--text-primary);
 }
 
 .app-header {
