@@ -50,6 +50,15 @@ Contract.
 
 The application owner must provide the task-level state model, primary-record value, identity context, aggregate information, optional destinations, and behavior for unresolved fields. This illustrative manifest does not authorize an implementer to invent them. If a neutral, source-blind fixture is allowed, it may fill only an already instructed semantic slot with recorded provenance; it must not create product meaning, source-specific copy, or a new hierarchy slot.
 
+# Verification
+
+Apply the `# Verification` section of every concept selected for a product
+task. Each section states the observable rendered or exercised interaction
+outcome for that concept's fixed guidance. Product facts remain in the binding
+or application input contract. An unavailable browser or other observation
+environment yields `not verified`, not a pass inferred from implementation
+source or intent.
+
 # Relationships
 
 Discover the available guidance through [Foundations](foundations/index.md),

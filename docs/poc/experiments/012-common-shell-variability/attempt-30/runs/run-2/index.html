@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell" data-theme="light">
+      <header class="header" aria-label="業務ワークスペースのヘッダー">
+        <div class="header-leading">
+          <button class="icon-button" id="drawer-toggle" type="button" aria-controls="navigation-drawer" aria-expanded="true" aria-label="Close navigation" data-tooltip="Close navigation">
+            <img id="drawer-icon" src="icons/panel-left-close.svg" alt="" aria-hidden="true">
+          </button>
+          <strong>業務ワークスペース</strong>
+        </div>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark theme" data-tooltip="Switch to dark theme">
+          <img id="theme-icon" src="icons/moon.svg" alt="" aria-hidden="true">
+        </button>
+      </header>
+      <div class="body-layout">
+        <aside class="drawer" id="navigation-drawer" aria-label="ナビゲーション">
+          <div class="drawer-search">
+            <label for="navigation-search">ナビゲーションを検索</label>
+            <div class="search-input-wrap">
+              <img src="icons/search.svg" alt="" aria-hidden="true">
+              <input id="navigation-search" type="search" autocomplete="off" placeholder="項目を検索">
+            </div>
+          </div>
+          <nav class="nav-scroll" aria-label="固定ナビゲーション">
+            <ul class="nav-list" id="nav-list"></ul>
+            <p class="no-matches" id="no-matches" hidden>一致する項目はありません</p>
+          </nav>
+        </aside>
+        <section class="workspace" aria-labelledby="workspace-title" tabindex="-1">
+          <div class="page-grid">
+            <div class="bounded-pane">
+              <h1 id="workspace-title">スクロール検証用ダミーコンテンツ</h1>
+              <ol class="dummy-numbers" id="dummy-numbers" aria-label="ダミー連番"></ol>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

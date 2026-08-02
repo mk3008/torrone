@@ -87,12 +87,36 @@ Use `flows/` for cross-screen guidance. A screen pattern records only the transi
 Use only sections that improve application. Useful headings include:
 
 - `# Guidance` for the decision or invariant.
+- `# Verification` for observable rendered or exercised interaction outcomes
+  that show whether the applicable guidance was implemented.
 - `# Provenance` for the non-identifying origin class of a statement.
 - `# Inferences` for interpretations that need confirmation.
 - `# Unresolved` for gaps, conflicts, or unavailable states.
 - `# Relationships` for prose links to related concepts.
 
 Keep statements reviewable and scoped. Describe user-visible intent and behavior rather than framework or CSS mechanics. Prefer relational language over measurements for typography, spacing, layout, and density. Do not include original UI names, URLs, screenshots, copied product vocabulary, capture paths, or extraction evidence links in a manifest. Provenance classes such as `observed`, `inferred`, and `authored` may remain only when they cannot identify or expose the original UI.
+
+## Verification section
+
+Use a `# Verification` section for each new or revised concept that supplies
+rendered or interaction guidance. It states the observable outcome that an
+implementer can confirm in the rendered result, and, when an interaction is in
+scope, the visible before/action/after result. Verification belongs with the
+guidance it checks; it does not become a generic validator, runtime contract,
+or product test plan.
+
+Write verification as affirmative, user-visible pass conditions. Name the
+region, state, relationship, or change that must be observable, rather than a
+CSS class, DOM structure, framework API, asset source, library, or literal
+value. Keep product facts, supplied labels, destinations, permissions, data,
+and state models in the application input contract or binding. When an outcome
+cannot be observed in the available environment, record it as `not verified`;
+do not infer a pass from source structure or an intended implementation.
+
+A concept that only routes to another concept may link to that concept's
+verification rather than duplicate it. Existing concepts may acquire this
+section incrementally when they are revised; a consumer-delivery task freezes
+the applicable verification sections with its other inputs.
 
 For added user-visible product information, meaning, or state, preserve a reviewable allowed-provenance trace to a requirement, current target-product implementation, manifest guidance, or an explicitly named fallback. A state-bearing element also needs a binding model: data or source of truth, possible state meaning, display condition, and update trigger. If that model is not established, record it as unresolved rather than silently authoring a state.
 

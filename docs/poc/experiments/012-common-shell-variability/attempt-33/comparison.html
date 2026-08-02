@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>共通シェル新規作成テスト: Terra medium 3回比較</title>
+  <link rel="stylesheet" href="comparison.css">
+</head>
+<body>
+<main>
+  <h1>共通シェル新規作成テスト: Terra medium 3回比較</h1>
+  <p>3件とも、同じ固定Manifest入力と同じ日本語プロンプトだけから新規に作成しました。過去の画面、PNG、比較結果、テスト、評価記録は生成入力に含めていません。</p>
+  <div class="metadata">
+    <span>生成モデル: <code>gpt-5.6-terra</code> / reasoning effort: <code>medium</code></span>
+    <span>Manifest snapshot: 59 files（<a href="frozen-input/frozen-input-inventory.json">固定入力一覧</a>）</span>
+    <span>固定 viewport: 1440 × 1200（<a href="capture-record.md">capture 記録</a>）</span>
+  </div>
+  <div class="notice">自動検証と独立レビューを通過した固定成果物です。比較対象は Light / Dark と Drawer 表示 / 非表示の初期表示です。YAML、digest、内部評価語彙への回答は不要です。</div>
+  <details>
+    <summary>生成に使用した固定プロンプト全文を表示</summary>
+    <p><a href="frozen-input/fixed-user-prompt-ja.md">固定プロンプトを別ページで開く</a></p>
+    <pre>業務アプリで再利用する共通シェルを作成してください。
+
+- この実験は `greenfield-manifest` です。過去の共通シェル成果物、PNG、比較結果、テスト、評価記録は参照しません。
+- 入力は、同梱された `design-manifest/`、`implementation-constraints.yaml`、`icon-fixture/`、この固定プロンプトだけです。`implementation-constraints.yaml` の値は実装選択として使用し、Manifestの意味や製品能力を変更しません。`icon-fixture/` は、実装制約で指定されたLucideのローカル資産サブセットです。ここにないアイコンを発明・取得せず、必要なアイコンはこのfixtureだけから使用します。
+- 作成対象は共通Header、Drawer、およびスクロール検証用の中立workspaceだけです。検索、一覧、読取、追加、編集、削除などの業務画面・画面遷移は作成しません。
+- Headerには `業務ワークスペース` を表示します。Drawerの表示状態と非表示状態の両方を、`?drawer=open` と `?drawer=hidden` で初期表示できる静的HTMLにしてください。
+- Drawerの固定fixtureは、`グループ 01`、子 `項目 01-01`、子 `項目 01-02`、`項目 02` から `項目 30` です。初期の現在位置は `項目 01-01` です。各固定項目には利用可能な静的destinationがあります。項目を選択すると画面遷移を作らずに現在位置の値だけをその項目へ更新します。
+- メニュー内検索を利用可能にしてください。検索対象は、このDrawerの固定fixtureだけです。
+- workspaceには、`スクロール検証用ダミーコンテンツ` と、`1` から `80` までの意味を持たない連番だけを表示してください。業務データ、説明文、操作、画面遷移は追加しません。
+- テーマはライトとダークを切り替え可能にし、初期状態はライトにします。`?theme=light` と `?theme=dark` のどちらでも初期状態を表示できるようにします。テーマ色はManifestの既定値を使用し、ローカルテーマ上書きは適用しません。
+- 外部画像、外部フォント、外部CDN、外部scriptは使用しません。</pre>
+  </details>
+  <section class="runs" aria-label="Three independent generated Runs">
+    <article class="run"><div class="run-header"><h2>Run 1</h2><div class="links"><a href="runs/run-1/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-1/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-1/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-1/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div></div><section class="state"><h3>Light / Drawer表示</h3><img src="evidence-captures/run-1-light-open.png" alt="Run 1 の Lightテーマ・Drawer表示の共通シェル"></section><section class="state"><h3>Light / Drawer非表示</h3><img src="evidence-captures/run-1-light-hidden.png" alt="Run 1 の Lightテーマ・Drawer非表示の共通シェル"></section><section class="state"><h3>Dark / Drawer表示</h3><img src="evidence-captures/run-1-dark-open.png" alt="Run 1 の Darkテーマ・Drawer表示の共通シェル"></section><section class="state"><h3>Dark / Drawer非表示</h3><img src="evidence-captures/run-1-dark-hidden.png" alt="Run 1 の Darkテーマ・Drawer非表示の共通シェル"></section></article>
+    <article class="run"><div class="run-header"><h2>Run 2</h2><div class="links"><a href="runs/run-2/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-2/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-2/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-2/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div></div><section class="state"><h3>Light / Drawer表示</h3><img src="evidence-captures/run-2-light-open.png" alt="Run 2 の Lightテーマ・Drawer表示の共通シェル"></section><section class="state"><h3>Light / Drawer非表示</h3><img src="evidence-captures/run-2-light-hidden.png" alt="Run 2 の Lightテーマ・Drawer非表示の共通シェル"></section><section class="state"><h3>Dark / Drawer表示</h3><img src="evidence-captures/run-2-dark-open.png" alt="Run 2 の Darkテーマ・Drawer表示の共通シェル"></section><section class="state"><h3>Dark / Drawer非表示</h3><img src="evidence-captures/run-2-dark-hidden.png" alt="Run 2 の Darkテーマ・Drawer非表示の共通シェル"></section></article>
+    <article class="run"><div class="run-header"><h2>Run 3</h2><div class="links"><a href="runs/run-3/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-3/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-3/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-3/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div></div><section class="state"><h3>Light / Drawer表示</h3><img src="evidence-captures/run-3-light-open.png" alt="Run 3 の Lightテーマ・Drawer表示の共通シェル"></section><section class="state"><h3>Light / Drawer非表示</h3><img src="evidence-captures/run-3-light-hidden.png" alt="Run 3 の Lightテーマ・Drawer非表示の共通シェル"></section><section class="state"><h3>Dark / Drawer表示</h3><img src="evidence-captures/run-3-dark-open.png" alt="Run 3 の Darkテーマ・Drawer表示の共通シェル"></section><section class="state"><h3>Dark / Drawer非表示</h3><img src="evidence-captures/run-3-dark-hidden.png" alt="Run 3 の Darkテーマ・Drawer非表示の共通シェル"></section></article>
+  </section>
+  <section class="request"><h2>人間への確認</h2><ul><li>Drawer の表示・非表示に問題がないか</li><li>Header のアイコン・テーマ切替に問題がないか</li><li>Drawer のメニュー、検索、スクロールに問題がないか</li></ul><p>問題がなければ「すべて問題ありません」と回答できます。</p></section>
+</main>
+</body>
+</html>

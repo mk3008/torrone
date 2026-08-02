@@ -33,11 +33,28 @@ resolved semantic role to its descendants. A component must consume the role
 for its semantic job; it must not substitute a visually similar role or a
 literal fallback value.
 
+Apply the resolved foreground role directly to each visible shell region and
+its readable content in the active mode. A Header, Drawer, workspace, and
+their supplied identity, label, and body text should visibly use their
+semantic foreground in both Light and Dark modes. Treat a foreground inherited
+from a page, document, or another region outside the active shell as
+unresolved: each region receives the active role before it renders its own
+content. This keeps text and glyphs legible when a theme changes without
+creating component-specific palette values.
+
 For every filled primary action, including Search, Create, Save, and another
 product-declared primary command, set `background-color` from
 `action_background` and `color` from `action_foreground`. Use the same two
 roles in Light and Dark mode. Do not use `selection_indicator`, a status role,
 or a literal `#fff`/`#000` as the primary-action foreground or background.
+
+For every editable text input, date input, email input, telephone input,
+search input, select, and textarea, set `background-color` from
+`surface_background`, `color` from `text_primary`, and its ordinary boundary
+from `border_interactive`. The control surface is opaque: do not leave an
+editable control transparent so that `page_background` or a parent panel shows
+through. This mapping keeps an entry control visually distinct from the
+workspace in both required modes; it is not a per-screen white-fill choice.
 
 For every result Grid, set each `thead th` `background-color` from
 `table_header_background` and `color` from `table_header_foreground`. Set each
@@ -53,39 +70,21 @@ For an editable field's shared helper-or-error message region, use
 a non-blocking exception, whereas validation prevents completion until the
 user corrects the supplied value.
 
-In a CSS custom-property implementation, declare the values corresponding to
-the active palette before the component renders, then apply exactly:
+When selectively marking requiredness, render the textual `Required`/`必須`
+token in that same `error_foreground` role. Do not use a selection, action, or
+warning role for either the required marker or a validation correction. The
+textual marker and field-specific error remain necessary non-color cues; the
+shared role supplies their consistent visual emphasis.
 
-```css
-.primary-action {
-  background-color: var(--action-background);
-  color: var(--action-foreground);
-}
+Resolve every required component role from the active selected palette before
+the component renders. An implementation may choose its own styling mechanism,
+but it must apply the resolved role directly to the semantic surface or content
+named above. Page-specific styling must not substitute a local literal or an
+unrelated role for a resolved component role, because that would prevent a
+permitted theme-color override from reaching the component.
 
-thead th {
-  background-color: var(--table-header-background);
-  color: var(--table-header-foreground);
-}
-
-tbody td {
-  background-color: var(--surface-background);
-  color: var(--text-primary);
-}
-```
-
-Selectors are implementation choices. When CSS custom properties are used,
-the shared-shell root must define the canonical role variables
-`--action-background`, `--action-foreground`, `--table-header-background`,
-`--table-header-foreground`, `--surface-background`, `--text-primary`,
-`--text-muted`, and `--error-foreground`
-from the active resolved palette. Page-specific CSS must consume those
-canonical variables directly. Do not copy a palette value into a page-local
-custom property, create page-local aliases such as `--grid-surface-background`, or place
-Light/Dark hexadecimal palette values in page-specific CSS: those approaches
-stop a component from following a permitted theme-color override.
-
-The role-to-element mapping, the canonical role variables, and their resolved
-values are fixed requirements; they are not implementation choices.
+The role-to-element mapping and resolved values are fixed requirements; the
+styling mechanism remains an implementation choice.
 
 # Standard button emphasis
 
@@ -160,6 +159,16 @@ override while preserving every role ID and meaning.
 A theme does not create a status, selection, permission, action, or business
 meaning. Changing a value changes presentation only. Changing, removing, or
 repurposing a role changes the contract.
+
+# Verification
+
+Confirm in every supported mode that each visible shell region, ordinary text,
+editable control, result-grid header and body, selected item, and primary action
+uses the resolved semantic role pair assigned by this foundation. Confirm that
+changing the supported mode preserves readable foregrounds, recognizable
+icon-only controls, and the shared focus treatment. Use the selected palette's
+own configuration verification for contrast checks; a rendered screenshot does
+not by itself prove every contrast or focus requirement.
 
 # Product boundary
 

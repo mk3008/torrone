@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業務ワークスペース</title>
+  <style>
+    :root {
+      --page-background: #F4F7FA; --surface-background: #FFFFFF; --text-primary: #172033; --text-muted: #52657A;
+      --border-subtle: #C7D2DF; --border-interactive: #75889C; --action-background: #0B5CAD; --action-foreground: #FFFFFF;
+      --link: #0B5CAD; --selection-background: #E7F1FC; --selection-foreground: #172033; --selection-indicator: #0B5CAD; --focus-ring: #3B82F6;
+    }
+    :root[data-theme="dark"] {
+      --page-background: #101820; --surface-background: #1B2632; --text-primary: #F4F7FA; --text-muted: #BAC6D2;
+      --border-subtle: #516273; --border-interactive: #91A3B5; --action-background: #74B7F5; --action-foreground: #07131E;
+      --link: #8BC4FF; --selection-background: #203E5A; --selection-foreground: #F4F7FA; --selection-indicator: #74B7F5; --focus-ring: #FFD54A;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body { background: var(--page-background); color: var(--text-primary); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    button, input { font: inherit; }
+    button:focus-visible, input:focus-visible, .nav-item:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+    .shell { height: 100%; display: grid; grid-template-rows: 58px minmax(0, 1fr); }
+    .header { background: var(--surface-background); color: var(--text-primary); border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; padding: 0 18px; gap: 12px; }
+    .workspace-name { font-size: 16px; font-weight: 700; letter-spacing: .02em; }
+    .header-end { margin-left: auto; }
+    .icon-button { width: 36px; height: 36px; display: inline-grid; place-items: center; background: var(--surface-background); color: var(--text-primary); border: 1px solid var(--border-interactive); border-radius: 5px; cursor: pointer; }
+    .icon { width: 19px; height: 19px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .body { min-height: 0; display: grid; grid-template-columns: 272px minmax(0, 1fr); }
+    .body.drawer-hidden { grid-template-columns: minmax(0, 1fr); }
+    .drawer { min-height: 0; background: var(--surface-background); border-right: 1px solid var(--border-subtle); display: grid; grid-template-rows: auto minmax(0, 1fr); }
+    .body.drawer-hidden .drawer { display: none; }
+    .drawer-search { padding: 16px 14px 12px; border-bottom: 1px solid var(--border-subtle); }
+    .drawer-search label { display: block; font-size: 13px; font-weight: 650; margin-bottom: 7px; }
+    .drawer-search input { width: 100%; height: 36px; border: 1px solid var(--border-interactive); border-radius: 4px; background: var(--surface-background); color: var(--text-primary); padding: 0 10px; }
+    .nav-list { overflow-y: auto; padding: 8px 0 16px; }
+    .nav-row { position: relative; min-height: 38px; display: flex; align-items: center; width: 100%; color: var(--text-primary); }
+    .nav-item, .disclosure { border: 0; background: transparent; color: inherit; cursor: pointer; }
+    .nav-item { min-height: 38px; flex: 1; text-align: left; padding: 0 14px 0 22px; font-size: 14px; }
+    .nav-row.child .nav-item { padding-left: 42px; }
+    .nav-row.selected { background: var(--selection-background); color: var(--selection-foreground); font-weight: 700; }
+    .nav-row.selected::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--selection-indicator); }
+    .disclosure { width: 38px; height: 38px; display: grid; place-items: center; }
+    .disclosure .icon { width: 17px; height: 17px; }
+    .no-match { color: var(--text-muted); font-size: 14px; padding: 16px 22px; }
+    .workspace { min-height: 0; overflow-y: auto; padding: 34px clamp(24px, 5vw, 72px) 64px; }
+    .workspace-content { max-width: 680px; }
+    h1 { font-size: 20px; margin: 0 0 22px; font-weight: 700; }
+    .sequence { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 10px; }
+    .number { min-height: 54px; display: grid; place-items: center; background: var(--surface-background); color: var(--text-primary); border: 1px solid var(--border-subtle); border-radius: 4px; font-variant-numeric: tabular-nums; }
+    @media (max-width: 640px) { .body { grid-template-columns: minmax(0, 1fr); } .drawer { position: absolute; z-index: 2; top: 58px; bottom: 0; width: min(272px, 88vw); box-shadow: 8px 0 20px rgb(0 0 0 / .16); } }
+  </style>
+</head>
+<body>
+  <div class="shell" id="shell">
+    <header class="header">
+      <button class="icon-button" id="drawer-toggle" type="button" aria-label="Close navigation" title="Close navigation">
+        <svg class="icon" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M3 5v14a2 2 0 0 0 2 2h14"/><path d="M21 3H5a2 2 0 0 0-2 2"/></svg>
+      </button>
+      <div class="workspace-name">業務ワークスペース</div>
+      <div class="header-end"><button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <svg class="icon" id="theme-icon" aria-hidden="true"><path d="M12 3a6 6 0 1 0 6 6c0-3.3-2.7-6-6-6Z"/></svg>
+      </button></div>
+    </header>
+    <div class="body" id="body">
+      <aside class="drawer" aria-label="Navigation">
+        <div class="drawer-search"><label for="menu-search">メニューを検索</label><input id="menu-search" type="search" placeholder="項目を検索"></div>
+        <nav class="nav-list" id="nav-list" aria-label="Navigation items"></nav>
+      </aside>
+      <main class="workspace"><div class="workspace-content"><h1>スクロール検証用ダミーコンテンツ</h1><div class="sequence" id="sequence"></div></div></main>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const root = document.documentElement, body = document.getElementById('body'), nav = document.getElementById('nav-list');
+    let theme = params.get('theme') === 'dark' ? 'dark' : 'light';
+    let drawerOpen = params.get('drawer') !== 'hidden';
+    let expanded = true, current = '項目 01-01', query = '';
+    const icons = { down: '<svg class="icon" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>', right: '<svg class="icon" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>' };
+    const items = ['項目 01-01', '項目 01-02', ...Array.from({length: 29}, (_, i) => `項目 ${String(i + 2).padStart(2, '0')}`)];
+    function syncTheme() {
+      root.dataset.theme = theme;
+      const button = document.getElementById('theme-toggle'), icon = document.getElementById('theme-icon');
+      const dark = theme === 'dark'; button.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme'); button.title = button.getAttribute('aria-label');
+      icon.innerHTML = dark ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>' : '<path d="M12 3a6 6 0 1 0 6 6c0-3.3-2.7-6-6-6Z"/>';
+    }
+    function syncDrawer() {
+      body.classList.toggle('drawer-hidden', !drawerOpen);
+      const button = document.getElementById('drawer-toggle'); button.setAttribute('aria-label', drawerOpen ? 'Close navigation' : 'Open navigation'); button.title = button.getAttribute('aria-label');
+      button.innerHTML = drawerOpen ? '<svg class="icon" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M3 5v14a2 2 0 0 0 2 2h14"/><path d="M21 3H5a2 2 0 0 0-2 2"/></svg>' : '<svg class="icon" aria-hidden="true"><path d="m9 18 6-6-6-6"/><path d="M21 5v14a2 2 0 0 1-2 2H5"/><path d="M3 3h16a2 2 0 0 1 2 2"/></svg>';
+    }
+    function row(label, child = false) { const selected = current === label; return `<div class="nav-row ${child ? 'child' : ''} ${selected ? 'selected' : ''}"><button class="nav-item" type="button" data-item="${label}" ${selected ? 'aria-current="page"' : ''}>${label}</button></div>`; }
+    function renderNav() {
+      const term = query.trim().toLowerCase(); const matches = label => !term || label.toLowerCase().includes(term);
+      const childMatches = items.slice(0,2).filter(matches); const leafMatches = items.slice(2).filter(matches);
+      let html = '';
+      if (!term || childMatches.length) html += `<div class="nav-row"><button class="nav-item" type="button" data-item="グループ 01">グループ 01</button><button class="disclosure" type="button" id="disclosure" aria-label="${expanded ? 'Collapse group' : 'Expand group'}" aria-expanded="${expanded}">${expanded ? icons.down : icons.right}</button></div>`;
+      if ((expanded || term) && childMatches.length) html += childMatches.map(label => row(label, true)).join('');
+      html += leafMatches.map(label => row(label)).join('');
+      nav.innerHTML = html || '<div class="no-match">一致する項目はありません</div>';
+      const disclosure = document.getElementById('disclosure'); if (disclosure) disclosure.addEventListener('click', () => { expanded = !expanded; renderNav(); });
+      nav.querySelectorAll('[data-item]').forEach(button => button.addEventListener('click', () => { current = button.dataset.item; renderNav(); }));
+    }
+    document.getElementById('drawer-toggle').addEventListener('click', () => { drawerOpen = !drawerOpen; syncDrawer(); });
+    document.getElementById('theme-toggle').addEventListener('click', () => { theme = theme === 'light' ? 'dark' : 'light'; syncTheme(); });
+    document.getElementById('menu-search').addEventListener('input', event => { query = event.target.value; renderNav(); });
+    document.getElementById('sequence').innerHTML = Array.from({length: 80}, (_, i) => `<div class="number">${i + 1}</div>`).join('');
+    syncTheme(); syncDrawer(); renderNav();
+  </script>
+</body>
+</html>

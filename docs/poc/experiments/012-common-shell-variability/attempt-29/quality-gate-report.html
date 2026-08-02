@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>共通シェル 3 Run 品質ゲート結果</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #172033; background: #f3f6fa; }
+    body { margin: 0; padding: 40px; }
+    main { max-width: 960px; margin: 0 auto; }
+    h1 { margin-top: 0; }
+    .status, .finding { padding: 18px 20px; border-radius: 8px; margin: 20px 0; }
+    .status { background: #fff5d6; border-left: 5px solid #a66d00; }
+    .finding { background: #fff; border: 1px solid #d6deea; }
+    ul { line-height: 1.7; }
+    a { color: #075db5; }
+    code { background: #eaf0f7; padding: 0.1em 0.3em; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>共通シェル新規作成テスト：品質ゲート結果</h1>
+    <p>同じ Manifest snapshot と同じ固定日本語プロンプトから、独立した3件を生成しました。生成モデルは <code>gpt-5.6-terra</code>、reasoning effort は <code>medium</code> です。</p>
+
+    <section class="status">
+      <strong>status: partial — human review not opened</strong>
+      <p>3件のうち Run 2 が、共通 Manifest の必須ルールである「Drawer と workspace の独立した縦スクロール領域」を満たしません。個別HTMLを修正せず、3 Run テストの品質結果として記録しています。</p>
+    </section>
+
+    <section class="finding">
+      <h2>確認結果</h2>
+      <p>Manifest と固定プロンプトはすでにこの共通ルールを明記しているため、独立レビューは Manifest／プロンプトの不足ではなく、Run 2 の生成逸脱と判定しました。</p>
+      <ul>
+        <li><a href="frozen-input/fixed-user-prompt-ja.md">固定プロンプト全文</a></li>
+        <li><a href="runs/run-1/index.html?drawer=open&amp;theme=light">Run 1</a></li>
+        <li><a href="runs/run-2/index.html?drawer=open&amp;theme=light">Run 2（non-conformance）</a></li>
+        <li><a href="runs/run-3/index.html?drawer=open&amp;theme=light">Run 3</a></li>
+      </ul>
+      <p>人間レビュー用のPNG・承認依頼は、この品質ゲートが通る新しい3 Run が得られるまで作成しません。</p>
+    </section>
+  </main>
+</body>
+</html>

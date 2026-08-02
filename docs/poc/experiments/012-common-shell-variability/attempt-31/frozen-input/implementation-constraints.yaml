@@ -1,0 +1,6 @@
+pack_id: example-business-app-standard-pack
+pack_version: 0.3.0
+implementation_constraints:
+  render_target: static_html
+  icon_library: lucide
+  asset_policy: local_bundle_only

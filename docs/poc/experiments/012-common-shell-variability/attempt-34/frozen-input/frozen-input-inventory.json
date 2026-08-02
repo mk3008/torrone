@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-01T14:40:09.9084630Z",
+  "root": "frozen-input",
+  "files": [
+    {
+      "path": "design-manifest/components/breadcrumb.md",
+      "sha256": "1B47A9073629B7AAA245F7DF11B4008AD41C0246DE023888D70DF52101209524",
+      "bytes": 2029
+    },
+    {
+      "path": "design-manifest/components/confirmation.md",
+      "sha256": "B5ACCFE4F74BABF2EED2F7A6FB6DF08F0D977290DD34166375D4D77D19A4E8EB",
+      "bytes": 1323
+    },
+    {
+      "path": "design-manifest/components/dashboard-panel.md",
+      "sha256": "489A39F8D13F5ED4DB226443A18ED7F6246478598FA01DAA3F3CEBD4C96FE72F",
+      "bytes": 1495
+    },
+    {
+      "path": "design-manifest/components/dialog.md",
+      "sha256": "745C6B0F57D4225A8F5A8C8D3522FD3FE606C31D87689D7A39029EF051F7B152",
+      "bytes": 1622
+    },
+    {
+      "path": "design-manifest/components/drawer.md",
+      "sha256": "3F259BF3E65636061DB8DA89A56C923FDE4840BDC59EA5CC7165FBB933B4F81D",
+      "bytes": 6996
+    },
+    {
+      "path": "design-manifest/components/environment-notice.md",
+      "sha256": "8731AFC693F5933DBBEDB1CA3FBCAD07DC0D491ED8A814C4CD966B1C60A1EC7D",
+      "bytes": 1834
+    },
+    {
+      "path": "design-manifest/components/header.md",
+      "sha256": "615C76CD3BD6C5F23C56E05F44350F87593E03318B73ECC6A1F7173860DD4731",
+      "bytes": 5624
+    },
+    {
+      "path": "design-manifest/components/index.md",
+      "sha256": "2C49E795602168E09F1ECCC4FE38F30261BCCD22C15756AA8E7AAB80BBC82452",
+      "bytes": 1574
+    },
+    {
+      "path": "design-manifest/components/page-header.md",
+      "sha256": "F78D3E9194C7FC4AD11FC21545E843B506E2C89AC5CB7E30A49AD3431C13B2EE",
+      "bytes": 1930
+    },
+    {
+      "path": "design-manifest/components/pagination.md",
+      "sha256": "D2C5A32A5F078044D0278AD5518D4F670E6803817DEF4E3C1F547FBBC7D13F37",
+      "bytes": 1570
+    },
+    {
+      "path": "design-manifest/components/record-fields.md",
+      "sha256": "118CB4C0AC39EEAE28A2BCFB8185FE25230A355E62B29B656D64D158E6C51CB2",
+      "bytes": 8501
+    },
+    {
+      "path": "design-manifest/components/result-card.md",
+      "sha256": "4C1296C01906A6AC2DCD435A80DCA59B99BB12AA8FE3536D47A3F64EF046BF73",
+      "bytes": 2483
+    },
+    {
+      "path": "design-manifest/components/result-grid.md",
+      "sha256": "FA94FCA2E13918CD7A5529EF10794AEAF3B9CE473937C8A86ABE451D71630B84",
+      "bytes": 9633
+    },
+    {
+      "path": "design-manifest/components/search-conditions.md",
+      "sha256": "D19E6E4C5A57F91C9906261133E69B28288898964E498CD9F2AF2E34DF7DB3BF",
+      "bytes": 3654
+    },
+    {
+      "path": "design-manifest/components/status-badge.md",
+      "sha256": "5A4878FEEDA4FFCE1E939A04452DD2B883C41CDFAC0D1E306E8E72508A27164F",
+      "bytes": 754
+    },
+    {
+      "path": "design-manifest/components/step-indicator.md",
+      "sha256": "73AD34D66B2EBBC468F46E36F0936752A9C3F2243DEA3A064F0402DAE14197D0",
+      "bytes": 1803
+    },
+    {
+      "path": "design-manifest/configuration/index.md",
+      "sha256": "2DED63F1CC9CD58B71973D71E910733AFFF06AA9B624D5520D26B4E93F4354F8",
+      "bytes": 1309
+    },
+    {
+      "path": "design-manifest/configuration/record-list-options.md",
+      "sha256": "611ACA4C76C915EF49BFFB0AA672792E76D0505A41B235769A048B4265608383",
+      "bytes": 8166
+    },
+    {
+      "path": "design-manifest/configuration/theme-colors.default.yaml",
+      "sha256": "91E69671A9E76F33211192536BBFED309094A0828C9E3BEE402AED4AB88108B0",
+      "bytes": 1637
+    },
+    {
+      "path": "design-manifest/configuration/theme-colors.md",
+      "sha256": "11CAC25CEE7EEE8C29FD520B9583AD094387FE7434C78BDA79FD551BBAC09291",
+      "bytes": 7061
+    },
+    {
+      "path": "design-manifest/flows/index.md",
+      "sha256": "22FE663D1E5866B74EA18BF1E9FE8B2203E9B1D08026DB87DDDF3B47FF49D409",
+      "bytes": 717
+    },
+    {
+      "path": "design-manifest/flows/list-to-detail.md",
+      "sha256": "3CF75E3BACDCE69B4D4BEF158F270D6826EB1C2220D076401463EDDB7E365EE1",
+      "bytes": 1748
+    },
+    {
+      "path": "design-manifest/flows/record-lifecycle.md",
+      "sha256": "AE74A2EF29078145AB7A77D041A589E1748ABD79DE482D397EABEA77AC937B44",
+      "bytes": 1951
+    },
+    {
+      "path": "design-manifest/flows/screen-transition.md",
+      "sha256": "F55DF5F971C3655E3C8B35FDEBA5331F0FE35337DD742DBD854026B2F59A8A87",
+      "bytes": 2628
+    },
+    {
+      "path": "design-manifest/flows/wizard-progress.md",
+      "sha256": "64D5326BBBACBF6AF97EDFCF99EA7BD9B70B198D40172AB8F3D77AF431DA0C95",
+      "bytes": 1746
+    },
+    {
+      "path": "design-manifest/foundations/accessible-work-surface.md",
+      "sha256": "2B29C3CB2D87095E6CD9AE6D57B765CB1B859EB1A83E21BDA9113ABADB6F3D0A",
+      "bytes": 2366
+    },
+    {
+      "path": "design-manifest/foundations/color-and-theme.md",
+      "sha256": "979C55B5655F19342716CB6E97CDD816C0FFFFEEEFC6CBB9CD00601CFA6B24D0",
+      "bytes": 10736
+    },
+    {
+      "path": "design-manifest/foundations/compact-work-surface.md",
+      "sha256": "DF20CDC36C15802156C015C001BBFD84C66722001312C5AF5892CB3C3341E248",
+      "bytes": 2464
+    },
+    {
+      "path": "design-manifest/foundations/iconography.md",
+      "sha256": "057132FBDA9DA19B4980548524F6D227C80ADBFA781DD2E005DE85CC0E87CD46",
+      "bytes": 2834
+    },
+    {
+      "path": "design-manifest/foundations/index.md",
+      "sha256": "789B3F0D3665CE658E5CCD96894267DBD256B5E82B1F15DE4E85AA8D2BE0FC51",
+      "bytes": 687
+    },
+    {
+      "path": "design-manifest/foundations/layout-panes.md",
+      "sha256": "A36D55DB547D77862AFBD69E2126AF013DC44DBAC9EFBE2216570F0FD59B4745",
+      "bytes": 9266
+    },
+    {
+      "path": "design-manifest/index.md",
+      "sha256": "4379DFD4578F3CA0DF34CED6AA0A79CEB4D430F0671B3F4F0FEA35E8FE747F8D",
+      "bytes": 987
+    },
+    {
+      "path": "design-manifest/manifest.md",
+      "sha256": "B9A1355FBA0A5DA28E56386E42C52A689C02294B1DE45D6CCBBC414D8A8656EF",
+      "bytes": 3460
+    },
+    {
+      "path": "design-manifest/policies/confirm-consequential-action.md",
+      "sha256": "ECA8BA628EA6D1970BF3E01591C71ED124DFC69782D17EFD076733DDFCDD55D6",
+      "bytes": 1024
+    },
+    {
+      "path": "design-manifest/policies/confirm-destructive-action.md",
+      "sha256": "26F1B09D5DCC433F4E6EC7D00BB45BD89A66E86AD1C0E9D2C16DE097594E0852",
+      "bytes": 1183
+    },
+    {
+      "path": "design-manifest/policies/index.md",
+      "sha256": "E839CBB66DA8EE8937DCE5CE2D258F21C199A3DEF92E21277B794B08FE80DFEC",
+      "bytes": 298
+    },
+    {
+      "path": "design-manifest/screen-patterns/dashboard.md",
+      "sha256": "8DA92AA18CE79DED5A061A90D9D732F670BD2A6EF0794FDE91BB7EBC2146CC84",
+      "bytes": 1151
+    },
+    {
+      "path": "design-manifest/screen-patterns/index.md",
+      "sha256": "21CFB2D4A702841F980544AA88CF1715929934C031CF9B4403CF3D65C4D1F59D",
+      "bytes": 843
+    },
+    {
+      "path": "design-manifest/screen-patterns/record-create.md",
+      "sha256": "FEF057E58F907C24F0CBBFA9A047CD6A69FB5DF2F09F29194140D084E7788107",
+      "bytes": 2774
+    },
+    {
+      "path": "design-manifest/screen-patterns/record-delete.md",
+      "sha256": "7980DC29CF0EE57272C7DC7AD983429421EF18B328AD13CAF257DBF58EE6F599",
+      "bytes": 1314
+    },
+    {
+      "path": "design-manifest/screen-patterns/record-detail.md",
+      "sha256": "549629D3901EB1A6FECE8934CF2A7F0AE76C91152DB3592D2FADDBC964EEDB1E",
+      "bytes": 3679
+    },
+    {
+      "path": "design-manifest/screen-patterns/record-edit.md",
+      "sha256": "D3ACF5545015F04CA1E095881EA3D7075B51E4FFC2DC01475432EA12F2E0601B",
+      "bytes": 2878
+    },
+    {
+      "path": "design-manifest/screen-patterns/record-list.md",
+      "sha256": "8CEEDA70D7246DE9567911DF9B851216394F80B8DEFECD702B018BB1745627E7",
+      "bytes": 3464
+    },
+    {
+      "path": "design-manifest/screen-patterns/search-with-cards.md",
+      "sha256": "22F89F0840EEDFD5B7DABC6A4C9D64CC8EE2378FD8868C55F572D4579B5AC64A",
+      "bytes": 2211
+    },
+    {
+      "path": "design-manifest/screen-patterns/wizard.md",
+      "sha256": "92C6EDEC473F970B875EFA1035E323ABDF4914AB86D6233BD938CAA12044B618",
+      "bytes": 1913
+    },
+    {
+      "path": "design-manifest/variability.md",
+      "sha256": "574708C2CB70CF7CB3C6501DA2E94C1EA6A7F1AA69FB597D85800181D4FFAA54",
+      "bytes": 17323
+    },
+    {
+      "path": "fixed-user-prompt-ja.md",
+      "sha256": "8108F4DACE46E1B39BBB20151FB4887859285609F77AE4262E899EA4560D8CC3",
+      "bytes": 2321
+    },
+    {
+      "path": "generation-input-manifest.yaml",
+      "sha256": "AFF9D71AC4A272DCE9991B0C71296B42BF058F0C7EC4D4BE09DA11DCE140CB05",
+      "bytes": 1642
+    },
+    {
+      "path": "icon-fixture/chevron-down.svg",
+      "sha256": "66EA878E72ED3488BB3B464C39DFDCCEE8D1F78E560DCCEA40E5E12DA0E87E87",
+      "bytes": 236
+    },
+    {
+      "path": "icon-fixture/chevron-right.svg",
+      "sha256": "2758143D7B2434E4AA7307DFD34405C87909FF4052F21B5F3F40D45224B4F19B",
+      "bytes": 237
+    },
+    {
+      "path": "icon-fixture/icon-fixture-digests.json",
+      "sha256": "5A209980F3B9B7A6631B069B9893142527B658E0DE1476C50715FAE71E8216CC",
+      "bytes": 1142
+    },
+    {
+      "path": "icon-fixture/LICENSE",
+      "sha256": "B495047BD93A9B06913511076F504DABA17D5BBEB3E0650F3BB53A4220329C57",
+      "bytes": 3208
+    },
+    {
+      "path": "icon-fixture/moon.svg",
+      "sha256": "205B959E940D5841F0CE1D09C933153DA9D9C94130A54D5CC0C68C2AF1D403DA",
+      "bytes": 334
+    },
+    {
+      "path": "icon-fixture/panel-left-close.svg",
+      "sha256": "8F5B1FC9255E60F212379E8E315087A2F0A595A639AD2FB25C255DC3295C4E7D",
+      "bytes": 314
+    },
+    {
+      "path": "icon-fixture/panel-left-open.svg",
+      "sha256": "4529F625891390E8C6F106B9603984BC9EC5B03E35A13AF7E7A6D50DF965183B",
+      "bytes": 313
+    },
+    {
+      "path": "icon-fixture/search.svg",
+      "sha256": "283D371C2E433817BB9C0C8310CAA6C77FA4177C0F4F1168D9C83B97AF7389DC",
+      "bytes": 275
+    },
+    {
+      "path": "icon-fixture/sun.svg",
+      "sha256": "A3955C8B0425FCC5C9BA12D2BDD77FE53B2CD5DD05E7742A56F342E996FB2EF8",
+      "bytes": 485
+    },
+    {
+      "path": "implementation-constraints.yaml",
+      "sha256": "EF3473C3C093C186DC664393ECE402EDE1A1FC0D7D3EB9762284B909FC16F240",
+      "bytes": 178
+    },
+    {
+      "path": "self-review-contract.md",
+      "sha256": "CA9158C52BC17688E8759197389F21C1966321143A52B634CFB46A1ED3524AC8",
+      "bytes": 2617
+    }
+  ]
+}

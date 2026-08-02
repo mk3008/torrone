@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業務ワークスペース</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell" data-theme="light" data-drawer="open">
+    <header class="app-header">
+      <div class="header-leading">
+        <button class="icon-button drawer-toggle" type="button" aria-label="Close navigation" title="Close navigation">
+          <img src="assets/panel-left-close.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+      <div class="workspace-identity">業務ワークスペース</div>
+      <div class="header-end">
+        <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+          <img src="assets/moon.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+    </header>
+
+    <div class="shell-body">
+      <aside class="drawer" aria-label="ナビゲーション">
+        <div class="drawer-search">
+          <label for="navigation-search">メニューを検索</label>
+          <div class="search-field">
+            <img src="assets/search.svg" alt="" aria-hidden="true">
+            <input id="navigation-search" type="search" placeholder="メニュー項目を検索">
+          </div>
+        </div>
+        <nav class="navigation-list" aria-label="業務ワークスペースのメニュー"></nav>
+      </aside>
+
+      <main class="workspace" tabindex="-1">
+        <div class="page-grid">
+          <h1>スクロール検証用ダミーコンテンツ</h1>
+          <ol class="dummy-numbers" aria-label="ダミー連番"></ol>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

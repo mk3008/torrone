@@ -16,6 +16,12 @@ shared page grid and two named content-pane behaviors: **bounded** and
 extent; a content pane provides the local width and alignment boundary for one
 coherent task.
 
+Align each top-level content pane to the logical start edge of the workspace
+page grid. A bounded reading or entry pane begins at that edge while retaining
+its bounded measure; a fluid collection pane uses the available page-grid
+width. This outer pane placement does not change the pane-local alignment of
+controls that act on the task.
+
 Treat the common shell and page content as different layout owners. The Header
 is a shell-global, fluid horizontal band: it spans the full available inline
 width of the shared shell, above both the Drawer track and the workspace. It
@@ -24,6 +30,27 @@ content wrapper. The Drawer, when supplied, is a sibling track below that
 Header; it reduces the workspace's available width but never narrows or
 re-centers the Header. Put page grids and their content panes only inside the
 workspace.
+
+## Shared-shell vertical scrolling
+
+The common shell owns the vertical-scroll relationship as well as the inline
+layout. Keep the Header outside the workspace scroll region. Below it, give an
+available Drawer and the workspace separate vertical scroll regions: scrolling
+a long navigation list does not move workspace content, and scrolling the
+workspace does not move the Drawer list. Each region has one vertical scrolling
+owner; do not combine a document-level vertical scrollbar with competing
+Drawer and workspace vertical scrollbars.
+
+The Drawer owns its local search/identity region and one navigation-list
+scrollport. Give the Drawer a finite available block below the Header; keep
+the search/identity region above the list and give the list the remaining
+available block. The workspace owns the page grid and its vertical scrollport. A
+page pattern may create a local *horizontal* Grid scroll container only under
+the Grid rules below; it does not acquire control of the workspace's vertical
+scrolling. When a compact implementation presents the Drawer as an overlay,
+keep the Drawer scrollable and prevent the covered workspace from scrolling
+until that Drawer is dismissed. Do not make the shared Header horizontally or
+vertically scroll with page content.
 
 A bounded pane keeps reading, entry, and related task controls within one
 shared constrained measure. Use it for a record read, create, edit, a search
@@ -128,6 +155,20 @@ For a desktop Search with grid implementation, use this ownership structure:
 Do not place a bounded condition pane in an extra panel merely to distinguish
 it from a fluid result pane. The difference is its width contract, not an
 additional decorative surface.
+
+# Verification
+
+Confirm that the Header spans the available shell width and remains outside the
+Drawer and workspace vertical scroll regions. With an available Drawer, confirm
+that the Drawer and workspace scroll independently and that hiding the Drawer
+changes only the workspace's available width.
+
+Confirm that a bounded task pane, including its fields and action row, stays
+inside one shared inline boundary and reflows before it overflows. Confirm that
+a fluid result pane keeps its summary, collection toolbar, Grid, and pagination
+footer aligned to its outer pane edges. When the Grid is wider than its pane,
+confirm that only the Grid body gains a local horizontal scroll area while the
+result toolbar and pagination footer remain visible and non-scrolling.
 
 # Implementation boundary
 
