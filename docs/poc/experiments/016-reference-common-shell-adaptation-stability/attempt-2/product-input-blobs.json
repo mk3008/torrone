@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "canonical_source": "Git blob object ID recorded in the product-input freeze commit",
+  "target_roots": [
+    "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-2/product-input"
+  ],
+  "files": [
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-2/product-input/application-input-contract.md",
+      "blob": "536fa48fcddff153256003fce70d7ae6a7f6a3c2"
+    }
+  ]
+}
