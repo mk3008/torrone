@@ -1,7 +1,7 @@
 ---
 type: PoC verification-condition preparation
 title: Reference common-shell adaptation stability — Attempt 2
-status: prepared; no adaptation Runs dispatched
+status: completed; human review pending
 source: authored
 ---
 
@@ -43,12 +43,20 @@ Git comparison uses the repository's clean/smudge semantics, so a checkout-only
 CRLF/LF conversion does not change the outcome. A substantive text or binary
 edit does. The existing Reference semantic check remains invoked unchanged.
 
-## Scope and stop condition
+## Scope and outcome
 
-This Attempt prepares and canary-tests the verification condition only. It
-does not alter the Reference, Manifest, their guidance or validation, global
-`.gitattributes`, or any common-shell implementation. It does not dispatch the
-three adaptation Runs.
+This Attempt preserves the approved Reference, Manifest, guidance, validation,
+and global `.gitattributes`. It contains three separately preserved
+browser-native adaptations plus bounded implementation-only corrections. It does not alter
+the frozen inputs, the Reference, or any other Pattern or framework.
 
-See [canary-record.md](canary-record.md) for the execution evidence and the
-human decision requested before Run dispatch.
+See [canary-record.md](canary-record.md) and
+[product-input-canary-record.md](product-input-canary-record.md) for fixed
+input evidence. The reviewer records and the human decision packet are:
+
+- [Run 1 review](runs/run-1/review.md)
+- [Run 2 review](runs/run-2/review.md)
+- [Run 3 review](runs/run-3/review.md)
+- [three-Run comparison](comparison/attempt-2-comparison.md)
+- [Manifest-method comparison](comparison/manifest-method-comparison.md)
+- [human review packet](human-review.md)

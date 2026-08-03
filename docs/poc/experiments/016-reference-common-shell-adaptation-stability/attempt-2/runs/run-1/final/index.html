@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Operations workspace</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell" data-theme="light">
+      <header class="app-header">
+        <div class="header-start">
+          <button class="icon-button" id="drawer-toggle" type="button" aria-controls="app-drawer" aria-expanded="true" aria-label="Hide navigation" title="Hide navigation">
+            <span aria-hidden="true" class="menu-icon"></span>
+          </button>
+          <div class="brand-lockup">
+            <span class="eyebrow">Internal tools</span>
+            <span class="app-name">Operations workspace</span>
+          </div>
+        </div>
+        <button class="theme-button" id="theme-toggle" type="button" aria-label="Use dark palette" title="Use dark palette">
+          <span aria-hidden="true" class="theme-mark">◐</span>
+          <span class="theme-copy">Palette</span>
+        </button>
+      </header>
+
+      <div class="body-layout">
+        <aside class="drawer" id="app-drawer" aria-label="Workspace navigation">
+          <div class="drawer-intro">
+            <label class="drawer-label" for="navigation-search">Search navigation</label>
+            <div class="search-box">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="navigation-search" type="search" placeholder="Find an item" autocomplete="off">
+            </div>
+          </div>
+          <nav class="nav-scroll" aria-label="Primary navigation">
+            <section class="nav-group" data-group="workspace">
+              <button class="group-toggle" type="button" aria-expanded="true" aria-controls="workspace-items">
+                <span class="chevron" aria-hidden="true">⌄</span>
+                <span>Workspace</span>
+              </button>
+              <div class="nav-items" id="workspace-items">
+                <button class="nav-row is-current" type="button" aria-current="page" data-item="Overview"><span aria-hidden="true" class="row-marker"></span><span>Overview</span></button>
+                <button class="nav-row" type="button" data-item="Activity"><span aria-hidden="true" class="row-marker"></span><span>Activity</span></button>
+              </div>
+            </section>
+            <section class="nav-group" aria-label="Sections">
+              <p class="group-caption">Sections</p>
+              <div class="nav-items" id="section-items"></div>
+            </section>
+            <p class="empty-message" id="empty-message" hidden>No matching navigation items.</p>
+          </nav>
+        </aside>
+
+        <main class="workspace" id="main-content" tabindex="-1">
+          <div class="workspace-inner">
+            <div class="content-heading">
+              <p class="section-kicker">Overview</p>
+              <h1>Neutral workspace content</h1>
+              <p class="fixture-note">This fixture provides neutral content so the workspace scrolling behavior is easy to inspect.</p>
+            </div>
+            <ol class="fixture-list" id="fixture-list" aria-label="Fixture items"></ol>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
