@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "canonical_source": "Git blob object IDs in the approved Attempt 3 exact-visual-binding commit",
+  "baseline_commit": "1d805e8f4fc30f30b00d88d7e69ab90a0c5c24ff",
+  "target_roots": [
+    "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned",
+    "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/validation"
+  ],
+  "files": [
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/README.md", "blob": "edc6b4369977ca85ca7579c168c82e1588c97116" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/adaptation-instructions.md", "blob": "eccf177ac8058a113ae1636d60367892b11acdde" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/cause-analysis.md", "blob": "5e9be0a80970d44346f27d5ab3dfec60c4c5ecd2" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/change-summary.md", "blob": "1cb2b928c1c2cc505838785ac9d4ece9260cb19b" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/human-review.md", "blob": "23b10602d8d4caadb4176657e9393a923f11b9ad" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/manifest-boundary-review.md", "blob": "22c4c1fcc1bf8cfd5fccb220669af52b33ca03f6" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/check-visual-binding-provenance.ps1", "blob": "58e8078ab8571d7b0d887fc9934f2106620e881e" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/reference-contract.md", "blob": "8ecf00ee00aee8b0415cd4d0ba36e3339b6506d4" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/binding-map.json", "blob": "6f6e91102933de3f8db11e1e40b27fd0c2274eef" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/icons/disclosure-collapsed.svg", "blob": "93eabf81bfcc96bbbffb78bdeba691c3bd54445c" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/icons/disclosure-expanded.svg", "blob": "d87b0a816577bff57987787b97571536920f69c3" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/icons/drawer-hide.svg", "blob": "7f9789aaea3b40b531340a354118db5df4612c2c" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/icons/drawer-show.svg", "blob": "0830ecdd2acb53b1d411f2e76f0130aa880f9b99" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/icons/search.svg", "blob": "6e13e929eb948cc8e33801ce64f40b69adc1de31" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/icons/theme-to-dark.svg", "blob": "60f56575a187fb6e0688674be85ddda2f8607e62" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/icons/theme-to-light.svg", "blob": "71ef5e42bd8d551916ca9c379a5309147e091c06" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/visual-tokens.css", "blob": "a0797d5c6a95ad1f214ba5a0e62fc4314b25d3d5" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/review-contract.md", "blob": "65fc57604d574436fa8ea466b569565ef474c2f2" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/self-review.md", "blob": "de0ab950e201b488208fafc48e37cc0da29a8985" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/validation/check-visual-bindings.ps1", "blob": "ffe148b4f58ee1a3ad90ba20d43852ec924de6de" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/validation/self-test-visual-bindings.ps1", "blob": "34178382d61566738427781c139f8aae149b3def" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/validation/validation-record.md", "blob": "3c0f7aecc307c26c62a597acf650d57942c384d8" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/validation/visual-binding-evidence.template.json", "blob": "415b4d20ed44dd265e126460a991037bde8814a3" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/validation/visual-binding-validation.md", "blob": "b08f7d0e8cfed447e467a640278c890d9b0d79b9" }
+  ]
+}
