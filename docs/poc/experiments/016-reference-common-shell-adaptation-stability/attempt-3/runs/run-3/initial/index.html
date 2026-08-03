@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operations workspace</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="reference-visual-bindings/visual-tokens.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="application-shell" data-reference-visual-theme="light">
+      <header class="top-bar">
+        <button id="drawer-toggle" class="header-control" type="button" aria-label="Hide navigation" title="Hide navigation">
+          <span class="fixed-icon icon-header" aria-hidden="true"></span>
+        </button>
+        <strong class="product-name">Operations workspace</strong>
+        <button id="theme-toggle" class="header-control header-end" type="button" aria-label="Switch to dark palette" title="Switch to dark palette">
+          <span class="fixed-icon icon-header" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <div class="shell-frame">
+        <aside id="navigation-drawer" class="navigation-drawer" aria-label="Application navigation">
+          <section class="navigation-search" aria-label="Navigation search">
+            <label for="navigation-query">Search navigation</label>
+            <div class="search-field">
+              <span class="fixed-icon icon-search" aria-hidden="true"></span>
+              <input id="navigation-query" type="search" autocomplete="off" placeholder="Find an item" />
+            </div>
+          </section>
+          <nav id="navigation-list" class="navigation-list" aria-label="Operations navigation"></nav>
+        </aside>
+
+        <main class="workspace" tabindex="-1">
+          <div class="workspace-inner">
+            <h1>Neutral workspace content</h1>
+            <p>This content is only an overflow fixture for observing the common shell.</p>
+            <ol id="overflow-fixture" class="overflow-fixture" aria-label="Neutral overflow fixture"></ol>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
