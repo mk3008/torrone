@@ -14,6 +14,7 @@ Run 3. It was created from the frozen inputs only and did not inspect another
 Attempt 3 Run, review, screenshot, or correction.
 
 - Observed base: `581460d9b75fbb05f85057a0cade81d70f7ce55b`
+- Initial implementation commit: `832b4fd`
 - Output root: `attempt-3/runs/run-3/initial/`
 - Initial state controls: `drawer`, `theme`, `group`, and `selection` query
   parameters, plus their matching interactive controls.
