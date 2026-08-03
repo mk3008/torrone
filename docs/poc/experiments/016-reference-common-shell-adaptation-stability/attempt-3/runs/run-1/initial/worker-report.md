@@ -86,7 +86,7 @@ foreground color; it does not substitute an asset or alter the binding map.
 
 ## Commit
 
-Implementation commit: `c90dc8b` (amended below to include this final commit
-reference). The parent orchestrator should treat this Run as `blocked` only on
-required browser capture; all required portable/static validation completed
-successfully.
+Implementation artifact commit: `ae71942`. This report-finalization record is
+committed separately after that immutable initial artifact. The parent
+orchestrator should treat this Run as `blocked` only on required browser
+capture; all required portable/static validation completed successfully.
