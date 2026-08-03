@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attempt 3 exact visual binding comparison</title>
+  <style>
+    body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #172033; background: #f4f7fa; }
+    header, main { max-width: 1600px; margin: auto; padding: 24px; }
+    h1 { margin: 0 0 8px; } section { margin-top: 36px; } h2 { border-bottom: 1px solid #c7d2df; padding-bottom: 8px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    figure { margin: 0; background: #fff; border: 1px solid #c7d2df; padding: 8px; } figcaption { font-weight: 650; padding: 4px 0 8px; }
+    img { display: block; width: 100%; height: auto; border: 1px solid #e7f1fc; }
+    @media (min-width: 1200px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Attempt 3: Exact visual binding comparison</h1>
+    <p>Viewport: 1440 × 900. Run 2 uses its post-review final artifact; Runs 1 and 3 use their unchanged initial artifacts.</p>
+  </header>
+  <main id="comparison"></main>
+  <script>
+    const states = [
+      ['Light · Drawer visible', 'light-drawer-open.png'], ['Dark · Drawer visible', 'dark-drawer-open.png'],
+      ['Light · Drawer hidden', 'drawer-hidden.png'], ['Dark · Drawer hidden', 'dark-drawer-hidden.png'],
+      ['Parent menu expanded', 'light-drawer-open.png'], ['Parent menu collapsed', 'parent-collapsed.png'],
+      ['Selected navigation item', 'selection-section-01.png']
+    ];
+    const sources = [
+      ['Approved Reference', '../reference-captures/'], ['Run 1 initial', '../runs/run-1/initial/'],
+      ['Run 2 final', '../runs/run-2/final/'], ['Run 3 initial', '../runs/run-3/initial/']
+    ];
+    document.querySelector('#comparison').innerHTML = states.map(([label, file]) => `<section><h2>${label}</h2><div class="grid">${sources.map(([name, path]) => `<figure><figcaption>${name}</figcaption><img src="${path}${file}" alt="${label}: ${name}"></figure>`).join('')}</div></section>`).join('');
+  </script>
+</body>
+</html>
