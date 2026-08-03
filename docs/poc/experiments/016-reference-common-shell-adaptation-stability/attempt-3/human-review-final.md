@@ -24,3 +24,21 @@ Confirm:
 The decision requested is whether the three outputs are identical for the
 declared exact subset—not merely in the same design family. See
 [final evaluation](final-evaluation.md), [Attempt 2 comparison](comparison/attempt-2-vs-attempt-3.md), and Run 2's [final re-review](runs/run-2/final-review.md).
+
+## Reference-alignment addendum — 2026-08-04
+
+The primary Run 2 comparison target is now the separate
+[`reference-alignment` derivative](runs/run-2/reference-alignment/index.html),
+not the historical `final` artifact. Confirm two additional outcomes before a
+final Attempt 3 decision:
+
+1. A hovered non-current navigation row remains visually distinct from the
+   selected row.
+2. The focused Search navigation field has a visible outer focus ring that
+   does not overlap its border.
+
+The static evidence supports both outcomes, but the derivative still needs
+the prescribed browser screenshots and visual re-review. Use its
+[`capture plan`](runs/run-2/reference-alignment/capture-plan.md) at a 1440 ×
+900 viewport. Do not treat the latest Attempt 3 result as final until that
+evidence is available.

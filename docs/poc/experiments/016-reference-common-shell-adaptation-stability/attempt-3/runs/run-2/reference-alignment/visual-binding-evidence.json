@@ -1,0 +1,26 @@
+{
+  "schema": "reference-common-shell-visual-binding-evidence/v1",
+  "bindingMap": "reference-visual-bindings/binding-map.json",
+  "tokenStylesheet": "reference-visual-bindings/visual-tokens.css",
+  "themeRootAttribute": "data-reference-visual-theme",
+  "fixedAssets": [
+    "reference-visual-bindings/icons/drawer-hide.svg",
+    "reference-visual-bindings/icons/drawer-show.svg",
+    "reference-visual-bindings/icons/theme-to-dark.svg",
+    "reference-visual-bindings/icons/theme-to-light.svg",
+    "reference-visual-bindings/icons/disclosure-expanded.svg",
+    "reference-visual-bindings/icons/disclosure-collapsed.svg",
+    "reference-visual-bindings/icons/search.svg"
+  ],
+  "locations": {
+    "drawerVisible": "header-leading",
+    "drawerHidden": "header-leading",
+    "themeLight": "header-logical-end",
+    "themeDark": "header-logical-end",
+    "disclosureExpanded": "parent-row-trailing",
+    "disclosureCollapsed": "parent-row-trailing",
+    "search": "search-field-leading",
+    "activeIndicator": "drawer-row-physical-start",
+    "activeIndicatorWidth": "0.25rem"
+  }
+}

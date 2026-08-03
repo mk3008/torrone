@@ -58,3 +58,24 @@ and Attempt 2's visual differences were not repeated. The full Reference-to-
 Run raster comparison remains a human confirmation because some Reference
 capture files are observation-error pages. Do not proceed to another Pattern
 or treat this as framework-independence evidence.
+
+## Reference-alignment addendum — 2026-08-04
+
+Human observation identified two additional Run 2 deviations in the existing
+`final` artifact: its menu hover used the selected-row background, and its
+focus ring overlapped the input border. They are corrected only in the new
+`runs/run-2/reference-alignment/` derivative; earlier artifacts and records
+remain historical evidence.
+
+The derivative passes all three frozen-input preflights, static visual-binding
+validation, JavaScript syntax checking, and independent static review. The
+approved Reference behavior is restored in source: hover uses the normal page
+background while current-row selection retains the selection background, and
+the focus ring uses the external `3px` offset. This is a current-Reference
+adaptation only—not a new Exact visual binding or validation requirement.
+
+Its rendered six-state and hover/focus evidence is still `unconfirmed`:
+browser automation rejected navigation to the new local `file:` artifact and
+no alternate browser path was used. Therefore the prior overall completion
+claim must not be used for this latest Run 2 derivative. Attempt 3 is
+`partial; awaiting the browser evidence and final visual re-review`.
