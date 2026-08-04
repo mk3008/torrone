@@ -17,21 +17,25 @@
 <body>
   <header>
     <h1>Attempt 3: Exact visual binding comparison</h1>
-    <p>Viewport: 1440 × 900. Run 2 uses its post-review final artifact; Runs 1 and 3 use their unchanged initial artifacts.</p>
+    <p>Viewport: 1440 × 900. Run 2 uses its separate Reference-alignment derivative; Runs 1 and 3 use their unchanged initial artifacts.</p>
   </header>
   <main id="comparison"></main>
   <script>
     const states = [
       ['Light · Drawer visible', 'light-drawer-open.png'], ['Dark · Drawer visible', 'dark-drawer-open.png'],
       ['Light · Drawer hidden', 'drawer-hidden.png'], ['Dark · Drawer hidden', 'dark-drawer-hidden.png'],
-      ['Parent menu expanded', 'light-drawer-open.png'], ['Parent menu collapsed', 'parent-collapsed.png'],
+      ['Parent menu expanded', 'parent-expanded.png'], ['Parent menu collapsed', 'parent-collapsed.png'],
       ['Selected navigation item', 'selection-section-01.png']
     ];
     const sources = [
       ['Approved Reference', '../reference-captures/'], ['Run 1 initial', '../runs/run-1/initial/'],
-      ['Run 2 final', '../runs/run-2/final/'], ['Run 3 initial', '../runs/run-3/initial/']
+      ['Run 2 Reference-alignment', '../runs/run-2/reference-alignment/'], ['Run 3 initial', '../runs/run-3/initial/']
     ];
-    document.querySelector('#comparison').innerHTML = states.map(([label, file]) => `<section><h2>${label}</h2><div class="grid">${sources.map(([name, path]) => `<figure><figcaption>${name}</figcaption><img src="${path}${file}" alt="${label}: ${name}"></figure>`).join('')}</div></section>`).join('');
+    const run2File = (file) => file === 'parent-expanded.png' ? file : file;
+    const sourceFile = (name, file) => name === 'Run 2 Reference-alignment' ? run2File(file) : (file === 'parent-expanded.png' ? 'light-drawer-open.png' : file);
+    const comparisons = states.map(([label, file]) => `<section><h2>${label}</h2><div class="grid">${sources.map(([name, path]) => `<figure><figcaption>${name}</figcaption><img src="${path}${sourceFile(name, file)}" alt="${label}: ${name}"></figure>`).join('')}</div></section>`).join('');
+    const interaction = `<section><h2>Run 2 focus-visible evidence</h2><p>The two focus images were captured through the temporary HTTP observation method. The automation surface could not sustain a CSS hover pseudo-state, so no hover image is presented as evidence.</p><div class="grid"><figure><figcaption>Light · Search navigation focused</figcaption><img src="../runs/run-2/reference-alignment/search-focus-visible.png" alt="Light search focus-visible"></figure><figure><figcaption>Dark · Search navigation focused</figcaption><img src="../runs/run-2/reference-alignment/search-focus-visible-dark.png" alt="Dark search focus-visible"></figure></div></section>`;
+    document.querySelector('#comparison').innerHTML = comparisons + interaction;
   </script>
 </body>
 </html>

@@ -79,3 +79,21 @@ browser automation rejected navigation to the new local `file:` artifact and
 no alternate browser path was used. Therefore the prior overall completion
 claim must not be used for this latest Run 2 derivative. Attempt 3 is
 `partial; awaiting the browser evidence and final visual re-review`.
+
+## HTTP observation addendum — 2026-08-04
+
+The local `file:` restriction was addressed as observation tooling only. A
+temporary Node standard-library server bound to `127.0.0.1:50096` served only
+the Run 2 Reference-alignment directory, then was stopped and removed. The
+resulting state and focus evidence is recorded in
+`runs/run-2/reference-alignment/http-capture-record.md`.
+
+Independent review found no visual nonconformance in the new light/dark,
+Drawer visible/hidden, parent expanded/collapsed, selection, or focus-visible
+captures. The focus ring is visible outside the field border in both themes;
+the prior Header control correction remains intact. The browser automation
+pointer API did not sustain a CSS `:hover` state, so no genuine hover image is
+available. Source inspection confirms the Reference-equivalent hover/current
+distinction, but the final visual decision remains `partial` until a human
+confirms that interaction. This is an observation gap—not a Run 2 correction
+or a change to the Attempt 3 input contract.

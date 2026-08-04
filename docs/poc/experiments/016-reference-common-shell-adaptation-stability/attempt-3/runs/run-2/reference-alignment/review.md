@@ -42,3 +42,18 @@ any frozen input, or an earlier Run record.
 Use `capture-plan.md` to collect the six states and the two interaction images
 at 1440 × 900, then conduct a visual re-review. Do not change the fixed input
 or any earlier artifact while doing so.
+
+## HTTP-capture addendum — 2026-08-04
+
+The independent reviewer rechecked the nine new HTTP-served captures recorded
+in `http-capture-record.md`.
+
+| Topic | Result |
+| --- | --- |
+| Light/dark, Drawer visible/hidden, parent expanded/collapsed, and `Section 01` selected | pass; no Header, token, fixed-SVG, active-indicator, structure, or theme regression observed |
+| Search `:focus-visible` in light and dark | pass; visible outside the input border with no clipping or adjacent-element occlusion |
+| Hover/current distinction | pass in source; the derivative uses the Reference normal background for hover and selection background for current |
+| Actual `:hover` browser evidence | unconfirmed; the browser automation pointer command did not sustain `:hover`, and no invalid trial capture was retained |
+
+Reviewer decision: `partial`. No visual nonconformance was found. The only
+remaining gap is an actual hover-state image, not a reason to modify Run 2.

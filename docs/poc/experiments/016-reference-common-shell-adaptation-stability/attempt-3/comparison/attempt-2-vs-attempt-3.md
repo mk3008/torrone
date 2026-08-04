@@ -1,7 +1,7 @@
 ---
 type: PoC comparison
 title: Attempt 2 and Attempt 3 common-shell adaptation outcomes
-status: pending final Run 2 re-review
+status: partial; Run 2 hover observation pending
 ---
 
 # Attempt 2 vs Attempt 3
@@ -15,7 +15,7 @@ status: pending final Run 2 re-review
 | Direction and location | Disclosure and header icon expression varied. | State/location map is carried unchanged and the reviewed initial screenshots show the mapped placement. |
 | Active indicator | Not an exact visual gate. | Fixed indicator binding is present and reviewed in selection captures. |
 | Initial exact conformance | Not measured as an exact gate. | 2/3 passed initial exact review; Run 2 exposed one header-control surface/border miss. |
-| Corrections | Visual differences were tolerated as design-family variance. | Run 2 required one implementation correction; its initial artifact remains preserved. |
+| Corrections | Visual differences were tolerated as design-family variance. | Run 2 required two implementation corrections; its initial artifact remains preserved. |
 
 ## Interpretation
 
@@ -29,3 +29,8 @@ The comparison does not claim framework independence or a pixel-perfect page.
 The remaining human judgment is whether the browser captures show the exact
 subset at the intended semantic locations; DOM and non-bound geometry remain
 implementation freedom.
+
+The Reference-alignment derivative now has HTTP-served state and focus
+captures. Its reviewer found no visual regression, but browser automation did
+not preserve a real CSS hover pseudo-state. That single human interaction
+check remains before Attempt 3 can be called final.

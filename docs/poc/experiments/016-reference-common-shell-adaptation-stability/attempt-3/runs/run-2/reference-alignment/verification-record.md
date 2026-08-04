@@ -2,7 +2,7 @@
 type: attempt-3-run-verification-record
 run: run-2
 artifact: reference-alignment
-status: partial; browser recapture pending
+status: partial; hover pseudo-state evidence unavailable
 date: 2026-08-04
 ---
 
@@ -21,16 +21,20 @@ date: 2026-08-04
 | No external visual dependency was introduced | static `rg` scan for URLs, CDN, and `@import` | pass; no matches | `index.html`, `styles.css`, `app.js` | high |
 | Hover treatment matches the approved Reference | CSS diff and source inspection | pass in source | Reference `.navigation-row:hover` uses normal page background; derivative matches it | medium pending rendered capture |
 | Focus ring is outside the control border | CSS diff and source inspection | pass in source | Reference and derivative both use `outline-offset: 3px` | medium pending rendered capture |
-| Six required states are visually recaptured | Browser capture at 1440 × 900 | unconfirmed | Browser automation rejected navigation to the new local `file:` artifact before capture | unconfirmed |
+| Required light/dark, Drawer, parent-state, and selection states are visually recaptured | Temporary HTTP browser capture at 1440 × 900 | pass | Seven new state PNGs; see `http-capture-record.md` | high |
+| Focus-visible is visible outside the search-field border in both themes | Keyboard focus plus browser capture and computed-style inspection | pass | `search-focus-visible.png`, `search-focus-visible-dark.png`; ring and offset inspected before capture | high |
+| Actual CSS hover state is visually captured | Pointer hover plus browser capture | unconfirmed | The browser pointer-move operation did not sustain `:hover`; its trial PNG was discarded | unconfirmed |
 
-## Capture limitation
+## Capture method and remaining limitation
 
-The browser automation policy rejected navigation to the newly created local
-`file:` artifact. No alternate browser, server, or indirect navigation method
-was used. This preserves the observation boundary but means the browser gate
-cannot yet establish rendered conformance for the six required states or the
-hover/focus interaction evidence.
+The new local `file:` URL was rejected by browser automation. Following the
+observation-only constraint, the artifact directory was instead served by a
+temporary `127.0.0.1` Node standard-library HTTP server. The delivery details,
+URLs, screenshots, server shutdown, and non-mutation boundary are recorded in
+`http-capture-record.md`.
 
-The required manual review URLs are listed in `capture-plan.md`. Once opened
-by a permitted browser surface, the screenshots must replace the copied PNGs
-in this derivative only; neither `initial` nor `final` may be changed.
+All required rendered states and both focus-visible states now have valid
+evidence. Only an actual CSS hover pseudo-state capture remains unavailable:
+the browser automation surface did not sustain hover after pointer movement.
+This is an observation gap, not an implementation failure. Neither `initial`
+nor `final` was changed.

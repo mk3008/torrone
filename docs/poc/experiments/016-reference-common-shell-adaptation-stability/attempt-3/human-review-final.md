@@ -37,8 +37,14 @@ final Attempt 3 decision:
 2. The focused Search navigation field has a visible outer focus ring that
    does not overlap its border.
 
-The static evidence supports both outcomes, but the derivative still needs
-the prescribed browser screenshots and visual re-review. Use its
-[`capture plan`](runs/run-2/reference-alignment/capture-plan.md) at a 1440 ×
-900 viewport. Do not treat the latest Attempt 3 result as final until that
-evidence is available.
+New HTTP-served evidence now covers the required shell states and Search
+focus-visible in both themes. See the
+[`capture record`](runs/run-2/reference-alignment/http-capture-record.md) and
+the focus section of the [comparison page](comparison/index.html).
+
+The remaining human check is an actual hover: place a pointer over a
+non-current navigation row and confirm it uses the normal background rather
+than the selected-row background. The browser automation surface could not
+preserve this pseudo-state for a screenshot, so its absence remains an
+observation gap. Do not treat the latest Attempt 3 result as final until that
+single interaction is confirmed.
