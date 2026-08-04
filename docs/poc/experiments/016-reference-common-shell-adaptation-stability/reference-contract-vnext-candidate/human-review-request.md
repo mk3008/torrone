@@ -23,12 +23,12 @@ scope: 契約候補の判断のみ。Canonical化・固定入力化・適用実�
 
 #### 見てほしいファイル
 
-- [reference-contract.md](reference-contract.md#exact-visual-bindings)
+- [reference-contract.md](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/reference-contract.md#exact-visual-bindings)
 
 必要な場合のみ:
 
-- [visual-tokens.css](../attempt-3/reference-owned/visual-bindings/visual-tokens.css)
-- [binding-map.json](../attempt-3/reference-owned/visual-bindings/binding-map.json)
+- [visual-tokens.css](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/visual-tokens.css)
+- [binding-map.json](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/reference-owned/visual-bindings/binding-map.json)
 
 #### 見てほしい点
 
@@ -59,7 +59,7 @@ Reference採用時に維持する視覚的出力の範囲と、実装方法を�
 
 #### 見てほしいファイル
 
-- [svg-rendering-contract.md](svg-rendering-contract.md)
+- [svg-rendering-contract.md](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/svg-rendering-contract.md)
 
 #### 見てほしい点
 
@@ -93,7 +93,7 @@ hover、focus-visible、selected、active、disabledを、共通シェル固有�
 
 #### 見てほしいファイル
 
-- [interaction-foundations-candidate.md](interaction-foundations-candidate.md)
+- [interaction-foundations-candidate.md](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/interaction-foundations-candidate.md)
 
 #### 見てほしい点
 
@@ -123,13 +123,13 @@ interaction状態の責任を将来の横断Foundationへ分離する方針だ�
 
 #### 見てほしいファイル
 
-- [validation-plan.md](validation-plan.md)
-- [verification-record.md](verification-record.md)
+- [validation-plan.md](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/validation-plan.md)
+- [verification-record.md](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/verification-record.md)
 
 必要な場合のみ:
 
-- [check-svg-rendering-contract.ps1](validation/check-svg-rendering-contract.ps1)
-- [self-test-svg-rendering-contract.ps1](validation/self-test-svg-rendering-contract.ps1)
+- [check-svg-rendering-contract.ps1](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/validation/check-svg-rendering-contract.ps1)
+- [self-test-svg-rendering-contract.ps1](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/validation/self-test-svg-rendering-contract.ps1)
 
 #### 見てほしい点
 
@@ -189,7 +189,7 @@ interaction状態の責任を将来の横断Foundationへ分離する方針だ�
 
 詳細な経緯、実験記録、自己テスト結果、個別Runの記録は、必要な場合のみ以下を参照してください。
 
-- [詳細な人間レビュー資料](human-review-packet.md)
-- [Attempt 3人間承認記録](../attempt-3/human-approval.md)
-- [Attempt 3最終評価](../attempt-3/final-evaluation.md)
-- [Run 2最終レビュー](../attempt-3/runs/run-2/reference-alignment-icon-color/review.md)
+- [詳細な人間レビュー資料](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/human-review-packet.md)
+- [Attempt 3人間承認記録](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/human-approval.md)
+- [Attempt 3最終評価](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/final-evaluation.md)
+- [Run 2最終レビュー](/C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/runs/run-2/reference-alignment-icon-color/review.md)
