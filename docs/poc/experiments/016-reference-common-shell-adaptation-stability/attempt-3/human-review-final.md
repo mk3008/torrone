@@ -1,14 +1,14 @@
 ---
 type: human review packet
 title: Attempt 3 exact visual binding outcome
-status: ready for human review
+status: human interaction review recorded
 ---
 
 # Human review: Attempt 3
 
 Open [the comparison page](comparison/index.html) at a 1440 × 900 viewport.
 For each state, compare the approved Reference against Run 1 initial, Run 2
-final, and Run 3 initial.
+Reference-alignment icon-color, and Run 3 initial.
 
 Confirm:
 
@@ -28,23 +28,22 @@ declared exact subset—not merely in the same design family. See
 ## Reference-alignment addendum — 2026-08-04
 
 The primary Run 2 comparison target is now the separate
-[`reference-alignment` derivative](runs/run-2/reference-alignment/index.html),
-not the historical `final` artifact. Confirm two additional outcomes before a
-final Attempt 3 decision:
+[`reference-alignment icon-color derivative`](runs/run-2/reference-alignment-icon-color/index.html),
+not the historical `final` artifact. The two additional outcomes are:
 
 1. A hovered non-current navigation row remains visually distinct from the
    selected row.
 2. The focused Search navigation field has a visible outer focus ring that
    does not overlap its border.
 
-New HTTP-served evidence now covers the required shell states and Search
-focus-visible in both themes. See the
-[`capture record`](runs/run-2/reference-alignment/http-capture-record.md) and
-the focus section of the [comparison page](comparison/index.html).
+HTTP-served evidence covers the required shell states and Search focus-visible
+in both themes. See the
+[`capture record`](runs/run-2/reference-alignment-icon-color/http-capture-record.md),
+the [independent review](runs/run-2/reference-alignment-icon-color/review.md),
+and the focus section of the [comparison page](comparison/index.html).
 
-The remaining human check is an actual hover: place a pointer over a
-non-current navigation row and confirm it uses the normal background rather
-than the selected-row background. The browser automation surface could not
-preserve this pseudo-state for a screenshot, so its absence remains an
-observation gap. Do not treat the latest Attempt 3 result as final until that
-single interaction is confirmed.
+Human review confirmed the hover interaction. Independent review confirmed
+that fixed icons remain visible in dark mode and that the correction introduced
+no state or accessibility regression. The remaining follow-ups are limited to
+future validation and adaptation-contract strengthening; they are outside
+Attempt 3.

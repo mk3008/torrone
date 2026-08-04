@@ -1,7 +1,7 @@
 ---
 type: PoC final evaluation
 title: Attempt 3 exact visual binding stability
-status: complete; human review pending
+status: complete; human review recorded
 ---
 
 # Attempt 3 final evaluation
@@ -97,3 +97,26 @@ available. Source inspection confirms the Reference-equivalent hover/current
 distinction, but the final visual decision remains `partial` until a human
 confirms that interaction. This is an observation gap—not a Run 2 correction
 or a change to the Attempt 3 input contract.
+
+## Icon-color final addendum — 2026-08-04
+
+Human review confirmed the actual hover interaction. A further dark-theme
+review then found that Run 2's externally loaded `currentColor` SVGs rendered
+black. The new `runs/run-2/reference-alignment-icon-color/` derivative fixes
+that Run 2 implementation error by using the unchanged canonical SVGs as CSS
+masks with the existing token-derived foreground.
+
+Independent review of its nine new HTTP-served captures passed. Header,
+Drawer, search, and disclosure icons are visible in light and dark themes;
+Drawer visibility, parent disclosure, selection, active indicator, focus,
+hover, and accessible control names have no regression. All three frozen-input
+preflights, visual-binding validation, JavaScript syntax, and dependency scan
+passed. Run 2 now has three implementation corrections; the temporary HTTP
+delivery remains observation tooling and does not affect that count.
+
+Attempt 3 is `complete for this browser-native common-shell scope`. It shows
+that Exact visual bindings suppress the Attempt 2 palette/icon differences
+when their integration is correctly implemented. Do not extend to another
+Pattern or framework. The only follow-up is outside this Attempt: strengthen
+future validation and adaptation guidance for themed `currentColor` SVG
+integration.
