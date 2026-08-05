@@ -8,9 +8,9 @@ source_commit: 0e2311d
 
 # Reference common-shell contract vNext candidate
 
-This directory is a human-review candidate derived from the approved
-browser-native Attempt 3 outcome. It does not change the approved Reference,
-the product-owned input, Attempt 3's frozen input, or any historical Run.
+This directory is a candidate derived from the approved browser-native
+Attempt 3 outcome. It does not change the approved Reference, the
+product-owned input, Attempt 3's frozen input, or any historical Run.
 
 The candidate separates exact visual bindings, structural invariants, and
 adaptation freedoms. It also makes the rendering result for themed
@@ -33,12 +33,12 @@ common-shell bindings.
 The approved assets, token stylesheet, and binding map remain in
 `../attempt-3/reference-owned/visual-bindings/`. This candidate refers to
 those sources; it does not copy their values or create a replacement source
-of truth. It must be approved and deliberately frozen in a later task before
-it can become an experiment input.
+of truth. It is an input candidate only; it is not Canonical or frozen.
 
-## Human review requested
+## Current review scope
 
-Decide whether the SVG output contract is sufficiently technology-neutral,
-whether the proposed validation layers are proportionate, and which
-interaction-state semantics should become application-wide Foundations rather
-than Reference-specific requirements.
+Confirm only that this candidate's free text does not contradict the approved
+authorities or create a new visual specification. Technology neutrality and
+reproducibility must be evaluated from the implementation artifacts of the
+next framework-adaptation experiment. This text review is not proof of
+technology neutrality or a product-policy re-approval.

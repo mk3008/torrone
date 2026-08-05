@@ -37,10 +37,11 @@ review packet and Run 2 icon-color review. This candidate does not claim a
 new browser result: it adds a static guard and a review-ready validation plan
 for a later, explicitly approved experiment.
 
-## Confidence and remaining gate
+## Scope and remaining evidence
 
-Confidence is high that the candidate preserves frozen-input boundaries and
-detects the demonstrated `currentColor` direct-image failure. Human review is
-still required before canonicalization, especially for the technology-neutral
-SVG output wording and the unresolved application-wide interaction-state
-semantics.
+This record shows frozen-input invariance, the candidate's structural
+consistency, and detection of the demonstrated `currentColor` direct-image
+misuse. It does not establish technology neutrality, cross-framework
+reproducibility, or a new application-wide interaction policy. Technology
+neutrality and reproducibility must be evaluated from the implementation
+artifacts of the next framework-adaptation experiment.

@@ -1,11 +1,18 @@
 ---
 type: human review packet
 title: 共通シェルReference契約vNext候補の承認判断
-status: 人間レビュー待ち
-scope: レビュー資料のみ。候補はCanonical化・固定化しない。
+status: 履歴資料。現行Gateではない。
+scope: 過去のレビュー方式の記録。現行の承認フロー・固定入力化・実験開始条件には使用しない。
 ---
 
 # 人間レビュー資料: 共通シェルReference契約vNext候補
+
+> **履歴資料**
+>
+> この文書は過去に作成された詳細レビュー方式の記録です。Exact visual
+> bindings、SVG契約、Interaction Foundations、Validationを人間へ再承認
+> させる現行Gateとして使用しません。現行の承認フロー、次の実験開始
+> 条件、または固定入力化の判断にも使用しません。
 
 ## 目的
 

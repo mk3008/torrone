@@ -9,9 +9,10 @@ status: proposed; not canonical
 
 For every fixed SVG identified by the canonical binding map, an implementation
 must preserve the approved geometry and render it with the current theme's
-applicable foreground. The resulting icon must remain perceptible in light
-and dark themes, including hover, `focus-visible`, selected, and active
-contexts where the icon is displayed.
+applicable foreground. The resulting icon must remain perceptible in the
+light and dark themes and states defined by the approved Reference.
+Cross-application interaction states not defined by that Reference remain
+out of scope for this contract.
 
 ## Permitted implementation families
 
