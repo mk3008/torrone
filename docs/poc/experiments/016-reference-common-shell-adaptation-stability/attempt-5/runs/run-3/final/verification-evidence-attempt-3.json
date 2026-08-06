@@ -1,0 +1,51 @@
+{
+  "schema": "attempt-5-run-verification/v1",
+  "attempt": 3,
+  "scope": "drawer-toggle-visual-state-mapping",
+  "viewport": { "width": 1440, "height": 900 },
+  "origin": "http://127.0.0.1:4175",
+  "observations": {
+    "lightOpen": {
+      "url": "/?theme=light&drawer=open&workspace=expanded&current=Overview",
+      "drawerPresent": true,
+      "drawerMask": "reference-visual-bindings/icons/drawer-hide.svg",
+      "screenshotBytes": 70647
+    },
+    "darkOpen": {
+      "url": "/?theme=dark&drawer=open&workspace=expanded&current=Overview",
+      "drawerPresent": true,
+      "drawerMask": "reference-visual-bindings/icons/drawer-hide.svg",
+      "currentColorContrastRatio": 14.26,
+      "screenshotBytes": 73360
+    },
+    "lightHidden": {
+      "url": "/?theme=light&drawer=hidden&workspace=expanded&current=Overview",
+      "drawerPresent": false,
+      "drawerMask": "reference-visual-bindings/icons/drawer-show.svg",
+      "screenshotBytes": 51012
+    },
+    "parentCollapsed": {
+      "url": "/?theme=light&drawer=open&workspace=collapsed&current=Overview",
+      "workspaceExpanded": false,
+      "disclosureMask": "reference-visual-bindings/icons/disclosure-collapsed.svg",
+      "screenshotBytes": 70423
+    },
+    "selectedSection01": {
+      "url": "/?theme=light&drawer=open&workspace=expanded&current=Section%2001",
+      "selectedText": "Section 01",
+      "selectionBackground": "rgb(231, 241, 252)",
+      "selectionForeground": "rgb(23, 32, 51)",
+      "selectionIndicator": "rgb(11, 92, 173)",
+      "screenshotBytes": 70855
+    },
+    "focusVisible": {
+      "control": "Hide navigation",
+      "outlineColor": "rgb(59, 130, 246)",
+      "outlineStyle": "solid",
+      "outlineWidth": "2.85714px",
+      "screenshotBytes": 71262
+    },
+    "lightCurrentColorContrastRatio": 16.27,
+    "hover": "human-review-gate"
+  }
+}
