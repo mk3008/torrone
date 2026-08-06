@@ -1,0 +1,27 @@
+{
+  "name": "reference-common-shell-react-harness",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": "22.14.0",
+    "npm": "10.9.2"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4175 --strictPort",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty false",
+    "preview": "vite preview --host 127.0.0.1 --port 4176 --strictPort"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.7.2",
+    "vite": "5.4.14"
+  }
+}
