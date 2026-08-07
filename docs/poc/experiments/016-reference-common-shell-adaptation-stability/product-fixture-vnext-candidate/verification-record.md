@@ -17,7 +17,7 @@
 - Dark URL:
   `/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/preview/index.html?theme=dark&drawer=open`。
 
-サーバーは保留中の人間レビューのためだけに起動したままにします。候補や将来の
+サーバーは人間レビューのためだけに起動し、確認後に停止しました。候補や将来の
 凍結harnessの一部ではなく、観測手段です。
 
 ## 自動観測
@@ -40,8 +40,8 @@
   データを複製せず`fixture.json`を取得することを確認します。
 - `git diff --check`: この記録の追加前にpassed。commit前に再実行します。
 
-## 残る人間Gate
+## 人間確認
 
-画面から階層が十分に明確かどうかは人間だけが判断します。
-[human-review-request.md](human-review-request.md)を使用し、この技術観測だけで
-人間判断を通過したとは扱いません。
+人間レビューは`clear`として完了しました。画面だけで親、子、トップレベルの
+非親項目を区別できることを確認しています。記録は
+[human-approval-record.md](human-approval-record.md)を参照してください。

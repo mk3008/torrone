@@ -1,6 +1,6 @@
 ---
 type: product-owned fixture candidate
-status: candidate; not frozen; no adaptation Run authorized
+status: human-reviewed candidate; not frozen; no adaptation Run authorized
 ---
 
 # Product fixture vNext candidate
@@ -28,6 +28,8 @@ being given a second visual specification.
   Reference's existing visual language. It is an observation aid, not a new
   Reference, contract, or implementation target.
 - [Focused human review](human-review-request.md) asks one question only.
+- [Human approval record](human-approval-record.md) records the completed
+  hierarchy-observability decision.
 
 ## Scope in
 
@@ -57,7 +59,7 @@ roles can be distinguished from the screen alone.
 | Field | State |
 | --- | --- |
 | Goal | Prepare an observable next fixture candidate only. |
-| Now | Candidate data and browser preview were verified; human review is pending. |
-| Next | Human hierarchy-observability decision. |
-| Blockers | No freeze or new Run is authorized before that decision. |
-| Evidence ready? | Technical evidence is ready; the human hierarchy-observability decision is pending. |
+| Now | Candidate data, browser preview, and focused human review are complete. |
+| Next | Await separate authorization before freezing the candidate. |
+| Blockers | No freeze or new Run is authorized by this approval alone. |
+| Evidence ready? | Technical and human hierarchy-observability evidence is ready. |
