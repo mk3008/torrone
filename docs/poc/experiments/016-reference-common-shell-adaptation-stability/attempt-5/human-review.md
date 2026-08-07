@@ -1,5 +1,9 @@
 # Attempt 5 — human hover review request
 
+> Historical only. Attempt 5 is currently stopped for
+> [fixture-coverage-gap](fixture-coverage-gap.md); do not use this request as
+> an acceptance gate or to resume the Attempt.
+
 ## Decision requested
 
 For each final React artifact, inspect one **unselected** navigation item in

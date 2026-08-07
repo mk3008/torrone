@@ -1,5 +1,9 @@
 # Attempt 5 — React comparison material
 
+> Historical comparison material. Attempt 5 is stopped for
+> [fixture-coverage-gap](fixture-coverage-gap.md), so this material is not a
+> current adaptation success/failure decision input.
+
 ## How to use this material
 
 This is a comparison aid, not a fourth implementation. All evidence below was

@@ -1,5 +1,13 @@
 # Attempt 5 — React adaptation evaluation
 
+## Current decision status
+
+**Superseded for the current adaptation decision.** After the historical
+reviews below, fixture hierarchy observability was classified as
+`fixture-coverage-gap`. The fixed input and every Run artifact remain intact,
+but this document must not be used to promote Attempt 5 as an adaptation
+success or failure. See [the gap record](fixture-coverage-gap.md).
+
 ## Goal
 
 Determine whether the frozen Reference-first contract can be independently
