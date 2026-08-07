@@ -41,11 +41,15 @@ a concrete implementation defect.
 | Run | Initial verdict | React implementation repairs | Observation-tool repairs | Final verdict before human hover gate |
 | --- | --- | ---: | ---: | --- |
 | Run 1 | not ready: Drawer/workspace scrolling was unbounded | 1 | 0 | accepted by correction reviewer |
-| Run 2 | ready for parent review | 0 | 0 | accepted by independent reviewer |
+| Run 2 | ready for parent review | 1 | 0 | parent-row alignment accepted by direct browser observation |
 | Run 3 | runtime review initially blocked; later found hidden-Drawer SVG mismatch | 1 | 1 | accepted by correction re-review |
 
 The Run 3 observation recovery did not change source or frozen input. Its
-subsequent SVG state correction is one React implementation repair.
+subsequent SVG state correction is one React implementation repair. After the
+initial integrated evaluation, human review found that Run 2 limited parent
+disclosure to the icon. The approved Reference already made the full row the
+control, so Run 2 received one additional implementation correction in its
+derived final artifact; see the [alignment record](runs/run-2/parent-disclosure-alignment-report.md).
 
 ## Verification methods
 
@@ -87,6 +91,7 @@ subsequent SVG state correction is one React implementation repair.
 | Run 1 auto-height shell made Drawer/workspace scrolling non-independent. | React implementation omission | Corrected once; independent reviewer accepted the scroll evidence. |
 | Fixed port was occupied during Run 3 observation. | Harness / observation-tool issue | Recovered without changing source; excluded from implementation-repair count. |
 | Run 3 hidden Drawer retained `drawer-hide.svg`. | SVG rendering implementation error | Corrected once; independent re-review observed canonical `drawer-show.svg`. |
+| Run 2 limited parent disclosure to the icon rather than the full row. | React implementation omission | Corrected in a derived final artifact; browser observation confirms text/row activation. |
 | Hover could not be held by browser automation. | Human-review gate / observation limit | Remains open; do not infer pass or failure. |
 
 No shared adaptation-instruction, vNext-contract, product-input, or frozen
@@ -102,11 +107,12 @@ captures and correction review confirm the repaired structure and unchanged
 exact authorities, while its target-attributable focus/hover observation was
 not available. Hover is an explicit human gate for every Run.
 
-For initial results, Run 2 was accepted without a React repair. Run 1 needed
-one repair; Run 3 needed one repair after the observation path was restored.
-Thus all three meet the "initial or one repair" threshold, but the experiment
-does **not** demonstrate that all initial React generations were already
-stable.
+For initial results, Run 1 needed one repair; Run 2 needed one later
+parent-row repair discovered in human review; and Run 3 needed one repair after
+the observation path was restored. The original "initial or one repair"
+threshold is therefore not met by the current literal repair counts for Run 2.
+The experiment does **not** demonstrate that all initial React generations were
+already stable.
 
 ## Outcome
 

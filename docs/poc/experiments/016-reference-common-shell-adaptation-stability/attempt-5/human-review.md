@@ -21,7 +21,7 @@ directory with `npm run dev`, then open the relevant URL at
 `http://127.0.0.1:4175`.
 
 - [Run 1 corrected artifact](runs/run-1/initial/)
-- [Run 2 artifact](runs/run-2/initial/)
+- [Run 2 final artifact](runs/run-2/final/)
 - [Run 3 final artifact](runs/run-3/final/)
 
 For each artifact, check both URLs:
