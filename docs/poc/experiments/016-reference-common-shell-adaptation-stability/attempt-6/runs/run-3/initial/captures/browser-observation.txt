@@ -1,0 +1,33 @@
+Attempt 6 Run 3 initial browser observation
+Viewport: 1440 x 900 CSS pixels
+Origin: http://127.0.0.1:4175
+
+Verified listener before shutdown:
+PID: 26020
+Command line: "C:\Program Files\nodejs\node.exe" C:\Users\mssgm\.codex\worktrees\41f6\ui-design-manifest\docs\poc\experiments\016-reference-common-shell-adaptation-stability\attempt-6\runs\run-3\initial\node_modules\vite\bin\vite.js --host 127.0.0.1 --port 4175 --strictPort
+
+Vite stdout:
+VITE v5.4.14 ready in 266 ms
+Local: http://127.0.0.1:4175/
+
+Vite stderr: empty
+
+Accepted mechanical browser observations:
+- light/open/expanded/Overview: Header, Drawer, Main, Overview, Workspace, Section 01-03, Activity, and 24 fixture items present.
+- dark/open/expanded/Overview: theme=dark; Drawer present; children=3; current=Overview.
+- light/hidden/expanded/Overview: Drawer absent; Main present; Header action=Show navigation.
+- light/open/expanded/Overview: aria-expanded=true; children=3.
+- light/open/collapsed/Overview: aria-expanded=false; children=0; Overview and Activity present; current=Overview.
+- light/open/expanded/Section 01: selected=Section 01; current=Section 01.
+
+Console observation before the capture-isolation stop:
+- Info: React DevTools development message.
+- Error: GET /favicon.ico returned 404.
+
+Isolation handling:
+The orchestrator reported a concurrent localhost-port conflict after these
+captures began. The captures above were retained only after the listener's full
+command line proved that it was this Run's Vite process. The Playwright session
+and PID 26020 were then stopped. A later process check found zero Run 3 Vite
+processes. Focus-visible, hover, interactive-flow completion, and the final
+console decision were deferred to the orchestrator's serial per-Run observation.

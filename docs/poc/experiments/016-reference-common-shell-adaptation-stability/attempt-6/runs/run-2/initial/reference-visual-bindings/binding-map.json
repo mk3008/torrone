@@ -1,0 +1,23 @@
+{
+  "schema": "reference-common-shell-visual-bindings/v1",
+  "tokenStylesheet": "visual-tokens.css",
+  "themeRootAttribute": "data-reference-visual-theme",
+  "themeModes": ["light", "dark"],
+  "surfaces": {
+    "header": { "background": "--reference-surface-background", "foreground": "--reference-text-primary", "border": "--reference-border-subtle" },
+    "drawer": { "background": "--reference-surface-background", "foreground": "--reference-text-primary", "border": "--reference-border-subtle" },
+    "workspace": { "background": "--reference-page-background", "foreground": "--reference-text-primary" },
+    "control": { "background": "--reference-surface-background", "foreground": "--reference-text-primary", "border": "--reference-border-interactive" },
+    "selection": { "background": "--reference-selection-background", "foreground": "--reference-selection-foreground", "indicator": "--reference-selection-indicator", "indicatorLocation": "drawer-row-physical-start", "indicatorWidth": "0.25rem", "rowCoverage": "full-row" },
+    "focus": { "ring": "--reference-focus-ring" }
+  },
+  "icons": {
+    "drawerVisible": { "asset": "icons/drawer-hide.svg", "location": "header-leading", "size": "1.25rem", "nextAction": "hide-navigation" },
+    "drawerHidden": { "asset": "icons/drawer-show.svg", "location": "header-leading", "size": "1.25rem", "nextAction": "show-navigation" },
+    "themeLight": { "asset": "icons/theme-to-dark.svg", "location": "header-logical-end", "size": "1.25rem", "nextAction": "switch-to-dark" },
+    "themeDark": { "asset": "icons/theme-to-light.svg", "location": "header-logical-end", "size": "1.25rem", "nextAction": "switch-to-light" },
+    "disclosureExpanded": { "asset": "icons/disclosure-expanded.svg", "location": "parent-row-trailing", "size": "1rem", "nextAction": "collapse-parent" },
+    "disclosureCollapsed": { "asset": "icons/disclosure-collapsed.svg", "location": "parent-row-trailing", "size": "1rem", "nextAction": "expand-parent" },
+    "search": { "asset": "icons/search.svg", "location": "search-field-leading", "size": "1rem", "nextAction": "none" }
+  }
+}
