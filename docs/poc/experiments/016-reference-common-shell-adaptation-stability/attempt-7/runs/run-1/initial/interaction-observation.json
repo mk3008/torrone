@@ -1,0 +1,79 @@
+{
+  "schema": "react-common-shell-interaction-observation/v1",
+  "observedAt": "2026-08-09T19:59:42.0933464+09:00",
+  "observer": "@playwright/cli@0.1.18",
+  "origin": "http://127.0.0.1:4176/",
+  "server": "Vite production preview from the verified build",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "results": {
+    "initial": {
+      "overviewCurrent": "page",
+      "workspaceExpanded": true,
+      "activityCurrent": false
+    },
+    "disclosureCollapse": {
+      "workspaceExpanded": false,
+      "overviewCurrentPreserved": true,
+      "childrenHidden": true
+    },
+    "disclosureExpand": {
+      "workspaceExpanded": true,
+      "childrenRestored": true
+    },
+    "matchingSearch": {
+      "parentContextVisible": true,
+      "matchingSection02Visible": true,
+      "nonmatchingSection01Hidden": true
+    },
+    "noMatchSearch": {
+      "messageVisible": true
+    },
+    "clearedSearch": {
+      "activityRestored": true
+    },
+    "activityActivation": {
+      "activityCurrent": true,
+      "overviewCurrent": false
+    },
+    "themeToggle": {
+      "resolvedTheme": "dark"
+    },
+    "drawerHide": {
+      "drawerRemoved": true,
+      "mainPreserved": true,
+      "nextAction": "Open navigation"
+    },
+    "drawerRestore": {
+      "activityCurrentPreserved": true
+    },
+    "focusVisible": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineOffset": "3px"
+    },
+    "hiddenEntry": {
+      "drawerRemoved": true,
+      "mainPreserved": true
+    },
+    "collapsedEntry": {
+      "workspaceExpanded": false,
+      "overviewCurrent": true
+    },
+    "selectedChildEntry": {
+      "section01Current": true,
+      "selectedAndPeerLabelStartsAligned": true
+    }
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0,
+    "pageErrors": 0
+  },
+  "limits": [
+    "This production-preview observation exercises browser-visible behavior but is not assistive-technology certification.",
+    "Responsive reflow, persistence across browser restarts, and production routing remain outside this common-shell fixture."
+  ]
+}

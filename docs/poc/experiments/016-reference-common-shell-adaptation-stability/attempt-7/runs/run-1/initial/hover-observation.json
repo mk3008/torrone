@@ -1,0 +1,88 @@
+{
+  "schema": "attempt-7-hover-observation/v1",
+  "capturedAt": "2026-08-09T19:57:29.8121998+09:00",
+  "observer": "@playwright/cli@0.1.18",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "themes": {
+    "light": {
+      "url": "http://127.0.0.1:4175/?theme=light&drawer=open&workspace=expanded&current=Overview",
+      "before": {
+        "file": "hover-light-before.png",
+        "sha256": "34a0687db11766a011fd3dc8358af14ff4bda66d3528bc8c5c0f1bb918209af6",
+        "width": 1440,
+        "height": 900
+      },
+      "hover": {
+        "file": "hover-light-activity.png",
+        "sha256": "c0dbf6c5120013f962454d7f9e408b58537b1910be8d612fc3ed823ed9110a73",
+        "width": 1440,
+        "height": 900,
+        "computedBackground": "color(srgb 0.899922 0.903804 0.912)",
+        "computedBoxShadow": "rgb(117, 136, 156) 0px 0px 0px 1px inset"
+      }
+    },
+    "dark": {
+      "url": "http://127.0.0.1:4175/?theme=dark&drawer=open&workspace=expanded&current=Overview",
+      "before": {
+        "file": "hover-dark-before.png",
+        "sha256": "91d8d7750622d7243c7f2cb1d95b92ba9bd0a0cb335200f1e06a5fa6def031ae",
+        "width": 1440,
+        "height": 900
+      },
+      "hover": {
+        "file": "hover-dark-activity.png",
+        "sha256": "4ff5339ce3ad9765f65670b1ec51c3c4f377f7f18013fd60e15661edb4a7e101",
+        "width": 1440,
+        "height": 900,
+        "computedBackground": "color(srgb 0.19949 0.239176 0.282353)",
+        "computedBoxShadow": "rgb(145, 163, 181) 0px 0px 0px 1px inset"
+      }
+    }
+  },
+  "pointerAction": {
+    "target": "Activity",
+    "clicked": false,
+    "rowBounds": {
+      "x": 0,
+      "y": 374,
+      "width": 287,
+      "height": 40
+    },
+    "labelBounds": {
+      "x": 16,
+      "y": 383.5,
+      "width": 51.71875,
+      "height": 21
+    },
+    "point": {
+      "x": 269,
+      "y": 394
+    },
+    "pointInsideCompleteRow": true,
+    "pointAwayFromLabel": true,
+    "hoverPseudoClassObserved": true
+  },
+  "stateBeforeAndAfterHover": {
+    "activityEnabled": true,
+    "activityCurrent": false,
+    "overviewCurrent": true,
+    "workspaceExpanded": true,
+    "drawerOpen": true,
+    "navigationSearch": "",
+    "destinationChanged": false,
+    "hierarchyChanged": false
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0,
+    "pageErrors": 0
+  },
+  "workerVisualObservation": {
+    "light": "The Activity row changes across its full available row width and gains an inset boundary while Overview keeps the selected surface, bold label, and physical-left indicator.",
+    "dark": "The Activity row changes across its full available row width and gains an inset boundary while Overview keeps the selected surface, bold label, and physical-left indicator.",
+    "decisionBoundary": "This observation records evidence only. Final visual quality and acceptance remain human judgments."
+  }
+}
