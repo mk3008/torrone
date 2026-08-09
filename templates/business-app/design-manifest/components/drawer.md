@@ -44,6 +44,11 @@ semantically as the current navigation item as well as visually.
 A product without a supplied current destination renders no current-item
 treatment.
 
+Apply the [Accessible work surface](../foundations/accessible-work-surface.md)
+pointer-hover treatment to every enabled, non-current navigation row. Keep
+that hover treatment separately recognizable from the current-item treatment
+defined here.
+
 Do not confuse Drawer visibility with hierarchy disclosure. Visibility concerns
 whether the available Drawer region is shown; a disclosure concerns a supplied
 parent/child navigation relationship. Neither fact creates the other. For a

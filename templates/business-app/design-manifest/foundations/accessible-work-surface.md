@@ -24,6 +24,12 @@ control. Do not move the focused or triggering control when nearby validation,
 selection, or progress feedback appears. Keep likely recovery actions close to
 the error or state they resolve.
 
+For an enabled, non-current interactive or navigation row, make pointer hover
+recognizable through a change to the row's full hit-area surface. Text
+decoration alone is not a sufficient hover treatment for the row. Whenever
+pointer hover and current or selected state are both applicable in a screen,
+keep their rendered treatments separately recognizable.
+
 Do not communicate status, selection, validation, required state, progress, or
 data meaning by color alone. Provide text, shape, position, or another
 programmatically available cue. Keep text and controls usable under the
@@ -39,7 +45,10 @@ contract.
 Confirm that each keyboard-reachable control has a discernible name and shows
 the shared focus treatment when focused without replacing its ordinary boundary
 or moving the control. Confirm that a selected, validation, progress, or status
-state has a visible cue in addition to color.
+state has a visible cue in addition to color. Confirm that pointer hover on
+each enabled, non-current interactive or navigation row changes its full
+hit-area surface rather than only its text, and that hover remains separately
+recognizable from any current or selected treatment present on the screen.
 
 Keyboard traversal, focus movement after a transition, announcements, reflow,
 and assistive-technology behavior require an available interactive browser or
