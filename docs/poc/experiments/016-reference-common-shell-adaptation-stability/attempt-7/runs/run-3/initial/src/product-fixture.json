@@ -1,0 +1,41 @@
+{
+  "applicationName": "Operations workspace",
+  "initial": {
+    "currentDestination": "overview",
+    "workspaceExpanded": true,
+    "drawer": "open",
+    "theme": "light"
+  },
+  "navigation": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "role": "top-level"
+    },
+    {
+      "id": "workspace",
+      "label": "Workspace",
+      "role": "parent",
+      "children": [
+        { "id": "section-01", "label": "Section 01", "role": "child" },
+        { "id": "section-02", "label": "Section 02", "role": "child" },
+        { "id": "section-03", "label": "Section 03", "role": "child" }
+      ]
+    },
+    {
+      "id": "activity",
+      "label": "Activity",
+      "role": "top-level"
+    }
+  ],
+  "search": {
+    "label": "Search navigation",
+    "placeholder": "Find an item",
+    "emptyMessage": "No matching navigation items."
+  },
+  "main": {
+    "heading": "Neutral workspace content",
+    "description": "This content is only an overflow fixture for observing the common shell.",
+    "itemCount": 24
+  }
+}
