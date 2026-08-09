@@ -1,0 +1,92 @@
+{
+  "schema": "attempt-7-hover-observation/v1",
+  "observer": "@playwright/cli@0.1.18",
+  "origin": "http://127.0.0.1:4175",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "unit": "CSS pixels"
+  },
+  "captureOrder": [
+    "hover-light-before.png",
+    "hover-light-activity.png",
+    "hover-dark-before.png",
+    "hover-dark-activity.png"
+  ],
+  "pairs": [
+    {
+      "theme": "light",
+      "url": "http://127.0.0.1:4175/?theme=light&drawer=open&workspace=expanded&current=Overview",
+      "before": {
+        "filename": "hover-light-before.png",
+        "sha256": "7e8f52958faf242562a60bc58f4022de95324b9488ee993abe99b9124b733ac2",
+        "pointer": { "x": 1400, "y": 10 }
+      },
+      "hover": {
+        "filename": "hover-light-activity.png",
+        "sha256": "ea0c9bc97de03331f151be41adfbbcd56670225dcb9e908aa2189bcddba224f3",
+        "pointer": { "x": 275, "y": 425 },
+        "hitDestination": "activity",
+        "activityBackground": "color(srgb 0.78949 0.859373 0.929255)",
+        "activityBoxShadow": "color(srgb 0.0431373 0.360784 0.678431 / 0.48) 0px 0px 0px 1px inset",
+        "overviewBackground": "rgb(231, 241, 252)"
+      },
+      "console": { "errors": 0, "warnings": 0 }
+    },
+    {
+      "theme": "dark",
+      "url": "http://127.0.0.1:4175/?theme=dark&drawer=open&workspace=expanded&current=Overview",
+      "before": {
+        "filename": "hover-dark-before.png",
+        "sha256": "544b8b7c7f0835e03339438f3451c808a018fcf90aefd3d9ce00fbdde4fbaed6",
+        "pointer": { "x": 1400, "y": 10 }
+      },
+      "hover": {
+        "filename": "hover-dark-activity.png",
+        "sha256": "15dbcd5ba746687aae599ba4979459c5e165ab0ff119e7a394c38119a52a9b4d",
+        "pointer": { "x": 275, "y": 425 },
+        "hitDestination": "activity",
+        "activityBackground": "color(srgb 0.182667 0.274118 0.364314)",
+        "activityBoxShadow": "color(srgb 0.454902 0.717647 0.960784 / 0.48) 0px 0px 0px 1px inset",
+        "overviewBackground": "rgb(32, 62, 90)"
+      },
+      "console": { "errors": 0, "warnings": 0 }
+    }
+  ],
+  "activityTarget": {
+    "enabled": true,
+    "current": false,
+    "rect": {
+      "left": 0,
+      "top": 402,
+      "right": 299,
+      "bottom": 448,
+      "width": 299,
+      "height": 46
+    },
+    "pointerWasAwayFromLabel": true,
+    "pointerSemanticLocation": "visually empty inline-end portion of the complete row hit area",
+    "clicked": false
+  },
+  "statePreservedAcrossEachPair": {
+    "drawer": "open",
+    "workspace": "expanded",
+    "searchText": "",
+    "currentDestination": "overview",
+    "overviewAriaCurrent": "page",
+    "activityAriaCurrent": null,
+    "destinationChanged": false
+  },
+  "mechanicalResults": {
+    "allPngDimensionsMatchViewport": true,
+    "lightPairHashesDiffer": true,
+    "darkPairHashesDiffer": true,
+    "pointerHitActivityInBothHoverCaptures": true
+  },
+  "limits": [
+    "PNG presence, dimensions, hashes, browser state, hit-target identity, and console counts are mechanical evidence only.",
+    "Whether the visible surface response covers the full row and remains sufficiently distinct from the current treatment requires human visual judgment.",
+    "These captures do not prove assistive-technology behavior, reflow, contrast compliance, or production readiness."
+  ],
+  "rejectedObservation": "rejected-observation.md"
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "attempt-7-run-browser-regression-observation/v1",
+  "observer": "@playwright/cli@0.1.18",
+  "url": "http://127.0.0.1:4175/?theme=light&drawer=open&workspace=expanded&current=Overview",
+  "viewport": { "width": 1440, "height": 900 },
+  "observations": {
+    "disclosureCollapse": {
+      "ariaExpanded": "false",
+      "visibleChildRows": 0,
+      "currentDestination": "overview",
+      "overviewAriaCurrent": "page"
+    },
+    "disclosureReexpand": {
+      "visibleChildRows": 3,
+      "currentDestination": "overview"
+    },
+    "childSearch": {
+      "query": "Section 02",
+      "visibleDestinations": ["Section 02"],
+      "parentContextVisible": true,
+      "currentDestination": "overview"
+    },
+    "noMatch": {
+      "query": "No supplied destination",
+      "message": "No matching navigation items.",
+      "visibleRows": 0,
+      "currentDestination": "overview"
+    },
+    "clearSearch": {
+      "restoredRows": 6,
+      "currentDestination": "overview"
+    }
+  },
+  "limits": [
+    "This supplementary pass did not exercise Drawer visibility, selection transfer, focus-visible, or independent scrolling because the fixed port was released promptly for the queued Run 1 recapture.",
+    "Static owner checks, build checks, and the four required hover captures remain the primary Run evidence."
+  ]
+}
