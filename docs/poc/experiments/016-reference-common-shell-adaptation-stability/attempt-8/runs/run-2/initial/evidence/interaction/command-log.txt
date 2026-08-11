@@ -1,0 +1,9 @@
+command=npx --yes --package @playwright/cli@0.1.18 playwright-cli '-s=attempt8-run-2-interaction' open '''http://127.0.0.1:4175/?theme=light&drawer=open&workspace=expanded&current=Overview'',''--browser'',''chrome'''
+exit_code=1
+output_begin
+### Browser `attempt8-run-2-interaction` opened with pid 32992.
+### Error
+Error: net::ERR_NAME_NOT_RESOLVED at https://'http//127.0.0.1:4175/?theme=light&drawer=open&workspace=expanded&current=Overview%27,%27--browser%27,%27chrome%27
+Call log:
+- navigating to "https://'http//127.0.0.1:4175/?theme=light&drawer=open&workspace=expanded&current=Overview%27,%27--browser%27,%27chrome%27", waiting until "domcontentloaded"
+output_end
