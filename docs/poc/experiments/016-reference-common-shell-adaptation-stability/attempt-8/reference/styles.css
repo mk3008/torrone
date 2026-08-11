@@ -1,0 +1,139 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  color: #1d2733;
+  background: #f5f7fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 48rem;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4rem;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  background: #26384d;
+}
+
+.header button {
+  padding: 0.55rem 0.8rem;
+  color: inherit;
+  background: #344b65;
+  border: 1px solid #9fb0c2;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.shell-body {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  min-height: calc(100vh - 4rem);
+}
+
+.drawer {
+  width: 17rem;
+  padding: 1rem;
+  background: #e8edf3;
+  border-inline-end: 1px solid #b9c5d1;
+}
+
+.drawer[hidden],
+.children[hidden] {
+  display: none;
+}
+
+.navigation-list,
+.children {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-row {
+  display: flex;
+  width: 100%;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.75rem;
+  color: #26384d;
+  background: transparent;
+  border: 0;
+  text-align: start;
+}
+
+button.navigation-row {
+  cursor: pointer;
+}
+
+button.navigation-row:hover {
+  background: #d9e2ec;
+}
+
+button:focus-visible {
+  outline: 3px solid #0b6bcb;
+  outline-offset: 2px;
+}
+
+.children {
+  padding-inline-start: 1.25rem;
+}
+
+.leaf-row {
+  margin-top: 0.25rem;
+}
+
+.workspace {
+  padding: 2rem;
+}
+
+.workspace h1 {
+  margin-top: 0;
+}
+
+.observation {
+  max-width: 26rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #b9c5d1;
+  border-radius: 0.35rem;
+}
+
+.observation h2 {
+  margin-top: 0;
+}
+
+.observation dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0;
+}
+
+.observation dl > div {
+  padding: 0.75rem;
+  background: #f5f7fa;
+}
+
+.observation dt {
+  font-weight: 700;
+}
+
+.observation dd {
+  margin: 0.25rem 0 0;
+}

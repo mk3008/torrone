@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive common-shell behavior Reference</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="header">
+      <button
+        id="drawer-controller"
+        type="button"
+        aria-controls="drawer"
+        aria-expanded="true"
+      >Close navigation</button>
+      <strong id="workspace-label"></strong>
+    </header>
+
+    <div class="shell-body">
+      <aside id="drawer" class="drawer" aria-label="Example navigation">
+        <nav aria-label="Example navigation items">
+          <ul class="navigation-list">
+            <li>
+              <button
+                id="parent-controller"
+                class="navigation-row parent-row"
+                type="button"
+                aria-controls="supplied-children"
+                aria-expanded="false"
+              >
+                <span id="parent-label"></span>
+                <span id="disclosure-indicator" aria-hidden="true">›</span>
+              </button>
+              <ul id="supplied-children" class="children" hidden>
+                <li id="child-label" class="navigation-row"></li>
+              </ul>
+            </li>
+            <li id="leaf-label" class="navigation-row leaf-row"></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="workspace">
+        <h1>Scoped interaction observation</h1>
+        <p>
+          Operate the Header control and the parent row. Each action changes
+          only its named state dimension.
+        </p>
+        <section class="observation" aria-labelledby="observation-title">
+          <h2 id="observation-title">Observation</h2>
+          <dl>
+            <div>
+              <dt>Drawer</dt>
+              <dd><output id="drawer-state">visible</output></dd>
+            </div>
+            <div>
+              <dt>Parent</dt>
+              <dd><output id="parent-state">collapsed</output></dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+
+    <script src="fixture.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
