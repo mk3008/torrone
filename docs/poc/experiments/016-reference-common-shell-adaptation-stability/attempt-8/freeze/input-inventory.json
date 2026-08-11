@@ -1,0 +1,606 @@
+{
+  "schema_version": 1,
+  "freeze_commit": "3f5dbb754531e4c6576f5660f229fdf1c7abc960",
+  "hash_note": "Git blob IDs identify repository content; SHA-256 values hash the observed worktree bytes at freeze time.",
+  "manifest": {
+    "root": "templates/business-app/design-manifest",
+    "git_tree": "1f493af6aaae09b6c89d35f46b45a0f8ac35ffce",
+    "file_count": 46,
+    "files": [
+      {
+        "path": "templates/business-app/design-manifest/components/breadcrumb.md",
+        "git_blob": "a4b4a2f9d54343d0a2fd063a7e695ec12abd1c3a",
+        "sha256_worktree": "1b47a9073629b7aaa245f7df11b4008ad41c0246de023888d70df52101209524",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/confirmation.md",
+        "git_blob": "2da922a8c01d4684193738185cdbef345fd490ee",
+        "sha256_worktree": "b5accfe4f74babf2eed2f7a6fb6df08f0d977290dd34166375d4d77d19a4e8eb",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/dashboard-panel.md",
+        "git_blob": "19b5d9bf71df13a24f0530af0645b98a0742314a",
+        "sha256_worktree": "489a39f8d13f5ed4db226443a18ed7f6246478598fa01daa3f3cebd4c96fe72f",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/dialog.md",
+        "git_blob": "7dc2c005a6b8006242a8034b047b36f359d00646",
+        "sha256_worktree": "745c6b0f57d4225a8f5a8c8d3522fd3fe606c31d87689d7a39029ef051f7b152",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/drawer.md",
+        "git_blob": "adcd262c058ed2bc77592681d544fceb7650638a",
+        "sha256_worktree": "6f4940d9a55f2f7c2cab060e56e3bdf1ad0569d8a002ac70366bbd37d4de4b1e",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/environment-notice.md",
+        "git_blob": "b6f53a6a9aed9a295c9760a9d2bb7d748f156afc",
+        "sha256_worktree": "8731afc693f5933dbbedb1ca3fbcad07dc0d491ed8a814c4cd966b1c60a1ec7d",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/header.md",
+        "git_blob": "ccf1ca09b7dee84036ac1e701bd1955bd6cebb27",
+        "sha256_worktree": "e7215effbc6440316599dfff067002d5a847ae1d934df36975d1a2fb77199f7b",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/index.md",
+        "git_blob": "b1aa75eca1631de76b55fbccc96993c092c3d3c8",
+        "sha256_worktree": "2c49e795602168e09f1eccc4fe38f30261bccd22c15756aa8e7aab80bbc82452",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/page-header.md",
+        "git_blob": "6ca55a47c410ba5e46d9585e478726cb13d9d671",
+        "sha256_worktree": "f78d3e9194c7fc4ad11fc21545e843b506e2c89ac5cb7e30a49ad3431c13b2ee",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/pagination.md",
+        "git_blob": "40c6ad501a5ecce796d5e85147b28b843789de98",
+        "sha256_worktree": "d2c5a32a5f078044d0278ad5518d4f670e6803817def4e3c1f547fbbc7d13f37",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/record-fields.md",
+        "git_blob": "b5d3bdc01613299ea06fe35eee64fdf2818f0afc",
+        "sha256_worktree": "118cb4c0ac39eeae28a2bcfb8185fe25230a355e62b29b656d64d158e6c51cb2",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/result-card.md",
+        "git_blob": "d9d3f99788759678d0b22d754cf3ea694826a398",
+        "sha256_worktree": "4c1296c01906a6ac2dcd435a80dca59b99bb12aa8fe3536d47a3f64ef046bf73",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/result-grid.md",
+        "git_blob": "d802e565a852261216768ee76eb5d2a13b506bdd",
+        "sha256_worktree": "fa94fca2e13918cd7a5529ef10794aeaf3b9ce473937c8a86abe451d71630b84",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/search-conditions.md",
+        "git_blob": "fce80c6908aea95ca5492a3f3e6135eeb5926a25",
+        "sha256_worktree": "d19e6e4c5a57f91c9906261133e69b28288898964e498cd9f2af2e34df7db3bf",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/status-badge.md",
+        "git_blob": "eb9cd34ae006eeedced3bb86a4edd6a042f98bfd",
+        "sha256_worktree": "5a4878feeda4ffce1e939a04452dd2b883c41cdfac0d1e306e8e72508a27164f",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/components/step-indicator.md",
+        "git_blob": "892d0fdb855a0339b46cb87c8de6a587157bd10a",
+        "sha256_worktree": "73ad34d66b2ebbc468f46e36f0936752a9c3f2243dea3a064f0402dae14197d0",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/configuration/index.md",
+        "git_blob": "b669ae94fa25e229d03920d102692cbfc010f7db",
+        "sha256_worktree": "2ded63f1cc9cd58b71973d71e910733afff06aa9b624d5520d26b4e93f4354f8",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/configuration/record-list-options.md",
+        "git_blob": "8395a5962a8dcefe091d14826c2228ad58cd3f29",
+        "sha256_worktree": "611aca4c76c915ef49bffb0aa672792e76d0505a41b235769a048b4265608383",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/configuration/theme-colors.default.yaml",
+        "git_blob": "4d3a23eb198e8fcc51341d644b1cb233b07ffa93",
+        "sha256_worktree": "91e69671a9e76f33211192536bbfed309094a0828c9e3bee402aed4ab88108b0",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/configuration/theme-colors.md",
+        "git_blob": "62e81550e7c9f8d835921c9b8c5c095e0d9d887a",
+        "sha256_worktree": "11cac25cee7eee8c29fd520b9583ad094387fe7434c78bda79fd551bbac09291",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/flows/index.md",
+        "git_blob": "7146819911dd2ec6e4e418ac823bb90ddee1dc08",
+        "sha256_worktree": "22fe663d1e5866b74ea18bf1e9fe8b2203e9b1d08026db87dddf3b47ff49d409",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/flows/list-to-detail.md",
+        "git_blob": "e6f9bb2cf8a0ce5e43c4aea80a2584965723ef79",
+        "sha256_worktree": "3cf75e3bacdce69b4d4bef158f270d6826eb1c2220d076401463eddb7e365ee1",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/flows/record-lifecycle.md",
+        "git_blob": "a5e90c5f266685d238c186dbf8879aa24c1a4e49",
+        "sha256_worktree": "ae74a2ef29078145ab7a77d041a589e1748abd79de482d397eabea77ac937b44",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/flows/screen-transition.md",
+        "git_blob": "9096bc3375b2c17412dac149f2a3d052c50ee3fd",
+        "sha256_worktree": "f55df5f971c3655e3c8b35fdeba5331f0fe35337dd742dbd854026b2f59a8a87",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/flows/wizard-progress.md",
+        "git_blob": "0a8fa09452622a047fbc70e37a6ac580970b8975",
+        "sha256_worktree": "64d5326bbbacbf6af97edfcf99ea7bd9b70b198d40172ab8f3d77af431da0c95",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/foundations/accessible-work-surface.md",
+        "git_blob": "4678a941c4ca8d39f8e82468ee979446c13c5b5c",
+        "sha256_worktree": "4a0a030733dc58ddab86b5b87daf65fd78b90e68a93102a3c36748d86c6044b4",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/foundations/color-and-theme.md",
+        "git_blob": "d23b94dc2970e00ee2090d62f001c5475e13f438",
+        "sha256_worktree": "ddc2ef6746ef5911af2dfb41de374482f0f1e829c414406f0d296eeda8d45d67",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/foundations/compact-work-surface.md",
+        "git_blob": "29a64022175853c5def5d111d2d5e9f789f33025",
+        "sha256_worktree": "df20cdc36c15802156c015c001bbfd84c66722001312c5af5892cb3c3341e248",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/foundations/iconography.md",
+        "git_blob": "7c641ed2d8ee2606cdadab77e7058ea771838c14",
+        "sha256_worktree": "febb8012e9a832be0e3c4d7d89a6af85866799ac8c9a50723bc4a5b6323077f9",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/foundations/index.md",
+        "git_blob": "8d47d8d21635af062c1199fce76951b61e023e7c",
+        "sha256_worktree": "789b3f0d3665ce658e5ccd96894267dbd256b5e82b1f15de4e85aa8d2be0fc51",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/foundations/layout-panes.md",
+        "git_blob": "a779af7c33dab0e7c86c88ed6d3be47e01f6cf6b",
+        "sha256_worktree": "b54f107311961a665655b1d6617523c752f890ab3e15eaf897d9616be8d8ce09",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/index.md",
+        "git_blob": "493fcde9e2a17555ff87db74d8a330cc2ebd87ca",
+        "sha256_worktree": "4379dfd4578f3ca0df34ced6aa0a79ceb4d430f0671b3f4f0fea35e8fe747f8d",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/manifest.md",
+        "git_blob": "5744ec65a0fd5bb63800b438a5d7be1f99a3a3e6",
+        "sha256_worktree": "bd0162f938ee08d09d450e4adaba2b819060a82175abc88a8389ad35a88f982f",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/policies/confirm-consequential-action.md",
+        "git_blob": "cd3ecbb68bc1cfe5ffeb465bbf5db810879c766d",
+        "sha256_worktree": "eca8ba628ea6d1970bf3e01591c71ed124dfc69782d17efd076733ddfcdd55d6",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/policies/confirm-destructive-action.md",
+        "git_blob": "79fc353cf8218df872435e85e8a2f98337fda91b",
+        "sha256_worktree": "26f1b09d5dcc433f4e6ec7d00bb45bd89a66e86ad1c0e9d2c16de097594e0852",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/policies/index.md",
+        "git_blob": "3b75bb54dcd5954b48a89acaac11f23e9dc464da",
+        "sha256_worktree": "e839cbb66da8ee8937dce5ce2d258f21c199a3def92e21277b794b08fe80dfec",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/dashboard.md",
+        "git_blob": "d42ddc7e34108e3be48053fa319a7fc25d472508",
+        "sha256_worktree": "8da92aa18ce79ded5a061a90d9d732f670bd2a6ef0794fde91bb7ebc2146cc84",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/index.md",
+        "git_blob": "9015c8e82f29357e69c2c964db471349ccba0f7d",
+        "sha256_worktree": "21cfb2d4a702841f980544aa88cf1715929934c031cf9b4403cf3d65c4d1f59d",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/record-create.md",
+        "git_blob": "b9885108d07762d572f50c4ff145460f791d8fd7",
+        "sha256_worktree": "fef057e58f907c24f0cbbfa9a047cd6a69fb5df2f09f29194140d084e7788107",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/record-delete.md",
+        "git_blob": "f234a4dfa8cda17ad25ec97a9fee5ce70dfc031d",
+        "sha256_worktree": "7980dc29cf0ee57272c7dc7ad983429421ef18b328ad13caf257dbf58ee6f599",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/record-detail.md",
+        "git_blob": "eadb13718da0e3960b2b5112c67c4c8d96691e51",
+        "sha256_worktree": "549629d3901eb1a6fece8934cf2a7f0ae76c91152db3592d2faddbc964eedb1e",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/record-edit.md",
+        "git_blob": "49ec350b68e377d5d8870489d5f467e260e00f0b",
+        "sha256_worktree": "d3acf5545015f04ca1e095881ea3d7075b51e4ffc2dc01475432ea12f2e0601b",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/record-list.md",
+        "git_blob": "a231086863a91db4cd6b9e8b85d800c43e61f0e8",
+        "sha256_worktree": "8ceeda70d7246de9567911df9b851216394f80b8defecd702b018bb1745627e7",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/search-with-cards.md",
+        "git_blob": "34ff7b4275338e6406eebacab7cc2a0abf673451",
+        "sha256_worktree": "22f89f0840eedfd5b7dabc6a4c9d64cc8ee2378fd8868c55f572d4579b5ac64a",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/screen-patterns/wizard.md",
+        "git_blob": "9cc5b3d1ff4a33f4a20c8b7121554a4879533b3b",
+        "sha256_worktree": "92c6edec473f970b875efa1035e323abdf4914ab86d6233bd938caa12044b618",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "templates/business-app/design-manifest/variability.md",
+        "git_blob": "5e5efa16f43d439e0bea2311cf3daaa70d52f8c2",
+        "sha256_worktree": "4353478c47b19c4602176ee12b3b8f20ddcafd27a4ba59701495bcf490d3904c",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      }
+    ]
+  },
+  "accepted_interactive_reference": {
+    "root": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/reference",
+    "git_tree": "c98218e35fe491fa7bd14113db135f31c427ef41",
+    "file_count": 5,
+    "files": [
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/reference/README.md",
+        "git_blob": "7d986fc4882c0a3ac82092ecaf5d5a09a34a646a",
+        "sha256_worktree": "f981994d57f865502b3f1aaa1cedb4551223f22205b43589fc9091c63e9af968",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/reference/app.js",
+        "git_blob": "afd4b367bc389c9ed528fddae90d05fc570b33e1",
+        "sha256_worktree": "ccb782488008a46db85074c4a053288f5fb589391cb5a36ce3a2fc7de2ad8aad",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/reference/fixture.js",
+        "git_blob": "e885d4ae67905aad9a8c83883ba101719e7a15d0",
+        "sha256_worktree": "dafefbf15988964501612f1e7063b90038347a96d16a57ae17fc9db1426f3feb",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/reference/index.html",
+        "git_blob": "c638059aa28db21926c41f25b80f7c320235a1a8",
+        "sha256_worktree": "a540f70a4a49afad7fe7061bf9f92e418ba8e216ebafe89e54595f15a6b843d4",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/reference/styles.css",
+        "git_blob": "38150c7da0619e544053a13ace698939f081621c",
+        "sha256_worktree": "3129ae5a6ee19695ad1b5fa2dcebdb47ecc5680d7170ebcad785fbe3424c5fc2",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      }
+    ]
+  },
+  "product_fixture": {
+    "inventory": {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-6/freeze/product-fixture-input-blobs.json",
+      "git_blob": "c35e140b1e2a26c4373b9ca6338282f82c01820b",
+      "sha256_worktree": "23064bfa7960cdfce6301de7bc313076b4c89443126a0db73e300bcff7aaf542",
+      "expected_owner_blob": null,
+      "owner_blob_matches": null
+    },
+    "baseline_commit": "2b3ebb0128fc7bdf37d597f128b7bdefc2287363",
+    "file_count": 5,
+    "files": [
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/check-fixture-candidate.ps1",
+        "git_blob": "426be7a59c4dc4055b15237ccae76a9a97aec290",
+        "sha256_worktree": "5b8c4ec6e47ec1a8b3b13632c505f1ff61f8361fde208e0f2525b75ff14a3fcc",
+        "expected_owner_blob": "426be7a59c4dc4055b15237ccae76a9a97aec290",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/fixture.json",
+        "git_blob": "b92ebaea742ef9fe022962f46813e6a8366c3b1c",
+        "sha256_worktree": "9eae9edc99ff957e20baac6c6ad2923735b3492dccc04a6f77caa142c0f2f53a",
+        "expected_owner_blob": "b92ebaea742ef9fe022962f46813e6a8366c3b1c",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/preview/index.html",
+        "git_blob": "eadf018e153fc9b8ec2defba16edc5fd4abbded6",
+        "sha256_worktree": "4946b347adedd0045fca7f888dac15f08cf6d3345e916c51158bf795a2671191",
+        "expected_owner_blob": "eadf018e153fc9b8ec2defba16edc5fd4abbded6",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/preview/preview.js",
+        "git_blob": "67270b9bf1ff50e6abf303d42a35684b57c5dc1a",
+        "sha256_worktree": "33a5e8c68b854f06baa0037c12a12a532d4cafb58514427aac843943b0fa85db",
+        "expected_owner_blob": "67270b9bf1ff50e6abf303d42a35684b57c5dc1a",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/product-input-candidate.md",
+        "git_blob": "ce7d428f88723649103db326ef931ee2412093ac",
+        "sha256_worktree": "8055512512626e9fea3634b37e8aaf8a36c89422c7eb27b54aa02f1ec4988d1c",
+        "expected_owner_blob": "ce7d428f88723649103db326ef931ee2412093ac",
+        "owner_blob_matches": true
+      }
+    ]
+  },
+  "react_harness": {
+    "inventory": {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/freeze/react-harness-input-blobs.json",
+      "git_blob": "66cbe4dcdc83b522389cfbcb2be8a18d76bc7126",
+      "sha256_worktree": "c6d1b1ed51b5df3b282b8520fe3bc6196c38777b4726cb14d217da7f59b2a86d",
+      "expected_owner_blob": null,
+      "owner_blob_matches": null
+    },
+    "defining_commit": "e54d05742b7097bfe1e4670ebc1a8c83b2155e14",
+    "file_count": 14,
+    "files": [
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/condition/experiment-condition.md",
+        "git_blob": "3075222313fc41c33c8742014d4d35217d47c211",
+        "sha256_worktree": "199a341fcd6995f44ff33b4fc243279e6de0544826cfa36135e839794e1241a8",
+        "expected_owner_blob": "3075222313fc41c33c8742014d4d35217d47c211",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/condition/shared-adaptation-instructions.md",
+        "git_blob": "218d902edf069069d43e2ca3ef83904779d65d54",
+        "sha256_worktree": "8a9e7c5552c735899ee20528416eb91aaf3f0eaf3ad05af10e0642002db04e38",
+        "expected_owner_blob": "218d902edf069069d43e2ca3ef83904779d65d54",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/.gitignore",
+        "git_blob": "8dedf0a0c4cc2357ab1a14838de547e7af4b153a",
+        "sha256_worktree": "70369dce54ea2651b6a2b68ef4ffc18bb40c6e09779b5f8e200408a51bf6f6ff",
+        "expected_owner_blob": "8dedf0a0c4cc2357ab1a14838de547e7af4b153a",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/index.html",
+        "git_blob": "b3228f2bb5a4ef253555a6707ba45de4961e32c4",
+        "sha256_worktree": "6e54a1d813494ebaf3fe94836016f3f908d06e63d68857291c4f343fea087b41",
+        "expected_owner_blob": "b3228f2bb5a4ef253555a6707ba45de4961e32c4",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/package.json",
+        "git_blob": "96c56b76cf814c36f29a906058285fd57bf1c6ed",
+        "sha256_worktree": "2ab14fa5b53e09ca7bcc6d609e0c2cfcfa9cc006562f98789dba9f40c8c56096",
+        "expected_owner_blob": "96c56b76cf814c36f29a906058285fd57bf1c6ed",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/package-lock.json",
+        "git_blob": "f4f493e0add210c3ae6ceedd043c6a488dc0807a",
+        "sha256_worktree": "48ac4d4bb6148f5de06dc7843a174b43db95d17fb695b1161a0a9a0476485aa0",
+        "expected_owner_blob": "f4f493e0add210c3ae6ceedd043c6a488dc0807a",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/tsconfig.json",
+        "git_blob": "1ffef600d959ec9e396d5a260bd3f5b927b2cef8",
+        "sha256_worktree": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+        "expected_owner_blob": "1ffef600d959ec9e396d5a260bd3f5b927b2cef8",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/tsconfig.app.json",
+        "git_blob": "6e52e6922df1351fca6f2fc3131b79f40ecc3426",
+        "sha256_worktree": "9f91b3e9f6bda53f5262191a1c1331da61e5641cdc3378a83fc249ce501f9200",
+        "expected_owner_blob": "6e52e6922df1351fca6f2fc3131b79f40ecc3426",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/tsconfig.node.json",
+        "git_blob": "a967d4db65e3a106cae7efa67206b48578b7c023",
+        "sha256_worktree": "8db98b33d39d5004ecbfc329c42b67faecdd5386a2eb846c6e85a42f3ee24d2a",
+        "expected_owner_blob": "a967d4db65e3a106cae7efa67206b48578b7c023",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/vite.config.ts",
+        "git_blob": "9ffcc675746194c4a34eb43404d15db40b810265",
+        "sha256_worktree": "6dc0ce25c4170ac9fbadb4dbd19ca5c2ceb57b9c5efc5090b82e2923f53dd679",
+        "expected_owner_blob": "9ffcc675746194c4a34eb43404d15db40b810265",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/src/HarnessApp.tsx",
+        "git_blob": "cfe65da973ac99048c9f748794bfd6143dbd35e4",
+        "sha256_worktree": "7697a723c6cfb2ae39b953e3dad9e21e8618970aad6e42824d6cadf48bd7b9c9",
+        "expected_owner_blob": "cfe65da973ac99048c9f748794bfd6143dbd35e4",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/src/harness.css",
+        "git_blob": "d53203a5468f3de59ce563e9f41e981bb94b8bf8",
+        "sha256_worktree": "71b326f960ac6aea1f944b5b91436fe578b784d8ace1304cc65e919d0a8dc683",
+        "expected_owner_blob": "d53203a5468f3de59ce563e9f41e981bb94b8bf8",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/src/main.tsx",
+        "git_blob": "1a57fbf21db8d57113d195db28d446a1a4cd8c28",
+        "sha256_worktree": "7ddc3ad889ed7478cd09d7f340e7abac03f0588f32139b9824f0f08d1e828fd0",
+        "expected_owner_blob": "1a57fbf21db8d57113d195db28d446a1a4cd8c28",
+        "owner_blob_matches": true
+      },
+      {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/src/vite-env.d.ts",
+        "git_blob": "11f02fe2a0061d6e6e1f271b21da95423b448b32",
+        "sha256_worktree": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+        "expected_owner_blob": "11f02fe2a0061d6e6e1f271b21da95423b448b32",
+        "owner_blob_matches": true
+      }
+    ]
+  },
+  "inherited_contracts": [
+    {
+      "owner": "Attempt 3 exact visual bindings and common adaptation boundary",
+      "baseline_commit": "1d805e8f4fc30f30b00d88d7e69ab90a0c5c24ff",
+      "inventory": {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-3/freeze/attempt-3-input-blobs.json",
+        "git_blob": "16101cd90a5bcbee0cfceff24bbc2b24c72b460f",
+        "sha256_worktree": "c99507b6f221809ca59062d8667eb56dded6c35106cc4ebd392e0f809886d8f9",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      }
+    },
+    {
+      "owner": "Attempt 4 vNext layered and SVG contracts",
+      "baseline_commit": "a3ef3fa680314a3b2721076698b13dbe97d0ead4",
+      "inventory": {
+        "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-4/freeze/attempt-4-input-blobs.json",
+        "git_blob": "d92410750d63ac76582d0c0912436e2f0adb7ef3",
+        "sha256_worktree": "27a6e1414497a7dfcb8ff29b2d90f14f7096a7e97f31c79a999b726be108db7a",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      }
+    },
+    {
+      "owner": "Three-run Manifest reproducibility protocol",
+      "baseline_commit": "3f5dbb754531e4c6576f5660f229fdf1c7abc960",
+      "inventory": {
+        "path": "docs/poc/experiments/three-run-reproducibility-protocol.md",
+        "git_blob": "f0f1f7dc816fc6e682508e6ff8b0ea899c0037ca",
+        "sha256_worktree": "e7d1b1c86df45079cf68611e349eca95f54b002bba2fefb06a1bbec179fa0a25",
+        "expected_owner_blob": null,
+        "owner_blob_matches": null
+      }
+    }
+  ],
+  "frozen_attempt_8_documents": [
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/freeze/fixed-prompt.md",
+      "git_blob": null,
+      "sha256_worktree": "cf309330242c273b35629ca51919d3b87aa9fee8363269dc0a95faac2f8d9392"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/freeze/interaction-contract.md",
+      "git_blob": null,
+      "sha256_worktree": "0d27b54f98fae5bbf176f9393ac957511e358d2e3dedd2cbbd8940b4ee497cee"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/freeze/input-set.md",
+      "git_blob": null,
+      "sha256_worktree": "09d9bd697fda4c2e54c5d0fc6ac38159d8f666b6cb8aba135ac10e43804b13cf"
+    }
+  ],
+  "generation_policy": {
+    "run_count": 3,
+    "model": "configured-default",
+    "reasoning_effort": "configured-default",
+    "override_policy": "Omit model and effort overrides on the same configured host; record resolved values and stop before generation if they differ."
+  },
+  "capture_policy": {
+    "viewport_css_pixels": "1440x900",
+    "observer": "@playwright/cli@0.1.18 through temporary npx",
+    "browser": "Playwright CLI Chrome; record actual version",
+    "server": "npm run dev at http://127.0.0.1:4175",
+    "sequence_steps": 10,
+    "contract_path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/freeze/interaction-contract.md",
+    "contract_sha256_worktree": "0d27b54f98fae5bbf176f9393ac957511e358d2e3dedd2cbbd8940b4ee497cee"
+  },
+  "prompt": {
+    "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-8/freeze/fixed-prompt.md",
+    "sha256_worktree": "cf309330242c273b35629ca51919d3b87aa9fee8363269dc0a95faac2f8d9392"
+  }
+}
