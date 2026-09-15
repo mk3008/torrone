@@ -39,12 +39,13 @@ The repository has evolved through several approaches. Earlier Manifest/OKF arti
 
 Reference HTML is the current central product direction. Its exact profile, stable-key notation, comparison API, CLI/Core shape, responsive strategy, framework bindings, MCP exposure, and other implementation details remain experimental.
 
-The large Reference HTML research handoff and experiment archive is currently preserved in [PR #2](https://github.com/mk3008/torrone/pull/2). That PR should be read as research evidence and handoff material, not as a frozen production specification.
+The Reference HTML research handoff and experiment archive are preserved under `docs/poc/`. They should be read as research evidence and bounded findings, not as a frozen production specification. Approved design originals are surfaced separately under `references/`.
 
 ## Repository map
 
-- [Development and Reference review](docs/development-workflow.md) — run a small review bundle in Work and prepare a phone-review handoff.
-- `review/` and `tools/build-review.py` — development review entry point for selected existing HTML samples; not a production Reference catalog.
+- [`references/`](references/) — curated design originals. `approved` entries are the current References for their stated responsibilities and scope.
+- [Development and Reference review](docs/development-workflow.md) — run a small review bundle in Work, prepare a phone-review handoff, and move an explicitly human-approved design into curation.
+- `review/` and `tools/build-review.py` — development review entry point for selected existing HTML samples; not an approval registry.
 - `docs/product-foundation.md` — product problem, principles, scope, and decision boundaries.
 - `profile/` — earlier UI Manifest profile research.
 - `templates/` — Manifest-era starter and business-application examples.

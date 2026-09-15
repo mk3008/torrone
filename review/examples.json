@@ -3,9 +3,9 @@
     "id": "date-range",
     "title": "Date range picker",
     "source": "review/references/date-range.html",
-    "guidance": "Review independent Start and End selection, partial ranges, manual input, invalid input recovery, clearing, and dismissal. The fixed today fixture is historical, not the current date.",
-    "status": "Responsive working draft; mobile changes await human approval.",
-    "evidence": "docs/poc/experiments/017-reference-html-ssot/date-picker-human-calibration-phase-2-result.md"
+    "guidance": "Review independent Start and End selection, partial ranges, manual input, invalid input recovery, clearing, dismissal, and the separation between typing and calendar operation. The fixed today fixture is historical, not the current date.",
+    "status": "Human-approved responsive Reference as of 2026-09-16. The exact approved content identity and bounded responsibility are recorded in references/date-range.md.",
+    "evidence": "docs/mobile-review-decisions.md"
   },
   {
     "id": "entity-lookup",

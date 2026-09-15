@@ -38,11 +38,29 @@ The owner approved a private Sites review surface on 2026-09-15. Reuse [Torrone 
 
 The index and active working copies adapt to narrow screens. Historical research References retain their authored layouts, including desktop assumptions. Phone review access and responsive product design are different questions; do not silently redesign an archived Reference to fit the review device. For a design change, create a clearly identified working copy outside historical evidence and point the entry list at it.
 
+## From review to curation
+
+`review/` answers "what can I operate and review now?". `references/` answers "what is the current approved design original for this responsibility?". Keep those roles separate.
+
+A draft does not become canonical because its tests pass, its comparison matches, its preview is published, or its PR is merged. When a human reviewer explicitly approves a bounded design:
+
+1. identify the exact executable Reference that was reviewed;
+2. record the responsibility and scope for which it is approved;
+3. record concise preserved behavior and implementation freedom;
+4. point to the human-approval evidence and exact approved artifact identity; and
+5. add or update the corresponding entry under `references/` with `status: approved`.
+
+If a material behavior or the executable Reference later changes, the changed version is a draft until explicitly reviewed again. Do not silently carry approval forward.
+
+Before implementing a recurring UI responsibility, humans and AI should check `references/` first. An applicable approved entry is the design original; historical PoC files and responsive working copies are not canonical by existence alone.
+
+The first curation pilot is the existing human-approved [Date range filter](../references/date-range.md). Its responsive working copy remains a separate draft and is not covered by the historical approval.
+
 ## Verification and preserved gaps
 
 Check that generated HTML matches the selected source bytes, links resolve, the index works at phone width, and the relevant example interaction still operates. Inspect the diff to confirm historical sources and outputs were not modified. New previews do not need a rerun of all old experiments.
 
-PoC 017 remains `partial`: the historical evidence incident and its recovery requirement in [the research handoff](poc/reference-html-program-summary.md) remain unresolved. This development entry point does not start Reference Discovery / Curation, repair that evidence, or accept its Gate. Do not run legacy conformance commands merely to launch a preview; some have a recorded history of overwriting evidence.
+PoC 017 remains `partial`: the historical evidence incident and its recovery requirement in [the research handoff](poc/reference-html-program-summary.md) remain unresolved. Curating an already approved Reference does not repair that evidence or accept the PoC 017 Gate. Do not run legacy conformance commands merely to launch a preview; some have a recorded history of overwriting evidence.
 
 No new orchestration skill or model-specific framework is required. `AGENTS.md` remains the operating guidance; select the available model in Work. Add reusable automation only when a repeated task justifies it.
 
