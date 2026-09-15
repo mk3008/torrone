@@ -18,17 +18,17 @@ On Windows, use `py -3` instead of `python3` if appropriate. Open `http://127.0.
 python3 tools/build-review.py
 ```
 
-The command prints a fresh directory below ignored `tmp/review/`. Each build gets a new directory; it never overwrites earlier previews or research evidence. It copies only the three explicitly selected, self-contained HTML examples, adds the review index, and records source paths, content hashes, base commit, and whether the working tree was dirty in `review-build.json`.
+The command prints a fresh directory below ignored `tmp/review/`. Each build gets a new directory; it never overwrites earlier previews or research evidence. It copies only the explicitly selected, self-contained HTML examples, adds the review index, and records source paths, content hashes, base commit, and whether the working tree was dirty in `review-build.json`.
 
-`review/examples.json` is a small development entry list, not a Reference profile, discovery result, or approval registry. The examples are existing research samples. No Reference source is rewritten or wrapped in an iframe. In particular, the date range sample preserves its historical fixed date fixture.
+`review/examples.json` is a small development entry list, not a Reference profile, discovery result, or approval registry. The active examples are responsive working copies in `review/references/`, derived from existing research samples. Historical sources remain untouched. The builder copies the selected files without rewriting them or wrapping them in an iframe. In particular, the date range sample preserves its historical fixed date fixture.
 
 ## Phone review
 
 Loopback URLs refer to the execution machine; they are not shareable links for a phone. A cloud task's local server alone does not provide a durable mobile review surface.
 
-For remote review, deploy only the generated directory to a static host with an HTTPS URL and the intended audience. ChatGPT Sites is a candidate for an owner-private review surface; hosting setup and publication are separate from building this bundle. Do not upload the entire research repository or assume that pushing a PR publishes a preview.
+For remote review, deploy only the generated directory to a static host with an HTTPS URL and the intended audience. ChatGPT Sites is a candidate for an owner-private review surface; publication is separate from building this bundle. Do not upload the entire research repository or assume that pushing a PR publishes a preview.
 
-The first deployment needs an explicit hosting/audience decision. Once approved, reuse the same review surface and update it from the requested branch. Keep Torrone's GitHub repository authoritative; any hosting-side source repository contains generated distribution only. Record the resulting URL and the exact Torrone revision in the PR or Work handoff. Verify access from the phone before calling the mobile loop complete.
+The owner approved a private Sites review surface on 2026-09-15. Reuse [Torrone Reference Review](https://torrone-reference-review.mssg-mobile2000.chatgpt.site) with owner-only access and update it from the requested branch. Keep Torrone's GitHub repository authoritative; any hosting-side source repository contains generated distribution only. Record the resulting URL and the exact Torrone revision in the PR or Work handoff. Verify access from the phone before calling the mobile loop complete.
 
 1. Commit the candidate and build a clean snapshot so its base commit identifies the review source precisely.
 2. Publish that generated directory through the approved hosting mechanism.
@@ -36,7 +36,7 @@ The first deployment needs an explicit hosting/audience decision. Once approved,
 4. Return feedback in the Work thread or PR: example ID, revision, device/browser, actions, observed result, expected result, and optional screenshot.
 5. Make the bounded correction on the working branch, regenerate, and repeat human review.
 
-The index is responsive. The research References retain their authored layouts, including desktop assumptions. Phone review access and responsive product design are different questions; do not silently redesign an archived Reference to fit the review device. For a design change, create a clearly identified working copy outside historical evidence and point the entry list at it.
+The index and active working copies adapt to narrow screens. Historical research References retain their authored layouts, including desktop assumptions. Phone review access and responsive product design are different questions; do not silently redesign an archived Reference to fit the review device. For a design change, create a clearly identified working copy outside historical evidence and point the entry list at it.
 
 ## Verification and preserved gaps
 
@@ -49,3 +49,7 @@ No new orchestration skill or model-specific framework is required. `AGENTS.md` 
 ## Official Work guidance
 
 The [official Work introduction](https://learn.chatgpt.com/docs/get-started-with-work) explains the product's execution modes. Check current availability and permissions in the active environment rather than assuming every Work surface exposes identical preview or hosting capabilities. This repository's portable static bundle does not depend on a specific Work UI or a continuously running personal computer.
+
+## Current responsive draft
+
+See [Mobile review decisions](mobile-review-decisions.md) for the bounded design choices, source provenance, and remaining validation. These drafts are not newly approved design originals.

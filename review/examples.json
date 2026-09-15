@@ -2,25 +2,25 @@
   {
     "id": "date-range",
     "title": "Date range picker",
-    "source": "docs/poc/experiments/017-reference-html-ssot/review/date-picker-human-calibration/adjusted/date-range.html",
+    "source": "review/references/date-range.html",
     "guidance": "Review independent Start and End selection, partial ranges, manual input, invalid input recovery, clearing, and dismissal. The fixed today fixture is historical, not the current date.",
-    "status": "Human-calibrated research Reference; see the Phase 2 record.",
+    "status": "Responsive working draft; mobile changes await human approval.",
     "evidence": "docs/poc/experiments/017-reference-html-ssot/date-picker-human-calibration-phase-2-result.md"
   },
   {
     "id": "entity-lookup",
     "title": "Entity dialog lookup",
-    "source": "docs/poc/experiments/017-reference-html-ssot/variants/11-composite-granularity/references/entity-dialog-lookup.html",
+    "source": "review/references/entity-lookup.html",
     "guidance": "Open the lookup, search, select, confirm or cancel, then clear and reselect. Observe selection state and focus return.",
-    "status": "Research sample; inclusion here does not grant design approval.",
+    "status": "Responsive working draft; mobile changes await human approval.",
     "evidence": "docs/poc/experiments/017-reference-html-ssot/composite-granularity-result.md"
   },
   {
     "id": "access-review",
     "title": "Access review workspace",
-    "source": "docs/poc/experiments/017-reference-html-ssot/reference/index.html",
-    "guidance": "Review navigation, filtering, row selection, and scrolling as a complete workspace. This historical desktop layout is not a mobile layout contract.",
-    "status": "Research sample; inclusion here does not grant design approval.",
+    "source": "review/references/access-review.html",
+    "guidance": "Open and dismiss navigation, filter requests, and review results. On phones, navigation overlays the workspace and results scroll horizontally within their own region.",
+    "status": "Responsive working draft; mobile changes await human approval.",
     "evidence": "docs/poc/experiments/017-reference-html-ssot/README.md"
   }
 ]
