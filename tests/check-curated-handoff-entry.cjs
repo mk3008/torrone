@@ -45,6 +45,13 @@ for (const viewport of [true, false]) {
   const stopped = f.calls.length;
   f.drain(); f.win.callbacks.resize();
   assert.equal(f.calls.length, stopped);
+  // Pointer focus must not move the tapped calendar/Clear button before click.
+  f.focus(f.inputs[1]); f.doc.callbacks.pointerdown();
+  f.focus({ calendarButton: true });
+  assert.ok(f.classes.has('manual-entry'));
+  assert.equal(f.timers.size, 0);
+  f.doc.callbacks.pointerup(); f.frames.splice(0).forEach(fn => fn());
+  assert.equal(f.classes.has('manual-entry'), false);
   // Blur outside the document can arrive without another focusin.
   f.focus(f.inputs[1]); f.doc.activeElement = null;
   f.doc.callbacks.focusout(); f.frames.splice(0).forEach(fn => fn());
