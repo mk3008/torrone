@@ -1,0 +1,1315 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "form-workflow.html",
+    "digest": "a403a13b83a22fc3511d59f1a6cce878fcc625f044a834283affefd3214e167c",
+    "files": [
+      {
+        "path": "form-workflow.html",
+        "bytes": 15931,
+        "sha256": "a4e3f072767604623763a8841aabe41780531865d7136e8df19475e1eda1b1f4"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "dc4e519053d216187fc0bbacbe74d69636a9561c4b04909f3faccc79ebe2fe30",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 27033,
+        "sha256": "84dbfb367754c963a8897c64b84b887b61cf30d257ec7a1a3d791253529fe048"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "missing required fields",
+        "steps": [
+          {
+            "action": "click",
+            "target": "review-action"
+          }
+        ]
+      },
+      {
+        "name": "invalid email correction",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "form-primary-field",
+            "value": "Correct duplicate service charge"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "approver"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "riley.chen@example.com"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          }
+        ]
+      },
+      {
+        "name": "review and edit",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "form-primary-field",
+            "value": "Correct duplicate service charge"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "riley.chen@example.com"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          },
+          {
+            "action": "click",
+            "target": "edit-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 192,
+    "errorSignatures": []
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:form.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main.box.height",
+      "expected": 758.05,
+      "actual": 836,
+      "delta": 77.95000000000005
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.semantic:role:form.box.x",
+      "expected": 182.5,
+      "actual": 322.5,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.semantic:role:main.box.x",
+      "expected": 182.5,
+      "actual": 322.5,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.missing required fields.step-1.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:role:form.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:role:main.box.height",
+      "expected": 758.05,
+      "actual": 836,
+      "delta": 77.95000000000005
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-1.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:role:form.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:role:main.box.height",
+      "expected": 758.05,
+      "actual": 836,
+      "delta": 77.95000000000005
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-2.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.semantic:role:form.box.x",
+      "expected": 182.5,
+      "actual": 322.5,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.semantic:role:main.box.x",
+      "expected": 182.5,
+      "actual": 322.5,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-3.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:role:form.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:role:main.box.height",
+      "expected": 758.05,
+      "actual": 836,
+      "delta": 77.95000000000005
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-4.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.semantic:role:main.box.height",
+      "expected": 588.58,
+      "actual": 836,
+      "delta": 247.41999999999996
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid email correction.step-5.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:role:form.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:role:main.box.height",
+      "expected": 758.05,
+      "actual": 836,
+      "delta": 77.95000000000005
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-1.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:role:form.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:role:main.box.height",
+      "expected": 758.05,
+      "actual": 836,
+      "delta": 77.95000000000005
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-2.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.semantic:role:main.box.height",
+      "expected": 588.58,
+      "actual": 836,
+      "delta": 247.41999999999996
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-3.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:role:form.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:role:form.box.y",
+      "expected": 170.19,
+      "actual": 180.19,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:role:main.box.x",
+      "expected": 190,
+      "actual": 330,
+      "delta": 140
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:role:main.box.height",
+      "expected": 758.05,
+      "actual": 836,
+      "delta": 77.95000000000005
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.review and edit.step-4.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

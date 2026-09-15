@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operations workspace</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="application" data-palette="light">
+      <header class="header-bar">
+        <button class="header-action drawer-toggle" type="button" aria-label="Hide navigation" title="Hide navigation">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM10 5v14m5-10-3 3 3 3" /></svg>
+        </button>
+        <p class="application-name">Operations workspace</p>
+        <button class="header-action palette-toggle" type="button" aria-label="Switch to dark palette" title="Switch to dark palette">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.7 14.6A8.7 8.7 0 1 1 9.4 3.3a6.9 6.9 0 0 0 11.3 11.3z" /></svg>
+        </button>
+      </header>
+
+      <div class="application-body">
+        <aside class="drawer-panel" aria-label="Application navigation">
+          <div class="navigation-search">
+            <label for="navigation-filter">Search navigation</label>
+            <div class="search-field">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6" /><path d="m15.4 15.4 4.1 4.1" /></svg>
+              <input id="navigation-filter" type="search" placeholder="Find an item" autocomplete="off" />
+            </div>
+          </div>
+          <nav class="navigation" aria-label="Operations navigation"></nav>
+        </aside>
+
+        <main class="main-workspace" tabindex="-1">
+          <section class="content-column" aria-labelledby="page-title">
+            <p class="eyebrow">Workspace</p>
+            <h1 id="page-title">Neutral workspace content</h1>
+            <p class="fixture-note">This is a neutral fixture used to make the workspace overflow observable.</p>
+            <ol class="numbered-fixture" aria-label="Neutral workspace items"></ol>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

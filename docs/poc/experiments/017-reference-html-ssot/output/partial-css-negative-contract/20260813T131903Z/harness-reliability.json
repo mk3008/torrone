@@ -1,0 +1,94 @@
+{
+  "browserExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "browserVersion": "151.0.4129.78",
+  "browserSha256": "AF02A342B7E6FA7D1154D9152B5997FF2BE300B3A7A678FEAAE863C9FBEA32CB",
+  "attempts": 12,
+  "timeouts": 0,
+  "retries": 0,
+  "events": [
+    {
+      "label": "Fresh Reference baseline",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3266
+    },
+    {
+      "label": "Fresh Reference baseline repeat",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3222
+    },
+    {
+      "label": "Saved-baseline exact control",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3240
+    },
+    {
+      "label": "Saved-baseline exact control repeat",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3231
+    },
+    {
+      "label": "Saved-baseline radius mutation",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3254
+    },
+    {
+      "label": "Saved-baseline restore",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3263
+    },
+    {
+      "label": "Saved-baseline restore repeat",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3267
+    },
+    {
+      "label": "Fresh-baseline exact control",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3213
+    },
+    {
+      "label": "Fresh-baseline exact control repeat",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3232
+    },
+    {
+      "label": "Fresh-baseline radius mutation",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3264
+    },
+    {
+      "label": "Fresh-baseline restore",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3234
+    },
+    {
+      "label": "Fresh-baseline restore repeat",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3293
+    }
+  ]
+}

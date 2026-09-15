@@ -1,0 +1,133 @@
+{
+  "status": "pass",
+  "candidates": [
+    "a-self-contained",
+    "b-token-only",
+    "c-visual-primitives"
+  ],
+  "canonicalComparisons": 6,
+  "deterministicBaselineBundles": 3,
+  "screenshotHashEvidence": {
+    "baselineRepeatControls": {
+      "common-shell": {
+        "screenshotFiles": 13,
+        "byteIdenticalFiles": 13,
+        "byteHashMismatches": []
+      },
+      "search-workspace": {
+        "screenshotFiles": 10,
+        "byteIdenticalFiles": 10,
+        "byteHashMismatches": []
+      },
+      "form-workflow": {
+        "screenshotFiles": 11,
+        "byteIdenticalFiles": 11,
+        "byteHashMismatches": []
+      }
+    },
+    "candidateComparisons": {
+      "b-token-only/common-shell": {
+        "screenshotFiles": 13,
+        "byteIdenticalFiles": 13,
+        "byteHashMismatches": []
+      },
+      "b-token-only/search-workspace": {
+        "screenshotFiles": 10,
+        "byteIdenticalFiles": 10,
+        "byteHashMismatches": []
+      },
+      "b-token-only/form-workflow": {
+        "screenshotFiles": 11,
+        "byteIdenticalFiles": 10,
+        "byteHashMismatches": [
+          "review-and-edit-03.png"
+        ]
+      },
+      "c-visual-primitives/common-shell": {
+        "screenshotFiles": 13,
+        "byteIdenticalFiles": 12,
+        "byteHashMismatches": [
+          "navigation-parent-02.png"
+        ]
+      },
+      "c-visual-primitives/search-workspace": {
+        "screenshotFiles": 10,
+        "byteIdenticalFiles": 10,
+        "byteHashMismatches": []
+      },
+      "c-visual-primitives/form-workflow": {
+        "screenshotFiles": 11,
+        "byteIdenticalFiles": 10,
+        "byteHashMismatches": [
+          "review-and-edit-03.png"
+        ]
+      }
+    },
+    "interpretation": "Byte hashes are supplementary. Exact observation-bundle determinism and zero-error computed comparisons are authoritative because interaction-frame capture can vary."
+  },
+  "positiveConformanceChecks": 9,
+  "retainedNegativeConformanceChecks": 3,
+  "commonProbe": {
+    "a-self-contained": {
+      "changedFiles": 3,
+      "changedLocations": 3,
+      "validationCommands": 3,
+      "restoreWrites": 3,
+      "restoreProof": "byte-identical source tree",
+      "missedSynchronizationRisk": "three independent edits can diverge"
+    },
+    "b-token-only": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "validationCommands": 3,
+      "restoreWrites": 1,
+      "restoreProof": "byte-identical source tree",
+      "missedSynchronizationRisk": "one edit; fan-out validation still required"
+    },
+    "c-visual-primitives": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "validationCommands": 3,
+      "restoreWrites": 1,
+      "restoreProof": "byte-identical source tree",
+      "missedSynchronizationRisk": "one edit; fan-out validation still required"
+    }
+  },
+  "localProbe": {
+    "a-self-contained": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "commonLayerEdits": 0,
+      "validationCommands": 1,
+      "restoreWrites": 1,
+      "unaffectedReferenceProof": "common layer, shell, and workspace hashes unchanged",
+      "restoreProof": "byte-identical source tree"
+    },
+    "b-token-only": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "commonLayerEdits": 0,
+      "validationCommands": 1,
+      "restoreWrites": 1,
+      "unaffectedReferenceProof": "common layer, shell, and workspace hashes unchanged",
+      "restoreProof": "byte-identical source tree"
+    },
+    "c-visual-primitives": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "commonLayerEdits": 0,
+      "validationCommands": 1,
+      "restoreWrites": 1,
+      "unaffectedReferenceProof": "common layer, shell, and workspace hashes unchanged",
+      "restoreProof": "byte-identical source tree"
+    }
+  },
+  "fixedConformancePacket": {
+    "fileCount": 62,
+    "digest": "E318076A90555C11D9D678F6BB5FF57B311982552A86D59548A44433AC0BF7BF"
+  },
+  "coreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+  "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+  "consumerRequirementsAdded": 0,
+  "buildOrRuntimeRequirementsAdded": 0
+}

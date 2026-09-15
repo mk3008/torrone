@@ -1,0 +1,719 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "review-presentation-only",
+  "source": {
+    "reportPath": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/evidence-harness-maintenance/20260813T112543Z/form-heavy-partial/target-form.report.json",
+    "sha256": "D208532EFB4D812AB2AFA0897C39A2DEA085D8B67D95D4CC85559C98014F5923",
+    "schemaVersion": 1,
+    "status": "pass"
+  },
+  "summary": {
+    "status": "pass",
+    "rawDifferenceCount": 192,
+    "rawErrorCount": 0,
+    "rawDiagnosticCount": 192,
+    "reviewerEntryCount": 21,
+    "errorEntryCount": 0,
+    "diagnosticEntryCount": 21,
+    "repeatedOccurrencesCollapsed": 171,
+    "rawCountsPreserved": true
+  },
+  "ordering": [
+    "severity: error before informational diagnostic",
+    "within severity: diagnostic shape, normalized path, exact observation values"
+  ],
+  "traceability": {
+    "differenceArray": "differences",
+    "rawDifferenceIndexBase": 1,
+    "guarantee": "Every raw difference index occurs in exactly one presentation entry."
+  },
+  "errors": [],
+  "diagnostics": [
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-current",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        6,
+        23,
+        41,
+        59,
+        76,
+        94,
+        110,
+        128,
+        146,
+        162,
+        180
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-empty",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        7,
+        24,
+        42,
+        60,
+        77,
+        95,
+        111,
+        129,
+        147,
+        163,
+        181
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-filter",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        8,
+        25,
+        43,
+        61,
+        78,
+        96,
+        112,
+        130,
+        148,
+        164,
+        182
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-parent",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        9,
+        26,
+        44,
+        62,
+        79,
+        97,
+        113,
+        131,
+        149,
+        165,
+        183
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-secondary",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        10,
+        27,
+        45,
+        63,
+        80,
+        98,
+        114,
+        132,
+        150,
+        166,
+        184
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        11,
+        28,
+        46,
+        64,
+        81,
+        99,
+        115,
+        133,
+        151,
+        167,
+        185
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:navigation-parent",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        12,
+        29,
+        47,
+        65,
+        82,
+        100,
+        116,
+        134,
+        152,
+        168,
+        186
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:navigation-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        13,
+        30,
+        48,
+        66,
+        83,
+        101,
+        117,
+        135,
+        153,
+        169,
+        187
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:user-menu-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        14,
+        31,
+        49,
+        67,
+        84,
+        102,
+        118,
+        136,
+        154,
+        170,
+        188
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:role:banner",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        15,
+        32,
+        50,
+        68,
+        85,
+        103,
+        119,
+        137,
+        155,
+        171,
+        189
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.sign-out-action",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        16,
+        33,
+        51,
+        69,
+        86,
+        104,
+        120,
+        138,
+        156,
+        172,
+        190
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.theme-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        17,
+        34,
+        52,
+        70,
+        87,
+        105,
+        121,
+        139,
+        157,
+        173,
+        191
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.user-menu-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        18,
+        35,
+        53,
+        71,
+        88,
+        106,
+        122,
+        140,
+        158,
+        174,
+        192
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:form.box.x",
+      "detail": {
+        "actual": 322.5,
+        "delta": 140,
+        "expected": 182.5
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        19,
+        72
+      ],
+      "states": [
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-3"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:form.box.x",
+      "detail": {
+        "actual": 330,
+        "delta": 140,
+        "expected": 190
+      },
+      "occurrenceCount": 7,
+      "rawDifferenceIndexes": [
+        1,
+        36,
+        54,
+        89,
+        123,
+        141,
+        175
+      ],
+      "states": [
+        "initial",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:form.box.y",
+      "detail": {
+        "actual": 180.19,
+        "delta": 10,
+        "expected": 170.19
+      },
+      "occurrenceCount": 9,
+      "rawDifferenceIndexes": [
+        2,
+        20,
+        37,
+        55,
+        73,
+        90,
+        124,
+        142,
+        176
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.height",
+      "detail": {
+        "actual": 836,
+        "delta": 247.41999999999996,
+        "expected": 588.58
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        109,
+        161
+      ],
+      "states": [
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-3"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.height",
+      "detail": {
+        "actual": 836,
+        "delta": 77.95000000000005,
+        "expected": 758.05
+      },
+      "occurrenceCount": 7,
+      "rawDifferenceIndexes": [
+        5,
+        40,
+        58,
+        93,
+        127,
+        145,
+        179
+      ],
+      "states": [
+        "initial",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.x",
+      "detail": {
+        "actual": 322.5,
+        "delta": 140,
+        "expected": 182.5
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        21,
+        74
+      ],
+      "states": [
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-3"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.x",
+      "detail": {
+        "actual": 330,
+        "delta": 140,
+        "expected": 190
+      },
+      "occurrenceCount": 9,
+      "rawDifferenceIndexes": [
+        3,
+        38,
+        56,
+        91,
+        107,
+        125,
+        143,
+        159,
+        177
+      ],
+      "states": [
+        "initial",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.y",
+      "detail": {
+        "actual": 64,
+        "delta": 10,
+        "expected": 54
+      },
+      "occurrenceCount": 11,
+      "rawDifferenceIndexes": [
+        4,
+        22,
+        39,
+        57,
+        75,
+        92,
+        108,
+        126,
+        144,
+        160,
+        178
+      ],
+      "states": [
+        "initial",
+        "scenarios.missing required fields.step-1",
+        "scenarios.invalid email correction.step-1",
+        "scenarios.invalid email correction.step-2",
+        "scenarios.invalid email correction.step-3",
+        "scenarios.invalid email correction.step-4",
+        "scenarios.invalid email correction.step-5",
+        "scenarios.review and edit.step-1",
+        "scenarios.review and edit.step-2",
+        "scenarios.review and edit.step-3",
+        "scenarios.review and edit.step-4"
+      ]
+    }
+  ]
+}

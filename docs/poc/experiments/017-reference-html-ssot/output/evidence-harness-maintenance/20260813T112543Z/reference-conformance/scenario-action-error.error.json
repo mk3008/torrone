@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "scenario-action-error.html",
+    "digest": "ecb5c0a3343eec38c7f1cf073f12d58f3dc78a9b25698af6cf69e4c331b3f66c",
+    "files": [
+      {
+        "path": "scenario-action-error.html",
+        "bytes": 2198,
+        "sha256": "aecc5d81fb204f8ef7b1b442f43e49704c8bf8d0358767dec7a6765ea7b410e5"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 1,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "runtime",
+      "code": "scenario-action-error",
+      "state": "scenarios.lookup.step-1",
+      "target": "missing-action",
+      "detail": "missing-action: missing target"
+    }
+  ]
+}

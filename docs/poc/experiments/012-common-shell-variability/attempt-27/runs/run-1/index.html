@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業務ワークスペース</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <button id="drawer-toggle" class="icon-button" type="button" aria-label="Close navigation" title="Close navigation"><img src="icons/panel-left-close.svg" alt=""></button>
+      <h1>業務ワークスペース</h1>
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to dark theme" title="Switch to dark theme"><img src="icons/moon.svg" alt=""></button>
+    </header>
+    <div class="shell-body">
+      <aside id="drawer" class="drawer" aria-label="ナビゲーション">
+        <div class="drawer-search">
+          <label for="nav-search">メニューを検索</label>
+          <div class="search-control"><img src="icons/search.svg" alt=""><input id="nav-search" type="search" placeholder="項目を検索"></div>
+        </div>
+        <nav class="nav-list" aria-label="固定メニュー"><div id="navigation"></div><p id="no-matches" hidden>一致する項目はありません。</p></nav>
+      </aside>
+      <main class="workspace" tabindex="-1">
+        <section aria-labelledby="workspace-title"><h2 id="workspace-title">スクロール検証用ダミーコンテンツ</h2><div id="numbers" aria-label="連番"></div></section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

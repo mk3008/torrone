@@ -8,6 +8,7 @@ $overrides = @(
 )
 $binding = Join-Path $root 'templates/business-app/product-bindings/record-list.example.yaml'
 $limitedBinding = Join-Path $root 'templates/business-app/product-bindings/record-list-limited.example.yaml'
+$implementationConstraints = Join-Path $root 'templates/business-app/implementation-constraints.example.yaml'
 $required = @(
   'components/search-conditions.md', 'components/result-grid.md', 'components/pagination.md',
   'screen-patterns/record-list.md', 'screen-patterns/record-detail.md',
@@ -15,6 +16,17 @@ $required = @(
 )
 foreach ($relative in $required) { if (-not (Test-Path -LiteralPath (Join-Path $pack $relative))) { throw "Missing standard-pack concept: $relative" } }
 foreach ($path in @($definition) + $overrides + @($binding, $limitedBinding)) { if (-not (Test-Path -LiteralPath $path)) { throw "Missing YAML input: $path" } }
+if (-not (Test-Path -LiteralPath $implementationConstraints)) { throw "Missing optional implementation-constraints example: $implementationConstraints" }
+if ($implementationConstraints.StartsWith($pack, [System.StringComparison]::OrdinalIgnoreCase)) { throw 'Implementation constraints must remain outside the distributable design-manifest pack.' }
+$implementationConstraintText = Get-Content -Raw $implementationConstraints
+foreach ($needle in @('implementation_constraints:', 'render_target:', 'icon_library:', 'asset_policy:')) {
+  if (-not $implementationConstraintText.Contains($needle)) { throw "Implementation-constraints example is missing: $needle" }
+}
+$businessPackReadme = Get-Content -Raw (Join-Path $root 'templates/business-app/README.md')
+$normalizedBusinessPackReadme = [regex]::Replace($businessPackReadme, '\s+', ' ')
+foreach ($needle in @('outside `design-manifest/`', 'not a UI configuration override', 'supplies no implicit default', 'does not authorize dependency installation')) {
+  if (-not $normalizedBusinessPackReadme.Contains($needle)) { throw "Implementation-constraints boundary is missing: $needle" }
+}
 
 $definitionText = Get-Content -Raw $definition
 foreach ($id in @('search_actions_region', 'search_action_order', 'pagination_region', 'result_count_presentation', 'row_action_presentation')) {

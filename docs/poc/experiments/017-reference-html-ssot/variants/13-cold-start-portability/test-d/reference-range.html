@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Compliance activity period reference</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #ffffff; --text: #101d2f; --muted: #54657a; --border: #94a8bd; --accent: #1d73b7; --focus: #86b9ee; --invalid: #b42318; --interval: #dbeeff; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 720px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :is(button, input):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .fixture-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .period-sample { width: min(620px, calc(100% - 48px)); margin: 48px auto; padding: 24px; background: var(--surface); border: 1px solid #c6d2df; border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .period-sample h1 { margin: 0 0 6px; font-size: 22px; }
+    .support { margin: 0 0 20px; color: var(--muted); }
+    .period-editor { position: relative; }
+    .boundary-fields { display: flex; align-items: end; gap: 16px; }
+    .boundary-field { display: grid; gap: 6px; }
+    .boundary-field label { color: #394b60; font-size: 14px; font-weight: 650; }
+    .boundary-input { width: 18ch; min-height: 42px; padding: 8px 11px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+    .boundary-input[aria-invalid="true"] { border-color: var(--invalid); box-shadow: 0 0 0 1px var(--invalid); }
+    .range-panel { position: absolute; z-index: 2; width: 316px; margin-top: 8px; padding: 12px; color: var(--text); background: var(--surface); border: 1px solid #98aabc; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
+    .month-title { margin: 0 0 4px; font-size: 16px; }
+    .active-boundary { margin: 0 0 8px; color: var(--muted); font-size: 13px; }
+    .weekday-row, .month-grid { display: grid; grid-template-columns: repeat(7, 36px); gap: 6px; }
+    .weekday-row { margin-bottom: 4px; color: #4b5e72; font-size: 12px; font-weight: 700; text-align: center; }
+    .weekday-row :first-child, .sunday { color: #a63b32; }
+    .weekday-row :last-child, .saturday { color: #245e9a; }
+    .calendar-day { width: 36px; height: 34px; padding: 0; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; }
+    .calendar-day:hover:not(:disabled):not(.range-boundary) { background: #edf3f9; }
+    .calendar-day[aria-current="date"] { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .calendar-day.range-between { color: #183653; background: var(--interval); border-color: transparent; }
+    .calendar-day.range-boundary { color: #ffffff; background: var(--accent); border-color: #155b92; font-weight: 700; }
+    .calendar-day:disabled { color: #4e5966; background: repeating-linear-gradient(135deg, #f5f7f9, #f5f7f9 4px, #e7ebef 4px, #e7ebef 6px); border-color: #d7dde3; opacity: .72; cursor: not-allowed; }
+    .calendar-day.blank { visibility: hidden; }
+    .range-status { min-height: 24px; margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+    .range-status[data-tone="error"] { color: var(--invalid); }
+  </style>
+</head>
+<body>
+  <div class="fixture-note" data-reference-harness="fixture-label">Fixed review date and future boundary: 2026-10-20</div>
+  <section class="period-sample" aria-labelledby="compliance-period-heading">
+    <h1 id="compliance-period-heading">Compliance activity period</h1>
+    <p class="support">Enter either boundary or both. Selecting a date completes the active boundary in one click.</p>
+    <div class="period-editor" id="compliance-period-editor">
+      <div class="boundary-fields" role="group" aria-label="Compliance activity period boundaries">
+        <div class="boundary-field">
+          <label for="compliance-start">Start date</label>
+          <input class="boundary-input" id="compliance-start" data-ref="range-start" inputmode="numeric" autocomplete="off" placeholder="yyyy-mm-dd" aria-controls="compliance-calendar" aria-expanded="false" aria-describedby="compliance-range-status">
+        </div>
+        <div class="boundary-field">
+          <label for="compliance-end">End date</label>
+          <input class="boundary-input" id="compliance-end" data-ref="range-end" inputmode="numeric" autocomplete="off" placeholder="yyyy-mm-dd" aria-controls="compliance-calendar" aria-expanded="false" aria-describedby="compliance-range-status">
+        </div>
+      </div>
+      <div class="range-panel" id="compliance-calendar" role="dialog" aria-label="Choose a compliance period boundary" hidden>
+        <h2 class="month-title">October 2026</h2>
+        <p class="active-boundary" id="active-boundary-label">Choosing start date</p>
+        <div class="weekday-row" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+        <div class="month-grid" aria-label="Dates in October 2026">
+          <span class="calendar-day blank"></span><span class="calendar-day blank"></span><span class="calendar-day blank"></span><span class="calendar-day blank"></span>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-01">1</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-02">2</button><button class="calendar-day saturday" type="button" tabindex="-1" data-date="2026-10-03">3</button>
+          <button class="calendar-day sunday" type="button" tabindex="-1" data-date="2026-10-04">4</button><button class="calendar-day" type="button" tabindex="-1" data-ref="range-start-day" data-date="2026-10-05">5</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-06">6</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-07">7</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-08">8</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-09">9</button><button class="calendar-day saturday" type="button" tabindex="-1" data-ref="range-midday" data-date="2026-10-10">10</button>
+          <button class="calendar-day sunday" type="button" tabindex="-1" data-date="2026-10-11">11</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-12">12</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-13">13</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-14">14</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-15">15</button><button class="calendar-day" type="button" tabindex="-1" data-ref="range-end-day" data-date="2026-10-16">16</button><button class="calendar-day saturday" type="button" tabindex="-1" data-date="2026-10-17">17</button>
+          <button class="calendar-day sunday" type="button" tabindex="-1" data-date="2026-10-18">18</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-19">19</button><button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-20" aria-current="date" aria-label="October 20, 2026, today">20</button><button class="calendar-day" type="button" tabindex="-1" data-ref="range-future" disabled aria-label="October 21, 2026, unavailable because it is in the future">21</button><button class="calendar-day" type="button" tabindex="-1" disabled>22</button><button class="calendar-day" type="button" tabindex="-1" disabled>23</button><button class="calendar-day" type="button" tabindex="-1" disabled>24</button>
+          <button class="calendar-day" type="button" tabindex="-1" disabled>25</button><button class="calendar-day" type="button" tabindex="-1" disabled>26</button><button class="calendar-day" type="button" tabindex="-1" disabled>27</button><button class="calendar-day" type="button" tabindex="-1" disabled>28</button><button class="calendar-day" type="button" tabindex="-1" disabled>29</button><button class="calendar-day" type="button" tabindex="-1" disabled>30</button><button class="calendar-day" type="button" tabindex="-1" disabled>31</button>
+        </div>
+      </div>
+      <p class="range-status" id="compliance-range-status" data-ref="range-status" aria-live="polite">No boundaries selected. Open boundaries are allowed.</p>
+    </div>
+  </section>
+
+  <script type="application/json" data-reference-scenarios>
+    {"version":1,"scenarios":[
+      {"name":"start-only partial","steps":[{"action":"fill","target":"range-start","value":"20261005"}]},
+      {"name":"end-only partial","steps":[{"action":"fill","target":"range-end","value":"20261016"}]},
+      {"name":"manual range completion","steps":[{"action":"fill","target":"range-start","value":"20261005"},{"action":"fill","target":"range-end","value":"2026-10-16"}]},
+      {"name":"one-click boundary selection","steps":[{"action":"click","target":"range-start"},{"action":"click","target":"range-start-day"},{"action":"click","target":"range-end"},{"action":"click","target":"range-end-day"}]},
+      {"name":"invalid reversed range","steps":[{"action":"fill","target":"range-start","value":"2026-10-16"},{"action":"fill","target":"range-end","value":"2026-10-05"}]},
+      {"name":"future boundary unavailable","steps":[{"action":"click","target":"range-start"},{"action":"click","target":"range-future"}]},
+      {"name":"escape closes boundary calendar","steps":[{"action":"press","target":"range-start","key":"ArrowRight"},{"action":"press","target":"range-start","key":"Escape"}]},
+      {"name":"clear one boundary returns to partial","steps":[{"action":"fill","target":"range-start","value":"2026-10-05"},{"action":"fill","target":"range-end","value":"2026-10-16"},{"action":"fill","target":"range-end","value":""}]}
+    ]}
+  </script>
+  <script>
+    (() => {
+      const limit = '2026-10-20';
+      const editor = document.getElementById('compliance-period-editor');
+      const panel = document.getElementById('compliance-calendar');
+      const panelLabel = document.getElementById('active-boundary-label');
+      const startInput = document.querySelector('[data-ref="range-start"]');
+      const endInput = document.querySelector('[data-ref="range-end"]');
+      const status = document.querySelector('[data-ref="range-status"]');
+      const inputs = { start: startInput, end: endInput };
+      const days = [...panel.querySelectorAll('button[data-date]:not(:disabled)')];
+      let activeBoundary = 'start';
+      let suppressOpen = false;
+      let pointerInsideEditor = false;
+
+      function normalize(raw) {
+        if (!raw) return '';
+        const compact = raw.match(/^(\d{4})(\d{2})(\d{2})$/);
+        const value = compact ? `${compact[1]}-${compact[2]}-${compact[3]}` : raw;
+        const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!match) return null;
+        const date = new Date(Date.UTC(+match[1], +match[2] - 1, +match[3]));
+        if (date.getUTCFullYear() !== +match[1] || date.getUTCMonth() !== +match[2] - 1 || date.getUTCDate() !== +match[3]) return null;
+        return value;
+      }
+
+      function setExpanded(expanded) {
+        startInput.setAttribute('aria-expanded', String(expanded && activeBoundary === 'start'));
+        endInput.setAttribute('aria-expanded', String(expanded && activeBoundary === 'end'));
+      }
+
+      function open(boundary, moveFocus) {
+        activeBoundary = boundary;
+        panelLabel.textContent = boundary === 'start' ? 'Choosing start date' : 'Choosing end date';
+        panel.hidden = false;
+        setExpanded(true);
+        if (moveFocus) requestAnimationFrame(() => (panel.querySelector('[aria-pressed="true"]') || days[0]).focus());
+      }
+
+      function close(returnToInput) {
+        panel.hidden = true;
+        setExpanded(false);
+        if (returnToInput && document.activeElement !== inputs[activeBoundary]) {
+          suppressOpen = true;
+          inputs[activeBoundary].focus();
+          suppressOpen = false;
+        }
+      }
+
+      function values() { return { start: startInput.value, end: endInput.value }; }
+
+      function render() {
+        const current = values();
+        days.forEach((day) => {
+          const value = day.dataset.date;
+          const boundary = value === current.start || value === current.end;
+          const between = current.start && current.end && value > current.start && value < current.end;
+          day.classList.toggle('range-boundary', Boolean(boundary));
+          day.classList.toggle('range-between', Boolean(between));
+          if (boundary) day.setAttribute('aria-pressed', 'true');
+          else day.removeAttribute('aria-pressed');
+        });
+        status.dataset.tone = 'normal';
+        if (current.start && current.end) status.textContent = `Selected ${current.start} through ${current.end}.`;
+        else if (current.start) status.textContent = `Start ${current.start}; end remains open.`;
+        else if (current.end) status.textContent = `Start remains open; end ${current.end}.`;
+        else status.textContent = 'No boundaries selected. Open boundaries are allowed.';
+      }
+
+      function reject(input, text) {
+        input.value = '';
+        input.setAttribute('aria-invalid', 'true');
+        status.dataset.tone = 'error';
+        status.textContent = text;
+        renderDaysOnly();
+        open(input === startInput ? 'start' : 'end', false);
+      }
+
+      function renderDaysOnly() {
+        const current = values();
+        days.forEach((day) => {
+          const value = day.dataset.date;
+          const boundary = value === current.start || value === current.end;
+          const between = current.start && current.end && value > current.start && value < current.end;
+          day.classList.toggle('range-boundary', Boolean(boundary));
+          day.classList.toggle('range-between', Boolean(between));
+          if (boundary) day.setAttribute('aria-pressed', 'true'); else day.removeAttribute('aria-pressed');
+        });
+      }
+
+      function commit(boundary, rawValue) {
+        const input = inputs[boundary];
+        const normalized = normalize(rawValue.trim());
+        if (normalized === null) { reject(input, 'Enter a real date as yyyy-mm-dd or yyyymmdd.'); return false; }
+        if (normalized > limit) { reject(input, 'Future boundaries after 2026-10-20 are unavailable.'); return false; }
+        const other = boundary === 'start' ? endInput.value : startInput.value;
+        if (normalized && other && ((boundary === 'start' && normalized > other) || (boundary === 'end' && normalized < other))) {
+          reject(input, 'The start boundary cannot be after the end boundary.');
+          return false;
+        }
+        input.value = normalized;
+        input.removeAttribute('aria-invalid');
+        render();
+        close(false);
+        return true;
+      }
+
+      [startInput, endInput].forEach((input) => {
+        const boundary = input === startInput ? 'start' : 'end';
+        input.addEventListener('focus', () => { if (!suppressOpen) open(boundary, false); });
+        input.addEventListener('input', () => input.removeAttribute('aria-invalid'));
+        input.addEventListener('change', () => commit(boundary, input.value));
+        input.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') { event.preventDefault(); close(false); }
+          if (event.key === 'ArrowDown') { event.preventDefault(); open(boundary, true); }
+        });
+      });
+      days.forEach((day, index) => {
+        day.addEventListener('click', () => { if (commit(activeBoundary, day.dataset.date)) close(true); });
+        day.addEventListener('keydown', (event) => {
+          const delta = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[event.key];
+          if (delta) { event.preventDefault(); days[Math.max(0, Math.min(days.length - 1, index + delta))].focus(); }
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); if (commit(activeBoundary, day.dataset.date)) close(true); }
+          if (event.key === 'Escape') { event.preventDefault(); close(true); }
+        });
+      });
+      editor.addEventListener('pointerdown', () => {
+        pointerInsideEditor = true;
+        setTimeout(() => { pointerInsideEditor = false; }, 50);
+      });
+      editor.addEventListener('focusout', () => setTimeout(() => {
+        if (!pointerInsideEditor && !editor.contains(document.activeElement)) close(false);
+      }, 0));
+      render();
+    })();
+  </script>
+</body>
+</html>

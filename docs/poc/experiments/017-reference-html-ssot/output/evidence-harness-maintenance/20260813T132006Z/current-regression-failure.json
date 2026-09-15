@@ -1,0 +1,684 @@
+{
+  "status": "fail",
+  "runId": "20260813T132006Z",
+  "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+  "currentCliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+  "completedGates": [
+    {
+      "name": "relational-reuse",
+      "status": "pass",
+      "historicalEntryPointSha256": "EC3CFB8B4D1125FFFFF8503A5B5236F68FE7484193A0A50181331B2CE36C1EE6",
+      "transientEntryPointSha256": "0B4B8B1DACF62231B042537D9D89B15E367E9B07605044AB0939C9D49A0111B1",
+      "entryPointBytesChanged": true,
+      "historicalCoreSha256": "D382601184DED6D351D2BBF5B6213013791AD4A59E0E9DB853B9E68754B59A76",
+      "historicalCliSha256": "7109A169EB8F6EA7C1483B2C14C8A9711560667ECD80DFDCCCC19380E38A8837",
+      "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+      "currentCliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+      "currentImplementationGuardPrepared": true,
+      "implementationHashValueChanged": true,
+      "focusFailureContractSubstitution": false,
+      "output": "relational-reuse",
+      "outputFileCount": 29,
+      "outputSha256": "C22707874C64344AC8E1A9FD1DE1BAB56D944CC8ACC486A8ABA2C40395DD83E0",
+      "reliability": {
+        "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "gateAttempts": 5,
+        "gateTimeouts": 0,
+        "gateRetries": 0,
+        "events": [
+          {
+            "label": "Relational Reference snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3219
+          },
+          {
+            "label": "Relational Reference repeat snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3281
+          },
+          {
+            "label": "Relational Target snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2159
+          },
+          {
+            "label": "Relational Target verification",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3282
+          },
+          {
+            "label": "Relational ambiguity probe",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2099
+          }
+        ],
+        "note": "Development-phase attempts are recorded in the verification record, not added to these final Gate counters."
+      },
+      "log": "logs/relational-reuse.log"
+    },
+    {
+      "name": "partial-reference",
+      "status": "pass",
+      "historicalEntryPointSha256": "D68C733C3EFC94A511AA1CB1FF2E9B436FF6662132DA0852FE8C5BD74B677B1A",
+      "transientEntryPointSha256": "059B5E75D8499FF7C0658FE2496FCD2A81BD56FE5B372E4EA678F3361B653E76",
+      "entryPointBytesChanged": true,
+      "historicalCoreSha256": "14BB52C2C60B9DA9A27B7593C772B09E18A2DA2A79AD7C129827330C0D4077EA",
+      "historicalCliSha256": "7109A169EB8F6EA7C1483B2C14C8A9711560667ECD80DFDCCCC19380E38A8837",
+      "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+      "currentCliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+      "currentImplementationGuardPrepared": true,
+      "implementationHashValueChanged": true,
+      "focusFailureContractSubstitution": false,
+      "output": "partial-reference",
+      "outputFileCount": 87,
+      "outputSha256": "5DF20B711906DC68221F184816771F2AD38F821F02DB6E543BCFB61309A76AF7",
+      "reliability": {
+        "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "gateAttempts": 13,
+        "gateTimeouts": 0,
+        "gateRetries": 0,
+        "events": [
+          {
+            "label": "Common shell snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 4297
+          },
+          {
+            "label": "Common shell repeat snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 4290
+          },
+          {
+            "label": "Search workspace snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3844
+          },
+          {
+            "label": "Search workspace repeat snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3845
+          },
+          {
+            "label": "Integrated Target snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2164
+          },
+          {
+            "label": "Target against shell",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 4332
+          },
+          {
+            "label": "Target against workspace",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3814
+          },
+          {
+            "label": "Whole-page missing-h1 probe",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2144
+          },
+          {
+            "label": "Accepted Reference regression",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 4416
+          },
+          {
+            "label": "Historical negative regression",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 3146
+          },
+          {
+            "label": "Semantic-only Reference regression",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2127
+          },
+          {
+            "label": "Semantic-only negative regression",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2082
+          },
+          {
+            "label": "Partial style negative",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 3318
+          }
+        ],
+        "note": "Development-phase attempts are recorded separately in the verification record."
+      },
+      "log": "logs/partial-reference.log"
+    },
+    {
+      "name": "form-heavy-partial",
+      "status": "pass",
+      "historicalEntryPointSha256": "80EEC72277BAF57D7CFAA9B0109FEF5B5A7E87FCB1FAC680509D34259D938501",
+      "transientEntryPointSha256": "1A8847F7B45094B4EFE43925683AB559EE2F5D59276349C58B2B63D2EC4E20E2",
+      "entryPointBytesChanged": true,
+      "historicalCoreSha256": "14BB52C2C60B9DA9A27B7593C772B09E18A2DA2A79AD7C129827330C0D4077EA",
+      "historicalCliSha256": "7109A169EB8F6EA7C1483B2C14C8A9711560667ECD80DFDCCCC19380E38A8837",
+      "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+      "currentCliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+      "currentImplementationGuardPrepared": true,
+      "implementationHashValueChanged": true,
+      "focusFailureContractSubstitution": false,
+      "output": "form-heavy-partial",
+      "outputFileCount": 88,
+      "outputSha256": "4FCBA4366A27C572F6576A587CE569EC4FF6595871F88B7136EE3E8C25ECAB3C",
+      "reliability": {
+        "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "gateAttempts": 12,
+        "gateTimeouts": 0,
+        "gateRetries": 0,
+        "events": [
+          {
+            "label": "Common shell snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3848
+          },
+          {
+            "label": "Common shell repeat snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3870
+          },
+          {
+            "label": "Form workflow snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3531
+          },
+          {
+            "label": "Form workflow repeat snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3461
+          },
+          {
+            "label": "Integrated Target snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2147
+          },
+          {
+            "label": "Target against common shell",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3964
+          },
+          {
+            "label": "Target against form workflow",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3464
+          },
+          {
+            "label": "Accepted Reference regression",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3948
+          },
+          {
+            "label": "Historical negative regression",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2776
+          },
+          {
+            "label": "Semantic-only Reference regression",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 1986
+          },
+          {
+            "label": "Semantic-only negative regression",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 1992
+          },
+          {
+            "label": "Form relationship negative",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2882
+          }
+        ]
+      },
+      "log": "logs/form-heavy-partial.log"
+    },
+    {
+      "name": "reference-conformance",
+      "status": "pass",
+      "historicalEntryPointSha256": "E179461E45F6406160BED52CB252BC7E0FF61C409C9F3AF74006FC1D19E29A58",
+      "transientEntryPointSha256": "E179461E45F6406160BED52CB252BC7E0FF61C409C9F3AF74006FC1D19E29A58",
+      "entryPointBytesChanged": false,
+      "historicalCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+      "historicalCliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+      "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+      "currentCliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+      "currentImplementationGuardPrepared": false,
+      "implementationHashValueChanged": false,
+      "focusFailureContractSubstitution": false,
+      "output": "reference-conformance",
+      "outputFileCount": 56,
+      "outputSha256": "A1C0BEC2230E3D53E51075490E7EA9255D4A88255F35DC659BB61FCC8DE5824D",
+      "reliability": {
+        "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "sandboxLaunchFailuresBeforeApprovedGate": 3,
+        "note": "The three preliminary Page.enable timeouts occurred under the restricted process sandbox and are not Reference conformance results.",
+        "gateAttempts": 51,
+        "gateTimeouts": 0,
+        "gateRetries": 0,
+        "events": [
+          {
+            "label": "accepted-reference positive preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3814
+          },
+          {
+            "label": "semantic-only-reference positive preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2028
+          },
+          {
+            "label": "mixed-reference positive preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3931
+          },
+          {
+            "label": "relational-reference positive preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2650
+          },
+          {
+            "label": "common-shell-reference positive preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3194
+          },
+          {
+            "label": "search-workspace-reference positive preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2933
+          },
+          {
+            "label": "form-reference positive preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2945
+          },
+          {
+            "label": "valid-fixture positive preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2222
+          },
+          {
+            "label": "Valid fixture repeat preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2189
+          },
+          {
+            "label": "missing-aria-reference before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2116
+          },
+          {
+            "label": "missing-aria-reference broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2154
+          },
+          {
+            "label": "missing-aria-reference restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2156
+          },
+          {
+            "label": "aria-reference-enters-harness before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2141
+          },
+          {
+            "label": "aria-reference-enters-harness broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2196
+          },
+          {
+            "label": "aria-reference-enters-harness restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2191
+          },
+          {
+            "label": "invalid-label-target before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2166
+          },
+          {
+            "label": "invalid-label-target broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2130
+          },
+          {
+            "label": "invalid-label-target restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2148
+          },
+          {
+            "label": "key-inside-harness before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2099
+          },
+          {
+            "label": "key-inside-harness broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2230
+          },
+          {
+            "label": "key-inside-harness restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2214
+          },
+          {
+            "label": "unsupported-invalid-token before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2166
+          },
+          {
+            "label": "unsupported-invalid-token broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2191
+          },
+          {
+            "label": "unsupported-invalid-token restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2197
+          },
+          {
+            "label": "duplicate-stable-identity before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2129
+          },
+          {
+            "label": "duplicate-stable-identity broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2131
+          },
+          {
+            "label": "duplicate-stable-identity restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2182
+          },
+          {
+            "label": "console-error before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2194
+          },
+          {
+            "label": "console-error broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2181
+          },
+          {
+            "label": "console-error restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2182
+          },
+          {
+            "label": "scenario-action-error before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2204
+          },
+          {
+            "label": "scenario-action-error broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2180
+          },
+          {
+            "label": "scenario-action-error restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2215
+          },
+          {
+            "label": "external-network before",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2177
+          },
+          {
+            "label": "external-network broken",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2198
+          },
+          {
+            "label": "external-network restored",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2213
+          },
+          {
+            "label": "Existing semantic ambiguity probe",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2031
+          },
+          {
+            "label": "Existing relational ambiguity probe",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2030
+          },
+          {
+            "label": "Existing missing-h1 probe",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2024
+          },
+          {
+            "label": "Form canary broken Reference snapshot",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2886
+          },
+          {
+            "label": "Form canary broken comparative check",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2917
+          },
+          {
+            "label": "Form canary broken Reference preflight",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2949
+          },
+          {
+            "label": "Form canary restored Reference preflight",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2869
+          },
+          {
+            "label": "Valid fixture comparative baseline",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2279
+          },
+          {
+            "label": "CSS negative comparison",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2164
+          },
+          {
+            "label": "Form Reference comparative regression",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2944
+          },
+          {
+            "label": "Form Target comparative regression",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2917
+          },
+          {
+            "label": "Accepted Reference snapshot regression",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 3900
+          },
+          {
+            "label": "Historical negative comparative regression",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2781
+          },
+          {
+            "label": "Semantic-only Reference snapshot regression",
+            "attempt": 1,
+            "exitCode": 0,
+            "timedOut": false,
+            "elapsedMilliseconds": 2049
+          },
+          {
+            "label": "Semantic-only comparative negative regression",
+            "attempt": 1,
+            "exitCode": 1,
+            "timedOut": false,
+            "elapsedMilliseconds": 2048
+          }
+        ]
+      },
+      "log": "logs/reference-conformance.log"
+    }
+  ],
+  "error": "diagnostic-review current regression failed with exit 1. See C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260813T132006Z\\logs\\diagnostic-review.log."
+}

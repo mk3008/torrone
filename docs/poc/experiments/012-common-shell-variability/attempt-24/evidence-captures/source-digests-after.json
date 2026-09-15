@@ -1,0 +1,52 @@
+[
+  {
+    "path": "runs/run-1/implementation-note.md",
+    "sha256": "a02a1314a970f38acde073ba8ef066131345f5b72618254e380ab41353345a27",
+    "bytes": 493
+  },
+  {
+    "path": "runs/run-1/index.html",
+    "sha256": "fa232c4f90aab1405990e3ce2a0274a059b6b0bab5b0e034e7e02930bb45e148",
+    "bytes": 8727
+  },
+  {
+    "path": "runs/run-2/app.js",
+    "sha256": "f7ce0cbb41377a825a8ddf849bbac68ff91a234a934b33e607b87cdc43061ea1",
+    "bytes": 2835
+  },
+  {
+    "path": "runs/run-2/capture.ps1",
+    "sha256": "9ed28cedd3edd2a58861a5defeb14f071d6b1c455e63f323594a971564969315",
+    "bytes": 693
+  },
+  {
+    "path": "runs/run-2/IMPLEMENTATION.md",
+    "sha256": "e3a6741402123f23d179155c9922b072ad28d845eb105fa5a9171c18e35d4bcb",
+    "bytes": 418
+  },
+  {
+    "path": "runs/run-2/index.html",
+    "sha256": "82a6a3087a78bc0926f8fe7daa852045741dc371485c4663485f359c4aede0d9",
+    "bytes": 1204
+  },
+  {
+    "path": "runs/run-2/lucide-icons.svg",
+    "sha256": "7b0959e72c566f8ce39cf0edeffd6412e142ccb5d8636f5a54b113b4dc89c26a",
+    "bytes": 1250
+  },
+  {
+    "path": "runs/run-2/styles.css",
+    "sha256": "1598ed40ff3bbc0cd1d4f6fe8ecf136b1cd062baff362ac728ac1ed198e354d3",
+    "bytes": 2901
+  },
+  {
+    "path": "runs/run-3/implementation-note.md",
+    "sha256": "c77a1a1bd290f8b635be22ccc9704394d74844885cb39203f7fec090543768ef",
+    "bytes": 697
+  },
+  {
+    "path": "runs/run-3/index.html",
+    "sha256": "0fc416cb2f7e94f772a4f92b5ccbf30d08221e4e451b45befde3d493f46236ec",
+    "bytes": 9535
+  }
+]

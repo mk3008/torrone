@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "attainment": "historical-drift-confirmed",
+  "cause": "The two focus-style errors reproduce in an unmutated exact control against the saved focus-visible baseline and disappear from a fresh same-root control/mutation pair.",
+  "contractDecision": "Exclude the focus signatures from the radius mutation contract; retain them in raw evidence as control/execution-condition observations.",
+  "historicalEvidenceChanged": false,
+  "canonicalSourceChanged": false,
+  "cliCoreChanged": false,
+  "comparisonSemanticsChanged": false,
+  "toleranceChanged": false,
+  "temporaryProbeRestored": true,
+  "attempts": 12,
+  "timeouts": 0,
+  "retries": 0,
+  "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+  "currentCliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+  "entryPointSha256": "908D19382A72867CC4BBE2534CAEEC54569B5821CED7B08847A931ADF5A01101",
+  "contractToolSha256": "4FD25137E1792673A436AB78DF5FE8229B7E29E4EF4380570B5887C5AACAA879"
+}

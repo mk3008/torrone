@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "canonical_source": "Git blob object IDs from the human-approved product fixture candidate",
+  "baseline_commit": "2b3ebb0",
+  "target_roots": [
+    "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate"
+  ],
+  "files": [
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/check-fixture-candidate.ps1",
+      "blob": "426be7a59c4dc4055b15237ccae76a9a97aec290"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/fixture.json",
+      "blob": "b92ebaea742ef9fe022962f46813e6a8366c3b1c"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/preview/index.html",
+      "blob": "eadf018e153fc9b8ec2defba16edc5fd4abbded6"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/preview/preview.js",
+      "blob": "67270b9bf1ff50e6abf303d42a35684b57c5dc1a"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/product-fixture-vnext-candidate/product-input-candidate.md",
+      "blob": "ce7d428f88723649103db326ef931ee2412093ac"
+    }
+  ]
+}

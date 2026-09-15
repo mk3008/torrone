@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "entity-autocomplete.html",
+    "digest": "1dd575e475fc3272462d9c1073255a44784fb0deb5be36ad1710bcfb9f52bd58",
+    "files": [
+      {
+        "path": "entity-autocomplete.html",
+        "bytes": 7334,
+        "sha256": "f7ae21dae37c07965ff488435102b0b1da7a12f8bc3d7dd66fc5e103dc135f03"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "entity-autocomplete-css-negative.html",
+    "digest": "bb48b8d2d833999af0e35ef2bd524f7c216719d3eb9b838246ab0105091f65ac",
+    "files": [
+      {
+        "path": "entity-autocomplete-css-negative.html",
+        "bytes": 6767,
+        "sha256": "8a402fa5de69d356e0a5f6c4f7f9b8a0cc11ba7978745d9c3199782a8287a3dd"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "keyboard entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "press",
+            "target": "entity-query",
+            "key": "ArrowDown"
+          },
+          {
+            "action": "press",
+            "target": "entity-query",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "pointer entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "click",
+            "target": "entity-option-primary"
+          }
+        ]
+      },
+      {
+        "name": "entity no results",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "zzz"
+          }
+        ]
+      },
+      {
+        "name": "clear entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "click",
+            "target": "entity-option-primary"
+          },
+          {
+            "action": "click",
+            "target": "entity-clear"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 10,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 10,
+    "errorSignatures": [
+      {
+        "path": "elements.entity-option-primary.styles.borderRadius",
+        "count": 10
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-1.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-2.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-3.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-1.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.entity no results.step-1.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.entity no results.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-1.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-3.elements.entity-option-primary.styles.borderRadius",
+      "expected": "5px",
+      "actual": "18px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "entry": "relational-ambiguity-probe.html",
+    "digest": "f0c41f3d7cc55caa99186bba62abeb24d9d391439a99e5c4fdb74ff2dcbd55e0",
+    "files": [
+      {
+        "path": "relational-ambiguity-probe.html",
+        "bytes": 585,
+        "sha256": "4410775bec58b6649a501a0fd216efb841b503e5748e7014350f0e16c2275225"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Edg/151.0.4129.78",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": []
+  },
+  "initial": {
+    "mode": "mixed-data-ref-semantic",
+    "contract": {
+      "version": 1,
+      "scenarios": [],
+      "parseError": null
+    },
+    "document": {
+      "title": "Relational ambiguity probe",
+      "lang": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "activeRef": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Ambiguity probe"
+        }
+      ],
+      "landmarks": {
+        "banner": 1,
+        "navigation": 0,
+        "main": 1,
+        "form": 2,
+        "table": 0,
+        "dialog": 0
+      }
+    },
+    "observationBoundary": {
+      "excludedHarnessRoots": 0,
+      "axExcludedHarnessRoots": 0,
+      "axExcludedNodeCount": 0
+    },
+    "duplicateKeys": [],
+    "semanticAmbiguities": [
+      {
+        "key": "semantic:controlled-by:filter-toggle",
+        "count": 2
+      }
+    ],
+    "semanticInventory": {
+      "banner": 1,
+      "button": 1,
+      "form": 2,
+      "main": 1,
+      "textbox": 2
+    },
+    "elements": {
+      "filter-toggle": {
+        "key": "filter-toggle",
+        "tag": "button",
+        "role": "button",
+        "name": "Filters",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": "false",
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": "first-filter second-filter",
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {
+          "controls": [
+            "id:first-filter",
+            "id:second-filter"
+          ]
+        },
+        "styles": {
+          "display": "inline-block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "Arial",
+          "fontSize": "13.3333px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(240, 240, 240)",
+          "borderTopWidth": "2px",
+          "borderTopStyle": "outset",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRightWidth": "2px",
+          "borderRightStyle": "outset",
+          "borderRightColor": "rgb(0, 0, 0)",
+          "borderBottomWidth": "2px",
+          "borderBottomStyle": "outset",
+          "borderBottomColor": "rgb(0, 0, 0)",
+          "borderLeftWidth": "2px",
+          "borderLeftStyle": "outset",
+          "borderLeftColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "paddingTop": "1px",
+          "paddingRight": "6px",
+          "paddingBottom": "1px",
+          "paddingLeft": "6px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "default"
+        },
+        "box": {
+          "x": 8,
+          "y": 92.88,
+          "width": 52.3,
+          "height": 21
+        }
+      },
+      "semantic:role:banner": {
+        "key": "semantic:role:banner",
+        "tag": "header",
+        "role": "banner",
+        "name": "Ambiguity probe",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "\"Noto Sans JP\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(0, 0, 0)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(0, 0, 0)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 8,
+          "y": 21.44,
+          "width": 1424,
+          "height": 46
+        }
+      },
+      "semantic:role:main": {
+        "key": "semantic:role:main",
+        "tag": "main",
+        "role": "main",
+        "name": "Filters First filter Second filter",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "\"Noto Sans JP\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(0, 0, 0)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(0, 0, 0)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 8,
+          "y": 88.88,
+          "width": 1424,
+          "height": 75
+        }
+      }
+    },
+    "accessibilityIssues": [],
+    "accessibilityTree": {
+      "nodeCount": 21,
+      "roles": {
+        "banner": 1,
+        "button": 1,
+        "form": 2,
+        "generic": 2,
+        "heading": 1,
+        "InlineTextBox": 4,
+        "LabelText": 2,
+        "main": 1,
+        "RootWebArea": 1,
+        "StaticText": 4,
+        "textbox": 2
+      },
+      "unnamedInteractive": {}
+    }
+  },
+  "scenarios": []
+}

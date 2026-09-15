@@ -1,0 +1,44 @@
+[
+  {
+    "file": "01-initial-expanded.png",
+    "width": 1440,
+    "height": 900,
+    "sha256": "2b5bb2719a72f7078dab6db35d3b0c9720e92e065dbf20a7dc997d93a860c94d",
+    "bytes": 36218
+  },
+  {
+    "file": "02-parent-collapsed-before.png",
+    "width": 1440,
+    "height": 900,
+    "sha256": "c437f268f2f0a44fc26944332e75e03fbd237ee43c093c7aac763f3b73aa877a",
+    "bytes": 32703
+  },
+  {
+    "file": "03-drawer-hidden.png",
+    "width": 1440,
+    "height": 900,
+    "sha256": "fbf76ca5a61ba3cbe563141bfbe8c7c1a79337f49ee8f7c79685ee6972e7ab39",
+    "bytes": 25666
+  },
+  {
+    "file": "04-drawer-visible-collapsed.png",
+    "width": 1440,
+    "height": 900,
+    "sha256": "27ba355301143e838a22d962b77e845e3c24bc713006a5fcdbba9ce0dc81f4c5",
+    "bytes": 33020
+  },
+  {
+    "file": "05-parent-expanded.png",
+    "width": 1440,
+    "height": 900,
+    "sha256": "b34aa0cbfa7a0a8d6d077173edf08e03d85d2d5fc8120f30e303604983cae4a2",
+    "bytes": 36266
+  },
+  {
+    "file": "06-parent-collapsed-after.png",
+    "width": 1440,
+    "height": 900,
+    "sha256": "c437f268f2f0a44fc26944332e75e03fbd237ee43c093c7aac763f3b73aa877a",
+    "bytes": 32703
+  }
+]

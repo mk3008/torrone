@@ -1,0 +1,1072 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "7c281fdfa4618756a04b660e9f1983f49c8de987bcb6b862b242282013b6af3d",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 34889,
+        "sha256": "868983b43cbe50be0d9eba952ad34c87922194167bcbcaf7a4c0163d30d52056"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "860375a809482caa135bf16cdb2ed8dc56d783e470c4da958ac0dc8c0b0a615f",
+    "files": [
+      {
+        "path": "assets/index-CNlmH6HE.css",
+        "bytes": 8937,
+        "sha256": "e70ae446b90877b230d6ef8fcc57add8e022cb9dcd29e3553f0eb4ca8b73e416"
+      },
+      {
+        "path": "assets/index-D8GKEUUk.js",
+        "bytes": 198213,
+        "sha256": "41c34eba2c4de404a6cbd88df2eb6278d3a11fcfa9ac8fe779f0ab1fb551f181"
+      },
+      {
+        "path": "index.html",
+        "bytes": 466,
+        "sha256": "d5299261850e98b96890373d17d97f69739380428e93a505720db57e0e8359cd"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "navigation parent round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          },
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          }
+        ]
+      },
+      {
+        "name": "navigation selection round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-audit-exports"
+          },
+          {
+            "action": "click",
+            "target": "navigation-access-review"
+          }
+        ]
+      },
+      {
+        "name": "navigation filter round trip",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "policy"
+          },
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "name": "navigation filter no results",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "missing"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "theme change",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "requester-filter",
+            "value": "No matching person"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 109,
+    "uniqueErrorCount": 12,
+    "diagnosticCount": 24,
+    "errorSignatures": [
+      {
+        "path": "elements.filter-toggle.attributes.aria-controls",
+        "count": 20
+      },
+      {
+        "path": "elements.navigation-access-review.styles.paddingLeft",
+        "count": 20
+      },
+      {
+        "path": "elements.navigation-access-review.visible",
+        "count": 2
+      },
+      {
+        "path": "elements.navigation-audit-exports.visible",
+        "count": 2
+      },
+      {
+        "path": "elements.navigation-children.visible",
+        "count": 1
+      },
+      {
+        "path": "elements.navigation-empty.attributes.hidden",
+        "count": 1
+      },
+      {
+        "path": "elements.navigation-empty.styles.display",
+        "count": 1
+      },
+      {
+        "path": "elements.navigation-empty.visible",
+        "count": 1
+      },
+      {
+        "path": "elements.navigation-parent.attributes.aria-controls",
+        "count": 20
+      },
+      {
+        "path": "elements.navigation-parent.visible",
+        "count": 1
+      },
+      {
+        "path": "elements.navigation-toggle.attributes.aria-controls",
+        "count": 20
+      },
+      {
+        "path": "elements.user-menu-toggle.attributes.aria-controls",
+        "count": 20
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-2.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-2.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-2.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-2.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-2.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-2.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-2.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-2.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-2.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-2.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-access-review.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-audit-exports.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-2.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-2.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-2.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-2.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-2.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-access-review.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-audit-exports.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-children.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-empty.visible",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-empty.attributes.hidden",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-empty.styles.display",
+      "expected": "block",
+      "actual": "none"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-parent.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-pagination.box.y",
+      "expected": 656.13,
+      "actual": 671.22,
+      "delta": 15.090000000000032
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-table.box.y",
+      "expected": 432.19,
+      "actual": 447.28,
+      "delta": 15.089999999999975
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.result-pagination.box.y",
+      "expected": 656.13,
+      "actual": 671.22,
+      "delta": 15.090000000000032
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.result-table.box.y",
+      "expected": 432.19,
+      "actual": 447.28,
+      "delta": 15.089999999999975
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 224.59,
+      "delta": 15.090000000000003
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-2.elements.filter-toggle.attributes.aria-controls",
+      "expected": "filter-panel",
+      "actual": "gate-filter-form"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-2.elements.navigation-access-review.styles.paddingLeft",
+      "expected": "26px",
+      "actual": "10px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-2.elements.navigation-parent.attributes.aria-controls",
+      "expected": "identity-navigation-items",
+      "actual": "gate-delivery-links"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-2.elements.navigation-toggle.attributes.aria-controls",
+      "expected": "primary-navigation",
+      "actual": "gate-sidebar"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-2.elements.user-menu-toggle.attributes.aria-controls",
+      "expected": "user-menu-popover",
+      "actual": "gate-account-menu"
+    }
+  ]
+}

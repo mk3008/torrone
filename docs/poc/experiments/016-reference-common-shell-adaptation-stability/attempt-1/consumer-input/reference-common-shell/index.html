@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="reference-source" content="Attempt 23 Run 1 selected common shell" />
+    <title>Reference-first common shell</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell" data-theme="light">
+      <header class="app-header">
+        <button class="icon-button drawer-control" type="button" aria-label="Hide navigation" title="Hide navigation">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM9 5v14M15 9l-3 3 3 3" /></svg>
+        </button>
+        <p class="workspace-name">Reference workspace</p>
+        <button class="icon-button theme-control" type="button" aria-label="Switch to dark palette" title="Switch to dark palette">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z" /></svg>
+        </button>
+      </header>
+      <div class="shell-body">
+        <aside class="drawer" aria-label="Application navigation">
+          <div class="drawer-search">
+            <label for="navigation-search">Search navigation</label>
+            <div class="input-wrap">
+              <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" /><path d="m16 16 4 4" /></svg>
+              <input id="navigation-search" type="search" placeholder="Find an item" autocomplete="off" />
+            </div>
+          </div>
+          <nav class="navigation-list" aria-label="Reference navigation"></nav>
+        </aside>
+        <main class="workspace" tabindex="-1">
+          <section class="workspace-content" aria-labelledby="workspace-heading">
+            <h1 id="workspace-heading">Neutral workspace content</h1>
+            <p>This content is only an overflow fixture for observing the common shell.</p>
+            <ol class="fixture-list" aria-label="Neutral overflow fixture"></ol>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

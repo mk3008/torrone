@@ -1,0 +1,33 @@
+{
+  "comparisons": {
+    "common-shell": {
+      "screenshotFiles": 13,
+      "byteIdenticalFiles": 11,
+      "byteHashMismatches": [
+        "navigation-parent-01.png",
+        "navigation-parent-02.png"
+      ]
+    },
+    "search-workspace": {
+      "screenshotFiles": 10,
+      "byteIdenticalFiles": 10,
+      "byteHashMismatches": []
+    },
+    "form-workflow": {
+      "screenshotFiles": 11,
+      "byteIdenticalFiles": 11,
+      "byteHashMismatches": []
+    },
+    "detail-summary": {
+      "screenshotFiles": 3,
+      "byteIdenticalFiles": 3,
+      "byteHashMismatches": []
+    },
+    "detail-summary-dark": {
+      "screenshotFiles": 3,
+      "byteIdenticalFiles": 3,
+      "byteHashMismatches": []
+    }
+  },
+  "interpretation": "PNG byte hashes are supplementary to state/computed-style comparison."
+}

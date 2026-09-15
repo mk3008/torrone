@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "detail-summary.html",
+    "digest": "5c53a68e87fa10da9b172c735dcf929759cc68e9b08b087828c04eb4b518bc3c",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6743,
+        "sha256": "97b883107e09456005a449d72cd2ab0b04e8987cc5bb49ba1955faae78f6e9f1"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "detail-summary.html",
+    "digest": "02c9362b31922121c870329caa3807966aa4c59275fcf303ff7cebdcdf79aa93",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6644,
+        "sha256": "4928667c82224bce6dabb4cbd3ee068ecae29a366cf53ecf846a53cf00969657"
+      },
+      {
+        "path": "shared-tokens.css",
+        "bytes": 168,
+        "sha256": "d1c29e01efecd358eefb33e7e2d753ec0e872e727758b9214e44b4346187b37f"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "processing notes round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "processing-notes-toggle",
+            "key": "Space"
+          },
+          {
+            "action": "press",
+            "target": "processing-notes-toggle",
+            "key": "Space"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.processing-notes-toggle.styles.outlineColor",
+        "count": 2
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-1.elements.processing-notes-toggle.styles.outlineColor",
+      "expected": "rgb(154, 203, 255)",
+      "actual": "rgb(255, 128, 204)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-2.elements.processing-notes-toggle.styles.outlineColor",
+      "expected": "rgb(154, 203, 255)",
+      "actual": "rgb(255, 128, 204)"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+.customer-search {
+  max-inline-size: 1440px;
+  padding: 32px;
+}
+
+.customer-page-header { margin-block-end: 28px; }
+.customer-page-header h1, .customer-conditions h2, .customer-results h2 { color: var(--text-primary); margin: 0; }
+.customer-page-header h1 { font-size: 1.5rem; line-height: 1.35; }
+.customer-page-header p { color: var(--text-muted); margin: 8px 0 0; }
+
+/* The condition pane is bounded but deliberately unboxed. */
+.customer-conditions { inline-size: 100%; max-inline-size: 720px; }
+.customer-conditions h2, .customer-results h2 { font-size: 1rem; line-height: 1.5; }
+.customer-fields { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); inline-size: 100%; margin-block-start: 16px; }
+.customer-fields > div { display: grid; gap: 6px; min-inline-size: 0; }
+.customer-fields label { color: var(--text-primary); font-size: .875rem; font-weight: 600; }
+.customer-fields input { background-color: var(--surface-background); border: 1px solid var(--border-interactive); border-radius: 2px; block-size: 38px; color: var(--text-primary); font: inherit; inline-size: 100%; min-inline-size: 0; padding: 7px 9px; }
+.customer-condition-actions { display: flex; gap: 8px; inline-size: 100%; justify-content: flex-end; margin-block-start: 18px; }
+
+.customer-primary-action, .customer-secondary-action, .customer-pagination button { border-radius: 2px; cursor: pointer; font: inherit; min-block-size: 36px; padding: 7px 13px; }
+.customer-primary-action { background-color: var(--action-background); border: 1px solid var(--action-background); color: var(--action-foreground); }
+.customer-secondary-action, .customer-pagination button { background-color: var(--surface-background); border: 1px solid var(--border-interactive); color: var(--text-primary); }
+
+/* The result pane owns the static summary/toolbar and pagination. Only the table body scrolls. */
+.customer-results { inline-size: 100%; margin-block-start: 40px; min-inline-size: 0; }
+.customer-result-toolbar { align-items: center; display: flex; gap: 16px; inline-size: 100%; justify-content: space-between; margin-block-end: 12px; }
+.customer-result-toolbar h2 span { color: var(--text-muted); font-size: .875rem; font-weight: 400; margin-inline-start: 6px; }
+.customer-table-scroll { inline-size: 100%; max-inline-size: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+.customer-table { border-collapse: collapse; inline-size: 100%; min-inline-size: 1090px; }
+.customer-table thead th { background-color: var(--table-header-background); color: var(--table-header-foreground); font-size: .8125rem; font-weight: 700; padding: 10px 12px; text-align: start; white-space: nowrap; }
+.customer-table tbody td { background-color: var(--surface-background); border-block-end: 1px solid var(--border-subtle); color: var(--text-primary); font-size: .875rem; padding: 11px 12px; vertical-align: top; white-space: nowrap; }
+.customer-table th:nth-child(1) { inline-size: 96px; }.customer-table th:nth-child(2) { inline-size: 116px; }.customer-table th:nth-child(3) { inline-size: 112px; }.customer-table th:nth-child(4) { inline-size: 190px; }.customer-table th:nth-child(5) { inline-size: 130px; }.customer-table th:nth-child(6) { inline-size: 225px; }.customer-table th:nth-child(7) { inline-size: 185px; }
+
+/* One product-supplied identity column stays visible within the local table scroller. */
+.customer-table .customer-sticky-id { inset-inline-start: 0; position: sticky; }
+.customer-table thead .customer-sticky-id { background-color: var(--table-header-background); border-inline-end: 1px solid var(--border-subtle); z-index: 2; }
+.customer-table tbody .customer-sticky-id { background-color: var(--surface-background); border-inline-end: 1px solid var(--border-subtle); z-index: 1; }
+.customer-table a { color: var(--link); font-weight: 700; }
+.customer-empty-cell { inline-size: 100%; }
+
+.customer-pagination { display: flex; inline-size: 100%; justify-content: flex-end; margin-block-start: 14px; }
+.customer-pagination > div { align-items: center; display: flex; gap: 8px; }
+.customer-pagination [aria-current="page"] { color: var(--text-primary); min-inline-size: 24px; text-align: center; }
+.customer-pagination button:disabled { color: var(--text-muted); cursor: not-allowed; }
+.customer-fields input:focus-visible, .customer-primary-action:focus-visible, .customer-secondary-action:focus-visible, .customer-table-scroll:focus-visible, .customer-table a:focus-visible, .customer-pagination button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+@media (max-width: 720px) {
+  .customer-search { padding: 24px 16px; }
+  .customer-fields { grid-template-columns: minmax(0, 1fr); }
+}

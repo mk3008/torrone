@@ -1,0 +1,43 @@
+{
+  "targetCss": {
+    "path": "consumers/transferability-gate-react/src/target.css",
+    "sha256": "EE0F56102A9BBBC06DFC29F6219B86E35BCEE8F815DF22ECE1A75A4709208D0A",
+    "lines": 409,
+    "selectorCount": 94
+  },
+  "reference": {
+    "path": "reference/index.html#inline-css",
+    "sha256": "B5C231F94EDCCD9E800E236D7C8CB940880BEB211A7D65CB7BF6AAD1A34F4222",
+    "selectorCount": 105,
+    "sharedSelectorCount": 10,
+    "sharedSelectors": [
+      ":root",
+      "body",
+      "button",
+      "caption",
+      "html, body",
+      "table",
+      "tbody tr:hover td:first-child",
+      "tbody tr:last-child td",
+      "td:first-child",
+      "th"
+    ]
+  },
+  "historicalVanilla": {
+    "path": "consumers/vanilla/styles.css",
+    "sha256": "BBEC7A60F160D6D9430EE539874CB34AE47861B1727CBB209B1FFD1C24A50589",
+    "lines": 343,
+    "selectorCount": 71,
+    "sharedSelectorCount": 8,
+    "sharedSelectors": [
+      ":root",
+      "body",
+      "button",
+      "caption",
+      "html, body",
+      "table",
+      "tbody tr:last-child td",
+      "th"
+    ]
+  }
+}

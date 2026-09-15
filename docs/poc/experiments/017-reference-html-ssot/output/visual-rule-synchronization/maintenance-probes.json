@@ -1,0 +1,57 @@
+{
+  "common": {
+    "a-self-contained": {
+      "changedFiles": 3,
+      "changedLocations": 3,
+      "validationCommands": 3,
+      "restoreWrites": 3,
+      "restoreProof": "byte-identical source tree",
+      "missedSynchronizationRisk": "three independent edits can diverge"
+    },
+    "b-token-only": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "validationCommands": 3,
+      "restoreWrites": 1,
+      "restoreProof": "byte-identical source tree",
+      "missedSynchronizationRisk": "one edit; fan-out validation still required"
+    },
+    "c-visual-primitives": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "validationCommands": 3,
+      "restoreWrites": 1,
+      "restoreProof": "byte-identical source tree",
+      "missedSynchronizationRisk": "one edit; fan-out validation still required"
+    }
+  },
+  "local": {
+    "a-self-contained": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "commonLayerEdits": 0,
+      "validationCommands": 1,
+      "restoreWrites": 1,
+      "unaffectedReferenceProof": "common layer, shell, and workspace hashes unchanged",
+      "restoreProof": "byte-identical source tree"
+    },
+    "b-token-only": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "commonLayerEdits": 0,
+      "validationCommands": 1,
+      "restoreWrites": 1,
+      "unaffectedReferenceProof": "common layer, shell, and workspace hashes unchanged",
+      "restoreProof": "byte-identical source tree"
+    },
+    "c-visual-primitives": {
+      "changedFiles": 1,
+      "changedLocations": 1,
+      "commonLayerEdits": 0,
+      "validationCommands": 1,
+      "restoreWrites": 1,
+      "unaffectedReferenceProof": "common layer, shell, and workspace hashes unchanged",
+      "restoreProof": "byte-identical source tree"
+    }
+  }
+}

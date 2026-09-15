@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "date-range.html",
+    "digest": "8ba75b0c760a8168b1939b6295a2419ce49797a9d7d732c705b1cbb9fae4d3fb",
+    "files": [
+      {
+        "path": "date-range.html",
+        "bytes": 24323,
+        "sha256": "d7752444302fb838ac5961593750bdb5586187a8626586bf2121296a6a331fc4"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Edg/151.0.4129.78",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 48
+  },
+  "errors": []
+}

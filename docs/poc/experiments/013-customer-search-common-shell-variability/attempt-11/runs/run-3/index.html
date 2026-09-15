@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="shell.css">
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div class="shared-shell" data-theme="light" data-drawer="open">
+      <header class="header">
+        <button class="icon-button" type="button" data-drawer-toggle aria-controls="workspace-drawer" aria-expanded="true" aria-label="Drawer を閉じる">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <p class="workspace-name">業務ワークスペース</p>
+        <button class="icon-button theme-button" type="button" data-theme-toggle aria-label="ダークモードに切り替える">
+          <span data-theme-icon aria-hidden="true">◐</span>
+        </button>
+      </header>
+
+      <div class="shell-content">
+        <aside class="drawer" id="workspace-drawer" aria-label="業務ワークスペースのナビゲーション">
+          <nav>
+            <ul class="drawer-list">
+              <li><a href="#section-a">セクション A</a></li>
+              <li class="drawer-parent">
+                <a href="#section-b">セクション B</a>
+                <span class="disclosure" aria-label="展開中">⌄</span>
+                <ul class="drawer-children">
+                  <li><a class="current" href="#item-b-1" aria-current="page">項目 B-1</a></li>
+                  <li><a href="#item-b-2">項目 B-2</a></li>
+                </ul>
+              </li>
+              <li><a href="#section-c">セクション C</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <main class="workspace" aria-label="ワークスペース">
+          <section class="customer-search" aria-labelledby="page-title">
+            <header class="customer-page-header">
+              <p class="eyebrow">顧客管理</p>
+              <h1 id="page-title">顧客検索</h1>
+              <p class="page-description">登録済みの顧客情報を検索・確認します。</p>
+            </header>
+
+            <section class="condition-pane" aria-labelledby="condition-title">
+              <h2 id="condition-title">検索条件</h2>
+              <form class="search-form">
+                <div class="condition-fields">
+                  <label>氏名<input name="name" type="search" placeholder="氏名を入力"></label>
+                  <label>生年月日<input name="birthdate" type="date"></label>
+                  <label>電話番号<input name="phone" type="tel" placeholder="例: 03-1234-5678"></label>
+                  <label>メールアドレス<input name="email" type="email" placeholder="name@example.jp"></label>
+                </div>
+                <div class="condition-toolbar">
+                  <div class="action-group">
+                    <button class="primary-action" type="submit">検索</button>
+                    <button class="secondary-action" type="reset">リセット</button>
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <section class="result-pane" aria-labelledby="result-title">
+              <div class="result-summary">
+                <div>
+                  <h2 id="result-title">検索結果 <span>6件</span></h2>
+                </div>
+                <button class="secondary-action" type="button">顧客を追加</button>
+              </div>
+              <table class="result-grid">
+                <thead><tr><th scope="col">顧客ID</th><th scope="col">氏名</th><th scope="col">生年月日</th><th scope="col">住所</th><th scope="col">電話番号</th><th scope="col">メールアドレス</th><th scope="col">備考</th></tr></thead>
+                <tbody>
+                  <tr><td><a href="#customer-000001">C000001</a></td><td>山田 花子</td><td>1984-05-12</td><td>東京都千代田区丸の内 1-1-1</td><td>03-1234-5678</td><td>hanako.yamada@example.jp</td><td>連絡は平日午前希望</td></tr>
+                  <tr><td><a href="#customer-000002">C000002</a></td><td>佐藤 恒一</td><td>1971-11-28</td><td>神奈川県横浜市西区みなとみらい 4-5-6</td><td>045-234-5678</td><td>koichi.sato@example.jp</td><td>—</td></tr>
+                  <tr><td><a href="#customer-000003">C000003</a></td><td>鈴木 美咲</td><td>1993-08-19</td><td>埼玉県さいたま市大宮区桜木町 2-3-4</td><td>048-345-6789</td><td>misaki.suzuki@example.jp</td><td>メール連絡を希望</td></tr>
+                  <tr><td><a href="#customer-000004">C000004</a></td><td>高橋 健</td><td>1966-02-09</td><td>千葉県千葉市中央区中央 5-6-7</td><td>043-456-7890</td><td>ken.takahashi@example.jp</td><td>—</td></tr>
+                  <tr><td><a href="#customer-000005">C000005</a></td><td>伊藤 彩</td><td>1988-12-03</td><td>東京都新宿区西新宿 8-9-10</td><td>03-5678-9012</td><td>aya.ito@example.jp</td><td>住所変更の確認待ち</td></tr>
+                  <tr><td><a href="#customer-000006">C000006</a></td><td>渡辺 裕子</td><td>1979-06-24</td><td>東京都品川区東品川 3-4-5</td><td>03-6789-0123</td><td>yuko.watanabe@example.jp</td><td>—</td></tr>
+                </tbody>
+              </table>
+              <nav class="pagination" aria-label="検索結果のページ移動"><button class="secondary-action" type="button">前へ</button><span aria-current="page">1</span><button class="secondary-action" type="button">次へ</button></nav>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="shell.js"></script>
+    <script src="page.js"></script>
+  </body>
+</html>

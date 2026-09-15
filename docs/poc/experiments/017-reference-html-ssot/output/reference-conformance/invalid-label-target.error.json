@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "invalid-label-target.html",
+    "digest": "f229dc7d8108197f477a92681a124bca2d1309506d16eb92b208996fab835737",
+    "files": [
+      {
+        "path": "invalid-label-target.html",
+        "bytes": 2195,
+        "sha256": "05601e01c94dc39f89670f1e04c6884aee7d1a2d11fbc1712611cc4607524dc9"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "absolute-dom",
+      "code": "invalid-label-for-target",
+      "state": "initial",
+      "target": "id:query-label",
+      "detail": "Label for=\"missing-query\" has no labelable control."
+    },
+    {
+      "source": "absolute-dom",
+      "code": "invalid-label-for-target",
+      "state": "scenarios.lookup.step-1",
+      "target": "id:query-label",
+      "detail": "Label for=\"missing-query\" has no labelable control."
+    }
+  ]
+}

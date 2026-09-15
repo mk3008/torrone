@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "valid.html",
+    "digest": "24aec1aef295f021dccbd962c9c4072834b9830a7e85872d67cc8b2e897dbf5d",
+    "files": [
+      {
+        "path": "valid.html",
+        "bytes": 2194,
+        "sha256": "d8d6c85da0b5e4197e87986f5d13f1e97ff1e201bd9b1d2c7f638d0c3d3b54fd"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "style-negative.html",
+    "digest": "44fb5fd151a76d54453c9cdec0ce9a0bbf370573d7311d07682d34837a942b75",
+    "files": [
+      {
+        "path": "style-negative.html",
+        "bytes": 2261,
+        "sha256": "a7ba77ce14fc76e73609311b5f7a19dda9dd0481ffc08111eb9801e3e9ff11d3"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "lookup",
+        "steps": [
+          {
+            "action": "click",
+            "target": "lookup-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.lookup-action.styles.borderRadius",
+        "count": 2
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.lookup-action.styles.borderRadius",
+      "expected": "0px",
+      "actual": "9px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.lookup.step-1.elements.lookup-action.styles.borderRadius",
+      "expected": "0px",
+      "actual": "9px"
+    }
+  ]
+}

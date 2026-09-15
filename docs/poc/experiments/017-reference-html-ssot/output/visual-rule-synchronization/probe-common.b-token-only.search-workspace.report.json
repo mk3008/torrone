@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "search-workspace.html",
+    "digest": "2e6f1a4ae8a04764a8d7f0eff0b6e597b4aaab3bb5f8f5a04fe36b8ad88f2f45",
+    "files": [
+      {
+        "path": "search-workspace.html",
+        "bytes": 12277,
+        "sha256": "3078962d0880a28658691922d2f6cb6e9e3a9239bce735994ec71ababbfd4c3b"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "search-workspace.html",
+    "digest": "f8cf776795e6b1594c676f44cd9d8186c5b029fc7aab6744df8b8869d00c4b83",
+    "files": [
+      {
+        "path": "search-workspace.html",
+        "bytes": 12253,
+        "sha256": "13b5b808be629dcfcc0ac4205ed7cbb44d777fd8666e46837fcb9853188d9468"
+      },
+      {
+        "path": "shared-tokens.css",
+        "bytes": 76,
+        "sha256": "3840956893909b22c089af0b9b53bc05fdfc2a8f5783b3d09852d0054e485b84"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "query-filter",
+            "value": "No match"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      },
+      {
+        "name": "filter pointer round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "filter-toggle"
+          },
+          {
+            "action": "click",
+            "target": "filter-toggle"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.filter-toggle.styles.outlineColor",
+        "count": 2
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(255, 0, 170)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(255, 0, 170)"
+    }
+  ]
+}

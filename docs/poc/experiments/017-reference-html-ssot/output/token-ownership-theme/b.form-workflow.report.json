@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "form-workflow.html",
+    "digest": "a403a13b83a22fc3511d59f1a6cce878fcc625f044a834283affefd3214e167c",
+    "files": [
+      {
+        "path": "form-workflow.html",
+        "bytes": 15931,
+        "sha256": "a4e3f072767604623763a8841aabe41780531865d7136e8df19475e1eda1b1f4"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "form-workflow.html",
+    "digest": "05c4ecb5830b66ffc21d3cba51e83b35ba0b99d1f9624b468107d1592b766ff9",
+    "files": [
+      {
+        "path": "form-workflow.html",
+        "bytes": 15909,
+        "sha256": "73afc2bf72f2bd8d495a2f458deefb8e878f04c39818223a82bb22e1b5bbba0f"
+      },
+      {
+        "path": "shared-tokens.css",
+        "bytes": 165,
+        "sha256": "8e1e66299c9144ccb495a1a4b6aa77aa53a87025ceaa73f1a56f965cc7c87abc"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "missing required fields",
+        "steps": [
+          {
+            "action": "click",
+            "target": "review-action"
+          }
+        ]
+      },
+      {
+        "name": "invalid email correction",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "form-primary-field",
+            "value": "Replace dock leveler"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "not-an-email"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "morgan.lee@example.com"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          }
+        ]
+      },
+      {
+        "name": "review and edit",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "form-primary-field",
+            "value": "Replace dock leveler"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "morgan.lee@example.com"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          },
+          {
+            "action": "click",
+            "target": "edit-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 0,
+    "errorSignatures": []
+  },
+  "differences": []
+}

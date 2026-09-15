@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "entry": "semantic-ambiguity-probe.html",
+    "digest": "24176be1c83a19ada5a5c1dea004cd842c272d6981261dc87ddaa7604c6c9761",
+    "files": [
+      {
+        "path": "semantic-ambiguity-probe.html",
+        "bytes": 1292,
+        "sha256": "14819fe592df9046a31fc44f8651578eb70343aee1ed044c7106da2b4bf4e511"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": []
+  },
+  "initial": {
+    "mode": "heuristic-semantic",
+    "contract": {
+      "version": 1,
+      "scenarios": [],
+      "parseError": null
+    },
+    "document": {
+      "title": "Semantic ambiguity probe",
+      "lang": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "activeRef": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Operations"
+        },
+        {
+          "level": 2,
+          "text": "Scoped task heading"
+        }
+      ],
+      "landmarks": {
+        "banner": 2,
+        "navigation": 2,
+        "main": 1,
+        "form": 0,
+        "table": 2,
+        "dialog": 0
+      }
+    },
+    "observationBoundary": {
+      "excludedHarnessRoots": 0,
+      "axExcludedHarnessRoots": 0,
+      "axExcludedNodeCount": 0
+    },
+    "duplicateKeys": [],
+    "semanticAmbiguities": [
+      {
+        "key": "semantic:aria-live:polite",
+        "count": 2
+      },
+      {
+        "key": "semantic:role:button:aria-expanded",
+        "count": 2
+      },
+      {
+        "key": "semantic:role:button:aria-pressed",
+        "count": 2
+      },
+      {
+        "key": "semantic:role:menuitem",
+        "count": 2
+      },
+      {
+        "key": "semantic:role:navigation",
+        "count": 2
+      },
+      {
+        "key": "semantic:role:table",
+        "count": 2
+      }
+    ],
+    "semanticInventory": {
+      "banner": 1,
+      "button": 4,
+      "link": 2,
+      "main": 1,
+      "menu": 1,
+      "menuitem": 2,
+      "navigation": 2,
+      "table": 2
+    },
+    "elements": {
+      "semantic:role:banner": {
+        "key": "semantic:role:banner",
+        "tag": "header",
+        "role": "banner",
+        "name": "Operations",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "aria-activedescendant": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "\"Noto Sans JP\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(0, 0, 0)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(0, 0, 0)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 8,
+          "y": 21.44,
+          "width": 1424,
+          "height": 46
+        }
+      },
+      "semantic:role:main": {
+        "key": "semantic:role:main",
+        "tag": "main",
+        "role": "main",
+        "name": "Scoped task heading First disclosure Second disclosure Theme Density Profile Sign out First status Second status First result setA Second result setB",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "aria-activedescendant": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "\"Noto Sans JP\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(0, 0, 0)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(0, 0, 0)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 8,
+          "y": 156.78,
+          "width": 1424,
+          "height": 429.91
+        }
+      },
+      "semantic:role:menu": {
+        "key": "semantic:role:menu",
+        "tag": "div",
+        "role": "menu",
+        "name": "Profile Sign out",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "aria-activedescendant": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "\"Noto Sans JP\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(0, 0, 0)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(0, 0, 0)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 8,
+          "y": 261.69,
+          "width": 1424,
+          "height": 25
+        }
+      }
+    },
+    "accessibilityIssues": [],
+    "accessibilityTree": {
+      "nodeCount": 65,
+      "roles": {
+        "banner": 1,
+        "button": 4,
+        "caption": 2,
+        "cell": 2,
+        "generic": 2,
+        "heading": 2,
+        "InlineTextBox": 20,
+        "link": 2,
+        "main": 1,
+        "menu": 1,
+        "menuitem": 2,
+        "navigation": 2,
+        "paragraph": 2,
+        "RootWebArea": 1,
+        "row": 2,
+        "sectionheader": 1,
+        "StaticText": 16,
+        "table": 2
+      },
+      "unnamedInteractive": {}
+    }
+  },
+  "scenarios": []
+}

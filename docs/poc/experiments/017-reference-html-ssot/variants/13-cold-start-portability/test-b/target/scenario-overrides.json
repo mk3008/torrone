@@ -1,0 +1,11 @@
+{
+  "overrides": [
+    { "scenario": "compact range tab commit", "step": 2, "value": "2026-08-10 / 2026-08-14" },
+    { "scenario": "compact complete manual range", "step": 2, "value": "2026-08-10 / 2026-08-14" },
+    { "scenario": "manual start-only range", "step": 2, "value": "2026-08-10 /" },
+    { "scenario": "manual end-only range", "step": 2, "value": "/ 2026-08-14" },
+    { "scenario": "reversed range validation", "step": 2, "value": "2026-08-14 / 2026-08-10" },
+    { "scenario": "invalid range date", "step": 2, "value": "2026-02-30 / 2026-08-14" },
+    { "scenario": "unavailable range date", "step": 2, "value": "2026-08-10 / 2026-08-20" }
+  ]
+}

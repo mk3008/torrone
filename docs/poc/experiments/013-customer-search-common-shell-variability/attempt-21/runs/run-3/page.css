@@ -1,0 +1,45 @@
+* { box-sizing: border-box; }
+
+.customer-search { width: 100%; color: var(--text-primary); }
+.page-header { margin-bottom: 28px; }
+.page-header h1, .conditions-pane h2, .result-summary h2 { margin: 0; color: var(--text-primary); }
+.page-header h1 { font-size: 1.6rem; line-height: 1.3; }
+.page-header p { margin: 8px 0 0; color: var(--text-muted); }
+
+.conditions-pane { width: 100%; max-width: 840px; margin-bottom: 36px; }
+.conditions-pane h2 { font-size: 1rem; margin-bottom: 14px; }
+.condition-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; width: 100%; }
+.condition-fields label { display: grid; gap: 7px; min-width: 0; color: var(--text-primary); font-size: .9rem; font-weight: 600; }
+.condition-fields input { width: 100%; min-width: 0; min-height: 38px; border: 1px solid var(--border-interactive); border-radius: 3px; padding: 7px 9px; color: var(--text-primary); background-color: var(--surface-background); font: inherit; }
+.condition-toolbar { display: flex; justify-content: flex-start; width: 100%; margin-top: 20px; }
+.condition-actions, .collection-actions, .pagination-actions { display: flex; align-items: center; gap: 10px; }
+button { min-height: 36px; border: 1px solid var(--border-interactive); border-radius: 3px; padding: 7px 13px; color: var(--text-primary); background-color: var(--surface-background); font: inherit; cursor: pointer; }
+button:hover { border-color: var(--link); }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+.primary-action { border-color: var(--action-background); color: var(--action-foreground); background-color: var(--action-background); }
+.secondary-action { color: var(--link); }
+
+.results-pane { width: 100%; min-width: 0; }
+.result-toolbar { display: flex; justify-content: space-between; align-items: end; gap: 16px; width: 100%; margin-bottom: 12px; }
+.result-summary h2 { font-size: 1rem; }
+.result-summary h2 span { font-size: .9rem; font-weight: 400; color: var(--text-muted); }
+.collection-actions { margin-inline-start: auto; }
+.grid-region { width: 100%; min-width: 0; border: 1px solid var(--border-subtle); }
+.customer-grid { width: 100%; min-width: 1060px; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+.customer-grid th, .customer-grid td { padding: 11px 12px; border: 0; border-bottom: 1px solid var(--border-subtle); text-align: start; vertical-align: middle; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.customer-grid thead th { color: var(--table-header-foreground); background-color: var(--table-header-background); font-size: .85rem; font-weight: 700; }
+.customer-grid tbody { display: block; width: 100%; overflow-x: auto; overflow-y: hidden; }
+.customer-grid thead, .customer-grid tbody tr { display: table; width: 100%; min-width: 1060px; table-layout: fixed; }
+.customer-grid tbody td { color: var(--text-primary); background-color: var(--surface-background); }
+.customer-grid tbody tr:last-child td { border-bottom: 0; }
+.customer-grid .sticky-id { position: sticky; inset-inline-start: 0; z-index: 1; width: 108px; min-width: 108px; max-width: 108px; border-inline-end: 1px solid var(--border-subtle); }
+.customer-grid thead .sticky-id { z-index: 2; }
+.customer-grid tbody .sticky-id { background-color: var(--surface-background); }
+.customer-grid tbody.is-scrolled .sticky-id { box-shadow: 4px 0 6px color-mix(in srgb, var(--text-primary) 14%, transparent); }
+.customer-grid a { color: var(--link); font-weight: 700; }
+.id-col { width: 108px; }.name-col { width: 140px; }.birth-col { width: 125px; }.address-col { width: 190px; }.phone-col { width: 145px; }.email-col { width: 230px; }.notes-col { width: 120px; }.spacer-col { width: auto; }
+.pagination-footer { display: flex; justify-content: flex-end; width: 100%; margin-top: 12px; }
+.pagination-actions span { min-width: 36px; text-align: center; color: var(--text-primary); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 640px) { .condition-fields { grid-template-columns: minmax(0, 1fr); } .result-toolbar { align-items: flex-start; flex-direction: column; } .collection-actions { margin-inline-start: 0; } }

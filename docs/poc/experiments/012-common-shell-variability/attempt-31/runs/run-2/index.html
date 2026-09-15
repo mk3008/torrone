@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業務ワークスペース</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell" id="shell">
+    <header class="header" aria-label="業務ワークスペース ヘッダー">
+      <div class="header-leading">
+        <button class="icon-button" id="drawer-toggle" type="button" aria-label="Close navigation" title="Close navigation">
+          <img id="drawer-icon" src="icons/panel-left-close.svg" alt="">
+        </button>
+      </div>
+      <p class="workspace-name">業務ワークスペース</p>
+      <div class="header-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+          <img id="theme-icon" src="icons/moon.svg" alt="">
+        </button>
+      </div>
+    </header>
+    <div class="shell-body">
+      <aside class="drawer" id="drawer" aria-label="ナビゲーション">
+        <div class="drawer-search">
+          <label for="nav-search">メニューを検索</label>
+          <div class="search-field"><img src="icons/search.svg" alt=""><input id="nav-search" type="search" placeholder="項目を検索"></div>
+        </div>
+        <nav class="navigation" aria-label="固定メニュー">
+          <div class="nav-scroll" id="nav-scroll">
+            <div class="nav-group" id="group-01">
+              <button class="nav-row parent-row" type="button" aria-expanded="true" aria-controls="group-01-children">
+                <span>グループ 01</span><img class="chevron" src="icons/chevron-down.svg" alt="">
+              </button>
+              <div class="child-list" id="group-01-children">
+                <button class="nav-row child-row is-current" type="button" aria-current="page" data-item="項目 01-01">項目 01-01</button>
+                <button class="nav-row child-row" type="button" data-item="項目 01-02">項目 01-02</button>
+              </div>
+            </div>
+            <div class="leaf-list" id="leaf-list"></div>
+            <p class="no-matches" id="no-matches" hidden>一致する項目はありません</p>
+          </div>
+        </nav>
+      </aside>
+      <main class="workspace" id="workspace" tabindex="-1">
+        <div class="page-grid">
+          <section class="workspace-content" aria-labelledby="workspace-title">
+            <h1 id="workspace-title">スクロール検証用ダミーコンテンツ</h1>
+            <ol class="number-list" id="number-list" aria-label="ダミー連番"></ol>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

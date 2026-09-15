@@ -1,0 +1,92 @@
+{
+  "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "gateAttempts": 12,
+  "gateTimeouts": 0,
+  "gateRetries": 0,
+  "events": [
+    {
+      "label": "Common shell snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3820
+    },
+    {
+      "label": "Common shell repeat snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3968
+    },
+    {
+      "label": "Form workflow snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3411
+    },
+    {
+      "label": "Form workflow repeat snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3529
+    },
+    {
+      "label": "Integrated Target snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2081
+    },
+    {
+      "label": "Target against common shell",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3915
+    },
+    {
+      "label": "Target against form workflow",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3446
+    },
+    {
+      "label": "Accepted Reference regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3963
+    },
+    {
+      "label": "Historical negative regression",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2809
+    },
+    {
+      "label": "Semantic-only Reference regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2082
+    },
+    {
+      "label": "Semantic-only negative regression",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2062
+    },
+    {
+      "label": "Form relationship negative",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2863
+    }
+  ]
+}

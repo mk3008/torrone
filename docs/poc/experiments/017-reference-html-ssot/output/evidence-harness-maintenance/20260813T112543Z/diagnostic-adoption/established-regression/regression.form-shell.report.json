@@ -1,0 +1,1617 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "common-shell.html",
+    "digest": "acbff1502c40f30c960971ca541138ea24add86ef29053c4303e11bc78285752",
+    "files": [
+      {
+        "path": "common-shell.html",
+        "bytes": 15436,
+        "sha256": "08ef898e61804197e5a53a221a4fd5248744beef4a7398045622d12750792527"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "dc4e519053d216187fc0bbacbe74d69636a9561c4b04909f3faccc79ebe2fe30",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 27033,
+        "sha256": "84dbfb367754c963a8897c64b84b887b61cf30d257ec7a1a3d791253529fe048"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation visibility",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "navigation parent",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          },
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          }
+        ]
+      },
+      {
+        "name": "navigation filter no match",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "not present"
+          },
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "name": "navigation selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-secondary"
+          },
+          {
+            "action": "click",
+            "target": "navigation-current"
+          }
+        ]
+      },
+      {
+        "name": "theme round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          },
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "target": "user-menu-toggle",
+            "key": "Escape"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 247,
+    "errorSignatures": []
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation visibility.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no match.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme round trip.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.cancel-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.confirm-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.edit-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-choice-group",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-contact-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-contact-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-date-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-error-summary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-notes-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-primary-error",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-primary-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-review-heading",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-review-region",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.form-select-field",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.review-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.review-actions",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

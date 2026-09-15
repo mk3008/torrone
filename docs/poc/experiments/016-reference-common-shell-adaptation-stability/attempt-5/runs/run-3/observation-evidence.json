@@ -1,0 +1,48 @@
+{
+  "schema": "attempt-5-observation-recovery/v1",
+  "observer": "Codex in-app browser",
+  "viewport": { "width": 1440, "height": 900 },
+  "origin": "http://127.0.0.1:4175",
+  "captures": [
+    {
+      "state": "light-drawer-open",
+      "url": "/?theme=light&drawer=open&workspace=expanded&current=Overview",
+      "drawerPresent": true,
+      "workspaceExpanded": true,
+      "selectedSection": false,
+      "screenshotBytes": 70647
+    },
+    {
+      "state": "dark-drawer-open",
+      "url": "/?theme=dark&drawer=open&workspace=expanded&current=Overview",
+      "drawerPresent": true,
+      "workspaceExpanded": true,
+      "selectedSection": false,
+      "screenshotBytes": 73360
+    },
+    {
+      "state": "drawer-hidden",
+      "url": "/?theme=light&drawer=hidden&workspace=expanded&current=Overview",
+      "drawerPresent": false,
+      "workspaceExpanded": false,
+      "selectedSection": false,
+      "screenshotBytes": 51017
+    },
+    {
+      "state": "parent-collapsed",
+      "url": "/?theme=light&drawer=open&workspace=collapsed&current=Overview",
+      "drawerPresent": true,
+      "workspaceExpanded": false,
+      "selectedSection": false,
+      "screenshotBytes": 70423
+    },
+    {
+      "state": "selected-section-01",
+      "url": "/?theme=light&drawer=open&workspace=expanded&current=Section%2001",
+      "drawerPresent": true,
+      "workspaceExpanded": true,
+      "selectedSection": true,
+      "screenshotBytes": 70855
+    }
+  ]
+}

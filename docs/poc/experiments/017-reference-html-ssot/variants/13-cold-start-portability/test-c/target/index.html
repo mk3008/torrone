@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <title>Facility access badge renewals</title>
+</head>
+<body data-color-mode="day">
+  <header class="top-rail">
+    <div class="rail-start">
+      <button type="button" data-ref="navigation-toggle" data-ui="rail-icon" aria-controls="badge-route-drawer" aria-expanded="true" aria-label="Hide navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M9 4v16M15 9l-3 3 3 3"></path></svg>
+      </button>
+      <strong class="product-wordmark">Workplace Security</strong>
+    </div>
+    <div class="rail-end">
+      <button type="button" data-ref="theme-toggle" data-ui="rail-icon" aria-pressed="false" aria-label="Use dark theme">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.3A8.5 8.5 0 0 1 8.7 4a8.5 8.5 0 1 0 11.3 11.3Z"></path></svg>
+      </button>
+      <div class="profile-anchor">
+        <button type="button" data-ref="user-menu-toggle" data-ui="rail-icon" aria-controls="badge-profile-popover" aria-expanded="false" aria-haspopup="menu" aria-label="Open user menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+        </button>
+        <div id="badge-profile-popover" role="menu" data-ui="profile-popover" hidden>
+          <p class="profile-person">Avery Chen</p>
+          <p class="profile-role">Access control coordinator</p>
+          <button type="button" role="menuitem" data-ui="menu-command">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="workbench" data-drawer="open">
+    <nav id="badge-route-drawer" class="route-drawer" aria-label="Primary navigation">
+      <label class="route-finder" for="badge-route-filter">Filter navigation
+        <input id="badge-route-filter" type="search" data-ref="navigation-filter" autocomplete="off" placeholder="Find a menu item">
+      </label>
+      <div class="route-overflow">
+        <ul class="route-list">
+          <li data-route-item><a data-route href="#facilities">Facilities overview</a></li>
+          <li data-route-item>
+            <button type="button" data-ref="navigation-parent" data-ui="route-parent" aria-expanded="true" aria-controls="badge-access-routes">
+              <span>Access management</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+            </button>
+            <ul id="badge-access-routes" data-ui="subroutes">
+              <li data-route-item><a data-route href="#badge-renewals" data-ref="navigation-current" aria-current="page">Badge renewals</a></li>
+              <li data-route-item><a data-route href="#badge-requests" data-ref="navigation-secondary">Badge requests</a></li>
+            </ul>
+          </li>
+          <li data-route-item><a data-route href="#cardholders">Cardholders</a></li>
+          <li data-route-item><a data-route href="#zones">Access zones</a></li>
+          <li data-route-item><a data-route href="#sites">Sites</a></li>
+          <li data-route-item><a data-route href="#visitors">Visitors</a></li>
+          <li data-route-item><a data-route href="#security-policies">Security policies</a></li>
+          <li data-route-item><a data-route href="#audit-log">Audit log</a></li>
+          <li data-route-item><a data-route href="#settings">Settings</a></li>
+        </ul>
+        <p data-ref="navigation-empty" data-ui="route-empty" hidden>No navigation items found.</p>
+      </div>
+    </nav>
+
+    <main class="queue-canvas">
+      <div class="queue-intro">
+        <div>
+          <h1>Facility access badge renewal queue</h1>
+          <p>Review badges due to expire before access is interrupted.</p>
+        </div>
+        <button type="button" data-ref="create-action" data-tone="primary">New renewal review</button>
+      </div>
+
+      <section data-ref="filter-panel" data-surface="panel" class="query-card" aria-labelledby="badge-filter-title">
+        <div class="card-bar">
+          <h2 id="badge-filter-title">Search filters</h2>
+          <button type="button" data-ref="filter-toggle" data-tone="secondary" aria-controls="badge-query-form" aria-expanded="true">Hide filters</button>
+        </div>
+        <form id="badge-query-form" aria-labelledby="badge-filter-title">
+          <div class="query-fields">
+            <label>Cardholder or badge ID
+              <input type="search" data-ref="query-filter" autocomplete="off" placeholder="Name or badge ID">
+            </label>
+            <label>Renewal status
+              <select><option>All statuses</option><option>Manager review</option><option>Security review</option><option>On hold</option></select>
+            </label>
+            <label>Facility
+              <select><option>All facilities</option><option>South Campus</option><option>Harbor Annex</option><option>North Operations</option></select>
+            </label>
+          </div>
+          <div class="query-actions">
+            <button type="submit" data-ref="search-action" data-tone="secondary">Search</button>
+            <button type="reset" data-ref="clear-action" data-tone="secondary">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section data-ref="result-panel" data-surface="panel" class="queue-card" aria-labelledby="badge-results-title">
+        <div class="card-bar">
+          <h2 id="badge-results-title">Badge renewal reviews</h2>
+        </div>
+        <p class="screen-reader-message" aria-live="polite">Search has not been run.</p>
+        <div data-ref="result-initial" data-ui="result-message">
+          <div><h3>Search for badge renewals</h3><p>Set filters as needed, then select Search.</p></div>
+        </div>
+        <div data-ref="result-empty" data-ui="result-message" hidden>
+          <div><h3>No badge renewals found</h3><p>Adjust the filters and search again.</p></div>
+        </div>
+        <div class="grid-scroll" hidden>
+          <table data-ref="result-table">
+            <thead><tr><th>Badge ID</th><th>Cardholder</th><th>Facility</th><th>Expires</th><th>Access level</th><th>Review status</th></tr></thead>
+            <tbody>
+              <tr><td><a href="#badge-BADGE-5182">BADGE-5182</a></td><td>Casey Morgan</td><td>South Campus</td><td>Sep 30, 2026</td><td>Standard</td><td><span data-ref="status-badge" data-ui="attention-pill">Manager review</span></td></tr>
+              <tr><td><a href="#badge-BADGE-5167">BADGE-5167</a></td><td>Riley Patel</td><td>Harbor Annex</td><td>Oct 5, 2026</td><td>Restricted lab</td><td>Security review</td></tr>
+              <tr><td><a href="#badge-BADGE-5149">BADGE-5149</a></td><td>Jamie Torres</td><td>North Operations</td><td>Oct 11, 2026</td><td>Standard</td><td>On hold</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <nav data-ref="result-pagination" data-ui="pager" aria-label="Badge renewal result pages" hidden>
+          <p class="pager-context">More results may be available. Refine filters to narrow the list.</p>
+          <div class="pager-actions">
+            <button type="button" data-ref="page-previous" disabled>Previous</button>
+            <span data-ref="page-current" class="pager-index">Page 1</span>
+            <button type="button" data-ref="page-next">Next</button>
+          </div>
+        </nav>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

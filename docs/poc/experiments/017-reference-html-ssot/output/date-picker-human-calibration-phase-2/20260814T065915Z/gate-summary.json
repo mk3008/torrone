@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "gate": "DatePicker Human Calibration Phase 2",
+  "runId": "20260814T065915Z",
+  "status": "meets",
+  "authority": {
+    "humanApprovedReference": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\review\\date-picker-human-calibration\\adjusted\\date-range.html",
+    "humanApprovedReferenceSha256": "387EC789769DE702263A802DE27368EA2128A2F27C25002E494C00DC65CC5D86",
+    "preFollowupComparison": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\date-picker-human-calibration-phase-2\\20260814T062509Z\\pre-followup-target.verify.json",
+    "comparison": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\date-picker-human-calibration-phase-2\\20260814T065915Z\\target-followup.verify.json",
+    "conformance": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\date-picker-human-calibration-phase-2\\20260814T065915Z\\human-approved-reference.preflight.json"
+  },
+  "cycle": [
+    "AI draft",
+    "human correction",
+    "human-approved Reference SSOT",
+    "Target difference detection",
+    "Target follow-up",
+    "comparative validation"
+  ],
+  "preFollowup": {
+    "status": "fail",
+    "errorCount": 1384,
+    "uniqueErrorCount": 110,
+    "diagnosticCount": 92
+  },
+  "final": {
+    "referenceConformance": "pass",
+    "referenceObservedElements": 25,
+    "scenarios": 22,
+    "actions": 58,
+    "targetComparison": "pass",
+    "targetErrorCount": 0,
+    "targetDiagnosticCount": 105,
+    "consoleErrorCount": 0,
+    "externalRequestCount": 0,
+    "failedRequestCount": 0
+  },
+  "independence": {
+    "referenceStyleSha256": "4B0E8CF8598E56A5F8722D1F9AEE6CA9C6763576918B064F53DF765865952B2F",
+    "targetStyleSha256": "2C8C3CFC4D0CEC044DF15C1206C842779FBA6620A26E7E4AD0C3FD77463F7AA3",
+    "sharedClassTokens": [],
+    "sharedLocalIds": [],
+    "targetHarnessRoots": 0,
+    "leakedReferenceTerms": null,
+    "fixtureOverrides": 15
+  },
+  "coreChange": {
+    "cliChanged": false,
+    "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+    "coreChangedFromHistoricalGate": true,
+    "historicalCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+    "currentCoreSha256": "F09AF96679EC529718AC3766DF19431AECC0A222A91A32523EA56C12CCC47285",
+    "scope": "Normalize unresolved aria-describedby targets by tag, role, and visibility instead of local ID spelling."
+  },
+  "negativeChecks": {
+    "describedByVisibility": {
+      "status": "fail",
+      "errorCount": 2,
+      "uniqueErrorCount": 1,
+      "requiredPath": "elements.relationship-field.relationships.describedBy"
+    },
+    "describedByMissingComparison": {
+      "status": "fail",
+      "errorCount": 2,
+      "uniqueErrorCount": 1,
+      "requiredPath": "elements.relationship-field.relationships.describedBy"
+    },
+    "describedByMissingConformance": {
+      "status": "error",
+      "errorCount": 1,
+      "uniqueErrorCount": 1,
+      "requiredPath": "missing-aria-reference"
+    },
+    "selectedDateStyle": {
+      "status": "fail",
+      "errorCount": 43,
+      "uniqueErrorCount": 2,
+      "requiredPath": "elements.range-end-day.styles.backgroundColor"
+    },
+    "singleClickCompletion": {
+      "status": "fail",
+      "errorCount": 8,
+      "uniqueErrorCount": 1,
+      "requiredPath": "document.activeRef"
+    }
+  },
+  "currentDatePickerRegression": {
+    "phase1-single": {
+      "conformance": "pass",
+      "observedElements": 6,
+      "scenarios": 4,
+      "actions": 11
+    },
+    "phase1-range": {
+      "conformance": "pass",
+      "observedElements": 8,
+      "scenarios": 4,
+      "actions": 14
+    },
+    "accepted-single": {
+      "conformance": "pass",
+      "observedElements": 17,
+      "scenarios": 15,
+      "actions": 34
+    },
+    "composite-range-target": {
+      "comparison": "pass",
+      "errorCount": 0
+    }
+  },
+  "preservation": {
+    "humanApprovedReferenceChanged": false,
+    "historicalEvidenceChanged": false,
+    "historicalDigests": {
+      "composite": "820E49AB2DF0F917ECC64BCDBFEEE7BC269225C308CB836A9C72100E9BD81A43",
+      "phase1": "8FDB37C24C1DE6EF2DB2558813FFC933699D608298E3E875CD14FA4189E695F7",
+      "acceptedSingle": "ECE816ABC716C370C9D90DC6865D86A1DE8CE416683E59273DDCBF843399677D",
+      "approvedRange": "CAFC89B6D2A2AE9273069CC7F1F6482EE54CDBDC6C73941FDD8CF4A186B825C0"
+    }
+  }
+}

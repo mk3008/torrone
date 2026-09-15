@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "external-network.html",
+    "digest": "58364bab2fbb663ff0393f5a982e2ffe4c057f31e50503eb5aaa2f6aed40a67c",
+    "files": [
+      {
+        "path": "external-network.html",
+        "bytes": 2252,
+        "sha256": "aade07b9809fafe80a080a5a830b82386775ef84452fe17bb70ba5a5710fea33"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [
+      "http://127.0.0.1:9/conformance-probe"
+    ],
+    "failedRequestCount": 2
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 2,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "runtime",
+      "code": "external-network-request",
+      "state": "bundle",
+      "target": "http://127.0.0.1:9/conformance-probe",
+      "detail": "Reference execution made an external network request."
+    },
+    {
+      "source": "runtime",
+      "code": "failed-network-request",
+      "state": "bundle",
+      "target": "network",
+      "detail": "2 network request(s) failed."
+    }
+  ]
+}

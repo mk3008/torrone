@@ -1,0 +1,50 @@
+{
+  "commonTheme": {
+    "a-self-contained": {
+      "changedFiles": 4,
+      "changedLocations": 6,
+      "lightLocations": 4,
+      "darkLocations": 2,
+      "validationCommands": 5,
+      "restoreFileWrites": 4,
+      "restoredByteIdentically": true,
+      "unintendedDifferencePaths": 0,
+      "synchronizationRisk": "six edits across four files can diverge"
+    },
+    "b-token-only": {
+      "changedFiles": 1,
+      "changedLocations": 2,
+      "lightLocations": 1,
+      "darkLocations": 1,
+      "validationCommands": 5,
+      "restoreFileWrites": 1,
+      "restoredByteIdentically": true,
+      "unintendedDifferencePaths": 0,
+      "synchronizationRisk": "one file owns both theme values; five fan-out validations remain"
+    }
+  },
+  "localAndFalseSharing": {
+    "a-self-contained": {
+      "changedFiles": 1,
+      "changedLocations": 2,
+      "sharedLayerEdits": 0,
+      "validationCommands": 3,
+      "restoreFileWrites": 1,
+      "restoredByteIdentically": true,
+      "priorReferenceHashesChanged": 0,
+      "commonShellComparison": "pass, zero errors",
+      "falseSharingEvidence": "status accent changed independently while the equal shell accent and shared token file remained unchanged"
+    },
+    "b-token-only": {
+      "changedFiles": 1,
+      "changedLocations": 2,
+      "sharedLayerEdits": 0,
+      "validationCommands": 3,
+      "restoreFileWrites": 1,
+      "restoredByteIdentically": true,
+      "priorReferenceHashesChanged": 0,
+      "commonShellComparison": "pass, zero errors",
+      "falseSharingEvidence": "status accent changed independently while the equal shell accent and shared token file remained unchanged"
+    }
+  }
+}

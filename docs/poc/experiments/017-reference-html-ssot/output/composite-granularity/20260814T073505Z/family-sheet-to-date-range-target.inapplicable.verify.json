@@ -1,0 +1,976 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "date-picker-family-sheet.html",
+    "digest": "db08db6aeb3133ff9baac9ba692231cd7be7b8583ff7d7b0be208137b5fbc3ce",
+    "files": [
+      {
+        "path": "date-picker-family-sheet.html",
+        "bytes": 11109,
+        "sha256": "0824e2d79139fa8c689648374894ef8740cc78162aed7aa1c25b30c12c4aac14"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "1b0c668e0be62cb7419a047269b43f23151104e5c60d2349c7c42e1ff80929f8",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 7333,
+        "sha256": "36ebf244c519fa6b932e7e6f9243e3615b5f8581d6b51ce3bd91f1144d683cb7"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "family single pointer",
+        "steps": [
+          {
+            "action": "click",
+            "target": "date-trigger"
+          },
+          {
+            "action": "click",
+            "target": "date-day"
+          }
+        ]
+      },
+      {
+        "name": "family single keyboard",
+        "steps": [
+          {
+            "action": "press",
+            "target": "date-trigger",
+            "key": " "
+          },
+          {
+            "action": "press",
+            "target": "date-day",
+            "key": "ArrowRight"
+          },
+          {
+            "action": "press",
+            "target": "date-next-day",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "family single clear",
+        "steps": [
+          {
+            "action": "click",
+            "target": "date-trigger"
+          },
+          {
+            "action": "click",
+            "target": "date-day"
+          },
+          {
+            "action": "click",
+            "target": "date-clear"
+          },
+          {
+            "action": "click",
+            "target": "date-trigger"
+          }
+        ]
+      },
+      {
+        "name": "family range pointer",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          }
+        ]
+      },
+      {
+        "name": "family range keyboard",
+        "steps": [
+          {
+            "action": "press",
+            "target": "range-trigger",
+            "key": " "
+          },
+          {
+            "action": "press",
+            "target": "range-start-day",
+            "key": "ArrowRight"
+          },
+          {
+            "action": "press",
+            "target": "range-next-day",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "range-end-day",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "family range clear",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          },
+          {
+            "action": "click",
+            "target": "range-clear"
+          },
+          {
+            "action": "click",
+            "target": "range-trigger"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 108,
+    "uniqueErrorCount": 14,
+    "diagnosticCount": 16,
+    "errorSignatures": [
+      {
+        "path": "action",
+        "count": 3
+      },
+      {
+        "path": "document.activeRef",
+        "count": 3
+      },
+      {
+        "path": "elements.date-clear",
+        "count": 16
+      },
+      {
+        "path": "elements.date-day",
+        "count": 16
+      },
+      {
+        "path": "elements.date-next-day",
+        "count": 16
+      },
+      {
+        "path": "elements.date-selection",
+        "count": 16
+      },
+      {
+        "path": "elements.date-trigger",
+        "count": 16
+      },
+      {
+        "path": "elements.semantic:controlled-by:date-trigger",
+        "count": 16
+      },
+      {
+        "path": "scenarios.family single clear.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.family single clear.step-3",
+        "count": 1
+      },
+      {
+        "path": "scenarios.family single clear.step-4",
+        "count": 1
+      },
+      {
+        "path": "scenarios.family single keyboard.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.family single keyboard.step-3",
+        "count": 1
+      },
+      {
+        "path": "scenarios.family single pointer.step-2",
+        "count": 1
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-1.action",
+      "expected": "success",
+      "actual": "date-trigger: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-1.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-1.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-1.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-1.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-1.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-1.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family single pointer.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-1.document.activeRef",
+      "expected": "date-day",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single pointer.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-1.action",
+      "expected": "success",
+      "actual": "date-trigger: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-1.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-1.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-1.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-1.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-1.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-1.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family single keyboard.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-1.document.activeRef",
+      "expected": "date-day",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single keyboard.step-3",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-1.action",
+      "expected": "success",
+      "actual": "date-trigger: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-1.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-1.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-1.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-1.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-1.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-1.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family single clear.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-1.document.activeRef",
+      "expected": "date-day",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-3",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family single clear.step-4",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-1.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-1.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-1.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-1.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-1.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-1.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range pointer.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-2.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-2.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-2.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-2.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-2.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-2.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range pointer.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-3.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-3.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-3.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-3.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-3.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range pointer.step-3.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range pointer.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-1.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-1.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-1.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-1.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-1.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-1.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range keyboard.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-2.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-2.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-2.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-2.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-2.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-2.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range keyboard.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-3.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-3.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-3.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-3.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-3.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-3.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range keyboard.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-4.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-4.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-4.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-4.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-4.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range keyboard.step-4.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range keyboard.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-1.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-1.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-1.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-1.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-1.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-1.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range clear.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-2.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-2.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-2.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-2.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-2.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-2.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range clear.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-3.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-3.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-3.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-3.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-3.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-3.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range clear.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-4.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-4.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-4.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-4.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-4.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-4.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range clear.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-5.elements.date-clear",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-5.elements.date-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-5.elements.date-next-day",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-5.elements.date-selection",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-5.elements.date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.family range clear.step-5.elements.semantic:controlled-by:date-trigger",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.family range clear.step-5.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

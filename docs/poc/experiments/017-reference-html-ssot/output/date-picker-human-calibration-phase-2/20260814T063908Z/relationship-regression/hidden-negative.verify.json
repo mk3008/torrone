@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "reference.html",
+    "digest": "984a489d95b68f5621e4249d865b0e501dbb2a15445816da8b2483caf746f906",
+    "files": [
+      {
+        "path": "reference.html",
+        "bytes": 653,
+        "sha256": "c40bafd079e3ab63d68cfb0368796147625ad92695e94ed760c4493841bf281b"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "hidden-negative.html",
+    "digest": "12d4a719580981032ecf72835cdc494785e5357a2e1115e5991f1a8536387344",
+    "files": [
+      {
+        "path": "hidden-negative.html",
+        "bytes": 461,
+        "sha256": "32083d2e0092aa6599ab1229ed95bed9c7a2d397bdb5dc67f55d0f6d456d2257"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "focus field",
+        "steps": [
+          {
+            "action": "click",
+            "target": "relationship-field"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.relationship-field.relationships.describedBy",
+        "count": 2
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.relationship-field.relationships.describedBy",
+      "expected": [
+        "unkeyed:describedBy:p:none:visible"
+      ],
+      "actual": [
+        "unkeyed:describedBy:p:none:hidden"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.focus field.step-1.elements.relationship-field.relationships.describedBy",
+      "expected": [
+        "unkeyed:describedBy:p:none:visible"
+      ],
+      "actual": [
+        "unkeyed:describedBy:p:none:hidden"
+      ]
+    }
+  ]
+}

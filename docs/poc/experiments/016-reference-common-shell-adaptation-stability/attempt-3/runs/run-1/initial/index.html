@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operations workspace</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="reference-visual-bindings/visual-tokens.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="application-shell" data-reference-visual-theme="light">
+      <header class="topbar">
+        <button class="control-button drawer-toggle" type="button" aria-label="Hide navigation" title="Hide navigation">
+          <span class="fixed-icon icon-drawer-hide" aria-hidden="true"></span>
+        </button>
+        <strong class="application-title">Operations workspace</strong>
+        <button class="control-button theme-toggle" type="button" aria-label="Switch to dark palette" title="Switch to dark palette">
+          <span class="fixed-icon icon-theme-to-dark" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <div class="shell-frame">
+        <aside class="navigation-drawer" aria-label="Application navigation">
+          <section class="navigation-search">
+            <label for="nav-filter">Search navigation</label>
+            <div class="search-control">
+              <span class="fixed-icon icon-search" aria-hidden="true"></span>
+              <input id="nav-filter" type="search" placeholder="Find an item" autocomplete="off" />
+            </div>
+          </section>
+          <nav class="navigation-scroll" aria-label="Operations workspace navigation"></nav>
+        </aside>
+
+        <main class="content-pane" tabindex="-1">
+          <section class="content-fixture" aria-labelledby="content-title">
+            <h1 id="content-title">Neutral workspace content</h1>
+            <p>This content is only an overflow fixture for observing the common shell.</p>
+            <ol class="numbered-fixture" aria-label="Neutral overflow fixture"></ol>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "date-picker-family-sheet.html",
+    "digest": "db08db6aeb3133ff9baac9ba692231cd7be7b8583ff7d7b0be208137b5fbc3ce",
+    "files": [
+      {
+        "path": "date-picker-family-sheet.html",
+        "bytes": 11109,
+        "sha256": "0824e2d79139fa8c689648374894ef8740cc78162aed7aa1c25b30c12c4aac14"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 22
+  },
+  "errors": []
+}

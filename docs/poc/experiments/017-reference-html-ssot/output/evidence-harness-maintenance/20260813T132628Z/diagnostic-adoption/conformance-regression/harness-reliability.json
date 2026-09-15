@@ -1,0 +1,367 @@
+{
+  "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "sandboxLaunchFailuresBeforeApprovedGate": 3,
+  "note": "The three preliminary Page.enable timeouts occurred under the restricted process sandbox and are not Reference conformance results.",
+  "gateAttempts": 51,
+  "gateTimeouts": 0,
+  "gateRetries": 0,
+  "events": [
+    {
+      "label": "accepted-reference positive preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3858
+    },
+    {
+      "label": "semantic-only-reference positive preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2039
+    },
+    {
+      "label": "mixed-reference positive preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3933
+    },
+    {
+      "label": "relational-reference positive preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2532
+    },
+    {
+      "label": "common-shell-reference positive preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3142
+    },
+    {
+      "label": "search-workspace-reference positive preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2922
+    },
+    {
+      "label": "form-reference positive preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2864
+    },
+    {
+      "label": "valid-fixture positive preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2189
+    },
+    {
+      "label": "Valid fixture repeat preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2183
+    },
+    {
+      "label": "missing-aria-reference before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2159
+    },
+    {
+      "label": "missing-aria-reference broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2180
+    },
+    {
+      "label": "missing-aria-reference restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2175
+    },
+    {
+      "label": "aria-reference-enters-harness before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2166
+    },
+    {
+      "label": "aria-reference-enters-harness broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2205
+    },
+    {
+      "label": "aria-reference-enters-harness restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2151
+    },
+    {
+      "label": "invalid-label-target before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2173
+    },
+    {
+      "label": "invalid-label-target broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2143
+    },
+    {
+      "label": "invalid-label-target restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2145
+    },
+    {
+      "label": "key-inside-harness before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2124
+    },
+    {
+      "label": "key-inside-harness broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2148
+    },
+    {
+      "label": "key-inside-harness restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2197
+    },
+    {
+      "label": "unsupported-invalid-token before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2102
+    },
+    {
+      "label": "unsupported-invalid-token broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2130
+    },
+    {
+      "label": "unsupported-invalid-token restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2149
+    },
+    {
+      "label": "duplicate-stable-identity before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2201
+    },
+    {
+      "label": "duplicate-stable-identity broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2153
+    },
+    {
+      "label": "duplicate-stable-identity restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2143
+    },
+    {
+      "label": "console-error before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2094
+    },
+    {
+      "label": "console-error broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2176
+    },
+    {
+      "label": "console-error restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2175
+    },
+    {
+      "label": "scenario-action-error before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2166
+    },
+    {
+      "label": "scenario-action-error broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2123
+    },
+    {
+      "label": "scenario-action-error restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2214
+    },
+    {
+      "label": "external-network before",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2104
+    },
+    {
+      "label": "external-network broken",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2125
+    },
+    {
+      "label": "external-network restored",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2151
+    },
+    {
+      "label": "Existing semantic ambiguity probe",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2030
+    },
+    {
+      "label": "Existing relational ambiguity probe",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2019
+    },
+    {
+      "label": "Existing missing-h1 probe",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 1991
+    },
+    {
+      "label": "Form canary broken Reference snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2968
+    },
+    {
+      "label": "Form canary broken comparative check",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2879
+    },
+    {
+      "label": "Form canary broken Reference preflight",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2945
+    },
+    {
+      "label": "Form canary restored Reference preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2972
+    },
+    {
+      "label": "Valid fixture comparative baseline",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2284
+    },
+    {
+      "label": "CSS negative comparison",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2170
+    },
+    {
+      "label": "Form Reference comparative regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2841
+    },
+    {
+      "label": "Form Target comparative regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2876
+    },
+    {
+      "label": "Accepted Reference snapshot regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3950
+    },
+    {
+      "label": "Historical negative comparative regression",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2775
+    },
+    {
+      "label": "Semantic-only Reference snapshot regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2026
+    },
+    {
+      "label": "Semantic-only comparative negative regression",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 1979
+    }
+  ]
+}

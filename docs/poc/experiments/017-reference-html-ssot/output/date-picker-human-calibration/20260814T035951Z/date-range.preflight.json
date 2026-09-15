@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "date-range.html",
+    "digest": "7586243f5a93b8a72916eb50b70923ba46bce0b8f743fce6b3fc18a21980a047",
+    "files": [
+      {
+        "path": "date-range.html",
+        "bytes": 8292,
+        "sha256": "da068c8bb35ec3b0af8108df4eb72a17201886bf56b6cdfcb4b0ea58a18a9c94"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 15
+  },
+  "errors": []
+}

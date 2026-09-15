@@ -1,0 +1,26 @@
+/* Canonical Reference visual tokens. Reuse unchanged for Attempt 3. */
+[data-reference-visual-theme="light"] {
+  --reference-page-background: #f4f7fa;
+  --reference-surface-background: #ffffff;
+  --reference-text-primary: #172033;
+  --reference-text-muted: #52657a;
+  --reference-border-subtle: #c7d2df;
+  --reference-border-interactive: #75889c;
+  --reference-selection-background: #e7f1fc;
+  --reference-selection-foreground: #172033;
+  --reference-selection-indicator: #0b5cad;
+  --reference-focus-ring: #3b82f6;
+}
+
+[data-reference-visual-theme="dark"] {
+  --reference-page-background: #101820;
+  --reference-surface-background: #1b2632;
+  --reference-text-primary: #f4f7fa;
+  --reference-text-muted: #bac6d2;
+  --reference-border-subtle: #516273;
+  --reference-border-interactive: #91a3b5;
+  --reference-selection-background: #203e5a;
+  --reference-selection-foreground: #f4f7fa;
+  --reference-selection-indicator: #74b7f5;
+  --reference-focus-ring: #ffd54a;
+}

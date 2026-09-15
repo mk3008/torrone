@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Transfer exception queue</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="app-header" data-ref="app-header">
+    <button class="icon-button" type="button" data-ref="navigation-toggle" aria-controls="primary-navigation" aria-expanded="true" aria-label="Hide navigation">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16" /></svg>
+    </button>
+    <div class="product-name">Inventory Console</div>
+    <div class="environment">Planning environment</div>
+    <button class="icon-button" type="button" data-ref="theme-toggle" aria-pressed="false" aria-label="Use dark theme">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z" /></svg>
+    </button>
+  </header>
+
+  <div class="shell" id="application-shell">
+    <nav class="primary-navigation" id="primary-navigation" data-ref="primary-navigation" aria-label="Primary navigation">
+      <p class="navigation-label">Inventory</p>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#">Stock position</a></li>
+        <li><a class="nav-link" href="#" aria-current="page">Transfer exceptions</a></li>
+        <li><a class="nav-link" href="#">Replenishment plans</a></li>
+        <li><a class="nav-link" href="#">Warehouse calendar</a></li>
+      </ul>
+    </nav>
+
+    <main class="workspace" data-ref="workspace">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">Inventory operations</p>
+          <h1>Transfer exception queue</h1>
+          <p class="page-description">Resolve blocked stock transfers before their warehouse cutoff so planned replenishment stays intact.</p>
+        </div>
+      </div>
+
+      <section class="filters" aria-labelledby="filter-heading">
+        <div class="section-heading">
+          <h2 id="filter-heading">Filters</h2>
+          <button class="disclosure-button" type="button" data-ref="filter-toggle" aria-controls="filter-panel" aria-expanded="true">Hide filters</button>
+        </div>
+        <form class="filter-panel" id="filter-panel" data-ref="filter-panel" aria-labelledby="filter-heading">
+          <label class="field">Warehouse
+            <select name="warehouse"><option value="">All warehouses</option><option>East hub</option><option>North hub</option></select>
+          </label>
+          <label class="field">Severity
+            <select name="severity"><option value="">All severities</option><option value="high">High</option><option value="standard">Standard</option></select>
+          </label>
+          <label class="field">Owner
+            <input name="owner" autocomplete="off" placeholder="Planner name">
+          </label>
+          <div class="filter-actions">
+            <button class="primary-button" type="submit">Find exceptions</button>
+            <button class="secondary-button" type="reset">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results" aria-labelledby="result-heading">
+        <div class="result-heading">
+          <h2 id="result-heading">Exceptions</h2>
+          <p class="result-summary" data-ref="result-summary" aria-live="polite">4 exceptions</p>
+        </div>
+        <div class="table-wrap">
+          <table data-ref="result-table">
+            <caption>Stock transfer exceptions awaiting review</caption>
+            <thead><tr><th scope="col">Exception</th><th scope="col">Item</th><th scope="col">Route</th><th scope="col">Severity</th><th scope="col">Cutoff</th><th scope="col">Action</th></tr></thead>
+            <tbody>
+              <tr data-warehouse="east" data-severity="high">
+                <td><span class="identity">TX-204</span><span class="subtle">East hub</span></td>
+                <td>Valve kit V-42</td><td>East to North</td>
+                <td><span class="status-badge high" data-ref="status-badge">High</span></td>
+                <td>Today, 15:30</td>
+                <td><button class="row-action" type="button" data-ref="detail-action">Review exception</button></td>
+              </tr>
+              <tr data-warehouse="north" data-severity="standard"><td><span class="identity">TX-198</span><span class="subtle">North hub</span></td><td>Seal pack S-18</td><td>North to West</td><td><span class="status-badge">Standard</span></td><td>Tomorrow</td><td><button class="row-action" type="button">Review exception</button></td></tr>
+              <tr data-warehouse="east" data-severity="standard"><td><span class="identity">TX-191</span><span class="subtle">East hub</span></td><td>Sensor array A-7</td><td>East to Central</td><td><span class="status-badge">Standard</span></td><td>19 Aug</td><td><button class="row-action" type="button">Review exception</button></td></tr>
+              <tr data-warehouse="north" data-severity="high"><td><span class="identity">TX-187</span><span class="subtle">North hub</span></td><td>Pump housing P-9</td><td>North to East</td><td><span class="status-badge high">High</span></td><td>19 Aug</td><td><button class="row-action" type="button">Review exception</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog data-ref="detail-dialog" aria-labelledby="detail-title">
+    <div class="dialog-header">
+      <h2 id="detail-title">Review TX-204</h2>
+      <button class="icon-button" type="button" data-ref="dialog-close" autofocus aria-label="Close exception details">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></svg>
+      </button>
+    </div>
+    <div class="dialog-body">
+      <p>Confirm the blocked quantity and cutoff before assigning the recovery plan.</p>
+      <dl><dt>Item</dt><dd>Valve kit V-42</dd><dt>Route</dt><dd>East to North</dd><dt>Blocked quantity</dt><dd>24 units</dd></dl>
+    </div>
+    <div class="dialog-actions">
+      <button class="secondary-button" type="button">Assign later</button>
+      <button class="primary-button" type="button">Assign recovery</button>
+    </div>
+  </dialog>
+</body>
+</html>

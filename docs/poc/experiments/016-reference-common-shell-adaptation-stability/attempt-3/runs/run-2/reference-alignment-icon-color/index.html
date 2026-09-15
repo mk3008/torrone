@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-reference-visual-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Operations workspace</title>
+    <link rel="stylesheet" href="reference-visual-bindings/visual-tokens.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="shell" id="shell">
+      <header class="app-header" aria-label="Application header">
+        <button class="header-control" id="drawer-toggle" type="button" aria-controls="app-drawer">
+          <span class="fixed-icon header-icon" id="drawer-icon" aria-hidden="true"></span>
+          <span class="sr-only" id="drawer-action">Hide navigation</span>
+        </button>
+        <div class="application-name">Operations workspace</div>
+        <button class="header-control" id="theme-toggle" type="button">
+          <span class="fixed-icon header-icon" id="theme-icon" aria-hidden="true"></span>
+          <span class="sr-only" id="theme-action">Switch to dark palette</span>
+        </button>
+      </header>
+
+      <div class="body-grid">
+        <aside class="drawer" id="app-drawer" aria-label="Application navigation">
+          <div class="drawer-scroll">
+            <label class="search-label" for="nav-search">Search navigation</label>
+            <div class="search-field">
+              <span class="fixed-icon search-icon" aria-hidden="true"></span>
+              <input id="nav-search" type="search" placeholder="Find an item" autocomplete="off">
+            </div>
+            <nav aria-label="Workspace navigation">
+              <section class="navigation-group" aria-labelledby="workspace-label">
+                <button class="parent-row" id="workspace-disclosure" type="button" aria-expanded="true" aria-controls="workspace-items">
+                  <span id="workspace-label">Workspace</span>
+                  <span class="fixed-icon disclosure-icon" id="disclosure-icon" aria-hidden="true"></span>
+                  <span class="sr-only" id="disclosure-action">Collapse Workspace</span>
+                </button>
+                <div class="child-list" id="workspace-items">
+                  <button class="navigation-row current" type="button" data-destination="Overview" aria-current="page">Overview</button>
+                  <button class="navigation-row" type="button" data-destination="Activity">Activity</button>
+                </div>
+              </section>
+              <div class="section-list" id="section-list" aria-label="Sections"></div>
+              <p class="empty-message" id="empty-message" hidden>No matching navigation items.</p>
+            </nav>
+          </div>
+        </aside>
+
+        <main class="workspace" id="workspace-main" tabindex="-1">
+          <div class="workspace-scroll">
+            <p class="eyebrow">Workspace fixture</p>
+            <h1>Neutral workspace content</h1>
+            <p class="intro">This minimal fixture makes the shared shell and its independently scrollable workspace observable.</p>
+            <ol class="fixture-list" id="fixture-list"></ol>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

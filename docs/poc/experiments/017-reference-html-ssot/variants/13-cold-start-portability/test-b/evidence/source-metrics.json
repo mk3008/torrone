@@ -1,0 +1,44 @@
+{
+  "generatedBy": "tools/source-metrics.cjs",
+  "metrics": [
+    {
+      "file": "single-date.html",
+      "bytes": 17976,
+      "lines": 277,
+      "styleBytes": 5160,
+      "executableScriptBytes": 7450,
+      "staticIdentityAnnotationCount": 12,
+      "staticIdentityKeyCount": 12,
+      "logicalExplicitIdentityKeyCount": 15,
+      "harnessAnnotationCount": 1,
+      "scenarioCount": 10,
+      "scenarioStepCount": 27
+    },
+    {
+      "file": "date-range.html",
+      "bytes": 24323,
+      "lines": 309,
+      "styleBytes": 6446,
+      "executableScriptBytes": 10565,
+      "staticIdentityAnnotationCount": 16,
+      "staticIdentityKeyCount": 16,
+      "logicalExplicitIdentityKeyCount": 21,
+      "harnessAnnotationCount": 1,
+      "scenarioCount": 15,
+      "scenarioStepCount": 47
+    },
+    {
+      "file": "maintenance-window.html",
+      "bytes": 22664,
+      "lines": 250,
+      "styleBytes": 6719,
+      "executableScriptBytes": 11544,
+      "staticIdentityAnnotationCount": 16,
+      "staticIdentityKeyCount": 16,
+      "logicalExplicitIdentityKeyCount": 21,
+      "harnessAnnotationCount": 0,
+      "scenarioCount": 0,
+      "scenarioStepCount": 0
+    }
+  ]
+}

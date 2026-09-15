@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "entity-autocomplete.html",
+    "digest": "1dd575e475fc3272462d9c1073255a44784fb0deb5be36ad1710bcfb9f52bd58",
+    "files": [
+      {
+        "path": "entity-autocomplete.html",
+        "bytes": 7334,
+        "sha256": "f7ae21dae37c07965ff488435102b0b1da7a12f8bc3d7dd66fc5e103dc135f03"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "ambiguous-active-target.html",
+    "digest": "0eee47891a927f93be54db267372e9ef0ecd996fcbe41ed0f992aad1a1543275",
+    "files": [
+      {
+        "path": "ambiguous-active-target.html",
+        "bytes": 6837,
+        "sha256": "63aa8cb86464231be1a48db5512abb9e1787af7f884c7f4e1508fd970fff43b9"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "keyboard entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "press",
+            "target": "entity-query",
+            "key": "ArrowDown"
+          },
+          {
+            "action": "press",
+            "target": "entity-query",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "pointer entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "click",
+            "target": "entity-option-primary"
+          }
+        ]
+      },
+      {
+        "name": "entity no results",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "zzz"
+          }
+        ]
+      },
+      {
+        "name": "clear entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "click",
+            "target": "entity-option-primary"
+          },
+          {
+            "action": "click",
+            "target": "entity-clear"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 12,
+    "uniqueErrorCount": 3,
+    "diagnosticCount": 10,
+    "errorSignatures": [
+      {
+        "path": "duplicateKeys",
+        "count": 10
+      },
+      {
+        "path": "elements.entity-query.attributes.aria-activedescendant",
+        "count": 1
+      },
+      {
+        "path": "elements.entity-query.relationships.activeDescendant",
+        "count": 1
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "initial.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-1.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-2.elements.entity-query.attributes.aria-activedescendant",
+      "expected": "relationship present",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-2.elements.entity-query.relationships.activeDescendant",
+      "expected": [
+        "entity-option-primary"
+      ],
+      "actual": "<missing>"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-2.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-3.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-1.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.entity no results.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.entity no results.step-1.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-1.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-3.duplicateKeys",
+      "expected": "unique",
+      "actual": "entity-option-primary"
+    }
+  ]
+}

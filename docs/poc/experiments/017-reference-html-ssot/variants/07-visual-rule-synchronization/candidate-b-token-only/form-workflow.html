@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maintenance work order form Reference</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="shared-tokens.css">
+  <style>
+    :root {
+      color-scheme: light;
+      --surface-muted: #edf3f8;
+      --text: #10253d;
+      --muted: #52647a;
+      --border: #c7d4e2;
+      --primary: #1d70b3;
+      --primary-border: #155b92;
+      --danger: #b42318;
+      --danger-surface: #fff3f1;
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+      background: var(--canvas);
+    }
+
+    :is(button, input, select, textarea):focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .reference-toolbar {
+      display: flex;
+      min-height: 54px;
+      padding: 8px 24px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--text);
+      background: #f7f9fc;
+      border-bottom: 1px dashed #9eb3ca;
+    }
+
+    .reference-label {
+      color: #394b60;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .reference-options { display: flex; align-items: center; gap: 6px; }
+    .reference-options button {
+      min-height: 34px;
+      padding: 0 11px;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 6px;
+    }
+
+    .reference-options button[aria-pressed="true"] {
+      background: #e4effb;
+      border-color: #9eb8d3;
+    }
+
+    .page {
+      display: block;
+      width: min(1060px, calc(100% - 56px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+
+    .page-heading { margin-bottom: 22px; }
+    h1 { margin: 0; color: var(--text); font-size: 30px; line-height: 1.2; }
+    .page-heading p { margin: 7px 0 0; color: var(--muted); }
+
+    .form-card, .review-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .card-heading {
+      min-height: 62px;
+      padding: 17px 20px;
+      border-bottom: 1px solid #d5dee8;
+    }
+
+    .card-heading h2 { margin: 0; font-size: 20px; }
+    .card-heading p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+
+    .error-summary {
+      margin: 20px 20px 0;
+      padding: 14px 16px;
+      color: #7a2018;
+      background: var(--danger-surface);
+      border: 1px solid #e5aaa4;
+      border-left: 4px solid var(--danger);
+      border-radius: 0;
+    }
+
+    .error-summary strong { display: block; margin-bottom: 3px; }
+    .error-summary p { margin: 0; }
+
+    .form-body { padding: 20px; }
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 20px;
+    }
+
+    .field { display: grid; align-content: start; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label, .choice-group legend {
+      color: #394b60;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .required { color: var(--danger); }
+    .field :is(input, select, textarea) {
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 11px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid #94a8bd;
+      border-radius: 6px;
+    }
+
+    .field textarea { min-height: 104px; resize: vertical; }
+    .field :is(input, select, textarea)[aria-invalid="true"] {
+      border-width: 2px;
+      border-color: var(--danger);
+    }
+
+    .field-error { margin: 0; color: var(--danger); font-size: 14px; font-weight: 650; }
+
+    .choice-group {
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .choice-group legend { margin-bottom: 8px; }
+    .choice-row { display: flex; min-height: 42px; align-items: center; gap: 22px; }
+    .choice-row label { display: inline-flex; align-items: center; gap: 7px; color: var(--text); font-size: 16px; font-weight: 400; }
+    .choice-row input { width: 18px; height: 18px; margin: 0; accent-color: var(--primary); }
+
+    .action-bar {
+      display: flex;
+      min-height: 72px;
+      padding: 15px 20px;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      background: var(--surface);
+      border-top: 1px solid #d5dee8;
+    }
+
+    .primary-action, .secondary-action {
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 6px;
+    }
+
+    .primary-action {
+      color: #ffffff;
+      font-weight: 700;
+      background: var(--primary);
+      border: 1px solid var(--primary-border);
+    }
+
+    .secondary-action {
+      color: #183653;
+      background: var(--surface);
+      border: 1px solid #8ea2b9;
+    }
+
+    .review-body { padding: 20px; }
+    .review-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 0;
+      border-top: 1px solid #d9e2eb;
+    }
+
+    .review-item { padding: 14px 0; border-bottom: 1px solid #d9e2eb; }
+    .review-item:nth-child(odd) { padding-right: 20px; }
+    .review-item dt { color: var(--muted); font-size: 13px; font-weight: 700; text-transform: uppercase; }
+    .review-item dd { margin: 4px 0 0; color: var(--text); }
+    .review-note { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="reference-toolbar" data-reference-harness="scenario-selector">
+    <span class="reference-label">Reference part · form workflow</span>
+    <div class="reference-options" role="group" aria-label="Reference scenario">
+      <button type="button" data-reference-state="normal" aria-pressed="true">Normal</button>
+      <button type="button" data-reference-state="validation" aria-pressed="false">Validation</button>
+      <button type="button" data-reference-state="review" aria-pressed="false">Review</button>
+    </div>
+  </div>
+
+  <main class="page">
+    <div class="page-heading">
+      <h1>Schedule maintenance work</h1>
+      <p>Record the work window and coordinator before reviewing the request.</p>
+    </div>
+
+    <form class="form-card" id="reference-work-form" aria-labelledby="reference-form-heading" novalidate>
+      <div class="card-heading">
+        <h2 id="reference-form-heading">Work details</h2>
+        <p>Fields marked with an asterisk are required.</p>
+      </div>
+
+      <div class="error-summary" data-ref="form-error-summary" role="alert" hidden>
+        <strong>Check the required information</strong>
+        <p>Correct the highlighted fields, then review again.</p>
+      </div>
+
+      <div class="form-body">
+        <div class="field-grid">
+          <div class="field">
+            <label for="reference-summary">Work summary <span class="required" aria-hidden="true">*</span></label>
+            <input id="reference-summary" data-ref="form-primary-field" type="text" autocomplete="off" required>
+            <p id="reference-summary-error" class="field-error" data-ref="form-primary-error" hidden>Enter a work summary.</p>
+          </div>
+
+          <div class="field">
+            <label for="reference-site">Site</label>
+            <select id="reference-site" data-ref="form-select-field">
+              <option>North distribution center</option>
+              <option>Central warehouse</option>
+              <option>South service depot</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="reference-date">Requested date</label>
+            <input id="reference-date" data-ref="form-date-field" type="date" value="2026-09-15">
+          </div>
+
+          <div class="field">
+            <label for="reference-coordinator">Coordinator email <span class="required" aria-hidden="true">*</span></label>
+            <input id="reference-coordinator" data-ref="form-contact-field" type="email" autocomplete="off" required>
+            <p id="reference-coordinator-error" class="field-error" data-ref="form-contact-error" hidden>Enter a valid coordinator email.</p>
+          </div>
+
+          <fieldset class="choice-group full" data-ref="form-choice-group">
+            <legend>Operational impact</legend>
+            <div class="choice-row">
+              <label><input type="radio" name="reference-impact" value="low" checked> Low</label>
+              <label><input type="radio" name="reference-impact" value="medium"> Medium</label>
+              <label><input type="radio" name="reference-impact" value="high"> High</label>
+            </div>
+          </fieldset>
+
+          <div class="field full">
+            <label for="reference-notes">Work notes</label>
+            <textarea id="reference-notes" data-ref="form-notes-field">Inspect the loading area before work begins.</textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-bar" data-ref="form-actions">
+        <button class="secondary-action" type="button" data-ref="cancel-action">Cancel</button>
+        <button class="primary-action" type="submit" data-ref="review-action">Review</button>
+      </div>
+    </form>
+
+    <section class="review-card" data-ref="form-review-region" aria-labelledby="reference-review-heading" hidden>
+      <div class="card-heading">
+        <h2 id="reference-review-heading" data-ref="form-review-heading" tabindex="-1">Review maintenance work</h2>
+        <p>Confirm the information before creating the request.</p>
+      </div>
+      <div class="review-body">
+        <dl class="review-list">
+          <div class="review-item"><dt>Work summary</dt><dd data-review-value="summary"></dd></div>
+          <div class="review-item"><dt>Site</dt><dd data-review-value="site"></dd></div>
+          <div class="review-item"><dt>Requested date</dt><dd data-review-value="date"></dd></div>
+          <div class="review-item"><dt>Coordinator</dt><dd data-review-value="coordinator"></dd></div>
+          <div class="review-item"><dt>Impact</dt><dd data-review-value="impact"></dd></div>
+          <div class="review-item"><dt>Notes</dt><dd data-review-value="notes"></dd></div>
+        </dl>
+      </div>
+      <div class="action-bar" data-ref="review-actions">
+        <button class="secondary-action" type="button" data-ref="edit-action">Back to edit</button>
+        <button class="primary-action" type="button" data-ref="confirm-action">Create</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="application/json" data-reference-scenarios>
+    {
+      "version": 1,
+      "scenarios": [
+        {
+          "name": "missing required fields",
+          "steps": [
+            { "action": "click", "target": "review-action" }
+          ]
+        },
+        {
+          "name": "invalid email correction",
+          "steps": [
+            { "action": "fill", "target": "form-primary-field", "value": "Replace dock leveler" },
+            { "action": "fill", "target": "form-contact-field", "value": "not-an-email" },
+            { "action": "click", "target": "review-action" },
+            { "action": "fill", "target": "form-contact-field", "value": "morgan.lee@example.com" },
+            { "action": "click", "target": "review-action" }
+          ]
+        },
+        {
+          "name": "review and edit",
+          "steps": [
+            { "action": "fill", "target": "form-primary-field", "value": "Replace dock leveler" },
+            { "action": "fill", "target": "form-contact-field", "value": "morgan.lee@example.com" },
+            { "action": "click", "target": "review-action" },
+            { "action": "click", "target": "edit-action" }
+          ]
+        }
+      ]
+    }
+  </script>
+
+  <script>
+    (() => {
+      const form = document.querySelector('#reference-work-form');
+      const primary = document.querySelector('[data-ref="form-primary-field"]');
+      const contact = document.querySelector('[data-ref="form-contact-field"]');
+      const primaryError = document.querySelector('[data-ref="form-primary-error"]');
+      const contactError = document.querySelector('[data-ref="form-contact-error"]');
+      const errorSummary = document.querySelector('[data-ref="form-error-summary"]');
+      const review = document.querySelector('[data-ref="form-review-region"]');
+      const reviewHeading = document.querySelector('[data-ref="form-review-heading"]');
+      const editAction = document.querySelector('[data-ref="edit-action"]');
+      const scenarioButtons = [...document.querySelectorAll('[data-reference-state]')];
+
+      function setFieldError(field, message, invalid) {
+        if (invalid) {
+          field.setAttribute('aria-invalid', 'true');
+          field.setAttribute('aria-describedby', message.id);
+        } else {
+          field.removeAttribute('aria-invalid');
+          field.removeAttribute('aria-describedby');
+        }
+        message.hidden = !invalid;
+      }
+
+      function refreshSummary() {
+        errorSummary.hidden = !form.querySelector('[aria-invalid="true"]');
+      }
+
+      function validate() {
+        const missingPrimary = !primary.value.trim();
+        const invalidContact = !contact.value.trim() || !contact.validity.valid;
+        setFieldError(primary, primaryError, missingPrimary);
+        setFieldError(contact, contactError, invalidContact);
+        refreshSummary();
+        if (missingPrimary) primary.focus();
+        else if (invalidContact) contact.focus();
+        return !missingPrimary && !invalidContact;
+      }
+
+      function showEdit(restoreFocus = false) {
+        review.hidden = true;
+        form.hidden = false;
+        if (restoreFocus) primary.focus();
+      }
+
+      function showReview() {
+        const values = {
+          summary: primary.value,
+          site: document.querySelector('[data-ref="form-select-field"]').value,
+          date: document.querySelector('[data-ref="form-date-field"]').value,
+          coordinator: contact.value,
+          impact: form.querySelector('input[name="reference-impact"]:checked').nextSibling.textContent.trim(),
+          notes: document.querySelector('[data-ref="form-notes-field"]').value
+        };
+        Object.entries(values).forEach(([name, value]) => {
+          document.querySelector(`[data-review-value="${name}"]`).textContent = value || 'Not provided';
+        });
+        form.hidden = true;
+        review.hidden = false;
+        reviewHeading.focus();
+      }
+
+      function resetProductState() {
+        form.reset();
+        primary.value = '';
+        contact.value = '';
+        setFieldError(primary, primaryError, false);
+        setFieldError(contact, contactError, false);
+        errorSummary.hidden = true;
+        showEdit(false);
+      }
+
+      primary.addEventListener('input', () => {
+        if (primary.value.trim()) setFieldError(primary, primaryError, false);
+        refreshSummary();
+      });
+      contact.addEventListener('input', () => {
+        if (contact.value.trim() && contact.validity.valid) setFieldError(contact, contactError, false);
+        refreshSummary();
+      });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (validate()) showReview();
+      });
+      editAction.addEventListener('click', () => showEdit(true));
+
+      scenarioButtons.forEach((button) => button.addEventListener('click', () => {
+        resetProductState();
+        if (button.dataset.referenceState === 'validation') validate();
+        if (button.dataset.referenceState === 'review') {
+          primary.value = 'Replace dock leveler';
+          contact.value = 'morgan.lee@example.com';
+          showReview();
+        }
+        scenarioButtons.forEach((candidate) => candidate.setAttribute('aria-pressed', String(candidate === button)));
+      }));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Integrated shipment exception summary target</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      --canvas: #f3f6fa;
+      --surface: #ffffff;
+      --surface-muted: #edf3f9;
+      --surface-selected: #dceafb;
+      --text: #101d2f;
+      --muted: #54657a;
+      --border: #c6d2df;
+      --header: #173f67;
+      --header-border: #0d3153;
+      --header-control: #6f93b8;
+      --accent: #1d73b7;
+      --focus: #86b9ee;
+      --status-accent: #1d73b7;
+      --status-surface: #e1edf9;
+      --timeline-line: #9ab1c8;
+    }
+
+    body[data-theme="dark"] {
+      color-scheme: dark;
+      --canvas: #101923;
+      --surface: #172431;
+      --surface-muted: #203243;
+      --surface-selected: #254b6d;
+      --text: #f3f7fb;
+      --muted: #b6c2cf;
+      --border: #3e5368;
+      --header: #0e2b47;
+      --header-border: #395a79;
+      --header-control: #7896b3;
+      --accent: #68aee7;
+      --focus: #9acbff;
+      --status-accent: #68aee7;
+      --status-surface: #1b3852;
+      --timeline-line: #58718a;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; }
+    body { min-width: 960px; overflow: hidden; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button, summary { cursor: pointer; }
+    :is(button, input, a, summary):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    [hidden] { display: none !important; }
+
+    .app-bar {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      min-height: 64px;
+      padding: 0 24px;
+      align-items: center;
+      justify-content: space-between;
+      color: #ffffff;
+      background: var(--header);
+      border-bottom: 1px solid var(--header-border);
+    }
+
+    .brand-group, .bar-actions { display: flex; align-items: center; gap: 12px; }
+    .brand-name { font-size: 19px; font-weight: 700; }
+    .icon-button {
+      display: inline-grid;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      place-items: center;
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid var(--header-control);
+      border-radius: 7px;
+    }
+
+    .icon-button svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .account { position: relative; }
+    .account-menu {
+      position: absolute;
+      z-index: 4;
+      top: 50px;
+      right: 0;
+      width: 220px;
+      padding: 12px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(8, 26, 44, 0.2);
+    }
+
+    .account-menu p { margin: 0; }
+    .account-name { font-weight: 700; }
+    .account-role { margin: 2px 0 12px !important; color: var(--muted); font-size: 14px; }
+    .menu-action {
+      width: 100%;
+      min-height: 38px;
+      padding: 0 12px;
+      color: var(--text);
+      text-align: left;
+      background: var(--surface);
+      border: 1px solid #91a5b9;
+      border-radius: 6px;
+    }
+
+    .application-frame { display: grid; grid-template-columns: 280px minmax(0, 1fr); height: calc(100vh - 64px); overflow: hidden; }
+    .application-frame[data-navigation-open="false"] { grid-template-columns: 0 minmax(0, 1fr); }
+    .primary-nav {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+    }
+
+    .navigation-search { display: grid; gap: 6px; padding: 18px 18px 12px; color: var(--muted); font-size: 14px; font-weight: 650; }
+    .navigation-search input { min-height: 42px; padding: 0 12px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
+    .navigation-scroll { min-height: 0; overflow-y: auto; padding: 8px 12px 24px; }
+    .navigation-list, .navigation-children { margin: 0; padding: 0; list-style: none; }
+    .navigation-list { display: grid; gap: 4px; }
+    .navigation-children { display: grid; gap: 2px; }
+    .navigation-parent, .navigation-link {
+      display: flex;
+      width: 100%;
+      min-height: 44px;
+      padding: 0 12px;
+      align-items: center;
+      color: var(--text);
+      text-align: left;
+      text-decoration: none;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .navigation-parent { justify-content: space-between; }
+    .navigation-parent svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 2; transition: transform 120ms ease; }
+    .navigation-parent[aria-expanded="true"] svg { transform: rotate(90deg); }
+    .navigation-children .navigation-link { padding-left: 34px; }
+    .navigation-link[aria-current="page"] { color: #0e4f84; font-weight: 700; background: var(--surface-selected); box-shadow: inset 4px 0 0 var(--accent); }
+    body[data-theme="dark"] .navigation-link[aria-current="page"] { color: #e5f3ff; }
+    .navigation-link:hover, .navigation-parent:hover { background: var(--surface-muted); }
+    .navigation-empty { margin: 12px; padding: 14px; color: var(--muted); background: var(--surface-muted); border-radius: 6px; }
+
+    .content-scroll {
+      min-width: 0;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .detail-workspace {
+      width: 960px;
+      max-width: calc(100% - 32px);
+      margin: 0 auto;
+      padding: 36px 0 48px;
+    }
+
+    .page-heading { margin-bottom: 24px; }
+    h1 { margin: 0; font-size: 32px; line-height: 1.2; }
+    .page-heading p { margin: 6px 0 0; color: var(--muted); }
+    .record-card { overflow: hidden; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+    .record-header { display: flex; min-height: 92px; padding: 22px; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--border); }
+    .record-id { margin: 0; font-size: 22px; }
+    .record-caption { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+    .status-badge { display: inline-flex; min-height: 32px; padding: 4px 11px; align-items: center; gap: 8px; color: var(--text); background: var(--status-surface); border: 1px solid var(--status-accent); border-radius: 999px; font-size: 14px; font-weight: 700; white-space: nowrap; }
+    .status-dot { width: 8px; height: 8px; background: var(--status-accent); border-radius: 50%; }
+    .record-section { padding: 22px; }
+    .record-section + .record-section { border-top: 1px solid var(--border); }
+    h2 { margin: 0 0 16px; font-size: 18px; }
+    .facts { display: grid; margin: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 32px; }
+    .fact { min-width: 0; }
+    dt { margin-bottom: 3px; color: var(--muted); font-size: 14px; font-weight: 600; }
+    dd { margin: 0; overflow-wrap: anywhere; }
+    .timeline { margin: 0; padding: 0; list-style: none; }
+    .timeline li { position: relative; min-height: 58px; padding: 0 0 20px 28px; }
+    .timeline li:last-child { min-height: 0; padding-bottom: 0; }
+    .timeline li::before { content: ""; position: absolute; top: 7px; left: 4px; width: 8px; height: 8px; background: var(--status-accent); border-radius: 50%; }
+    .timeline li:not(:last-child)::after { content: ""; position: absolute; top: 18px; bottom: 2px; left: 7px; width: 2px; background: var(--timeline-line); }
+    .event-time { display: block; color: var(--muted); font-size: 14px; }
+    .event-text { margin: 2px 0 0; }
+    .processing-notes { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 6px; }
+    .processing-notes summary { padding: 13px 16px; font-weight: 700; }
+    .processing-notes[open] summary { box-shadow: inset 0 -1px 0 var(--border); }
+    .processing-notes p { margin: 0; padding: 14px 16px 16px; color: var(--muted); }
+  </style>
+</head>
+<body data-theme="light">
+  <header class="app-bar">
+    <div class="brand-group">
+      <button class="icon-button" type="button" data-ref="navigation-toggle" aria-controls="target-primary-navigation" aria-expanded="true" aria-label="Hide navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M9 4v16M15 9l-3 3 3 3" /></svg>
+      </button>
+      <span class="brand-name">Operations Desk</span>
+    </div>
+    <div class="bar-actions">
+      <button class="icon-button" type="button" data-ref="theme-toggle" aria-pressed="false" aria-label="Use dark theme">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.3A8.5 8.5 0 0 1 8.7 4a8.5 8.5 0 1 0 11.3 11.3Z" /></svg>
+      </button>
+      <div class="account">
+        <button class="icon-button" type="button" data-ref="user-menu-toggle" aria-controls="target-account-menu" aria-expanded="false" aria-haspopup="menu" aria-label="Open user menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+        </button>
+        <div class="account-menu" id="target-account-menu" role="menu" hidden>
+          <p class="account-name">Jordan Bell</p>
+          <p class="account-role">Operations coordinator</p>
+          <button class="menu-action" type="button" role="menuitem" data-ref="sign-out-action">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="application-frame" data-navigation-open="true">
+    <nav class="primary-nav" id="target-primary-navigation" aria-label="Primary navigation">
+      <label class="navigation-search" for="target-navigation-filter">Filter navigation
+        <input id="target-navigation-filter" type="search" data-ref="navigation-filter" autocomplete="off" placeholder="Find a menu item">
+      </label>
+      <div class="navigation-scroll">
+        <ul class="navigation-list">
+          <li data-navigation-item><a class="navigation-link" href="#overview">Overview</a></li>
+          <li data-navigation-item>
+            <button class="navigation-parent" type="button" data-ref="navigation-parent" aria-expanded="true" aria-controls="target-navigation-children">
+              <span>Logistics</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+            <ul class="navigation-children" id="target-navigation-children">
+              <li data-navigation-item><a class="navigation-link" href="#shipment" data-ref="navigation-current" aria-current="page">Shipment exceptions</a></li>
+              <li data-navigation-item><a class="navigation-link" href="#handoffs" data-ref="navigation-secondary">Carrier handoffs</a></li>
+            </ul>
+          </li>
+          <li data-navigation-item><a class="navigation-link" href="#calendar">Calendar</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#teams">Teams</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#vendors">Vendors</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#locations">Locations</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#policies">Policies</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#audit">Audit history</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#reports">Reports</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#exports">Exports</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#settings">Settings</a></li>
+        </ul>
+        <p class="navigation-empty" data-ref="navigation-empty" hidden>No navigation items found.</p>
+      </div>
+    </nav>
+
+    <div class="content-scroll">
+    <main class="detail-workspace">
+      <header class="page-heading">
+        <h1>Shipment exception</h1>
+        <p>Current routing and handoff status for a delayed shipment.</p>
+      </header>
+
+      <article class="record-card" data-ref="record-summary" aria-labelledby="shipment-heading">
+        <header class="record-header">
+          <div>
+            <h2 class="record-id" id="shipment-heading">SH-2084</h2>
+            <p class="record-caption">Outbound shipment · Priority service</p>
+          </div>
+          <span class="status-badge" data-ref="record-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Awaiting carrier
+          </span>
+        </header>
+
+        <section class="record-section" aria-labelledby="shipment-facts-heading">
+          <h2 id="shipment-facts-heading">Shipment facts</h2>
+          <dl class="facts">
+            <div class="fact"><dt>Current location</dt><dd>North distribution center</dd></div>
+            <div class="fact"><dt>Carrier</dt><dd>BlueLine Freight</dd></div>
+            <div class="fact"><dt>Promised delivery</dt><dd>18 August 2026</dd></div>
+            <div class="fact"><dt>Exception owner</dt><dd>Regional logistics desk</dd></div>
+          </dl>
+        </section>
+
+        <section class="record-section" data-ref="activity-timeline" aria-labelledby="activity-heading">
+          <h2 id="activity-heading">Latest activity</h2>
+          <ol class="timeline">
+            <li><time class="event-time" datetime="2026-08-13T09:40">13 August, 09:40</time><p class="event-text">Carrier pickup window was missed.</p></li>
+            <li><time class="event-time" datetime="2026-08-13T10:15">13 August, 10:15</time><p class="event-text">Logistics desk requested a replacement vehicle.</p></li>
+          </ol>
+        </section>
+
+        <section class="record-section">
+          <details class="processing-notes" data-ref="processing-notes">
+            <summary data-ref="processing-notes-toggle">Processing notes</summary>
+            <p>The shipment remains at the distribution center until the carrier confirms a new pickup window.</p>
+          </details>
+        </section>
+      </article>
+    </main>
+    </div>
+  </div>
+
+  <script type="application/json" data-reference-scenarios>
+    {
+      "version": 1,
+      "scenarios": [
+        { "name": "navigation visibility", "steps": [{ "action": "click", "target": "navigation-toggle" }, { "action": "click", "target": "navigation-toggle" }] },
+        { "name": "navigation parent", "steps": [{ "action": "click", "target": "navigation-parent" }, { "action": "click", "target": "navigation-parent" }] },
+        { "name": "navigation filter no match", "steps": [{ "action": "fill", "target": "navigation-filter", "value": "not present" }, { "action": "fill", "target": "navigation-filter", "value": "" }] },
+        { "name": "navigation selection", "steps": [{ "action": "click", "target": "navigation-secondary" }, { "action": "click", "target": "navigation-current" }] },
+        { "name": "theme round trip", "steps": [{ "action": "click", "target": "theme-toggle" }, { "action": "click", "target": "theme-toggle" }] },
+        { "name": "user menu escape", "steps": [{ "action": "click", "target": "user-menu-toggle" }, { "action": "press", "target": "user-menu-toggle", "key": "Escape" }] },
+        { "name": "processing notes round trip", "steps": [{ "action": "press", "target": "processing-notes-toggle", "key": "Space" }, { "action": "press", "target": "processing-notes-toggle", "key": "Space" }] }
+      ]
+    }
+  </script>
+
+  <script>
+    (() => {
+      const body = document.body;
+      const frame = document.querySelector('.application-frame');
+      const navigation = document.getElementById('target-primary-navigation');
+      const navigationToggle = document.querySelector('[data-ref="navigation-toggle"]');
+      const navigationParent = document.querySelector('[data-ref="navigation-parent"]');
+      const navigationChildren = document.getElementById('target-navigation-children');
+      const navigationFilter = document.querySelector('[data-ref="navigation-filter"]');
+      const navigationItems = [...document.querySelectorAll('[data-navigation-item]')];
+      const navigationEmpty = document.querySelector('[data-ref="navigation-empty"]');
+      const navigationLinks = [...document.querySelectorAll('.navigation-link')];
+      const themeToggle = document.querySelector('[data-ref="theme-toggle"]');
+      const userMenuToggle = document.querySelector('[data-ref="user-menu-toggle"]');
+      const accountMenu = document.getElementById('target-account-menu');
+      const signOut = document.querySelector('[data-ref="sign-out-action"]');
+
+      function setNavigation(open) {
+        navigationToggle.setAttribute('aria-expanded', String(open));
+        navigationToggle.setAttribute('aria-label', open ? 'Hide navigation' : 'Show navigation');
+        frame.dataset.navigationOpen = String(open);
+        navigation.hidden = !open;
+      }
+
+      function setParent(open) {
+        navigationParent.setAttribute('aria-expanded', String(open));
+        navigationChildren.hidden = !open;
+      }
+
+      function filterNavigation() {
+        const query = navigationFilter.value.trim().toLowerCase();
+        let visibleLeaves = 0;
+        for (const item of navigationItems) {
+          const ownLink = item.querySelector(':scope > .navigation-link');
+          if (!ownLink) continue;
+          const visible = !query || ownLink.textContent.toLowerCase().includes(query);
+          item.hidden = !visible;
+          if (visible) visibleLeaves += 1;
+        }
+        const childVisible = [...navigationChildren.children].some((item) => !item.hidden);
+        navigationParent.closest('li').hidden = Boolean(query) && !childVisible;
+        if (query && childVisible) setParent(true);
+        navigationEmpty.hidden = visibleLeaves > 0;
+      }
+
+      function setMenu(open, restoreFocus = false) {
+        userMenuToggle.setAttribute('aria-expanded', String(open));
+        userMenuToggle.setAttribute('aria-label', open ? 'Close user menu' : 'Open user menu');
+        accountMenu.hidden = !open;
+        if (open) signOut.focus();
+        else if (restoreFocus) userMenuToggle.focus();
+      }
+
+      navigationToggle.addEventListener('click', () => setNavigation(navigationToggle.getAttribute('aria-expanded') !== 'true'));
+      navigationParent.addEventListener('click', () => setParent(navigationParent.getAttribute('aria-expanded') !== 'true'));
+      navigationFilter.addEventListener('input', filterNavigation);
+      navigationLinks.forEach((link) => link.addEventListener('click', () => {
+        navigationLinks.forEach((item) => item.removeAttribute('aria-current'));
+        link.setAttribute('aria-current', 'page');
+      }));
+      themeToggle.addEventListener('click', () => {
+        const dark = themeToggle.getAttribute('aria-pressed') !== 'true';
+        themeToggle.setAttribute('aria-pressed', String(dark));
+        themeToggle.setAttribute('aria-label', dark ? 'Use light theme' : 'Use dark theme');
+        body.dataset.theme = dark ? 'dark' : 'light';
+      });
+      userMenuToggle.addEventListener('click', () => setMenu(userMenuToggle.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && userMenuToggle.getAttribute('aria-expanded') === 'true') {
+          event.preventDefault();
+          setMenu(false, true);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

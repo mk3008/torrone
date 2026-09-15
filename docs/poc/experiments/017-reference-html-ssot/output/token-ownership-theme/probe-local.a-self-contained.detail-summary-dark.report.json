@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "detail-summary.html",
+    "digest": "5c53a68e87fa10da9b172c735dcf929759cc68e9b08b087828c04eb4b518bc3c",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6743,
+        "sha256": "97b883107e09456005a449d72cd2ab0b04e8987cc5bb49ba1955faae78f6e9f1"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "detail-summary.html",
+    "digest": "ef11b68a04af367bea7c2611c540e480ed0316b29ca06206f12ea03fbb4d5b2e",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6743,
+        "sha256": "a7e9e39d8b7803e0e37b159645833f8f8d3b9d7292607dc602c284d9aa25b0f5"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "processing notes round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "processing-notes-toggle",
+            "key": "Space"
+          },
+          {
+            "action": "press",
+            "target": "processing-notes-toggle",
+            "key": "Space"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 12,
+    "uniqueErrorCount": 4,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.record-status.styles.borderBottomColor",
+        "count": 3
+      },
+      {
+        "path": "elements.record-status.styles.borderLeftColor",
+        "count": 3
+      },
+      {
+        "path": "elements.record-status.styles.borderRightColor",
+        "count": 3
+      },
+      {
+        "path": "elements.record-status.styles.borderTopColor",
+        "count": 3
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.record-status.styles.borderBottomColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.record-status.styles.borderLeftColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.record-status.styles.borderRightColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.record-status.styles.borderTopColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-1.elements.record-status.styles.borderBottomColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-1.elements.record-status.styles.borderLeftColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-1.elements.record-status.styles.borderRightColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-1.elements.record-status.styles.borderTopColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-2.elements.record-status.styles.borderBottomColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-2.elements.record-status.styles.borderLeftColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-2.elements.record-status.styles.borderRightColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-2.elements.record-status.styles.borderTopColor",
+      "expected": "rgb(104, 174, 231)",
+      "actual": "rgb(196, 181, 253)"
+    }
+  ]
+}

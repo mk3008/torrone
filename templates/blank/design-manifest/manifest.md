@@ -29,6 +29,16 @@ The application owner supplies the task-level state model, primary-record value,
 
 Put fixed intent, hierarchy, responsibility, and selection criteria in Markdown concepts. Put only finite presentation choices in a configuration concept, with stable IDs, types, defaults, allowed values, meanings, scope, and owner. Keep local overrides separate from the pack; direct pack edits are a fork. Use a flow concept for cross-screen decision criteria, while a product binding owns feature existence, routes, permissions, state, data, aggregates, and display language.
 
+# Verification
+
+For each applicable concept, state the observable rendered outcome that shows
+its guidance has been applied. For an exercised interaction, state the visible
+before state, user action, and after state. Keep these pass conditions free of
+CSS, DOM, framework, library, asset-source, and literal-value requirements.
+Keep product-specific facts in the application input contract or binding. If
+the required observation cannot be made in the available environment, report it
+as not verified rather than inferring a pass.
+
 # Unresolved
 
 List gaps and conflicts that an implementer must not guess away.

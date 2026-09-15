@@ -1,0 +1,132 @@
+{
+  "status": "pass",
+  "fourthReference": {
+    "responsibility": "read-only record summary workspace",
+    "lines": 197,
+    "productScripts": 0,
+    "scenarios": 1,
+    "scenarioActions": 2,
+    "observedElements": 6,
+    "harnessRoots": 0
+  },
+  "canonicalComparisons": 5,
+  "positiveConformanceChecks": 10,
+  "retainedConformanceNegatives": 3,
+  "retainedComparativeNegatives": 2,
+  "baselineBundles": {
+    "common-shell": {
+      "elements": 13,
+      "scenarios": 6,
+      "states": 13
+    },
+    "search-workspace": {
+      "elements": 14,
+      "scenarios": 5,
+      "states": 10
+    },
+    "form-workflow": {
+      "elements": 19,
+      "scenarios": 3,
+      "states": 11
+    },
+    "detail-summary": {
+      "elements": 6,
+      "scenarios": 1,
+      "states": 3
+    }
+  },
+  "screenshotEvidence": {
+    "common-shell": {
+      "screenshotFiles": 13,
+      "byteIdenticalFiles": 11,
+      "byteHashMismatches": [
+        "navigation-parent-01.png",
+        "navigation-parent-02.png"
+      ]
+    },
+    "search-workspace": {
+      "screenshotFiles": 10,
+      "byteIdenticalFiles": 10,
+      "byteHashMismatches": []
+    },
+    "form-workflow": {
+      "screenshotFiles": 11,
+      "byteIdenticalFiles": 11,
+      "byteHashMismatches": []
+    },
+    "detail-summary": {
+      "screenshotFiles": 3,
+      "byteIdenticalFiles": 3,
+      "byteHashMismatches": []
+    },
+    "detail-summary-dark": {
+      "screenshotFiles": 3,
+      "byteIdenticalFiles": 3,
+      "byteHashMismatches": []
+    }
+  },
+  "commonThemeProbe": {
+    "a-self-contained": {
+      "changedFiles": 4,
+      "changedLocations": 6,
+      "lightLocations": 4,
+      "darkLocations": 2,
+      "validationCommands": 5,
+      "restoreFileWrites": 4,
+      "restoredByteIdentically": true,
+      "unintendedDifferencePaths": 0,
+      "synchronizationRisk": "six edits across four files can diverge"
+    },
+    "b-token-only": {
+      "changedFiles": 1,
+      "changedLocations": 2,
+      "lightLocations": 1,
+      "darkLocations": 1,
+      "validationCommands": 5,
+      "restoreFileWrites": 1,
+      "restoredByteIdentically": true,
+      "unintendedDifferencePaths": 0,
+      "synchronizationRisk": "one file owns both theme values; five fan-out validations remain"
+    }
+  },
+  "localAndFalseSharingProbe": {
+    "a-self-contained": {
+      "changedFiles": 1,
+      "changedLocations": 2,
+      "sharedLayerEdits": 0,
+      "validationCommands": 3,
+      "restoreFileWrites": 1,
+      "restoredByteIdentically": true,
+      "priorReferenceHashesChanged": 0,
+      "commonShellComparison": "pass, zero errors",
+      "falseSharingEvidence": "status accent changed independently while the equal shell accent and shared token file remained unchanged"
+    },
+    "b-token-only": {
+      "changedFiles": 1,
+      "changedLocations": 2,
+      "sharedLayerEdits": 0,
+      "validationCommands": 3,
+      "restoreFileWrites": 1,
+      "restoredByteIdentically": true,
+      "priorReferenceHashesChanged": 0,
+      "commonShellComparison": "pass, zero errors",
+      "falseSharingEvidence": "status accent changed independently while the equal shell accent and shared token file remained unchanged"
+    }
+  },
+  "fixedVisualPacket": {
+    "fileCount": 197,
+    "digest": "9D35977A710AF47C2AAAC1E209A33A097BA92371D5F6C173E4AB0005F7CEB99E"
+  },
+  "consumerTree": {
+    "fileCount": 20,
+    "digest": "B2B0E11CEC5F01725CEF1A490437A8D2E4B1DC2E1CC50B2306CABA0D0569F26A"
+  },
+  "consumerRequirementsAdded": 0,
+  "coreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+  "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+  "cliCoreChanges": 0,
+  "conformanceRulesAdded": 0,
+  "buildRuntimeDependenciesAdded": 0,
+  "externalRequests": 0,
+  "failedRequests": 0
+}

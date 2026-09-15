@@ -1,0 +1,184 @@
+{
+  "status": "pass",
+  "contract": "control-observed-secondary-signature-separated-css-mutation-delta",
+  "mutation": {
+    "selector": ".outline-action",
+    "affectedElementKeys": [
+      "clear-action",
+      "filter-toggle"
+    ],
+    "property": "borderRadius",
+    "expected": "6px",
+    "actual": "20px"
+  },
+  "controls": {
+    "runCount": 8,
+    "runs": [
+      {
+        "index": 1,
+        "status": "fail",
+        "errorCount": 2,
+        "signatures": [
+          "elements.query-filter.styles.outlineColor",
+          "elements.query-filter.styles.outlineStyle"
+        ],
+        "rawErrorIndexes": [
+          45,
+          46
+        ]
+      },
+      {
+        "index": 2,
+        "status": "fail",
+        "errorCount": 2,
+        "signatures": [
+          "elements.query-filter.styles.outlineColor",
+          "elements.query-filter.styles.outlineStyle"
+        ],
+        "rawErrorIndexes": [
+          45,
+          46
+        ]
+      },
+      {
+        "index": 3,
+        "status": "fail",
+        "errorCount": 2,
+        "signatures": [
+          "elements.query-filter.styles.outlineColor",
+          "elements.query-filter.styles.outlineStyle"
+        ],
+        "rawErrorIndexes": [
+          45,
+          46
+        ]
+      },
+      {
+        "index": 4,
+        "status": "fail",
+        "errorCount": 2,
+        "signatures": [
+          "elements.query-filter.styles.outlineColor",
+          "elements.query-filter.styles.outlineStyle"
+        ],
+        "rawErrorIndexes": [
+          45,
+          46
+        ]
+      },
+      {
+        "index": 5,
+        "status": "pass",
+        "errorCount": 0,
+        "signatures": [],
+        "rawErrorIndexes": []
+      },
+      {
+        "index": 6,
+        "status": "pass",
+        "errorCount": 0,
+        "signatures": [],
+        "rawErrorIndexes": []
+      },
+      {
+        "index": 7,
+        "status": "pass",
+        "errorCount": 0,
+        "signatures": [],
+        "rawErrorIndexes": []
+      },
+      {
+        "index": 8,
+        "status": "pass",
+        "errorCount": 0,
+        "signatures": [],
+        "rawErrorIndexes": []
+      }
+    ],
+    "observedSecondaryErrorCount": 8,
+    "observedSecondarySignatures": [
+      "elements.query-filter.styles.outlineColor",
+      "elements.query-filter.styles.outlineStyle"
+    ]
+  },
+  "mutationOnly": {
+    "errorCount": 20,
+    "signatures": [
+      "elements.clear-action.styles.borderRadius",
+      "elements.filter-toggle.styles.borderRadius"
+    ],
+    "rawErrorIndexes": [
+      1,
+      2,
+      22,
+      23,
+      49,
+      50,
+      72,
+      73,
+      93,
+      94,
+      120,
+      121,
+      141,
+      142,
+      159,
+      160,
+      180,
+      181,
+      201,
+      202
+    ]
+  },
+  "sharedSecondary": {
+    "errorCount": 2,
+    "signatures": [
+      "elements.query-filter.styles.outlineColor",
+      "elements.query-filter.styles.outlineStyle"
+    ]
+  },
+  "controlOnlySecondary": {
+    "errorCount": 0,
+    "signatures": []
+  },
+  "sources": {
+    "controls": [
+      {
+        "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/saved-baseline.control.report.json",
+        "sha256": "07AFF72A840B20F9EE5202DBD00869C46702C3CFD3A4B1B29B2DEBD1CF261D46"
+      },
+      {
+        "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/saved-baseline.control-repeat.report.json",
+        "sha256": "07AFF72A840B20F9EE5202DBD00869C46702C3CFD3A4B1B29B2DEBD1CF261D46"
+      },
+      {
+        "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/saved-baseline.restore.report.json",
+        "sha256": "07AFF72A840B20F9EE5202DBD00869C46702C3CFD3A4B1B29B2DEBD1CF261D46"
+      },
+      {
+        "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/saved-baseline.restore-repeat.report.json",
+        "sha256": "07AFF72A840B20F9EE5202DBD00869C46702C3CFD3A4B1B29B2DEBD1CF261D46"
+      },
+      {
+        "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/fresh-baseline.control.report.json",
+        "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+      },
+      {
+        "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/fresh-baseline.control-repeat.report.json",
+        "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+      },
+      {
+        "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/fresh-baseline.restore.report.json",
+        "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+      },
+      {
+        "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/fresh-baseline.restore-repeat.report.json",
+        "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+      }
+    ],
+    "mutation": {
+      "path": "docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131658Z/fresh-baseline.radius-mutation.report.json",
+      "sha256": "BD2C1A24EB15E44BF0BFBBA45B17BFD6DA4566C322220A5104508799874489FB"
+    }
+  }
+}

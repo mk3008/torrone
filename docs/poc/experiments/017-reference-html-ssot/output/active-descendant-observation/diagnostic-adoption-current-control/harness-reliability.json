@@ -1,0 +1,16 @@
+{
+  "browserExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "browserVersion": "Chrome/151.0.7922.109",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "thirdResponsibilityDevelopmentAndGateAttempts": 9,
+  "timeouts": 0,
+  "retries": 0,
+  "acceptedComparisonFamilies": [
+    "integrated Target against common shell",
+    "integrated Target against read-only detail"
+  ],
+  "note": "Includes the initial detail mismatch used to correct only the noncanonical Target, the reversible negative, and the restored positive. Baselines were not recaptured during the negative probe."
+}

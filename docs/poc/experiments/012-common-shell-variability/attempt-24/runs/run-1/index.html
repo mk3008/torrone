@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業務ワークスペース</title>
+  <style>
+    :root { color-scheme: light; --page-background:#F4F7FA;--surface-background:#FFFFFF;--text-primary:#172033;--text-muted:#52657A;--border-subtle:#C7D2DF;--border-interactive:#75889C;--selection-background:#F3EAFB;--selection-foreground:#172033;--selection-indicator:#6B3FA0;--focus-ring:#3B82F6; }
+    [data-theme="dark"] { color-scheme: dark; --page-background:#101820;--surface-background:#1B2632;--text-primary:#F4F7FA;--text-muted:#BAC6D2;--border-subtle:#516273;--border-interactive:#91A3B5;--selection-background:#3A254D;--selection-foreground:#F4F7FA;--selection-indicator:#D5B4FF;--focus-ring:#FFD54A; }
+    * { box-sizing:border-box; } body { margin:0; font-family:system-ui, sans-serif; background:var(--page-background); color:var(--text-primary); }
+    button,input { font:inherit; } button:focus-visible,input:focus-visible,a:focus-visible { outline:3px solid var(--focus-ring); outline-offset:3px; }
+    .app-header { position:sticky; top:0; z-index:4; height:62px; display:flex; align-items:center; gap:14px; padding:0 20px; background:var(--surface-background); color:var(--text-primary); border-bottom:1px solid var(--border-subtle); }
+    .icon-button { width:36px; height:36px; display:grid; place-items:center; padding:0; color:var(--text-primary); background:var(--surface-background); border:1px solid var(--border-interactive); border-radius:6px; cursor:pointer; }
+    .icon { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; } .identity { font-weight:700; letter-spacing:.02em; } .header-spacer { flex:1; }
+    .shell { display:grid; grid-template-columns:268px minmax(0,1fr); min-height:calc(100vh - 62px); } .shell.drawer-hidden { grid-template-columns:minmax(0,1fr); }
+    .drawer { min-width:0; height:calc(100vh - 62px); position:sticky; top:62px; display:flex; flex-direction:column; background:var(--surface-background); border-right:1px solid var(--border-subtle); }
+    .drawer-search { margin:16px 14px 12px; position:relative; } .drawer-search svg { position:absolute; width:16px; left:10px; top:11px; color:var(--text-muted); } .drawer-search input { width:100%; height:40px; padding:0 10px 0 33px; color:var(--text-primary); background:var(--surface-background); border:1px solid var(--border-interactive); border-radius:5px; }
+    .nav-list { overflow:auto; padding:0 8px 16px; } .nav-row { width:100%; min-height:38px; display:flex; align-items:center; text-align:left; padding:8px 10px; color:var(--text-primary); background:transparent; border:0; border-radius:0; cursor:pointer; position:relative; } .nav-row:hover { background:color-mix(in srgb,var(--selection-background) 55%, transparent); } .nav-row.child { padding-left:32px; } .nav-row.selected { color:var(--selection-foreground); font-weight:700; background:var(--selection-background); } .nav-row.selected::before { content:""; position:absolute; left:-8px; top:0; bottom:0; width:4px; background:var(--selection-indicator); } .nav-parent { font-weight:650; } .chevron { margin-left:auto; width:17px; height:17px; }
+    .workspace { padding:34px clamp(22px,5vw,72px) 70px; } .workspace-inner { max-width:900px; } h1 { margin:0 0 30px; font-size:18px; font-weight:700; } .numbers { display:grid; grid-template-columns:repeat(auto-fill,minmax(76px,1fr)); gap:10px; } .number { min-height:46px; display:grid; place-items:center; background:var(--surface-background); border:1px solid var(--border-subtle); border-radius:5px; color:var(--text-primary); font-variant-numeric:tabular-nums; }
+    .no-matches { padding:14px 10px; color:var(--text-muted); font-size:14px; } .hidden { display:none !important; }
+    @media (max-width:640px) { .shell { grid-template-columns:220px minmax(0,1fr); } .workspace { padding:24px 18px 48px; } .numbers { grid-template-columns:repeat(2,minmax(0,1fr)); } .identity { font-size:15px; } }
+  </style>
+</head>
+<body>
+  <div id="app" data-theme="light">
+    <header class="app-header">
+      <button id="drawer-toggle" class="icon-button" type="button" title="Close navigation" aria-label="Close navigation"></button>
+      <div class="identity">業務ワークスペース</div><div class="header-spacer"></div>
+      <button id="theme-toggle" class="icon-button" type="button" title="Switch to dark theme" aria-label="Switch to dark theme"></button>
+    </header>
+    <div id="shell" class="shell">
+      <aside id="drawer" class="drawer" aria-label="Navigation">
+        <label class="drawer-search"><span class="hidden">メニューを検索</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path></svg><input id="nav-search" type="search" aria-label="メニューを検索" placeholder="項目を検索"></label>
+        <nav id="nav-list" class="nav-list" aria-label="Drawer navigation"></nav>
+      </aside>
+      <main class="workspace"><div class="workspace-inner"><h1>スクロール検証用ダミーコンテンツ</h1><div id="numbers" class="numbers" aria-label="1 から 80"></div></div></main>
+    </div>
+  </div>
+  <script>
+    const icon=(name)=>name==='panel-left-close'?'<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"></rect><path d="M9 4v16M16 9l-3 3 3 3"></path></svg>':name==='panel-left-open'?'<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"></rect><path d="M9 4v16M13 9l3 3-3 3"></path></svg>':name==='moon'?'<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8 8 0 0 1 9.8 3.5 8 8 0 1 0 20.5 14.2Z"></path></svg>':'<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>';
+    const items=['項目 02',...Array.from({length:29},(_,i)=>`項目 ${String(i+3).padStart(2,'0')}`)]; const state={current:'項目 01-01',expanded:true};
+    const app=document.querySelector('#app'), shell=document.querySelector('#shell'), drawer=document.querySelector('#drawer'), list=document.querySelector('#nav-list'), search=document.querySelector('#nav-search'), drawerToggle=document.querySelector('#drawer-toggle'), themeToggle=document.querySelector('#theme-toggle');
+    function renderNav(){ const q=search.value.trim(); const visible=(x)=>!q||x.includes(q); let html=''; const childMatch=visible('項目 01-01')||visible('項目 01-02'); if(visible('グループ 01')||childMatch){html+=`<button class="nav-row nav-parent" type="button" data-disclosure="true" aria-expanded="${state.expanded}">グループ 01 <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>`; if(state.expanded){['項目 01-01','項目 01-02'].filter(visible).forEach(x=>html+=row(x,'child'));}} items.filter(visible).forEach(x=>html+=row(x,'')); if(!html) html='<p class="no-matches">一致する項目はありません</p>'; list.innerHTML=html; }
+    function row(label,kind){return `<button class="nav-row ${kind} ${state.current===label?'selected':''}" type="button" data-item="${label}" ${state.current===label?'aria-current="page"':''}>${label}</button>`}
+    function setDrawer(open){ shell.classList.toggle('drawer-hidden',!open); drawer.classList.toggle('hidden',!open); drawerToggle.innerHTML=icon(open?'panel-left-close':'panel-left-open'); drawerToggle.title=drawerToggle.setAttribute('aria-label',open?'Close navigation':'Open navigation'); }
+    function setTheme(theme){app.dataset.theme=theme; themeToggle.innerHTML=icon(theme==='light'?'moon':'sun'); themeToggle.title=themeToggle.setAttribute('aria-label',theme==='light'?'Switch to dark theme':'Switch to light theme');}
+    const params=new URLSearchParams(location.search); setDrawer(params.get('drawer')!=='hidden'); setTheme(params.get('theme')==='dark'?'dark':'light');
+    drawerToggle.onclick=()=>setDrawer(drawer.classList.contains('hidden')); themeToggle.onclick=()=>setTheme(app.dataset.theme==='light'?'dark':'light'); search.oninput=renderNav; list.onclick=(e)=>{const button=e.target.closest('button');if(!button)return;if(button.dataset.disclosure){state.expanded=!state.expanded;renderNav();}else if(button.dataset.item){state.current=button.dataset.item;renderNav();}};
+    document.querySelector('#numbers').innerHTML=Array.from({length:80},(_,i)=>`<div class="number">${i+1}</div>`).join(''); renderNav();
+  </script>
+</body>
+</html>

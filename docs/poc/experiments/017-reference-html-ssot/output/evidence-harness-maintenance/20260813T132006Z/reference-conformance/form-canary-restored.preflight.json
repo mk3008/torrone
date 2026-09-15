@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "form-canary-reference.html",
+    "digest": "845efe6e2ab212a3e815d7d1d408447fea4969d4607749759500ee46d0e8fc60",
+    "files": [
+      {
+        "path": "form-canary-reference.html",
+        "bytes": 15931,
+        "sha256": "a4e3f072767604623763a8841aabe41780531865d7136e8df19475e1eda1b1f4"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 11
+  },
+  "errors": []
+}

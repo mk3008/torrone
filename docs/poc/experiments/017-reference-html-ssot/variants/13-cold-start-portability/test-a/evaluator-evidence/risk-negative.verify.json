@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "reference.html",
+    "digest": "1c041e549b6290f42a64b3b5e4697c8c886e59c3946648ebd429f13589700886",
+    "files": [
+      {
+        "path": "reference.css",
+        "bytes": 7957,
+        "sha256": "e9355532b302f18f8080b9c369d9d81f908521af96865a173296491dc6af0b44"
+      },
+      {
+        "path": "reference.html",
+        "bytes": 10640,
+        "sha256": "71d8575c4c86d0375c4afabb7ab8f01efa20cc9ba29ed4a3798d94d8f8686751"
+      },
+      {
+        "path": "reference.js",
+        "bytes": 6046,
+        "sha256": "43e81de08ab41ce764bfeff6e5055f6a9c9b90eb8c7cad7585f9814ab06b6acd"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "negative/target-risk-color.html",
+    "digest": "b189fbd97937777ac5d0dc9e7b067b11b0cad10c3f5cde2cf2b9bb54c7cbab96",
+    "files": [
+      {
+        "path": "negative/risk-color-mutation.css",
+        "bytes": 124,
+        "sha256": "04c27be278fdb589236d7a981b7fdec50649b29b4922b65f46d5f50ece17d06e"
+      },
+      {
+        "path": "negative/target-risk-color.html",
+        "bytes": 7785,
+        "sha256": "957709de84e37c133ed6b15142c27864640aaed2aac7dbf54d216b39987583db"
+      },
+      {
+        "path": "target.css",
+        "bytes": 8415,
+        "sha256": "14eeef8feaf20d5c128bb85c0c648572304d0706815bf0570a5cecde296877ee"
+      },
+      {
+        "path": "target.js",
+        "bytes": 5585,
+        "sha256": "2abd416d6e5b6155b0a9a0ca3ff9c79547328ed58157e63f45ac0e2aeefcd71b"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation visibility",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "navigation parent",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          },
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          }
+        ]
+      },
+      {
+        "name": "navigation filter no match",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "not present"
+          },
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "name": "navigation selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-secondary"
+          },
+          {
+            "action": "click",
+            "target": "navigation-current"
+          }
+        ]
+      },
+      {
+        "name": "theme round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "semantic:role:button:aria-pressed"
+          },
+          {
+            "action": "click",
+            "target": "semantic:role:button:aria-pressed"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "target": "user-menu-toggle",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "search-query",
+            "value": "No inspection"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      },
+      {
+        "name": "filter pointer round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "filters-toggle"
+          },
+          {
+            "action": "click",
+            "target": "filters-toggle"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filters-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filters-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "pagination round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "page-next"
+          },
+          {
+            "action": "click",
+            "target": "page-previous"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 24,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.risk-badge.styles.backgroundColor",
+        "count": 24
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation visibility.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation visibility.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no match.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no match.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme round trip.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear to initial.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear to initial.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter pointer round trip.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter pointer round trip.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pagination round trip.step-1.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pagination round trip.step-2.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pagination round trip.step-3.elements.risk-badge.styles.backgroundColor",
+      "expected": "rgb(255, 240, 237)",
+      "actual": "rgb(223, 244, 255)"
+    }
+  ]
+}

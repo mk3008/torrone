@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "console-error.html",
+    "digest": "35350cd91e56d8e73a14a53f677d9c43f46b509720bffcdd45690dfea78004e5",
+    "files": [
+      {
+        "path": "console-error.html",
+        "bytes": 2249,
+        "sha256": "a3d54c79654f785bffc9b33713214f1de9bbe7c4dd62b7c6cd45bf6f57f792f0"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 2,
+    "errors": [
+      {
+        "kind": "console.error",
+        "message": "intentional conformance probe"
+      },
+      {
+        "kind": "console.error",
+        "message": "intentional conformance probe"
+      }
+    ]
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "runtime",
+      "code": "console-error",
+      "state": "bundle",
+      "target": "console.error",
+      "detail": "intentional conformance probe"
+    },
+    {
+      "source": "runtime",
+      "code": "console-error",
+      "state": "bundle",
+      "target": "console.error",
+      "detail": "intentional conformance probe"
+    }
+  ]
+}

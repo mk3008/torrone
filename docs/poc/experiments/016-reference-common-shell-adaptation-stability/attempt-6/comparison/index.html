@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Attempt 6 — final state comparison</title>
+    <style>
+      :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+      body { margin: 0; background: Canvas; color: CanvasText; }
+      header, main { max-width: 1900px; margin: auto; padding: 1rem; }
+      h1 { margin-bottom: .25rem; }
+      p, li { line-height: 1.5; }
+      .notice { border-inline-start: 4px solid #0b5cad; padding-inline-start: .75rem; }
+      section { margin-block: 2rem; }
+      .grid { display: grid; grid-template-columns: repeat(4, minmax(260px, 1fr)); gap: 1rem; }
+      figure { margin: 0; border: 1px solid color-mix(in srgb, CanvasText 22%, transparent); background: Canvas; }
+      figcaption { padding: .6rem .75rem; font-weight: 650; }
+      img { display: block; width: 100%; height: auto; border-top: 1px solid color-mix(in srgb, CanvasText 15%, transparent); }
+      code { font-family: ui-monospace, monospace; }
+      @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, minmax(260px, 1fr)); } }
+      @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Attempt 6 — React final-state comparison</h1>
+      <p>同一 viewport（1440×900）で取得した最終成果物の比較です。Reference は視覚 Binding の比較基準、Run 1–3 は独立した React 実装です。</p>
+      <p class="notice">比較するのは Header / Drawer / Main、テーマ、固定 SVG、選択状態、active indicator、親子階層、操作状態です。React の DOM・コンポーネント構成は比較対象ではありません。</p>
+      <p><a href="../final-evaluation.md">最終評価</a> · <a href="../human-review-packet.md">人間レビュー資料</a></p>
+    </header>
+    <main>
+      <section>
+        <h2>ライトテーマ・Drawer 表示</h2>
+        <div class="grid">
+          <figure><figcaption>Reference</figcaption><img src="../observation/reference/01-light-open.png" alt="Reference light Drawer open" /></figure>
+          <figure><figcaption>Run 1 final</figcaption><img src="../observation/run-1/final/01-light-open.png" alt="Run 1 light Drawer open" /></figure>
+          <figure><figcaption>Run 2 final</figcaption><img src="../observation/run-2/final/01-light-open.png" alt="Run 2 light Drawer open" /></figure>
+          <figure><figcaption>Run 3 final</figcaption><img src="../runs/run-3/final/output/playwright/attempt-3/06-light-open.png" alt="Run 3 light Drawer open" /></figure>
+        </div>
+      </section>
+      <section>
+        <h2>ダークテーマ・Drawer 表示</h2>
+        <div class="grid">
+          <figure><figcaption>Reference</figcaption><img src="../observation/reference/02-dark-open.png" alt="Reference dark Drawer open" /></figure>
+          <figure><figcaption>Run 1 final</figcaption><img src="../observation/run-1/final/02-dark-open.png" alt="Run 1 dark Drawer open" /></figure>
+          <figure><figcaption>Run 2 final</figcaption><img src="../observation/run-2/final/02-dark-open.png" alt="Run 2 dark Drawer open" /></figure>
+          <figure><figcaption>Run 3 final</figcaption><img src="../runs/run-3/final/output/playwright/attempt-3/07-dark-open.png" alt="Run 3 dark Drawer open" /></figure>
+        </div>
+      </section>
+      <section>
+        <h2>Drawer 非表示</h2>
+        <div class="grid">
+          <figure><figcaption>Reference</figcaption><img src="../observation/reference/03-drawer-hidden.png" alt="Reference Drawer hidden" /></figure>
+          <figure><figcaption>Run 1 final</figcaption><img src="../observation/run-1/final/03-drawer-hidden.png" alt="Run 1 Drawer hidden" /></figure>
+          <figure><figcaption>Run 2 final</figcaption><img src="../observation/run-2/final/03-drawer-hidden.png" alt="Run 2 Drawer hidden" /></figure>
+          <figure><figcaption>Run 3 final</figcaption><img src="../runs/run-3/final/output/playwright/attempt-3/08-drawer-hidden.png" alt="Run 3 Drawer hidden" /></figure>
+        </div>
+      </section>
+      <section>
+        <h2>親メニュー折りたたみ</h2>
+        <div class="grid">
+          <figure><figcaption>Reference</figcaption><img src="../observation/reference/04-workspace-collapsed.png" alt="Reference Workspace collapsed" /></figure>
+          <figure><figcaption>Run 1 final</figcaption><img src="../observation/run-1/final/05-workspace-collapsed.png" alt="Run 1 Workspace collapsed" /></figure>
+          <figure><figcaption>Run 2 final</figcaption><img src="../observation/run-2/final/05-workspace-collapsed.png" alt="Run 2 Workspace collapsed" /></figure>
+          <figure><figcaption>Run 3 final</figcaption><img src="../runs/run-3/final/output/playwright/attempt-3/10-workspace-collapsed.png" alt="Run 3 Workspace collapsed" /></figure>
+        </div>
+      </section>
+      <section>
+        <h2>子項目の選択状態</h2>
+        <div class="grid">
+          <figure><figcaption>Reference</figcaption><img src="../observation/reference/01-light-open.png" alt="Reference baseline for selection" /></figure>
+          <figure><figcaption>Run 1 final</figcaption><img src="../observation/run-1/final/06-selected.png" alt="Run 1 selected Section 01" /></figure>
+          <figure><figcaption>Run 2 final</figcaption><img src="../observation/run-2/final/06-selected.png" alt="Run 2 selected Section 01" /></figure>
+          <figure><figcaption>Run 3 final</figcaption><img src="../runs/run-3/final/output/playwright/attempt-3/11-selected.png" alt="Run 3 selected Section 01" /></figure>
+        </div>
+      </section>
+      <section>
+        <h2>hover と focus-visible</h2>
+        <p>hover は未選択の <code>Activity</code>、focus-visible は検索入力で確認しています。</p>
+        <div class="grid">
+          <figure><figcaption>Reference hover</figcaption><img src="../observation/reference/05-hover-overview.png" alt="Reference hover" /></figure>
+          <figure><figcaption>Run 1 final hover</figcaption><img src="../observation/run-1/final/07-hover-activity.png" alt="Run 1 hover" /></figure>
+          <figure><figcaption>Run 2 final focus-visible</figcaption><img src="../observation/run-2/final/08-focus-visible.png" alt="Run 2 focus visible" /></figure>
+          <figure><figcaption>Run 3 final focus-visible</figcaption><img src="../runs/run-3/final/output/playwright/attempt-3/13-focus-visible-search.png" alt="Run 3 focus visible" /></figure>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

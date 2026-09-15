@@ -17,6 +17,12 @@ implementation variation.
 The maintained product is the Manifest. A generated HTML page, PNG, capture
 script, static check, and evaluator note are experiment evidence only.
 
+This protocol does not govern a consumer delivery in which an implementer may
+repair and re-verify one product artifact. That separate bounded loop is defined
+in the [Manifest quality workflow](manifest-quality-workflow.md#consumer-delivery-loop).
+Keep its repaired output separate from this protocol's untouched first-pass
+three-run evidence.
+
 ## What the three runs test
 
 The test subject is the fixed **Manifest plus product prompt** (and, for a
@@ -142,3 +148,39 @@ Each attempt records:
 Human review remains a decision about whether the demonstrated result is useful
 or acceptable. It is not a substitute for freezing inputs or for preserving
 the three independent outputs.
+
+## Interaction observation contract
+
+When a fixed prompt exercises a visible state-changing control, freeze a
+short, observable interaction contract with the input set. The contract names
+the starting state, the user action, the visible result, and the state that
+must remain stable. A self-review records the observed before state, the action
+actually performed, and the observed after state for each run; it must not only
+list the intended HTML structure or handler.
+
+For a common-shell Drawer controller, the contract observes the visible Drawer
+body before and after activation, the absence of reserved Drawer space while
+hidden, the unchanged workspace task content, and the controller's updated
+available-action meaning. For a themed icon-only control, the contract observes
+the rendered glyph, its button surface, and its visible focus treatment in
+every exercised theme. These checks observe the result; they do not prescribe
+an icon library, CSS selector, DOM shape, or framework.
+
+## Fixed human-review report format
+
+Every human-review comparison uses one concise HTML report format. It contains:
+
+1. the attempt status and experiment type;
+2. the frozen Manifest snapshot identity and file count;
+3. a local link to the complete frozen-input inventory;
+4. the complete fixed product prompt as readable text and a local link;
+5. the generation model and reasoning effort;
+6. three equivalent Run cards, each linking to its HTML and each required
+   fixed-state PNG; and
+7. a short Japanese decision request that asks only about the visible screen,
+   without requiring claim IDs, YAML, digests, or evaluator vocabulary.
+
+The same report may link to mechanical evidence and review limits, but it must
+keep those separate from the human decision request. Do not add Run-specific
+editorial commentary to the cards: the comparison is the evidence, and the
+report format stays stable across attempts.

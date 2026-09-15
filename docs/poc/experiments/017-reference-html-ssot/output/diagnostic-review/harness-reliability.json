@@ -1,0 +1,155 @@
+{
+  "browsers": [
+    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+  ],
+  "attempts": 18,
+  "timeouts": 0,
+  "retries": 0,
+  "events": [
+    {
+      "label": "Current baseline search-shell",
+      "attempt": 1,
+      "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3551
+    },
+    {
+      "label": "Current comparison search-shell",
+      "attempt": 1,
+      "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3573
+    },
+    {
+      "label": "Current baseline search-workspace",
+      "attempt": 1,
+      "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3236
+    },
+    {
+      "label": "Current comparison search-workspace",
+      "attempt": 1,
+      "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3270
+    },
+    {
+      "label": "Current baseline form-shell",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3117
+    },
+    {
+      "label": "Current comparison form-shell",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3116
+    },
+    {
+      "label": "Current baseline form-workflow",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2790
+    },
+    {
+      "label": "Current comparison form-workflow",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2816
+    },
+    {
+      "label": "Injected late-focus defect",
+      "attempt": 1,
+      "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3266
+    },
+    {
+      "label": "Positive preflight common-shell",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3062
+    },
+    {
+      "label": "Positive preflight search-workspace",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2808
+    },
+    {
+      "label": "Positive preflight form-workflow",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2831
+    },
+    {
+      "label": "Conformance negative semantic-ambiguity",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 1930
+    },
+    {
+      "label": "Conformance negative relational-ambiguity",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2045
+    },
+    {
+      "label": "Conformance negative whole-page-missing-h1",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2026
+    },
+    {
+      "label": "Historical comparative negative",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2857
+    },
+    {
+      "label": "Semantic-only Reference regression",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 1956
+    },
+    {
+      "label": "Semantic-only comparative negative",
+      "attempt": 1,
+      "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 1981
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "unsupported-invalid-token.html",
+    "digest": "32fd500a42ab3b6f72458be7e099814f1badebe45df0ae2e348742536165e165",
+    "files": [
+      {
+        "path": "unsupported-invalid-token.html",
+        "bytes": 2204,
+        "sha256": "158f216c9e064e005d9211ba6328a3058ebc68d98d6d97c07bb6ba0520d5dfa6"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "absolute-dom",
+      "code": "unsupported-aria-invalid-token",
+      "state": "initial",
+      "target": "query-field",
+      "detail": "aria-invalid has unsupported value \"pending\"."
+    },
+    {
+      "source": "absolute-dom",
+      "code": "unsupported-aria-invalid-token",
+      "state": "scenarios.lookup.step-1",
+      "target": "query-field",
+      "detail": "aria-invalid has unsupported value \"pending\"."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "single-date.html",
+    "digest": "4d9e052d2726f69297287a7e26f739179a291fc9458b1805e75c3b1f041b93a6",
+    "files": [
+      {
+        "path": "single-date.html",
+        "bytes": 16048,
+        "sha256": "69383270e50b1e0f59ce88d891f65225624c8a27dd3a1b1fdf077998614abae9"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 24
+  },
+  "errors": []
+}

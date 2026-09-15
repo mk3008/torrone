@@ -1,0 +1,5175 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "date-range.html",
+    "digest": "42a431133b1fb30e58c534c221b8ab407af3cdbc47bc7400d2f5264978110d32",
+    "files": [
+      {
+        "path": "date-range.html",
+        "bytes": 37110,
+        "sha256": "387ec789769de702263a802de27368ea2128a2f27c25002e494c00dc65cc5d86"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "40c8a3233720b80613c6c1218307f3fa91d8641a121f8298cf48a558afe080c4",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 28821,
+        "sha256": "41676a07a5570f862caaa79f85841a21f4ffc8c4b4f633b2ee624a2e5454b8a3"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "start input focus opens calendar",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-input"
+          }
+        ]
+      },
+      {
+        "name": "start input tab closes calendar",
+        "steps": [
+          {
+            "action": "press",
+            "target": "range-start-input",
+            "key": "Tab"
+          }
+        ]
+      },
+      {
+        "name": "start calendar icon toggle",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          }
+        ]
+      },
+      {
+        "name": "end calendar anchor",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-end-trigger"
+          }
+        ]
+      },
+      {
+        "name": "month navigation",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-next-month"
+          },
+          {
+            "action": "click",
+            "target": "range-prev-month"
+          }
+        ]
+      },
+      {
+        "name": "year navigation",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-prev-year"
+          },
+          {
+            "action": "click",
+            "target": "range-next-year"
+          }
+        ]
+      },
+      {
+        "name": "single-click start selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          }
+        ]
+      },
+      {
+        "name": "single-click end selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-end-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          }
+        ]
+      },
+      {
+        "name": "pointer range selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          }
+        ]
+      },
+      {
+        "name": "completed range reopen",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-trigger"
+          }
+        ]
+      },
+      {
+        "name": "keyboard range selection",
+        "steps": [
+          {
+            "action": "press",
+            "target": "range-start-input",
+            "key": "ArrowDown"
+          },
+          {
+            "action": "press",
+            "target": "range-start-day",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "range-end-input",
+            "key": "ArrowDown"
+          },
+          {
+            "action": "press",
+            "target": "range-end-day",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "disabled future date",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-disabled-day"
+          }
+        ]
+      },
+      {
+        "name": "compact manual range",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start-input",
+            "value": "20261019"
+          },
+          {
+            "action": "fill",
+            "target": "range-end-input",
+            "value": "20261021"
+          },
+          {
+            "action": "press",
+            "target": "range-end-input",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "invalid manual start",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start-input",
+            "value": "20260931"
+          },
+          {
+            "action": "press",
+            "target": "range-start-input",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "future manual end",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start-input",
+            "value": "20261019"
+          },
+          {
+            "action": "fill",
+            "target": "range-end-input",
+            "value": "20261028"
+          },
+          {
+            "action": "press",
+            "target": "range-end-input",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "reversed manual range",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start-input",
+            "value": "20261021"
+          },
+          {
+            "action": "fill",
+            "target": "range-end-input",
+            "value": "20261019"
+          },
+          {
+            "action": "press",
+            "target": "range-end-input",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "correct reversed range",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start-input",
+            "value": "20261021"
+          },
+          {
+            "action": "fill",
+            "target": "range-end-input",
+            "value": "20261019"
+          },
+          {
+            "action": "fill",
+            "target": "range-start-input",
+            "value": "20261019"
+          },
+          {
+            "action": "fill",
+            "target": "range-end-input",
+            "value": "20261021"
+          },
+          {
+            "action": "press",
+            "target": "range-end-input",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "escape closes calendar",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "press",
+            "target": "range-start-day",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "close button closes calendar",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-close"
+          }
+        ]
+      },
+      {
+        "name": "clear end and reopen",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start-input",
+            "value": "20261019"
+          },
+          {
+            "action": "fill",
+            "target": "range-end-input",
+            "value": "20261021"
+          },
+          {
+            "action": "click",
+            "target": "range-end-clear"
+          },
+          {
+            "action": "click",
+            "target": "range-end-trigger"
+          }
+        ]
+      },
+      {
+        "name": "end-only manual period",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-end-input",
+            "value": "20261021"
+          },
+          {
+            "action": "press",
+            "target": "range-end-input",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "start-only manual period",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start-input",
+            "value": "20261019"
+          },
+          {
+            "action": "press",
+            "target": "range-start-input",
+            "key": "Escape"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 403,
+    "uniqueErrorCount": 7,
+    "diagnosticCount": 105,
+    "errorSignatures": [
+      {
+        "path": "elements.range-before-start-day.relationships.describedBy",
+        "count": 57
+      },
+      {
+        "path": "elements.range-disabled-day.relationships.describedBy",
+        "count": 57
+      },
+      {
+        "path": "elements.range-end-day.relationships.describedBy",
+        "count": 57
+      },
+      {
+        "path": "elements.range-end-input.relationships.describedBy",
+        "count": 59
+      },
+      {
+        "path": "elements.range-next-day.relationships.describedBy",
+        "count": 57
+      },
+      {
+        "path": "elements.range-start-day.relationships.describedBy",
+        "count": 57
+      },
+      {
+        "path": "elements.range-start-input.relationships.describedBy",
+        "count": 59
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start input focus opens calendar.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input tab closes calendar.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input tab closes calendar.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input tab closes calendar.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input tab closes calendar.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input tab closes calendar.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input tab closes calendar.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start input tab closes calendar.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start input tab closes calendar.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start calendar icon toggle.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start calendar icon toggle.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start calendar icon toggle.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-grid.box.x",
+      "expected": 690,
+      "actual": 650,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end calendar anchor.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end calendar anchor.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-2.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-2.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-3.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-3.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.month navigation.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.month navigation.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-2.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-2.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-3.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-3.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.year navigation.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.year navigation.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.single-click start selection.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.single-click start selection.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.single-click start selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click start selection.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.single-click start selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.single-click end selection.step-1.elements.range-grid.box.x",
+      "expected": 690,
+      "actual": 650,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.single-click end selection.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.single-click end selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.single-click end selection.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.single-click end selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-3.elements.range-grid.box.x",
+      "expected": 690,
+      "actual": 650,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-3.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-4.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-4.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-4.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-4.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-4.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-4.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-4.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-3.elements.range-grid.box.x",
+      "expected": 690,
+      "actual": 650,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-3.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-4.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-4.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-4.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-4.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-4.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-4.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-4.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-5.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-5.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-5.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-5.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-5.elements.range-grid.box.x",
+      "expected": 690,
+      "actual": 650,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-5.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-5.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-5.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.completed range reopen.step-5.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.completed range reopen.step-5.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-grid.box.x",
+      "expected": 690,
+      "actual": 650,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.disabled future date.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.disabled future date.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.disabled future date.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.disabled future date.step-2.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.disabled future date.step-2.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.disabled future date.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.disabled future date.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact manual range.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact manual range.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.compact manual range.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact manual range.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint",
+        "range-start-error"
+      ],
+      "actual": [
+        "id:dispatch-format",
+        "range-start-error"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid manual start.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid manual start.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint",
+        "range-start-error"
+      ],
+      "actual": [
+        "id:dispatch-format",
+        "range-start-error"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid manual start.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.future manual end.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint",
+        "range-end-error"
+      ],
+      "actual": [
+        "id:dispatch-format",
+        "range-end-error"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.future manual end.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint",
+        "range-end-error"
+      ],
+      "actual": [
+        "id:dispatch-format",
+        "range-end-error"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.future manual end.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.future manual end.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed manual range.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint",
+        "range-end-error"
+      ],
+      "actual": [
+        "id:dispatch-format",
+        "range-end-error"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed manual range.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint",
+        "range-end-error"
+      ],
+      "actual": [
+        "id:dispatch-format",
+        "range-end-error"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.reversed manual range.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed manual range.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.correct reversed range.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint",
+        "range-end-error"
+      ],
+      "actual": [
+        "id:dispatch-format",
+        "range-end-error"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.correct reversed range.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint",
+        "range-end-error"
+      ],
+      "actual": [
+        "id:dispatch-format",
+        "range-end-error"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.correct reversed range.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-4.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-4.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-4.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-4.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-4.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-4.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-4.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.correct reversed range.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-5.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-5.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-5.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-5.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-5.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-5.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.correct reversed range.step-5.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.correct reversed range.step-5.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.escape closes calendar.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.escape closes calendar.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.escape closes calendar.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-grid.box.x",
+      "expected": 418,
+      "actual": 378,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.close button closes calendar.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.close button closes calendar.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.close button closes calendar.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear end and reopen.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear end and reopen.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-3.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-3.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-3.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-3.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-3.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-3.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-3.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear end and reopen.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-grid.box.x",
+      "expected": 690,
+      "actual": 650,
+      "delta": 40
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-grid.box.y",
+      "expected": 371.5,
+      "actual": 416,
+      "delta": 44.5
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear end and reopen.step-4.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear end and reopen.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only manual period.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.end-only manual period.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only manual period.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-1.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-1.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-1.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-1.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-1.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-1.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-1.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start-only manual period.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-2.elements.range-before-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-2.elements.range-disabled-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-2.elements.range-end-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-2.elements.range-end-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-2.elements.range-next-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-2.elements.range-start-day.relationships.describedBy",
+      "expected": [
+        "id:range-keyboard-help"
+      ],
+      "actual": [
+        "id:dispatch-keyboard-guide"
+      ]
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.start-only manual period.step-2.elements.range-start-input.relationships.describedBy",
+      "expected": [
+        "id:range-hint"
+      ],
+      "actual": [
+        "id:dispatch-format"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start-only manual period.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

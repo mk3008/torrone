@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Assign shipping carrier</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --page: #f3f6fa; --panel: #fff; --ink: #101d2f; --subtle: #54657a; --stroke: #c6d2df; --focus-ring: #86b9ee; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 720px; color: var(--ink); background: var(--page); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :is(button, input, [role="option"]):focus-visible { outline-color: var(--focus-ring); outline-style: solid; outline-width: 3px; outline-offset: 2px; }
+    .workspace { width: min(760px, calc(100% - 64px)); margin: 44px auto; }
+    h1 { margin: 0; font-size: 30px; line-height: 1.2; }
+    .intro { margin: 7px 0 22px; color: var(--subtle); }
+    .assignment { padding: 24px; background: var(--panel); border: 1px solid var(--stroke); border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .assignment h2 { margin: 0 0 6px; font-size: 22px; }
+    .purpose { margin: 0 0 20px; color: var(--subtle); }
+    .caption { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .carrier-query { width: 100%; min-height: 42px; padding: 8px 11px; color: var(--ink); background: var(--panel); border: 1px solid #94a8bd; border-radius: 6px; }
+    .matches { margin: 6px 0 0; padding: 6px; background: var(--panel); border: 1px solid #98aabc; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
+    .carrier-result { display: grid; width: 100%; min-height: 54px; padding: 8px 10px; align-content: center; color: var(--ink); background: var(--panel); border: 0; border-radius: 5px; text-align: left; }
+    .carrier-result:hover, .carrier-result[aria-selected="true"] { background: #e5f0fb; }
+    .carrier-code { color: var(--subtle); font-size: 13px; }
+    .no-match, .no-carrier-results { margin: 8px 0 0; padding: 14px; color: var(--subtle); background: #f8fafc; border: 1px solid var(--stroke); border-radius: 6px; }
+    .assigned-carrier { display: flex; min-height: 58px; margin-top: 14px; padding: 10px 12px; align-items: center; justify-content: space-between; gap: 16px; background: #edf5fd; border: 1px solid #9ebbd5; border-radius: 6px; }
+    .assigned-carrier p { margin: 0; }
+    .remove-carrier { min-height: 36px; padding: 0 12px; color: #183653; background: var(--panel); border: 1px solid #8ea2b9; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <aside hidden aria-label="Consumer implementation metadata"></aside>
+  <main class="workspace">
+    <h1>Assign shipping carrier</h1>
+    <p class="intro">Select the carrier responsible for the outbound shipment.</p>
+    <article class="assignment" aria-labelledby="carrier-heading">
+      <h2 id="carrier-heading">Carrier</h2>
+      <p class="purpose">Search by carrier code or legal name.</p>
+      <label class="caption" for="carrier-search">Carrier code or name</label>
+      <input class="carrier-query" id="carrier-search" role="combobox" aria-autocomplete="list" aria-controls="carrier-matches" aria-expanded="false" autocomplete="off">
+      <div class="matches" id="carrier-matches" role="listbox" aria-label="Matching carriers" hidden>
+        <button class="carrier-result" id="carrier-option-primary" type="button" role="option" aria-selected="false"><span>Atlas Freight Services</span><span class="carrier-code">Carrier CR-714</span></button>
+        <button class="carrier-result" type="button" role="option" aria-selected="false"><span>Northline Transport</span><span class="carrier-code">Carrier CR-728</span></button>
+        <button class="carrier-result" type="button" role="option" aria-selected="false"><span>Blue River Logistics</span><span class="carrier-code">Carrier CR-735</span></button>
+      </div>
+      <p class="no-match" role="status" aria-live="polite" hidden>No matching carriers. Change the code or name.</p>
+      <div class="assigned-carrier" hidden><p><strong>Atlas Freight Services</strong><br><span class="carrier-code">Carrier CR-714</span></p><button class="remove-carrier" type="button">Clear</button></div>
+    </article>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="identity-map.js"></script>
+</body>
+</html>

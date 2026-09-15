@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "search-workspace.html",
+    "digest": "2e6f1a4ae8a04764a8d7f0eff0b6e597b4aaab3bb5f8f5a04fe36b8ad88f2f45",
+    "files": [
+      {
+        "path": "search-workspace.html",
+        "bytes": 12277,
+        "sha256": "3078962d0880a28658691922d2f6cb6e9e3a9239bce735994ec71ababbfd4c3b"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 10
+  },
+  "errors": []
+}

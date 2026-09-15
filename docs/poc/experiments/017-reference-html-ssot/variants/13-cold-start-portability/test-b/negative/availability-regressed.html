@@ -1,0 +1,250 @@
+<!doctype html>
+<!-- Generated negative: availability-regressed.html; source maintenance-window.html -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Maintenance history window</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --page-bg: #f3f6fa; --panel-bg: #ffffff; --ink: #101d2f; --quiet: #56677a; --line: #8fa3b8; --brand: #1769a6; --keyboard: #75abe0; --danger: #a4262c; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 720px; color: var(--ink); background: var(--page-bg); font: 16px/1.45 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: not-allowed; }
+    [hidden] { display: none !important; }
+    :where(button, input):focus-visible { outline: 3px solid var(--keyboard); outline-offset: 2px; }
+    .environment-strip { padding: 9px 22px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+    .maintenance-sheet { width: 590px; margin: 40px auto; padding: 24px; background: var(--panel-bg); border: 1px solid #c6d2df; border-radius: 8px; box-shadow: 0 8px 22px rgb(37 55 75 / 8%); }
+    .maintenance-intro h1 { margin: 0 0 5px; font-size: 22px; line-height: 1.25; }
+    .maintenance-intro p { margin: 0 0 20px; color: var(--quiet); }
+    .asset-fixture { display: flex; margin-bottom: 17px; padding: 9px 11px; justify-content: space-between; color: #405267; background: #f4f7fa; border-radius: 6px; font-size: 13px; }
+    .window-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .window-widget { position: relative; width: 340px; }
+    .window-entry { display: flex; width: 340px; min-height: 42px; align-items: stretch; background: var(--panel-bg); border: 1px solid var(--line); border-radius: 6px; }
+    .window-entry:focus-within { border-color: #4e7fab; box-shadow: 0 0 0 1px #4e7fab; }
+    .window-text { width: 26ch; min-width: 0; padding: 8px 10px; flex: 1; color: var(--ink); background: transparent; border: 0; outline: 0; }
+    .window-text:focus-visible { outline: 0; }
+    .window-text[aria-invalid="true"] { color: var(--danger); }
+    .entry-tool { display: grid; width: 40px; min-width: 40px; padding: 0; place-items: center; color: #29445f; background: transparent; border: 0; }
+    .entry-tool:hover { background: #edf3f9; }
+    .entry-tool svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .calendar-tool { position: relative; }
+    .calendar-tool::before { position: absolute; top: 8px; bottom: 8px; left: 0; width: 1px; content: ""; background: #c7d2dd; }
+    .problem-copy { min-height: 20px; margin: 6px 0 0; color: var(--danger); font-size: 13px; }
+    .window-flyout { position: absolute; z-index: 2; top: 50px; left: 0; width: 310px; padding: 12px; background: var(--panel-bg); border: 1px solid #93a6b9; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 18%); }
+    .problem-copy:not([hidden]) + .window-flyout { top: 76px; }
+    .boundary-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+    .boundary-tab { min-height: 38px; padding: 4px 9px; color: #29445f; text-align: left; background: #f4f7fa; border: 1px solid #bdcad6; border-radius: 6px; font-size: 12px; }
+    .boundary-tab strong { display: block; color: var(--ink); font-size: 13px; }
+    .boundary-tab[aria-pressed="true"] { background: #e4f0fa; border-color: #4e7fab; box-shadow: inset 0 -3px 0 var(--brand); }
+    .calendar-toolbar { display: grid; grid-template-columns: 32px 32px 1fr 32px 32px; gap: 3px; align-items: center; }
+    .period-label { margin: 0; text-align: center; font-size: 15px; }
+    .period-tool { display: grid; width: 32px; height: 32px; padding: 0; place-items: center; color: #29445f; background: var(--panel-bg); border: 1px solid transparent; border-radius: 5px; }
+    .period-tool:hover { background: #edf3f9; border-color: #d1dce6; }
+    .period-tool svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+    .instruction { min-height: 18px; margin: 7px 0 5px; color: var(--quiet); font-size: 12px; }
+    .dow, .dates { display: grid; grid-template-columns: repeat(7, 36px); gap: 3px; }
+    .dow span { color: #5d6d7e; text-align: center; font-size: 12px; font-weight: 700; }
+    .dow span:first-child, .dates .calendar-number:nth-child(7n + 1) { color: #a4262c; }
+    .dow span:last-child, .dates .calendar-number:nth-child(7n) { color: #245f9b; }
+    .dates { margin-top: 3px; }
+    .calendar-number { width: 36px; height: 32px; padding: 0; color: var(--ink); background: var(--panel-bg); border: 1px solid transparent; border-radius: 5px; }
+    .calendar-number:hover:not(:disabled):not([aria-pressed="true"]) { background: #eaf2f8; }
+    .calendar-number.other-period { color: #536679; }
+    .calendar-number[aria-current="date"] { font-weight: 750; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .calendar-number.inside-span { color: #173e5f; background: #d6eafa; border-color: #b4d2e8; border-radius: 2px; }
+    .calendar-number[aria-pressed="true"] { color: #ffffff; background: var(--brand); border-color: #0d558d; border-radius: 5px; font-weight: 750; }
+    .calendar-number:disabled { color: #55616d !important; background: repeating-linear-gradient(135deg, #f4f6f8, #f4f6f8 4px, #e6eaee 4px, #e6eaee 6px) !important; border-color: transparent !important; text-decoration: line-through; opacity: 1; }
+    .calendar-footer { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-top: 9px; padding-top: 9px; align-items: center; border-top: 1px solid #d5dee7; }
+    .return-today, .confirm-window { min-height: 34px; padding: 0 11px; border-radius: 5px; font-size: 13px; font-weight: 650; }
+    .return-today { justify-self: start; color: #174f7f; background: var(--panel-bg); border: 1px solid #9aabba; }
+    .confirm-window { color: #ffffff; background: var(--brand); border: 1px solid #0d558d; }
+    .confirm-window:disabled { color: #4f5d69; background: #e8edf1; border-color: #c3cdd6; }
+    .state-legend { grid-column: 1 / -1; display: flex; gap: 12px; color: var(--quiet); font-size: 11px; }
+    .span-key::before, .blocked-key::before { display: inline-block; width: 13px; height: 10px; margin-right: 4px; vertical-align: -1px; content: ""; border: 1px solid #aebdca; }
+    .span-key::before { background: #d6eafa; border-color: #b4d2e8; }
+    .blocked-key::before { background: repeating-linear-gradient(135deg, #f4f6f8, #f4f6f8 3px, #dfe5ea 3px, #dfe5ea 5px); }
+    .review-action { margin-top: 28px; min-height: 38px; padding: 0 14px; color: #183653; background: var(--panel-bg); border: 1px solid #8ea2b9; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="environment-strip">Maintenance ledger · North cooling loop · review date 2026-08-14</div>
+  <main class="maintenance-sheet">
+    <section class="maintenance-intro" aria-labelledby="maintenance-heading">
+      <h1 id="maintenance-heading">Maintenance history window</h1>
+      <p>Limit the completed work records included in the export.</p>
+    </section>
+    <aside class="asset-fixture" aria-label="Selected equipment"><span>Asset CL-204</span><strong>Cooling loop</strong></aside>
+    <form aria-labelledby="maintenance-heading" onsubmit="return false">
+      <label class="window-label" for="maintenance-window-input">Completed between</label>
+      <div class="window-widget" data-window-widget>
+        <div class="window-entry">
+          <input id="maintenance-window-input" class="window-text" data-ref="range-input" inputmode="numeric" autocomplete="off" placeholder="yyyy-mm-dd / yyyy-mm-dd" aria-describedby="maintenance-range-problem">
+          <button class="entry-tool" type="button" data-ref="range-clear" aria-label="Clear coverage dates" hidden><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+          <button class="entry-tool calendar-tool" type="button" data-ref="range-trigger" aria-label="Open calendar" aria-controls="maintenance-window-calendar" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M7 3v4M17 3v4M3 10h18" /></svg></button>
+        </div>
+        <p class="problem-copy" id="maintenance-range-problem" data-ref="range-message" aria-live="polite" hidden></p>
+        <div class="window-flyout" id="maintenance-window-calendar" data-ref="range-picker" role="dialog" aria-label="Choose coverage dates" hidden>
+          <div class="boundary-tabs" role="group" aria-label="Boundary to set">
+            <button class="boundary-tab" type="button" data-ref="range-start-mode" aria-pressed="true"><strong>1 · Start date</strong><span data-window-start>Open</span></button>
+            <button class="boundary-tab" type="button" data-ref="range-end-mode" aria-pressed="false"><strong>2 · End date</strong><span data-window-end>Open</span></button>
+          </div>
+          <header class="calendar-toolbar">
+            <button class="period-tool" type="button" data-ref="range-prev-year" aria-label="Previous year"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6M20 6l-6 6 6 6" /></svg></button>
+            <button class="period-tool" type="button" data-ref="range-prev-month" aria-label="Previous month"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6" /></svg></button>
+            <h2 class="period-label" data-ref="range-month">August 2026</h2>
+            <button class="period-tool" type="button" data-ref="range-next-month" aria-label="Next month"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" /></svg></button>
+            <button class="period-tool" type="button" data-ref="range-next-year" aria-label="Next year"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 6 6 6-6 6M10 6l6 6-6 6" /></svg></button>
+          </header>
+          <p class="instruction" data-ref="range-status" aria-live="polite">Choose a start date, or switch to End date.</p>
+          <div class="dow" aria-hidden="true"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+          <div class="dates" data-window-dates aria-label="Dates in August 2026"></div>
+          <footer class="calendar-footer">
+            <button class="return-today" type="button" data-ref="range-today-action">Go to today</button>
+            <button class="confirm-window" type="button" data-ref="range-apply" disabled>Apply dates</button>
+            <div class="state-legend" aria-hidden="true"><span class="span-key">Selected span</span><span class="blocked-key">Unavailable</span></div>
+          </footer>
+        </div>
+      </div>
+      <button class="review-action" type="button" data-ref="range-after">Review export</button>
+    </form>
+  </main>
+  <script>
+    (() => {
+      class MaintenanceWindowPicker {
+        static TODAY = '2026-08-14';
+        static MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        constructor(root) {
+          this.root = root;
+          this.nodes = {
+            input: root.querySelector('[data-ref="range-input"]'), clear: root.querySelector('[data-ref="range-clear"]'), trigger: root.querySelector('[data-ref="range-trigger"]'),
+            flyout: root.querySelector('[data-ref="range-picker"]'), startTab: root.querySelector('[data-ref="range-start-mode"]'), endTab: root.querySelector('[data-ref="range-end-mode"]'),
+            startText: root.querySelector('[data-window-start]'), endText: root.querySelector('[data-window-end]'), period: root.querySelector('[data-ref="range-month"]'),
+            instruction: root.querySelector('[data-ref="range-status"]'), dates: root.querySelector('[data-window-dates]'), confirm: root.querySelector('[data-ref="range-apply"]'),
+            problem: root.querySelector('[data-ref="range-message"]')
+          };
+          this.state = { year: 2026, month: 7, start: '', end: '', draftStart: '', draftEnd: '', active: 'start', opener: this.nodes.input };
+          this.suppressOpen = false;
+          this.connect();
+          this.draw();
+        }
+        dateId(year, month, day) { return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`; }
+        parse(raw) {
+          if (!raw.trim()) return '';
+          const found = raw.trim().match(/^(\d{4})(?:-?)(\d{2})(?:-?)(\d{2})$/);
+          if (!found) return null;
+          const year = Number(found[1]); const month = Number(found[2]); const day = Number(found[3]);
+          const probe = new Date(Date.UTC(year, month - 1, day));
+          return probe.getUTCFullYear() === year && probe.getUTCMonth() === month - 1 && probe.getUTCDate() === day ? this.dateId(year, month - 1, day) : null;
+        }
+        fail(text) { this.nodes.input.setAttribute('aria-invalid', 'true'); this.nodes.input.setCustomValidity(text); this.nodes.problem.textContent = text; this.nodes.problem.hidden = false; }
+        recover() { this.nodes.input.removeAttribute('aria-invalid'); this.nodes.input.setCustomValidity(''); this.nodes.problem.textContent = ''; this.nodes.problem.hidden = true; }
+        display(start, end) { return `${start || '—'} / ${end || '—'}`; }
+        chooseBoundary(name) {
+          this.state.active = name;
+          this.nodes.startTab.setAttribute('aria-pressed', String(name === 'start'));
+          this.nodes.endTab.setAttribute('aria-pressed', String(name === 'end'));
+          this.nodes.instruction.textContent = name === 'start' ? 'Choose a start date, or leave it open.' : 'Choose an end date, or leave it open.';
+        }
+        updateSummaries() {
+          this.nodes.startText.textContent = this.state.draftStart || 'Open';
+          this.nodes.endText.textContent = this.state.draftEnd || 'Open';
+          this.nodes.confirm.disabled = !(this.state.draftStart || this.state.draftEnd);
+        }
+        draw() {
+          const { year, month, draftStart, draftEnd } = this.state;
+          this.nodes.period.textContent = `${MaintenanceWindowPicker.MONTHS[month]} ${year}`;
+          this.nodes.dates.setAttribute('aria-label', `Dates in ${MaintenanceWindowPicker.MONTHS[month]} ${year}`);
+          this.nodes.dates.replaceChildren();
+          const first = new Date(Date.UTC(year, month, 1));
+          const firstCell = new Date(first);
+          firstCell.setUTCDate(1 - first.getUTCDay());
+          for (let position = 0; position < 42; position += 1) {
+            const date = new Date(firstCell);
+            date.setUTCDate(firstCell.getUTCDate() + position);
+            const value = this.dateId(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+            const cell = document.createElement('button');
+            cell.type = 'button'; cell.className = 'calendar-number'; cell.textContent = String(date.getUTCDate()); cell.dataset.windowDate = value;
+            cell.setAttribute('aria-label', `${MaintenanceWindowPicker.MONTHS[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}${value === MaintenanceWindowPicker.TODAY ? ', today' : ''}`);
+            if (date.getUTCMonth() !== month) cell.classList.add('other-period');
+            if (value === MaintenanceWindowPicker.TODAY) { cell.setAttribute('aria-current', 'date'); cell.dataset.ref = 'range-today'; }
+            const identities = { '2026-08-10': 'range-start-day', '2026-08-12': 'range-middle-day', '2026-08-13': 'range-end-day', '2026-08-15': 'range-unavailable-day' };
+            if (identities[value]) cell.dataset.ref = identities[value];
+            if (value === draftStart || value === draftEnd) cell.setAttribute('aria-pressed', 'true');
+            if (draftStart && draftEnd && value > draftStart && value < draftEnd) cell.classList.add('inside-span');
+            if (false) cell.disabled = true;
+            this.nodes.dates.append(cell);
+          }
+          this.updateSummaries();
+        }
+        show(source, moveFocus) {
+          this.state.opener = source; this.state.draftStart = this.state.start; this.state.draftEnd = this.state.end;
+          this.chooseBoundary('start'); this.nodes.flyout.hidden = false; this.nodes.trigger.setAttribute('aria-expanded', 'true'); this.nodes.trigger.setAttribute('aria-label', 'Close calendar'); this.draw();
+          if (moveFocus) requestAnimationFrame(() => this.nodes.dates.querySelector('[data-ref="range-today"]')?.focus());
+        }
+        hide(restore = false) {
+          this.nodes.flyout.hidden = true; this.nodes.trigger.setAttribute('aria-expanded', 'false'); this.nodes.trigger.setAttribute('aria-label', 'Open calendar'); this.nodes.dates.replaceChildren();
+          if (restore) (this.state.opener || this.nodes.input).focus();
+        }
+        save(start, end) {
+          this.state.start = start; this.state.end = end; this.nodes.input.value = this.display(start, end); this.nodes.clear.hidden = false; this.recover(); this.hide(); this.suppressOpen = true; this.nodes.input.focus(); this.suppressOpen = false;
+        }
+        saveTyped() {
+          const raw = this.nodes.input.value.trim();
+          if (!raw) { this.state.start = ''; this.state.end = ''; this.nodes.clear.hidden = true; this.recover(); this.hide(); return true; }
+          const parts = raw.split('/');
+          if (parts.length !== 2) { this.fail('Use start / end, leaving either side blank if unknown.'); return false; }
+          const start = this.parse(parts[0]); const end = this.parse(parts[1]);
+          if (start === null || end === null) { this.fail('Enter real dates as yyyy-mm-dd.'); return false; }
+          if (!start && !end) { this.fail('Enter at least one boundary.'); return false; }
+          if ((start && start > MaintenanceWindowPicker.TODAY) || (end && end > MaintenanceWindowPicker.TODAY)) { this.fail('Future dates are unavailable.'); return false; }
+          if (start && end && start > end) { this.fail('The start date must not be after the end date.'); return false; }
+          this.save(start, end); return true;
+        }
+        pick(value) {
+          if (this.state.active === 'start') {
+            this.state.draftStart = value;
+            if (this.state.draftEnd && this.state.draftEnd < value) this.state.draftEnd = '';
+            this.chooseBoundary('end'); this.nodes.instruction.textContent = 'Start set. Choose an end date, or Apply dates with an open end.';
+          } else {
+            if (this.state.draftStart && value < this.state.draftStart) { this.nodes.instruction.textContent = 'End date must be on or after the start date.'; return; }
+            this.state.draftEnd = value;
+            this.nodes.instruction.textContent = this.state.draftStart ? 'Range ready. Apply dates to finish.' : 'End set. Apply dates with an open start.';
+          }
+          this.draw();
+        }
+        shiftMonth(delta) { this.state.month += delta; if (this.state.month < 0) { this.state.month = 11; this.state.year -= 1; } if (this.state.month > 11) { this.state.month = 0; this.state.year += 1; } this.draw(); }
+        connect() {
+          const n = this.nodes;
+          n.input.addEventListener('focus', () => { if (n.flyout.hidden && !this.suppressOpen) this.show(n.input, false); });
+          n.input.addEventListener('input', () => { this.recover(); n.clear.hidden = !n.input.value; });
+          n.input.addEventListener('keydown', (event) => { if (event.key === 'Enter') { event.preventDefault(); this.saveTyped(); } if (event.key === 'Escape' && !n.flyout.hidden) { event.preventDefault(); this.hide(true); } if (event.key === 'Tab') { this.saveTyped(); this.hide(false); } });
+          n.trigger.addEventListener('click', () => { if (n.flyout.hidden) this.show(n.trigger, true); else this.hide(true); });
+          n.clear.addEventListener('click', () => { Object.assign(this.state, { start: '', end: '', draftStart: '', draftEnd: '' }); n.input.value = ''; n.clear.hidden = true; this.recover(); this.draw(); this.hide(); this.suppressOpen = true; n.input.focus(); this.suppressOpen = false; });
+          n.startTab.addEventListener('click', () => { this.chooseBoundary('start'); this.draw(); });
+          n.endTab.addEventListener('click', () => { this.chooseBoundary('end'); this.draw(); });
+          n.confirm.addEventListener('click', () => this.save(this.state.draftStart, this.state.draftEnd));
+          n.dates.addEventListener('click', (event) => { const cell = event.target.closest('.calendar-number'); if (cell && !cell.disabled) this.pick(cell.dataset.windowDate); });
+          n.dates.addEventListener('keydown', (event) => {
+            const cell = event.target.closest('.calendar-number'); if (!cell) return;
+            if (event.key === 'Escape') { event.preventDefault(); this.hide(true); return; }
+            if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); if (!cell.disabled) this.pick(cell.dataset.windowDate); return; }
+            const delta = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[event.key]; if (!delta) return;
+            event.preventDefault(); const cells = [...n.dates.querySelectorAll('.calendar-number')]; let index = cells.indexOf(cell) + delta; while (cells[index]?.disabled) index += delta; cells[index]?.focus();
+          });
+          this.root.querySelector('[data-ref="range-prev-month"]').addEventListener('click', () => this.shiftMonth(-1));
+          this.root.querySelector('[data-ref="range-next-month"]').addEventListener('click', () => this.shiftMonth(1));
+          this.root.querySelector('[data-ref="range-prev-year"]').addEventListener('click', () => { this.state.year -= 1; this.draw(); });
+          this.root.querySelector('[data-ref="range-next-year"]').addEventListener('click', () => { this.state.year += 1; this.draw(); });
+          this.root.querySelector('[data-ref="range-today-action"]').addEventListener('click', () => { this.state.year = 2026; this.state.month = 7; this.draw(); requestAnimationFrame(() => n.dates.querySelector('[data-ref="range-today"]')?.focus()); });
+          document.addEventListener('focusin', (event) => { if (!n.flyout.hidden && !this.root.contains(event.target)) this.hide(false); });
+        }
+      }
+      new MaintenanceWindowPicker(document.querySelector('[data-window-widget]'));
+    })();
+  </script>
+</body>
+</html>

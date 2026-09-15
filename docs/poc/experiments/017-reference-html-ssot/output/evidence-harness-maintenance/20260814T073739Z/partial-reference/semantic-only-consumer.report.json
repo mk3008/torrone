@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "reference.html",
+    "digest": "37ad510667bc1a9aa75e1a3ed4fab96931eb3eb0254c258e48ec798556284a71",
+    "files": [
+      {
+        "path": "reference.html",
+        "bytes": 1728,
+        "sha256": "4f64e6778e3a2e53667c73aac68052d04bc5ec85ad1a4cfb3bf879729ade0acf"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "consumer.html",
+    "digest": "ac54ca2a037e2aa80004accbbf77723f2c0f1bed32304758d2811532a0d9bc9d",
+    "files": [
+      {
+        "path": "consumer.html",
+        "bytes": 1861,
+        "sha256": "6f49f0b599e88447f62ba01928c24400db4c032d5ed5cbadbce02a91c9aa70d6"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Edg/151.0.4129.78",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": []
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 1,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "semanticInventory.combobox",
+        "count": 1
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.semanticInventory.combobox",
+      "expected": 1,
+      "actual": 2
+    }
+  ]
+}

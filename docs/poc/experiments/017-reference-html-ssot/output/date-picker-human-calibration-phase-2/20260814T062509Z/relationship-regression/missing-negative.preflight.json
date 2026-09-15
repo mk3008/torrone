@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "missing-negative.html",
+    "digest": "01cd56a4713e07a2f9118744e155cbd217ff4fd28a0ec41e188b1c7cace6b064",
+    "files": [
+      {
+        "path": "missing-negative.html",
+        "bytes": 404,
+        "sha256": "3794b91c07f3ec8817619ab4684455d5058f2f8637f669a8b29cd800a75e46ea"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 1,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 1
+  },
+  "errors": [
+    {
+      "source": "absolute-dom",
+      "code": "missing-aria-reference",
+      "state": "initial",
+      "target": "relationship-field",
+      "detail": "aria-describedby references missing id missing-help."
+    }
+  ]
+}

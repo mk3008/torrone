@@ -1,0 +1,12 @@
+{
+  "overrides": [
+    { "scenario": "start-only partial", "step": 1, "value": "20261003" },
+    { "scenario": "end-only partial", "step": 1, "value": "20261018" },
+    { "scenario": "manual range completion", "step": 1, "value": "20261003" },
+    { "scenario": "manual range completion", "step": 2, "value": "2026-10-18" },
+    { "scenario": "invalid reversed range", "step": 1, "value": "2026-10-18" },
+    { "scenario": "invalid reversed range", "step": 2, "value": "2026-10-03" },
+    { "scenario": "clear one boundary returns to partial", "step": 1, "value": "2026-10-03" },
+    { "scenario": "clear one boundary returns to partial", "step": 2, "value": "2026-10-18" }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "a-self-contained": {
+    "authoredFiles": 3,
+    "filesToUnderstandOneReference": 1,
+    "externalStylesheetImports": 0,
+    "declarationOccurrences": 510,
+    "exactDuplicateDeclarationOccurrences": 254.0,
+    "customPropertyDefinitionOccurrences": 43
+  },
+  "b-token-only": {
+    "authoredFiles": 4,
+    "filesToUnderstandOneReference": 2,
+    "externalStylesheetImports": 3,
+    "declarationOccurrences": 504,
+    "exactDuplicateDeclarationOccurrences": 248.0,
+    "customPropertyDefinitionOccurrences": 37
+  },
+  "c-visual-primitives": {
+    "authoredFiles": 4,
+    "filesToUnderstandOneReference": 2,
+    "externalStylesheetImports": 3,
+    "declarationOccurrences": 500,
+    "exactDuplicateDeclarationOccurrences": 244.0,
+    "customPropertyDefinitionOccurrences": 37
+  }
+}

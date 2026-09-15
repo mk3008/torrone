@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "entity-autocomplete.html",
+    "digest": "1dd575e475fc3272462d9c1073255a44784fb0deb5be36ad1710bcfb9f52bd58",
+    "files": [
+      {
+        "path": "entity-autocomplete.html",
+        "bytes": 7334,
+        "sha256": "f7ae21dae37c07965ff488435102b0b1da7a12f8bc3d7dd66fc5e103dc135f03"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 10
+  },
+  "errors": []
+}

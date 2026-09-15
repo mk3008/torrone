@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "aria-reference-enters-harness.html",
+    "digest": "f847d969dfe54f1bf1f3e54a10e5402f0b655d0787c84f8c431fcc4d75a0dd20",
+    "files": [
+      {
+        "path": "aria-reference-enters-harness.html",
+        "bytes": 2194,
+        "sha256": "d8d6c85da0b5e4197e87986f5d13f1e97ff1e201bd9b1d2c7f638d0c3d3b54fd"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": []
+}

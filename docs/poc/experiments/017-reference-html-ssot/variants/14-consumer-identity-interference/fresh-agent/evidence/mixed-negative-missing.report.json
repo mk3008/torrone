@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "1e320bef1cb11534e32d2810c6e57adfcd8ac9fc55a6a642acc083a0381c1fd6",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 34670,
+        "sha256": "f87b30ef6293f2dfc230cd2613485816a3708e9e929b5166f3323b47fc2a8787"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "cfc5d476c6b9434fadc5bd76908ef0e014a2161947872f963fef4736f9663d6d",
+    "files": [
+      {
+        "path": "assets/index-BXoPfGm2.css",
+        "bytes": 8981,
+        "sha256": "3abf1902c21194ae54adc78297e673b6da8f0f995917a73d3542c647e6a7d80b"
+      },
+      {
+        "path": "assets/index-h9-ei3Dg.js",
+        "bytes": 197992,
+        "sha256": "3c12acb9aa0e4512475f70c5657cb8a3f222c800849eb47de736fcb2e7e9cb88"
+      },
+      {
+        "path": "index.html",
+        "bytes": 466,
+        "sha256": "0c9c647b0f171a089495e33d4634520b800a022261301cbd9c06cd374966b97a"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "navigation parent round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          },
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          }
+        ]
+      },
+      {
+        "name": "navigation selection round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-leaf-action"
+          },
+          {
+            "action": "click",
+            "target": "navigation-child-action"
+          }
+        ]
+      },
+      {
+        "name": "navigation filter round trip",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "routing"
+          },
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "name": "navigation filter no results",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "missing"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "theme change",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "free-text-filter",
+            "value": "No matching person"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 20,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 24,
+    "errorSignatures": [
+      {
+        "path": "elements.new-request-action",
+        "count": 20
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-2.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-2.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-2.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-pagination.box.y",
+      "expected": 656.13,
+      "actual": 650.92,
+      "delta": 5.210000000000036
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-table.box.y",
+      "expected": 432.19,
+      "actual": 426.98,
+      "delta": 5.2099999999999795
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.result-pagination.box.y",
+      "expected": 656.13,
+      "actual": 650.92,
+      "delta": 5.210000000000036
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.result-table.box.y",
+      "expected": 432.19,
+      "actual": 426.98,
+      "delta": 5.2099999999999795
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-2.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    }
+  ]
+}

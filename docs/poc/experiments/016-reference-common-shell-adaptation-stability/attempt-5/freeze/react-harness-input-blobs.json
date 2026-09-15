@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "title": "React framework-adaptation harness input blobs",
+  "upstream_attempt_4_commit": "7431ce8",
+  "target_roots": [
+    "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/condition",
+    "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness"
+  ],
+  "run_configuration_files": [
+    ".gitignore",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "tsconfig.app.json",
+    "tsconfig.node.json",
+    "vite.config.ts"
+  ],
+  "files": [
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/condition/experiment-condition.md",
+      "blob": "3075222313fc41c33c8742014d4d35217d47c211"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/condition/shared-adaptation-instructions.md",
+      "blob": "218d902edf069069d43e2ca3ef83904779d65d54"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/.gitignore",
+      "blob": "8dedf0a0c4cc2357ab1a14838de547e7af4b153a"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/index.html",
+      "blob": "b3228f2bb5a4ef253555a6707ba45de4961e32c4"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/package.json",
+      "blob": "96c56b76cf814c36f29a906058285fd57bf1c6ed"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/package-lock.json",
+      "blob": "f4f493e0add210c3ae6ceedd043c6a488dc0807a"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/tsconfig.json",
+      "blob": "1ffef600d959ec9e396d5a260bd3f5b927b2cef8"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/tsconfig.app.json",
+      "blob": "6e52e6922df1351fca6f2fc3131b79f40ecc3426"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/tsconfig.node.json",
+      "blob": "a967d4db65e3a106cae7efa67206b48578b7c023"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/vite.config.ts",
+      "blob": "9ffcc675746194c4a34eb43404d15db40b810265"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/src/HarnessApp.tsx",
+      "blob": "cfe65da973ac99048c9f748794bfd6143dbd35e4"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/src/harness.css",
+      "blob": "d53203a5468f3de59ce563e9f41e981bb94b8bf8"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/src/main.tsx",
+      "blob": "1a57fbf21db8d57113d195db28d446a1a4cd8c28"
+    },
+    {
+      "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/attempt-5/harness/src/vite-env.d.ts",
+      "blob": "11f02fe2a0061d6e6e1f271b21da95423b448b32"
+    }
+  ]
+}

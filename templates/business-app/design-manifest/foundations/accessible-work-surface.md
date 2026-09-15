@@ -14,10 +14,21 @@ Give every interactive control a discernible name, keep the visible label in
 that name, and preserve a logical reading and focus order. All available
 operations must be keyboard reachable without a trap.
 
-Show a visible focus indicator that remains distinguishable and unobscured.
-Do not move the focused or triggering control when nearby validation, selection,
-or progress feedback appears. Keep likely recovery actions close to the error
-or state they resolve.
+Use one visible focus treatment across this pack. This focus indicator appears
+on `:focus-visible`: retain the control's ordinary border and draw the resolved
+`focus_ring` as a separate outer halo, with a visible gap between the border
+and ring. Do not replace the border with the ring or draw the ring on top of
+it. Apply this treatment to text inputs, buttons, icon-only controls,
+navigation nodes, disclosure controls, and every other keyboard-reachable
+control. Do not move the focused or triggering control when nearby validation,
+selection, or progress feedback appears. Keep likely recovery actions close to
+the error or state they resolve.
+
+For an enabled, non-current interactive or navigation row, make pointer hover
+recognizable through a change to the row's full hit-area surface. Text
+decoration alone is not a sufficient hover treatment for the row. Whenever
+pointer hover and current or selected state are both applicable in a screen,
+keep their rendered treatments separately recognizable.
 
 Do not communicate status, selection, validation, required state, progress, or
 data meaning by color alone. Provide text, shape, position, or another
@@ -28,6 +39,22 @@ Announce an asynchronous outcome when the product supplies one, without moving
 focus merely to announce it. When navigation or a modal transition changes the
 task context, move focus only according to the applicable transition or dialog
 contract.
+
+# Verification
+
+Confirm that each keyboard-reachable control has a discernible name and shows
+the shared focus treatment when focused without replacing its ordinary boundary
+or moving the control. Confirm that a selected, validation, progress, or status
+state has a visible cue in addition to color. Confirm that pointer hover on
+each enabled, non-current interactive or navigation row changes its full
+hit-area surface rather than only its text, and that hover remains separately
+recognizable from any current or selected treatment present on the screen.
+
+Keyboard traversal, focus movement after a transition, announcements, reflow,
+and assistive-technology behavior require an available interactive browser or
+equivalent execution environment. If that environment is unavailable, record
+those outcomes as `not verified` rather than inferring them from static HTML or
+a screenshot.
 
 # Product boundary
 

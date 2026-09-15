@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="shell.css">
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div class="shared-shell" data-theme="light" data-drawer="open">
+      <header class="header">
+        <button class="icon-button" type="button" data-drawer-toggle aria-controls="workspace-drawer" aria-expanded="true" aria-label="Drawer を閉じる">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <p class="workspace-name">業務ワークスペース</p>
+        <button class="icon-button theme-button" type="button" data-theme-toggle aria-label="ダークモードに切り替える">
+          <span data-theme-icon aria-hidden="true">◐</span>
+        </button>
+      </header>
+
+      <div class="shell-content">
+        <aside class="drawer" id="workspace-drawer" aria-label="業務ワークスペースのナビゲーション">
+          <nav>
+            <ul class="drawer-list">
+              <li><a href="#section-a">セクション A</a></li>
+              <li class="drawer-parent">
+                <a href="#section-b">セクション B</a>
+                <span class="disclosure" aria-label="展開中">⌄</span>
+                <ul class="drawer-children">
+                  <li><a class="current" href="#item-b-1" aria-current="page">項目 B-1</a></li>
+                  <li><a href="#item-b-2">項目 B-2</a></li>
+                </ul>
+              </li>
+              <li><a href="#section-c">セクション C</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <main class="workspace" aria-label="ワークスペース">
+          <section class="customer-search" aria-labelledby="customer-search-title">
+            <header class="customer-search__header">
+              <h1 id="customer-search-title">顧客検索</h1>
+              <p>登録済みの顧客情報を検索・確認します。</p>
+            </header>
+
+            <form class="search-conditions" data-search-form>
+              <fieldset>
+                <legend>検索条件</legend>
+                <div class="search-conditions__fields">
+                  <div class="field">
+                    <label for="customer-name">氏名</label>
+                    <input id="customer-name" name="name" type="search" autocomplete="name">
+                  </div>
+                  <div class="field">
+                    <label for="birth-date">生年月日</label>
+                    <input id="birth-date" name="birth-date" type="date">
+                  </div>
+                  <div class="field">
+                    <label for="phone-number">電話番号</label>
+                    <input id="phone-number" name="phone" type="tel" autocomplete="tel">
+                  </div>
+                  <div class="field">
+                    <label for="email-address">メールアドレス</label>
+                    <input id="email-address" name="email" type="email" autocomplete="email">
+                  </div>
+                </div>
+                <div class="search-conditions__actions">
+                  <button class="button button--primary" type="submit">検索</button>
+                  <button class="button button--secondary" type="reset">リセット</button>
+                </div>
+              </fieldset>
+              <p class="sr-only" data-search-message aria-live="polite"></p>
+            </form>
+
+            <section class="results" aria-labelledby="results-title">
+              <div class="results__toolbar">
+                <h2 id="results-title">検索結果 <span>6件</span></h2>
+                <button class="button button--secondary" type="button" data-add-customer>顧客を追加</button>
+              </div>
+              <div class="results__table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">顧客ID</th>
+                      <th scope="col">氏名</th>
+                      <th scope="col">生年月日</th>
+                      <th scope="col">住所</th>
+                      <th scope="col">電話番号</th>
+                      <th scope="col">メールアドレス</th>
+                      <th scope="col">備考</th>
+                      <th class="results__spacer" aria-hidden="true"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><button class="record-link" type="button" data-customer-id="C-000001">C-000001</button></td><td>佐藤 花子</td><td>1985-04-12</td><td>東京都千代田区丸の内 1-2-3</td><td>03-1234-5678</td><td>hanako.sato@example.test</td><td>連絡は平日午後を希望</td><td class="results__spacer" aria-hidden="true"></td></tr>
+                    <tr><td><button class="record-link" type="button" data-customer-id="C-000002">C-000002</button></td><td>鈴木 恒一</td><td>1978-11-03</td><td>神奈川県横浜市西区みなとみらい 4-5-6</td><td>045-234-6789</td><td>koichi.suzuki@example.test</td><td>—</td><td class="results__spacer" aria-hidden="true"></td></tr>
+                    <tr><td><button class="record-link" type="button" data-customer-id="C-000003">C-000003</button></td><td>田中 美咲</td><td>1992-07-21</td><td>大阪府大阪市北区梅田 2-8-1</td><td>06-3456-7890</td><td>misaki.tanaka@example.test</td><td>郵送物は勤務先宛</td><td class="results__spacer" aria-hidden="true"></td></tr>
+                    <tr><td><button class="record-link" type="button" data-customer-id="C-000004">C-000004</button></td><td>高橋 恒一</td><td>1969-02-18</td><td>愛知県名古屋市中区栄 3-1-7</td><td>052-456-8901</td><td>kazuya.takahashi@example.test</td><td>—</td><td class="results__spacer" aria-hidden="true"></td></tr>
+                    <tr><td><button class="record-link" type="button" data-customer-id="C-000005">C-000005</button></td><td>伊藤 彩</td><td>1988-09-30</td><td>福岡県福岡市博多区博多駅前 5-4-2</td><td>092-567-9012</td><td>aya.ito@example.test</td><td>メールでの連絡を希望</td><td class="results__spacer" aria-hidden="true"></td></tr>
+                    <tr><td><button class="record-link" type="button" data-customer-id="C-000006">C-000006</button></td><td>渡辺 健</td><td>1975-06-08</td><td>北海道札幌市中央区北一条西 6-9</td><td>011-678-0123</td><td>ken.watanabe@example.test</td><td>—</td><td class="results__spacer" aria-hidden="true"></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <footer class="pagination" aria-label="検索結果のページ移動">
+                <div class="pagination__controls">
+                  <button type="button" disabled>前へ</button>
+                  <span aria-label="1ページ目">1</span>
+                  <button type="button" data-next-page>次へ</button>
+                </div>
+              </footer>
+              <p class="sr-only" data-page-message aria-live="polite"></p>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="shell.js"></script>
+    <script src="page.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "missing-aria-reference.html",
+    "digest": "fc10cba1a15977d2b6167dbdba09bb5141d6e17721d6888c4ba095a074ef5156",
+    "files": [
+      {
+        "path": "missing-aria-reference.html",
+        "bytes": 2194,
+        "sha256": "d8d6c85da0b5e4197e87986f5d13f1e97ff1e201bd9b1d2c7f638d0c3d3b54fd"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": []
+}

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>顧客検索 | 業務ワークスペース</title>
+    <link rel="stylesheet" href="shell.css">
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div class="shared-shell" data-theme="light" data-drawer="open">
+      <header class="shell-header">
+        <button class="shell-icon-button" type="button" data-drawer-toggle aria-controls="workspace-drawer" aria-expanded="true" aria-label="Drawer を閉じる">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <p class="shell-workspace-name">業務ワークスペース</p>
+        <button class="shell-icon-button shell-theme-button" type="button" data-theme-toggle aria-label="ダークモードに切り替える">
+          <span data-theme-icon aria-hidden="true">◐</span>
+        </button>
+      </header>
+
+      <div class="shell-body">
+        <aside class="shell-drawer" id="workspace-drawer" aria-label="業務ワークスペースのナビゲーション">
+          <nav>
+            <ul class="shell-drawer-list">
+              <li><a href="#section-a">セクション A</a></li>
+              <li class="shell-drawer-parent">
+                <a href="#section-b">セクション B</a>
+                <span class="shell-disclosure" aria-label="展開中">⌄</span>
+                <ul class="shell-drawer-children">
+                  <li><a class="current" href="#item-b-1" aria-current="page">項目 B-1</a></li>
+                  <li><a href="#item-b-2">項目 B-2</a></li>
+                </ul>
+              </li>
+              <li><a href="#section-c">セクション C</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <main class="shell-workspace" aria-label="ワークスペース">
+          <div class="customer-page">
+            <header class="page-heading">
+              <h1>顧客検索</h1>
+              <p>登録済みの顧客情報を検索・確認します。</p>
+            </header>
+
+            <section class="condition-pane" aria-labelledby="conditions-title">
+              <form>
+                <fieldset class="condition-fields">
+                  <legend id="conditions-title">検索条件</legend>
+                  <div class="field-grid">
+                    <label class="field">
+                      <span>氏名</span>
+                      <input type="search" name="name" autocomplete="name">
+                    </label>
+                    <label class="field">
+                      <span>生年月日</span>
+                      <input type="date" name="birth-date">
+                    </label>
+                    <label class="field">
+                      <span>電話番号</span>
+                      <input type="tel" name="phone" autocomplete="tel">
+                    </label>
+                    <label class="field">
+                      <span>メールアドレス</span>
+                      <input type="email" name="email" autocomplete="email">
+                    </label>
+                  </div>
+                </fieldset>
+                <div class="condition-toolbar">
+                  <div class="button-set">
+                    <button class="button button-primary" type="submit">検索</button>
+                    <button class="button button-secondary" type="reset">リセット</button>
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <section class="result-pane" aria-labelledby="results-title">
+              <div class="result-header">
+                <div class="result-summary">
+                  <h2 id="results-title">検索結果 <span>6件</span></h2>
+                </div>
+                <div class="result-toolbar" aria-label="検索結果の操作">
+                  <button class="button button-tertiary" type="button">顧客を追加</button>
+                </div>
+              </div>
+
+              <div class="grid-scroll" tabindex="0" aria-label="顧客検索結果の表。横方向にスクロールできます。">
+                <table class="results-table">
+                  <colgroup>
+                    <col class="id-column">
+                    <col class="name-column">
+                    <col class="birth-column">
+                    <col class="address-column">
+                    <col class="phone-column">
+                    <col class="email-column">
+                    <col class="notes-column">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="pinned-id" scope="col">顧客ID</th>
+                      <th scope="col">氏名</th>
+                      <th scope="col">生年月日</th>
+                      <th scope="col">住所</th>
+                      <th scope="col">電話番号</th>
+                      <th scope="col">メールアドレス</th>
+                      <th scope="col">備考</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="pinned-id"><a href="#customer-000001">C000001</a></td><td>佐藤 花子</td><td>1987-04-12</td><td>東京都千代田区丸の内 1-2-3</td><td>03-1234-5678</td><td>hanako.sato@example.jp</td><td>連絡は平日午後を希望</td></tr>
+                    <tr><td class="pinned-id"><a href="#customer-000002">C000002</a></td><td>鈴木 一郎</td><td>1975-11-08</td><td>神奈川県横浜市西区みなとみらい 2-4-1</td><td>045-234-5678</td><td>ichiro.suzuki@example.jp</td><td>—</td></tr>
+                    <tr><td class="pinned-id"><a href="#customer-000003">C000003</a></td><td>高橋 美咲</td><td>1990-02-19</td><td>埼玉県さいたま市大宮区桜木町 1-8-5</td><td>048-345-6789</td><td>misaki.takahashi@example.jp</td><td>メールでの案内を希望</td></tr>
+                    <tr><td class="pinned-id"><a href="#customer-000004">C000004</a></td><td>田中 健</td><td>1982-06-04</td><td>千葉県船橋市本町 4-10-2</td><td>047-456-7890</td><td>ken.tanaka@example.jp</td><td>—</td></tr>
+                    <tr><td class="pinned-id"><a href="#customer-000005">C000005</a></td><td>伊藤 優香</td><td>1995-09-15</td><td>東京都杉並区荻窪 5-12-7</td><td>03-5678-9012</td><td>yuka.ito@example.jp</td><td>—</td></tr>
+                    <tr><td class="pinned-id"><a href="#customer-000006">C000006</a></td><td>渡辺 恒一</td><td>1978-01-28</td><td>東京都世田谷区三軒茶屋 3-6-9</td><td>03-6789-0123</td><td>koichi.watanabe@example.jp</td><td>電話での確認を希望</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <footer class="pagination-footer" aria-label="ページネーション">
+                <div class="pagination-controls">
+                  <button class="button button-secondary" type="button" disabled>前へ</button>
+                  <span aria-current="page">1</span>
+                  <button class="button button-secondary" type="button">次へ</button>
+                </div>
+              </footer>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="shell.js"></script>
+    <script src="page.js"></script>
+  </body>
+</html>

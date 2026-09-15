@@ -1,0 +1,100 @@
+{
+  "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "gateAttempts": 13,
+  "gateTimeouts": 0,
+  "gateRetries": 0,
+  "events": [
+    {
+      "label": "Common shell snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 4279
+    },
+    {
+      "label": "Common shell repeat snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 4338
+    },
+    {
+      "label": "Search workspace snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3809
+    },
+    {
+      "label": "Search workspace repeat snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3783
+    },
+    {
+      "label": "Integrated Target snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2175
+    },
+    {
+      "label": "Target against shell",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 4353
+    },
+    {
+      "label": "Target against workspace",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3782
+    },
+    {
+      "label": "Whole-page missing-h1 probe",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2109
+    },
+    {
+      "label": "Accepted Reference regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 4367
+    },
+    {
+      "label": "Historical negative regression",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3062
+    },
+    {
+      "label": "Semantic-only Reference regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2144
+    },
+    {
+      "label": "Semantic-only negative regression",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2114
+    },
+    {
+      "label": "Partial style negative",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3316
+    }
+  ],
+  "note": "Development-phase attempts are recorded separately in the verification record."
+}

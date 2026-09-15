@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "entity-autocomplete.html",
+    "digest": "1dd575e475fc3272462d9c1073255a44784fb0deb5be36ad1710bcfb9f52bd58",
+    "files": [
+      {
+        "path": "entity-autocomplete.html",
+        "bytes": 7334,
+        "sha256": "f7ae21dae37c07965ff488435102b0b1da7a12f8bc3d7dd66fc5e103dc135f03"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "wrong-active-target.html",
+    "digest": "0f096174ad759bc75ec42a91df60392c81d3e31f8c51aa3ae4875c15cdc1d49f",
+    "files": [
+      {
+        "path": "wrong-active-target.html",
+        "bytes": 6804,
+        "sha256": "6ab87f762cefcd96e88e6048101e465480c9fd28ed9f2b48b5dd6f3e48698f3b"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "keyboard entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "press",
+            "target": "entity-query",
+            "key": "ArrowDown"
+          },
+          {
+            "action": "press",
+            "target": "entity-query",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "pointer entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "click",
+            "target": "entity-option-primary"
+          }
+        ]
+      },
+      {
+        "name": "entity no results",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "zzz"
+          }
+        ]
+      },
+      {
+        "name": "clear entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "click",
+            "target": "entity-option-primary"
+          },
+          {
+            "action": "click",
+            "target": "entity-clear"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 10,
+    "errorSignatures": []
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.entity no results.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

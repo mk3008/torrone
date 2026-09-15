@@ -1,0 +1,1874 @@
+{
+  "manifest_version": 1,
+  "capture_tool": {
+    "command": "npx --yes --package @playwright/cli playwright-cli",
+    "browser_channel": "chrome",
+    "chrome_executable_preflight": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "server_base": "http://127.0.0.1:41824"
+  },
+  "source_digests_before": "source-digests-before.json",
+  "source_digests_after": "source-digests-after.json",
+  "command_log": "capture-command-log.jsonl",
+  "captures": [
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "initial-menu-light-palette",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/desktop/initial-menu-light-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\initial-menu-light-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-11-39-844Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\initial-menu-light-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\initial-menu-light-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\initial-menu-light-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\initial-menu-light-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "db3dbbcd5dd9f9fe56dbc26a322c563b38f6cd885c30a512359c717d8027adf5",
+      "bytes": 63550,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "initial-menu-dark-palette",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-1/desktop/initial-menu-dark-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\initial-menu-dark-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-11-42-793Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\initial-menu-dark-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\initial-menu-dark-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\initial-menu-dark-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\initial-menu-dark-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "07a5573cfb6d540abca029ee82d21c68d66cc1774841d8c25c936dacfa7c51e2",
+      "bytes": 65252,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-hidden-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=light",
+      "png": "evidence-captures/run-1/desktop/drawer-hidden-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-hidden-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-11-45-641Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-hidden-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-hidden-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-hidden-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\drawer-hidden-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "59a2ee67085c7dd9b1a383f75e2d5215724b89ee426add1425286565a1353b02",
+      "bytes": 38993,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-hidden-dark-track-removal",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=dark",
+      "png": "evidence-captures/run-1/desktop/drawer-hidden-dark-track-removal.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-hidden-dark-track-removal.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-11-48-510Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-hidden-dark-track-removal.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-hidden-dark-track-removal.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-hidden-dark-track-removal.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\drawer-hidden-dark-track-removal.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "9c106ea766306b51e1d31c089068ded4bbf5b951a7657be5f82025856cf611a9",
+      "bytes": 40400,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "search-match-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/desktop/search-match-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\search-match-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-11-51-289Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 fill #nav-search \"項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#nav-search').fill('項目 30');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\search-match-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\search-match-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\search-match-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\search-match-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "2a946f62e6cca6bbd22751c4988701767db00a48fca93efcb3168a255f497a30",
+      "bytes": 42582,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "search-no-match-dark",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-1/desktop/search-no-match-dark.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\search-no-match-dark.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-11-55-422Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 fill #nav-search 存在しない項目",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#nav-search').fill('存在しない項目');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\search-no-match-dark.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\search-no-match-dark.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\search-no-match-dark.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\search-no-match-dark.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "942d149a83038d4309974a485350600417861ea8529e69fb6fec360f9a7bff36",
+      "bytes": 47185,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-scroll-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/desktop/drawer-scroll-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-scroll-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-11-59-744Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 mousemove 160 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (160, 900)\r\nawait page.mouse.move(160, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 mousewheel 0 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-scroll-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-scroll-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\drawer-scroll-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\drawer-scroll-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "0afff8b4f1d27bdf85f7556a2b6250cf19b0c6e14d04222e78057388180c83aa",
+      "bytes": 62617,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "workspace-scroll-header-persistent-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/desktop/workspace-scroll-header-persistent-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\workspace-scroll-header-persistent-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-05-250Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 mousemove 960 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (960, 900)\r\nawait page.mouse.move(960, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 mousewheel 0 1000",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 1000);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\workspace-scroll-header-persistent-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\workspace-scroll-header-persistent-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\workspace-scroll-header-persistent-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\workspace-scroll-header-persistent-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "db3dbbcd5dd9f9fe56dbc26a322c563b38f6cd885c30a512359c717d8027adf5",
+      "bytes": 63550,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "selection-transfer-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/desktop/selection-transfer-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\selection-transfer-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-10-812Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 click \"text=項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('text=項目 30').click();\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-12-740Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\selection-transfer-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\selection-transfer-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\selection-transfer-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\selection-transfer-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "2f877863ff06fa0ea5bab6f8451c64072e55ed4e62906fe9fe13632d4d1ce0dc",
+      "bytes": 62806,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "disclosure-current-destination-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/desktop/disclosure-current-destination-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\disclosure-current-destination-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-15-581Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 click \"text=グループ 01\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('text=グループ 01').click();\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-17-519Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\disclosure-current-destination-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\disclosure-current-destination-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\desktop\\disclosure-current-destination-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\desktop\\\\disclosure-current-destination-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "aade8cec856c2c5670fde5d9a3bc2a9a44c65913fb151fbbf91556c50bf3f8af",
+      "bytes": 62874,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "initial-menu-light-palette",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/narrow/initial-menu-light-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\initial-menu-light-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-26-917Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\initial-menu-light-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\initial-menu-light-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\initial-menu-light-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\initial-menu-light-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "df0d936909dbfb9edbbfe876666dcb76823ebbcbcff9eb15507dc42a65b5c040",
+      "bytes": 64830,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "initial-menu-dark-palette",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-1/narrow/initial-menu-dark-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\initial-menu-dark-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-29-813Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\initial-menu-dark-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\initial-menu-dark-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\initial-menu-dark-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\initial-menu-dark-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "06b48549631739c922798e7780fba52f375b1390815be695bca10c47b5afbd4f",
+      "bytes": 66299,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-hidden-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=light",
+      "png": "evidence-captures/run-1/narrow/drawer-hidden-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-hidden-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-32-639Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-hidden-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-hidden-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-hidden-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\drawer-hidden-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "1d2d7114802a1410abcec5d5f51cb8fd6ebda5d8ac24639f38343abe5203504a",
+      "bytes": 37150,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-hidden-dark-track-removal",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=dark",
+      "png": "evidence-captures/run-1/narrow/drawer-hidden-dark-track-removal.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-hidden-dark-track-removal.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=hidden&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-35-426Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-hidden-dark-track-removal.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-hidden-dark-track-removal.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-hidden-dark-track-removal.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\drawer-hidden-dark-track-removal.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "89fa9f7c591d331ac691940c346267b0b252774d3087082f02f47a39a6f5c2c9",
+      "bytes": 38806,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "search-match-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/narrow/search-match-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\search-match-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-38-171Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 fill #nav-search \"項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#nav-search').fill('項目 30');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\search-match-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\search-match-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\search-match-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\search-match-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "798d86e118d9db50443c60781d7dfd77ac437a54426c49c9a13ce253fa6148f1",
+      "bytes": 44563,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "search-no-match-dark",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-1/narrow/search-no-match-dark.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\search-no-match-dark.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-42-425Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 fill #nav-search 存在しない項目",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#nav-search').fill('存在しない項目');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\search-no-match-dark.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\search-no-match-dark.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\search-no-match-dark.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\search-no-match-dark.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "dbef6e03f3f918e106f7338acce61bcf17225333f55e4177c7e6cceb01ffb578",
+      "bytes": 48912,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-scroll-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/narrow/drawer-scroll-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-scroll-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-46-603Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 mousemove 160 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (160, 900)\r\nawait page.mouse.move(160, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 mousewheel 0 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-scroll-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-scroll-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\drawer-scroll-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\drawer-scroll-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "28c6e8466fd5fdd9f85789da1a311cb05b23a845cae783b440a987d50ac51fa1",
+      "bytes": 63564,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "workspace-scroll-header-persistent-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/narrow/workspace-scroll-header-persistent-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\workspace-scroll-header-persistent-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-52-212Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 mousemove 640 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (640, 900)\r\nawait page.mouse.move(640, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 mousewheel 0 1000",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 1000);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\workspace-scroll-header-persistent-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\workspace-scroll-header-persistent-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\workspace-scroll-header-persistent-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\workspace-scroll-header-persistent-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "621e4c42aec6374107d7337fd1668835a99fefdf47201b8bbbdcfb188d402716",
+      "bytes": 61499,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "selection-transfer-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/narrow/selection-transfer-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\selection-transfer-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-57-848Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 click \"text=項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('text=項目 30').click();\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-12-59-790Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\selection-transfer-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\selection-transfer-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\selection-transfer-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\selection-transfer-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "d6364d26b8649d8819f49ad6130e36439e0ccf99bd6c961d32d5ba80fa11584d",
+      "bytes": 63668,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-1",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "disclosure-current-destination-light",
+      "url": "http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-1/narrow/disclosure-current-destination-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\disclosure-current-destination-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 goto http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-02-691Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 click \"text=グループ 01\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('text=グループ 01').click();\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-1/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-04-589Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-1-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\disclosure-current-destination-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\disclosure-current-destination-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-1\\narrow\\disclosure-current-destination-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-1\\\\narrow\\\\disclosure-current-destination-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "e631c78da4f3463d9e48002d9a8ba2b73120b76f0a49ac2d5a9c221f9ea094fc",
+      "bytes": 64152,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "initial-menu-light-palette",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/desktop/initial-menu-light-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\initial-menu-light-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-14-268Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\initial-menu-light-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\initial-menu-light-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\initial-menu-light-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\initial-menu-light-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "877a8978b159c67a547c9fbd61ca998ce48194d146f2d023b68bda9719e0b794",
+      "bytes": 58212,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "initial-menu-dark-palette",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-2/desktop/initial-menu-dark-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\initial-menu-dark-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-17-138Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\initial-menu-dark-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\initial-menu-dark-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\initial-menu-dark-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\initial-menu-dark-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "c322f238f1f14cbab893088b541f62dbeae61f305ffe0168c81abcb27be84d38",
+      "bytes": 58693,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-hidden-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=light",
+      "png": "evidence-captures/run-2/desktop/drawer-hidden-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-hidden-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-19-859Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-hidden-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-hidden-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-hidden-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\drawer-hidden-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "edf8e1091c7f6c67e4bb1cef2b3e8b33da86299f02f00d0541fcec5aaf95cc2a",
+      "bytes": 31692,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-hidden-dark-track-removal",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=dark",
+      "png": "evidence-captures/run-2/desktop/drawer-hidden-dark-track-removal.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-hidden-dark-track-removal.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-22-741Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-hidden-dark-track-removal.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-hidden-dark-track-removal.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-hidden-dark-track-removal.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\drawer-hidden-dark-track-removal.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "170f5d586d4429b9d88db091cafd4a8da685a5cb085a35cee1bc99f3837e5897",
+      "bytes": 32090,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "search-match-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/desktop/search-match-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\search-match-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-25-650Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 fill #nav-search \"項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#nav-search').fill('項目 30');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\search-match-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\search-match-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\search-match-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\search-match-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "826599f2004be9f0d134d1eebbd91c7316e4bd78960ac992e01fd70355156cba",
+      "bytes": 36425,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "search-no-match-dark",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-2/desktop/search-no-match-dark.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\search-no-match-dark.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-29-740Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 fill #nav-search 存在しない項目",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#nav-search').fill('存在しない項目');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\search-no-match-dark.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\search-no-match-dark.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\search-no-match-dark.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\search-no-match-dark.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "facd488d6883c861c3f56bf9ba1e304ed18ad4a42c527878d76ffb59efc9a4be",
+      "bytes": 39349,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-scroll-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/desktop/drawer-scroll-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-scroll-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-34-175Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 mousemove 160 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (160, 900)\r\nawait page.mouse.move(160, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 mousewheel 0 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-scroll-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-scroll-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\drawer-scroll-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\drawer-scroll-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "3e55c8a4cfc5a3a99b78406aff994817661be94f17cda882836a17bd729326ae",
+      "bytes": 56886,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "workspace-scroll-header-persistent-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/desktop/workspace-scroll-header-persistent-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\workspace-scroll-header-persistent-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-39-624Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 mousemove 960 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (960, 900)\r\nawait page.mouse.move(960, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 mousewheel 0 1000",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 1000);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\workspace-scroll-header-persistent-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\workspace-scroll-header-persistent-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\workspace-scroll-header-persistent-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\workspace-scroll-header-persistent-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "16ac6489de065ab269b6bb8981b29e8e1b6b74adb98ff375a8eacdff61f74b62",
+      "bytes": 58610,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "selection-transfer-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/desktop/selection-transfer-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\selection-transfer-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-45-353Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 click \"text=項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('text=項目 30').click();\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-47-225Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\selection-transfer-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\selection-transfer-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\selection-transfer-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\selection-transfer-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "332d916b82cdef1b18e3c0557d26a0ff0da8a3f926f79de5ff7f8895f81554ed",
+      "bytes": 57080,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "disclosure-current-destination-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/desktop/disclosure-current-destination-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\disclosure-current-destination-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-50-106Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 click \"text=グループ 01\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('text=グループ 01').click();\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-13-52-062Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\disclosure-current-destination-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\disclosure-current-destination-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\desktop\\disclosure-current-destination-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\desktop\\\\disclosure-current-destination-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "877a8978b159c67a547c9fbd61ca998ce48194d146f2d023b68bda9719e0b794",
+      "bytes": 58212,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "initial-menu-light-palette",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/narrow/initial-menu-light-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\initial-menu-light-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-01-633Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\initial-menu-light-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\initial-menu-light-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\initial-menu-light-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\initial-menu-light-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "dda9d5d1afcf419f42f99f828be77f203d18585634ea451f0d8e24c3496033f7",
+      "bytes": 53984,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "initial-menu-dark-palette",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-2/narrow/initial-menu-dark-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\initial-menu-dark-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-04-402Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\initial-menu-dark-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\initial-menu-dark-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\initial-menu-dark-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\initial-menu-dark-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "5be334d417259025fee6838a668b992af38f714b8cf5e4d2fe26c3a053128187",
+      "bytes": 54483,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-hidden-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=light",
+      "png": "evidence-captures/run-2/narrow/drawer-hidden-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-hidden-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-07-179Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-hidden-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-hidden-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-hidden-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\drawer-hidden-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "37e23b2ba980d77702757c146b208a96158042db286042e1ceb816fefe915452",
+      "bytes": 28514,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-hidden-dark-track-removal",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=dark",
+      "png": "evidence-captures/run-2/narrow/drawer-hidden-dark-track-removal.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-hidden-dark-track-removal.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=hidden&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-09-955Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-hidden-dark-track-removal.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-hidden-dark-track-removal.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-hidden-dark-track-removal.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\drawer-hidden-dark-track-removal.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "624a172cc3e3e6a12be14e44999ea000fa74ef31ac050edeeb8a9c6ab9f31d29",
+      "bytes": 28877,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "search-match-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/narrow/search-match-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\search-match-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-12-612Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 fill #nav-search \"項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#nav-search').fill('項目 30');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\search-match-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\search-match-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\search-match-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\search-match-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "e7327e5853facc0c933bce8034caa829668d07edd4b1e149e04271c03d84f235",
+      "bytes": 32995,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "search-no-match-dark",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-2/narrow/search-no-match-dark.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\search-no-match-dark.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-16-446Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 fill #nav-search 存在しない項目",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#nav-search').fill('存在しない項目');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\search-no-match-dark.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\search-no-match-dark.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\search-no-match-dark.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\search-no-match-dark.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "2cedde4b923c8ad00c812e3f0d7ad35803da33e7f911f3ceb84a505ed3a7001a",
+      "bytes": 35624,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-scroll-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/narrow/drawer-scroll-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-scroll-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-20-315Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 mousemove 160 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (160, 900)\r\nawait page.mouse.move(160, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 mousewheel 0 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-scroll-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-scroll-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\drawer-scroll-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\drawer-scroll-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "446d2bd472e1894a5223712e89a78fac3272f05c686c7703c1e24f6c7f7cba48",
+      "bytes": 52690,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "workspace-scroll-header-persistent-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/narrow/workspace-scroll-header-persistent-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\workspace-scroll-header-persistent-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-25-602Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 mousemove 640 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (640, 900)\r\nawait page.mouse.move(640, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 mousewheel 0 1000",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 1000);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\workspace-scroll-header-persistent-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\workspace-scroll-header-persistent-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\workspace-scroll-header-persistent-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\workspace-scroll-header-persistent-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "cbe57a24dfab1a84fdfb6015ec860b42d5dc61086e3567ff8feabc10b1f18fbe",
+      "bytes": 54444,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "selection-transfer-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/narrow/selection-transfer-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\selection-transfer-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-30-734Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 click \"text=項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('text=項目 30').click();\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-32-581Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\selection-transfer-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\selection-transfer-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\selection-transfer-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\selection-transfer-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "2eb9493e922d89b0dc998001eed6d2e9763c6007c8ba9911237af473ffdb4f8b",
+      "bytes": 52885,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-2",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "disclosure-current-destination-light",
+      "url": "http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-2/narrow/disclosure-current-destination-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\disclosure-current-destination-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 goto http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-35-230Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 click \"text=グループ 01\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('text=グループ 01').click();\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-2/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-37-033Z.yml)"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-2-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\disclosure-current-destination-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\disclosure-current-destination-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-2\\narrow\\disclosure-current-destination-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-2\\\\narrow\\\\disclosure-current-destination-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "dda9d5d1afcf419f42f99f828be77f203d18585634ea451f0d8e24c3496033f7",
+      "bytes": 53984,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "initial-menu-light-palette",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/desktop/initial-menu-light-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\initial-menu-light-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-45-982Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-14-45-948Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\initial-menu-light-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\initial-menu-light-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\initial-menu-light-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\initial-menu-light-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "86e316b88d2936b7bc5d5490345f5d6a9be641350bc751268be4f226f26e38b9",
+      "bytes": 43475,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "initial-menu-dark-palette",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-3/desktop/initial-menu-dark-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\initial-menu-dark-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-48-602Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-14-48-566Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\initial-menu-dark-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\initial-menu-dark-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\initial-menu-dark-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\initial-menu-dark-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "e4279afb1a11670852dc1e7da1ee2a42c4f133e0d9a818b5b8073c40eed2541b",
+      "bytes": 44807,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-hidden-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=light",
+      "png": "evidence-captures/run-3/desktop/drawer-hidden-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-hidden-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-51-310Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-14-51-267Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-hidden-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-hidden-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-hidden-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\drawer-hidden-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "f3c0edf6fe8dfe495e9ee8a03c9dbba9f727cd6a26fe1f860f6ec31eb0723dc1",
+      "bytes": 44193,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-hidden-dark-track-removal",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=dark",
+      "png": "evidence-captures/run-3/desktop/drawer-hidden-dark-track-removal.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-hidden-dark-track-removal.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=dark\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-53-903Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-14-53-872Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-hidden-dark-track-removal.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-hidden-dark-track-removal.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-hidden-dark-track-removal.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\drawer-hidden-dark-track-removal.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "fde7107aa7198a7f6a7f41fa1d183d7ba97d98a39141f7b9304f30d4628b9421",
+      "bytes": 45420,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "search-match-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/desktop/search-match-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\search-match-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-14-56-675Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-14-56-641Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 fill #navSearch \"項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#navSearch').fill('項目 30');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\search-match-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\search-match-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\search-match-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\search-match-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "4d27000d04519b9411175870efc0978183862368abca932604080ae84a546c47",
+      "bytes": 46191,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "search-no-match-dark",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-3/desktop/search-no-match-dark.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\search-no-match-dark.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-00-771Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-00-729Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 fill #navSearch 存在しない項目",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#navSearch').fill('存在しない項目');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\search-no-match-dark.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\search-no-match-dark.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\search-no-match-dark.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\search-no-match-dark.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "44ffe42c20f7607a3e7225e5055d25d020ef034063428f017239c78dd86bf024",
+      "bytes": 48850,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "drawer-scroll-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/desktop/drawer-scroll-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-scroll-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-04-717Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-04-682Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 mousemove 160 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (160, 900)\r\nawait page.mouse.move(160, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 mousewheel 0 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-scroll-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-scroll-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\drawer-scroll-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\drawer-scroll-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "86e316b88d2936b7bc5d5490345f5d6a9be641350bc751268be4f226f26e38b9",
+      "bytes": 43475,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "workspace-scroll-header-persistent-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/desktop/workspace-scroll-header-persistent-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\workspace-scroll-header-persistent-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-09-897Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-09-863Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 mousemove 960 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (960, 900)\r\nawait page.mouse.move(960, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 mousewheel 0 1000",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 1000);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\workspace-scroll-header-persistent-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\workspace-scroll-header-persistent-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\workspace-scroll-header-persistent-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\workspace-scroll-header-persistent-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "86e316b88d2936b7bc5d5490345f5d6a9be641350bc751268be4f226f26e38b9",
+      "bytes": 43475,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "selection-transfer-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/desktop/selection-transfer-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\selection-transfer-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-15-094Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-15-057Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 click \"text=項目 30\"",
+          "exit_code": 0,
+          "output": "### Error\r\nError: \"text=項目 30\" does not match any elements."
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\selection-transfer-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\selection-transfer-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\selection-transfer-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\selection-transfer-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "86e316b88d2936b7bc5d5490345f5d6a9be641350bc751268be4f226f26e38b9",
+      "bytes": 43475,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "desktop",
+        "css_pixels": "1440x1200"
+      },
+      "state": "disclosure-current-destination-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/desktop/disclosure-current-destination-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\disclosure-current-destination-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-18-907Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-18-874Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 click \"text=グループ 01\"",
+          "exit_code": 0,
+          "output": "### Error\r\nError: \"text=グループ 01\" does not match any elements."
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-1440 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\disclosure-current-destination-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\disclosure-current-destination-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\desktop\\disclosure-current-destination-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\desktop\\\\disclosure-current-destination-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "86e316b88d2936b7bc5d5490345f5d6a9be641350bc751268be4f226f26e38b9",
+      "bytes": 43475,
+      "dimensions": "1440x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "initial-menu-light-palette",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/narrow/initial-menu-light-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\initial-menu-light-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-29-197Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-29-157Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\initial-menu-light-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\initial-menu-light-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\initial-menu-light-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\initial-menu-light-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "5d6da0c01a1801a36021987ba13a3f7ed1ff3b1af03f3906163a1270aa4e4005",
+      "bytes": 42944,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "initial-menu-dark-palette",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-3/narrow/initial-menu-dark-palette.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\initial-menu-dark-palette.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-31-842Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-31-808Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\initial-menu-dark-palette.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\initial-menu-dark-palette.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\initial-menu-dark-palette.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\initial-menu-dark-palette.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "59dc49a3bc40b35297b8053e7b1f06e56dd31229ff13300a7c1d918c107cc02a",
+      "bytes": 44620,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-hidden-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=light",
+      "png": "evidence-captures/run-3/narrow/drawer-hidden-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-hidden-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-34-469Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-34-439Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-hidden-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-hidden-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-hidden-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\drawer-hidden-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "b17a038ad9cdea7f3c0285d14bd4a7c879290b1d67b81f1f4fc3217bd3ee5e8d",
+      "bytes": 42342,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-hidden-dark-track-removal",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=dark",
+      "png": "evidence-captures/run-3/narrow/drawer-hidden-dark-track-removal.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-hidden-dark-track-removal.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=hidden&theme=dark\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-37-032Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-37-000Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-hidden-dark-track-removal.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-hidden-dark-track-removal.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-hidden-dark-track-removal.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\drawer-hidden-dark-track-removal.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "0160d88fcd34c32526daa267ca2e5b976eb96622c6c321855bc5aea450e04870",
+      "bytes": 43556,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "search-match-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/narrow/search-match-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\search-match-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-39-628Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-39-592Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 fill #navSearch \"項目 30\"",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#navSearch').fill('項目 30');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\search-match-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\search-match-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\search-match-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\search-match-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "dd32c2268642c5cbe5698dcad393a229eb468b9bd1b314ae5c7c0bfbc697fe22",
+      "bytes": 45883,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "search-no-match-dark",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark",
+      "png": "evidence-captures/run-3/narrow/search-no-match-dark.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\search-no-match-dark.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=dark\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-43-483Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-43-447Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 fill #navSearch 存在しない項目",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.locator('#navSearch').fill('存在しない項目');\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\search-no-match-dark.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\search-no-match-dark.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\search-no-match-dark.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\search-no-match-dark.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "7987357e2dae5f83e8513ab407793bb5c9ce822c65debf9681883f77ea27ce55",
+      "bytes": 48528,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "drawer-scroll-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/narrow/drawer-scroll-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-scroll-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-47-344Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-47-308Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 mousemove 160 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (160, 900)\r\nawait page.mouse.move(160, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 mousewheel 0 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-scroll-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-scroll-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\drawer-scroll-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\drawer-scroll-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "5d6da0c01a1801a36021987ba13a3f7ed1ff3b1af03f3906163a1270aa4e4005",
+      "bytes": 42944,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "workspace-scroll-header-persistent-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/narrow/workspace-scroll-header-persistent-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\workspace-scroll-header-persistent-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-52-445Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-52-413Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 mousemove 640 900",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Move mouse to (640, 900)\r\nawait page.mouse.move(640, 900);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 mousewheel 0 1000",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\n// Scroll mouse wheel\r\nawait page.mouse.wheel(0, 1000);\r\n```"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\workspace-scroll-header-persistent-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\workspace-scroll-header-persistent-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\workspace-scroll-header-persistent-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\workspace-scroll-header-persistent-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "5d6da0c01a1801a36021987ba13a3f7ed1ff3b1af03f3906163a1270aa4e4005",
+      "bytes": 42944,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "selection-transfer-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/narrow/selection-transfer-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\selection-transfer-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-15-57-564Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-15-57-535Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 click \"text=項目 30\"",
+          "exit_code": 0,
+          "output": "### Error\r\nError: \"text=項目 30\" does not match any elements."
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\selection-transfer-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\selection-transfer-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\selection-transfer-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\selection-transfer-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "5d6da0c01a1801a36021987ba13a3f7ed1ff3b1af03f3906163a1270aa4e4005",
+      "bytes": 42944,
+      "dimensions": "720x1200"
+    },
+    {
+      "run": "run-3",
+      "viewport": {
+        "name": "narrow",
+        "css_pixels": "720x1200"
+      },
+      "state": "disclosure-current-destination-light",
+      "url": "http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+      "png": "evidence-captures/run-3/narrow/disclosure-current-destination-light.png",
+      "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\disclosure-current-destination-light.png",
+      "exit_code": 0,
+      "commands": [
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 goto http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light",
+          "exit_code": 0,
+          "output": "### Ran Playwright code\r\n```js\r\nawait page.goto('http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light');\r\n```\r\n### Page\r\n- Page URL: http://127.0.0.1:41824/run-3/index.html?drawer=open&theme=light\r\n- Page Title: 業務ワークスペース\r\n- Console: 1 errors, 0 warnings\r\n### Snapshot\r\n- [Snapshot](.playwright-cli\\page-2026-08-01T02-16-01-443Z.yml)\r\n### Events\r\n- New console entries: .playwright-cli\\console-2026-08-01T02-16-01-414Z.log#L1-L3"
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 click \"text=グループ 01\"",
+          "exit_code": 0,
+          "output": "### Error\r\nError: \"text=グループ 01\" does not match any elements."
+        },
+        {
+          "command": "npx --yes --package @playwright/cli playwright-cli -s=common-shell-run-3-720 screenshot --filename C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\disclosure-current-destination-light.png",
+          "exit_code": 0,
+          "output": "### Result\r\n- [Screenshot of viewport](docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\disclosure-current-destination-light.png)\r\n### Ran Playwright code\r\n```js\r\n// Screenshot viewport and save it as docs\\poc\\experiments\\012-common-shell-variability\\attempt-24\\evidence-captures\\run-3\\narrow\\disclosure-current-destination-light.png\r\nawait page.screenshot({\r\n  path: 'docs\\\\poc\\\\experiments\\\\012-common-shell-variability\\\\attempt-24\\\\evidence-captures\\\\run-3\\\\narrow\\\\disclosure-current-destination-light.png',\r\n  scale: 'css',\r\n  type: 'png'\r\n});\r\n```"
+        }
+      ],
+      "sha256": "5d6da0c01a1801a36021987ba13a3f7ed1ff3b1af03f3906163a1270aa4e4005",
+      "bytes": 42944,
+      "dimensions": "720x1200"
+    }
+  ]
+}

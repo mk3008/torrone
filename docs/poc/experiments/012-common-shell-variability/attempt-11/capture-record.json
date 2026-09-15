@@ -1,0 +1,45 @@
+{
+  "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "chrome_version": "150.0.7871.187",
+  "viewport": "1440x1200",
+  "command_mode": "headless=new, disable-gpu, disable-software-rasterizer, independent temporary profile; direct per-run capture after Chrome process cleanup",
+  "command_template": "chrome.exe --headless=new --disable-gpu --disable-software-rasterizer --no-first-run --no-default-browser-check --remote-debugging-port=0 --window-size=1440,1200 --user-data-dir=<temporary-profile> --screenshot=<png> file:///.../index.html?drawer=open&theme=light",
+  "captures": [
+    {
+      "run": 1,
+      "drawer": "open",
+      "theme": "light",
+      "viewport": "1440x1200",
+      "png": "runs/run-1/shell-open-light.png",
+      "fallback_used": false,
+      "bytes": 59284,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "5E596262194C9801D476A1D37B0397FFADFDE4C9E81D7DBE64019E51688161D8"
+    },
+    {
+      "run": 2,
+      "drawer": "open",
+      "theme": "light",
+      "viewport": "1440x1200",
+      "png": "runs/run-2/shell-open-light.png",
+      "fallback_used": false,
+      "bytes": 56689,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "E67DBA636B546BD0910443BF8805977571D0F44F4168902B6F00047189A74511"
+    },
+    {
+      "run": 3,
+      "drawer": "open",
+      "theme": "light",
+      "viewport": "1440x1200",
+      "png": "runs/run-3/shell-open-light.png",
+      "fallback_used": false,
+      "bytes": 54369,
+      "width": 1440,
+      "height": 1200,
+      "sha256": "DA41C6D76534CD8D51B15A3BAD6AA32A239E0CDE526BB5481D277A03724173CF"
+    }
+  ]
+}

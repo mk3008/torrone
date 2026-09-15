@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "7c281fdfa4618756a04b660e9f1983f49c8de987bcb6b862b242282013b6af3d",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 34889,
+        "sha256": "868983b43cbe50be0d9eba952ad34c87922194167bcbcaf7a4c0163d30d52056"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "c0361e168e029181e93f503d209b4cce334063bbd402eaee6761624014d3fad5",
+    "files": [
+      {
+        "path": "assets/index-C9KvfiEz.css",
+        "bytes": 8981,
+        "sha256": "37a84d52a7545ff6df95764dc91e7d841c324cd235710e31a33f2a3a7b896415"
+      },
+      {
+        "path": "assets/index-ew333T6r.js",
+        "bytes": 198344,
+        "sha256": "84fd68037855f8826d757e1541c13b3f87716ea3cf79a1da6f030ef9fbdd2b5f"
+      },
+      {
+        "path": "index.html",
+        "bytes": 466,
+        "sha256": "0489f50ed65b0bf40ec7669fc2d707b5c922e4a3d39e6e36848da44c296afc73"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "navigation parent round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          },
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          }
+        ]
+      },
+      {
+        "name": "navigation selection round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-audit-exports"
+          },
+          {
+            "action": "click",
+            "target": "navigation-access-review"
+          }
+        ]
+      },
+      {
+        "name": "navigation filter round trip",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "routing"
+          },
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "name": "navigation filter no results",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "missing"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "theme change",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "requester-filter",
+            "value": "No matching person"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 24,
+    "errorSignatures": []
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-pagination.box.y",
+      "expected": 656.13,
+      "actual": 650.92,
+      "delta": 5.210000000000036
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-table.box.y",
+      "expected": 432.19,
+      "actual": 426.98,
+      "delta": 5.2099999999999795
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.result-pagination.box.y",
+      "expected": 656.13,
+      "actual": 650.92,
+      "delta": 5.210000000000036
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.result-table.box.y",
+      "expected": 432.19,
+      "actual": 426.98,
+      "delta": 5.2099999999999795
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-2.elements.filter-panel.box.y",
+      "expected": 209.5,
+      "actual": 204.3,
+      "delta": 5.199999999999989
+    }
+  ]
+}

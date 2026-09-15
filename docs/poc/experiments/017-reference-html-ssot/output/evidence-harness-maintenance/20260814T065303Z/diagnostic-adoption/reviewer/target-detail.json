@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "review-presentation-only",
+  "source": {
+    "reportPath": "docs/poc/experiments/017-reference-html-ssot/output/diagnostic-adoption/target-detail.raw.report.json",
+    "sha256": "CAE446977E0952A5CB03B54351D95DD21DB6CCC1B05DA9C31630B12D26F76FA0",
+    "schemaVersion": 1,
+    "status": "pass"
+  },
+  "summary": {
+    "status": "pass",
+    "rawDifferenceCount": 48,
+    "rawErrorCount": 0,
+    "rawDiagnosticCount": 48,
+    "reviewerEntryCount": 17,
+    "errorEntryCount": 0,
+    "diagnosticEntryCount": 17,
+    "repeatedOccurrencesCollapsed": 31,
+    "rawCountsPreserved": true
+  },
+  "ordering": [
+    "severity: error before informational diagnostic",
+    "within severity: diagnostic shape, normalized path, exact observation values"
+  ],
+  "traceability": {
+    "differenceArray": "differences",
+    "rawDifferenceIndexBase": 1,
+    "guarantee": "Every raw difference index occurs in exactly one presentation entry."
+  },
+  "errors": [],
+  "diagnostics": [
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-current",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        4,
+        20,
+        36
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-empty",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        5,
+        21,
+        37
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-filter",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        6,
+        22,
+        38
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-parent",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        7,
+        23,
+        39
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-secondary",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        8,
+        24,
+        40
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        9,
+        25,
+        41
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:navigation-parent",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        10,
+        26,
+        42
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:navigation-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        11,
+        27,
+        43
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:user-menu-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        12,
+        28,
+        44
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:role:banner",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        13,
+        29,
+        45
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.sign-out-action",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        14,
+        30,
+        46
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.theme-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        15,
+        31,
+        47
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.user-menu-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        16,
+        32,
+        48
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.height",
+      "detail": {
+        "actual": 779.39,
+        "delta": 12.889999999999986,
+        "expected": 766.5
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        3,
+        35
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.height",
+      "detail": {
+        "actual": 833.39,
+        "delta": 12.889999999999986,
+        "expected": 820.5
+      },
+      "occurrenceCount": 1,
+      "rawDifferenceIndexes": [
+        19
+      ],
+      "states": [
+        "scenarios.processing notes round trip.step-1"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.x",
+      "detail": {
+        "actual": 380,
+        "delta": 140,
+        "expected": 240
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        1,
+        17,
+        33
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.y",
+      "detail": {
+        "actual": 64,
+        "delta": 64,
+        "expected": 0
+      },
+      "occurrenceCount": 3,
+      "rawDifferenceIndexes": [
+        2,
+        18,
+        34
+      ],
+      "states": [
+        "initial",
+        "scenarios.processing notes round trip.step-1",
+        "scenarios.processing notes round trip.step-2"
+      ]
+    }
+  ]
+}

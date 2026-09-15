@@ -1,0 +1,16 @@
+pack_id: example-business-app-standard-pack
+pack_version: 0.3.0
+theme_color_contract_version: 2
+theme_color_overrides:
+  light:
+    action_background: "#6B3FA0"
+    action_foreground: "#FFFFFF"
+    link: "#6B3FA0"
+    selection_background: "#F3EAFB"
+    selection_indicator: "#6B3FA0"
+  dark:
+    action_background: "#D5B4FF"
+    action_foreground: "#241335"
+    link: "#D5B4FF"
+    selection_background: "#3A254D"
+    selection_indicator: "#D5B4FF"

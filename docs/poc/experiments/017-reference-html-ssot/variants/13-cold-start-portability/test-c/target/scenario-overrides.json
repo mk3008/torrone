@@ -1,0 +1,14 @@
+{
+  "overrides": [
+    {
+      "scenario": "navigation filter no match",
+      "step": 1,
+      "value": "No badge section"
+    },
+    {
+      "scenario": "search empty",
+      "step": 1,
+      "value": "Nothing found"
+    }
+  ]
+}

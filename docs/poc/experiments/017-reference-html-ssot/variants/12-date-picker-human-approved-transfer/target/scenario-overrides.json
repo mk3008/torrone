@@ -1,0 +1,19 @@
+{
+  "overrides": [
+    { "scenario": "compact manual range", "step": 1, "value": "20261019" },
+    { "scenario": "compact manual range", "step": 2, "value": "20261021" },
+    { "scenario": "invalid manual start", "step": 1, "value": "20260931" },
+    { "scenario": "future manual end", "step": 1, "value": "20261019" },
+    { "scenario": "future manual end", "step": 2, "value": "20261028" },
+    { "scenario": "reversed manual range", "step": 1, "value": "20261021" },
+    { "scenario": "reversed manual range", "step": 2, "value": "20261019" },
+    { "scenario": "correct reversed range", "step": 1, "value": "20261021" },
+    { "scenario": "correct reversed range", "step": 2, "value": "20261019" },
+    { "scenario": "correct reversed range", "step": 3, "value": "20261019" },
+    { "scenario": "correct reversed range", "step": 4, "value": "20261021" },
+    { "scenario": "clear end and reopen", "step": 1, "value": "20261019" },
+    { "scenario": "clear end and reopen", "step": 2, "value": "20261021" },
+    { "scenario": "end-only manual period", "step": 1, "value": "20261021" },
+    { "scenario": "start-only manual period", "step": 1, "value": "20261019" }
+  ]
+}

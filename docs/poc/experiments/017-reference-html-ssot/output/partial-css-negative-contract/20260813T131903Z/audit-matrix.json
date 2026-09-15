@@ -1,0 +1,1187 @@
+{
+  "status": "pass",
+  "attainment": "historical-drift-confirmed",
+  "classification": "C-harness-baseline-browser-condition",
+  "mutationCausalForAddedFocusSignatures": false,
+  "historical": {
+    "path": "output/partial-reference/partial-style-negative.report.json",
+    "sha256": "FFB8B8454D6C43EAE4245348E80A0590AD04B82DACE0EE3CF37D56FC1AA3D9FC",
+    "status": "fail",
+    "errorCount": 20,
+    "signatures": [
+      "elements.clear-action.styles.borderRadius",
+      "elements.filter-toggle.styles.borderRadius"
+    ],
+    "errors": [
+      {
+        "path": "initial.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "initial.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search results.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search results.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search empty.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search empty.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search empty.step-2.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search empty.step-2.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.clear to initial.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.clear to initial.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.clear to initial.step-2.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.clear to initial.step-2.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter pointer round trip.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter pointer round trip.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter pointer round trip.step-2.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter pointer round trip.step-2.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-2.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      }
+    ],
+    "browser": {
+      "name": "Edg/151.0.4129.78",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "sourceDigest": "bcf33cd30de720810c1c803c668e7de052af22d51971d2ec288e6c3a454a7f80",
+    "consoleErrorCount": 0,
+    "externalRequestCount": 0,
+    "failedRequestCount": 0
+  },
+  "savedFresh": {
+    "path": "output/evidence-harness-maintenance/20260813T112543Z/partial-reference/partial-style-negative.report.json",
+    "sha256": "1F2E01861FA2D2D6C43C4363604F362D3E322D2AABC2A9F7A4C220CCA159E53E",
+    "status": "fail",
+    "errorCount": 22,
+    "signatures": [
+      "elements.clear-action.styles.borderRadius",
+      "elements.filter-toggle.styles.borderRadius",
+      "elements.query-filter.styles.outlineColor",
+      "elements.query-filter.styles.outlineStyle"
+    ],
+    "errors": [
+      {
+        "path": "initial.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "initial.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search results.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search results.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search empty.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search empty.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineColor",
+        "normalizedPath": "elements.query-filter.styles.outlineColor",
+        "expected": "rgb(134, 185, 238)",
+        "actual": "rgb(16, 29, 47)"
+      },
+      {
+        "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineStyle",
+        "normalizedPath": "elements.query-filter.styles.outlineStyle",
+        "expected": "solid",
+        "actual": "none"
+      },
+      {
+        "path": "scenarios.search empty.step-2.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.search empty.step-2.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.clear to initial.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.clear to initial.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.clear to initial.step-2.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.clear to initial.step-2.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter pointer round trip.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter pointer round trip.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter pointer round trip.step-2.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter pointer round trip.step-2.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-1.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-2.elements.clear-action.styles.borderRadius",
+        "normalizedPath": "elements.clear-action.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.styles.borderRadius",
+        "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      }
+    ],
+    "browser": {
+      "name": "Edg/151.0.4129.78",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    "sourceDigest": "bcf33cd30de720810c1c803c668e7de052af22d51971d2ec288e6c3a454a7f80",
+    "consoleErrorCount": 0,
+    "externalRequestCount": 0,
+    "failedRequestCount": 0
+  },
+  "baselineComparison": {
+    "saved": {
+      "path": "output/evidence-harness-maintenance/20260813T112543Z/partial-reference/search-workspace.snapshot.json",
+      "sha256": "4A4634C56DEDF0A045AFEDE8AE6FD93F2EA12B96E56FD2E1DC0C2B8FAF4A95B3",
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "activeRef": "query-filter",
+      "outlineColor": "rgb(134, 185, 238)",
+      "outlineStyle": "solid"
+    },
+    "fresh": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.snapshot.json",
+      "sha256": "613B11B10D30021F1F418D24222E8A69A131E42D79337E15324E1B05929C2F77",
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "activeRef": "query-filter",
+      "outlineColor": "rgb(16, 29, 47)",
+      "outlineStyle": "none"
+    },
+    "freshRepeat": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.repeat.snapshot.json",
+      "sha256": "36D72FF5A3F5913F30BFCC45516EC1CFB63DA6B228962260259B231702B7CAEF",
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "activeRef": "query-filter",
+      "outlineColor": "rgb(134, 185, 238)",
+      "outlineStyle": "solid"
+    }
+  },
+  "focusObservationVariantCount": 2,
+  "affectedElementKeys": [
+    "clear-action",
+    "filter-toggle"
+  ],
+  "probes": {
+    "savedControl": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/saved-baseline.control.report.json",
+      "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE",
+      "status": "pass",
+      "errorCount": 0,
+      "signatures": [],
+      "errors": null,
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "71498ce897b76e1f90d7f48dedc3ad119111272dfed77657c8fb4f9dd2e4ec8c",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "savedControlRepeat": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/saved-baseline.control-repeat.report.json",
+      "sha256": "07AFF72A840B20F9EE5202DBD00869C46702C3CFD3A4B1B29B2DEBD1CF261D46",
+      "status": "fail",
+      "errorCount": 2,
+      "signatures": [
+        "elements.query-filter.styles.outlineColor",
+        "elements.query-filter.styles.outlineStyle"
+      ],
+      "errors": [
+        {
+          "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineColor",
+          "normalizedPath": "elements.query-filter.styles.outlineColor",
+          "expected": "rgb(134, 185, 238)",
+          "actual": "rgb(16, 29, 47)"
+        },
+        {
+          "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineStyle",
+          "normalizedPath": "elements.query-filter.styles.outlineStyle",
+          "expected": "solid",
+          "actual": "none"
+        }
+      ],
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "71498ce897b76e1f90d7f48dedc3ad119111272dfed77657c8fb4f9dd2e4ec8c",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "savedMutation": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/saved-baseline.radius-mutation.report.json",
+      "sha256": "E8BF5A743AB4727EFAAE439109347664CA4403CD8D47770F3E9C9904B82B4733",
+      "status": "fail",
+      "errorCount": 22,
+      "signatures": [
+        "elements.clear-action.styles.borderRadius",
+        "elements.filter-toggle.styles.borderRadius",
+        "elements.query-filter.styles.outlineColor",
+        "elements.query-filter.styles.outlineStyle"
+      ],
+      "errors": [
+        {
+          "path": "initial.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "initial.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search results.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search results.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search empty.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search empty.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineColor",
+          "normalizedPath": "elements.query-filter.styles.outlineColor",
+          "expected": "rgb(134, 185, 238)",
+          "actual": "rgb(16, 29, 47)"
+        },
+        {
+          "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineStyle",
+          "normalizedPath": "elements.query-filter.styles.outlineStyle",
+          "expected": "solid",
+          "actual": "none"
+        },
+        {
+          "path": "scenarios.search empty.step-2.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search empty.step-2.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.clear to initial.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.clear to initial.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.clear to initial.step-2.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.clear to initial.step-2.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter pointer round trip.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter pointer round trip.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter pointer round trip.step-2.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter pointer round trip.step-2.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter keyboard round trip.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter keyboard round trip.step-2.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        }
+      ],
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "05d60760e0850ebd936b2af137226f5e277abbd78352e30deba261163afad5a6",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "savedRestore": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/saved-baseline.restore.report.json",
+      "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE",
+      "status": "pass",
+      "errorCount": 0,
+      "signatures": [],
+      "errors": null,
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "71498ce897b76e1f90d7f48dedc3ad119111272dfed77657c8fb4f9dd2e4ec8c",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "savedRestoreRepeat": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/saved-baseline.restore-repeat.report.json",
+      "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE",
+      "status": "pass",
+      "errorCount": 0,
+      "signatures": [],
+      "errors": null,
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "71498ce897b76e1f90d7f48dedc3ad119111272dfed77657c8fb4f9dd2e4ec8c",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "freshControl": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.control.report.json",
+      "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE",
+      "status": "pass",
+      "errorCount": 0,
+      "signatures": [],
+      "errors": null,
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "71498ce897b76e1f90d7f48dedc3ad119111272dfed77657c8fb4f9dd2e4ec8c",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "freshControlRepeat": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.control-repeat.report.json",
+      "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE",
+      "status": "pass",
+      "errorCount": 0,
+      "signatures": [],
+      "errors": null,
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "71498ce897b76e1f90d7f48dedc3ad119111272dfed77657c8fb4f9dd2e4ec8c",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "freshMutation": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.radius-mutation.report.json",
+      "sha256": "474C0F1D6846FB4CD33A74FBFBCE5CA4ABC592FDAD301E3E38544811300CF510",
+      "status": "fail",
+      "errorCount": 20,
+      "signatures": [
+        "elements.clear-action.styles.borderRadius",
+        "elements.filter-toggle.styles.borderRadius"
+      ],
+      "errors": [
+        {
+          "path": "initial.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "initial.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search results.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search results.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search empty.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search empty.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search empty.step-2.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.search empty.step-2.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.clear to initial.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.clear to initial.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.clear to initial.step-2.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.clear to initial.step-2.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter pointer round trip.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter pointer round trip.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter pointer round trip.step-2.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter pointer round trip.step-2.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter keyboard round trip.step-1.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter keyboard round trip.step-2.elements.clear-action.styles.borderRadius",
+          "normalizedPath": "elements.clear-action.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        },
+        {
+          "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.styles.borderRadius",
+          "normalizedPath": "elements.filter-toggle.styles.borderRadius",
+          "expected": "6px",
+          "actual": "20px"
+        }
+      ],
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "05d60760e0850ebd936b2af137226f5e277abbd78352e30deba261163afad5a6",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "freshRestore": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.restore.report.json",
+      "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE",
+      "status": "pass",
+      "errorCount": 0,
+      "signatures": [],
+      "errors": null,
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "71498ce897b76e1f90d7f48dedc3ad119111272dfed77657c8fb4f9dd2e4ec8c",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    },
+    "freshRestoreRepeat": {
+      "path": "output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.restore-repeat.report.json",
+      "sha256": "E3A688294497E0FF1CFCC5CFA23D750C4672F3615AAC1926F9B6BE38AAF8F055",
+      "status": "fail",
+      "errorCount": 2,
+      "signatures": [
+        "elements.query-filter.styles.outlineColor",
+        "elements.query-filter.styles.outlineStyle"
+      ],
+      "errors": [
+        {
+          "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineColor",
+          "normalizedPath": "elements.query-filter.styles.outlineColor",
+          "expected": "rgb(16, 29, 47)",
+          "actual": "rgb(134, 185, 238)"
+        },
+        {
+          "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineStyle",
+          "normalizedPath": "elements.query-filter.styles.outlineStyle",
+          "expected": "none",
+          "actual": "solid"
+        }
+      ],
+      "browser": {
+        "name": "Edg/151.0.4129.78",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "sourceDigest": "71498ce897b76e1f90d7f48dedc3ad119111272dfed77657c8fb4f9dd2e4ec8c",
+      "consoleErrorCount": 0,
+      "externalRequestCount": 0,
+      "failedRequestCount": 0
+    }
+  },
+  "contracts": {
+    "savedBaseline": {
+      "status": "pass",
+      "contract": "control-observed-secondary-signature-separated-css-mutation-delta",
+      "mutation": {
+        "selector": ".outline-action",
+        "affectedElementKeys": [
+          "clear-action",
+          "filter-toggle"
+        ],
+        "property": "borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      "controls": {
+        "runCount": 8,
+        "runs": [
+          {
+            "index": 1,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 2,
+            "status": "fail",
+            "errorCount": 2,
+            "signatures": [
+              "elements.query-filter.styles.outlineColor",
+              "elements.query-filter.styles.outlineStyle"
+            ],
+            "rawErrorIndexes": [
+              45,
+              46
+            ]
+          },
+          {
+            "index": 3,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 4,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 5,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 6,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 7,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 8,
+            "status": "fail",
+            "errorCount": 2,
+            "signatures": [
+              "elements.query-filter.styles.outlineColor",
+              "elements.query-filter.styles.outlineStyle"
+            ],
+            "rawErrorIndexes": [
+              45,
+              46
+            ]
+          }
+        ],
+        "observedSecondaryErrorCount": 4,
+        "observedSecondarySignatures": [
+          "elements.query-filter.styles.outlineColor",
+          "elements.query-filter.styles.outlineStyle"
+        ]
+      },
+      "mutationOnly": {
+        "errorCount": 20,
+        "signatures": [
+          "elements.clear-action.styles.borderRadius",
+          "elements.filter-toggle.styles.borderRadius"
+        ],
+        "rawErrorIndexes": [
+          1,
+          2,
+          22,
+          23,
+          49,
+          50,
+          72,
+          73,
+          93,
+          94,
+          120,
+          121,
+          141,
+          142,
+          159,
+          160,
+          180,
+          181,
+          201,
+          202
+        ]
+      },
+      "sharedSecondary": {
+        "errorCount": 2,
+        "signatures": [
+          "elements.query-filter.styles.outlineColor",
+          "elements.query-filter.styles.outlineStyle"
+        ]
+      },
+      "controlOnlySecondary": {
+        "errorCount": 0,
+        "signatures": []
+      },
+      "sources": {
+        "controls": [
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.control.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.control-repeat.report.json",
+            "sha256": "07AFF72A840B20F9EE5202DBD00869C46702C3CFD3A4B1B29B2DEBD1CF261D46"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.restore.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.restore-repeat.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.control.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.control-repeat.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.restore.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.restore-repeat.report.json",
+            "sha256": "E3A688294497E0FF1CFCC5CFA23D750C4672F3615AAC1926F9B6BE38AAF8F055"
+          }
+        ],
+        "mutation": {
+          "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.radius-mutation.report.json",
+          "sha256": "E8BF5A743AB4727EFAAE439109347664CA4403CD8D47770F3E9C9904B82B4733"
+        }
+      }
+    },
+    "freshBaseline": {
+      "status": "pass",
+      "contract": "control-observed-secondary-signature-separated-css-mutation-delta",
+      "mutation": {
+        "selector": ".outline-action",
+        "affectedElementKeys": [
+          "clear-action",
+          "filter-toggle"
+        ],
+        "property": "borderRadius",
+        "expected": "6px",
+        "actual": "20px"
+      },
+      "controls": {
+        "runCount": 8,
+        "runs": [
+          {
+            "index": 1,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 2,
+            "status": "fail",
+            "errorCount": 2,
+            "signatures": [
+              "elements.query-filter.styles.outlineColor",
+              "elements.query-filter.styles.outlineStyle"
+            ],
+            "rawErrorIndexes": [
+              45,
+              46
+            ]
+          },
+          {
+            "index": 3,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 4,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 5,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 6,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 7,
+            "status": "pass",
+            "errorCount": 0,
+            "signatures": [],
+            "rawErrorIndexes": []
+          },
+          {
+            "index": 8,
+            "status": "fail",
+            "errorCount": 2,
+            "signatures": [
+              "elements.query-filter.styles.outlineColor",
+              "elements.query-filter.styles.outlineStyle"
+            ],
+            "rawErrorIndexes": [
+              45,
+              46
+            ]
+          }
+        ],
+        "observedSecondaryErrorCount": 4,
+        "observedSecondarySignatures": [
+          "elements.query-filter.styles.outlineColor",
+          "elements.query-filter.styles.outlineStyle"
+        ]
+      },
+      "mutationOnly": {
+        "errorCount": 20,
+        "signatures": [
+          "elements.clear-action.styles.borderRadius",
+          "elements.filter-toggle.styles.borderRadius"
+        ],
+        "rawErrorIndexes": [
+          1,
+          2,
+          22,
+          23,
+          49,
+          50,
+          70,
+          71,
+          91,
+          92,
+          118,
+          119,
+          139,
+          140,
+          157,
+          158,
+          178,
+          179,
+          199,
+          200
+        ]
+      },
+      "sharedSecondary": {
+        "errorCount": 0,
+        "signatures": []
+      },
+      "controlOnlySecondary": {
+        "errorCount": 4,
+        "signatures": [
+          "elements.query-filter.styles.outlineColor",
+          "elements.query-filter.styles.outlineStyle"
+        ]
+      },
+      "sources": {
+        "controls": [
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.control.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.control-repeat.report.json",
+            "sha256": "07AFF72A840B20F9EE5202DBD00869C46702C3CFD3A4B1B29B2DEBD1CF261D46"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.restore.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/saved-baseline.restore-repeat.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.control.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.control-repeat.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.restore.report.json",
+            "sha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE"
+          },
+          {
+            "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.restore-repeat.report.json",
+            "sha256": "E3A688294497E0FF1CFCC5CFA23D750C4672F3615AAC1926F9B6BE38AAF8F055"
+          }
+        ],
+        "mutation": {
+          "path": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/partial-css-negative-contract/20260813T131903Z/fresh-baseline.radius-mutation.report.json",
+          "sha256": "474C0F1D6846FB4CD33A74FBFBCE5CA4ABC592FDAD301E3E38544811300CF510"
+        }
+      }
+    }
+  }
+}

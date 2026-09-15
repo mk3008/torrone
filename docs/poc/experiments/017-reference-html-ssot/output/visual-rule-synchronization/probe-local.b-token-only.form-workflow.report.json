@@ -1,0 +1,1134 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "form-workflow.html",
+    "digest": "a403a13b83a22fc3511d59f1a6cce878fcc625f044a834283affefd3214e167c",
+    "files": [
+      {
+        "path": "form-workflow.html",
+        "bytes": 15931,
+        "sha256": "a4e3f072767604623763a8841aabe41780531865d7136e8df19475e1eda1b1f4"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "form-workflow.html",
+    "digest": "ef085338e30c354297c6b504a6458c5848ae3460a41cf86d60bf87a775473ebc",
+    "files": [
+      {
+        "path": "form-workflow.html",
+        "bytes": 15910,
+        "sha256": "e5b472c4061b835c7e220737fb0c8ef0b19ef9aa956c04b2a48d2e57070222a3"
+      },
+      {
+        "path": "shared-tokens.css",
+        "bytes": 73,
+        "sha256": "37ee5ab480c74061b15a7e928a25bfeac593bd406512c94466a3b358d24dadcb"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "missing required fields",
+        "steps": [
+          {
+            "action": "click",
+            "target": "review-action"
+          }
+        ]
+      },
+      {
+        "name": "invalid email correction",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "form-primary-field",
+            "value": "Replace dock leveler"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "not-an-email"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "morgan.lee@example.com"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          }
+        ]
+      },
+      {
+        "name": "review and edit",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "form-primary-field",
+            "value": "Replace dock leveler"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "morgan.lee@example.com"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          },
+          {
+            "action": "click",
+            "target": "edit-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 155,
+    "uniqueErrorCount": 21,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.form-contact-error.styles.borderBottomColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-contact-error.styles.borderLeftColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-contact-error.styles.borderRightColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-contact-error.styles.borderTopColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-contact-error.styles.color",
+        "count": 11
+      },
+      {
+        "path": "elements.form-contact-error.styles.outlineColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-contact-field.styles.borderBottomColor",
+        "count": 2
+      },
+      {
+        "path": "elements.form-contact-field.styles.borderLeftColor",
+        "count": 2
+      },
+      {
+        "path": "elements.form-contact-field.styles.borderRightColor",
+        "count": 2
+      },
+      {
+        "path": "elements.form-contact-field.styles.borderTopColor",
+        "count": 2
+      },
+      {
+        "path": "elements.form-error-summary.styles.borderLeftColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-primary-error.styles.borderBottomColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-primary-error.styles.borderLeftColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-primary-error.styles.borderRightColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-primary-error.styles.borderTopColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-primary-error.styles.color",
+        "count": 11
+      },
+      {
+        "path": "elements.form-primary-error.styles.outlineColor",
+        "count": 11
+      },
+      {
+        "path": "elements.form-primary-field.styles.borderBottomColor",
+        "count": 1
+      },
+      {
+        "path": "elements.form-primary-field.styles.borderLeftColor",
+        "count": 1
+      },
+      {
+        "path": "elements.form-primary-field.styles.borderRightColor",
+        "count": 1
+      },
+      {
+        "path": "elements.form-primary-field.styles.borderTopColor",
+        "count": 1
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-field.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-field.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-field.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-contact-field.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-field.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-field.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-field.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-field.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-1.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-2.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-field.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-field.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-field.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-field.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-5.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-1.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-2.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-3.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-contact-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-contact-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-contact-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-contact-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-contact-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-contact-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-error-summary.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-primary-error.styles.borderBottomColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-primary-error.styles.borderLeftColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-primary-error.styles.borderRightColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-primary-error.styles.borderTopColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-primary-error.styles.color",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-primary-error.styles.outlineColor",
+      "expected": "rgb(180, 35, 24)",
+      "actual": "rgb(127, 29, 29)"
+    }
+  ]
+}

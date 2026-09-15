@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer create: Terra medium three-run comparison</title>
+    <link rel="stylesheet" href="comparison.css">
+  </head>
+  <body>
+    <main>
+      <h1>顧客新規登録: Terra medium 3回</h1>
+      <section class="meta" aria-label="生成条件"><p>Model: <strong>gpt-5.6-terra</strong></p><p>Reasoning effort: <strong>medium</strong></p><p>Runs: <strong>3</strong></p></section>
+      <section class="source" aria-labelledby="manifest-title"><h2 id="manifest-title">固定入力</h2><p><a href="consumer-input/design-manifest/manifest.md">このテストで使用したManifest snapshotを開く</a></p><p><a href="consumer-input/common-shell-fixture/shell-template.html?drawer=open&amp;theme=light">不変の共通シェルfixtureを開く</a></p><p><a href="evaluation-contract.md">実験契約を開く</a></p></section>
+      <section aria-labelledby="prompt-title"><h2 id="prompt-title">使用プロンプト全文</h2><div class="prompt">既存の共通シェルを再利用して、顧客追加の静的HTMLを作成してください。
+
+- 画面名は `顧客追加`、説明は `新しい顧客情報を登録します。` とします。
+- 顧客IDは内部管理用の連番であり、画面に入力欄を表示しません。
+- 入力項目は氏名、生年月日、住所、電話番号、メールアドレス、備考です。氏名、生年月日、住所、電話番号、メールアドレスは必須、備考は任意です。
+- 画面内で必須入力、日付形式、電話番号形式、メールアドレス形式を検証します。各エラーは対象の入力欄と結び付けて表示します。
+- 保存操作は表示しますが、保存、データ接続、画面遷移、権限判定は実装しません。
+- 画像は表示しません。</div></section>
+      <section class="runs" aria-label="3件の結果">
+        <article class="run"><div class="run-header"><h2>Run 1</h2><p class="links"><a href="runs/run-1/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a> · <a href="runs/run-1/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><br><a href="runs/run-1/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a> · <a href="runs/run-1/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></p></div><p class="state">Light / Drawer表示</p><img src="runs/run-1/customer-create-open-light.png" alt="Run 1 のLightテーマ・Drawer表示の顧客追加"><p class="state">Light / Drawer非表示</p><img src="runs/run-1/customer-create-hidden-light.png" alt="Run 1 のLightテーマ・Drawer非表示の顧客追加"><p class="state">Dark / Drawer表示</p><img src="runs/run-1/customer-create-open-dark.png" alt="Run 1 のDarkテーマ・Drawer表示の顧客追加"><p class="state">Dark / Drawer非表示</p><img src="runs/run-1/customer-create-hidden-dark.png" alt="Run 1 のDarkテーマ・Drawer非表示の顧客追加"></article>
+        <article class="run"><div class="run-header"><h2>Run 2</h2><p class="links"><a href="runs/run-2/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a> · <a href="runs/run-2/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><br><a href="runs/run-2/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a> · <a href="runs/run-2/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></p></div><p class="state">Light / Drawer表示</p><img src="runs/run-2/customer-create-open-light.png" alt="Run 2 のLightテーマ・Drawer表示の顧客追加"><p class="state">Light / Drawer非表示</p><img src="runs/run-2/customer-create-hidden-light.png" alt="Run 2 のLightテーマ・Drawer非表示の顧客追加"><p class="state">Dark / Drawer表示</p><img src="runs/run-2/customer-create-open-dark.png" alt="Run 2 のDarkテーマ・Drawer表示の顧客追加"><p class="state">Dark / Drawer非表示</p><img src="runs/run-2/customer-create-hidden-dark.png" alt="Run 2 のDarkテーマ・Drawer非表示の顧客追加"></article>
+        <article class="run"><div class="run-header"><h2>Run 3</h2><p class="links"><a href="runs/run-3/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a> · <a href="runs/run-3/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><br><a href="runs/run-3/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a> · <a href="runs/run-3/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></p></div><p class="state">Light / Drawer表示</p><img src="runs/run-3/customer-create-open-light.png" alt="Run 3 のLightテーマ・Drawer表示の顧客追加"><p class="state">Light / Drawer非表示</p><img src="runs/run-3/customer-create-hidden-light.png" alt="Run 3 のLightテーマ・Drawer非表示の顧客追加"><p class="state">Dark / Drawer表示</p><img src="runs/run-3/customer-create-open-dark.png" alt="Run 3 のDarkテーマ・Drawer表示の顧客追加"><p class="state">Dark / Drawer非表示</p><img src="runs/run-3/customer-create-hidden-dark.png" alt="Run 3 のDarkテーマ・Drawer非表示の顧客追加"></article>
+      </section>
+      <section class="narrow-runs" aria-labelledby="narrow-title"><h2 id="narrow-title">狭幅確認（720px・Drawer非表示・Light）</h2><p>bounded form task paneが利用可能幅を越えず、フィールドと専用action toolbarが同じ境界に収まることを確認する補助証跡です。</p><div class="narrow-grid"><figure><figcaption>Run 1</figcaption><img src="runs/run-1/customer-create-narrow-hidden-light.png" alt="Run 1 の狭幅・Drawer非表示・Lightテーマの顧客追加"></figure><figure><figcaption>Run 2</figcaption><img src="runs/run-2/customer-create-narrow-hidden-light.png" alt="Run 2 の狭幅・Drawer非表示・Lightテーマの顧客追加"></figure><figure><figcaption>Run 3</figcaption><img src="runs/run-3/customer-create-narrow-hidden-light.png" alt="Run 3 の狭幅・Drawer非表示・Lightテーマの顧客追加"></figure></div></section>
+    </main>
+  </body>
+</html>

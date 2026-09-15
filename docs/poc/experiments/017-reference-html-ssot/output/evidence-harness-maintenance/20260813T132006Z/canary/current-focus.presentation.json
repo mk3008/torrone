@@ -1,0 +1,828 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "review-presentation-only",
+  "source": {
+    "reportPath": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/diagnostic-adoption/established-regression/injected-focus.report.json",
+    "sha256": "FF48CC538FF74747C2392AFA5F5FA535E803804761B314D63F3385748869E360",
+    "schemaVersion": 1,
+    "status": "fail"
+  },
+  "summary": {
+    "status": "fail",
+    "rawDifferenceCount": 202,
+    "rawErrorCount": 3,
+    "rawDiagnosticCount": 199,
+    "reviewerEntryCount": 27,
+    "errorEntryCount": 2,
+    "diagnosticEntryCount": 25,
+    "repeatedOccurrencesCollapsed": 175,
+    "rawCountsPreserved": true
+  },
+  "ordering": [
+    "severity: error before informational diagnostic",
+    "within severity: diagnostic shape, normalized path, exact observation values"
+  ],
+  "traceability": {
+    "differenceArray": "differences",
+    "rawDifferenceIndexBase": 1,
+    "guarantee": "Every raw difference index occurs in exactly one presentation entry."
+  },
+  "errors": [
+    {
+      "severity": "error",
+      "kind": "error",
+      "normalizedPath": "elements.filter-toggle.styles.outlineColor",
+      "detail": {
+        "actual": "rgb(255, 0, 170)",
+        "expected": "rgb(134, 185, 238)"
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        163,
+        183
+      ],
+      "states": [
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "error",
+      "kind": "error",
+      "normalizedPath": "elements.query-filter.styles.outlineColor",
+      "detail": {
+        "actual": "rgb(255, 0, 170)",
+        "expected": "rgb(134, 185, 238)"
+      },
+      "occurrenceCount": 1,
+      "rawDifferenceIndexes": [
+        45
+      ],
+      "states": [
+        "scenarios.search empty.step-1"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-current",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        7,
+        32,
+        52,
+        71,
+        96,
+        115,
+        131,
+        150,
+        170,
+        190
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-empty",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        8,
+        33,
+        53,
+        72,
+        97,
+        116,
+        132,
+        151,
+        171,
+        191
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-filter",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        9,
+        34,
+        54,
+        73,
+        98,
+        117,
+        133,
+        152,
+        172,
+        192
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-parent",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        10,
+        35,
+        55,
+        74,
+        99,
+        118,
+        134,
+        153,
+        173,
+        193
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-secondary",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        11,
+        36,
+        56,
+        75,
+        100,
+        119,
+        135,
+        154,
+        174,
+        194
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.navigation-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        12,
+        37,
+        57,
+        76,
+        101,
+        120,
+        136,
+        155,
+        175,
+        195
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:navigation-parent",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        13,
+        38,
+        58,
+        77,
+        102,
+        121,
+        137,
+        156,
+        176,
+        196
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:navigation-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        14,
+        39,
+        59,
+        78,
+        103,
+        122,
+        138,
+        157,
+        177,
+        197
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:controlled-by:user-menu-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        15,
+        40,
+        60,
+        79,
+        104,
+        123,
+        139,
+        158,
+        178,
+        198
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:role:banner",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        16,
+        41,
+        61,
+        80,
+        105,
+        124,
+        140,
+        159,
+        179,
+        199
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.sign-out-action",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        17,
+        42,
+        62,
+        81,
+        106,
+        125,
+        141,
+        160,
+        180,
+        200
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.theme-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        18,
+        43,
+        63,
+        82,
+        107,
+        126,
+        142,
+        161,
+        181,
+        201
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.user-menu-toggle",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        19,
+        44,
+        64,
+        83,
+        108,
+        127,
+        143,
+        162,
+        182,
+        202
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.result-pagination.box.width",
+      "detail": {
+        "actual": 1087,
+        "delta": 295,
+        "expected": 1382
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        22,
+        86
+      ],
+      "states": [
+        "scenarios.search results.step-1",
+        "scenarios.clear to initial.step-1"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.result-pagination.box.x",
+      "detail": {
+        "actual": 309,
+        "delta": 280,
+        "expected": 29
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        20,
+        84
+      ],
+      "states": [
+        "scenarios.search results.step-1",
+        "scenarios.clear to initial.step-1"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.result-pagination.box.y",
+      "detail": {
+        "actual": 717.5,
+        "delta": 10,
+        "expected": 707.5
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        21,
+        85
+      ],
+      "states": [
+        "scenarios.search results.step-1",
+        "scenarios.clear to initial.step-1"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.result-table.box.width",
+      "detail": {
+        "actual": 1087,
+        "delta": 295,
+        "expected": 1382
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        25,
+        89
+      ],
+      "states": [
+        "scenarios.search results.step-1",
+        "scenarios.clear to initial.step-1"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.result-table.box.x",
+      "detail": {
+        "actual": 309,
+        "delta": 280,
+        "expected": 29
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        23,
+        87
+      ],
+      "states": [
+        "scenarios.search results.step-1",
+        "scenarios.clear to initial.step-1"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.result-table.box.y",
+      "detail": {
+        "actual": 505,
+        "delta": 10,
+        "expected": 495
+      },
+      "occurrenceCount": 2,
+      "rawDifferenceIndexes": [
+        24,
+        88
+      ],
+      "states": [
+        "scenarios.search results.step-1",
+        "scenarios.clear to initial.step-1"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:controlled-by:filter-toggle.box.width",
+      "detail": {
+        "actual": 1087,
+        "delta": 295,
+        "expected": 1382
+      },
+      "occurrenceCount": 9,
+      "rawDifferenceIndexes": [
+        3,
+        28,
+        48,
+        67,
+        92,
+        111,
+        146,
+        166,
+        186
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:controlled-by:filter-toggle.box.x",
+      "detail": {
+        "actual": 309,
+        "delta": 280,
+        "expected": 29
+      },
+      "occurrenceCount": 9,
+      "rawDifferenceIndexes": [
+        1,
+        26,
+        46,
+        65,
+        90,
+        109,
+        144,
+        164,
+        184
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:controlled-by:filter-toggle.box.y",
+      "detail": {
+        "actual": 244,
+        "delta": 10,
+        "expected": 234
+      },
+      "occurrenceCount": 9,
+      "rawDifferenceIndexes": [
+        2,
+        27,
+        47,
+        66,
+        91,
+        110,
+        145,
+        165,
+        185
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.width",
+      "detail": {
+        "actual": 1145,
+        "delta": 295,
+        "expected": 1440
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        6,
+        31,
+        51,
+        70,
+        95,
+        114,
+        130,
+        149,
+        169,
+        189
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.x",
+      "detail": {
+        "actual": 280,
+        "delta": 280,
+        "expected": 0
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        4,
+        29,
+        49,
+        68,
+        93,
+        112,
+        128,
+        147,
+        167,
+        187
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "geometry",
+      "normalizedPath": "elements.semantic:role:main.box.y",
+      "detail": {
+        "actual": 64,
+        "delta": 10,
+        "expected": 54
+      },
+      "occurrenceCount": 10,
+      "rawDifferenceIndexes": [
+        5,
+        30,
+        50,
+        69,
+        94,
+        113,
+        129,
+        148,
+        168,
+        188
+      ],
+      "states": [
+        "initial",
+        "scenarios.search results.step-1",
+        "scenarios.search empty.step-1",
+        "scenarios.search empty.step-2",
+        "scenarios.clear to initial.step-1",
+        "scenarios.clear to initial.step-2",
+        "scenarios.filter pointer round trip.step-1",
+        "scenarios.filter pointer round trip.step-2",
+        "scenarios.filter keyboard round trip.step-1",
+        "scenarios.filter keyboard round trip.step-2"
+      ]
+    }
+  ]
+}

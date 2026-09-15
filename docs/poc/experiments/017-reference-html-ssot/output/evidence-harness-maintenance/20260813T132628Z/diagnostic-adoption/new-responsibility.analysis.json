@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "selectedPresentation": "exact-observation-signature",
+  "reason": "It groups only state/frame repetition with identical path and values; it does not infer cause.",
+  "comparisons": [
+    {
+      "name": "shell",
+      "sourcePath": "docs/poc/experiments/017-reference-html-ssot/output/diagnostic-adoption/target-shell.raw.report.json",
+      "sourceSha256": "B37CE44505A019A66C5F754361221467D4F116336F50E478FA71823C511AE08C",
+      "sourceStatus": "pass",
+      "raw": {
+        "differenceCount": 78,
+        "errorCount": 0,
+        "diagnosticCount": 78,
+        "diagnosticKinds": {
+          "extra-element": 78
+        },
+        "jsonLineCount": 603
+      },
+      "exactValue": {
+        "reviewerEntryCount": 6,
+        "errorEntryCount": 0,
+        "diagnosticEntryCount": 6,
+        "repeatedOccurrencesCollapsed": 72,
+        "markdownLineCount": 27,
+        "trace": {
+          "status": "pass",
+          "rawDifferenceCount": 78,
+          "indexedOccurrenceCount": 78,
+          "uniqueIndexedOccurrenceCount": 78,
+          "missingOrDuplicateIndexes": false,
+          "signatureMismatches": []
+        }
+      },
+      "fieldOnly": {
+        "diagnosticEntryCount": 6,
+        "heterogeneousGroupCount": 0,
+        "heterogeneousGroups": []
+      }
+    },
+    {
+      "name": "detail",
+      "sourcePath": "docs/poc/experiments/017-reference-html-ssot/output/diagnostic-adoption/target-detail.raw.report.json",
+      "sourceSha256": "CAE446977E0952A5CB03B54351D95DD21DB6CCC1B05DA9C31630B12D26F76FA0",
+      "sourceStatus": "pass",
+      "raw": {
+        "differenceCount": 48,
+        "errorCount": 0,
+        "diagnosticCount": 48,
+        "diagnosticKinds": {
+          "geometry": 9,
+          "extra-element": 39
+        },
+        "jsonLineCount": 366
+      },
+      "exactValue": {
+        "reviewerEntryCount": 17,
+        "errorEntryCount": 0,
+        "diagnosticEntryCount": 17,
+        "repeatedOccurrencesCollapsed": 31,
+        "markdownLineCount": 38,
+        "trace": {
+          "status": "pass",
+          "rawDifferenceCount": 48,
+          "indexedOccurrenceCount": 48,
+          "uniqueIndexedOccurrenceCount": 48,
+          "missingOrDuplicateIndexes": false,
+          "signatureMismatches": []
+        }
+      },
+      "fieldOnly": {
+        "diagnosticEntryCount": 16,
+        "heterogeneousGroupCount": 1,
+        "heterogeneousGroups": [
+          {
+            "kind": "geometry",
+            "normalizedPath": "elements.semantic:role:main.box.height",
+            "occurrenceCount": 3,
+            "exactObservationCount": 2
+          }
+        ]
+      }
+    }
+  ],
+  "families": {
+    "search": {
+      "rawDiagnosticCount": 0,
+      "exactDiagnosticEntryCount": 0,
+      "fieldOnlyDiagnosticEntryCount": 0,
+      "repeatedOccurrencesCollapsed": 0,
+      "heterogeneousFieldGroups": 0
+    },
+    "formHeavy": {
+      "rawDiagnosticCount": 0,
+      "exactDiagnosticEntryCount": 0,
+      "fieldOnlyDiagnosticEntryCount": 0,
+      "repeatedOccurrencesCollapsed": 0,
+      "heterogeneousFieldGroups": 0
+    }
+  }
+}

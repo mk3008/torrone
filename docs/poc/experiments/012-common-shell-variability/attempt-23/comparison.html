@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>共通シェル検索欄テスト: Terra medium 3回比較</title>
+  <link rel="stylesheet" href="comparison.css">
+</head>
+<body>
+  <main>
+    <h1>共通シェル検索欄テスト: Terra medium 3回比較</h1>
+    <p>3件とも、同じManifest snapshotと同じ日本語の共通シェル要件だけから新規に作成しました。過去の画面、PNG、比較結果、テストは生成入力に含めていません。</p>
+    <p>生成モデル: <code>gpt-5.6-terra</code> / reasoning effort: <code>medium</code>。Manifest snapshot: 46 files。固定プロンプトは各Runで同一です。</p>
+    <div class="note">比較対象は LightテーマのDrawer表示・非表示です。Drawer検索は、ラベルとウォーターマークを持つ単一の通常入力欄として比較します。現在位置はfixtureが供給する値であり、Drawerの既定項目ではありません。ほかの状態は各Runのリンクから確認できます。</div>
+    <section class="prompt-evidence" aria-labelledby="fixed-prompt-title">
+      <h2 id="fixed-prompt-title">固定プロンプト（全Run共通の生成入力）</h2>
+      <p>入力ファイル: <code>consumer-input/user-prompt-ja.md</code> / SHA-256: <code>1CE97BD05A35A23B3298D31CF9DD09B2E7C28C5C41822EDA842991686876AFD4</code></p>
+      <pre># Fixed user prompt
+
+業務アプリで再利用する共通シェルを作成してください。
+
+- 作成対象は共通Header、Drawer、およびスクロール検証用の中立workspaceだけです。検索、一覧、読取、追加、編集、削除などの業務画面・画面遷移は作成しません。
+- Headerには `業務ワークスペース` を表示します。Headerの先頭側にDrawerを開閉する制御を置きます。
+- Drawerの表示状態と非表示状態の両方を確認できる静的HTMLにしてください。`?drawer=open` と `?drawer=hidden` のどちらでも初期状態を表示できるようにします。
+- Drawerの固定fixtureは、`グループ 01`、子 `項目 01-01`、子 `項目 01-02`、`項目 02` から `項目 30` です。現在位置はproduct bindingが供給する値であり、初期比較表示ではその1件を `項目 01-01` とします。これはfixtureの初期値であり、コンポーネントが特定の項目を常に選択する既定値ではありません。各固定項目には利用可能な静的destinationがあります。今回の確認では項目を選択すると、画面遷移を作らずに現在位置のbinding値だけをその項目へ更新し、選択表現の移動を確認できるようにします。親には末尾側の展開状態アイコンを表示してください。
+- メニュー内検索が利用可能です。メニュー検索の対象は、このDrawerの固定fixtureだけです。
+- workspaceには、`スクロール検証用ダミーコンテンツ` と、`1` から `80` までの意味を持たない連番だけを表示してください。業務データ、説明文、操作、画面遷移は追加しません。
+- Drawerとworkspaceの長さを利用して、各領域のスクロールを確認できるようにします。
+- Drawerを非表示にしたとき、空のDrawer境界や残存余白を残しません。
+- テーマはライトとダークを切り替え可能にし、初期状態はライトにします。Headerの末尾側に、次のテーマへ切り替えるアイコンのみの制御を置きます。`?theme=light` と `?theme=dark` のどちらでも初期状態を表示できるようにします。可視の `Theme` または `テーマ` というキャプションは表示しません。
+- アイコンには Lucide を使用します。外部CDNや外部scriptを使わず、この静的HTMLのローカル成果物として表示してください。
+- 外部画像、外部フォント、外部CDN、外部scriptは使用しません。</pre>
+    </section>
+    <section class="runs" aria-label="3つの生成結果">
+      <article class="run">
+        <h2>Run 1</h2>
+        <div class="links"><a href="runs/run-1/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-1/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-1/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-1/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div>
+        <h3>Light / Drawer表示</h3>
+        <img src="runs/run-1/shell-open-light.png" alt="Run 1 のLightテーマ・Drawer表示の共通シェル">
+        <h3>Light / Drawer非表示</h3>
+        <img src="runs/run-1/shell-hidden-light.png" alt="Run 1 のLightテーマ・Drawer非表示の共通シェル">
+      </article>
+      <article class="run">
+        <h2>Run 2</h2>
+        <div class="links"><a href="runs/run-2/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-2/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-2/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-2/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div>
+        <h3>Light / Drawer表示</h3>
+        <img src="runs/run-2/shell-open-light.png" alt="Run 2 のLightテーマ・Drawer表示の共通シェル">
+        <h3>Light / Drawer非表示</h3>
+        <img src="runs/run-2/shell-hidden-light.png" alt="Run 2 のLightテーマ・Drawer非表示の共通シェル">
+      </article>
+      <article class="run">
+        <h2>Run 3</h2>
+        <div class="links"><a href="runs/run-3/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-3/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-3/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-3/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div>
+        <h3>Light / Drawer表示</h3>
+        <img src="runs/run-3/shell-open-light.png" alt="Run 3 のLightテーマ・Drawer表示の共通シェル">
+        <h3>Light / Drawer非表示</h3>
+        <img src="runs/run-3/shell-hidden-light.png" alt="Run 3 のLightテーマ・Drawer非表示の共通シェル">
+      </article>
+    </section>
+  </main>
+</body>
+</html>

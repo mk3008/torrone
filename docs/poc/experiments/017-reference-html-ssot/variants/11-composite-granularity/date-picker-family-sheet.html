@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Date picker family sheet candidate</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #fff; --text: #101d2f; --muted: #54657a; --border: #c6d2df; --accent: #1d73b7; --focus: #86b9ee; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 1080px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :is(button, input):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .reference-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .family { display: grid; grid-template-columns: repeat(2, minmax(0, 620px)); gap: 24px; justify-content: center; padding: 36px 24px; }
+    .sample { padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .sample h2 { margin: 0 0 6px; font-size: 22px; }
+    .support { min-height: 48px; margin: 0 0 20px; color: var(--muted); }
+    .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .date-field { display: flex; align-items: stretch; gap: 8px; }
+    .date-value { flex: 1; min-height: 42px; padding: 8px 11px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
+    .trigger, .secondary { min-height: 42px; padding: 0 14px; color: #183653; background: var(--surface); border: 1px solid #8ea2b9; border-radius: 6px; }
+    .picker { width: 330px; margin-top: 10px; padding: 16px; background: var(--surface); border: 1px solid #98aabc; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
+    .month-heading { margin: 0 0 4px; font-size: 16px; }
+    .range-instruction { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+    .week { display: grid; grid-template-columns: repeat(7, 36px); gap: 6px; }
+    .day { width: 36px; height: 36px; padding: 0; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; }
+    .day:hover { background: #edf3f9; }
+    .day[aria-selected="true"] { color: #fff; background: var(--accent); border-color: #155b92; font-weight: 700; }
+    .selection-row { display: flex; min-height: 44px; margin-top: 18px; align-items: center; justify-content: space-between; gap: 16px; }
+    .selection { margin: 0; color: #31465d; }
+  </style>
+</head>
+<body>
+  <div class="reference-note" data-reference-harness="reference-label">Candidate · date picker family in one Reference</div>
+  <div class="family">
+    <section class="sample" aria-labelledby="family-date-heading">
+      <h2 id="family-date-heading">Required delivery date</h2>
+      <p class="support">Choose the date by which the order must arrive.</p>
+      <span class="field-label" id="family-date-label">Delivery date</span>
+      <div class="date-field"><input class="date-value" aria-labelledby="family-date-label" value="Not selected" readonly><button class="trigger" type="button" data-ref="date-trigger" aria-controls="family-date-popup" aria-expanded="false">Choose date</button></div>
+      <div class="picker" id="family-date-popup" role="dialog" aria-label="Choose delivery date" hidden>
+        <h3 class="month-heading">September 2026</h3>
+        <div class="week" aria-label="Dates in September 2026"><button class="day" type="button">14</button><button class="day" type="button" data-ref="date-day" aria-selected="false">15</button><button class="day" type="button" data-ref="date-next-day" aria-selected="false">16</button><button class="day" type="button">17</button><button class="day" type="button">18</button><button class="day" type="button">19</button><button class="day" type="button">20</button></div>
+      </div>
+      <div class="selection-row"><p class="selection" data-ref="date-selection" aria-live="polite">No date selected.</p><button class="secondary" type="button" data-ref="date-clear" hidden>Clear</button></div>
+    </section>
+
+    <section class="sample" aria-labelledby="family-range-heading">
+      <h2 id="family-range-heading">Reporting period</h2>
+      <p class="support">Choose the first and last date included in the report.</p>
+      <span class="field-label" id="family-range-label">Date range</span>
+      <div class="date-field"><input class="date-value" aria-labelledby="family-range-label" value="Not selected" readonly><button class="trigger" type="button" data-ref="range-trigger" aria-controls="family-range-popup" aria-expanded="false">Choose range</button></div>
+      <div class="picker" id="family-range-popup" role="dialog" aria-label="Choose reporting period" hidden>
+        <h3 class="month-heading">September 2026</h3><p class="range-instruction" data-ref="range-status" aria-live="polite">Select the start date.</p>
+        <div class="week" aria-label="Dates in September 2026"><button class="day" type="button">13</button><button class="day" type="button" data-ref="range-start-day" aria-selected="false">14</button><button class="day" type="button" data-ref="range-next-day" aria-selected="false">15</button><button class="day" type="button">16</button><button class="day" type="button">17</button><button class="day" type="button" data-ref="range-end-day" aria-selected="false">18</button><button class="day" type="button">19</button></div>
+      </div>
+      <div class="selection-row"><p class="selection" data-ref="range-selection" aria-live="polite">No range selected.</p><button class="secondary" type="button" data-ref="range-clear" hidden>Clear</button></div>
+    </section>
+  </div>
+
+  <script type="application/json" data-reference-scenarios>
+    {"version":1,"scenarios":[
+      {"name":"family single pointer","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-day"}]},
+      {"name":"family single keyboard","steps":[{"action":"press","target":"date-trigger","key":" "},{"action":"press","target":"date-day","key":"ArrowRight"},{"action":"press","target":"date-next-day","key":"Enter"}]},
+      {"name":"family single clear","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-day"},{"action":"click","target":"date-clear"},{"action":"click","target":"date-trigger"}]},
+      {"name":"family range pointer","steps":[{"action":"click","target":"range-trigger"},{"action":"click","target":"range-start-day"},{"action":"click","target":"range-end-day"}]},
+      {"name":"family range keyboard","steps":[{"action":"press","target":"range-trigger","key":" "},{"action":"press","target":"range-start-day","key":"ArrowRight"},{"action":"press","target":"range-next-day","key":"Enter"},{"action":"press","target":"range-end-day","key":"Enter"}]},
+      {"name":"family range clear","steps":[{"action":"click","target":"range-trigger"},{"action":"click","target":"range-start-day"},{"action":"click","target":"range-end-day"},{"action":"click","target":"range-clear"},{"action":"click","target":"range-trigger"}]}
+    ]}
+  </script>
+  <script>
+    (() => {
+      const configureSingle = () => {
+        const trigger = document.querySelector('[data-ref="date-trigger"]'); const popup = document.getElementById('family-date-popup'); const days = [...popup.querySelectorAll('.day')]; const selection = document.querySelector('[data-ref="date-selection"]'); const clear = document.querySelector('[data-ref="date-clear"]'); const value = trigger.previousElementSibling;
+        const close = () => { popup.hidden = true; trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); };
+        trigger.addEventListener('click', () => { popup.hidden = false; trigger.setAttribute('aria-expanded', 'true'); requestAnimationFrame(() => document.querySelector('[data-ref="date-day"]').focus()); });
+        days.forEach((day, index) => {
+          day.addEventListener('click', () => { days.forEach((item) => item.setAttribute('aria-selected', String(item === day))); value.value = `Sep ${day.textContent}, 2026`; selection.textContent = `Selected: September ${day.textContent}, 2026.`; clear.hidden = false; close(); });
+          day.addEventListener('keydown', (event) => { if (event.key === 'ArrowRight') { event.preventDefault(); days[Math.min(index + 1, days.length - 1)].focus(); } if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); day.click(); } });
+        });
+        clear.addEventListener('click', () => { days.forEach((day) => day.setAttribute('aria-selected', 'false')); value.value = 'Not selected'; selection.textContent = 'No date selected.'; clear.hidden = true; trigger.focus(); });
+      };
+      const configureRange = () => {
+        const trigger = document.querySelector('[data-ref="range-trigger"]'); const popup = document.getElementById('family-range-popup'); const days = [...popup.querySelectorAll('.day')]; const startDefault = document.querySelector('[data-ref="range-start-day"]'); const status = document.querySelector('[data-ref="range-status"]'); const selection = document.querySelector('[data-ref="range-selection"]'); const clear = document.querySelector('[data-ref="range-clear"]'); const value = trigger.previousElementSibling; let start = null;
+        const reset = () => { start = null; days.forEach((day) => day.setAttribute('aria-selected', 'false')); status.textContent = 'Select the start date.'; };
+        const close = () => { popup.hidden = true; trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); };
+        trigger.addEventListener('click', () => { reset(); popup.hidden = false; trigger.setAttribute('aria-expanded', 'true'); requestAnimationFrame(() => startDefault.focus()); });
+        days.forEach((day, index) => {
+          day.addEventListener('click', () => { if (!start) { start = day; day.setAttribute('aria-selected', 'true'); status.textContent = 'Select the end date.'; return; } day.setAttribute('aria-selected', 'true'); value.value = `Sep ${start.textContent} – Sep ${day.textContent}, 2026`; selection.textContent = `Selected: September ${start.textContent} through ${day.textContent}, 2026.`; clear.hidden = false; close(); });
+          day.addEventListener('keydown', (event) => { if (event.key === 'ArrowRight') { event.preventDefault(); days[Math.min(index + 1, days.length - 1)].focus(); } if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); day.click(); } });
+        });
+        clear.addEventListener('click', () => { reset(); value.value = 'Not selected'; selection.textContent = 'No range selected.'; clear.hidden = true; trigger.focus(); });
+      };
+      configureSingle(); configureRange();
+    })();
+  </script>
+</body>
+</html>

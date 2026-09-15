@@ -1,0 +1,1530 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "search-workspace.html",
+    "digest": "2e6f1a4ae8a04764a8d7f0eff0b6e597b4aaab3bb5f8f5a04fe36b8ad88f2f45",
+    "files": [
+      {
+        "path": "search-workspace.html",
+        "bytes": 12277,
+        "sha256": "3078962d0880a28658691922d2f6cb6e9e3a9239bce735994ec71ababbfd4c3b"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "bcf33cd30de720810c1c803c668e7de052af22d51971d2ec288e6c3a454a7f80",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 23047,
+        "sha256": "689655761d7e721bbb1a1350382748ea14607de76992fc424b67766ff8e9c77b"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Edg/151.0.4129.78",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "query-filter",
+            "value": "No match"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      },
+      {
+        "name": "filter pointer round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "filter-toggle"
+          },
+          {
+            "action": "click",
+            "target": "filter-toggle"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 22,
+    "uniqueErrorCount": 4,
+    "diagnosticCount": 199,
+    "errorSignatures": [
+      {
+        "path": "elements.clear-action.styles.borderRadius",
+        "count": 10
+      },
+      {
+        "path": "elements.filter-toggle.styles.borderRadius",
+        "count": 10
+      },
+      {
+        "path": "elements.query-filter.styles.outlineColor",
+        "count": 1
+      },
+      {
+        "path": "elements.query-filter.styles.outlineStyle",
+        "count": 1
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-pagination.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-pagination.box.y",
+      "expected": 707.5,
+      "actual": 717.5,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-pagination.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-table.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-table.box.y",
+      "expected": 495,
+      "actual": 505,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.result-table.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(16, 29, 47)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.query-filter.styles.outlineStyle",
+      "expected": "solid",
+      "actual": "none"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-2.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear to initial.step-1.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear to initial.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.result-pagination.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.result-pagination.box.y",
+      "expected": 707.5,
+      "actual": 717.5,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.result-pagination.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.result-table.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.result-table.box.y",
+      "expected": 495,
+      "actual": 505,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.result-table.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-1.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear to initial.step-2.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear to initial.step-2.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear to initial.step-2.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter pointer round trip.step-1.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter pointer round trip.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-1.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter pointer round trip.step-2.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter pointer round trip.step-2.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter pointer round trip.step-2.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.clear-action.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.styles.borderRadius",
+      "expected": "6px",
+      "actual": "20px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.x",
+      "expected": 29,
+      "actual": 309,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.y",
+      "expected": 234,
+      "actual": 244,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:controlled-by:filter-toggle.box.width",
+      "expected": 1382,
+      "actual": 1087,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 280,
+      "delta": 280
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:role:main.box.y",
+      "expected": 54,
+      "actual": 64,
+      "delta": 10
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1145,
+      "delta": 295
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-current",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-empty",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-filter",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-secondary",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:controlled-by:navigation-parent",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.semantic:role:banner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.sign-out-action",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.theme-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.user-menu-toggle",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

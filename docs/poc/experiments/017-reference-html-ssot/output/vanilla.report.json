@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "c04002ca19d8c6089c16a214802c54039e0d9b6eda61ad5f05fe71058530a212",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 19298,
+        "sha256": "536f466334ff9c635734456578d71d9b1a9d99761064528710e5e138fc55214a"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "bda57874159283b6193985ebe035775eadda79a6ac1568a5be255b47e9c4f450",
+    "files": [
+      {
+        "path": "app.js",
+        "bytes": 2769,
+        "sha256": "196a4e0b7a28a98898fd4d6bee33e4644258bd48b7e6e8c0f64390ace99789c0"
+      },
+      {
+        "path": "index.html",
+        "bytes": 6291,
+        "sha256": "9a6d260319cd061b3102aa365b02f7cf6ae0600064405a8a50dc67cc7895c8bb"
+      },
+      {
+        "path": "styles.css",
+        "bytes": 8205,
+        "sha256": "bbec7a60f160d6d9430ee539874cb34ae47861b1727cbb209b1ffd1c24a50589"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "theme change",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "dialog escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "detail-action"
+          },
+          {
+            "action": "press",
+            "key": "Escape"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 0,
+    "errorSignatures": []
+  },
+  "differences": []
+}

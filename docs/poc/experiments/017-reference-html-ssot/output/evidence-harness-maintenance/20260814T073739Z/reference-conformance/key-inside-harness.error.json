@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "key-inside-harness.html",
+    "digest": "11af2bc899ff614ab85023933676b3a5bda51f470332ec43809a236c86596fdb",
+    "files": [
+      {
+        "path": "key-inside-harness.html",
+        "bytes": 2224,
+        "sha256": "02c6c7472979a9290645e9cc085af830ac6acd04585ea301680465e2e955b12d"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "absolute-dom",
+      "code": "observation-key-inside-harness",
+      "state": "initial",
+      "target": "harness-control",
+      "detail": "data-ref is inside an excluded Reference harness."
+    },
+    {
+      "source": "absolute-dom",
+      "code": "observation-key-inside-harness",
+      "state": "scenarios.lookup.step-1",
+      "target": "harness-control",
+      "detail": "data-ref is inside an excluded Reference harness."
+    }
+  ]
+}

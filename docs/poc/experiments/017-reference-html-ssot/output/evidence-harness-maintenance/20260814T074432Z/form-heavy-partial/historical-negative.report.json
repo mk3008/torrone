@@ -1,0 +1,1094 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "c04002ca19d8c6089c16a214802c54039e0d9b6eda61ad5f05fe71058530a212",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 19298,
+        "sha256": "536f466334ff9c635734456578d71d9b1a9d99761064528710e5e138fc55214a"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "negative/index.html",
+    "digest": "0e97c516e2f0d86a3cb8324dd185877ee7bcad3281c591ad1cee5d3366bd5c7c",
+    "files": [
+      {
+        "path": "negative/broken.js",
+        "bytes": 399,
+        "sha256": "76c08ef8524cc5e2597da190e6e2cfeb5743fdb07c64be1171d73e8ee0487405"
+      },
+      {
+        "path": "negative/index.html",
+        "bytes": 4310,
+        "sha256": "495b7f4c1acf50c561d8cd711a8c6d248baa515e2d0c19b0380cb629ffa6d484"
+      },
+      {
+        "path": "vanilla/app.js",
+        "bytes": 2769,
+        "sha256": "196a4e0b7a28a98898fd4d6bee33e4644258bd48b7e6e8c0f64390ace99789c0"
+      },
+      {
+        "path": "vanilla/styles.css",
+        "bytes": 8205,
+        "sha256": "bbec7a60f160d6d9430ee539874cb34ae47861b1727cbb209b1ffd1c24a50589"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "theme change",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "dialog escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "detail-action"
+          },
+          {
+            "action": "press",
+            "key": "Escape"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 32,
+    "uniqueErrorCount": 15,
+    "diagnosticCount": 118,
+    "errorSignatures": [
+      {
+        "path": "accessibility.unnamed-interactive",
+        "count": 7
+      },
+      {
+        "path": "accessibilityTree.unnamedInteractive.button",
+        "count": 5
+      },
+      {
+        "path": "document.activeRef",
+        "count": 1
+      },
+      {
+        "path": "elements.detail-action.styles.outlineColor",
+        "count": 1
+      },
+      {
+        "path": "elements.detail-action.styles.outlineStyle",
+        "count": 1
+      },
+      {
+        "path": "elements.detail-dialog.attributes.open",
+        "count": 1
+      },
+      {
+        "path": "elements.detail-dialog.styles.display",
+        "count": 1
+      },
+      {
+        "path": "elements.detail-dialog.styles.overflowX",
+        "count": 1
+      },
+      {
+        "path": "elements.detail-dialog.styles.overflowY",
+        "count": 1
+      },
+      {
+        "path": "elements.detail-dialog.styles.position",
+        "count": 1
+      },
+      {
+        "path": "elements.detail-dialog.visible",
+        "count": 1
+      },
+      {
+        "path": "elements.dialog-close.styles.outlineColor",
+        "count": 1
+      },
+      {
+        "path": "elements.dialog-close.styles.outlineStyle",
+        "count": 1
+      },
+      {
+        "path": "elements.dialog-close.visible",
+        "count": 1
+      },
+      {
+        "path": "elements.filter-toggle.styles.borderRadius",
+        "count": 8
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.app-header.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.detail-action.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.detail-dialog.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.dialog-close.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.filter-panel.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.filter-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.filter-toggle.styles.borderRadius",
+      "expected": "5px",
+      "actual": "0px"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.navigation-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.primary-navigation.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.result-summary.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.result-table.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.result-table.box.height",
+      "expected": 278.69,
+      "actual": 96.63,
+      "delta": 182.06
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.status-badge.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.theme-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.workspace.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "initial.accessibility.unnamed-interactive",
+      "expected": "no issue",
+      "actual": "theme-toggle: Visible interactive element has no accessible name."
+    },
+    {
+      "severity": "error",
+      "path": "initial.accessibilityTree.unnamedInteractive.button",
+      "expected": 0,
+      "actual": 1
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.app-header.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.detail-action.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.detail-dialog.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.dialog-close.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.filter-panel.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.filter-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "5px",
+      "actual": "0px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.primary-navigation.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.result-summary.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.result-table.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.result-table.box.height",
+      "expected": 278.69,
+      "actual": 96.63,
+      "delta": 182.06
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.status-badge.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.theme-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.workspace.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.accessibility.unnamed-interactive",
+      "expected": "no issue",
+      "actual": "theme-toggle: Visible interactive element has no accessible name."
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.accessibilityTree.unnamedInteractive.button",
+      "expected": 0,
+      "actual": 1
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.app-header.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.detail-action.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.detail-dialog.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.dialog-close.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.filter-panel.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.filter-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.elements.filter-toggle.styles.borderRadius",
+      "expected": "5px",
+      "actual": "0px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.navigation-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.primary-navigation.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.result-summary.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.result-table.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.result-table.box.height",
+      "expected": 278.69,
+      "actual": 96.63,
+      "delta": 182.06
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.status-badge.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.theme-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-2.elements.workspace.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.accessibility.unnamed-interactive",
+      "expected": "no issue",
+      "actual": "theme-toggle: Visible interactive element has no accessible name."
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2.accessibilityTree.unnamedInteractive.button",
+      "expected": 0,
+      "actual": 1
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.app-header.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.detail-action.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.detail-dialog.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.dialog-close.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-panel.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "5px",
+      "actual": "0px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.primary-navigation.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.result-summary.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.result-table.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.result-table.box.height",
+      "expected": 278.69,
+      "actual": 96.63,
+      "delta": 182.06
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.status-badge.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.theme-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.workspace.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.accessibility.unnamed-interactive",
+      "expected": "no issue",
+      "actual": "theme-toggle: Visible interactive element has no accessible name."
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.accessibilityTree.unnamedInteractive.button",
+      "expected": 0,
+      "actual": 1
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.app-header.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.detail-action.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.detail-dialog.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.dialog-close.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.filter-panel.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.filter-toggle.styles.borderRadius",
+      "expected": "5px",
+      "actual": "0px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.navigation-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.primary-navigation.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.result-summary.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.result-table.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.result-table.box.height",
+      "expected": 278.69,
+      "actual": 96.63,
+      "delta": 182.06
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.status-badge.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.theme-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.workspace.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.accessibility.unnamed-interactive",
+      "expected": "no issue",
+      "actual": "theme-toggle: Visible interactive element has no accessible name."
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.accessibilityTree.unnamedInteractive.button",
+      "expected": 0,
+      "actual": 1
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.app-header.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.detail-action.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.detail-dialog.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.dialog-close.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.filter-panel.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.filter-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "5px",
+      "actual": "0px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.navigation-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.primary-navigation.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.result-summary.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.result-table.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.result-table.box.height",
+      "expected": 278.69,
+      "actual": 96.63,
+      "delta": 182.06
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.status-badge.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.theme-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.workspace.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.app-header.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.detail-action.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.detail-dialog.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.detail-dialog.box.y",
+      "expected": 295.25,
+      "actual": 309.41,
+      "delta": 14.160000000000025
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.detail-dialog.box.height",
+      "expected": 309.48,
+      "actual": 281.19,
+      "delta": 28.29000000000002
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.dialog-close.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.filter-panel.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.filter-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-1.elements.filter-toggle.styles.borderRadius",
+      "expected": "5px",
+      "actual": "0px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.navigation-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.primary-navigation.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.result-summary.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.result-table.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.result-table.box.height",
+      "expected": 278.69,
+      "actual": 96.63,
+      "delta": 182.06
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.status-badge.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.theme-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.workspace.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-1.accessibility.unnamed-interactive",
+      "expected": "no issue",
+      "actual": "theme-toggle: Visible interactive element has no accessible name."
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.app-header.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.detail-action.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.detail-action.styles.outlineColor",
+      "expected": "rgb(47, 123, 208)",
+      "actual": "rgb(40, 117, 199)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.detail-action.styles.outlineStyle",
+      "expected": "solid",
+      "actual": "none"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.attributes.open",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.styles.overflowX",
+      "expected": "visible",
+      "actual": "auto"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.styles.overflowY",
+      "expected": "visible",
+      "actual": "auto"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.styles.position",
+      "expected": "absolute",
+      "actual": "fixed"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.box.x",
+      "expected": 0,
+      "actual": 460,
+      "delta": 460
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.box.y",
+      "expected": 0,
+      "actual": 309.41,
+      "delta": 309.41
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.box.width",
+      "expected": 0,
+      "actual": 520,
+      "delta": 520
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.detail-dialog.box.height",
+      "expected": 0,
+      "actual": 281.19,
+      "delta": 281.19
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.dialog-close.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.dialog-close.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.dialog-close.styles.outlineColor",
+      "expected": "rgb(23, 32, 51)",
+      "actual": "rgb(47, 123, 208)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.dialog-close.styles.outlineStyle",
+      "expected": "none",
+      "actual": "solid"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.filter-panel.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.filter-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.elements.filter-toggle.styles.borderRadius",
+      "expected": "5px",
+      "actual": "0px"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.navigation-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.primary-navigation.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.result-summary.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.result-table.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.result-table.box.height",
+      "expected": 278.69,
+      "actual": 96.63,
+      "delta": 182.06
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.status-badge.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.theme-toggle.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-2.elements.workspace.attributes.aria-activedescendant",
+      "expected": "<not present>",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.document.activeRef",
+      "expected": "detail-action",
+      "actual": "dialog-close"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.dialog escape.step-2.accessibility.unnamed-interactive",
+      "expected": "no issue",
+      "actual": "theme-toggle: Visible interactive element has no accessible name."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "whole-page-missing-h1.html",
+    "digest": "b53950a154f7d5a0bc11f6eeb7879d6dcb5e627e52e8bade6586869b00fa08b0",
+    "files": [
+      {
+        "path": "whole-page-missing-h1.html",
+        "bytes": 364,
+        "sha256": "85b405b5fd0f6da95c091e8908242abe37a9294a13b332975e6b06767c54042c"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 1,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 1
+  },
+  "errors": [
+    {
+      "source": "bounded-accessibility",
+      "code": "unexpected-h1-count",
+      "state": "initial",
+      "target": "document",
+      "detail": "Expected one h1 but found 0."
+    }
+  ]
+}

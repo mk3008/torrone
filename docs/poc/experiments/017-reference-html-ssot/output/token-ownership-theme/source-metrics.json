@@ -1,0 +1,37 @@
+{
+  "fourthReference": {
+    "responsibility": "read-only record summary workspace",
+    "lines": 197,
+    "productScripts": 0,
+    "scenarios": 1,
+    "scenarioActions": 2,
+    "observedElements": 6,
+    "harnessRoots": 0
+  },
+  "themeCoverage": {
+    "lightReferences": 4,
+    "completeDarkReferences": 2,
+    "darkReferences": [
+      "common-shell",
+      "detail-summary"
+    ],
+    "lightSharedTokenDefinitionsA": 12,
+    "darkSharedTokenDefinitionsA": 6,
+    "lightSharedTokenDefinitionsB": 3,
+    "darkSharedTokenDefinitionsB": 3
+  },
+  "understanding": {
+    "filesForOneReferenceA": 1,
+    "filesForOneReferenceB": 2,
+    "sharedStylesheetLines": 11,
+    "staticImportsB": 4,
+    "buildRuntimeDependenciesAdded": 0
+  },
+  "ownership": {
+    "canvas": "shared: application workspace backdrop in light and complete dark themes",
+    "surface": "shared: primary content surface in light and complete dark themes",
+    "focus": "shared: keyboard focus indicator color; selector and geometry remain local",
+    "statusAccent": "local false-sharing example: equal to shell accent in both themes but represents record status/timeline, not navigation selection",
+    "newSharedTokenCandidates": 0
+  }
+}

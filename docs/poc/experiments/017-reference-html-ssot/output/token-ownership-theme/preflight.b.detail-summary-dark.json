@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "detail-summary.html",
+    "digest": "1a51e0c80d811bada10cd773f9b533b89374053264a472e87652280d0dd74459",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6644,
+        "sha256": "4928667c82224bce6dabb4cbd3ee068ecae29a366cf53ecf846a53cf00969657"
+      },
+      {
+        "path": "shared-tokens.css",
+        "bytes": 165,
+        "sha256": "8e1e66299c9144ccb495a1a4b6aa77aa53a87025ceaa73f1a56f965cc7c87abc"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 3
+  },
+  "errors": []
+}

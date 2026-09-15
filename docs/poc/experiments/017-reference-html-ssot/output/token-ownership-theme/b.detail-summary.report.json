@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "detail-summary.html",
+    "digest": "00ea2c9c752edd2b4a5209a13de652ea15ee86541c3f251f907f18dc7fb47267",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6741,
+        "sha256": "fd9ddd69570d420149a9904e5e05058423815c3aa8ca078fd5128e3206b2a9e3"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "detail-summary.html",
+    "digest": "7cbd843dc39fe206772005f5693951f9fd43ed93262d5285129d43d48b071701",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6642,
+        "sha256": "dfddd4d19408f6b15181e7fb17f9252d3848eac4701c03f6746ff25156a93f9e"
+      },
+      {
+        "path": "shared-tokens.css",
+        "bytes": 165,
+        "sha256": "8e1e66299c9144ccb495a1a4b6aa77aa53a87025ceaa73f1a56f965cc7c87abc"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "processing notes round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "processing-notes-toggle",
+            "key": "Space"
+          },
+          {
+            "action": "press",
+            "target": "processing-notes-toggle",
+            "key": "Space"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 0,
+    "errorSignatures": []
+  },
+  "differences": []
+}

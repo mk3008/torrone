@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "missing-active-target.html",
+    "digest": "faf8eaded70b642913f764e94e7794c77d3cdbfdc69c34cd845a2de325ce2277",
+    "files": [
+      {
+        "path": "missing-active-target.html",
+        "bytes": 7349,
+        "sha256": "0c93db4a545a9f62596fe96d2e6230c1e0f09a2efae640e86cc206aeb08ea8a0"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 1,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 10
+  },
+  "errors": [
+    {
+      "source": "absolute-dom",
+      "code": "missing-aria-reference",
+      "state": "scenarios.keyboard entity selection.step-2",
+      "target": "entity-query",
+      "detail": "aria-activedescendant references missing id missing-account-option."
+    }
+  ]
+}

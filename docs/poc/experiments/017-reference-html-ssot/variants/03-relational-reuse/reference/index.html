@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Month-end close checklist</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: #172033;
+      background: #f4f7fa;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 960px; font: 16px/1.5 "Segoe UI", system-ui, sans-serif; background: #f4f7fa; }
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+    button:focus-visible, select:focus-visible { outline: 3px solid #88b9ef; outline-offset: 2px; }
+    [hidden] { display: none !important; }
+
+    .top-bar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+      padding: 0 28px;
+      color: #ffffff;
+      background: #173f67;
+      border-bottom: 1px solid #0e3153;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 650; }
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid #6f93b8;
+      border-radius: 6px;
+    }
+
+    .account { position: relative; }
+    .icon-button {
+      display: inline-grid;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      place-items: center;
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid #6f93b8;
+      border-radius: 6px;
+    }
+
+    .icon-button svg { width: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+
+    .account-menu {
+      position: absolute;
+      z-index: 3;
+      top: 48px;
+      right: 0;
+      display: block;
+      width: 220px;
+      padding: 12px;
+      color: #172033;
+      background: #ffffff;
+      border: 1px solid #bdc9d7;
+      border-radius: 8px;
+      box-shadow: 0 10px 24px rgba(18, 42, 66, 0.18);
+    }
+
+    .account-name { margin: 0; font-weight: 650; }
+    .account-context { margin: 2px 0 12px; color: #59687a; font-size: 14px; }
+    .menu-action {
+      display: block;
+      width: 100%;
+      min-height: 38px;
+      padding: 0 12px;
+      color: #172033;
+      text-align: left;
+      background: #ffffff;
+      border: 1px solid #9cacc0;
+      border-radius: 6px;
+    }
+
+    .workspace {
+      display: block;
+      min-height: calc(100vh - 64px);
+      padding: 28px;
+      background: #f4f7fa;
+    }
+
+    .page-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+    h1 { margin: 0; color: #10253d; font-size: 30px; line-height: 1.2; }
+    .page-heading p { max-width: 720px; margin: 7px 0 0; color: #53647a; }
+
+    .summary-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .summary-item { padding: 16px 18px; background: #ffffff; border: 1px solid #c7d2df; border-radius: 8px; }
+    .summary-label { display: block; color: #5a697b; font-size: 14px; }
+    .summary-value { display: block; margin-top: 4px; color: #10253d; font-size: 24px; font-weight: 700; }
+
+    .work-region {
+      display: block;
+      overflow: visible;
+      background: #ffffff;
+      border: 1px solid #c7d2df;
+      border-radius: 8px;
+    }
+
+    .work-heading { display: flex; align-items: center; justify-content: space-between; min-height: 64px; padding: 0 18px; border-bottom: 1px solid #d3dce7; }
+    .work-heading h2 { margin: 0; font-size: 20px; }
+    .secondary-action {
+      min-height: 38px;
+      padding: 0 14px;
+      color: #183653;
+      background: #ffffff;
+      border: 1px solid #8ea2b9;
+      border-radius: 6px;
+    }
+
+    .filter-panel {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding: 16px 18px;
+      background: #f9fbfd;
+      border-bottom: 1px solid #d3dce7;
+    }
+
+    .filter-panel label { display: grid; gap: 5px; color: #394b60; font-size: 14px; font-weight: 600; }
+    .filter-panel select { min-height: 40px; padding: 0 10px; color: #172033; background: #ffffff; border: 1px solid #9cacc0; border-radius: 5px; }
+
+    .checklist { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+    .checklist li { display: grid; grid-template-columns: minmax(260px, 1.4fr) 1fr 160px 130px; gap: 18px; align-items: center; min-height: 72px; padding: 12px 18px; border-bottom: 1px solid #e0e6ed; }
+    .checklist li:last-child { border-bottom: 0; }
+    .task-title { font-weight: 650; }
+    .task-meta { color: #5a697b; }
+    .status-badge {
+      display: inline-block;
+      width: fit-content;
+      padding: 3px 10px;
+      color: #8a2c20;
+      font-size: 14px;
+      font-weight: 650;
+      background: #fff0ed;
+      border: 1px solid #e6aaa1;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">LC</span>
+      <span>Ledger Close</span>
+    </div>
+    <div class="account">
+      <button class="icon-button" type="button" data-ref="user-menu-toggle" aria-controls="close-account-menu" aria-expanded="false" aria-haspopup="menu" aria-label="Open user menu">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+      </button>
+      <div class="account-menu" id="close-account-menu" role="menu" hidden>
+        <p class="account-name">Avery Chen</p>
+        <p class="account-context">Financial controller</p>
+        <button class="menu-action" type="button" role="menuitem" data-ref="sign-out-action">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <div class="page-heading">
+      <div>
+        <h1>Month-end close checklist</h1>
+        <p>Resolve outstanding close tasks before the reporting period is locked.</p>
+      </div>
+    </div>
+
+    <section class="summary-strip" data-ref="summary-strip" aria-label="Close status summary">
+      <div class="summary-item"><span class="summary-label">Open tasks</span><strong class="summary-value">8</strong></div>
+      <div class="summary-item"><span class="summary-label">Blocked</span><strong class="summary-value">2</strong></div>
+      <div class="summary-item"><span class="summary-label">Due today</span><strong class="summary-value">3</strong></div>
+    </section>
+
+    <section class="work-region" data-ref="work-region" aria-labelledby="close-tasks-heading">
+      <div class="work-heading">
+        <h2 id="close-tasks-heading">Close tasks</h2>
+        <button class="secondary-action" type="button" data-ref="filter-toggle" aria-controls="close-filter-panel" aria-expanded="false">Show filters</button>
+      </div>
+      <form class="filter-panel" id="close-filter-panel" aria-labelledby="close-tasks-heading" hidden>
+        <label>Owner
+          <select><option>All owners</option><option>Accounting</option><option>Treasury</option></select>
+        </label>
+        <label>Status
+          <select><option>All statuses</option><option>Open</option><option>Blocked</option></select>
+        </label>
+        <label>Entity
+          <select><option>All entities</option><option>North division</option><option>Central division</option></select>
+        </label>
+      </form>
+      <ul class="checklist">
+        <li><span class="task-title">Reconcile clearing account</span><span class="task-meta">Accounting</span><span class="status-badge" data-ref="status-badge">Blocked</span><span>Today</span></li>
+        <li><span class="task-title">Confirm bank balances</span><span class="task-meta">Treasury</span><span>Open</span><span>Today</span></li>
+        <li><span class="task-title">Post accrual journal</span><span class="task-meta">Accounting</span><span>Open</span><span>Tomorrow</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="application/json" data-reference-scenarios>
+    {
+      "version": 1,
+      "scenarios": [
+        {
+          "name": "filter pointer round trip",
+          "steps": [
+            { "action": "click", "target": "filter-toggle" },
+            { "action": "click", "target": "filter-toggle" }
+          ]
+        },
+        {
+          "name": "filter keyboard round trip",
+          "steps": [
+            { "action": "press", "target": "filter-toggle", "key": "Enter" },
+            { "action": "press", "target": "filter-toggle", "key": "Enter" }
+          ]
+        },
+        {
+          "name": "user menu escape",
+          "steps": [
+            { "action": "click", "target": "user-menu-toggle" },
+            { "action": "press", "target": "user-menu-toggle", "key": "Escape" }
+          ]
+        }
+      ]
+    }
+  </script>
+
+  <script>
+    (() => {
+      const filterToggle = document.querySelector('[data-ref="filter-toggle"]');
+      const filterPanel = document.getElementById('close-filter-panel');
+      const userMenuToggle = document.querySelector('[data-ref="user-menu-toggle"]');
+      const userMenu = document.getElementById('close-account-menu');
+      const signOutAction = document.querySelector('[data-ref="sign-out-action"]');
+
+      function setFilters(open) {
+        filterToggle.setAttribute('aria-expanded', String(open));
+        filterToggle.textContent = open ? 'Hide filters' : 'Show filters';
+        filterPanel.hidden = !open;
+      }
+
+      function setUserMenu(open, restoreFocus = false) {
+        userMenuToggle.setAttribute('aria-expanded', String(open));
+        userMenuToggle.setAttribute('aria-label', open ? 'Close user menu' : 'Open user menu');
+        userMenu.hidden = !open;
+        if (open) signOutAction.focus();
+        else if (restoreFocus) userMenuToggle.focus();
+      }
+
+      filterToggle.addEventListener('click', () => setFilters(filterToggle.getAttribute('aria-expanded') !== 'true'));
+      userMenuToggle.addEventListener('click', () => setUserMenu(userMenuToggle.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && userMenuToggle.getAttribute('aria-expanded') === 'true') {
+          event.preventDefault();
+          setUserMenu(false, true);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

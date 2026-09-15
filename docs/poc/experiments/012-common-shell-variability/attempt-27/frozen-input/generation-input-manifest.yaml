@@ -1,0 +1,40 @@
+manifest_version: 2
+experiment_id: common-shell-manifest-quality-rerun-v2-attempt-27
+consumer_rule: "Each Run must use only the paths in included_inputs and write only to its assigned isolated output directory."
+included_inputs:
+  - "generation-input-manifest.yaml"
+  - "design-manifest/"
+  - "implementation-constraints.yaml"
+  - "icon-fixture/"
+  - "fixed-user-prompt-ja.md"
+excluded_inputs:
+  - "runs/**"
+  - "comparisons/**"
+  - "evidence-captures/**"
+  - "reviews/**"
+  - "**/*.png"
+  - "tests/**"
+  - "docs/poc/experiments/012-common-shell-variability/attempt-*/runs/**"
+  - "docs/poc/experiments/012-common-shell-variability/attempt-*/comparison.*"
+  - "any prior generated Run, capture, comparison, rubric, selected reference, or evaluation material"
+fixture_contract:
+  present: true
+  owner: fixed-user-prompt
+  classification: neutral-common-shell-fixture
+  icon_assets:
+    library: lucide
+    source_revision: "6d1fc51b9a3c1cdd6f606ffe0ba8ea6b70b814bb"
+    directory: "icon-fixture/"
+    required_files: [panel-left-open.svg, panel-left-close.svg, chevron-down.svg, chevron-right.svg, moon.svg, sun.svg, search.svg]
+resolution:
+  selected_theme_color_override: none
+  theme_values: "Use the default values in design-manifest/configuration/theme-colors.default.yaml."
+independence:
+  run_count: 3
+  model: gpt-5.6-terra
+  reasoning_effort: medium
+  output_isolation: "No Run can read another Run output."
+capture:
+  viewport_desktop: "1440x1200"
+  viewport_narrow: "720x1200"
+  browser: "Chrome headless, local file URLs only"

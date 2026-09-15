@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "duplicate-stable-identity.html",
+    "digest": "61ea5fcc7b3d6444c6fbcec13c3ea0dedff02291e399d3da0a6e1068e23f3ce3",
+    "files": [
+      {
+        "path": "duplicate-stable-identity.html",
+        "bytes": 2194,
+        "sha256": "d8d6c85da0b5e4197e87986f5d13f1e97ff1e201bd9b1d2c7f638d0c3d3b54fd"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": []
+}

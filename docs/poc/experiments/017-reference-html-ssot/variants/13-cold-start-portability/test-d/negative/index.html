@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../target/target.css">
+  <title>Negative: vendor insurance completion stays open</title>
+</head>
+<body>
+  <div class="test-stamp" data-reference-harness="negative-fixture">Intentional completion-state mutation</div>
+  <article class="insurance-card">
+    <header><h1>Vendor insurance coverage period</h1><p>Track the effective and expiry boundaries supplied by the vendor. Either boundary may remain open.</p></header>
+    <div class="coverage-tool" id="coverage-widget">
+      <div class="coverage-boxes" aria-label="Insurance coverage boundaries" role="group">
+        <label class="coverage-box"><span>Effective from</span><input id="negative-effective" data-ref="range-start" inputmode="numeric" autocomplete="off" placeholder="yyyy-mm-dd" aria-controls="negative-date-tray" aria-expanded="false" aria-describedby="negative-feedback"></label>
+        <label class="coverage-box"><span>Expires on</span><input id="negative-expiry" data-ref="range-end" inputmode="numeric" autocomplete="off" placeholder="yyyy-mm-dd" aria-controls="negative-date-tray" aria-expanded="false" aria-describedby="negative-feedback"></label>
+      </div>
+      <div class="date-tray" id="negative-date-tray" role="dialog" aria-label="Choose an insurance coverage boundary" hidden>
+        <h2>October 2026</h2><p class="coverage-mode">Choosing effective date</p>
+        <div class="weekday-strip" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+        <div class="coverage-days" aria-label="October 2026 insurance dates">
+          <span class="empty-cell"></span><span class="empty-cell"></span><span class="empty-cell"></span><span class="empty-cell"></span>
+          <button type="button" tabindex="-1" data-value="2026-10-01">1</button><button type="button" tabindex="-1" data-value="2026-10-02">2</button><button class="coverage-sat" type="button" tabindex="-1" data-ref="range-start-day" data-value="2026-10-03">3</button>
+          <button class="coverage-sun" type="button" tabindex="-1" data-value="2026-10-04">4</button><button type="button" tabindex="-1" data-value="2026-10-05">5</button><button type="button" tabindex="-1" data-value="2026-10-06">6</button><button type="button" tabindex="-1" data-value="2026-10-07">7</button><button type="button" tabindex="-1" data-value="2026-10-08">8</button><button type="button" tabindex="-1" data-value="2026-10-09">9</button><button class="coverage-sat" type="button" tabindex="-1" data-ref="range-midday" data-value="2026-10-10">10</button>
+          <button class="coverage-sun" type="button" tabindex="-1" data-value="2026-10-11">11</button><button type="button" tabindex="-1" data-value="2026-10-12">12</button><button type="button" tabindex="-1" data-value="2026-10-13">13</button><button type="button" tabindex="-1" data-value="2026-10-14">14</button><button type="button" tabindex="-1" data-value="2026-10-15">15</button><button type="button" tabindex="-1" data-value="2026-10-16">16</button><button class="coverage-sat" type="button" tabindex="-1" data-value="2026-10-17">17</button>
+          <button class="coverage-sun" type="button" tabindex="-1" data-ref="range-end-day" data-value="2026-10-18">18</button><button type="button" tabindex="-1" data-value="2026-10-19">19</button><button type="button" tabindex="-1" data-value="2026-10-20" aria-current="date" aria-label="October 20, 2026, today">20</button><button type="button" tabindex="-1" data-ref="range-future" disabled aria-label="October 21, 2026, unavailable because it is in the future">21</button><button type="button" tabindex="-1" disabled>22</button><button type="button" tabindex="-1" disabled>23</button><button type="button" tabindex="-1" disabled>24</button>
+          <button type="button" tabindex="-1" disabled>25</button><button type="button" tabindex="-1" disabled>26</button><button type="button" tabindex="-1" disabled>27</button><button type="button" tabindex="-1" disabled>28</button><button type="button" tabindex="-1" disabled>29</button><button type="button" tabindex="-1" disabled>30</button><button type="button" tabindex="-1" disabled>31</button>
+        </div>
+      </div>
+      <p class="coverage-feedback" id="negative-feedback" data-ref="range-status" aria-live="polite">Both coverage boundaries are open.</p>
+    </div>
+  </article>
+  <script src="../target/target.js"></script>
+  <script>
+    (() => {
+      const root = document.getElementById('coverage-widget');
+      const start = root.querySelector('[data-ref="range-start"]');
+      const end = root.querySelector('[data-ref="range-end"]');
+      const tray = root.querySelector('[role="dialog"]');
+      const exposeCompletionDefect = () => requestAnimationFrame(() => {
+        if (!start.value || !end.value) return;
+        tray.hidden = false;
+        start.setAttribute('aria-expanded', 'false');
+        end.setAttribute('aria-expanded', 'true');
+      });
+      root.addEventListener('change', exposeCompletionDefect);
+      root.addEventListener('click', exposeCompletionDefect);
+    })();
+  </script>
+</body>
+</html>

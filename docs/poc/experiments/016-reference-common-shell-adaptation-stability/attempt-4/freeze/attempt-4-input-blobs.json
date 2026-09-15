@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "canonical_source": "Git blob object IDs in the vNext contract revision used as the next framework-adaptation input candidate",
+  "baseline_commit": "a3ef3fa680314a3b2721076698b13dbe97d0ead4",
+  "target_roots": [
+    "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate"
+  ],
+  "files": [
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/README.md", "blob": "69216198181215bfb6fb9584e4362e95c5d45093" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/human-review-packet.md", "blob": "eb9c9ec035d286bd95555102d4ecc2c256612c06" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/human-review-request.md", "blob": "24279875247d9fd75a6f3e3c47627e758f723bb6" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/interaction-foundations-candidate.md", "blob": "6c1f47162c96af24b46a51e3253c93407f3534a9" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/reference-contract.md", "blob": "beda1d89f6b95da16ce30cda135d53ccd32f543d" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/svg-rendering-contract.md", "blob": "2ac3d13ab954818ae452678370d212889999fcff" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/validation-plan.md", "blob": "34ada7b46f7368f0eb3652f723e00e5a57a5fa6e" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/validation/check-next-contract-candidate.ps1", "blob": "8657fcca72fd311b9c235c78a2c61bf4c22c4495" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/validation/check-svg-rendering-contract.ps1", "blob": "8f9a6177dd69ec1742a121c1ddc34359608f2071" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/validation/self-test-svg-rendering-contract.ps1", "blob": "2c9f12284c5fcb19cfb074c5a6bc3a41b5dfb685" },
+    { "path": "docs/poc/experiments/016-reference-common-shell-adaptation-stability/reference-contract-vnext-candidate/verification-record.md", "blob": "dd80bfe71943c0171d22fa9e1591354f5efff136" }
+  ]
+}

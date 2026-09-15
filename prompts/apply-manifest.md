@@ -11,6 +11,7 @@ You are a fresh implementer applying product-local design knowledge. A UI Design
 - `standard_pack`: path to the standard pack's `design-manifest/index.md`.
 - `local_configuration_override`: product-local values for known configuration IDs; absent when the pack defaults are used.
 - `product_binding`: application-owner supplied feature availability, destinations, permissions, state, data sources, aggregate semantics, display language, and post-action behavior.
+- `implementation_constraints`: optional consumer-owned delivery constraints such as the render target, icon library, and external-asset policy. This input is outside the standard pack and does not change design meaning or product capability.
 - `requirements`: accessibility, security, business, and other constraints.
 - `verification`: required functional, interaction, and visual checks.
 - `business_application_lens`: optional authored perspective; keep it distinct from manifest provenance.
@@ -21,17 +22,17 @@ Do not accept an original UI, source URL, screenshot, capture, extraction trace,
 ## Procedure
 
 1. Inspect target-product code and repository guidance relevant to the task.
-2. Read product requirements.
+2. Read product requirements and any supplied implementation constraints. If they conflict with the target repository or each other, stop and report the conflict rather than silently choosing one.
 3. Open the standard-pack root index, then `manifest.md`. Follow only category and concept links relevant to the requested slice.
 4. Resolve the pack defaults with the local configuration override. Reject an unknown ID or disallowed value rather than guessing.
 5. Check the product binding and Application Input Contract before designing a dependent feature, state, value, identity, aggregate, destination, permission, or displayed language. Build a short guidance map: concept path, resolved configuration, binding fact, unresolved gaps, expected implementation effect, and provenance for each added user-visible meaning or state.
 6. Use an explicitly supplied fallback only when a required input remains absent. Never create a feature, route, permission, state, data value, aggregate meaning, or business string from standard guidance or configuration.
 7. Resolve conflicts in this order: target-product implementation and repository guidance; explicit product requirements; local manifest; explicit starter defaults. The original UI is never an authority.
 8. Preserve uncertainty. Do not convert inferred or unresolved guidance into asserted product truth. For an unresolved contract field, omit the dependent UI, use only a pre-existing product-defined fallback, or stop for a decision. When a gap changes user-visible behavior materially, report it; otherwise choose the smallest reversible local mechanical decision.
-9. Implement in the repository's existing architecture and vocabulary. Do not introduce a framework, runtime, or generalized design system solely to mirror the manifest.
+9. Implement in the repository's existing architecture and vocabulary while following compatible supplied implementation constraints. A named framework, runtime, or icon library is a selection constraint, not automatic permission to add a dependency: use it when the target repository already supports it or the task explicitly authorizes the dependency change; otherwise stop and report the conflict. Do not introduce a generalized design system solely to mirror the manifest.
 10. Choose concrete CSS and component values from the target product and task context. Do not treat manifest prose as a second numerical source of truth.
 11. Verify required states and interactions within the task boundary. These checks establish implementation quality, not manifest conformance.
-12. Report concepts used, resolved configuration, local deviations, binding facts used, and unresolved gaps. A deliberate deviation is not a defect merely because it differs from manifest guidance.
+12. Report concepts used, resolved configuration, implementation constraints used, local deviations, binding facts used, and unresolved gaps. A deliberate deviation is not a defect merely because it differs from manifest guidance.
 
 ## Visible-output boundary
 

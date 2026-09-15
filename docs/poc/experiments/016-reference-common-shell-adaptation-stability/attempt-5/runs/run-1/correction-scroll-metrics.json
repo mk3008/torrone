@@ -1,0 +1,16 @@
+{
+  "attempt": 2,
+  "capture_url": "http://127.0.0.1:4175/?theme=light&drawer=open&workspace=expanded&current=Overview",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "drawer": {
+    "scrollHeight": 1374,
+    "clientHeight": 840
+  },
+  "workspace": {
+    "scrollHeight": 1247,
+    "clientHeight": 840
+  }
+}

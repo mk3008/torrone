@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Entity autocomplete reference</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #fff; --text: #101d2f; --muted: #54657a; --border: #c6d2df; --accent: #1d73b7; --focus: #86b9ee; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 720px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :is(button, input, [role="option"]):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .reference-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .sample { width: min(620px, calc(100% - 48px)); margin: 48px auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .sample h2 { margin: 0 0 6px; font-size: 22px; }
+    .support { margin: 0 0 20px; color: var(--muted); }
+    .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .query { width: 100%; min-height: 42px; padding: 8px 11px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
+    .suggestions { margin: 6px 0 0; padding: 6px; background: var(--surface); border: 1px solid #98aabc; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
+    .option { display: grid; width: 100%; min-height: 54px; padding: 8px 10px; align-content: center; color: var(--text); background: var(--surface); border: 0; border-radius: 5px; text-align: left; }
+    .option:hover, .option[aria-selected="true"] { background: #e5f0fb; }
+    .entity-id { color: var(--muted); font-size: 13px; }
+    .empty { margin: 8px 0 0; padding: 14px; color: var(--muted); background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; }
+    .selection { display: flex; min-height: 58px; margin-top: 14px; padding: 10px 12px; align-items: center; justify-content: space-between; gap: 16px; background: #edf5fd; border: 1px solid #9ebbd5; border-radius: 6px; }
+    .selection p { margin: 0; }
+    .clear { min-height: 36px; padding: 0 12px; color: #183653; background: var(--surface); border: 1px solid #8ea2b9; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="reference-note" data-reference-harness="reference-label">Reference part · entity autocomplete</div>
+  <section class="sample" aria-labelledby="entity-autocomplete-heading">
+    <h2 id="entity-autocomplete-heading">Billing account</h2>
+    <p class="support">Find the account that will receive the charge.</p>
+    <label class="field-label" for="entity-query">Account ID or name</label>
+    <input class="query" id="entity-query" data-ref="entity-query" role="combobox" aria-autocomplete="list" aria-controls="entity-suggestions" aria-expanded="false" autocomplete="off">
+    <div class="suggestions" id="entity-suggestions" role="listbox" aria-label="Matching billing accounts" hidden>
+      <button class="option" id="account-option-primary" type="button" role="option" data-ref="entity-option-primary" aria-selected="false"><span>Harbor Medical Group</span><span class="entity-id">Account BA-2048</span></button>
+      <button class="option" type="button" role="option" aria-selected="false"><span>Alpine Service Network</span><span class="entity-id">Account BA-2081</span></button>
+      <button class="option" type="button" role="option" aria-selected="false"><span>Cedar Labs</span><span class="entity-id">Account BA-2114</span></button>
+    </div>
+    <p class="empty" data-ref="entity-empty" role="status" aria-live="polite" hidden>No matching accounts. Change the ID or name.</p>
+    <div class="selection" data-ref="entity-selection" hidden>
+      <p><strong>Harbor Medical Group</strong><br><span class="entity-id">Account BA-2048</span></p>
+      <button class="clear" type="button" data-ref="entity-clear">Clear</button>
+    </div>
+  </section>
+
+  <script type="application/json" data-reference-scenarios>
+    {"version":1,"scenarios":[
+      {"name":"keyboard entity selection","steps":[{"action":"fill","target":"entity-query","value":"a"},{"action":"press","target":"entity-query","key":"ArrowDown"},{"action":"press","target":"entity-query","key":"Enter"}]},
+      {"name":"pointer entity selection","steps":[{"action":"fill","target":"entity-query","value":"a"},{"action":"click","target":"entity-option-primary"}]},
+      {"name":"entity no results","steps":[{"action":"fill","target":"entity-query","value":"zzz"}]},
+      {"name":"clear entity selection","steps":[{"action":"fill","target":"entity-query","value":"a"},{"action":"click","target":"entity-option-primary"},{"action":"click","target":"entity-clear"}]}
+    ]}
+  </script>
+  <script>
+    (() => {
+      const query = document.querySelector('[data-ref="entity-query"]');
+      const suggestions = document.getElementById('entity-suggestions');
+      const options = [...suggestions.querySelectorAll('[role="option"]')];
+      const primary = document.querySelector('[data-ref="entity-option-primary"]');
+      const empty = document.querySelector('[data-ref="entity-empty"]');
+      const selected = document.querySelector('[data-ref="entity-selection"]');
+      const clear = document.querySelector('[data-ref="entity-clear"]');
+      let active = null;
+      const showMatches = () => { const noMatch = query.value.trim().toLowerCase() === 'zzz'; suggestions.hidden = noMatch || !query.value.trim(); empty.hidden = !noMatch; query.setAttribute('aria-expanded', String(!suggestions.hidden)); query.removeAttribute('aria-activedescendant'); active = null; options.forEach((option) => option.setAttribute('aria-selected', 'false')); };
+      const choose = () => { suggestions.hidden = true; empty.hidden = true; query.setAttribute('aria-expanded', 'false'); query.removeAttribute('aria-activedescendant'); selected.hidden = false; query.value = primary.querySelector('span').textContent; query.focus(); };
+      query.addEventListener('input', showMatches);
+      query.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowDown' && !suggestions.hidden) { event.preventDefault(); active = primary; active.setAttribute('aria-selected', 'true'); query.setAttribute('aria-activedescendant', active.id); }
+        if (event.key === 'Enter' && active) { event.preventDefault(); choose(); }
+        if (event.key === 'Escape') { suggestions.hidden = true; query.setAttribute('aria-expanded', 'false'); query.removeAttribute('aria-activedescendant'); }
+      });
+      primary.addEventListener('click', choose);
+      clear.addEventListener('click', () => { selected.hidden = true; query.value = ''; query.setAttribute('aria-expanded', 'false'); query.removeAttribute('aria-activedescendant'); suggestions.hidden = true; empty.hidden = true; query.focus(); });
+    })();
+  </script>
+</body>
+</html>

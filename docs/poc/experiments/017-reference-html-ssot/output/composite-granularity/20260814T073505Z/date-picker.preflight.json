@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "date-picker.html",
+    "digest": "b830c0a5ba191066a420f06b1f2ac5b9566fe34e64a821c81984d74a575eb4f4",
+    "files": [
+      {
+        "path": "date-picker.html",
+        "bytes": 6765,
+        "sha256": "b8f4fec9b02d96769d139dce77ac424c7f51063c0b43550b3409d5588e2ea6ce"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 10
+  },
+  "errors": []
+}
