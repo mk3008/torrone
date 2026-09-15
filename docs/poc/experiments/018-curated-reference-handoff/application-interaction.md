@@ -27,3 +27,9 @@ Application interaction verification is incomplete. The next review must operate
 ## Applicability of this follow-up
 
 The current change adds management and review guidance only; it changes no HTML, CSS, runtime handler, or approved Reference. The table above exposes existing gaps rather than reporting a new browser pass. The previously deployed candidate remains the review surface.
+
+## Compact calendar navigation follow-up
+
+The owner requested less unused vertical space in the month navigation. The candidate now places previous-year, previous-month, month heading, next-month and next-year in one grid row, in that DOM order. Buttons retain 44 by 44 CSS pixel minimum targets. At very narrow widths or enlarged text the heading may wrap inside its center cell rather than shrinking the controls or overflowing the calendar. No key handler or shared Enter policy changes. Native Tab order among these four buttons is unchanged.
+
+Static source inspection confirms the visual/DOM order and target sizing; the calendar handler and static bundle checks pass. Browser rendering at phone widths and enlarged text remains unverified. This is a candidate layout change, not approval of the complete UI.
