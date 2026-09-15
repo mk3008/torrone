@@ -151,9 +151,16 @@
   windowControl.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !browser.hidden) { event.preventDefault(); dismiss(true); }
   });
-  windowControl.addEventListener('focusout', () => {
-    queueMicrotask(() => {
-      if (!browser.hidden && !browser.contains(document.activeElement) && !limits[owner].section.contains(document.activeElement)) dismiss();
+  windowControl.addEventListener('focusout', event => {
+    const outsideOwner = target => !browser.contains(target) && !limits[owner].section.contains(target);
+    // During focusout, activeElement may still be body. The destination is the
+    // reliable signal; closing here would remove a tapped day before its click.
+    if (event.relatedTarget) {
+      if (!browser.hidden && outsideOwner(event.relatedTarget)) dismiss();
+      return;
+    }
+    requestAnimationFrame(() => {
+      if (!browser.hidden && outsideOwner(document.activeElement)) dismiss();
     });
   });
   document.addEventListener('pointerdown', event => {
