@@ -49,9 +49,13 @@ The consuming product owns its implementation and vocabulary. These are not tran
 
 If a product requirement changes the operation model itself, record the difference explicitly and use or create a more appropriate Reference rather than silently redefining this one.
 
-## Not approved by this entry
+## Responsive review status
 
-Responsive behavior is **not** part of this approval. The responsive derivative at `review/references/date-range.html` remains a working draft pending separate human review. The historical approval must not be inferred to cover that derivative.
+Responsive behavior is **not yet approved as a whole** by this entry. The responsive derivative at `review/references/date-range.html` remains a working draft.
+
+A phone review on 2026-09-16 reported no issue with the narrow-screen calendar behavior, so that bounded calendar presentation/interaction is human-accepted for the draft. This does not extend approval to manual entry, invalid-input recovery, Clear, software-keyboard/focus behavior, or the remaining responsive flow.
+
+The historical desktop approval must not be inferred to cover the entire responsive derivative.
 
 This entry also does not make the Date range choices universal DatePicker rules. It curates one bounded design original for the stated responsibility.
 
