@@ -49,3 +49,7 @@ This separates two input methods without making the text field read-only or chan
 ## Follow-up: calendar ownership
 
 The single calendar is moved into the active boundary stack on narrow screens, immediately after that boundary's input/error area. Start selection therefore appears before the End field; End selection appears below End. The existing heading/status identifies which boundary is being selected. Wider screens retain the shared anchored popup. Breakpoint changes close the calendar and relocate it without retaining focus inside hidden content. Focus-policy regression checks also cover repeated Start/End switching and the desktop parent.
+
+## Human review log
+
+- **2026-09-16 — Date range calendar on phone:** reviewer reported no issue with the calendar behavior. Treat the narrow-screen calendar presentation/interaction as human-accepted for this working draft. This does **not** yet approve the responsive Date range derivative as a whole; manual entry, invalid-input recovery, Clear, keyboard/focus behavior, and the remaining responsive flow are still separate review subjects.
