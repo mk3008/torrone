@@ -43,6 +43,8 @@ The large Reference HTML research handoff and experiment archive is currently pr
 
 ## Repository map
 
+- [Development and Reference review](docs/development-workflow.md) — run a small review bundle in Work and prepare a phone-review handoff.
+- `review/` and `tools/build-review.py` — development review entry point for selected existing HTML samples; not a production Reference catalog.
 - `docs/product-foundation.md` — product problem, principles, scope, and decision boundaries.
 - `profile/` — earlier UI Manifest profile research.
 - `templates/` — Manifest-era starter and business-application examples.
