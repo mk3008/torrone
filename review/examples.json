@@ -1,0 +1,26 @@
+[
+  {
+    "id": "date-range",
+    "title": "Date range picker",
+    "source": "review/references/date-range.html",
+    "guidance": "Review independent Start and End selection, partial ranges, manual input, invalid input recovery, clearing, and dismissal. The fixed today fixture is historical, not the current date.",
+    "status": "Responsive working draft; mobile changes await human approval.",
+    "evidence": "docs/poc/experiments/017-reference-html-ssot/date-picker-human-calibration-phase-2-result.md"
+  },
+  {
+    "id": "entity-lookup",
+    "title": "Entity dialog lookup",
+    "source": "review/references/entity-lookup.html",
+    "guidance": "Open the lookup, search, select, confirm or cancel, then clear and reselect. Observe selection state and focus return.",
+    "status": "Responsive working draft; mobile changes await human approval.",
+    "evidence": "docs/poc/experiments/017-reference-html-ssot/composite-granularity-result.md"
+  },
+  {
+    "id": "access-review",
+    "title": "Access review workspace",
+    "source": "review/references/access-review.html",
+    "guidance": "Open and dismiss navigation, filter requests, and review results. On phones, navigation overlays the workspace and results scroll horizontally within their own region.",
+    "status": "Responsive working draft; mobile changes await human approval.",
+    "evidence": "docs/poc/experiments/017-reference-html-ssot/README.md"
+  }
+]

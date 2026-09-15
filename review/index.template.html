@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Torrone — Reference review</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f5f4f0; color: #202c29; font: 1rem/1.6 system-ui, sans-serif; }
+  main { max-width: 52rem; margin: auto; padding: 1.25rem; }
+  h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); line-height: 1.2; }
+  h2 { margin-top: 0; font-size: 1.3rem; }
+  article { background: white; border: 1px solid #cbd2ce; border-radius: .75rem; padding: 1.25rem; margin: 1.25rem 0; }
+  a { color: #16583d; text-underline-offset: .2em; }
+  a.open { display: inline-block; background: #16583d; color: white; border-radius: .35rem; padding: .65rem 1rem; margin: 0 .75rem .5rem 0; }
+  a:focus-visible, summary:focus-visible { outline: 3px solid #a34e00; outline-offset: 4px; }
+  summary { cursor: pointer; padding: .5rem 0; }
+  code { overflow-wrap: anywhere; }
+  .note { color: #535e59; }
+</style>
+<main>
+  <header><p>Torrone / Review workspace</p><h1>Open it. Try it. Review it.</h1>
+  <p>Responsive working drafts adapted from existing research examples. Choose an example, operate it, then use your browser’s Back action to return.</p>
+  <p>Try completion, cancellation, clearing, and recovery. Send the example name, what you did, what happened, and what you expected back to the Work thread or PR.</p>
+  <p class="note">On phones, navigation opens over the workspace, search uses a full-screen dialog, and the date calendar stays inline. These adaptations await your review.</p></header>
+  {{cards}}
+  <footer><p>{{state}} · Base commit <code>{{revision}}</code></p>
+  <p><a href="review-build.json">Snapshot identity and source hashes</a></p>
+  <p class="note">Historical research originals are preserved. This is a review entry point, not a curated production library. PoC 017 remains partial; its historical evidence incident is unresolved.</p></footer>
+</main>
+</html>
