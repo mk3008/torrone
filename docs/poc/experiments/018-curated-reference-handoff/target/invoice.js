@@ -116,14 +116,11 @@
       if (event.key === 'Tab') dismiss();
       if (event.key === 'ArrowDown') { event.preventDefault(); open(index, true); }
       if (event.key === 'Enter') {
+        if (event.isComposing || event.keyCode === 229) return;
         event.preventDefault();
-        if (!validate()) return;
-        dismiss();
-        // Follow the same left-to-right, top-to-bottom DOM order as Tab.
-        // Calendar return-focus state must not control manual-entry navigation.
-        const sequence = [...document.querySelector('form').querySelectorAll('input, button')]
-          .filter(element => !element.disabled && !element.hidden && !element.closest('[hidden]'));
-        sequence[sequence.indexOf(limit.input) + 1]?.focus();
+        // Commit this boundary; Enter is not sequential focus navigation.
+        // Do not use dismiss(true): calendar focus return has a different role.
+        if (validate()) dismiss();
       }
       if (event.key === 'Escape') { validate(); dismiss(); }
     });

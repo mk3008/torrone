@@ -86,20 +86,32 @@ for (const owner of [0,1]) {
 }
 console.log('PASS: both calendar boundaries commit after focus transition; null destination, focus return, disabled dates, outside dismissal');
 
-// Manual entry must follow visual/DOM order, independent of the last calendar owner.
+// Manual Enter confirms in place; Tab owns sequential navigation. This replaces
+// the earlier Enter-as-Tab policy after the owner requested a source-based rule.
 for (const index of [0, 1]) {
   const f = setup(), controls = f.sections[index].selectors;
   f.sections[1-index].selectors['[data-action="browse"]'].fire('click');
   controls.input.focus(); controls.input.fire('focus');
   controls.input.value = '20260910';
   controls.input.fire('keydown', { key: 'Enter', preventDefault() {} });
-  assert.equal(f.doc.activeElement, controls['[data-action="erase"]'], 'Enter moves right to visible Clear');
+  assert.equal(f.doc.activeElement, controls.input, 'Valid Enter keeps the current field');
+  assert.equal(controls.input.value, '2026-09-10');
   assert.equal(f.popup.hidden, true);
   controls.input.focus(); controls.input.fire('focus'); controls.input.value = '';
   controls.input.fire('keydown', { key: 'Enter', preventDefault() {} });
-  assert.equal(f.doc.activeElement, controls['[data-action="browse"]'], 'Blank input skips hidden Clear');
+  assert.equal(f.doc.activeElement, controls.input, 'Blank Enter keeps the current field');
   controls.input.focus(); controls.input.fire('focus'); controls.input.value = 'bad';
   controls.input.fire('keydown', { key: 'Enter', preventDefault() {} });
   assert.equal(f.doc.activeElement, controls.input, 'Invalid input keeps focus for recovery');
 }
-console.log('PASS: manual Enter follows left-to-right controls for either boundary regardless of prior calendar owner');
+console.log('PASS: valid, blank and invalid Enter keep either field regardless of previous calendar owner');
+for (const index of [0, 1]) {
+  const f = setup(), input = f.sections[index].selectors.input;
+  input.focus(); input.fire('focus'); input.value = '20260910';
+  input.fire('keydown', { key: 'Enter', isComposing: true, preventDefault() { throw new Error('Composition must not be intercepted'); } });
+  assert.equal(input.value, '20260910');
+  assert.equal(f.doc.activeElement, input);
+}
+const html = fs.readFileSync(require.resolve('../docs/poc/experiments/018-curated-reference-handoff/target/index.html'), 'utf8');
+assert.equal((html.match(/enterkeyhint="done"/g) || []).length, 2);
+console.log('PASS: composition Enter is untouched; both mobile inputs request Done');

@@ -45,3 +45,5 @@ This is an implementation candidate, not a curated Reference. The approved execu
 ## Post-implementation owner feedback
 
 The first phone review exposed keyboard obstruction during manual entry, especially at the latest boundary. This is a candidate defect against the existing responsive/coherent-entry requirement, not evidence for a new Torrone-wide rule. A local focus/scroll correction was added after the initial handoff experiment. The original implementation checkpoint remains available, and the observed failure plus verification limits are retained in `verification.md`.
+
+The subsequent manual-Enter policy is documented in [keyboard-policy.md](keyboard-policy.md). It replaces the earlier Enter-as-Tab correction after owner feedback and primary-source research. This local decision does not rewrite the initial handoff evidence or approved Reference.

@@ -72,3 +72,7 @@ The Enter defect was reproduced in the actual-handler event fixture: manual entr
 For the supplied rendering symptom, date-cell focus outlines now draw inside the cell and above adjacent cells. This removes the external overlap that could hide part of the ring. This is a targeted CSS correction based on the screenshot; intermittent real-phone rendering has not been verified or declared fully resolved. Other unshown rendering failures are not assumed to share this cause.
 
 The calendar, manual-entry visibility, date arithmetic and packaging checks pass. Actual browser/phone verification remains pending; the prior evidence and limitations are retained.
+
+## Superseding decision: consistent manual Enter behavior
+
+After further phone feedback, the owner requested a literature-based rule instead of more ad hoc focus transfers. See [keyboard-policy.md](keyboard-policy.md) for primary sources, their limits and the local decision. The preceding Enter-as-Tab behavior is superseded: both fields now confirm in place, while Tab remains sequential navigation. Both request the Done virtual-keyboard label. Composition Enter is not intercepted. Calendar completion retains its separate return path. The actual-handler and existing focused checks pass; the owner's IME has not been verified here.

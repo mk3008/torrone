@@ -12,12 +12,12 @@
   <form novalidate>
     <fieldset id="issue-window">
       <legend>Issued date</legend>
-      <p id="date-format">Use YYYY-MM-DD or YYYYMMDD. Review date: 2026-09-16; later issue dates are unavailable.</p>
+      <p id="date-format">Use YYYY-MM-DD or YYYYMMDD. Enter confirms the current field; Tab moves between controls. Review date: 2026-09-16; later issue dates are unavailable.</p>
       <div class="limits">
         <section class="limit" data-side="after">
           <label for="issued-after">Issued on or after <small>(optional)</small></label>
           <div class="editor">
-            <input id="issued-after" type="text" inputmode="numeric" autocomplete="off" placeholder="YYYY-MM-DD" aria-describedby="date-format after-problem" aria-invalid="false" aria-controls="date-browser" aria-expanded="false" aria-haspopup="dialog">
+            <input id="issued-after" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" placeholder="YYYY-MM-DD" aria-describedby="date-format after-problem" aria-invalid="false" aria-controls="date-browser" aria-expanded="false" aria-haspopup="dialog">
             <button type="button" data-action="erase" aria-label="Clear earliest issue date" hidden>×</button>
             <button type="button" data-action="browse" aria-label="Calendar for earliest issue date" aria-controls="date-browser" aria-expanded="false">▦</button>
           </div>
@@ -26,7 +26,7 @@
         <section class="limit" data-side="before">
           <label for="issued-before">Issued on or before <small>(optional)</small></label>
           <div class="editor">
-            <input id="issued-before" type="text" inputmode="numeric" autocomplete="off" placeholder="YYYY-MM-DD" aria-describedby="date-format before-problem" aria-invalid="false" aria-controls="date-browser" aria-expanded="false" aria-haspopup="dialog">
+            <input id="issued-before" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" placeholder="YYYY-MM-DD" aria-describedby="date-format before-problem" aria-invalid="false" aria-controls="date-browser" aria-expanded="false" aria-haspopup="dialog">
             <button type="button" data-action="erase" aria-label="Clear latest issue date" hidden>×</button>
             <button type="button" data-action="browse" aria-label="Calendar for latest issue date" aria-controls="date-browser" aria-expanded="false">▦</button>
           </div>
