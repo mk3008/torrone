@@ -6,14 +6,16 @@ const source = readFileSync(new URL('../review/references/date-range.html', impo
 const between = (start, end) => source.slice(source.indexOf(start), source.indexOf(end, source.indexOf(start)));
 const focusPolicy = between('      const separateDateInput =', '      const setViewFromIso =');
 const onInputFocus = source.match(/boundary\.input\.addEventListener\('focus', \(\) => \{([\s\S]*?)\n        \}\);/)[1];
-const openPolicy = between('      const open = (position,', '      function close(');
+const openPolicy = between('      const placeCalendar = (position)', '      function close(');
 function environment(mobile) {
-  const state = { active: null, opened: 0, closed: 0, scrolled: 0 };
+  const state = { active: null, opened: 0, closed: 0, scrolled: 0, parent: null };
   const node = name => ({ focus() { state.active = name; } });
   const boundary = { position: 'start', input: node('input'), trigger: node('trigger') };
+  boundary.stack = { append() { state.parent = 'start'; } };
+  const end = { position: 'end', input: node('end-input'), trigger: node('end-trigger'), stack: { append() { state.parent = 'end'; } } };
   const frames = [];
   const context = vm.createContext({
-    boundaries: { start: boundary }, boundary,
+    boundaries: { start: boundary, end }, boundary,
     suppressFocusOpen: false,
     matchMedia: () => ({ matches: mobile }),
     setTimeout: callback => callback(),
@@ -21,7 +23,7 @@ function environment(mobile) {
     requestAnimationFrame: callback => frames.push(callback),
     popup: { hidden: true, scrollIntoView() { state.scrolled++; } },
     gridBody: { querySelector: () => node('day') },
-    control: { dataset: {} }, popupOwner: null,
+    control: { dataset: {}, append() { state.parent = 'control'; } }, popupOwner: null,
     setViewFromIso() {}, valueFor: () => null,
     startIso: null, endIso: null, fixedToday: '2026-08-14',
     renderCalendar() {}, setExpanded() {},
@@ -53,3 +55,13 @@ for (const mobile of [true, false]) {
   assert.equal(state.active, 'trigger', 'Cancelled opening must not focus a hidden day');
 }
 console.log('Date input focus policy: mobile/desktop, return focus, entry, cancelled opening PASS');
+
+for (const mobile of [true, false]) {
+  const { context, state } = environment(mobile);
+  vm.runInContext(openPolicy, context);
+  for (const position of ['start', 'end', 'start']) {
+    vm.runInContext('open("' + position + '")', context);
+    assert.equal(state.parent, mobile ? position : 'control', 'Calendar follows the active mobile boundary; desktop keeps shared anchor');
+  }
+}
+console.log('Calendar placement: start/end switching and desktop parent PASS');

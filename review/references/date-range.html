@@ -80,7 +80,7 @@
       .range-fields { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 8px; }
       .boundary-stack { width: 100%; min-width: 0; }
       .range-separator { display: none; }
-      .picker, .range-fields[data-anchor="end"] .picker { position: static; width: 100%; padding: 8px; box-shadow: none; }
+      .picker, .range-fields[data-anchor="end"] .picker { position: static; width: 100%; margin-top: 8px; padding: 8px; box-shadow: none; }
       .picker-header { grid-template-columns: 1fr 1fr auto; gap: 4px; }
       .month-heading { grid-column: 1 / -1; grid-row: 1; padding: 8px 0; font-size: 17px; }
       .icon-button { width: 44px; height: 44px; }
@@ -561,11 +561,17 @@
         }
       }
 
+      const placeCalendar = (position) => {
+        const parent = separateDateInput.matches ? boundaries[position].stack : control;
+        parent.append(popup);
+      };
+
       const open = (position, { focusDay = false } = {}) => {
         // Move focus off editable input synchronously to dismiss the mobile keyboard.
         if (separateDateInput.matches) boundaries[position].trigger.focus();
         popupOwner = position;
         control.dataset.anchor = position;
+        placeCalendar(position);
         setViewFromIso(valueFor(position) || startIso || endIso || fixedToday);
         renderCalendar();
         popup.hidden = false;
@@ -598,7 +604,11 @@
         close({ restoreFocus: boundary.input });
       };
 
-      separateDateInput.addEventListener('change', () => close());
+      separateDateInput.addEventListener('change', () => {
+        const restoreFocus = !popup.hidden && popup.contains(document.activeElement) ? boundaries[popupOwner].input : null;
+        close({ restoreFocus });
+        placeCalendar(popupOwner);
+      });
 
       Object.values(boundaries).forEach((boundary) => {
         boundary.input.addEventListener('focus', () => {
