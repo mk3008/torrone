@@ -41,6 +41,8 @@ nav { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 12
 #date-options button:disabled { color: #6b716e; background: repeating-linear-gradient(135deg, #f1f2f0, #f1f2f0 4px, #e5e8e4 4px, #e5e8e4 5px); cursor: not-allowed; }
 #availability, #date-keys { font-size: .8rem; color: #52625b; margin: 10px 0 0; }
 @media (max-width: 720px) {
+  body.manual-entry { padding-bottom: 100vh; }
+  .limit { scroll-margin-top: 16px; }
   main { margin: 20px auto; padding: 0 12px; }
   fieldset { padding: 12px; }
   .limits { flex-direction: column; gap: 20px; }

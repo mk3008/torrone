@@ -30,7 +30,8 @@
     "assets": [
       "invoice.css",
       "invoice-dates.js",
-      "invoice.js"
+      "invoice.js",
+      "invoice-entry.js"
     ],
     "implementation_candidate": true,
     "guidance": "Try earliest-only and latest-only issue dates, manual correction, Clear, calendar completion and dismissal. On a phone, switch between typing and the inline calendar. Does the operation model feel coherent?",

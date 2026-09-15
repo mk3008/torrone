@@ -41,3 +41,7 @@ Focused verification later extracted date-only arithmetic and input assessment i
 ## Review boundary
 
 This is an implementation candidate, not a curated Reference. The approved executable and curation are unchanged. Review-surface integration and focused checks follow the initial implementation; their files and results are recorded separately in `verification.md`. No historical research had to be consulted.
+
+## Post-implementation owner feedback
+
+The first phone review exposed keyboard obstruction during manual entry, especially at the latest boundary. This is a candidate defect against the existing responsive/coherent-entry requirement, not evidence for a new Torrone-wide rule. A local focus/scroll correction was added after the initial handoff experiment. The original implementation checkpoint remains available, and the observed failure plus verification limits are retained in `verification.md`.

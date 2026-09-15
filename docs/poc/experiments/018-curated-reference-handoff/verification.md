@@ -46,3 +46,11 @@ Operate the candidate first without the original side-by-side:
 6. Review local choices recorded in `handoff-notes.md`, especially tab-reachable actions and dependent-boundary revalidation. If those expose missing curation guidance, record that separately instead of changing the approved Reference here.
 
 Human recognition, actual software-keyboard behavior, assistive technology, cross-browser behavior and design quality remain unevaluated. No score or approval is assigned. A later reviewer may inspect historical research; this implementation did not require it.
+
+## Follow-up: real-phone keyboard obstruction
+
+The owner tested snapshot `570d35ac6eb7d67bbf4aa2d5923de48760aa3ed2` in the ChatGPT-embedded review surface on an Android phone. The supplied screenshots (`Screenshot_20260916_075517.jpg` and `Screenshot_20260916_075524.jpg`) show the software keyboard covering the earliest-date editor. The owner also reported that the latest-date editor was completely invisible. This is observed usability failure, not approval; it supersedes the earlier lack of phone observations.
+
+The candidate previously only dismissed the calendar when an input received focus. It did not reserve scroll space or reposition the editable control. The correction adds temporary bottom scroll space while a narrow-screen date field is focused, then brings that field's label/editor to the top. Bounded retries accommodate keyboard animation when the embedding host does not deliver a child viewport resize; viewport resize events also recheck the current input. Moving focus to calendar/Clear/elsewhere cancels retries and removes the space. Desktop behavior and the approved Reference are unchanged.
+
+`node tests/check-curated-handoff-entry.cjs` passes checks of both fields, delayed opening without resize, resize handling with/without VisualViewport, switching fields, blur/calendar cleanup, and desktop isolation. The existing date and packaging checks also pass. These are event-level tests, not a real browser/keyboard simulation. The initial browser-verification limitation remains; confirm the corrected display on the same phone after reopening the updated review surface.
