@@ -39,3 +39,9 @@ On a phone, open navigation and try each dismissal path; open the search and che
 - [Material Design: dialogs](https://m3.material.io/components/dialogs/guidelines) — basic versus full-screen dialog responsibilities.
 
 These inform the choices; they do not require Torrone or its consumers to adopt Material components or a particular framework.
+
+## Follow-up: keyboard and calendar collision
+
+Phone feedback showed that the inherited focus-open behavior displayed the software keyboard and calendar together. On narrow screens, input focus now closes the calendar and is reserved for typing. The calendar button moves focus off the input before opening the calendar. Selecting, clearing, or dismissing restores focus to that boundary's calendar button instead of its editable input, so programmatic focus does not request the keyboard again. Wider-screen focus-open behavior is preserved. A breakpoint change closes the calendar to avoid carrying the previous input mode across layouts.
+
+This separates two input methods without making the text field read-only or changing validation and independent-boundary semantics. Software-keyboard dismissal still needs real-device confirmation.

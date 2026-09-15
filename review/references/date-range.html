@@ -95,7 +95,7 @@
   <section class="sample" aria-labelledby="range-heading">
     <h2 id="range-heading">Transaction date filter</h2>
     <p class="support">Filter recorded transactions by date.</p>
-    <p class="range-hint" id="range-hint">Format: yyyy-mm-dd or yyyymmdd. Either date may be blank.</p>
+    <p class="range-hint" id="range-hint">Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.</p>
     <div class="range-fields" data-ref="range-control" data-anchor="start">
       <div class="boundary-stack" data-boundary="start">
         <label class="field-label" id="range-start-label" for="range-start-input">Start date</label>
@@ -297,7 +297,12 @@
         });
       };
 
+      const separateDateInput = matchMedia('(max-width: 800px)');
       const focusWithoutOpening = (element) => {
+        if (separateDateInput.matches) {
+          const boundary = Object.values(boundaries).find(({ input }) => input === element);
+          if (boundary) element = boundary.trigger;
+        }
         suppressFocusOpen = Object.values(boundaries).some(({ input }) => input === element);
         element.focus();
         setTimeout(() => { suppressFocusOpen = false; }, 0);
@@ -557,6 +562,8 @@
       }
 
       const open = (position, { focusDay = false } = {}) => {
+        // Move focus off editable input synchronously to dismiss the mobile keyboard.
+        if (separateDateInput.matches) boundaries[position].trigger.focus();
         popupOwner = position;
         control.dataset.anchor = position;
         setViewFromIso(valueFor(position) || startIso || endIso || fixedToday);
@@ -565,8 +572,10 @@
         setExpanded(true);
         if (focusDay) {
           requestAnimationFrame(() => {
+            if (popup.hidden) return;
             const target = gridBody.querySelector('.day[tabindex="0"]');
             if (target) target.focus();
+            if (separateDateInput.matches) popup.scrollIntoView({ block: 'nearest' });
           });
         }
       };
@@ -589,9 +598,12 @@
         close({ restoreFocus: boundary.input });
       };
 
+      separateDateInput.addEventListener('change', () => close());
+
       Object.values(boundaries).forEach((boundary) => {
         boundary.input.addEventListener('focus', () => {
           if (suppressFocusOpen) return;
+          if (separateDateInput.matches) { close(); return; }
           open(boundary.position, { focusDay: false });
         });
         boundary.input.addEventListener('input', () => showClear(boundary, Boolean(boundary.input.value)));
