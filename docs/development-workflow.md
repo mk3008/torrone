@@ -58,6 +58,8 @@ The first curation pilot is the existing human-approved [Date range filter](../r
 
 ## Verification and preserved gaps
 
+For UI changes, complete the pre-implementation and handoff checks in [Application interaction requirements](application-interaction.md). Link one application-owned decision record and its affected-path evidence from the PR; the [PR template](../.github/pull_request_template.md) prompts for this even when the change appears confined to a component. Missing shared requirements are explicit gaps, and unexecuted paths remain unverified. Non-UI changes need only a brief applicability explanation. Do not call application interaction verification complete while relevant rows remain unresolved or unverified.
+
 Check that generated HTML matches the selected source bytes, links resolve, the index works at phone width, and the relevant example interaction still operates. Inspect the diff to confirm historical sources and outputs were not modified. New previews do not need a rerun of all old experiments.
 
 PoC 017 remains `partial`: the historical evidence incident and its recovery requirement in [the research handoff](poc/reference-html-program-summary.md) remain unresolved. Curating an already approved Reference does not repair that evidence or accept the PoC 017 Gate. Do not run legacy conformance commands merely to launch a preview; some have a recorded history of overwriting evidence.
