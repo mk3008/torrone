@@ -12,7 +12,7 @@ The complete product input was Issue #8 (no comments) and these current files:
 - `references/date-range.md`
 - `review/references/date-range.html`, approved Git blob `d2be91d512ac310cb306adfe0e9bfe556ec2bca8`
 
-The executable was inspected as source, including its CSS and interaction handlers. Its historical links and approval evidence were not opened. The three target files were authored before inspecting review-surface infrastructure or existing verification. This is an otherwise fresh implementation context, not a claim that a second agent was run. General project background was present in the conversation, but no historical DatePicker behavior or results informed the implementation.
+The executable was inspected as source, including its CSS and interaction handlers. Its historical links and approval evidence were not opened. The initial three target files were authored before inspecting review-surface infrastructure or existing verification. This is an otherwise fresh implementation context, not a claim that a second agent was run. General project background was present in the conversation, but no historical DatePicker behavior or results informed the implementation.
 
 ## Clear guidance
 
@@ -35,6 +35,8 @@ The curation says to preserve coherent Escape/Tab/focus behavior without identif
 The curation permits product-specific cutoff rules but does not specify how errors on the opposite boundary should recover after a dependent value changes. This candidate revalidates both boundaries. That is a local recovery policy, not a proposed global convention.
 
 No material gap prevented implementation. That observation does not establish handoff quality, design approval or general sufficiency of curation. In particular, visual recognition without a side-by-side original, actual phone software-keyboard behavior and usability require human operation of the candidate.
+
+Focused verification later extracted date-only arithmetic and input assessment into `invoice-dates.js` for executable boundary/recovery tests; it did not introduce another design source.
 
 ## Review boundary
 

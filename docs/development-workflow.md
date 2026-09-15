@@ -18,9 +18,9 @@ On Windows, use `py -3` instead of `python3` if appropriate. Open `http://127.0.
 python3 tools/build-review.py
 ```
 
-The command prints a fresh directory below ignored `tmp/review/`. Each build gets a new directory; it never overwrites earlier previews or research evidence. It copies only the explicitly selected, self-contained HTML examples, adds the review index, and records source paths, content hashes, base commit, and whether the working tree was dirty in `review-build.json`.
+The command prints a fresh directory below ignored `tmp/review/`. Each build gets a new directory; it never overwrites earlier previews or research evidence. It copies only the explicitly selected HTML examples and listed sibling CSS/JS assets, adds the review index, and records source paths, content hashes, base commit, and whether the working tree was dirty in `review-build.json`.
 
-`review/examples.json` is a small development entry list, not a Reference profile, discovery result, or approval registry. The active examples are responsive working copies in `review/references/`, derived from existing research samples. Historical sources remain untouched. The builder copies the selected files without rewriting them or wrapping them in an iframe. In particular, the date range sample preserves its historical fixed date fixture.
+`review/examples.json` is a small development entry list, not a Reference profile, discovery result, or approval registry. Reference review examples live in `review/references/`. Independent implementation candidates are listed separately and can include explicitly named sibling CSS/JS assets; their content hashes are included in the snapshot identity. PoC 018 adds the invoice issued-date candidate without promoting it into curation. Historical sources remain untouched. The builder copies the selected files without rewriting them or wrapping them in an iframe. In particular, the date range sample preserves its historical fixed date fixture.
 
 ## Phone review
 

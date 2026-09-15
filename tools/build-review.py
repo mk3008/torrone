@@ -1,4 +1,4 @@
-"""Package selected research References for review; never modify their sources."""
+"""Package selected References and implementation candidates for review; never modify their sources."""
 import argparse
 import hashlib
 import html
@@ -31,30 +31,49 @@ def build():
             if not path.is_relative_to(ROOT) or not path.is_file():
                 raise ValueError(f'Invalid {field}: {entry[field]}')
         data = (ROOT / entry['source']).read_bytes()
-        prepared.append((entry, data))
+        assets = []
+        for name in entry.get('assets', []):
+            # Explicit sibling assets only; no dependency discovery or repository upload.
+            if Path(name).name != name or not re.fullmatch(r'[a-zA-Z0-9_-]+\.(css|js)', name):
+                raise ValueError(f'Invalid asset name: {name}')
+            path = (ROOT / entry['source']).parent / name
+            if not path.resolve().is_relative_to(ROOT) or not path.is_file():
+                raise ValueError(f'Invalid asset: {name}')
+            assets.append((name, path.read_bytes()))
+        prepared.append((entry, data, assets))
 
     parent = ROOT / 'tmp/review'
     parent.mkdir(parents=True, exist_ok=True)
     output = Path(tempfile.mkdtemp(prefix=revision[:12] + '-', dir=parent))
-    cards, records = [], []
-    for entry, data in prepared:
-        filename = entry['id'] + '.html'
+    cards, candidate_cards, records = [], [], []
+    for entry, data, assets in prepared:
+        filename = entry['id'] + '/index.html' if assets else entry['id'] + '.html'
+        (output / filename).parent.mkdir(parents=True, exist_ok=True)
         (output / filename).write_bytes(data)
+        asset_records = []
+        for name, asset_data in assets:
+            asset_file = entry['id'] + '/' + name
+            (output / asset_file).write_bytes(asset_data)
+            asset_records.append({'file': asset_file, 'sha256': hashlib.sha256(asset_data).hexdigest()})
         digest = hashlib.sha256(data).hexdigest()
-        records.append({**entry, 'file': filename, 'sha256': digest})
+        records.append({**entry, 'file': filename, 'sha256': digest, 'asset_hashes': asset_records})
         esc = html.escape
         evidence = f"https://github.com/mk3008/torrone/blob/{revision}/{entry['evidence']}"
-        cards.append(f'''<article id="{entry['id']}">
+        group = candidate_cards if entry.get('implementation_candidate') else cards
+        group.append(f'''<article id="{entry['id']}">
 <h2>{esc(entry['title'])}</h2><p>{esc(entry['guidance'])}</p>
 <p class="note">{esc(entry['status'])}</p>
-<p><a class="open" href="{filename}">Open example</a> <a href="{evidence}">Research record at base commit</a></p>
+<p><a class="open" href="{filename}">Open example</a> <a href="{evidence}">Review notes at base commit</a></p>
 <details><summary>Review identity</summary><p>Example: {entry['id']}</p>
 <p>Source: <code>{esc(entry['source'])}</code></p><p>SHA-256: <code>{digest}</code></p></details>
 </article>''')
     manifest = {'revision': revision, 'dirty': dirty, 'examples': records}
     (output / 'review-build.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     template = (ROOT / 'review/index.template.html').read_text(encoding='utf-8')
-    page = template.replace('{{cards}}', '\n'.join(cards)).replace('{{revision}}', revision)
+    sections = '<section aria-labelledby="references-heading"><h2 id="references-heading">References and working drafts</h2>' + '\n'.join(cards) + '</section>'
+    if candidate_cards:
+        sections += '<section aria-labelledby="candidates-heading"><h2 id="candidates-heading">Implementation candidates</h2><p>Independent consuming-product examples. These are not curated References and have no design approval.</p>' + '\n'.join(candidate_cards) + '</section>'
+    page = template.replace('{{cards}}', sections).replace('{{revision}}', revision)
     page = page.replace('{{state}}', 'Uncommitted working-tree snapshot' if dirty else 'Committed snapshot')
     (output / 'index.html').write_text(page, encoding='utf-8')
     return output

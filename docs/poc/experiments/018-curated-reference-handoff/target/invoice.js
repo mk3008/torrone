@@ -14,38 +14,13 @@
   let page = reviewDay.slice(0, 7) + '-01';
   let cursor = reviewDay;
   let restoring = false;
-  const date = iso => new Date(iso + 'T00:00:00Z');
-  const iso = value => value.toISOString().slice(0, 10);
-  const dayShift = (value, count) => { const d = date(value); d.setUTCDate(d.getUTCDate() + count); return iso(d); };
-  function monthShift(value, count) {
-    const d = date(value), day = d.getUTCDate();
-    d.setUTCDate(1);
-    d.setUTCMonth(d.getUTCMonth() + count);
-    if (d.getUTCFullYear() < 1 || d.getUTCFullYear() > 9999) return value;
-    const last = new Date(d); last.setUTCMonth(last.getUTCMonth() + 1); last.setUTCDate(0);
-    d.setUTCDate(Math.min(day, last.getUTCDate()));
-    return iso(d);
-  }
-  function parse(raw) {
-    const parts = /^(\d{4})-?(\d{2})-?(\d{2})$/.exec(raw.trim());
-    if (!parts || !/^(\d{8}|\d{4}-\d{2}-\d{2})$/.test(raw.trim())) return null;
-    const value = parts.slice(1).join('-');
-    const d = date(value);
-    return parts[1] !== '0000' && Number.isFinite(d.valueOf()) && iso(d) === value ? value : null;
-  }
+  const { date, dayShift, monthShift, assess } = window.invoiceDates;
   function validate() {
-    const errors = limits.map(limit => {
-      const raw = limit.input.value.trim();
-      limit.value = raw ? parse(raw) : null;
-      if (raw && !limit.value) return 'Enter a real date using YYYY-MM-DD or YYYYMMDD.';
-      if (limit.value > reviewDay) { limit.value = null; return 'Issue date cannot be later than 2026-09-16.'; }
-      if (limit.value) limit.input.value = limit.value;
-      return '';
+    const { values, errors } = assess(limits.map(limit => limit.input.value), reviewDay);
+    limits.forEach((limit, i) => {
+      limit.value = values[i];
+      if (values[i]) limit.input.value = values[i];
     });
-    if (limits[0].value && limits[1].value && limits[0].value > limits[1].value) {
-      errors[1] = 'Latest issue date must be on or after earliest issue date.';
-      limits[1].value = null;
-    }
     limits.forEach((limit, i) => {
       limit.input.setAttribute('aria-invalid', String(Boolean(errors[i])));
       limit.problem.textContent = errors[i];
@@ -172,6 +147,9 @@
     if (unavailable(next)) return;
     cursor = next; page = next.slice(0, 7) + '-01'; paint();
     options.querySelector('[tabindex="0"]').focus();
+  });
+  windowControl.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !browser.hidden) { event.preventDefault(); dismiss(true); }
   });
   windowControl.addEventListener('focusout', () => {
     queueMicrotask(() => {
