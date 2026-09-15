@@ -1,20 +1,11 @@
 # Repository Guidance
 
-- Keep this repository docs-first. Do not add an editor, runtime, validator, or package ecosystem without an explicit product decision.
-- Write repository artifacts in English.
-- Treat manifests as locally owned, evolving guidance. Running implementation and applicable requirements remain authoritative.
-- Prefer small, observable experiments over fidelity claims or broad catalogs.
-- Keep examples illustrative and restrained; product teams should refine them from their own evidence.
-
-## Manifest change workflow
-
-- Use the `manifest-review` skill before and after changing a file under `templates/business-app/design-manifest/`.
-- Keep universal design guidance in the manifest, individual screen requirements in the consuming prompt, product facts in bindings, and runtime or CSS mechanics in implementation.
-- When a manifest or fixed prompt changes, regenerate every run in a variability comparison from those same inputs. Do not repair an individual generated run as evidence of manifest quality.
-
-## Manifest quality workflow
-
-- Use `manifest-quality-workflow` for a governed Manifest authoring, frozen three-run generation, artifact-review, and human-review loop; use `codex-app-orchestration` as its control plane.
-- Use `manifest-artifact-review` only after frozen outputs exist. It checks applicable Manifest guidance, resolved OKF-compatible YAML values and visible effects, and focused evidence without editing outputs.
-- Route generic guidance gaps to Manifest authoring and `manifest-review`; route product facts to the fixed prompt or product binding; route fixture identity to the fixture contract; keep runtime mechanics in implementation.
-- A human review follows mechanical generation, capture, static verification, and artifact review. Passing evidence never promotes a generated Run automatically.
+- Read `docs/product-foundation.md` before changing product direction, Reference semantics, or repository architecture.
+- Write maintained repository artifacts in English.
+- Torrone's current product direction is small, framework-independent, browser-reviewable Reference HTML plus concise guidance. Keep References plain, lightweight, locally understandable, and free of production-application infrastructure unless a bounded experiment explicitly requires otherwise.
+- Treat `docs/poc/`, `profile/`, `prompts/`, `templates/`, and historical test/output material as research history or evidence. They may inform current work but do not override the Product Foundation. Do not rewrite historical evidence to make a current result appear cleaner.
+- Human review decides design quality. Browser observation and automated comparison may verify bounded observable transfer; they are not design-approval authorities.
+- Prefer the smallest reversible change or experiment that can answer the current question. Promote a bounded finding into a repository-wide product rule only through an explicit decision.
+- Match verification effort to change risk and impact. Use focused checks for documentation or mechanical cleanup, and broader verification when behavior, Reference semantics, comparison logic, or evidence handling changes. Do not weaken checks merely to obtain a passing result.
+- When requirements conflict or a material product decision is missing, preserve the gap and report it instead of inventing a new product-wide convention.
+- Do not restore Manifest/OKF-era workflows, skills, schemas, or orchestration as active repository requirements unless a new product decision explicitly calls for them.
