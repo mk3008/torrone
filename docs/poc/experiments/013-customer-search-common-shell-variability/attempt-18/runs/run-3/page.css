@@ -1,0 +1,38 @@
+.customer-search-page { margin: 0 auto; max-width: 1440px; min-width: 0; padding: 28px 32px 40px; width: 100%; }
+.customer-page-header { margin-bottom: 28px; }
+.customer-page-header h1, .customer-conditions h2, .customer-results h2 { margin: 0; }
+.customer-page-header h1 { font-size: 1.75rem; line-height: 1.25; }
+.customer-page-header p { color: var(--text-muted); margin: 8px 0 0; }
+.customer-conditions { max-width: 760px; min-width: 0; width: 100%; }
+.customer-conditions h2, .customer-results h2 { font-size: 1rem; }
+.customer-fields { display: grid; gap: 7px 16px; grid-template-columns: 120px minmax(0, 1fr); margin-top: 14px; width: 100%; }
+.customer-fields label { align-self: center; color: var(--text-primary); font-size: .9rem; font-weight: 600; }
+.customer-fields input { background: var(--surface-background); border: 1px solid var(--border-interactive); border-radius: 2px; color: var(--text-primary); font: inherit; height: 38px; min-width: 0; padding: 7px 9px; width: 100%; }
+.customer-condition-actions { display: flex; justify-content: flex-end; margin-top: 18px; width: 100%; }
+.customer-condition-actions div { display: flex; gap: 8px; }
+.customer-button-primary, .customer-button-secondary, .customer-pagination button { border: 1px solid var(--border-interactive); border-radius: 2px; cursor: pointer; font: inherit; min-height: 36px; padding: 7px 14px; }
+.customer-button-primary { background: var(--action-background); border-color: var(--action-background); color: var(--action-foreground); }
+.customer-button-secondary, .customer-pagination button { background: var(--surface-background); color: var(--text-primary); }
+.customer-button-primary:focus-visible, .customer-button-secondary:focus-visible, .customer-id-link:focus-visible, .customer-pagination button:focus-visible, .customer-fields input:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+.customer-results { margin-top: 40px; min-width: 0; width: 100%; }
+.customer-results-toolbar { align-items: center; display: flex; justify-content: space-between; margin-bottom: 12px; width: 100%; }
+.customer-results h2 span { color: var(--text-muted); font-size: .9rem; font-weight: 400; margin-left: 6px; }
+.customer-table-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; width: 100%; }
+.customer-table { border-collapse: collapse; min-width: 1080px; width: 100%; }
+.customer-table th { background-color: var(--table-header-background); color: var(--table-header-foreground); font-size: .85rem; font-weight: 700; padding: 11px 12px; text-align: left; white-space: nowrap; }
+.customer-table tbody td { background-color: var(--surface-background); border-bottom: 1px solid var(--border-subtle); color: var(--text-primary); font-size: .9rem; padding: 12px; vertical-align: top; }
+.customer-table th:first-child, .customer-table td:first-child { left: 0; position: sticky; }
+.customer-table th:first-child { background: var(--table-header-background); border-right: 1px solid var(--border-subtle); z-index: 2; }
+.customer-table td:first-child { background: var(--surface-background); border-right: 1px solid var(--border-subtle); z-index: 1; }
+.customer-id-link { background: transparent; border: 0; color: var(--link); cursor: pointer; font: inherit; padding: 0; text-decoration: underline; text-underline-offset: 2px; }
+.customer-pagination { display: flex; justify-content: flex-end; margin-top: 14px; width: 100%; }
+.customer-pagination div { align-items: center; display: flex; gap: 8px; }
+.customer-pagination span { color: var(--text-primary); min-width: 32px; text-align: center; }
+.customer-pagination button:disabled { color: var(--text-muted); cursor: not-allowed; }
+.customer-message { color: var(--text-muted); margin: 18px 0 0; min-height: 1.25em; }
+@media (max-width: 720px) {
+  .customer-search-page { padding: 20px 16px 32px; }
+  .customer-fields { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .customer-fields label { margin-top: 6px; }
+  .customer-results-toolbar { align-items: flex-start; gap: 12px; }
+}

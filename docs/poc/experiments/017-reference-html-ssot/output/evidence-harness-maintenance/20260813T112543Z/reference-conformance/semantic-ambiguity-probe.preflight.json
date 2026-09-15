@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "semantic-ambiguity-probe.html",
+    "digest": "24176be1c83a19ada5a5c1dea004cd842c272d6981261dc87ddaa7604c6c9761",
+    "files": [
+      {
+        "path": "semantic-ambiguity-probe.html",
+        "bytes": 1292,
+        "sha256": "14819fe592df9046a31fc44f8651578eb70343aee1ed044c7106da2b4bf4e511"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 6,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 1
+  },
+  "errors": [
+    {
+      "source": "identity",
+      "code": "ambiguous-semantic-identity",
+      "state": "initial",
+      "target": "semantic:aria-live:polite",
+      "detail": "2 elements resolve to this semantic identity."
+    },
+    {
+      "source": "identity",
+      "code": "ambiguous-semantic-identity",
+      "state": "initial",
+      "target": "semantic:role:button:aria-expanded",
+      "detail": "2 elements resolve to this semantic identity."
+    },
+    {
+      "source": "identity",
+      "code": "ambiguous-semantic-identity",
+      "state": "initial",
+      "target": "semantic:role:button:aria-pressed",
+      "detail": "2 elements resolve to this semantic identity."
+    },
+    {
+      "source": "identity",
+      "code": "ambiguous-semantic-identity",
+      "state": "initial",
+      "target": "semantic:role:menuitem",
+      "detail": "2 elements resolve to this semantic identity."
+    },
+    {
+      "source": "identity",
+      "code": "ambiguous-semantic-identity",
+      "state": "initial",
+      "target": "semantic:role:navigation",
+      "detail": "2 elements resolve to this semantic identity."
+    },
+    {
+      "source": "identity",
+      "code": "ambiguous-semantic-identity",
+      "state": "initial",
+      "target": "semantic:role:table",
+      "detail": "2 elements resolve to this semantic identity."
+    }
+  ]
+}

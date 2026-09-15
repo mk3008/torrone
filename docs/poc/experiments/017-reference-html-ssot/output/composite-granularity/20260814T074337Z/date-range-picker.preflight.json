@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "date-range-picker.html",
+    "digest": "ce2603f8996f4a3a57f767990fe654329baa8b13c15e2d788b4cf45d1882bacd",
+    "files": [
+      {
+        "path": "date-range-picker.html",
+        "bytes": 7751,
+        "sha256": "82e6769e5a75ed8e86205164bc857030fb7484d57950de1558b039095a0efa64"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 13
+  },
+  "errors": []
+}

@@ -1,0 +1,36 @@
+{
+  "responsibility": "human-calibration-single-date-adjustment-evidence",
+  "status": "adjusted-candidate-awaiting-human-confirmation",
+  "runId": "20260814T025953Z",
+  "adjusted": {
+    "path": "review/date-picker-human-calibration/adjusted/single-date.html",
+    "sha256": "254E3BA5B2ECD1E2A1677DD5C4FC8FA95224FCB605A74387300E47BFA40102B7"
+  },
+  "preserved": {
+    "baselineSingleSha256": "7FB5D151B48FEDC64CF6839EFC5B87C2D4BE0D77B3264F2FE2958CAA65F41E10",
+    "baselineRangeSha256": "DA068C8BB35EC3B0AF8108DF4EB72A17201886BF56B6CDFCB4B0EA58A18A9C94",
+    "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+    "coreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8"
+  },
+  "checks": {
+    "conformanceStates": 35,
+    "scenarios": 15,
+    "consoleErrors": 0,
+    "externalRequests": 0,
+    "failedRequests": 0,
+    "boundedAccessibilityIssues": 0,
+    "duplicateKeys": 0,
+    "semanticAmbiguities": 0,
+    "integratedTriggerGeometryStable": true,
+    "pageTabStopsInComposite": 1,
+    "monthAndYearNavigation": true,
+    "futureDatesUnavailable": true,
+    "compactFieldWidth": 336,
+    "compactPopupWidth": 336,
+    "compactPopupHeightBelow": 340,
+    "inlineActionDivider": true,
+    "weekendColumnColor": true
+  },
+  "observationGap": "The current Core does not capture editable input value or the unkeyed current-day cell directly; normalized value and today treatment rely on live/source state plus rendered evidence.",
+  "next": "Human confirmation before Core change, Target transfer, observation classification, or final Gate judgment."
+}

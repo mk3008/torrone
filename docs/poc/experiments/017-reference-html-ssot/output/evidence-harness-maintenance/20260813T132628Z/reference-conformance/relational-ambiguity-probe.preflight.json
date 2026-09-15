@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "relational-ambiguity-probe.html",
+    "digest": "f0c41f3d7cc55caa99186bba62abeb24d9d391439a99e5c4fdb74ff2dcbd55e0",
+    "files": [
+      {
+        "path": "relational-ambiguity-probe.html",
+        "bytes": 585,
+        "sha256": "4410775bec58b6649a501a0fd216efb841b503e5748e7014350f0e16c2275225"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 1,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 1
+  },
+  "errors": [
+    {
+      "source": "identity",
+      "code": "ambiguous-semantic-identity",
+      "state": "initial",
+      "target": "semantic:controlled-by:filter-toggle",
+      "detail": "2 elements resolve to this semantic identity."
+    }
+  ]
+}

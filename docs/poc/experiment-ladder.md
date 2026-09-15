@@ -4,6 +4,11 @@
 
 The ladder tests small, observable claims in order. It dogfoods two things: whether extraction methods expose useful business-application observation points, and whether source-independent Markdown communicates the retained roles and relationships through reconstruction and semantic re-extraction. Passing one gate permits the next experiment; it does not prove overall utility, fidelity, or canonical status. Keep raw artifacts so an independent evaluator can distinguish observation, inference, authored defaults, contextual patterns, and target-product decisions.
 
+Reference HTML experiments also follow the
+[Reference HTML observation boundary](reference-html-observation-boundary.md).
+That note is cross-PoC experimental guidance, not a Manifest or Profile
+authority.
+
 ## Gate 1 — Structure discovery
 
 **Question:** Can a fresh reader locate relevant manifest concepts without loading the whole bundle?

@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Common shell and navigation reference</title>
+  <link rel="stylesheet" href="shared-visual-primitives.css">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      --surface-muted: #edf3f9;
+      --surface-selected: #dceafb;
+      --text: #101d2f;
+      --muted: #54657a;
+      --border: #c6d2df;
+      --header: #173f67;
+      --header-border: #0d3153;
+      --header-control: #6f93b8;
+      --accent: #1d73b7;
+    }
+
+    body[data-theme="dark"] {
+      color-scheme: dark;
+      --canvas: #101923;
+      --surface: #172431;
+      --surface-muted: #203243;
+      --surface-selected: #254b6d;
+      --text: #f3f7fb;
+      --muted: #b6c2cf;
+      --border: #3e5368;
+      --header: #0e2b47;
+      --header-border: #395a79;
+      --header-control: #7896b3;
+      --accent: #68aee7;
+      --focus: #9acbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; }
+    body { min-width: 960px; overflow: hidden; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+
+    .app-bar {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      min-height: 64px;
+      padding: 0 24px;
+      align-items: center;
+      justify-content: space-between;
+      color: #ffffff;
+      background: var(--header);
+      border-bottom: 1px solid var(--header-border);
+    }
+
+    .brand-group, .bar-actions { display: flex; align-items: center; gap: 12px; }
+    .brand-name { font-size: 19px; font-weight: 700; }
+    .icon-button {
+      display: inline-grid;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      place-items: center;
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid var(--header-control);
+      border-radius: 7px;
+    }
+
+    .icon-button svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .account { position: relative; }
+    .account-menu {
+      position: absolute;
+      z-index: 4;
+      top: 50px;
+      right: 0;
+      width: 220px;
+      padding: 12px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(8, 26, 44, 0.2);
+    }
+
+    .account-menu p { margin: 0; }
+    .account-name { font-weight: 700; }
+    .account-role { margin: 2px 0 12px !important; color: var(--muted); font-size: 14px; }
+    .menu-action {
+      width: 100%;
+      min-height: 38px;
+      padding: 0 12px;
+      color: var(--text);
+      text-align: left;
+      background: var(--surface);
+      border: 1px solid #91a5b9;
+      border-radius: 6px;
+    }
+
+    .application-frame { display: grid; grid-template-columns: 280px minmax(0, 1fr); height: calc(100vh - 64px); }
+    .application-frame[data-navigation-open="false"] { grid-template-columns: 0 minmax(0, 1fr); }
+    .primary-nav {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+    }
+
+    .navigation-search { display: grid; gap: 6px; padding: 18px 18px 12px; color: var(--muted); font-size: 14px; font-weight: 650; }
+    .navigation-search input { min-height: 42px; padding: 0 12px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
+    .navigation-scroll { min-height: 0; overflow-y: auto; padding: 8px 12px 24px; }
+    .navigation-list, .navigation-children { margin: 0; padding: 0; list-style: none; }
+    .navigation-list { display: grid; gap: 4px; }
+    .navigation-children { display: grid; gap: 2px; }
+    .navigation-parent, .navigation-link {
+      display: flex;
+      width: 100%;
+      min-height: 44px;
+      padding: 0 12px;
+      align-items: center;
+      color: var(--text);
+      text-align: left;
+      text-decoration: none;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .navigation-parent { justify-content: space-between; }
+    .navigation-parent svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 2; transition: transform 120ms ease; }
+    .navigation-parent[aria-expanded="true"] svg { transform: rotate(90deg); }
+    .navigation-children .navigation-link { padding-left: 34px; }
+    .navigation-link[aria-current="page"] { color: #0e4f84; font-weight: 700; background: var(--surface-selected); box-shadow: inset 4px 0 0 var(--accent); }
+    body[data-theme="dark"] .navigation-link[aria-current="page"] { color: #e5f3ff; }
+    .navigation-link:hover, .navigation-parent:hover { background: var(--surface-muted); }
+    .navigation-empty { margin: 12px; padding: 14px; color: var(--muted); background: var(--surface-muted); border-radius: 6px; }
+
+    .content-placeholder {
+      display: grid;
+      min-width: 0;
+      padding: 28px;
+      align-content: start;
+      color: var(--muted);
+      background: var(--canvas);
+    }
+
+    .placeholder-card { padding: 22px; border: 1px dashed #9cafc1; border-radius: 8px; }
+    .placeholder-label { margin: 0 0 6px; color: var(--text); font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .placeholder-card p:last-child { margin: 0; }
+  </style>
+</head>
+<body data-theme="light">
+  <header class="app-bar">
+    <div class="brand-group">
+      <button class="icon-button" type="button" data-ref="navigation-toggle" aria-controls="reference-primary-navigation" aria-expanded="true" aria-label="Hide navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M9 4v16M15 9l-3 3 3 3" /></svg>
+      </button>
+      <span class="brand-name">Operations Desk</span>
+    </div>
+    <div class="bar-actions">
+      <button class="icon-button" type="button" data-ref="theme-toggle" aria-pressed="false" aria-label="Use dark theme">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.3A8.5 8.5 0 0 1 8.7 4a8.5 8.5 0 1 0 11.3 11.3Z" /></svg>
+      </button>
+      <div class="account">
+        <button class="icon-button" type="button" data-ref="user-menu-toggle" aria-controls="reference-account-menu" aria-expanded="false" aria-haspopup="menu" aria-label="Open user menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+        </button>
+        <div class="account-menu" id="reference-account-menu" role="menu" hidden>
+          <p class="account-name">Jordan Bell</p>
+          <p class="account-role">Operations coordinator</p>
+          <button class="menu-action" type="button" role="menuitem" data-ref="sign-out-action">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="application-frame" data-navigation-open="true">
+    <nav class="primary-nav" id="reference-primary-navigation" aria-label="Primary navigation">
+      <label class="navigation-search" for="reference-navigation-filter">Filter navigation
+        <input id="reference-navigation-filter" type="search" data-ref="navigation-filter" autocomplete="off" placeholder="Find a menu item">
+      </label>
+      <div class="navigation-scroll">
+        <ul class="navigation-list">
+          <li data-navigation-item><a class="navigation-link" href="#overview">Overview</a></li>
+          <li data-navigation-item>
+            <button class="navigation-parent" type="button" data-ref="navigation-parent" aria-expanded="true" aria-controls="reference-navigation-children">
+              <span>Work management</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+            <ul class="navigation-children" id="reference-navigation-children">
+              <li data-navigation-item><a class="navigation-link" href="#queue" data-ref="navigation-current" aria-current="page">Review queue</a></li>
+              <li data-navigation-item><a class="navigation-link" href="#assignments" data-ref="navigation-secondary">Assignments</a></li>
+            </ul>
+          </li>
+          <li data-navigation-item><a class="navigation-link" href="#calendar">Calendar</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#teams">Teams</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#vendors">Vendors</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#locations">Locations</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#policies">Policies</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#audit">Audit history</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#reports">Reports</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#exports">Exports</a></li>
+          <li data-navigation-item><a class="navigation-link" href="#settings">Settings</a></li>
+        </ul>
+        <p class="navigation-empty" data-ref="navigation-empty" hidden>No navigation items found.</p>
+      </div>
+    </nav>
+
+    <main class="content-placeholder" data-reference-harness="content-placeholder">
+      <div class="placeholder-card">
+        <p class="placeholder-label">Reference harness</p>
+        <p>Page content is intentionally excluded so the shell and navigation can be reviewed independently.</p>
+      </div>
+    </main>
+  </div>
+
+  <script type="application/json" data-reference-scenarios>
+    {
+      "version": 1,
+      "scenarios": [
+        {
+          "name": "navigation visibility",
+          "steps": [
+            { "action": "click", "target": "navigation-toggle" },
+            { "action": "click", "target": "navigation-toggle" }
+          ]
+        },
+        {
+          "name": "navigation parent",
+          "steps": [
+            { "action": "click", "target": "navigation-parent" },
+            { "action": "click", "target": "navigation-parent" }
+          ]
+        },
+        {
+          "name": "navigation filter no match",
+          "steps": [
+            { "action": "fill", "target": "navigation-filter", "value": "not present" },
+            { "action": "fill", "target": "navigation-filter", "value": "" }
+          ]
+        },
+        {
+          "name": "navigation selection",
+          "steps": [
+            { "action": "click", "target": "navigation-secondary" },
+            { "action": "click", "target": "navigation-current" }
+          ]
+        },
+        {
+          "name": "theme round trip",
+          "steps": [
+            { "action": "click", "target": "theme-toggle" },
+            { "action": "click", "target": "theme-toggle" }
+          ]
+        },
+        {
+          "name": "user menu escape",
+          "steps": [
+            { "action": "click", "target": "user-menu-toggle" },
+            { "action": "press", "target": "user-menu-toggle", "key": "Escape" }
+          ]
+        }
+      ]
+    }
+  </script>
+
+  <script>
+    (() => {
+      const body = document.body;
+      const frame = document.querySelector('.application-frame');
+      const navigation = document.getElementById('reference-primary-navigation');
+      const navigationToggle = document.querySelector('[data-ref="navigation-toggle"]');
+      const navigationParent = document.querySelector('[data-ref="navigation-parent"]');
+      const navigationChildren = document.getElementById('reference-navigation-children');
+      const navigationFilter = document.querySelector('[data-ref="navigation-filter"]');
+      const navigationItems = [...document.querySelectorAll('[data-navigation-item]')];
+      const navigationEmpty = document.querySelector('[data-ref="navigation-empty"]');
+      const navigationLinks = [...document.querySelectorAll('.navigation-link')];
+      const themeToggle = document.querySelector('[data-ref="theme-toggle"]');
+      const userMenuToggle = document.querySelector('[data-ref="user-menu-toggle"]');
+      const accountMenu = document.getElementById('reference-account-menu');
+      const signOut = document.querySelector('[data-ref="sign-out-action"]');
+
+      function setNavigation(open) {
+        navigationToggle.setAttribute('aria-expanded', String(open));
+        navigationToggle.setAttribute('aria-label', open ? 'Hide navigation' : 'Show navigation');
+        frame.dataset.navigationOpen = String(open);
+        navigation.hidden = !open;
+      }
+
+      function setParent(open) {
+        navigationParent.setAttribute('aria-expanded', String(open));
+        navigationChildren.hidden = !open;
+      }
+
+      function filterNavigation() {
+        const query = navigationFilter.value.trim().toLowerCase();
+        let visibleLeaves = 0;
+        for (const item of navigationItems) {
+          const ownLink = item.querySelector(':scope > .navigation-link');
+          if (!ownLink) continue;
+          const visible = !query || ownLink.textContent.toLowerCase().includes(query);
+          item.hidden = !visible;
+          if (visible) visibleLeaves += 1;
+        }
+        const childVisible = [...navigationChildren.children].some((item) => !item.hidden);
+        navigationParent.closest('li').hidden = Boolean(query) && !childVisible;
+        if (query && childVisible) setParent(true);
+        navigationEmpty.hidden = visibleLeaves > 0;
+      }
+
+      function setMenu(open, restoreFocus = false) {
+        userMenuToggle.setAttribute('aria-expanded', String(open));
+        userMenuToggle.setAttribute('aria-label', open ? 'Close user menu' : 'Open user menu');
+        accountMenu.hidden = !open;
+        if (open) signOut.focus();
+        else if (restoreFocus) userMenuToggle.focus();
+      }
+
+      navigationToggle.addEventListener('click', () => setNavigation(navigationToggle.getAttribute('aria-expanded') !== 'true'));
+      navigationParent.addEventListener('click', () => setParent(navigationParent.getAttribute('aria-expanded') !== 'true'));
+      navigationFilter.addEventListener('input', filterNavigation);
+      navigationLinks.forEach((link) => link.addEventListener('click', () => {
+        navigationLinks.forEach((item) => item.removeAttribute('aria-current'));
+        link.setAttribute('aria-current', 'page');
+      }));
+      themeToggle.addEventListener('click', () => {
+        const dark = themeToggle.getAttribute('aria-pressed') !== 'true';
+        themeToggle.setAttribute('aria-pressed', String(dark));
+        themeToggle.setAttribute('aria-label', dark ? 'Use light theme' : 'Use dark theme');
+        body.dataset.theme = dark ? 'dark' : 'light';
+      });
+      userMenuToggle.addEventListener('click', () => setMenu(userMenuToggle.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && userMenuToggle.getAttribute('aria-expanded') === 'true') {
+          event.preventDefault();
+          setMenu(false, true);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+

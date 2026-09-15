@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "entry": "whole-page-missing-h1.html",
+    "digest": "b53950a154f7d5a0bc11f6eeb7879d6dcb5e627e52e8bade6586869b00fa08b0",
+    "files": [
+      {
+        "path": "whole-page-missing-h1.html",
+        "bytes": 364,
+        "sha256": "85b405b5fd0f6da95c091e8908242abe37a9294a13b332975e6b06767c54042c"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Edg/151.0.4129.78",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": []
+  },
+  "initial": {
+    "mode": "heuristic-semantic",
+    "contract": {
+      "version": 1,
+      "scenarios": [],
+      "parseError": null
+    },
+    "document": {
+      "title": "Whole-page missing h1 probe",
+      "lang": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "activeRef": null,
+      "headings": [],
+      "landmarks": {
+        "banner": 1,
+        "navigation": 0,
+        "main": 1,
+        "form": 0,
+        "table": 0,
+        "dialog": 0
+      }
+    },
+    "observationBoundary": {
+      "excludedHarnessRoots": 0,
+      "axExcludedHarnessRoots": 0,
+      "axExcludedNodeCount": 0
+    },
+    "duplicateKeys": [],
+    "semanticAmbiguities": [],
+    "semanticInventory": {
+      "banner": 1,
+      "main": 1
+    },
+    "elements": {
+      "semantic:role:banner": {
+        "key": "semantic:role:banner",
+        "tag": "header",
+        "role": "banner",
+        "name": "Probe application",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "\"Noto Sans JP\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(0, 0, 0)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(0, 0, 0)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 8,
+          "y": 8,
+          "width": 1424,
+          "height": 24
+        }
+      },
+      "semantic:role:main": {
+        "key": "semantic:role:main",
+        "tag": "main",
+        "role": "main",
+        "name": "This full-page probe intentionally has no h1.",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "\"Noto Sans JP\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(0, 0, 0)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(0, 0, 0)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 8,
+          "y": 48,
+          "width": 1424,
+          "height": 24
+        }
+      }
+    },
+    "accessibilityIssues": [
+      {
+        "code": "unexpected-h1-count",
+        "target": "document",
+        "detail": "Expected one h1 but found 0."
+      }
+    ],
+    "accessibilityTree": {
+      "nodeCount": 8,
+      "roles": {
+        "banner": 1,
+        "InlineTextBox": 2,
+        "main": 1,
+        "paragraph": 1,
+        "RootWebArea": 1,
+        "StaticText": 2
+      },
+      "unnamedInteractive": {}
+    }
+  },
+  "scenarios": []
+}

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Maintenance log date reference</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      --canvas: #f3f6fa;
+      --surface: #ffffff;
+      --text: #101d2f;
+      --muted: #54657a;
+      --border: #94a8bd;
+      --accent: #1d73b7;
+      --focus: #86b9ee;
+      --invalid: #b42318;
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 720px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :is(button, input):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .fixture-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .date-sample { width: min(540px, calc(100% - 48px)); margin: 48px auto; padding: 24px; background: var(--surface); border: 1px solid #c6d2df; border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .date-sample h1 { margin: 0 0 6px; font-size: 22px; }
+    .support { margin: 0 0 20px; color: var(--muted); }
+    .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .picker-field { position: relative; width: calc(12ch + 76px); }
+    .picker-input { width: 100%; min-height: 42px; padding: 8px 74px 8px 11px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+    .picker-input[aria-invalid="true"] { border-color: var(--invalid); box-shadow: 0 0 0 1px var(--invalid); }
+    .field-actions { position: absolute; inset: 1px 1px 1px auto; display: flex; align-items: center; background: var(--surface); border-radius: 0 5px 5px 0; }
+    .field-actions::after { position: absolute; left: 36px; width: 1px; height: 22px; content: ""; background: #c6d2df; }
+    .icon-action { width: 36px; height: 36px; padding: 0; color: #183653; background: transparent; border: 0; border-radius: 4px; font-size: 18px; line-height: 1; }
+    .calendar-panel { position: absolute; z-index: 2; width: 316px; margin-top: 8px; padding: 12px; color: var(--text); background: var(--surface); border: 1px solid #98aabc; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
+    .month-title { margin: 0 0 8px; font-size: 16px; }
+    .weekday-row, .month-grid { display: grid; grid-template-columns: repeat(7, 36px); gap: 6px; }
+    .weekday-row { margin-bottom: 4px; color: #4b5e72; font-size: 12px; font-weight: 700; text-align: center; }
+    .weekday-row :first-child, .sunday { color: #a63b32; }
+    .weekday-row :last-child, .saturday { color: #245e9a; }
+    .calendar-day { width: 36px; height: 34px; padding: 0; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; }
+    .calendar-day:hover:not(:disabled):not([aria-pressed="true"]) { background: #edf3f9; }
+    .calendar-day[aria-current="date"] { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .calendar-day[aria-pressed="true"] { color: #ffffff; background: var(--accent); border-color: #155b92; font-weight: 700; }
+    .calendar-day:disabled { color: #4e5966; background: repeating-linear-gradient(135deg, #f5f7f9, #f5f7f9 4px, #e7ebef 4px, #e7ebef 6px); border-color: #d7dde3; opacity: .72; cursor: not-allowed; }
+    .calendar-day.blank { visibility: hidden; }
+    .field-message { width: 34ch; min-height: 24px; margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+    .picker-input[aria-invalid="true"] + .field-actions + .calendar-panel + .field-message { color: var(--invalid); }
+  </style>
+</head>
+<body>
+  <div class="fixture-note" data-reference-harness="fixture-label">Fixed review date and future boundary: 2026-10-20</div>
+  <section class="date-sample" aria-labelledby="maintenance-date-heading">
+    <h1 id="maintenance-date-heading">Maintenance log date</h1>
+    <p class="support">Record the date associated with this maintenance entry.</p>
+    <label class="field-label" for="maintenance-date-input">Log date</label>
+    <div class="picker-field" id="single-date-widget">
+      <input class="picker-input" id="maintenance-date-input" data-ref="date-input" inputmode="numeric" autocomplete="off" placeholder="yyyy-mm-dd" aria-controls="maintenance-calendar" aria-expanded="false" aria-describedby="maintenance-date-message">
+      <span class="field-actions">
+        <button class="icon-action" type="button" data-ref="date-clear" tabindex="-1" aria-label="Clear log date" hidden>&times;</button>
+        <button class="icon-action" type="button" data-ref="date-calendar" tabindex="-1" aria-label="Open calendar" aria-controls="maintenance-calendar" aria-expanded="false">&#128197;</button>
+      </span>
+      <div class="calendar-panel" id="maintenance-calendar" role="dialog" aria-label="Choose maintenance log date" hidden>
+        <h2 class="month-title">October 2026</h2>
+        <div class="weekday-row" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+        <div class="month-grid" aria-label="Dates in October 2026">
+          <span class="calendar-day blank"></span><span class="calendar-day blank"></span><span class="calendar-day blank"></span><span class="calendar-day blank"></span>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-01" aria-label="October 1, 2026">1</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-02" aria-label="October 2, 2026">2</button>
+          <button class="calendar-day saturday" type="button" tabindex="-1" data-ref="date-saturday" data-date="2026-10-03" aria-label="October 3, 2026">3</button>
+          <button class="calendar-day sunday" type="button" tabindex="-1" data-ref="date-sunday" data-date="2026-10-04" aria-label="October 4, 2026">4</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-ref="date-day" data-date="2026-10-05" aria-label="October 5, 2026">5</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-06" aria-label="October 6, 2026">6</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-07" aria-label="October 7, 2026">7</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-08" aria-label="October 8, 2026">8</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-09" aria-label="October 9, 2026">9</button>
+          <button class="calendar-day saturday" type="button" tabindex="-1" data-date="2026-10-10" aria-label="October 10, 2026">10</button>
+          <button class="calendar-day sunday" type="button" tabindex="-1" data-date="2026-10-11" aria-label="October 11, 2026">11</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-12" aria-label="October 12, 2026">12</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-13" aria-label="October 13, 2026">13</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-14" aria-label="October 14, 2026">14</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-15" aria-label="October 15, 2026">15</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-16" aria-label="October 16, 2026">16</button>
+          <button class="calendar-day saturday" type="button" tabindex="-1" data-date="2026-10-17" aria-label="October 17, 2026">17</button>
+          <button class="calendar-day sunday" type="button" tabindex="-1" data-date="2026-10-18" aria-label="October 18, 2026">18</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-date="2026-10-19" aria-label="October 19, 2026">19</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-ref="date-today" data-date="2026-10-20" aria-current="date" aria-label="October 20, 2026, today">20</button>
+          <button class="calendar-day" type="button" tabindex="-1" data-ref="date-future" data-date="2026-10-21" aria-label="October 21, 2026, unavailable because it is in the future" disabled>21</button>
+          <button class="calendar-day" type="button" tabindex="-1" disabled>22</button><button class="calendar-day" type="button" tabindex="-1" disabled>23</button><button class="calendar-day" type="button" tabindex="-1" disabled>24</button>
+          <button class="calendar-day" type="button" tabindex="-1" disabled>25</button><button class="calendar-day" type="button" tabindex="-1" disabled>26</button><button class="calendar-day" type="button" tabindex="-1" disabled>27</button><button class="calendar-day" type="button" tabindex="-1" disabled>28</button><button class="calendar-day" type="button" tabindex="-1" disabled>29</button><button class="calendar-day" type="button" tabindex="-1" disabled>30</button><button class="calendar-day" type="button" tabindex="-1" disabled>31</button>
+        </div>
+      </div>
+      <p class="field-message" id="maintenance-date-message" data-ref="date-message" aria-live="polite">Enter yyyy-mm-dd. Eight digits are also accepted.</p>
+    </div>
+  </section>
+
+  <script type="application/json" data-reference-scenarios>
+    {"version":1,"scenarios":[
+      {"name":"focus opens and escape closes","steps":[{"action":"press","target":"date-input","key":"ArrowRight"},{"action":"press","target":"date-input","key":"Escape"}]},
+      {"name":"tab departure closes","steps":[{"action":"press","target":"date-input","key":"Tab"}]},
+      {"name":"compact manual entry normalizes","steps":[{"action":"fill","target":"date-input","value":"20261005"}]},
+      {"name":"invalid manual entry is rejected","steps":[{"action":"fill","target":"date-input","value":"not-a-date"}]},
+      {"name":"calendar selection completes","steps":[{"action":"click","target":"date-calendar"},{"action":"click","target":"date-day"}]},
+      {"name":"future date remains unavailable","steps":[{"action":"click","target":"date-calendar"},{"action":"click","target":"date-future"}]},
+      {"name":"clear selected date","steps":[{"action":"fill","target":"date-input","value":"2026-10-05"},{"action":"click","target":"date-clear"}]}
+    ]}
+  </script>
+  <script>
+    (() => {
+      const boundary = '2026-10-20';
+      const widget = document.getElementById('single-date-widget');
+      const input = document.querySelector('[data-ref="date-input"]');
+      const clear = document.querySelector('[data-ref="date-clear"]');
+      const calendarButton = document.querySelector('[data-ref="date-calendar"]');
+      const panel = document.getElementById('maintenance-calendar');
+      const message = document.querySelector('[data-ref="date-message"]');
+      const days = [...panel.querySelectorAll('button[data-date]:not(:disabled)')];
+      let suppressFocusOpen = false;
+      let pointerInsideWidget = false;
+
+      function setExpanded(expanded) {
+        input.setAttribute('aria-expanded', String(expanded));
+        calendarButton.setAttribute('aria-expanded', String(expanded));
+      }
+
+      function openCalendar(focusCalendar) {
+        panel.hidden = false;
+        setExpanded(true);
+        if (focusCalendar) requestAnimationFrame(() => (panel.querySelector('[aria-pressed="true"]') || document.querySelector('[data-ref="date-today"]')).focus());
+      }
+
+      function closeCalendar(returnFocus) {
+        panel.hidden = true;
+        setExpanded(false);
+        if (returnFocus && document.activeElement !== input) {
+          suppressFocusOpen = true;
+          input.focus();
+          suppressFocusOpen = false;
+        }
+      }
+
+      function normalizedDate(raw) {
+        const compact = raw.match(/^(\d{4})(\d{2})(\d{2})$/);
+        const value = compact ? `${compact[1]}-${compact[2]}-${compact[3]}` : raw;
+        const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!match) return null;
+        const date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
+        if (date.getUTCFullYear() !== Number(match[1]) || date.getUTCMonth() !== Number(match[2]) - 1 || date.getUTCDate() !== Number(match[3])) return null;
+        return value;
+      }
+
+      function renderSelection(value) {
+        days.forEach((day) => {
+          if (day.dataset.date === value) day.setAttribute('aria-pressed', 'true');
+          else day.removeAttribute('aria-pressed');
+        });
+        clear.hidden = !value;
+      }
+
+      function reject(text) {
+        input.value = '';
+        input.setAttribute('aria-invalid', 'true');
+        message.textContent = text;
+        renderSelection('');
+        openCalendar(false);
+      }
+
+      function accept(value) {
+        input.value = value;
+        input.removeAttribute('aria-invalid');
+        message.textContent = `Selected ${value}.`;
+        renderSelection(value);
+        closeCalendar(false);
+      }
+
+      function commitManualEntry() {
+        const raw = input.value.trim();
+        if (!raw) {
+          input.removeAttribute('aria-invalid');
+          message.textContent = 'Enter yyyy-mm-dd. Eight digits are also accepted.';
+          renderSelection('');
+          closeCalendar(false);
+          return;
+        }
+        const value = normalizedDate(raw);
+        if (!value) reject('Enter a real date as yyyy-mm-dd or yyyymmdd.');
+        else if (value > boundary) reject('Future dates after 2026-10-20 are unavailable.');
+        else accept(value);
+      }
+
+      input.addEventListener('focus', () => { if (!suppressFocusOpen) openCalendar(false); });
+      input.addEventListener('input', () => {
+        input.removeAttribute('aria-invalid');
+        message.textContent = 'Enter yyyy-mm-dd. Eight digits are also accepted.';
+      });
+      input.addEventListener('change', commitManualEntry);
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') { event.preventDefault(); closeCalendar(false); }
+        if (event.key === 'ArrowDown') { event.preventDefault(); openCalendar(true); }
+      });
+      calendarButton.addEventListener('click', () => panel.hidden ? openCalendar(true) : closeCalendar(true));
+      clear.addEventListener('click', () => {
+        input.value = '';
+        input.removeAttribute('aria-invalid');
+        message.textContent = 'Date cleared. Enter yyyy-mm-dd.';
+        renderSelection('');
+        closeCalendar(true);
+      });
+      days.forEach((day, index) => {
+        day.addEventListener('click', () => accept(day.dataset.date));
+        day.addEventListener('keydown', (event) => {
+          const delta = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[event.key];
+          if (delta) { event.preventDefault(); days[Math.max(0, Math.min(days.length - 1, index + delta))].focus(); }
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); accept(day.dataset.date); }
+          if (event.key === 'Escape') { event.preventDefault(); closeCalendar(true); }
+        });
+      });
+      widget.addEventListener('pointerdown', () => {
+        pointerInsideWidget = true;
+        setTimeout(() => { pointerInsideWidget = false; }, 50);
+      });
+      widget.addEventListener('focusout', () => setTimeout(() => {
+        if (!pointerInsideWidget && !widget.contains(document.activeElement)) closeCalendar(false);
+      }, 0));
+    })();
+  </script>
+</body>
+</html>

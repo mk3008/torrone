@@ -1,0 +1,29 @@
+{
+  "overrides": [
+    {
+    "scenario": "invalid email correction",
+    "step": 1,
+    "value": "Correct duplicate service charge"
+    },
+    {
+    "scenario": "invalid email correction",
+    "step": 2,
+    "value": "approver"
+    },
+    {
+    "scenario": "invalid email correction",
+    "step": 4,
+    "value": "riley.chen@example.com"
+    },
+    {
+    "scenario": "review and edit",
+    "step": 1,
+    "value": "Correct duplicate service charge"
+    },
+    {
+    "scenario": "review and edit",
+    "step": 2,
+    "value": "riley.chen@example.com"
+    }
+  ]
+}

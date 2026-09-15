@@ -1,0 +1,50 @@
+{
+  "status": "diagnostic-adoption-confirmed",
+  "newResponsibility": {
+    "rawDiagnostics": 126,
+    "exactEntries": 23,
+    "repetitionsCollapsed": 103,
+    "fieldOnlyFalseGroups": 1
+  },
+  "negative": {
+    "rawStatus": "fail",
+    "rawErrors": 2,
+    "exactErrorSignatures": 1,
+    "firstRawErrorIndex": 17,
+    "firstPresentationErrorPosition": 1,
+    "rawIndexes": [17, 34]
+  },
+  "adoption": {
+    "savedReportsRead": 4,
+    "derivedPairsWritten": 4,
+    "deterministicPairs": 8,
+    "rawReportsChanged": 0,
+    "reporterChanges": 0,
+    "referenceSpecificRules": 0,
+    "browserRunsForPresentation": 0,
+    "failureIsolation": "pass"
+  },
+  "combinedEstablishedAndNew": {
+    "rawDiagnostics": 946,
+    "exactEntries": 102,
+    "repetitionsCollapsed": 844
+  },
+  "conformance": {
+    "status": "pass",
+    "positiveShapes": 8,
+    "reversibleProbeFamilies": 9,
+    "attempts": 51,
+    "timeouts": 0,
+    "retries": 0
+  },
+  "thirdResponsibilityHarness": {
+    "attempts": 9,
+    "timeouts": 0,
+    "retries": 0,
+    "browser": "Chrome/151.0.7922.109"
+  },
+  "legacyHarnessLimitations": [
+    "The frozen partial/form Gate scripts pin a superseded Core SHA and stop before execution.",
+    "The current Diagnostic Gate negative assertion expects two errors, while the current browser detects three across two signatures."
+  ]
+}

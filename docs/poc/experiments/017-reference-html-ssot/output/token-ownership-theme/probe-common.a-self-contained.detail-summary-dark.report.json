@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "detail-summary.html",
+    "digest": "5c53a68e87fa10da9b172c735dcf929759cc68e9b08b087828c04eb4b518bc3c",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6743,
+        "sha256": "97b883107e09456005a449d72cd2ab0b04e8987cc5bb49ba1955faae78f6e9f1"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "detail-summary.html",
+    "digest": "d159baac0980981cc4858d79ac3448f5a39008ad691811f5e3e8e60732ce2b55",
+    "files": [
+      {
+        "path": "detail-summary.html",
+        "bytes": 6743,
+        "sha256": "539296da282a61af846961274fee770335ff44fe557f9be0a7490beb713bdf4f"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "processing notes round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "processing-notes-toggle",
+            "key": "Space"
+          },
+          {
+            "action": "press",
+            "target": "processing-notes-toggle",
+            "key": "Space"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.processing-notes-toggle.styles.outlineColor",
+        "count": 2
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-1.elements.processing-notes-toggle.styles.outlineColor",
+      "expected": "rgb(154, 203, 255)",
+      "actual": "rgb(255, 128, 204)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.processing notes round trip.step-2.elements.processing-notes-toggle.styles.outlineColor",
+      "expected": "rgb(154, 203, 255)",
+      "actual": "rgb(255, 128, 204)"
+    }
+  ]
+}

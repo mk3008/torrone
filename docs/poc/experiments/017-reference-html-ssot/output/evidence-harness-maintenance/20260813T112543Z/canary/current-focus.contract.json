@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "contract": "required-historical-signature-plus-focus-mutation-bounded-additions",
+  "requiredSignatures": [
+    "elements.filter-toggle.styles.outlineColor"
+  ],
+  "observedSignatures": [
+    "elements.filter-toggle.styles.outlineColor",
+    "elements.query-filter.styles.outlineColor"
+  ],
+  "additionalSignatures": [
+    "elements.query-filter.styles.outlineColor"
+  ],
+  "rawErrorCount": 3,
+  "rawErrorIndexes": [
+    45,
+    163,
+    183
+  ],
+  "allowedObservation": {
+    "normalizedPathPattern": "^elements\\.[^.]+\\.styles\\.outlineColor$",
+    "expected": "rgb(134, 185, 238)",
+    "actual": "rgb(255, 0, 170)"
+  },
+  "presentationChecked": true,
+  "rawReport": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/diagnostic-adoption/established-regression/injected-focus.report.json",
+  "rawSha256": "FF48CC538FF74747C2392AFA5F5FA535E803804761B314D63F3385748869E360"
+}

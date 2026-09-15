@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "entry": "reference.html",
+    "digest": "984a489d95b68f5621e4249d865b0e501dbb2a15445816da8b2483caf746f906",
+    "files": [
+      {
+        "path": "reference.html",
+        "bytes": 653,
+        "sha256": "c40bafd079e3ab63d68cfb0368796147625ad92695e94ed760c4493841bf281b"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "focus field",
+        "steps": [
+          {
+            "action": "click",
+            "target": "relationship-field"
+          }
+        ]
+      }
+    ]
+  },
+  "initial": {
+    "mode": "explicit-data-ref",
+    "contract": {
+      "version": 1,
+      "scenarios": [
+        {
+          "name": "focus field",
+          "steps": [
+            {
+              "action": "click",
+              "target": "relationship-field"
+            }
+          ]
+        }
+      ],
+      "parseError": null
+    },
+    "document": {
+      "title": "Described-by relationship reference",
+      "lang": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "activeRef": null,
+      "headings": [],
+      "landmarks": {
+        "banner": 0,
+        "navigation": 0,
+        "main": 0,
+        "form": 0,
+        "table": 0,
+        "dialog": 0
+      }
+    },
+    "observationBoundary": {
+      "excludedHarnessRoots": 0,
+      "axExcludedHarnessRoots": 0,
+      "axExcludedNodeCount": 0
+    },
+    "duplicateKeys": [],
+    "semanticAmbiguities": [],
+    "semanticInventory": {
+      "textbox": 1
+    },
+    "elements": {
+      "relationship-field": {
+        "key": "relationship-field",
+        "tag": "input",
+        "role": "textbox",
+        "name": "Reference value",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": "reference-help",
+          "disabled": false,
+          "hidden": false,
+          "open": false,
+          "checked": false
+        },
+        "relationships": {
+          "describedBy": [
+            "unkeyed:describedBy:p:none:visible"
+          ]
+        },
+        "styles": {
+          "display": "inline-block",
+          "position": "static",
+          "overflowX": "clip",
+          "overflowY": "clip",
+          "fontFamily": "Arial",
+          "fontSize": "13.3333px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(119, 119, 119)",
+          "borderRightWidth": "1px",
+          "borderRightStyle": "solid",
+          "borderRightColor": "rgb(119, 119, 119)",
+          "borderBottomWidth": "1px",
+          "borderBottomStyle": "solid",
+          "borderBottomColor": "rgb(119, 119, 119)",
+          "borderLeftWidth": "1px",
+          "borderLeftStyle": "solid",
+          "borderLeftColor": "rgb(119, 119, 119)",
+          "borderRadius": "0px",
+          "paddingTop": "1px",
+          "paddingRight": "2px",
+          "paddingBottom": "1px",
+          "paddingLeft": "2px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(17, 17, 17)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "text"
+        },
+        "box": {
+          "x": 129,
+          "y": 13,
+          "width": 175,
+          "height": 19
+        }
+      }
+    },
+    "accessibilityIssues": [],
+    "accessibilityTree": {
+      "nodeCount": 9,
+      "roles": {
+        "generic": 1,
+        "InlineTextBox": 2,
+        "LabelText": 1,
+        "paragraph": 1,
+        "RootWebArea": 1,
+        "StaticText": 2,
+        "textbox": 1
+      },
+      "unnamedInteractive": {}
+    }
+  },
+  "scenarios": [
+    {
+      "name": "focus field",
+      "loadConsoleErrors": [],
+      "steps": [
+        {
+          "action": {
+            "action": "click",
+            "target": "relationship-field"
+          },
+          "actionError": null,
+          "consoleErrors": [],
+          "screenshot": null,
+          "state": {
+            "mode": "explicit-data-ref",
+            "contract": {
+              "version": 1,
+              "scenarios": [
+                {
+                  "name": "focus field",
+                  "steps": [
+                    {
+                      "action": "click",
+                      "target": "relationship-field"
+                    }
+                  ]
+                }
+              ],
+              "parseError": null
+            },
+            "document": {
+              "title": "Described-by relationship reference",
+              "lang": "en",
+              "viewport": {
+                "width": 1440,
+                "height": 900
+              },
+              "activeRef": "relationship-field",
+              "headings": [],
+              "landmarks": {
+                "banner": 0,
+                "navigation": 0,
+                "main": 0,
+                "form": 0,
+                "table": 0,
+                "dialog": 0
+              }
+            },
+            "observationBoundary": {
+              "excludedHarnessRoots": 0,
+              "axExcludedHarnessRoots": 0,
+              "axExcludedNodeCount": 0
+            },
+            "duplicateKeys": [],
+            "semanticAmbiguities": [],
+            "semanticInventory": {
+              "textbox": 1
+            },
+            "elements": {
+              "relationship-field": {
+                "key": "relationship-field",
+                "tag": "input",
+                "role": "textbox",
+                "name": "Reference value",
+                "visible": true,
+                "attributes": {
+                  "aria-expanded": null,
+                  "aria-pressed": null,
+                  "aria-current": null,
+                  "aria-selected": null,
+                  "aria-checked": null,
+                  "aria-invalid": null,
+                  "aria-modal": null,
+                  "aria-controls": null,
+                  "aria-describedby": "reference-help",
+                  "disabled": false,
+                  "hidden": false,
+                  "open": false,
+                  "checked": false
+                },
+                "relationships": {
+                  "describedBy": [
+                    "unkeyed:describedBy:p:none:visible"
+                  ]
+                },
+                "styles": {
+                  "display": "inline-block",
+                  "position": "static",
+                  "overflowX": "clip",
+                  "overflowY": "clip",
+                  "fontFamily": "Arial",
+                  "fontSize": "13.3333px",
+                  "fontWeight": "400",
+                  "lineHeight": "normal",
+                  "color": "rgb(17, 17, 17)",
+                  "backgroundColor": "rgb(255, 255, 255)",
+                  "borderTopWidth": "1px",
+                  "borderTopStyle": "solid",
+                  "borderTopColor": "rgb(119, 119, 119)",
+                  "borderRightWidth": "1px",
+                  "borderRightStyle": "solid",
+                  "borderRightColor": "rgb(119, 119, 119)",
+                  "borderBottomWidth": "1px",
+                  "borderBottomStyle": "solid",
+                  "borderBottomColor": "rgb(119, 119, 119)",
+                  "borderLeftWidth": "1px",
+                  "borderLeftStyle": "solid",
+                  "borderLeftColor": "rgb(119, 119, 119)",
+                  "borderRadius": "0px",
+                  "paddingTop": "1px",
+                  "paddingRight": "2px",
+                  "paddingBottom": "1px",
+                  "paddingLeft": "2px",
+                  "gap": "normal",
+                  "rowGap": "normal",
+                  "columnGap": "normal",
+                  "alignItems": "normal",
+                  "justifyContent": "normal",
+                  "boxShadow": "none",
+                  "outlineColor": "rgb(16, 16, 16)",
+                  "outlineStyle": "auto",
+                  "outlineWidth": "1px",
+                  "opacity": "1",
+                  "cursor": "text"
+                },
+                "box": {
+                  "x": 129,
+                  "y": 13,
+                  "width": 175,
+                  "height": 19
+                }
+              }
+            },
+            "accessibilityIssues": [],
+            "accessibilityTree": {
+              "nodeCount": 9,
+              "roles": {
+                "generic": 1,
+                "InlineTextBox": 2,
+                "LabelText": 1,
+                "paragraph": 1,
+                "RootWebArea": 1,
+                "StaticText": 2,
+                "textbox": 1
+              },
+              "unnamedInteractive": {}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

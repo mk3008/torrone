@@ -1,0 +1,26 @@
+{
+  "local": {
+    "description": "Artificial reversible empty-state copy correction",
+    "whole": {
+      "filesTouched": 1,
+      "locations": 2,
+      "reviewLines": 979
+    },
+    "partial": {
+      "filesTouched": 1,
+      "locations": 2,
+      "reviewLines": 255
+    }
+  },
+  "common": {
+    "description": "Artificial reversible shared light-focus token correction",
+    "whole": {
+      "filesTouched": 1,
+      "locations": 1
+    },
+    "partial": {
+      "filesTouched": 2,
+      "locations": 2
+    }
+  }
+}

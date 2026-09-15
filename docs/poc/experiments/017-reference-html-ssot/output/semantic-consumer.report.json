@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "reference.html",
+    "digest": "37ad510667bc1a9aa75e1a3ed4fab96931eb3eb0254c258e48ec798556284a71",
+    "files": [
+      {
+        "path": "reference.html",
+        "bytes": 1728,
+        "sha256": "4f64e6778e3a2e53667c73aac68052d04bc5ec85ad1a4cfb3bf879729ade0acf"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "consumer.html",
+    "digest": "ac54ca2a037e2aa80004accbbf77723f2c0f1bed32304758d2811532a0d9bc9d",
+    "files": [
+      {
+        "path": "consumer.html",
+        "bytes": 1861,
+        "sha256": "6f49f0b599e88447f62ba01928c24400db4c032d5ed5cbadbce02a91c9aa70d6"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": []
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "summary": {
+    "errorCount": 8,
+    "uniqueErrorCount": 8,
+    "diagnosticCount": 9,
+    "errorSignatures": [
+      {
+        "path": "elements.id:invoice-filter-form",
+        "count": 1
+      },
+      {
+        "path": "elements.id:invoice-header",
+        "count": 1
+      },
+      {
+        "path": "elements.id:invoice-results",
+        "count": 1
+      },
+      {
+        "path": "elements.id:invoice-review-workspace",
+        "count": 1
+      },
+      {
+        "path": "elements.id:invoice-status",
+        "count": 1
+      },
+      {
+        "path": "elements.id:supplier-name",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:button:button:5",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:button:button:7",
+        "count": 1
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.id:invoice-filter-form",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.id:invoice-header",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.id:invoice-results",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.id:invoice-review-workspace",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.id:invoice-status",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.id:supplier-name",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.semantic:button:button:5",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.semantic:button:button:7",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.id:exception-owner",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.id:inventory-header",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.id:severity",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.id:transfer-exception-workspace",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.id:transfer-filter-form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.id:transfer-results",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.id:warehouse",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:button:button:6",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:button:button:8",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

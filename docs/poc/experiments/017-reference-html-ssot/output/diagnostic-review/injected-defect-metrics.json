@@ -1,0 +1,36 @@
+{
+  "rawStatus": "fail",
+  "rawErrorCount": 2,
+  "rawDiagnosticCount": 199,
+  "firstRawErrorEntry": 162,
+  "firstReviewerErrorEntry": 1,
+  "reviewerErrorEntryCount": 1,
+  "reviewerDiagnosticEntryCount": 25,
+  "rawSourceSha256": "F59CC94303BCD780441D93330188195CE281A022C25E13CB3C50BBC4959CF80B",
+  "presentationSourceSha256": "F59CC94303BCD780441D93330188195CE281A022C25E13CB3C50BBC4959CF80B",
+  "rawIndexes": [
+    162,
+    182
+  ],
+  "rawEvidenceComplete": true,
+  "rawCliExit": 1,
+  "presentationExit": 1,
+  "persistentTargetRestored": true,
+  "presentation": {
+    "name": "injected-focus",
+    "sourcePath": "output/diagnostic-review/injected-focus.report.json",
+    "sourceSha256": "F59CC94303BCD780441D93330188195CE281A022C25E13CB3C50BBC4959CF80B",
+    "sourceStatus": "fail",
+    "rawDifferenceCount": 201,
+    "rawErrorCount": 2,
+    "rawDiagnosticCount": 199,
+    "reviewerEntryCount": 26,
+    "errorEntryCount": 1,
+    "diagnosticEntryCount": 25,
+    "markdownLineCount": 48,
+    "jsonSha256": "468607A5D1EE9E33F005E56EDB5DA5651EE14B9B471529BCC70263D66C9E4E75",
+    "markdownSha256": "744B904A2C7D768D6F052DB88AB653AD46F1924D530F781CDC35EEA7D7CCA913",
+    "deterministic": true,
+    "traceability": "complete one-based raw indexes plus source SHA-256"
+  }
+}

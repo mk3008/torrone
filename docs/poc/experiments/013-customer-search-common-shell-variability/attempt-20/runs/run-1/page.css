@@ -1,0 +1,223 @@
+/* Page-owned styles: the fixed shell owns the document, Header, Drawer, and workspace. */
+.customer-page {
+  display: grid;
+  gap: 36px;
+  margin: 0 auto;
+  max-inline-size: 1440px;
+  padding: 32px;
+}
+
+.customer-page .page-heading h1,
+.customer-page .result-summary h2 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.customer-page .page-heading h1 { font-size: 1.75rem; }
+
+.customer-page .page-heading p {
+  color: var(--text-muted);
+  margin: 8px 0 0;
+}
+
+.customer-page .condition-pane { inline-size: min(100%, 760px); }
+
+.customer-page fieldset.condition-fields {
+  border: 0;
+  margin: 0;
+  min-inline-size: 0;
+  padding: 0;
+}
+
+.customer-page .condition-fields legend {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.customer-page .field-grid {
+  display: grid;
+  gap: 18px 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.customer-page .field {
+  color: var(--text-primary);
+  display: grid;
+  font-size: .875rem;
+  font-weight: 650;
+  gap: 7px;
+  min-inline-size: 0;
+}
+
+.customer-page .field input {
+  background: var(--surface-background);
+  border: 1px solid var(--border-interactive);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font: inherit;
+  inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: 40px;
+  padding: 8px 10px;
+}
+
+.customer-page .field input:focus-visible,
+.customer-page .button:focus-visible,
+.customer-page .grid-scroll:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.customer-page .condition-toolbar {
+  display: flex;
+  inline-size: 100%;
+  justify-content: flex-end;
+  margin-block-start: 22px;
+}
+
+.customer-page .button-set,
+.customer-page .pagination-controls {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.customer-page .button {
+  border: 1px solid var(--border-interactive);
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+  min-block-size: 40px;
+  padding: 8px 14px;
+}
+
+.customer-page .button-primary {
+  background: var(--action-background);
+  border-color: var(--action-background);
+  color: var(--action-foreground);
+}
+
+.customer-page .button-secondary,
+.customer-page .button-tertiary {
+  background: var(--surface-background);
+  color: var(--text-primary);
+}
+
+.customer-page .button:disabled { cursor: default; opacity: .55; }
+
+.customer-page .result-pane { min-inline-size: 0; }
+
+.customer-page .result-header {
+  align-items: end;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-block-end: 14px;
+}
+
+.customer-page .result-summary h2 { font-size: 1.25rem; }
+
+.customer-page .result-summary h2 span {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-inline-start: 8px;
+}
+
+.customer-page .result-toolbar { flex: 0 0 auto; }
+
+/* This is the only horizontal-overflow owner in the page. */
+.customer-page .grid-scroll {
+  inline-size: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.customer-page .results-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  inline-size: 100%;
+  min-inline-size: 1120px;
+  table-layout: fixed;
+}
+
+.customer-page .results-table .id-column { inline-size: 124px; }
+.customer-page .results-table .name-column { inline-size: 138px; }
+.customer-page .results-table .birth-column { inline-size: 130px; }
+.customer-page .results-table .address-column { inline-size: 250px; }
+.customer-page .results-table .phone-column { inline-size: 152px; }
+.customer-page .results-table .email-column { inline-size: 240px; }
+.customer-page .results-table .notes-column { inline-size: 230px; }
+
+.customer-page .results-table th,
+.customer-page .results-table td {
+  border-block-end: 1px solid var(--border-subtle);
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+  padding: 12px 14px;
+  text-align: start;
+  vertical-align: middle;
+}
+
+.customer-page .results-table thead th {
+  background-color: var(--table-header-background);
+  color: var(--table-header-foreground);
+  font-size: .875rem;
+  font-weight: 700;
+}
+
+.customer-page .results-table tbody td {
+  background-color: var(--surface-background);
+  color: var(--text-primary);
+}
+
+.customer-page .results-table .pinned-id {
+  inset-inline-start: 0;
+  position: sticky;
+}
+
+.customer-page .results-table thead .pinned-id {
+  box-shadow: 2px 0 0 var(--border-subtle);
+  z-index: 3;
+}
+
+.customer-page .results-table tbody .pinned-id {
+  box-shadow: 2px 0 0 var(--border-subtle);
+  z-index: 2;
+}
+
+.customer-page .results-table a {
+  color: var(--link);
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.customer-page .pagination-footer {
+  display: flex;
+  inline-size: 100%;
+  justify-content: flex-end;
+  margin-block-start: 14px;
+}
+
+.customer-page .pagination-controls > span {
+  color: var(--text-primary);
+  min-inline-size: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .customer-page { gap: 28px; padding: 24px 16px; }
+  .customer-page .field-grid { grid-template-columns: minmax(0, 1fr); }
+  .customer-page .result-header { align-items: start; flex-direction: column; }
+  .customer-page .result-toolbar { align-self: flex-end; }
+}
+
+@media (max-width: 420px) {
+  .customer-page .condition-toolbar,
+  .customer-page .pagination-footer { justify-content: flex-start; }
+}

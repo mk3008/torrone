@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Invoice review reference</title>
+  <style>
+    body { margin: 0; font: 14px/1.4 system-ui, sans-serif; color: #172033; background: #f4f6f9; }
+    header { min-height: 52px; display: flex; align-items: center; padding: 0 20px; color: white; background: #173b63; }
+    main { padding: 24px; }
+    form, table { width: 100%; background: white; border: 1px solid #cbd4df; border-radius: 8px; }
+    form { box-sizing: border-box; display: flex; gap: 12px; padding: 16px; }
+    label { display: grid; gap: 4px; }
+    table { margin-top: 16px; border-collapse: separate; border-spacing: 0; overflow: hidden; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #e1e6ed; text-align: left; }
+    button { min-height: 36px; padding: 0 12px; }
+  </style>
+</head>
+<body>
+  <header id="invoice-header"><strong>Finance workspace</strong></header>
+  <main id="invoice-review-workspace">
+    <h1>Invoice review</h1>
+    <form id="invoice-filter-form">
+      <label>Supplier <input id="supplier-name" name="supplier"></label>
+      <label>Status <select id="invoice-status" name="status"><option>Needs review</option></select></label>
+      <button type="submit">Search invoices</button>
+    </form>
+    <table id="invoice-results">
+      <caption>3 invoices need review</caption>
+      <thead><tr><th>Invoice</th><th>Supplier</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody><tr><td>INV-1842</td><td>Northwind Paper</td><td>Needs review</td><td><button type="button">Open invoice</button></td></tr></tbody>
+    </table>
+  </main>
+</body>
+</html>

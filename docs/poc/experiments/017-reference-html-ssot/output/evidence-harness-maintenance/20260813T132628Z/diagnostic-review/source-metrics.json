@@ -1,0 +1,18 @@
+{
+  "reportingLayer": {
+    "files": 3,
+    "reporterLines": 253,
+    "analysisLines": 133,
+    "fixtureTestLines": 73,
+    "dependenciesAdded": 0,
+    "referenceSpecificRules": 0,
+    "scopeMetadata": 0,
+    "suppressionRules": 0
+  },
+  "fixedComparisonCliCoreChanges": 0,
+  "referenceChanges": 0,
+  "targetChanges": 0,
+  "consumerChanges": 0,
+  "conformanceRulesAdded": 0,
+  "geometryToleranceChanges": 0
+}

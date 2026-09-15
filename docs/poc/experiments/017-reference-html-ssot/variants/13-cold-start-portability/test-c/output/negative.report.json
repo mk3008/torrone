@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "eb13229ed17bfc0e8334fbd7c811ea1db7c34f9607b2235c1e919dbe2af1153f",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 26727,
+        "sha256": "2a6b5036c801fa7a4d91ba2e61974338fbd0fafc4e688c2239700c7c8b7bff2f"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "negative/index.html",
+    "digest": "4117278a5d29e9705aac9abcedc643f312dd474232a6b48a7cb8e6d7ccbfc222",
+    "files": [
+      {
+        "path": "negative/defect.css",
+        "bytes": 149,
+        "sha256": "cef422a27ecf326580d16f2783668c086e3dae6bd32d5aeee5b14e491e4d0737"
+      },
+      {
+        "path": "negative/index.html",
+        "bytes": 7675,
+        "sha256": "b3225c9963a7933c1d845462c78dc3c15470448037a4f7bc03a3cb4686cf14ea"
+      },
+      {
+        "path": "target/app.js",
+        "bytes": 6890,
+        "sha256": "d55f24a2c8345cbc27ef12ed89180e8f66d3a21d6cedc988aca6b71bbab2c1cf"
+      },
+      {
+        "path": "target/styles.css",
+        "bytes": 8587,
+        "sha256": "5d3a0290563284b84b1c15364decfda5379624ee057534531afc758fc2a6562f"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation visibility",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "navigation parent",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          },
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          }
+        ]
+      },
+      {
+        "name": "navigation filter no match",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "No badge section"
+          },
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "name": "navigation selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-secondary"
+          },
+          {
+            "action": "click",
+            "target": "navigation-current"
+          }
+        ]
+      },
+      {
+        "name": "theme round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          },
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "target": "user-menu-toggle",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "query-filter",
+            "value": "Nothing found"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "pagination round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "page-next"
+          },
+          {
+            "action": "click",
+            "target": "page-previous"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 23,
+    "uniqueErrorCount": 1,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.create-action.styles.backgroundColor",
+        "count": 23
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation visibility.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation visibility.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no match.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no match.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme round trip.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme round trip.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear to initial.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear to initial.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pagination round trip.step-1.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pagination round trip.step-2.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pagination round trip.step-3.elements.create-action.styles.backgroundColor",
+      "expected": "rgb(29, 112, 179)",
+      "actual": "rgb(138, 44, 32)"
+    }
+  ]
+}

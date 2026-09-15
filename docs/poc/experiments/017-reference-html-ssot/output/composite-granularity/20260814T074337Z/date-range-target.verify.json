@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "date-range-picker.html",
+    "digest": "ce2603f8996f4a3a57f767990fe654329baa8b13c15e2d788b4cf45d1882bacd",
+    "files": [
+      {
+        "path": "date-range-picker.html",
+        "bytes": 7751,
+        "sha256": "82e6769e5a75ed8e86205164bc857030fb7484d57950de1558b039095a0efa64"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "1b0c668e0be62cb7419a047269b43f23151104e5c60d2349c7c42e1ff80929f8",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 7333,
+        "sha256": "36ebf244c519fa6b932e7e6f9243e3615b5f8581d6b51ce3bd91f1144d683cb7"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "pointer range selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          }
+        ]
+      },
+      {
+        "name": "keyboard range selection",
+        "steps": [
+          {
+            "action": "press",
+            "target": "range-trigger",
+            "key": " "
+          },
+          {
+            "action": "press",
+            "target": "range-start-day",
+            "key": "ArrowRight"
+          },
+          {
+            "action": "press",
+            "target": "range-next-day",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "range-end-day",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "clear and reselect range",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          },
+          {
+            "action": "click",
+            "target": "range-clear"
+          },
+          {
+            "action": "click",
+            "target": "range-trigger"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 13,
+    "errorSignatures": []
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-5.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

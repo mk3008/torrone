@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "review-presentation-only",
+  "source": {
+    "reportPath": "C:/Users/mssgm/AppData/Local/Temp/poc017-maintenance-diagnostic-adoption-c71e14ec3d6d4e2d991249ae871e0159/output/form-heavy-partial/target-shell.report.json",
+    "sha256": "E7A975CE96552851FD5D69DB5B4B3F880CD0C7AC7CA135A35558A11CB5E47213",
+    "schemaVersion": 1,
+    "status": "pass"
+  },
+  "summary": {
+    "status": "pass",
+    "rawDifferenceCount": 247,
+    "rawErrorCount": 0,
+    "rawDiagnosticCount": 247,
+    "reviewerEntryCount": 19,
+    "errorEntryCount": 0,
+    "diagnosticEntryCount": 19,
+    "repeatedOccurrencesCollapsed": 228,
+    "rawCountsPreserved": true
+  },
+  "ordering": [
+    "severity: error before informational diagnostic",
+    "within severity: diagnostic shape, normalized path, exact observation values"
+  ],
+  "traceability": {
+    "differenceArray": "differences",
+    "rawDifferenceIndexBase": 1,
+    "guarantee": "Every raw difference index occurs in exactly one presentation entry."
+  },
+  "errors": [],
+  "diagnostics": [
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.cancel-action",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        1,
+        20,
+        39,
+        58,
+        77,
+        96,
+        115,
+        134,
+        153,
+        172,
+        191,
+        210,
+        229
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.confirm-action",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        2,
+        21,
+        40,
+        59,
+        78,
+        97,
+        116,
+        135,
+        154,
+        173,
+        192,
+        211,
+        230
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.edit-action",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        3,
+        22,
+        41,
+        60,
+        79,
+        98,
+        117,
+        136,
+        155,
+        174,
+        193,
+        212,
+        231
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-actions",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        4,
+        23,
+        42,
+        61,
+        80,
+        99,
+        118,
+        137,
+        156,
+        175,
+        194,
+        213,
+        232
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-choice-group",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        5,
+        24,
+        43,
+        62,
+        81,
+        100,
+        119,
+        138,
+        157,
+        176,
+        195,
+        214,
+        233
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-contact-error",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        6,
+        25,
+        44,
+        63,
+        82,
+        101,
+        120,
+        139,
+        158,
+        177,
+        196,
+        215,
+        234
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-contact-field",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        7,
+        26,
+        45,
+        64,
+        83,
+        102,
+        121,
+        140,
+        159,
+        178,
+        197,
+        216,
+        235
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-date-field",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        8,
+        27,
+        46,
+        65,
+        84,
+        103,
+        122,
+        141,
+        160,
+        179,
+        198,
+        217,
+        236
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-error-summary",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        9,
+        28,
+        47,
+        66,
+        85,
+        104,
+        123,
+        142,
+        161,
+        180,
+        199,
+        218,
+        237
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-notes-field",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        10,
+        29,
+        48,
+        67,
+        86,
+        105,
+        124,
+        143,
+        162,
+        181,
+        200,
+        219,
+        238
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-primary-error",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        11,
+        30,
+        49,
+        68,
+        87,
+        106,
+        125,
+        144,
+        163,
+        182,
+        201,
+        220,
+        239
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-primary-field",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        12,
+        31,
+        50,
+        69,
+        88,
+        107,
+        126,
+        145,
+        164,
+        183,
+        202,
+        221,
+        240
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-review-heading",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        13,
+        32,
+        51,
+        70,
+        89,
+        108,
+        127,
+        146,
+        165,
+        184,
+        203,
+        222,
+        241
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-review-region",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        14,
+        33,
+        52,
+        71,
+        90,
+        109,
+        128,
+        147,
+        166,
+        185,
+        204,
+        223,
+        242
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.form-select-field",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        15,
+        34,
+        53,
+        72,
+        91,
+        110,
+        129,
+        148,
+        167,
+        186,
+        205,
+        224,
+        243
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.review-action",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        16,
+        35,
+        54,
+        73,
+        92,
+        111,
+        130,
+        149,
+        168,
+        187,
+        206,
+        225,
+        244
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.review-actions",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        17,
+        36,
+        55,
+        74,
+        93,
+        112,
+        131,
+        150,
+        169,
+        188,
+        207,
+        226,
+        245
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:role:form",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        18,
+        37,
+        56,
+        75,
+        94,
+        113,
+        132,
+        151,
+        170,
+        189,
+        208,
+        227,
+        246
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    },
+    {
+      "severity": "info",
+      "kind": "extra-element",
+      "normalizedPath": "elements.semantic:role:main",
+      "detail": {
+        "actual": "extra annotated element",
+        "expected": "<not present>"
+      },
+      "occurrenceCount": 13,
+      "rawDifferenceIndexes": [
+        19,
+        38,
+        57,
+        76,
+        95,
+        114,
+        133,
+        152,
+        171,
+        190,
+        209,
+        228,
+        247
+      ],
+      "states": [
+        "initial",
+        "scenarios.navigation visibility.step-1",
+        "scenarios.navigation visibility.step-2",
+        "scenarios.navigation parent.step-1",
+        "scenarios.navigation parent.step-2",
+        "scenarios.navigation filter no match.step-1",
+        "scenarios.navigation filter no match.step-2",
+        "scenarios.navigation selection.step-1",
+        "scenarios.navigation selection.step-2",
+        "scenarios.theme round trip.step-1",
+        "scenarios.theme round trip.step-2",
+        "scenarios.user menu escape.step-1",
+        "scenarios.user menu escape.step-2"
+      ]
+    }
+  ]
+}

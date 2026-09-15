@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "duplicate-stable-identity.html",
+    "digest": "6808cbe5c5ccc4399fb388aeb5e64da38d84fb8b81827fad89ea750690095fdd",
+    "files": [
+      {
+        "path": "duplicate-stable-identity.html",
+        "bytes": 2197,
+        "sha256": "9eee7eca72f4ced030ac910c8c8d0a7fa0115e10196f6c91d70d12a574ed7791"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "identity",
+      "code": "duplicate-stable-identity",
+      "state": "initial",
+      "target": "query-field",
+      "detail": "More than one observed element resolves to the same stable identity."
+    },
+    {
+      "source": "identity",
+      "code": "duplicate-stable-identity",
+      "state": "scenarios.lookup.step-1",
+      "target": "query-field",
+      "detail": "More than one observed element resolves to the same stable identity."
+    }
+  ]
+}

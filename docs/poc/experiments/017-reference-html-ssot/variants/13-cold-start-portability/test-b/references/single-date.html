@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Calibrated single date reference</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      --canvas: #f3f6fa;
+      --surface: #ffffff;
+      --text: #101d2f;
+      --muted: #56677a;
+      --border: #8fa3b8;
+      --accent: #1769a6;
+      --focus: #75abe0;
+      --error: #a4262c;
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 680px; color: var(--text); background: var(--canvas); font: 16px/1.45 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: not-allowed; }
+    [hidden] { display: none !important; }
+    :is(button, input):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .fixture-note { padding: 9px 22px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+    .sample-card { width: 550px; margin: 40px auto; padding: 24px; background: var(--surface); border: 1px solid #c6d2df; border-radius: 8px; box-shadow: 0 8px 22px rgb(37 55 75 / 8%); }
+    h1 { margin: 0 0 5px; font-size: 22px; line-height: 1.25; }
+    .support { margin: 0 0 20px; color: var(--muted); }
+    .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .date-control { position: relative; width: 230px; }
+    .input-shell { display: flex; width: 230px; min-height: 42px; align-items: stretch; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+    .input-shell:focus-within { border-color: #4e7fab; box-shadow: 0 0 0 1px #4e7fab; }
+    .date-input { width: 15ch; min-width: 0; padding: 8px 10px; flex: 1; color: var(--text); background: transparent; border: 0; outline: 0; }
+    .date-input:focus-visible { outline: 0; }
+    .date-input[aria-invalid="true"] { color: var(--error); }
+    .field-action { display: grid; width: 40px; min-width: 40px; padding: 0; place-items: center; color: #29445f; background: transparent; border: 0; }
+    .field-action:hover { background: #edf3f9; }
+    .field-action svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .calendar-action { position: relative; }
+    .calendar-action::before { position: absolute; top: 8px; bottom: 8px; left: 0; width: 1px; content: ""; background: #c7d2dd; }
+    .validation { min-height: 20px; margin: 6px 0 0; color: var(--error); font-size: 13px; }
+    .picker {
+      position: absolute;
+      z-index: 2;
+      top: 50px;
+      left: 0;
+      width: 310px;
+      padding: 12px;
+      background: var(--surface);
+      border: 1px solid #93a6b9;
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgb(27 45 65 / 18%);
+    }
+    .validation:not([hidden]) + .picker { top: 76px; }
+    .picker-head { display: grid; grid-template-columns: 32px 32px 1fr 32px 32px; gap: 3px; align-items: center; }
+    .month-title { margin: 0; text-align: center; font-size: 15px; }
+    .nav-action { display: grid; width: 32px; height: 32px; padding: 0; place-items: center; color: #29445f; background: var(--surface); border: 1px solid transparent; border-radius: 5px; }
+    .nav-action:hover { background: #edf3f9; border-color: #d1dce6; }
+    .nav-action svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+    .weekday-grid, .calendar-grid { display: grid; grid-template-columns: repeat(7, 36px); gap: 3px; }
+    .weekday-grid { margin-top: 9px; }
+    .weekday { color: #5d6d7e; text-align: center; font-size: 12px; font-weight: 700; }
+    .weekday:first-child, .calendar-grid .day-cell:nth-child(7n + 1) { color: #a4262c; }
+    .weekday:last-child, .calendar-grid .day-cell:nth-child(7n) { color: #245f9b; }
+    .calendar-grid { margin-top: 3px; }
+    .day-cell { width: 36px; height: 32px; padding: 0; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 5px; }
+    .day-cell:hover:not(:disabled):not([aria-pressed="true"]) { background: #eaf2f8; }
+    .day-cell.outside-month { color: #536679; }
+    .day-cell[aria-current="date"] { font-weight: 750; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .day-cell[aria-pressed="true"] { color: #ffffff; background: var(--accent); border-color: #0d558d; font-weight: 750; }
+    .day-cell:disabled { color: #55616d !important; background: repeating-linear-gradient(135deg, #f4f6f8, #f4f6f8 4px, #e6eaee 4px, #e6eaee 6px); text-decoration: line-through; opacity: 1; }
+    .picker-foot { display: flex; margin-top: 9px; padding-top: 9px; align-items: center; justify-content: space-between; border-top: 1px solid #d5dee7; }
+    .today-action { min-height: 32px; padding: 0 10px; color: #174f7f; background: var(--surface); border: 1px solid #9aabba; border-radius: 5px; font-size: 13px; font-weight: 650; }
+    .availability-key { color: var(--muted); font-size: 12px; }
+    .next-control { margin-top: 28px; min-height: 38px; padding: 0 14px; color: #183653; background: var(--surface); border: 1px solid #8ea2b9; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="fixture-note" data-reference-harness="reference-label">Human-calibrated replay · fixed review date: 2026-08-14</div>
+  <main class="sample-card">
+    <h1>Invoice issue date</h1>
+    <p class="support">Enter a past or current business date.</p>
+    <label class="field-label" for="invoice-date">Issue date</label>
+    <div class="date-control" data-date-control>
+      <div class="input-shell">
+        <input id="invoice-date" class="date-input" data-ref="single-input" inputmode="numeric" autocomplete="off" placeholder="yyyy-mm-dd" maxlength="10" aria-describedby="single-date-error">
+        <button class="field-action" type="button" data-ref="single-clear" aria-label="Clear issue date" hidden>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></svg>
+        </button>
+        <button class="field-action calendar-action" type="button" data-ref="single-trigger" aria-label="Open calendar" aria-controls="single-date-picker" aria-expanded="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M7 3v4M17 3v4M3 10h18" /></svg>
+        </button>
+      </div>
+      <p class="validation" id="single-date-error" data-ref="single-message" aria-live="polite" hidden></p>
+      <div class="picker" id="single-date-picker" data-ref="single-picker" role="dialog" aria-label="Choose issue date" hidden>
+        <div class="picker-head">
+          <button class="nav-action" type="button" data-ref="single-prev-year" aria-label="Previous year"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6M20 6l-6 6 6 6" /></svg></button>
+          <button class="nav-action" type="button" data-ref="single-prev-month" aria-label="Previous month"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6" /></svg></button>
+          <h2 class="month-title" data-ref="single-month">August 2026</h2>
+          <button class="nav-action" type="button" data-ref="single-next-month" aria-label="Next month"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" /></svg></button>
+          <button class="nav-action" type="button" data-ref="single-next-year" aria-label="Next year"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m4 6 6 6-6 6M10 6l6 6-6 6" /></svg></button>
+        </div>
+        <div class="weekday-grid" aria-hidden="true"><span class="weekday">Su</span><span class="weekday">Mo</span><span class="weekday">Tu</span><span class="weekday">We</span><span class="weekday">Th</span><span class="weekday">Fr</span><span class="weekday">Sa</span></div>
+        <div class="calendar-grid" data-calendar-grid aria-label="Dates in August 2026"></div>
+        <div class="picker-foot">
+          <button class="today-action" type="button" data-ref="single-today-action">Go to today</button>
+          <span class="availability-key">Striped dates unavailable</span>
+        </div>
+      </div>
+    </div>
+    <button class="next-control" type="button" data-ref="single-after">Continue</button>
+  </main>
+
+  <script type="application/json" data-reference-scenarios>
+    {"version":1,"scenarios":[
+      {"name":"input focus and tab dismissal","steps":[{"action":"click","target":"single-input"},{"action":"press","target":"single-input","key":"Tab"}]},
+      {"name":"compact input tab commit","steps":[{"action":"click","target":"single-input"},{"action":"fill","target":"single-input","value":"20260812"},{"action":"press","target":"single-input","key":"Tab"}]},
+      {"name":"escape returns to invoker","steps":[{"action":"click","target":"single-trigger"},{"action":"press","target":"single-today","key":"Escape"}]},
+      {"name":"compact manual entry","steps":[{"action":"click","target":"single-input"},{"action":"fill","target":"single-input","value":"20260812"},{"action":"press","target":"single-input","key":"Enter"}]},
+      {"name":"invalid calendar date","steps":[{"action":"click","target":"single-input"},{"action":"fill","target":"single-input","value":"20260230"},{"action":"press","target":"single-input","key":"Enter"}]},
+      {"name":"unavailable manual date","steps":[{"action":"click","target":"single-input"},{"action":"fill","target":"single-input","value":"20260820"},{"action":"press","target":"single-input","key":"Enter"}]},
+      {"name":"pointer date completion","steps":[{"action":"click","target":"single-trigger"},{"action":"click","target":"single-day-valid"}]},
+      {"name":"keyboard date completion","steps":[{"action":"click","target":"single-trigger"},{"action":"press","target":"single-day-valid","key":"ArrowRight"},{"action":"press","target":"single-day-next","key":"Enter"}]},
+      {"name":"month movement and today return","steps":[{"action":"click","target":"single-trigger"},{"action":"click","target":"single-next-month"},{"action":"click","target":"single-today-action"}]},
+      {"name":"clear completed date","steps":[{"action":"click","target":"single-trigger"},{"action":"click","target":"single-day-valid"},{"action":"click","target":"single-clear"}]}
+    ]}
+  </script>
+  <script>
+    (() => {
+      const TODAY = '2026-08-14';
+      const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const control = document.querySelector('[data-date-control]');
+      const input = document.querySelector('[data-ref="single-input"]');
+      const clear = document.querySelector('[data-ref="single-clear"]');
+      const trigger = document.querySelector('[data-ref="single-trigger"]');
+      const picker = document.querySelector('[data-ref="single-picker"]');
+      const heading = document.querySelector('[data-ref="single-month"]');
+      const grid = document.querySelector('[data-calendar-grid]');
+      const message = document.querySelector('[data-ref="single-message"]');
+      let viewYear = 2026;
+      let viewMonth = 7;
+      let selected = '';
+      let openedBy = input;
+      let suppressFocusOpen = false;
+
+      const iso = (year, month, day) => `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      const parseDate = (raw) => {
+        const match = raw.trim().match(/^(\d{4})(?:-?)(\d{2})(?:-?)(\d{2})$/);
+        if (!match) return null;
+        const year = Number(match[1]);
+        const month = Number(match[2]);
+        const day = Number(match[3]);
+        const value = new Date(Date.UTC(year, month - 1, day));
+        if (value.getUTCFullYear() !== year || value.getUTCMonth() !== month - 1 || value.getUTCDate() !== day) return null;
+        return iso(year, month - 1, day);
+      };
+      const setError = (text) => {
+        input.setAttribute('aria-invalid', 'true');
+        input.setCustomValidity(text);
+        message.textContent = text;
+        message.hidden = false;
+      };
+      const clearError = () => {
+        input.removeAttribute('aria-invalid');
+        input.setCustomValidity('');
+        message.textContent = '';
+        message.hidden = true;
+      };
+      const render = () => {
+        heading.textContent = `${MONTHS[viewMonth]} ${viewYear}`;
+        grid.setAttribute('aria-label', `Dates in ${MONTHS[viewMonth]} ${viewYear}`);
+        grid.replaceChildren();
+        const first = new Date(Date.UTC(viewYear, viewMonth, 1));
+        const start = new Date(first);
+        start.setUTCDate(1 - first.getUTCDay());
+        for (let offset = 0; offset < 42; offset += 1) {
+          const date = new Date(start);
+          date.setUTCDate(start.getUTCDate() + offset);
+          const value = iso(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+          const day = document.createElement('button');
+          day.type = 'button';
+          day.className = 'day-cell';
+          day.textContent = String(date.getUTCDate());
+          day.dataset.iso = value;
+          day.setAttribute('aria-label', `${MONTHS[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}${value === TODAY ? ', today' : ''}`);
+          if (date.getUTCMonth() !== viewMonth) day.classList.add('outside-month');
+          if (value === TODAY) { day.setAttribute('aria-current', 'date'); day.dataset.ref = 'single-today'; }
+          if (value === '2026-08-12') day.dataset.ref = 'single-day-valid';
+          if (value === '2026-08-13') day.dataset.ref = 'single-day-next';
+          if (value === selected) day.setAttribute('aria-pressed', 'true');
+          if (value > TODAY) day.disabled = true;
+          grid.append(day);
+        }
+      };
+      const open = (source, moveFocus) => {
+        openedBy = source;
+        picker.hidden = false;
+        trigger.setAttribute('aria-expanded', 'true');
+        trigger.setAttribute('aria-label', 'Close calendar');
+        render();
+        if (moveFocus) requestAnimationFrame(() => grid.querySelector('[data-ref="single-today"]')?.focus());
+      };
+      const close = (restore = false) => {
+        picker.hidden = true;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute('aria-label', 'Open calendar');
+        grid.replaceChildren();
+        if (restore) (openedBy || input).focus();
+      };
+      const select = (value) => {
+        selected = value;
+        input.value = value;
+        clear.hidden = false;
+        clearError();
+        render();
+        close();
+        suppressFocusOpen = true;
+        input.focus();
+        suppressFocusOpen = false;
+      };
+      const commitInput = () => {
+        if (!input.value.trim()) {
+          selected = '';
+          clear.hidden = true;
+          clearError();
+          render();
+          close();
+          return true;
+        }
+        const value = parseDate(input.value);
+        if (!value) { setError('Enter a real date as yyyy-mm-dd.'); return false; }
+        if (value > TODAY) { setError('Future dates are unavailable.'); return false; }
+        select(value);
+        return true;
+      };
+
+      render();
+      input.addEventListener('focus', () => { if (picker.hidden && !suppressFocusOpen) open(input, false); });
+      input.addEventListener('input', () => { clearError(); selected = ''; clear.hidden = !input.value; render(); });
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') { event.preventDefault(); commitInput(); }
+        if (event.key === 'Escape' && !picker.hidden) { event.preventDefault(); close(true); }
+        if (event.key === 'Tab') { commitInput(); close(false); }
+      });
+      trigger.addEventListener('click', () => { if (picker.hidden) open(trigger, true); else close(true); });
+      clear.addEventListener('click', () => { input.value = ''; selected = ''; clear.hidden = true; clearError(); render(); close(); suppressFocusOpen = true; input.focus(); suppressFocusOpen = false; });
+      grid.addEventListener('click', (event) => {
+        const day = event.target.closest('.day-cell');
+        if (day && !day.disabled) select(day.dataset.iso);
+      });
+      grid.addEventListener('keydown', (event) => {
+        const day = event.target.closest('.day-cell');
+        if (!day) return;
+        if (event.key === 'Escape') { event.preventDefault(); close(true); return; }
+        const delta = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[event.key];
+        if (!delta) return;
+        event.preventDefault();
+        const cells = [...grid.querySelectorAll('.day-cell')];
+        let index = cells.indexOf(day) + delta;
+        while (cells[index]?.disabled) index += delta;
+        cells[index]?.focus();
+      });
+      document.querySelector('[data-ref="single-prev-month"]').addEventListener('click', () => { viewMonth -= 1; if (viewMonth < 0) { viewMonth = 11; viewYear -= 1; } render(); });
+      document.querySelector('[data-ref="single-next-month"]').addEventListener('click', () => { viewMonth += 1; if (viewMonth > 11) { viewMonth = 0; viewYear += 1; } render(); });
+      document.querySelector('[data-ref="single-prev-year"]').addEventListener('click', () => { viewYear -= 1; render(); });
+      document.querySelector('[data-ref="single-next-year"]').addEventListener('click', () => { viewYear += 1; render(); });
+      document.querySelector('[data-ref="single-today-action"]').addEventListener('click', () => { viewYear = 2026; viewMonth = 7; render(); requestAnimationFrame(() => grid.querySelector('[data-ref="single-today"]')?.focus()); });
+      document.addEventListener('focusin', (event) => { if (!picker.hidden && !control.contains(event.target)) close(false); });
+    })();
+  </script>
+</body>
+</html>

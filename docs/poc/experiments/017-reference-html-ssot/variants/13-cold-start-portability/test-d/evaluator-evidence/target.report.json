@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "reference-range.html",
+    "digest": "c3da9d700071b7bb39e3f400686ec24e29c397d5e0ca76b296bbf397864517fe",
+    "files": [
+      {
+        "path": "reference-range.html",
+        "bytes": 17042,
+        "sha256": "e9211b3924a15ad39efcffddf0e98001cc2f81ea4eeba93772ef0614c83c754b"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "dc29afe4e6eea99e5a9d6019222e9a39aaf81a5bbf94f71d50866fbec312fbb8",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 4685,
+        "sha256": "6a86e15cf6d8f98d6b1ce655ae00ad2ad26665f7e26db6b6ef7f3ce18093426d"
+      },
+      {
+        "path": "target.css",
+        "bytes": 3225,
+        "sha256": "7fade6298db40c8d766dffdc38d6101a623f798026774b44266f8f48651e6d8c"
+      },
+      {
+        "path": "target.js",
+        "bytes": 6672,
+        "sha256": "8ab9ac11cd49edb83957b7ad46e832d5ea6442b5fe3a5de6cafcb5600a399040"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "start-only partial",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start",
+            "value": "20261003"
+          }
+        ]
+      },
+      {
+        "name": "end-only partial",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": "20261018"
+          }
+        ]
+      },
+      {
+        "name": "manual range completion",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start",
+            "value": "20261003"
+          },
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": "2026-10-18"
+          }
+        ]
+      },
+      {
+        "name": "one-click boundary selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          }
+        ]
+      },
+      {
+        "name": "invalid reversed range",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start",
+            "value": "2026-10-18"
+          },
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": "2026-10-03"
+          }
+        ]
+      },
+      {
+        "name": "future boundary unavailable",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start"
+          },
+          {
+            "action": "click",
+            "target": "range-future"
+          }
+        ]
+      },
+      {
+        "name": "escape closes boundary calendar",
+        "steps": [
+          {
+            "action": "press",
+            "target": "range-start",
+            "key": "ArrowRight"
+          },
+          {
+            "action": "press",
+            "target": "range-start",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "clear one boundary returns to partial",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start",
+            "value": "2026-10-03"
+          },
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": "2026-10-18"
+          },
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 0,
+    "errorSignatures": []
+  },
+  "differences": []
+}

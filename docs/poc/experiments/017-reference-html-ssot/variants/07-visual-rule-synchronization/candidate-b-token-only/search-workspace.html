@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Search workspace reference</title>
+  <link rel="stylesheet" href="shared-tokens.css">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      --surface-muted: #edf3f9;
+      --text: #101d2f;
+      --muted: #54657a;
+      --border: #c6d2df;
+      --accent: #1d73b7;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 960px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    :is(button, input, select, a):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    [hidden] { display: none !important; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+    .reference-bar {
+      display: flex;
+      min-height: 54px;
+      padding: 8px 24px;
+      align-items: center;
+      justify-content: space-between;
+      color: #405267;
+      background: #f8fbfe;
+      border-bottom: 1px dashed #9cafc1;
+    }
+
+    .reference-name { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .reference-options { display: flex; gap: 3px; }
+    .reference-options button { min-height: 34px; padding: 0 11px; color: #20364e; background: transparent; border: 1px solid transparent; border-radius: 5px; }
+    .reference-options button[aria-pressed="true"] { background: #e1edf9; border-color: #9eb5cc; }
+
+    .workspace { display: block; min-height: calc(100vh - 54px); padding: 28px; background: var(--canvas); }
+    .page-heading { margin-bottom: 22px; }
+    h1 { margin: 0; color: #10253d; font-size: 30px; line-height: 1.2; }
+    .page-heading p { margin: 7px 0 0; color: var(--muted); }
+
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+    .filter-panel { margin-bottom: 20px; }
+    .panel-heading { display: flex; min-height: 62px; padding: 0 18px; align-items: center; justify-content: space-between; border-bottom: 1px solid #d5dee8; }
+    .panel-heading h2 { margin: 0; font-size: 20px; }
+    .secondary-button {
+      min-height: 38px;
+      padding: 0 14px;
+      color: #183653;
+      background: var(--surface);
+      border: 1px solid #8ea2b9;
+      border-radius: 6px;
+    }
+
+    .filter-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 18px; }
+    .filter-fields label { display: grid; gap: 5px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .filter-fields :is(input, select) { min-height: 42px; padding: 0 11px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
+    .filter-actions { display: flex; gap: 10px; padding: 16px 18px; border-top: 1px solid #d5dee8; }
+    .primary-button {
+      min-height: 40px;
+      padding: 0 16px;
+      color: #ffffff;
+      font-weight: 700;
+      background: #1d70b3;
+      border: 1px solid #155b92;
+      border-radius: 6px;
+    }
+
+    .results-panel { overflow: hidden; }
+    .result-state { display: grid; min-height: 230px; padding: 36px 24px; place-content: center; text-align: center; }
+    .result-state h3 { margin: 0 0 7px; font-size: 19px; }
+    .result-state p { margin: 0; color: var(--muted); }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; min-width: 920px; border-collapse: separate; border-spacing: 0; }
+    th, td { min-height: 56px; padding: 14px 16px; text-align: left; border-bottom: 1px solid #d9e2eb; white-space: nowrap; }
+    th { color: #52647a; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; background: var(--surface-muted); }
+    th:first-child, td:first-child { position: sticky; left: 0; z-index: 1; background: var(--surface); }
+    th:first-child { z-index: 2; background: var(--surface-muted); }
+    td a { color: #126eb8; font-weight: 650; text-underline-offset: 3px; }
+    .status-badge { display: inline-block; padding: 3px 10px; color: #8a2c20; font-size: 14px; font-weight: 650; background: #fff0ed; border: 1px solid #e6aaa1; border-radius: 999px; }
+    .pagination { display: flex; min-height: 64px; padding: 10px 18px; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid #d5dee8; }
+    .pagination-hint { margin: 0; color: var(--muted); font-size: 13px; }
+    .pagination-controls { display: flex; align-items: center; gap: 10px; }
+    .pagination button { min-height: 38px; padding: 0 13px; color: #183653; background: var(--surface); border: 1px solid #8ea2b9; border-radius: 6px; }
+    .pagination button:disabled { color: #52647a; background: #f2f5f8; cursor: default; }
+    .page-number { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="reference-bar" data-reference-harness="scenario-selector">
+    <span class="reference-name">Reference part · search workflow</span>
+    <div class="reference-options" role="group" aria-label="Reference scenario">
+      <button type="button" data-reference-state="initial" aria-pressed="true">Initial</button>
+      <button type="button" data-reference-state="results" aria-pressed="false">Results</button>
+      <button type="button" data-reference-state="empty" aria-pressed="false">Empty</button>
+    </div>
+  </div>
+
+  <main class="workspace">
+    <div class="page-heading">
+      <h1>Purchase order search</h1>
+      <p>Find purchase orders that need review or follow-up.</p>
+    </div>
+
+    <section class="panel filter-panel" aria-labelledby="reference-filter-heading">
+      <div class="panel-heading">
+        <h2 id="reference-filter-heading">Filters</h2>
+        <button class="secondary-button" type="button" data-ref="filter-toggle" aria-controls="reference-filter-fields" aria-expanded="true">Hide filters</button>
+      </div>
+      <form id="reference-filter-fields" class="filter-form" aria-labelledby="reference-filter-heading">
+        <div class="filter-fields">
+          <label>Supplier
+            <input type="search" data-ref="query-filter" autocomplete="off" placeholder="Supplier name">
+          </label>
+          <label>Status
+            <select><option>All statuses</option><option>Pending review</option><option>On hold</option></select>
+          </label>
+          <label>Business unit
+            <select><option>All units</option><option>Retail</option><option>Distribution</option></select>
+          </label>
+        </div>
+        <div class="filter-actions" data-ref="filter-actions">
+          <button class="primary-button" type="submit" data-ref="search-action">Search</button>
+          <button class="secondary-button" type="reset" data-ref="clear-action">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel results-panel" aria-labelledby="reference-result-heading">
+      <div class="panel-heading">
+        <h2 id="reference-result-heading">Purchase orders</h2>
+        <button class="primary-button" type="button" data-ref="create-action">New order</button>
+      </div>
+      <p class="visually-hidden" data-ref="result-summary" aria-live="polite">Search has not been run.</p>
+      <div class="result-state" data-ref="result-initial">
+        <div><h3>Search for purchase orders</h3><p>Set filters as needed, then select Search.</p></div>
+      </div>
+      <div class="result-state" data-ref="result-empty" hidden>
+        <div><h3>No purchase orders found</h3><p>Adjust the filters and search again.</p></div>
+      </div>
+      <div class="table-wrap" hidden>
+        <table data-ref="result-table">
+          <thead><tr><th>Order ID</th><th>Supplier</th><th>Business unit</th><th>Amount</th><th>Status</th><th>Required by</th></tr></thead>
+          <tbody>
+            <tr><td><a href="#PO-4821">PO-4821</a></td><td>Northstar Parts</td><td>Distribution</td><td>$18,420</td><td><span class="status-badge" data-ref="status-badge">On hold</span></td><td>Sep 30</td></tr>
+            <tr><td><a href="#PO-4816">PO-4816</a></td><td>Harbor Office</td><td>Retail</td><td>$6,850</td><td>Pending review</td><td>Oct 2</td></tr>
+            <tr><td><a href="#PO-4809">PO-4809</a></td><td>Cedar Packaging</td><td>Distribution</td><td>$12,300</td><td>Pending review</td><td>Oct 4</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <nav class="pagination" data-ref="result-pagination" aria-label="Purchase order result pages" hidden>
+        <p class="pagination-hint">More results available. Refine filters to narrow the list.</p>
+        <div class="pagination-controls">
+          <button type="button" disabled>Previous</button>
+          <span class="page-number">Page 1</span>
+          <button type="button">Next</button>
+        </div>
+      </nav>
+    </section>
+  </main>
+
+  <script type="application/json" data-reference-scenarios>
+    {
+      "version": 1,
+      "scenarios": [
+        {
+          "name": "search results",
+          "steps": [
+            { "action": "click", "target": "search-action" }
+          ]
+        },
+        {
+          "name": "search empty",
+          "steps": [
+            { "action": "fill", "target": "query-filter", "value": "No match" },
+            { "action": "click", "target": "search-action" }
+          ]
+        },
+        {
+          "name": "clear to initial",
+          "steps": [
+            { "action": "click", "target": "search-action" },
+            { "action": "click", "target": "clear-action" }
+          ]
+        },
+        {
+          "name": "filter pointer round trip",
+          "steps": [
+            { "action": "click", "target": "filter-toggle" },
+            { "action": "click", "target": "filter-toggle" }
+          ]
+        },
+        {
+          "name": "filter keyboard round trip",
+          "steps": [
+            { "action": "press", "target": "filter-toggle", "key": "Enter" },
+            { "action": "press", "target": "filter-toggle", "key": "Enter" }
+          ]
+        }
+      ]
+    }
+  </script>
+
+  <script>
+    (() => {
+      const form = document.querySelector('.filter-form');
+      const filterToggle = document.querySelector('[data-ref="filter-toggle"]');
+      const query = document.querySelector('[data-ref="query-filter"]');
+      const initial = document.querySelector('[data-ref="result-initial"]');
+      const empty = document.querySelector('[data-ref="result-empty"]');
+      const tableWrap = document.querySelector('.table-wrap');
+      const pagination = document.querySelector('[data-ref="result-pagination"]');
+      const summary = document.querySelector('[data-ref="result-summary"]');
+      const scenarioButtons = [...document.querySelectorAll('[data-reference-state]')];
+
+      function setFilters(open) {
+        filterToggle.setAttribute('aria-expanded', String(open));
+        filterToggle.textContent = open ? 'Hide filters' : 'Show filters';
+        form.hidden = !open;
+      }
+
+      function setState(state) {
+        initial.hidden = state !== 'initial';
+        empty.hidden = state !== 'empty';
+        tableWrap.hidden = state !== 'results';
+        pagination.hidden = state !== 'results';
+        summary.textContent = state === 'initial'
+          ? 'Search has not been run.'
+          : state === 'empty'
+            ? 'No purchase orders found.'
+            : 'Purchase order results are displayed.';
+        scenarioButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.referenceState === state)));
+      }
+
+      filterToggle.addEventListener('click', () => setFilters(filterToggle.getAttribute('aria-expanded') !== 'true'));
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        setState(query.value.trim().toLowerCase() === 'no match' ? 'empty' : 'results');
+      });
+      form.addEventListener('reset', () => setTimeout(() => setState('initial'), 0));
+      scenarioButtons.forEach((button) => button.addEventListener('click', () => setState(button.dataset.referenceState)));
+    })();
+  </script>
+</body>
+</html>

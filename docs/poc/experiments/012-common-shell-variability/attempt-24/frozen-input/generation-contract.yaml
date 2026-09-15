@@ -1,0 +1,59 @@
+contract_version: 1
+experiment: 012-common-shell-variability
+attempt: 24
+classification: greenfield-manifest
+delivery: local_static_artifact_only
+frozen_inputs:
+  manifest_snapshot: frozen-input/design-manifest
+  linked_configuration_support: frozen-input/local-overrides/theme-colors.example.yaml
+  manifest_artifact_manifest: frozen-input/artifact-manifest.yaml
+  fixed_prompt: frozen-input/fixed-user-prompt-ja.md
+  product_binding:
+    fixture_contract: absent
+    workspace_identity: "業務ワークスペース"
+    drawer_fixture:
+      group: "グループ 01"
+      children: ["項目 01-01", "項目 01-02"]
+      leaf_range: "項目 02 through 項目 30"
+      initial_current_destination: "項目 01-01"
+      search_available: true
+      destination_behavior: "Static activation updates only the current destination."
+    workspace_fixture:
+      label: "スクロール検証用ダミーコンテンツ"
+      ordinal_range: "1 through 80"
+      business_content_allowed: false
+    capture_selectable_initial_states:
+      drawer: [open, hidden]
+      theme: [light, dark]
+    theme_capability:
+      modes: [light, dark]
+      initial_mode: light
+      selected_theme_color_override: none
+    local_asset_constraint: "Lucide only; no external images, fonts, CDN, or scripts."
+execution:
+  model: gpt-5.6-terra
+  reasoning_effort: medium
+  independent_run_count: 3
+  run_isolation: "Each run receives only this frozen input set and its assigned output directory."
+  prohibited_run_actions:
+    - repair a generated Run
+    - selectively replace a generated Run
+    - use one generated Run as input to another Run
+evidence_plan:
+  viewports:
+    - { name: desktop, css_pixels: "1440x1200" }
+    - { name: narrow, css_pixels: "720x1200" }
+  visual_states:
+    - Light and Dark
+    - Drawer open and hidden
+    - initial menu
+    - matching navigation search
+    - no-match navigation search
+    - Drawer scroll
+    - workspace scroll
+  interaction_evidence:
+    - destination selection transfer
+    - parent disclosure preserves the current destination treatment
+    - Header remains available while the workspace scrolls
+    - hidden Drawer removes its track rather than reserving residual space
+    - semantic palette coverage in Light and Dark

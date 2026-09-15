@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>顧客追加</title>
+  <link rel="stylesheet" href="shell.css">
+  <link rel="stylesheet" href="page.css">
+</head>
+<body>
+  <div class="shell" id="shell">
+    <header class="header">
+      <button class="icon-button" id="drawer-toggle" type="button" aria-label="Close navigation" title="Close navigation"></button>
+      <div class="workspace-name">業務ワークスペース</div>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme"></button>
+    </header>
+    <div class="shell-body">
+      <aside class="drawer" id="drawer" aria-label="Navigation">
+        <div class="drawer-search">
+          <label for="menu-search">メニューを検索</label>
+          <div class="search-field">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="menu-search" type="search" placeholder="固定項目を検索" autocomplete="off">
+            <button class="clear-button" id="search-clear" type="button" aria-label="検索をクリア" title="検索をクリア"></button>
+          </div>
+        </div>
+        <nav class="navigation" id="navigation" aria-label="固定メニュー"></nav>
+      </aside>
+      <main class="workspace" aria-label="ワークスペース">
+        <article class="customer-create">
+          <header class="page-header">
+            <h1>顧客追加</h1>
+            <p>新しい顧客情報を登録します。</p>
+          </header>
+          <form id="customer-form" novalidate>
+            <div class="error-summary" id="error-summary" tabindex="-1" role="alert" hidden></div>
+            <fieldset>
+              <legend>顧客情報</legend>
+              <div class="field-group">
+                <label for="name">氏名 <span class="required">必須</span></label>
+                <input id="name" name="name" type="text" aria-describedby="name-message" required>
+                <div class="field-message" id="name-message" aria-live="polite">&nbsp;</div>
+              </div>
+              <div class="field-group">
+                <label for="birthdate">生年月日 <span class="required">必須</span></label>
+                <input id="birthdate" name="birthdate" type="text" inputmode="numeric" placeholder="YYYY-MM-DD" aria-describedby="birthdate-message" required>
+                <div class="field-message helper" id="birthdate-message" aria-live="polite">YYYY-MM-DD形式で入力してください。</div>
+              </div>
+              <div class="field-group">
+                <label for="address">住所 <span class="required">必須</span></label>
+                <input id="address" name="address" type="text" autocomplete="street-address" aria-describedby="address-message" required>
+                <div class="field-message" id="address-message" aria-live="polite">&nbsp;</div>
+              </div>
+              <div class="field-group">
+                <label for="phone">電話番号 <span class="required">必須</span></label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="03-1234-5678" aria-describedby="phone-message" required>
+                <div class="field-message helper" id="phone-message" aria-live="polite">電話番号をハイフン付きまたは数字のみで入力してください。</div>
+              </div>
+              <div class="field-group">
+                <label for="email">メールアドレス <span class="required">必須</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.jp" aria-describedby="email-message" required>
+                <div class="field-message helper" id="email-message" aria-live="polite">メールアドレスの形式で入力してください。</div>
+              </div>
+              <div class="field-group">
+                <label for="notes">備考</label>
+                <textarea id="notes" name="notes" rows="4" aria-describedby="notes-message"></textarea>
+                <div class="field-message" id="notes-message" aria-live="polite">&nbsp;</div>
+              </div>
+            </fieldset>
+            <div class="form-actions"><button class="primary-action" type="submit">保存</button></div>
+          </form>
+        </article>
+        <div class="numbers" id="numbers" hidden style="display: none"></div>
+      </main>
+    </div>
+  </div>
+  <script src="shell.js"></script>
+  <script src="page.js"></script>
+</body>
+</html>

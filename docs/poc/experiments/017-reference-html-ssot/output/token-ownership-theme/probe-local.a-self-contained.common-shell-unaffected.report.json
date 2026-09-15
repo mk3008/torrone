@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "common-shell.html",
+    "digest": "acbff1502c40f30c960971ca541138ea24add86ef29053c4303e11bc78285752",
+    "files": [
+      {
+        "path": "common-shell.html",
+        "bytes": 15436,
+        "sha256": "08ef898e61804197e5a53a221a4fd5248744beef4a7398045622d12750792527"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "common-shell.html",
+    "digest": "acbff1502c40f30c960971ca541138ea24add86ef29053c4303e11bc78285752",
+    "files": [
+      {
+        "path": "common-shell.html",
+        "bytes": 15436,
+        "sha256": "08ef898e61804197e5a53a221a4fd5248744beef4a7398045622d12750792527"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation visibility",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "navigation parent",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          },
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          }
+        ]
+      },
+      {
+        "name": "navigation filter no match",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "not present"
+          },
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "name": "navigation selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-secondary"
+          },
+          {
+            "action": "click",
+            "target": "navigation-current"
+          }
+        ]
+      },
+      {
+        "name": "theme round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          },
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "target": "user-menu-toggle",
+            "key": "Escape"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 0,
+    "errorSignatures": []
+  },
+  "differences": []
+}

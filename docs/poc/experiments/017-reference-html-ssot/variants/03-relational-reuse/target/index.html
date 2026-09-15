@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Site readiness board</title>
+  <style>
+    :root { font-family: "Segoe UI", system-ui, sans-serif; color: #172033; background-color: #f4f7fa; color-scheme: light; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-height: 100%; margin: 0; }
+    body { min-width: 960px; min-height: 100%; margin: 0; font-family: "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.5; background-color: #f4f7fa; }
+    button, select { font-family: inherit; font-size: inherit; line-height: inherit; }
+    button { cursor: pointer; }
+    :is(button, select):focus-visible { outline-color: #88b9ef; outline-style: solid; outline-width: 3px; outline-offset: 2px; }
+    [hidden] { display: none !important; }
+
+    .command-bar {
+      position: relative;
+      display: flex;
+      min-height: 64px;
+      padding: 0 28px;
+      align-items: center;
+      justify-content: space-between;
+      color: rgb(255, 255, 255);
+      background-color: rgb(23, 63, 103);
+      border-bottom-color: rgb(14, 49, 83);
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+
+    .operations-identity { display: flex; align-items: center; gap: 12px; font-weight: 650; }
+    .operations-symbol { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid #6f93b8; border-radius: 6px; }
+    .profile-zone { position: relative; }
+
+    .profile-trigger {
+      display: inline-grid;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      place-items: center;
+      color: #ffffff;
+      background-color: transparent;
+      border-color: #6f93b8;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 6px;
+    }
+
+    .profile-trigger svg { width: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+
+    .profile-popover {
+      position: absolute;
+      z-index: 3;
+      top: 48px;
+      right: 0;
+      display: block;
+      width: 220px;
+      padding: 12px;
+      color: #172033;
+      background-color: #ffffff;
+      border-color: #bdc9d7;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 8px;
+      box-shadow: 0 10px 24px rgba(18, 42, 66, 0.18);
+    }
+
+    .profile-person { margin: 0; font-weight: 650; }
+    .profile-role { margin: 2px 0 12px; color: #59687a; font-size: 14px; }
+    .profile-command {
+      display: block;
+      width: 100%;
+      min-height: 38px;
+      padding: 0 12px;
+      color: #172033;
+      text-align: left;
+      background-color: #ffffff;
+      border-color: #9cacc0;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 6px;
+    }
+
+    .board-canvas { display: block; min-height: calc(100vh - 64px); padding: 28px; background-color: #f4f7fa; }
+    .board-intro { display: flex; margin-bottom: 22px; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .board-title h1 { margin: 0; color: #10253d; font-size: 30px; line-height: 1.2; }
+    .board-title p { max-width: 720px; margin: 7px 0 0; color: #53647a; }
+
+    .readiness-totals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .readiness-total { padding: 16px 18px; background: #ffffff; border: 1px solid #c7d2df; border-radius: 8px; }
+    .total-name { display: block; color: #5a697b; font-size: 14px; }
+    .total-number { display: block; margin-top: 4px; color: #10253d; font-size: 24px; font-weight: 700; }
+
+    .inspection-board { display: block; overflow: visible; background-color: #ffffff; border-color: #c7d2df; border-style: solid; border-width: 1px; border-radius: 8px; }
+    .inspection-toolbar { display: flex; min-height: 64px; padding: 0 18px; align-items: center; justify-content: space-between; border-bottom: 1px solid #d3dce7; }
+    .inspection-toolbar h2 { margin: 0; font-size: 20px; }
+    .criteria-trigger { min-height: 38px; padding: 0 14px; color: #183653; background-color: #ffffff; border-color: #8ea2b9; border-style: solid; border-width: 1px; border-radius: 6px; }
+
+    .inspection-criteria { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 16px 18px; background-color: #f9fbfd; border-bottom-color: #d3dce7; border-bottom-style: solid; border-bottom-width: 1px; }
+    .inspection-criteria label { display: grid; gap: 5px; color: #394b60; font-size: 14px; font-weight: 600; }
+    .inspection-criteria select { min-height: 40px; padding: 0 10px; color: #172033; background-color: #ffffff; border-color: #9cacc0; border-style: solid; border-width: 1px; border-radius: 5px; }
+
+    .visit-cards { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+    .visit-card { display: grid; grid-template-columns: minmax(260px, 1.4fr) 1fr 160px 130px; gap: 18px; min-height: 72px; padding: 12px 18px; align-items: center; border-bottom: 1px solid #e0e6ed; }
+    .visit-card:last-child { border-bottom: 0; }
+    .visit-name { font-weight: 650; }
+    .visit-owner { color: #5a697b; }
+    .risk-marker { display: inline-block; width: fit-content; padding: 3px 10px; color: #8a2c20; font-size: 14px; font-weight: 650; background-color: #fff0ed; border-color: #e6aaa1; border-style: solid; border-width: 1px; border-radius: 999px; }
+  </style>
+</head>
+<body>
+  <header class="command-bar">
+    <div class="operations-identity"><span class="operations-symbol" aria-hidden="true">SO</span><span>Site Operations</span></div>
+    <section class="profile-zone" aria-label="Account controls">
+      <button class="profile-trigger" type="button" data-ref="user-menu-toggle" aria-controls="inspection-account-actions" aria-expanded="false" aria-haspopup="menu" aria-label="Open account menu">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+      </button>
+      <div class="profile-popover" id="inspection-account-actions" role="menu" hidden>
+        <div><p class="profile-person">Morgan Lee</p><p class="profile-role">Regional safety lead</p></div>
+        <button class="profile-command" type="button" role="menuitem" data-ref="sign-out-action">Sign out</button>
+      </div>
+    </section>
+  </header>
+
+  <main class="board-canvas">
+    <section class="board-intro" aria-labelledby="readiness-title">
+      <div class="board-title"><h1 id="readiness-title">Site readiness board</h1><p>Review facilities that require attention before their next operating window.</p></div>
+    </section>
+
+    <section class="readiness-totals" data-ref="summary-strip" aria-label="Inspection summary">
+      <div class="readiness-total"><span class="total-name">Scheduled</span><strong class="total-number">12</strong></div>
+      <div class="readiness-total"><span class="total-name">Escalated</span><strong class="total-number">2</strong></div>
+      <div class="readiness-total"><span class="total-name">Due today</span><strong class="total-number">4</strong></div>
+    </section>
+
+    <section class="inspection-board" data-ref="work-region" aria-labelledby="inspection-heading">
+      <div class="inspection-toolbar"><h2 id="inspection-heading">Upcoming inspections</h2><button class="criteria-trigger" type="button" data-ref="filter-toggle" aria-controls="inspection-criteria" aria-expanded="false">Show criteria</button></div>
+      <form class="inspection-criteria" id="inspection-criteria" aria-labelledby="inspection-heading" hidden>
+        <label>Region<select><option>All regions</option><option>North</option><option>West</option></select></label>
+        <label>Risk<select><option>All risk levels</option><option>Elevated</option><option>Routine</option></select></label>
+        <label>Inspector<select><option>All inspectors</option><option>M. Ortiz</option><option>K. Singh</option></select></label>
+      </form>
+      <ol class="visit-cards">
+        <li class="visit-card"><span class="visit-name">North distribution center</span><span class="visit-owner">M. Ortiz</span><span class="risk-marker" data-ref="status-badge">Escalated</span><time>Today</time></li>
+        <li class="visit-card"><span class="visit-name">West repair depot</span><span class="visit-owner">K. Singh</span><span>Scheduled</span><time>Tomorrow</time></li>
+        <li class="visit-card"><span class="visit-name">Central parts warehouse</span><span class="visit-owner">J. Ford</span><span>Scheduled</span><time>Friday</time></li>
+      </ol>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const criteriaButton = document.querySelector('[data-ref="filter-toggle"]');
+      const criteria = document.getElementById('inspection-criteria');
+      const profileButton = document.querySelector('[data-ref="user-menu-toggle"]');
+      const profileActions = document.getElementById('inspection-account-actions');
+      const exitButton = document.querySelector('[data-ref="sign-out-action"]');
+
+      criteriaButton.addEventListener('click', () => {
+        const open = criteriaButton.getAttribute('aria-expanded') !== 'true';
+        criteriaButton.setAttribute('aria-expanded', String(open));
+        criteriaButton.textContent = open ? 'Hide criteria' : 'Show criteria';
+        criteria.hidden = !open;
+      });
+
+      profileButton.addEventListener('click', () => {
+        const open = profileButton.getAttribute('aria-expanded') !== 'true';
+        profileButton.setAttribute('aria-expanded', String(open));
+        profileButton.setAttribute('aria-label', open ? 'Close account menu' : 'Open account menu');
+        profileActions.hidden = !open;
+        if (open) exitButton.focus();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape' || profileButton.getAttribute('aria-expanded') !== 'true') return;
+        event.preventDefault();
+        profileButton.setAttribute('aria-expanded', 'false');
+        profileButton.setAttribute('aria-label', 'Open account menu');
+        profileActions.hidden = true;
+        profileButton.focus();
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "pass",
+  "source": {
+    "entry": "entity-dialog-lookup.html",
+    "digest": "fedad0c3712ecfac4a2f8f3e16344282b5fd1908fd886cb884990b23112a9657",
+    "files": [
+      {
+        "path": "entity-dialog-lookup.html",
+        "bytes": 8695,
+        "sha256": "43534e19ec72998ec6f2613ab3bd6d736fe8411c646ca2834a04333085dbd0fe"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "warningCount": 0,
+    "checkedStateCount": 18
+  },
+  "errors": []
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "gate": "aria-activedescendant relational observation canary",
+  "runId": "20260814T072513Z",
+  "status": "observation-hole-reproduced",
+  "implementation": {
+    "coreSha256": "F09AF96679EC529718AC3766DF19431AECC0A222A91A32523EA56C12CCC47285",
+    "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+    "preservedCore": "implementation/browser-core.js",
+    "preservedCli": "implementation/reference-ui.mjs"
+  },
+  "fixedInputs": {
+    "referenceSha256": "F7AE21DAE37C07965FF488435102B0B1DA7A12F8BC3D7DD66FC5E103DC135F03",
+    "targetSha256": "1ED5AC6CD1C139B656D46DA11AC2C50637831EB55A22007D142CC2380FEA741C"
+  },
+  "validTarget": {
+    "status": "pass",
+    "errorCount": 0
+  },
+  "wrongActiveTarget": {
+    "mutation": "Only aria-activedescendant points at the existing secondary option; the primary option remains aria-selected and styled.",
+    "status": "pass",
+    "errorCount": 0,
+    "activeDescendantObserved": false
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "selectedPresentation": "exact-observation-signature",
+  "reason": "It groups only state/frame repetition with identical path and values; it does not infer cause.",
+  "comparisons": [
+    {
+      "name": "search-shell",
+      "sourcePath": "output/partial-reference/target-shell.report.json",
+      "sourceSha256": "833DB640FC2C4AA6E4D8D16EC3F7298D4EE686AF38213B7F4E776C35A5A8E720",
+      "sourceStatus": "pass",
+      "raw": {
+        "differenceCount": 182,
+        "errorCount": 0,
+        "diagnosticCount": 182,
+        "diagnosticKinds": {
+          "extra-element": 182
+        },
+        "jsonLineCount": 1227
+      },
+      "exactValue": {
+        "reviewerEntryCount": 14,
+        "errorEntryCount": 0,
+        "diagnosticEntryCount": 14,
+        "repeatedOccurrencesCollapsed": 168,
+        "markdownLineCount": 35,
+        "trace": {
+          "status": "pass",
+          "rawDifferenceCount": 182,
+          "indexedOccurrenceCount": 182,
+          "uniqueIndexedOccurrenceCount": 182,
+          "missingOrDuplicateIndexes": false,
+          "signatureMismatches": []
+        }
+      },
+      "fieldOnly": {
+        "diagnosticEntryCount": 14,
+        "heterogeneousGroupCount": 0,
+        "heterogeneousGroups": []
+      }
+    },
+    {
+      "name": "search-workspace",
+      "sourcePath": "output/partial-reference/target-workspace.report.json",
+      "sourceSha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE",
+      "sourceStatus": "pass",
+      "raw": {
+        "differenceCount": 199,
+        "errorCount": 0,
+        "diagnosticCount": 199,
+        "diagnosticKinds": {
+          "geometry": 69,
+          "extra-element": 130
+        },
+        "jsonLineCount": 1381
+      },
+      "exactValue": {
+        "reviewerEntryCount": 25,
+        "errorEntryCount": 0,
+        "diagnosticEntryCount": 25,
+        "repeatedOccurrencesCollapsed": 174,
+        "markdownLineCount": 46,
+        "trace": {
+          "status": "pass",
+          "rawDifferenceCount": 199,
+          "indexedOccurrenceCount": 199,
+          "uniqueIndexedOccurrenceCount": 199,
+          "missingOrDuplicateIndexes": false,
+          "signatureMismatches": []
+        }
+      },
+      "fieldOnly": {
+        "diagnosticEntryCount": 25,
+        "heterogeneousGroupCount": 0,
+        "heterogeneousGroups": []
+      }
+    },
+    {
+      "name": "form-shell",
+      "sourcePath": "output/form-heavy-partial/target-shell.report.json",
+      "sourceSha256": "E7A975CE96552851FD5D69DB5B4B3F880CD0C7AC7CA135A35558A11CB5E47213",
+      "sourceStatus": "pass",
+      "raw": {
+        "differenceCount": 247,
+        "errorCount": 0,
+        "diagnosticCount": 247,
+        "diagnosticKinds": {
+          "extra-element": 247
+        },
+        "jsonLineCount": 1617
+      },
+      "exactValue": {
+        "reviewerEntryCount": 19,
+        "errorEntryCount": 0,
+        "diagnosticEntryCount": 19,
+        "repeatedOccurrencesCollapsed": 228,
+        "markdownLineCount": 40,
+        "trace": {
+          "status": "pass",
+          "rawDifferenceCount": 247,
+          "indexedOccurrenceCount": 247,
+          "uniqueIndexedOccurrenceCount": 247,
+          "missingOrDuplicateIndexes": false,
+          "signatureMismatches": []
+        }
+      },
+      "fieldOnly": {
+        "diagnosticEntryCount": 19,
+        "heterogeneousGroupCount": 0,
+        "heterogeneousGroups": []
+      }
+    },
+    {
+      "name": "form-workflow",
+      "sourcePath": "output/form-heavy-partial/target-form.report.json",
+      "sourceSha256": "D208532EFB4D812AB2AFA0897C39A2DEA085D8B67D95D4CC85559C98014F5923",
+      "sourceStatus": "pass",
+      "raw": {
+        "differenceCount": 192,
+        "errorCount": 0,
+        "diagnosticCount": 192,
+        "diagnosticKinds": {
+          "geometry": 49,
+          "extra-element": 143
+        },
+        "jsonLineCount": 1315
+      },
+      "exactValue": {
+        "reviewerEntryCount": 21,
+        "errorEntryCount": 0,
+        "diagnosticEntryCount": 21,
+        "repeatedOccurrencesCollapsed": 171,
+        "markdownLineCount": 42,
+        "trace": {
+          "status": "pass",
+          "rawDifferenceCount": 192,
+          "indexedOccurrenceCount": 192,
+          "uniqueIndexedOccurrenceCount": 192,
+          "missingOrDuplicateIndexes": false,
+          "signatureMismatches": []
+        }
+      },
+      "fieldOnly": {
+        "diagnosticEntryCount": 18,
+        "heterogeneousGroupCount": 3,
+        "heterogeneousGroups": [
+          {
+            "kind": "geometry",
+            "normalizedPath": "elements.semantic:role:form.box.x",
+            "occurrenceCount": 9,
+            "exactObservationCount": 2
+          },
+          {
+            "kind": "geometry",
+            "normalizedPath": "elements.semantic:role:main.box.height",
+            "occurrenceCount": 9,
+            "exactObservationCount": 2
+          },
+          {
+            "kind": "geometry",
+            "normalizedPath": "elements.semantic:role:main.box.x",
+            "occurrenceCount": 11,
+            "exactObservationCount": 2
+          }
+        ]
+      }
+    }
+  ],
+  "families": {
+    "search": {
+      "rawDiagnosticCount": 381,
+      "exactDiagnosticEntryCount": 39,
+      "fieldOnlyDiagnosticEntryCount": 39,
+      "repeatedOccurrencesCollapsed": 342,
+      "heterogeneousFieldGroups": 0
+    },
+    "formHeavy": {
+      "rawDiagnosticCount": 439,
+      "exactDiagnosticEntryCount": 40,
+      "fieldOnlyDiagnosticEntryCount": 37,
+      "repeatedOccurrencesCollapsed": 399,
+      "heterogeneousFieldGroups": 3
+    }
+  }
+}

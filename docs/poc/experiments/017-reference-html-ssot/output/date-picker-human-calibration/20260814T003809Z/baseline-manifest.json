@@ -1,0 +1,83 @@
+{
+  "responsibility": "human-calibration-phase-1-baseline-evidence",
+  "status": "ready-for-human-review",
+  "phase": 1,
+  "runId": "20260814T003809Z",
+  "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "baseline": [
+    {
+      "name": "single-date",
+      "path": "review/date-picker-human-calibration/baseline/single-date.html",
+      "sha256": "7FB5D151B48FEDC64CF6839EFC5B87C2D4BE0D77B3264F2FE2958CAA65F41E10"
+    },
+    {
+      "name": "date-range",
+      "path": "review/date-picker-human-calibration/baseline/date-range.html",
+      "sha256": "DA068C8BB35EC3B0AF8108DF4EB72A17201886BF56B6CDFCB4B0EA58A18A9C94"
+    }
+  ],
+  "origin": [
+    {
+      "name": "single-date",
+      "path": "variants/11-composite-granularity/references/date-picker.html",
+      "sha256": "B8F4FEC9B02D96769D139DCE77AC424C7F51063C0B43550B3409D5588E2EA6CE"
+    },
+    {
+      "name": "date-range",
+      "path": "variants/11-composite-granularity/references/date-range-picker.html",
+      "sha256": "82E6769E5A75ED8E86205164BC857030FB7484D57950DE1558B039095A0EFA64"
+    }
+  ],
+  "fixedInputs": {
+    "acceptedReferenceSha256": "868983B43CBE50BE0D9EBA952AD34C87922194167BCBCAF7A4C0163D30D52056",
+    "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+    "coreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+    "fixedCompositeOutput": {
+      "fileCount": 113,
+      "sha256": "99BDD8BC4C702E2C78509AD2120332D69B09609AA77D7FE906DBA49944BF00BB"
+    }
+  },
+  "objectivePreReviewAdjustments": [
+    "Trigger activation now toggles the picker closed as well as open.",
+    "Unsupported aria-selected state was removed from native buttons; selected-only aria-pressed state is used.",
+    "A fixed Sep 14 today fixture exposes today, selection, and focus as distinct review states."
+  ],
+  "checks": {
+    "conformanceStates": {
+      "singleDate": 12,
+      "dateRange": 15
+    },
+    "scenarios": {
+      "singleDate": 4,
+      "dateRange": 4
+    },
+    "consoleErrors": 0,
+    "externalRequests": 0,
+    "failedRequests": 0,
+    "boundedAccessibilityIssues": 0,
+    "duplicateKeys": 0,
+    "semanticAmbiguities": 0,
+    "excludedHarnessRootsPerState": 1
+  },
+  "reviewStates": {
+    "singleDate": [
+      "closed",
+      "opened",
+      "keyboard focus",
+      "selected value",
+      "clear",
+      "reselection"
+    ],
+    "dateRange": [
+      "closed",
+      "opened",
+      "range start",
+      "intermediate selection",
+      "completion",
+      "completed value",
+      "clear",
+      "reselection"
+    ]
+  },
+  "scopeBoundary": "Phase 1 baseline only; no Target transfer, observation classification, canonical decision, or CLI/Core change."
+}

@@ -1,0 +1,4 @@
+/* Deliberate isolated mutation: the sole primary action loses its approved emphasis. */
+[data-ref="create-action"] {
+  background-color: #8a2c20;
+}

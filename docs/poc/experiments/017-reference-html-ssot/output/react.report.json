@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "c04002ca19d8c6089c16a214802c54039e0d9b6eda61ad5f05fe71058530a212",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 19298,
+        "sha256": "536f466334ff9c635734456578d71d9b1a9d99761064528710e5e138fc55214a"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "1b0ff5331ee291b9a93ad7956109a855dd018d18a9ca21ae99af0bc7eb4d3c9a",
+    "files": [
+      {
+        "path": "assets/index-Ch7IjAo9.js",
+        "bytes": 192175,
+        "sha256": "4d1789330cd865d4b4a5c4f23265090257690444e8f54a52d6b8dd195d700c2a"
+      },
+      {
+        "path": "assets/index-DLr_ytGV.css",
+        "bytes": 6896,
+        "sha256": "c53ec5bd054963a4458f07d5f872e3c8e525f6eaca302673ded325ae6e82f9a4"
+      },
+      {
+        "path": "index.html",
+        "bytes": 439,
+        "sha256": "9d14fa68d9b8947223eafcff1751921b2c7a402e47779c723205580ecefc9460"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "theme change",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "dialog escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "detail-action"
+          },
+          {
+            "action": "press",
+            "key": "Escape"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 2,
+    "errorSignatures": []
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.detail-dialog.box.y",
+      "expected": 295.25,
+      "actual": 285.11,
+      "delta": 10.139999999999986
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.dialog escape.step-1.elements.detail-dialog.box.height",
+      "expected": 309.48,
+      "actual": 329.78,
+      "delta": 20.299999999999955
+    }
+  ]
+}

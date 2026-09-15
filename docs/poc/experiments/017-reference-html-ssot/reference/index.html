@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Access review queue reference</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #f3f6fa;
+      --surface: #ffffff;
+      --surface-muted: #edf2f7;
+      --text: #172033;
+      --muted: #5b677a;
+      --border: #c8d2df;
+      --border-strong: #96a6ba;
+      --brand: #173b63;
+      --brand-strong: #0f2f52;
+      --brand-contrast: #ffffff;
+      --accent: #2875c7;
+      --accent-soft: #e3f0ff;
+      --focus: #2f7bd0;
+      --danger: #a83232;
+      --status-bg: #e3f5ea;
+      --status-text: #17633a;
+      --shadow: 0 12px 32px rgb(20 38 61 / 18%);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --canvas: #111923;
+      --surface: #1a2532;
+      --surface-muted: #243244;
+      --text: #edf4fb;
+      --muted: #b6c4d4;
+      --border: #40536a;
+      --border-strong: #63768d;
+      --brand: #0d2844;
+      --brand-strong: #081e35;
+      --brand-contrast: #f4f8fc;
+      --accent: #6bb2ff;
+      --accent-soft: #1b3f65;
+      --focus: #78baff;
+      --danger: #ff9999;
+      --status-bg: #183d2b;
+      --status-text: #9ae6b9;
+      --shadow: 0 12px 32px rgb(0 0 0 / 42%);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-width: 760px; min-height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--text);
+      background: var(--canvas);
+    }
+
+    button, input, select { font: inherit; }
+
+    button { cursor: pointer; }
+
+    button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .app-header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 18px;
+      color: var(--brand-contrast);
+      background: var(--brand);
+      border-bottom: 1px solid var(--brand-strong);
+    }
+
+    .product-name {
+      margin-right: auto;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+
+    .icon-button {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      padding: 0;
+      color: inherit;
+      background: transparent;
+      border: 1px solid rgb(255 255 255 / 35%);
+      border-radius: 6px;
+    }
+
+    .icon-button:hover { background: rgb(255 255 255 / 12%); }
+
+    .icon-button svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .navigation-icon-open { display: none; }
+
+    [data-ref="navigation-toggle"][aria-expanded="false"] .navigation-icon-close { display: none; }
+
+    [data-ref="navigation-toggle"][aria-expanded="false"] .navigation-icon-open { display: block; }
+
+    .user-menu { position: relative; }
+
+    .user-menu-popover {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      z-index: 10;
+      min-width: 220px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgb(16 42 67 / 18%);
+    }
+
+    .user-menu-popover[hidden] { display: none; }
+
+    .user-menu-identity { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+
+    .user-menu-name { margin: 0; font-weight: 700; }
+
+    .user-menu-email { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+
+    .user-menu-action {
+      width: 100%;
+      min-height: 40px;
+      padding: 9px 14px;
+      color: var(--text);
+      background: transparent;
+      border: 0;
+      border-radius: 0 0 5px 5px;
+      text-align: left;
+    }
+
+    .user-menu-action:hover { background: var(--surface-muted); }
+
+    .shell {
+      height: calc(100vh - 56px);
+      display: grid;
+      grid-template-columns: 248px minmax(0, 1fr);
+      overflow: hidden;
+    }
+
+    .shell.navigation-hidden { grid-template-columns: minmax(0, 1fr); }
+
+    .primary-navigation {
+      min-width: 0;
+      overflow: auto;
+      padding: 18px 12px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+    }
+
+    .primary-navigation[hidden] { display: none; }
+
+    .navigation-filter {
+      display: grid;
+      gap: 5px;
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .navigation-filter input {
+      min-height: 36px;
+      padding: 7px 9px;
+    }
+
+    .nav-list { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; }
+
+    .nav-group { display: grid; gap: 3px; }
+
+    .nav-group[hidden] { display: none; }
+
+    .nav-parent {
+      width: 100%;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 10px 8px 13px;
+      color: var(--text);
+      background: transparent;
+      border: 0;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    .nav-parent:hover { background: var(--surface-muted); }
+
+    .nav-parent svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      transition: transform 120ms ease;
+    }
+
+    .nav-parent[aria-expanded="false"] svg { transform: rotate(-90deg); }
+
+    .nav-children {
+      display: grid;
+      gap: 3px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-children[hidden] { display: none; }
+
+    .nav-children .nav-link { padding-left: 26px; }
+
+    .navigation-empty {
+      margin: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .navigation-empty[hidden] { display: none; }
+
+    .nav-link {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 10px;
+      color: var(--text);
+      text-decoration: none;
+      border-left: 3px solid transparent;
+      border-radius: 5px;
+    }
+
+    .nav-link:hover { background: var(--surface-muted); }
+
+    .nav-link[aria-current="page"] {
+      color: var(--brand-strong);
+      background: var(--accent-soft);
+      border-left-color: var(--accent);
+      border-radius: 0;
+      font-weight: 700;
+    }
+
+    :root[data-theme="dark"] .nav-link[aria-current="page"] { color: var(--text); }
+
+    .workspace {
+      min-width: 0;
+      overflow: auto;
+      padding: 24px 28px 48px;
+    }
+
+    .page-heading {
+      max-width: 1180px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    h1 { margin: 0; font-size: 25px; line-height: 1.2; letter-spacing: -.015em; }
+
+    .page-description { max-width: 640px; margin: 7px 0 0; color: var(--muted); }
+
+    .reference-scenario {
+      flex: 0 0 auto;
+      display: grid;
+      justify-items: end;
+      gap: 4px;
+      padding: 7px 9px;
+      border: 1px dashed var(--border-strong);
+      border-radius: 6px;
+    }
+
+    .reference-scenario-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .reference-scenario-options { display: flex; gap: 3px; }
+
+    .reference-scenario button {
+      min-height: 28px;
+      padding: 3px 8px;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .reference-scenario button:hover { background: var(--surface-muted); }
+
+    .reference-scenario button[aria-pressed="true"] {
+      color: var(--brand-strong);
+      background: var(--accent-soft);
+      border-color: var(--border-strong);
+      font-weight: 700;
+    }
+
+    .secondary-button, .primary-button, .danger-button {
+      min-height: 36px;
+      padding: 7px 13px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .secondary-button {
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+    }
+
+    .secondary-button:hover { background: var(--surface-muted); }
+
+    .primary-button {
+      color: #ffffff;
+      background: #1f68b2;
+      border: 1px solid #185792;
+    }
+
+    .primary-button:hover { background: #185792; }
+
+    .filters, .results {
+      max-width: 1180px;
+      margin: 0 auto 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .section-heading {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-heading h2 { margin: 0; font-size: 15px; }
+
+    .disclosure-button {
+      min-height: 32px;
+      padding: 4px 10px;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      font-weight: 700;
+    }
+
+    .filter-panel { display: block; }
+
+    .filter-panel[hidden] { display: none; }
+
+    .filter-fields {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+      align-items: end;
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .field { display: grid; gap: 5px; color: var(--muted); font-size: 12px; font-weight: 700; }
+
+    input, select {
+      width: 100%;
+      min-height: 36px;
+      padding: 7px 9px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      font-weight: 400;
+    }
+
+    .filter-actions {
+      display: flex;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .results { margin-bottom: 0; overflow: hidden; }
+
+    .result-heading {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 16px;
+    }
+
+    .result-heading h2 { margin: 0; font-size: 15px; }
+
+    .result-state {
+      min-height: 148px;
+      display: grid;
+      place-content: center;
+      gap: 6px;
+      padding: 28px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .result-state[hidden] { display: none; }
+
+    .result-state h3 { margin: 0; font-size: 15px; }
+
+    .result-state p { max-width: 480px; margin: 0; color: var(--muted); }
+
+    .table-wrap { overflow-x: auto; border-top: 1px solid var(--border); }
+
+    .table-wrap[hidden], .pagination[hidden] { display: none; }
+
+    table { width: 100%; min-width: 840px; border-collapse: collapse; background: var(--surface); }
+
+    caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+
+    th {
+      color: var(--muted);
+      background: var(--surface-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    th:first-child,
+    td:first-child {
+      position: sticky;
+      left: 0;
+      box-shadow: 1px 0 0 var(--border);
+    }
+
+    th:first-child { z-index: 3; }
+
+    td:first-child {
+      z-index: 2;
+      background: var(--surface);
+    }
+
+    tbody tr:hover { background: color-mix(in srgb, var(--accent-soft) 45%, var(--surface)); }
+
+    tbody tr:hover td:first-child { background: color-mix(in srgb, var(--accent-soft) 45%, var(--surface)); }
+
+    tbody tr:last-child td { border-bottom: 0; }
+
+    .identity {
+      font-weight: 700;
+    }
+
+    a.identity {
+      color: var(--accent);
+      text-underline-offset: 2px;
+    }
+
+    a.identity:hover { text-decoration-thickness: 2px; }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 8px;
+      color: var(--status-text);
+      background: var(--status-bg);
+      border: 1px solid color-mix(in srgb, var(--status-text) 35%, transparent);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status-badge.high { color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, var(--surface)); border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
+
+    .pagination {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .pagination-hint { margin: 0; color: var(--muted); font-size: 12px; }
+
+    .pagination-controls { display: flex; align-items: center; gap: 4px; }
+
+    .page-button {
+      min-width: 34px;
+      min-height: 34px;
+      padding: 5px 9px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+    }
+
+    .page-status {
+      min-width: 56px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .page-button:disabled {
+      color: var(--muted);
+      background: var(--surface-muted);
+      cursor: not-allowed;
+      opacity: .65;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 920px) {
+      .filter-fields { grid-template-columns: 1fr 1fr; }
+      .page-heading { align-items: stretch; flex-direction: column; }
+      .reference-scenario { justify-items: start; align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header" data-ref="app-header">
+    <button class="icon-button" type="button" data-ref="navigation-toggle" aria-controls="primary-navigation" aria-expanded="true" aria-label="Hide navigation">
+      <svg class="navigation-icon-close" aria-hidden="true" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M9 3v18" /><path d="m16 15-3-3 3-3" /></svg>
+      <svg class="navigation-icon-open" aria-hidden="true" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M9 3v18" /><path d="m14 9 3 3-3 3" /></svg>
+    </button>
+    <div class="product-name">Control Center</div>
+    <div class="header-actions">
+      <button class="icon-button" type="button" data-ref="theme-toggle" aria-pressed="false" aria-label="Use dark theme">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.2A8 8 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z" /></svg>
+      </button>
+      <div class="user-menu">
+        <button class="icon-button" type="button" data-ref="user-menu-toggle" aria-controls="user-menu-popover" aria-expanded="false" aria-haspopup="menu" aria-label="Open user menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="10" r="4" /><path d="M18 20a6 6 0 0 0-12 0" /></svg>
+        </button>
+        <div class="user-menu-popover" id="user-menu-popover" data-ref="user-menu-popover" role="menu" hidden>
+          <div class="user-menu-identity" role="presentation">
+            <p class="user-menu-name">Mina Patel</p>
+            <p class="user-menu-email">mina.patel@example.com</p>
+          </div>
+          <button class="user-menu-action" type="button" role="menuitem" data-ref="sign-out-action">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell" id="application-shell">
+    <nav class="primary-navigation" id="primary-navigation" data-ref="primary-navigation" aria-label="Primary navigation">
+      <label class="navigation-filter" for="navigation-filter">Filter navigation
+        <input id="navigation-filter" type="search" data-ref="navigation-filter" autocomplete="off" placeholder="Find a menu item">
+      </label>
+      <ul class="nav-list">
+        <li data-nav-kind="leaf"><a class="nav-link" href="#overview">Overview</a></li>
+        <li class="nav-group" data-nav-kind="group">
+          <button class="nav-parent" type="button" data-ref="navigation-parent" aria-expanded="true" aria-controls="identity-navigation-items">
+            <span>Identity management</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
+          <ul class="nav-children" id="identity-navigation-items" data-ref="navigation-children">
+            <li data-nav-kind="child"><a class="nav-link" href="#access-review" data-ref="navigation-access-review" aria-current="page">Access review</a></li>
+            <li data-nav-kind="child"><a class="nav-link" href="#policy-exceptions">Policy exceptions</a></li>
+          </ul>
+        </li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#audit-exports" data-ref="navigation-audit-exports">Audit exports</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#user-directory">User directory</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#role-assignments">Role assignments</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#groups">Groups</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#service-accounts">Service accounts</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#authentication-policies">Authentication policies</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#session-monitoring">Session monitoring</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#audit-logs">Audit logs</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#report-library">Report library</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#export-history">Export history</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#scheduled-jobs">Scheduled jobs</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#notification-rules">Notification rules</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#integrations">Integrations</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#api-clients">API clients</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#data-retention">Data retention</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#system-settings">System settings</a></li>
+        <li data-nav-kind="leaf"><a class="nav-link" href="#help-center">Help center</a></li>
+      </ul>
+      <p class="navigation-empty" data-ref="navigation-empty" hidden>No navigation items found.</p>
+    </nav>
+
+    <main class="workspace" data-ref="workspace">
+      <div class="page-heading">
+        <div>
+          <h1>Access review queue</h1>
+          <p class="page-description">Review elevated access requests that need an owner decision before the stated deadline.</p>
+        </div>
+        <div class="reference-scenario" data-reference-harness="scenario-selector" role="group" aria-label="Reference scenario">
+          <span class="reference-scenario-label">Reference scenario</span>
+          <div class="reference-scenario-options">
+            <button type="button" data-reference-scenario="initial" aria-pressed="true">Initial</button>
+            <button type="button" data-reference-scenario="results" aria-pressed="false">Results</button>
+            <button type="button" data-reference-scenario="empty" aria-pressed="false">Empty</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="filters" aria-labelledby="filter-heading">
+        <div class="section-heading">
+          <h2 id="filter-heading">Filters</h2>
+          <button class="disclosure-button" type="button" data-ref="filter-toggle" aria-controls="filter-panel" aria-expanded="true">Hide filters</button>
+        </div>
+        <form class="filter-panel" id="filter-panel" data-ref="filter-panel" aria-labelledby="filter-heading">
+          <div class="filter-fields">
+            <label class="field">Team
+              <select name="team"><option value="">All teams</option><option>Finance</option><option>Support</option></select>
+            </label>
+            <label class="field">Risk
+              <select name="risk"><option value="">All risks</option><option value="high">High</option><option value="standard">Standard</option></select>
+            </label>
+            <label class="field">Requested by
+              <input name="requester" data-ref="requester-filter" autocomplete="off" placeholder="Name or email">
+            </label>
+          </div>
+          <div class="filter-actions" data-ref="filter-actions">
+            <button class="primary-button" type="submit" data-ref="search-action">Search</button>
+            <button class="secondary-button" type="reset" data-ref="clear-action">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results" aria-labelledby="result-heading">
+        <div class="result-heading">
+          <h2 id="result-heading">Requests</h2>
+          <button class="primary-button" type="button" data-ref="new-request-action">New request</button>
+        </div>
+        <p class="visually-hidden" data-ref="result-summary" aria-live="polite">Search has not been run.</p>
+        <div class="result-state" data-ref="result-initial">
+          <h3>Search for requests</h3>
+          <p>Set filters as needed, then select Search.</p>
+        </div>
+        <div class="result-state" data-ref="result-empty" hidden>
+          <h3>No requests found</h3>
+          <p>Adjust the filters and search again.</p>
+        </div>
+        <div class="table-wrap" hidden>
+          <table data-ref="result-table">
+            <caption>Access requests awaiting review</caption>
+            <thead><tr><th scope="col">Request ID</th><th scope="col">Team</th><th scope="col">Person</th><th scope="col">Access</th><th scope="col">Risk</th><th scope="col">Due</th></tr></thead>
+            <tbody>
+              <tr data-team="finance" data-risk="high" data-requester="mina patel">
+                <td><a class="identity" href="#request-AR-1048">AR-1048</a></td>
+                <td>Finance</td><td>Mina Patel</td><td>Payment release</td>
+                <td><span class="status-badge high" data-ref="status-badge">High</span></td>
+                <td>Today, 16:00</td>
+              </tr>
+              <tr data-team="support" data-risk="standard" data-requester="diego romero"><td><a class="identity" href="#request-AR-1044">AR-1044</a></td><td>Support</td><td>Diego Romero</td><td>Customer export</td><td><span class="status-badge">Standard</span></td><td>Tomorrow</td></tr>
+              <tr data-team="finance" data-risk="standard" data-requester="jo kim"><td><a class="identity" href="#request-AR-1041">AR-1041</a></td><td>Finance</td><td>Jo Kim</td><td>Ledger correction</td><td><span class="status-badge">Standard</span></td><td>18 Aug</td></tr>
+              <tr data-team="support" data-risk="high" data-requester="sam okafor"><td><a class="identity" href="#request-AR-1039">AR-1039</a></td><td>Support</td><td>Sam Okafor</td><td>Account recovery</td><td><span class="status-badge high">High</span></td><td>18 Aug</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <nav class="pagination" data-ref="result-pagination" aria-label="Request result pages" hidden>
+          <p class="pagination-hint">More results available. Refine filters to narrow the list.</p>
+          <div class="pagination-controls">
+            <button class="page-button" type="button" disabled>Previous</button>
+            <span class="page-status" aria-label="Current page, 1">Page 1</span>
+            <button class="page-button" type="button">Next</button>
+          </div>
+        </nav>
+      </section>
+    </main>
+  </div>
+
+  <script type="application/json" data-reference-scenarios>
+  {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation round trip",
+        "steps": [
+          { "action": "click", "target": "navigation-toggle" },
+          { "action": "click", "target": "navigation-toggle" }
+        ]
+      },
+      {
+        "name": "navigation parent round trip",
+        "steps": [
+          { "action": "click", "target": "navigation-parent" },
+          { "action": "click", "target": "navigation-parent" }
+        ]
+      },
+      {
+        "name": "navigation selection round trip",
+        "steps": [
+          { "action": "click", "target": "navigation-audit-exports" },
+          { "action": "click", "target": "navigation-access-review" }
+        ]
+      },
+      {
+        "name": "navigation filter round trip",
+        "steps": [
+          { "action": "fill", "target": "navigation-filter", "value": "policy" },
+          { "action": "fill", "target": "navigation-filter", "value": "" }
+        ]
+      },
+      {
+        "name": "navigation filter no results",
+        "steps": [
+          { "action": "fill", "target": "navigation-filter", "value": "missing" }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          { "action": "press", "target": "filter-toggle", "key": "Enter" },
+          { "action": "press", "target": "filter-toggle", "key": "Enter" }
+        ]
+      },
+      {
+        "name": "theme change",
+        "steps": [
+          { "action": "click", "target": "theme-toggle" }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          { "action": "click", "target": "user-menu-toggle" },
+          { "action": "press", "key": "Escape" }
+        ]
+      },
+      {
+        "name": "search results",
+        "steps": [
+          { "action": "click", "target": "search-action" }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          { "action": "fill", "target": "requester-filter", "value": "No matching person" },
+          { "action": "click", "target": "search-action" }
+        ]
+      },
+      {
+        "name": "search clear to initial",
+        "steps": [
+          { "action": "click", "target": "search-action" },
+          { "action": "click", "target": "clear-action" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const shell = document.querySelector('.shell');
+      const navigation = document.querySelector('[data-ref="primary-navigation"]');
+      const navigationToggle = document.querySelector('[data-ref="navigation-toggle"]');
+      const navigationFilter = document.querySelector('[data-ref="navigation-filter"]');
+      const navigationParent = document.querySelector('[data-ref="navigation-parent"]');
+      const navigationChildren = document.querySelector('[data-ref="navigation-children"]');
+      const navigationGroup = navigationParent.closest('[data-nav-kind="group"]');
+      const navigationLeaves = [...navigation.querySelectorAll('[data-nav-kind="leaf"]')];
+      const navigationChildItems = [...navigationChildren.querySelectorAll('[data-nav-kind="child"]')];
+      const navigationEmpty = document.querySelector('[data-ref="navigation-empty"]');
+      const themeToggle = document.querySelector('[data-ref="theme-toggle"]');
+      const userMenu = document.querySelector('.user-menu');
+      const userMenuToggle = document.querySelector('[data-ref="user-menu-toggle"]');
+      const userMenuPopover = document.querySelector('[data-ref="user-menu-popover"]');
+      const signOutAction = document.querySelector('[data-ref="sign-out-action"]');
+      const filterToggle = document.querySelector('[data-ref="filter-toggle"]');
+      const filterPanel = document.querySelector('[data-ref="filter-panel"]');
+      const form = filterPanel;
+      const resultSummary = document.querySelector('[data-ref="result-summary"]');
+      const resultInitial = document.querySelector('[data-ref="result-initial"]');
+      const resultEmpty = document.querySelector('[data-ref="result-empty"]');
+      const resultTable = document.querySelector('[data-ref="result-table"]');
+      const tableWrap = resultTable.closest('.table-wrap');
+      const resultPagination = document.querySelector('[data-ref="result-pagination"]');
+      const resultRows = [...resultTable.tBodies[0].rows];
+      const referenceScenarioButtons = [...document.querySelectorAll('[data-reference-scenario]')];
+      let navigationGroupExpanded = true;
+      let filteredGroupExpanded = true;
+
+      const normalize = (value) => value.trim().toLocaleLowerCase();
+
+      const showResultState = (state, visibleCount = 0) => {
+        const hasResults = state === 'results';
+        referenceScenarioButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.referenceScenario === state)));
+        resultInitial.hidden = state !== 'initial';
+        resultEmpty.hidden = state !== 'empty';
+        tableWrap.hidden = !hasResults;
+        resultPagination.hidden = !hasResults;
+
+        if (state === 'initial') resultSummary.textContent = 'Search has not been run.';
+        if (state === 'empty') resultSummary.textContent = 'No requests found.';
+        if (hasResults) resultSummary.textContent = `${visibleCount} ${visibleCount === 1 ? 'row' : 'rows'} shown on this page.`;
+      };
+
+      const selectReferenceScenario = (state) => {
+        if (state === 'results') {
+          resultRows.forEach((row) => { row.hidden = false; });
+          showResultState('results', resultRows.length);
+          return;
+        }
+        showResultState(state);
+      };
+
+      const renderNavigationFilter = () => {
+        const query = normalize(navigationFilter.value);
+        let hasVisibleItem = false;
+
+        navigationLeaves.forEach((item) => {
+          const matches = !query || normalize(item.textContent).includes(query);
+          item.hidden = !matches;
+          hasVisibleItem ||= matches;
+        });
+
+        const parentMatches = normalize(navigationParent.textContent).includes(query);
+        const childMatches = navigationChildItems.map((item) => !query || parentMatches || normalize(item.textContent).includes(query));
+        const groupMatches = !query || parentMatches || childMatches.some(Boolean);
+        navigationGroup.hidden = !groupMatches;
+        hasVisibleItem ||= groupMatches;
+
+        navigationChildItems.forEach((item, index) => { item.hidden = !childMatches[index]; });
+        const expanded = query ? filteredGroupExpanded : navigationGroupExpanded;
+        navigationParent.setAttribute('aria-expanded', String(expanded));
+        navigationChildren.hidden = !expanded;
+        navigationEmpty.hidden = hasVisibleItem;
+      };
+
+      navigationToggle.addEventListener('click', () => {
+        const visible = navigation.hidden;
+        navigation.hidden = !visible;
+        shell.classList.toggle('navigation-hidden', !visible);
+        navigationToggle.setAttribute('aria-expanded', String(visible));
+        navigationToggle.setAttribute('aria-label', visible ? 'Hide navigation' : 'Show navigation');
+      });
+
+      navigationParent.addEventListener('click', () => {
+        if (normalize(navigationFilter.value)) {
+          filteredGroupExpanded = !filteredGroupExpanded;
+        } else {
+          navigationGroupExpanded = !navigationGroupExpanded;
+        }
+        renderNavigationFilter();
+      });
+
+      navigationFilter.addEventListener('input', () => {
+        filteredGroupExpanded = true;
+        renderNavigationFilter();
+      });
+
+      navigation.addEventListener('click', (event) => {
+        const link = event.target.closest('.nav-link');
+        if (!link) return;
+        event.preventDefault();
+        navigation.querySelectorAll('.nav-link[aria-current="page"]').forEach((item) => item.removeAttribute('aria-current'));
+        link.setAttribute('aria-current', 'page');
+      });
+
+      filterToggle.addEventListener('click', () => {
+        const visible = filterPanel.hidden;
+        filterPanel.hidden = !visible;
+        filterToggle.setAttribute('aria-expanded', String(visible));
+        filterToggle.textContent = visible ? 'Hide filters' : 'Show filters';
+      });
+
+      themeToggle.addEventListener('click', () => {
+        const dark = root.dataset.theme !== 'dark';
+        root.dataset.theme = dark ? 'dark' : 'light';
+        themeToggle.setAttribute('aria-pressed', String(dark));
+        themeToggle.setAttribute('aria-label', dark ? 'Use light theme' : 'Use dark theme');
+      });
+
+      const closeUserMenu = (restoreFocus = false) => {
+        userMenuPopover.hidden = true;
+        userMenuToggle.setAttribute('aria-expanded', 'false');
+        userMenuToggle.setAttribute('aria-label', 'Open user menu');
+        if (restoreFocus) userMenuToggle.focus();
+      };
+
+      userMenuToggle.addEventListener('click', () => {
+        const open = userMenuPopover.hidden;
+        if (!open) {
+          closeUserMenu();
+          return;
+        }
+        userMenuPopover.hidden = false;
+        userMenuToggle.setAttribute('aria-expanded', 'true');
+        userMenuToggle.setAttribute('aria-label', 'Close user menu');
+        signOutAction.focus();
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!userMenuPopover.hidden && !userMenu.contains(event.target)) closeUserMenu();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !userMenuPopover.hidden) {
+          event.preventDefault();
+          closeUserMenu(true);
+        }
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const team = String(data.get('team') || '').toLowerCase();
+        const risk = String(data.get('risk') || '');
+        const requester = normalize(String(data.get('requester') || ''));
+        let visible = 0;
+        resultRows.forEach((row) => {
+          const match = (!team || row.dataset.team === team)
+            && (!risk || row.dataset.risk === risk)
+            && (!requester || row.dataset.requester.includes(requester));
+          row.hidden = !match;
+          if (match) visible += 1;
+        });
+        showResultState(visible > 0 ? 'results' : 'empty', visible);
+      });
+
+      form.addEventListener('reset', () => {
+        requestAnimationFrame(() => {
+          resultRows.forEach((row) => { row.hidden = false; });
+          showResultState('initial');
+        });
+      });
+
+      referenceScenarioButtons.forEach((button) => {
+        button.addEventListener('click', () => selectReferenceScenario(button.dataset.referenceScenario));
+      });
+    })();
+  </script>
+</body>
+</html>

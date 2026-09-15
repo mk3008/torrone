@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "missing-aria-reference.html",
+    "digest": "9737ba5d09077f49d09a851eebae7048738f3f387fa37e0ee9017dcd188a0e80",
+    "files": [
+      {
+        "path": "missing-aria-reference.html",
+        "bytes": 2199,
+        "sha256": "7f2e3e7677059d4ab869eca9c894f40e1b1b98743f2b9132266d043775629c62"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "absolute-dom",
+      "code": "missing-aria-reference",
+      "state": "initial",
+      "target": "query-field",
+      "detail": "aria-describedby references missing id missing-help."
+    },
+    {
+      "source": "absolute-dom",
+      "code": "missing-aria-reference",
+      "state": "scenarios.lookup.step-1",
+      "target": "query-field",
+      "detail": "aria-describedby references missing id missing-help."
+    }
+  ]
+}

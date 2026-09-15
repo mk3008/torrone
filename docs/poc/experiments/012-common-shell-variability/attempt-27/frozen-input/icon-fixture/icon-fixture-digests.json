@@ -1,0 +1,42 @@
+[
+  {
+    "file": "chevron-down.svg",
+    "sha256": "66EA878E72ED3488BB3B464C39DFDCCEE8D1F78E560DCCEA40E5E12DA0E87E87",
+    "bytes": 236
+  },
+  {
+    "file": "chevron-right.svg",
+    "sha256": "2758143D7B2434E4AA7307DFD34405C87909FF4052F21B5F3F40D45224B4F19B",
+    "bytes": 237
+  },
+  {
+    "file": "LICENSE",
+    "sha256": "B495047BD93A9B06913511076F504DABA17D5BBEB3E0650F3BB53A4220329C57",
+    "bytes": 3208
+  },
+  {
+    "file": "moon.svg",
+    "sha256": "205B959E940D5841F0CE1D09C933153DA9D9C94130A54D5CC0C68C2AF1D403DA",
+    "bytes": 334
+  },
+  {
+    "file": "panel-left-close.svg",
+    "sha256": "8F5B1FC9255E60F212379E8E315087A2F0A595A639AD2FB25C255DC3295C4E7D",
+    "bytes": 314
+  },
+  {
+    "file": "panel-left-open.svg",
+    "sha256": "4529F625891390E8C6F106B9603984BC9EC5B03E35A13AF7E7A6D50DF965183B",
+    "bytes": 313
+  },
+  {
+    "file": "search.svg",
+    "sha256": "283D371C2E433817BB9C0C8310CAA6C77FA4177C0F4F1168D9C83B97AF7389DC",
+    "bytes": 275
+  },
+  {
+    "file": "sun.svg",
+    "sha256": "A3955C8B0425FCC5C9BA12D2BDD77FE53B2CD5DD05E7742A56F342E996FB2EF8",
+    "bytes": 485
+  }
+]

@@ -1,0 +1,957 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "date-range.html",
+    "digest": "8ba75b0c760a8168b1939b6295a2419ce49797a9d7d732c705b1cbb9fae4d3fb",
+    "files": [
+      {
+        "path": "date-range.html",
+        "bytes": 24323,
+        "sha256": "d7752444302fb838ac5961593750bdb5586187a8626586bf2121296a6a331fc4"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "maintenance-window.html",
+    "digest": "16462cca4c4f2572c7e2ac1e775fd8e1a9f4e97bb065689433e459d8e474380c",
+    "files": [
+      {
+        "path": "maintenance-window.html",
+        "bytes": 22664,
+        "sha256": "dddc511c4cdb9aec3991b3f015e1e3c04d8ff01fbea909d81abf8f3042708f98"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Edg/151.0.4129.78",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "range input focus and tab dismissal",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-input"
+          },
+          {
+            "action": "press",
+            "target": "range-input",
+            "key": "Tab"
+          }
+        ]
+      },
+      {
+        "name": "compact range tab commit",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-input"
+          },
+          {
+            "action": "fill",
+            "target": "range-input",
+            "value": "2026-08-10 / 2026-08-14"
+          },
+          {
+            "action": "press",
+            "target": "range-input",
+            "key": "Tab"
+          }
+        ]
+      },
+      {
+        "name": "complete range pointer flow",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          },
+          {
+            "action": "click",
+            "target": "range-apply"
+          }
+        ]
+      },
+      {
+        "name": "range visual before apply",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          }
+        ]
+      },
+      {
+        "name": "start-only partial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-apply"
+          }
+        ]
+      },
+      {
+        "name": "end-only partial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-end-mode"
+          },
+          {
+            "action": "click",
+            "target": "range-middle-day"
+          },
+          {
+            "action": "click",
+            "target": "range-apply"
+          }
+        ]
+      },
+      {
+        "name": "compact complete manual range",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-input"
+          },
+          {
+            "action": "fill",
+            "target": "range-input",
+            "value": "2026-08-10 / 2026-08-14"
+          },
+          {
+            "action": "press",
+            "target": "range-input",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "manual start-only range",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-input"
+          },
+          {
+            "action": "fill",
+            "target": "range-input",
+            "value": "2026-08-10 /"
+          },
+          {
+            "action": "press",
+            "target": "range-input",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "manual end-only range",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-input"
+          },
+          {
+            "action": "fill",
+            "target": "range-input",
+            "value": "/ 2026-08-14"
+          },
+          {
+            "action": "press",
+            "target": "range-input",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "reversed range validation",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-input"
+          },
+          {
+            "action": "fill",
+            "target": "range-input",
+            "value": "2026-08-14 / 2026-08-10"
+          },
+          {
+            "action": "press",
+            "target": "range-input",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "invalid range date",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-input"
+          },
+          {
+            "action": "fill",
+            "target": "range-input",
+            "value": "2026-02-30 / 2026-08-14"
+          },
+          {
+            "action": "press",
+            "target": "range-input",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "unavailable range date",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-input"
+          },
+          {
+            "action": "fill",
+            "target": "range-input",
+            "value": "2026-08-10 / 2026-08-20"
+          },
+          {
+            "action": "press",
+            "target": "range-input",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "range escape dismissal",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "press",
+            "target": "range-today",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "range month movement and today return",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-next-month"
+          },
+          {
+            "action": "click",
+            "target": "range-today-action"
+          }
+        ]
+      },
+      {
+        "name": "clear applied range",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          },
+          {
+            "action": "click",
+            "target": "range-apply"
+          },
+          {
+            "action": "click",
+            "target": "range-clear"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 96,
+    "errorSignatures": []
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range input focus and tab dismissal.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range input focus and tab dismissal.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range input focus and tab dismissal.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range input focus and tab dismissal.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact range tab commit.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact range tab commit.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact range tab commit.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact range tab commit.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact range tab commit.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact range tab commit.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.complete range pointer flow.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.complete range pointer flow.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.complete range pointer flow.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.complete range pointer flow.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.complete range pointer flow.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.complete range pointer flow.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.complete range pointer flow.step-4.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.complete range pointer flow.step-4.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range visual before apply.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range visual before apply.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range visual before apply.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range visual before apply.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range visual before apply.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range visual before apply.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start-only partial.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start-only partial.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start-only partial.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start-only partial.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start-only partial.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.start-only partial.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only partial.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only partial.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only partial.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only partial.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only partial.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only partial.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only partial.step-4.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.end-only partial.step-4.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact complete manual range.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact complete manual range.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact complete manual range.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact complete manual range.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact complete manual range.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.compact complete manual range.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual start-only range.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual start-only range.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual start-only range.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual start-only range.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual start-only range.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual start-only range.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual end-only range.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual end-only range.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual end-only range.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual end-only range.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual end-only range.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.manual end-only range.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed range validation.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed range validation.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed range validation.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed range validation.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed range validation.step-3.elements.semantic:role:main.box.height",
+      "expected": 285.98,
+      "actual": 339.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.reversed range validation.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid range date.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid range date.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid range date.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid range date.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid range date.step-3.elements.semantic:role:main.box.height",
+      "expected": 285.98,
+      "actual": 339.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.invalid range date.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.unavailable range date.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.unavailable range date.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.unavailable range date.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.unavailable range date.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.unavailable range date.step-3.elements.semantic:role:main.box.height",
+      "expected": 285.98,
+      "actual": 339.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.unavailable range date.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range escape dismissal.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range escape dismissal.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range escape dismissal.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range escape dismissal.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range month movement and today return.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range month movement and today return.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range month movement and today return.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range month movement and today return.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range month movement and today return.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.range month movement and today return.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-1.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-2.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-2.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-3.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-3.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-4.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-4.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-5.elements.semantic:role:main.box.height",
+      "expected": 259.98,
+      "actual": 313.83,
+      "delta": 53.849999999999966
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear applied range.step-5.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

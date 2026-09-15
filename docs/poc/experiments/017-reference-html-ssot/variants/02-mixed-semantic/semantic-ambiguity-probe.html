@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Semantic ambiguity probe</title>
+</head>
+<body>
+  <header><h1>Operations</h1></header>
+  <nav aria-label="Primary"><a href="#work">Work</a></nav>
+  <nav aria-label="Results"><a href="#next">Next</a></nav>
+  <main>
+    <header><h2>Scoped task heading</h2></header>
+    <button type="button" aria-expanded="false" aria-controls="first-region">First disclosure</button>
+    <button type="button" aria-expanded="true" aria-controls="second-region">Second disclosure</button>
+    <div id="first-region"></div>
+    <div id="second-region"></div>
+    <button type="button" aria-pressed="false">Theme</button>
+    <button type="button" aria-pressed="true">Density</button>
+    <div role="menu">
+      <button type="button" role="menuitem">Profile</button>
+      <button type="button" role="menuitem">Sign out</button>
+    </div>
+    <p aria-live="polite">First status</p>
+    <p aria-live="polite">Second status</p>
+    <table><caption>First result set</caption><tbody><tr><td>A</td></tr></tbody></table>
+    <table><caption>Second result set</caption><tbody><tr><td>B</td></tr></tbody></table>
+  </main>
+</body>
+</html>

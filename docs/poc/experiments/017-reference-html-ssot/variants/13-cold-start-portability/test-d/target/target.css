@@ -1,0 +1,93 @@
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body {
+  min-width: 720px;
+  color: #101d2f;
+  background: #f3f6fa;
+  font: 16px/1.5 "Segoe UI", system-ui, sans-serif;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+:is(button, input):focus-visible { outline: 3px solid #86b9ee; outline-offset: 2px; }
+
+.test-stamp {
+  padding: 10px 24px;
+  color: #405267;
+  background: #f8fbfe;
+  border-bottom: 1px dashed #9cafc1;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.insurance-card {
+  width: min(620px, calc(100% - 48px));
+  margin: 48px auto;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #c6d2df;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(37 55 75 / 8%);
+}
+.insurance-card h1 { margin: 0 0 6px; font-size: 22px; }
+.insurance-card header p { margin: 0 0 20px; color: #54657a; }
+.coverage-tool { position: relative; }
+.coverage-boxes { display: flex; align-items: end; gap: 16px; }
+.coverage-box { display: grid; gap: 6px; }
+.coverage-box span { color: #394b60; font-size: 14px; font-weight: 650; }
+#coverage-widget input[data-ref] {
+  width: 18ch;
+  min-height: 42px;
+  padding: 8px 11px;
+  color: #101d2f;
+  background: #ffffff;
+  border: 1px solid #94a8bd;
+  border-radius: 6px;
+}
+#coverage-widget input[data-ref][aria-invalid="true"] {
+  border-color: #b42318;
+  box-shadow: 0 0 0 1px #b42318;
+}
+
+.date-tray {
+  position: absolute;
+  z-index: 2;
+  width: 316px;
+  margin-top: 8px;
+  padding: 12px;
+  color: #101d2f;
+  background: #ffffff;
+  border: 1px solid #98aabc;
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgb(27 45 65 / 16%);
+}
+.date-tray h2 { margin: 0 0 4px; font-size: 16px; }
+.coverage-mode { margin: 0 0 8px; color: #54657a; font-size: 13px; }
+.weekday-strip, .coverage-days { display: grid; grid-template-columns: repeat(7, 36px); gap: 6px; }
+.weekday-strip { margin-bottom: 4px; color: #4b5e72; font-size: 12px; font-weight: 700; text-align: center; }
+.weekday-strip :first-child, .coverage-sun { color: #a63b32; }
+.weekday-strip :last-child, .coverage-sat { color: #245e9a; }
+.coverage-days button, .coverage-days .empty-cell {
+  width: 36px;
+  height: 34px;
+  padding: 0;
+  color: #101d2f;
+  background: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+.coverage-days button:hover:not(:disabled):not(.coverage-edge) { background: #edf3f9; }
+.coverage-days button[aria-current="date"] { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.coverage-days button.coverage-span { color: #183653; background: #dbeeff; border-color: transparent; }
+.coverage-days button.coverage-edge { color: #ffffff; background: #1d73b7; border-color: #155b92; font-weight: 700; }
+.coverage-days button:disabled {
+  color: #4e5966;
+  background: repeating-linear-gradient(135deg, #f5f7f9, #f5f7f9 4px, #e7ebef 4px, #e7ebef 6px);
+  border-color: #d7dde3;
+  opacity: .72;
+  cursor: not-allowed;
+}
+.coverage-days .empty-cell { visibility: hidden; }
+.coverage-feedback { min-height: 24px; margin: 10px 0 0; color: #54657a; font-size: 14px; }
+.coverage-feedback[data-level="problem"] { color: #b42318; }

@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "positiveReferenceShapes": 8,
+  "reversibleProbeFamilies": 9,
+  "canary": {
+    "comparativeStatus": "pass",
+    "preflightStatus": "error",
+    "restoredStatus": "pass"
+  },
+  "comparativeRegression": {
+    "formTarget": "pass",
+    "historicalNegative": "fail",
+    "semanticOnlyNegative": "fail",
+    "cssNegative": "fail"
+  },
+  "fixedFormPacket": {
+    "fileCount": 98,
+    "digest": "E3DDFE25D0855B6ADE922DC0625F6DA7A6BFFF66444234FA9491F4AA201F5D91"
+  },
+  "coreSha256": "E62FD23295EFF665B8EC280B55AF4D40DD4E3B4063F5B40DAFA224ECA46C506F",
+  "cliSha256": "19872837F9F7BEDE66F64C8F6C30AE20B769097E2C5374377394BBC7C4C07271"
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Schedule inventory count</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --page-bg: #f3f6fa; --card-bg: #fff; --ink: #101d2f; --quiet: #54657a; --line: #c6d2df; --brand: #1d73b7; --ring: #86b9ee; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 720px; color: var(--ink); background: var(--page-bg); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :is(button, input):focus-visible { outline-color: var(--ring); outline-style: solid; outline-width: 3px; outline-offset: 2px; }
+    .workspace { width: min(760px, calc(100% - 64px)); margin: 44px auto; }
+    h1 { margin: 0; font-size: 30px; line-height: 1.2; }
+    .intro { margin: 7px 0 22px; color: var(--quiet); }
+    .schedule-card { padding: 24px; background: var(--card-bg); border-color: var(--line); border-style: solid; border-width: 1px; border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .schedule-card h2 { margin: 0 0 6px; font-size: 22px; }
+    .purpose { margin: 0 0 20px; color: var(--quiet); }
+    .caption { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .control-line { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+    .window-value { min-height: 42px; padding: 8px 11px; color: var(--ink); background: var(--card-bg); border-color: #94a8bd; border-style: solid; border-width: 1px; border-radius: 6px; }
+    .open-calendar, .clear-window { min-height: 42px; padding: 0 14px; color: #183653; background: var(--card-bg); border-color: #8ea2b9; border-style: solid; border-width: 1px; border-radius: 6px; }
+    .calendar-panel { width: 330px; margin-top: 10px; padding: 16px; background: var(--card-bg); border-color: #98aabc; border-style: solid; border-width: 1px; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
+    .calendar-panel h3 { margin: 0 0 4px; font-size: 16px; }
+    .next-step { margin: 0 0 12px; color: var(--quiet); font-size: 14px; }
+    .dates { display: grid; grid-template-columns: repeat(7, 36px); gap: 6px; }
+    .calendar-day { width: 36px; height: 36px; padding: 0; color: var(--ink); background: var(--card-bg); border: 1px solid transparent; border-radius: 6px; }
+    .calendar-day:hover { background: #edf3f9; }
+    .calendar-day[aria-selected="true"] { color: #fff; background: var(--brand); border-color: #155b92; font-weight: 700; }
+    .chosen-row { display: grid; grid-template-columns: 1fr auto; min-height: 44px; margin-top: 18px; align-items: center; gap: 16px; }
+    .chosen-window { margin: 0; color: #31465d; }
+  </style>
+</head>
+<body>
+  <main class="workspace">
+    <h1>Schedule inventory count</h1>
+    <p class="intro">Reserve the counting window before assigning the team.</p>
+    <article class="schedule-card" aria-labelledby="count-window-title">
+      <h2 id="count-window-title">Counting window</h2>
+      <p class="purpose">Choose the first and last day when counting can occur.</p>
+      <div>
+        <span class="caption" id="count-window-label">Date range</span>
+        <div class="control-line">
+          <input class="window-value" aria-labelledby="count-window-label" value="Not selected" readonly>
+          <button class="open-calendar" type="button" data-ref="range-trigger" aria-controls="count-calendar" aria-expanded="false">Choose range</button>
+        </div>
+      </div>
+      <div class="calendar-panel" id="count-calendar" role="dialog" aria-label="Choose counting window" hidden>
+        <h3>October 2026</h3>
+        <p class="next-step" data-ref="range-status" aria-live="polite">Select the start date.</p>
+        <div class="dates" aria-label="Dates in October 2026">
+          <button class="calendar-day" type="button">4</button>
+          <button class="calendar-day" type="button" data-ref="range-start-day" aria-selected="false">5</button>
+          <button class="calendar-day" type="button" data-ref="range-next-day" aria-selected="false">6</button>
+          <button class="calendar-day" type="button">7</button>
+          <button class="calendar-day" type="button">8</button>
+          <button class="calendar-day" type="button" data-ref="range-end-day" aria-selected="false">9</button>
+          <button class="calendar-day" type="button">10</button>
+        </div>
+      </div>
+      <div class="chosen-row">
+        <p class="chosen-window" data-ref="range-selection" aria-live="polite">No range selected.</p>
+        <button class="clear-window" type="button" data-ref="range-clear" hidden>Clear</button>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    (() => {
+      const ui = {
+        opener: document.querySelector('[data-ref="range-trigger"]'),
+        calendar: document.getElementById('count-calendar'),
+        value: document.querySelector('.window-value'),
+        message: document.querySelector('[data-ref="range-status"]'),
+        summary: document.querySelector('[data-ref="range-selection"]'),
+        clear: document.querySelector('[data-ref="range-clear"]'),
+        days: [...document.querySelectorAll('.calendar-day')]
+      };
+      const first = document.querySelector('[data-ref="range-start-day"]');
+      const model = { start: null };
+      const clearDraft = () => { model.start = null; ui.days.forEach((day) => day.setAttribute('aria-selected', 'false')); ui.message.textContent = 'Select the start date.'; };
+      const dismiss = () => { ui.calendar.hidden = true; ui.opener.setAttribute('aria-expanded', 'false'); ui.opener.focus(); };
+      const present = () => { clearDraft(); ui.calendar.hidden = false; ui.opener.setAttribute('aria-expanded', 'true'); requestAnimationFrame(() => first.focus()); };
+      const commitRange = (end) => { end.setAttribute('aria-selected', 'true'); ui.value.value = `Oct ${model.start.textContent} – Oct ${end.textContent}, 2026`; ui.summary.textContent = `Selected: October ${model.start.textContent} through ${end.textContent}, 2026.`; ui.clear.hidden = false; dismiss(); };
+      const select = (candidate) => { if (!model.start) { model.start = candidate; candidate.setAttribute('aria-selected', 'true'); ui.message.textContent = 'Select the end date.'; } else { commitRange(candidate); } };
+      ui.opener.addEventListener('click', present);
+      ui.calendar.addEventListener('click', (event) => { const day = event.target.closest('.calendar-day'); if (day) select(day); });
+      ui.days.forEach((day, index) => day.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') { event.preventDefault(); ui.days[Math.min(index + 1, ui.days.length - 1)].focus(); }
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(day); }
+        if (event.key === 'Escape') { event.preventDefault(); dismiss(); }
+      }));
+      ui.clear.addEventListener('click', () => { clearDraft(); ui.value.value = 'Not selected'; ui.summary.textContent = 'No range selected.'; ui.clear.hidden = true; ui.opener.focus(); });
+    })();
+  </script>
+</body>
+</html>

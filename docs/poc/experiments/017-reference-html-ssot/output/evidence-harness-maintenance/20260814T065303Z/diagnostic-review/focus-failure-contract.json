@@ -1,0 +1,27 @@
+{
+  "status": "pass",
+  "contract": "required-historical-signature-plus-focus-mutation-bounded-additions",
+  "requiredSignatures": [
+    "elements.filter-toggle.styles.outlineColor"
+  ],
+  "observedSignatures": [
+    "elements.filter-toggle.styles.outlineColor"
+  ],
+  "additionalSignatures": [],
+  "rawErrorCount": 2,
+  "rawErrorIndexes": [
+    162,
+    182
+  ],
+  "allowedObservation": {
+    "normalizedPathPattern": "^elements\\.[^.]+\\.styles\\.outlineColor$",
+    "expected": [
+      "rgb(16, 29, 47)",
+      "rgb(134, 185, 238)"
+    ],
+    "actual": "rgb(255, 0, 170)"
+  },
+  "presentationChecked": true,
+  "rawReport": "C:/Users/mssgm/AppData/Local/Temp/poc017-maintenance-diagnostic-review-9223e2ebfe9142c48566c55f2ea25398/output/diagnostic-review/injected-focus.report.json",
+  "rawSha256": "F59CC94303BCD780441D93330188195CE281A022C25E13CB3C50BBC4959CF80B"
+}

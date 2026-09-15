@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="shell.css">
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div class="shared-shell" data-theme="light" data-drawer="open">
+      <header class="shell-header">
+        <button class="shell-icon-button" type="button" data-drawer-toggle aria-controls="workspace-drawer" aria-expanded="true" aria-label="Drawer を閉じる">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <p class="shell-workspace-name">業務ワークスペース</p>
+        <button class="shell-icon-button shell-theme-button" type="button" data-theme-toggle aria-label="ダークモードに切り替える">
+          <span data-theme-icon aria-hidden="true">◐</span>
+        </button>
+      </header>
+
+      <div class="shell-body">
+        <aside class="shell-drawer" id="workspace-drawer" aria-label="業務ワークスペースのナビゲーション">
+          <nav>
+            <ul class="shell-drawer-list">
+              <li><a href="#section-a">セクション A</a></li>
+              <li class="shell-drawer-parent">
+                <a href="#section-b">セクション B</a>
+                <span class="shell-disclosure" aria-label="展開中">⌄</span>
+                <ul class="shell-drawer-children">
+                  <li><a class="current" href="#item-b-1" aria-current="page">項目 B-1</a></li>
+                  <li><a href="#item-b-2">項目 B-2</a></li>
+                </ul>
+              </li>
+              <li><a href="#section-c">セクション C</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <main class="shell-workspace" aria-label="ワークスペース">
+          <section class="customer-search-page" aria-labelledby="customer-search-title">
+            <header class="customer-search-page__header">
+              <h1 id="customer-search-title">顧客検索</h1>
+              <p>登録済みの顧客情報を検索・確認します。</p>
+            </header>
+
+            <section class="condition-pane" aria-labelledby="conditions-title">
+              <h2 id="conditions-title">検索条件</h2>
+              <form id="customer-search-form" class="condition-form" novalidate>
+                <div class="condition-fields">
+                  <label>氏名<input name="name" type="search" autocomplete="name"></label>
+                  <label>生年月日<input name="birthdate" type="date"></label>
+                  <label>電話番号<input name="phone" type="tel" autocomplete="tel"></label>
+                  <label>メールアドレス<input name="email" type="email" autocomplete="email"></label>
+                </div>
+                <div class="condition-actions" aria-label="検索操作">
+                  <button class="button button--primary" type="submit">検索</button>
+                  <button class="button button--secondary" type="reset">クリア</button>
+                </div>
+              </form>
+              <p id="search-message" class="sr-only" aria-live="polite"></p>
+            </section>
+
+            <section class="result-pane" aria-labelledby="results-title">
+              <div class="result-toolbar">
+                <div class="result-summary">
+                  <h2 id="results-title">検索結果 <span>6件</span></h2>
+                </div>
+                <div class="result-toolbar__actions">
+                  <button class="button button--collection" type="button">顧客を追加</button>
+                </div>
+              </div>
+
+              <div class="grid-scroll" tabindex="0" aria-label="顧客検索結果。横方向にスクロールできます。">
+                <table class="customer-grid">
+                  <caption class="sr-only">顧客検索結果 6件</caption>
+                  <thead>
+                    <tr>
+                      <th class="customer-grid__identity" scope="col">顧客ID</th>
+                      <th scope="col">氏名</th>
+                      <th scope="col">生年月日</th>
+                      <th scope="col">住所</th>
+                      <th scope="col">電話番号</th>
+                      <th scope="col">メールアドレス</th>
+                      <th scope="col">備考</th>
+                      <th class="customer-grid__spacer" aria-label=""></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="customer-grid__identity"><a href="#customer-0001">C-0001</a></td><td>佐藤 花子</td><td>1988-04-12</td><td>東京都千代田区</td><td>03-1234-5678</td><td>hanako.sato@example.test</td><td>連絡先確認済み</td><td class="customer-grid__spacer"></td></tr>
+                    <tr><td class="customer-grid__identity"><a href="#customer-0002">C-0002</a></td><td>鈴木 一郎</td><td>1976-11-03</td><td>神奈川県横浜市</td><td>045-234-5678</td><td>ichiro.suzuki@example.test</td><td>—</td><td class="customer-grid__spacer"></td></tr>
+                    <tr><td class="customer-grid__identity"><a href="#customer-0003">C-0003</a></td><td>高橋 美咲</td><td>1992-07-21</td><td>大阪府大阪市</td><td>06-3456-7890</td><td>misaki.takahashi@example.test</td><td>郵送案内を希望</td><td class="customer-grid__spacer"></td></tr>
+                    <tr><td class="customer-grid__identity"><a href="#customer-0004">C-0004</a></td><td>田中 健</td><td>1981-02-15</td><td>愛知県名古屋市</td><td>052-456-7890</td><td>ken.tanaka@example.test</td><td>—</td><td class="customer-grid__spacer"></td></tr>
+                    <tr><td class="customer-grid__identity"><a href="#customer-0005">C-0005</a></td><td>伊藤 直子</td><td>1995-09-08</td><td>福岡県福岡市</td><td>092-567-8901</td><td>naoko.ito@example.test</td><td>午前中の連絡を希望</td><td class="customer-grid__spacer"></td></tr>
+                    <tr><td class="customer-grid__identity"><a href="#customer-0006">C-0006</a></td><td>渡辺 修</td><td>1969-12-27</td><td>北海道札幌市</td><td>011-678-9012</td><td>osamu.watanabe@example.test</td><td>—</td><td class="customer-grid__spacer"></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <nav class="pagination" aria-label="検索結果のページ送り">
+                <button type="button" disabled>前へ</button>
+                <span aria-current="page">1</span>
+                <button type="button">次へ</button>
+              </nav>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="shell.js"></script>
+    <script src="page.js"></script>
+  </body>
+</html>

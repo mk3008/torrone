@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "entity-autocomplete.html",
+    "digest": "1dd575e475fc3272462d9c1073255a44784fb0deb5be36ad1710bcfb9f52bd58",
+    "files": [
+      {
+        "path": "entity-autocomplete.html",
+        "bytes": 7334,
+        "sha256": "f7ae21dae37c07965ff488435102b0b1da7a12f8bc3d7dd66fc5e103dc135f03"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "id-change-unrepaired.html",
+    "digest": "831016c50bc66a950ee662c2f4021da07b30726241abbf947d79f8a9c5f5f5e8",
+    "files": [
+      {
+        "path": "app.js",
+        "bytes": 2224,
+        "sha256": "f92f3f1d30fcd3b9c3ddfe130665cf5aa20de0df58a72a66d0f551790336d628"
+      },
+      {
+        "path": "id-change-unrepaired.html",
+        "bytes": 4450,
+        "sha256": "12b7f134a5c768bccbd970a899e38609811d741cfe44fcd7d192496d43634069"
+      },
+      {
+        "path": "identity-map.js",
+        "bytes": 1003,
+        "sha256": "9a89b119edc60486851d3eb7aaa6aebd1c056eab97b6b34cd2ddaab8f3d46cc5"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "keyboard entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "press",
+            "target": "entity-query",
+            "key": "ArrowDown"
+          },
+          {
+            "action": "press",
+            "target": "entity-query",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "pointer entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "click",
+            "target": "entity-option-primary"
+          }
+        ]
+      },
+      {
+        "name": "entity no results",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "zzz"
+          }
+        ]
+      },
+      {
+        "name": "clear entity selection",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "entity-query",
+            "value": "a"
+          },
+          {
+            "action": "click",
+            "target": "entity-option-primary"
+          },
+          {
+            "action": "click",
+            "target": "entity-clear"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 35,
+    "uniqueErrorCount": 15,
+    "diagnosticCount": 9,
+    "errorSignatures": [
+      {
+        "path": "action",
+        "count": 2
+      },
+      {
+        "path": "elements.entity-clear.styles.display",
+        "count": 2
+      },
+      {
+        "path": "elements.entity-clear.visible",
+        "count": 2
+      },
+      {
+        "path": "elements.entity-option-primary",
+        "count": 9
+      },
+      {
+        "path": "elements.entity-query.attributes.aria-expanded",
+        "count": 2
+      },
+      {
+        "path": "elements.entity-query.relationships.activeDescendant",
+        "count": 1
+      },
+      {
+        "path": "elements.entity-query.styles.outlineColor",
+        "count": 2
+      },
+      {
+        "path": "elements.entity-query.styles.outlineStyle",
+        "count": 2
+      },
+      {
+        "path": "elements.entity-selection.attributes.hidden",
+        "count": 2
+      },
+      {
+        "path": "elements.entity-selection.styles.display",
+        "count": 2
+      },
+      {
+        "path": "elements.entity-selection.visible",
+        "count": 2
+      },
+      {
+        "path": "elements.semantic:controlled-by:entity-query.attributes.hidden",
+        "count": 2
+      },
+      {
+        "path": "elements.semantic:controlled-by:entity-query.styles.display",
+        "count": 2
+      },
+      {
+        "path": "elements.semantic:controlled-by:entity-query.visible",
+        "count": 2
+      },
+      {
+        "path": "scenarios.clear entity selection.step-3",
+        "count": 1
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-1.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-2.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-2.elements.entity-query.relationships.activeDescendant",
+      "expected": [
+        "entity-option-primary"
+      ],
+      "actual": [
+        "unresolved"
+      ]
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard entity selection.step-3.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard entity selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-1.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.action",
+      "expected": "success",
+      "actual": "entity-option-primary: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-clear.visible",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-clear.styles.display",
+      "expected": "block",
+      "actual": "inline-block"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-query.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-query.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(16, 29, 47)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-query.styles.outlineStyle",
+      "expected": "solid",
+      "actual": "none"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-selection.visible",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-selection.attributes.hidden",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.entity-selection.styles.display",
+      "expected": "flex",
+      "actual": "none"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.semantic:controlled-by:entity-query.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.semantic:controlled-by:entity-query.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer entity selection.step-2.elements.semantic:controlled-by:entity-query.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.entity no results.step-1.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.entity no results.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-1.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.action",
+      "expected": "success",
+      "actual": "entity-option-primary: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-clear.visible",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-clear.styles.display",
+      "expected": "block",
+      "actual": "inline-block"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-option-primary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-query.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-query.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(16, 29, 47)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-query.styles.outlineStyle",
+      "expected": "solid",
+      "actual": "none"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-selection.visible",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-selection.attributes.hidden",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.entity-selection.styles.display",
+      "expected": "flex",
+      "actual": "none"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.semantic:controlled-by:entity-query.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.semantic:controlled-by:entity-query.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-2.elements.semantic:controlled-by:entity-query.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear entity selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear entity selection.step-3",
+      "expected": "captured state",
+      "actual": "missing"
+    }
+  ]
+}

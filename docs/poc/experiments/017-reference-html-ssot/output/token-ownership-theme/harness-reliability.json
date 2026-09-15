@@ -1,0 +1,337 @@
+{
+  "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "attempts": 47,
+  "timeouts": 0,
+  "retries": 0,
+  "events": [
+    {
+      "label": "A common-shell snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3908
+    },
+    {
+      "label": "A common-shell preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3232
+    },
+    {
+      "label": "B common-shell snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3859
+    },
+    {
+      "label": "B common-shell comparison",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3209
+    },
+    {
+      "label": "B common-shell preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3095
+    },
+    {
+      "label": "A search-workspace snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3347
+    },
+    {
+      "label": "A search-workspace preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2855
+    },
+    {
+      "label": "B search-workspace snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3428
+    },
+    {
+      "label": "B search-workspace comparison",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2832
+    },
+    {
+      "label": "B search-workspace preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2831
+    },
+    {
+      "label": "A form-workflow snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3416
+    },
+    {
+      "label": "A form-workflow preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2800
+    },
+    {
+      "label": "B form-workflow snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3396
+    },
+    {
+      "label": "B form-workflow comparison",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2834
+    },
+    {
+      "label": "B form-workflow preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2826
+    },
+    {
+      "label": "A detail-summary snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2259
+    },
+    {
+      "label": "A detail-summary preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2113
+    },
+    {
+      "label": "B detail-summary snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2271
+    },
+    {
+      "label": "B detail-summary comparison",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2128
+    },
+    {
+      "label": "B detail-summary preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2106
+    },
+    {
+      "label": "A detail dark snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2372
+    },
+    {
+      "label": "A detail dark preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2229
+    },
+    {
+      "label": "B detail dark snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2261
+    },
+    {
+      "label": "B detail dark comparison",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2161
+    },
+    {
+      "label": "B detail dark preflight",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2224
+    },
+    {
+      "label": "Conformance negative semantic-ambiguity",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2022
+    },
+    {
+      "label": "Conformance negative relational-ambiguity",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 1965
+    },
+    {
+      "label": "Conformance negative whole-page-missing-h1",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 1948
+    },
+    {
+      "label": "Historical comparative negative",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2791
+    },
+    {
+      "label": "Semantic-only Reference regression",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2032
+    },
+    {
+      "label": "Semantic-only comparative negative",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2016
+    },
+    {
+      "label": "a-self-contained common probe common-shell",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3098
+    },
+    {
+      "label": "a-self-contained common probe search-workspace",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2859
+    },
+    {
+      "label": "a-self-contained common probe form-workflow",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2882
+    },
+    {
+      "label": "a-self-contained common probe detail-summary",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2146
+    },
+    {
+      "label": "a-self-contained common probe detail dark",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2091
+    },
+    {
+      "label": "a-self-contained local detail light",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2133
+    },
+    {
+      "label": "a-self-contained local detail dark",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2106
+    },
+    {
+      "label": "a-self-contained local shell unaffected",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3109
+    },
+    {
+      "label": "b-token-only common probe common-shell",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 3139
+    },
+    {
+      "label": "b-token-only common probe search-workspace",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2821
+    },
+    {
+      "label": "b-token-only common probe form-workflow",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2905
+    },
+    {
+      "label": "b-token-only common probe detail-summary",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2095
+    },
+    {
+      "label": "b-token-only common probe detail dark",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2133
+    },
+    {
+      "label": "b-token-only local detail light",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2083
+    },
+    {
+      "label": "b-token-only local detail dark",
+      "attempt": 1,
+      "exitCode": 1,
+      "timedOut": false,
+      "elapsedMilliseconds": 2164
+    },
+    {
+      "label": "b-token-only local shell unaffected",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3118
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "acceptedReference": {
+    "dataRefAttributes": 27,
+    "lines": 979,
+    "scenarioTargets": 18,
+    "javascriptDataRefQueries": 17
+  },
+  "mixedReference": {
+    "dataRefAttributes": 21,
+    "lines": 979,
+    "scenarioTargets": 18,
+    "javascriptDataRefQueries": 13
+  },
+  "sharedCore": {
+    "lines": 514,
+    "mixedFunctions": [
+      "semanticDescriptor",
+      "semanticIndex",
+      "find",
+      "semanticInventory"
+    ]
+  },
+  "targetCss": {
+    "mixedVariantSha256": "EE0F56102A9BBBC06DFC29F6219B86E35BCEE8F815DF22ECE1A75A4709208D0A",
+    "fixedIndependentTargetSha256": "EE0F56102A9BBBC06DFC29F6219B86E35BCEE8F815DF22ECE1A75A4709208D0A",
+    "historicalVanillaSha256": "BBEC7A60F160D6D9430EE539874CB34AE47861B1727CBB209B1FFD1C24A50589"
+  }
+}

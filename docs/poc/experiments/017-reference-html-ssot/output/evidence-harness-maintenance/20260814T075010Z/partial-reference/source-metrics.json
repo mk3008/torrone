@@ -1,0 +1,61 @@
+{
+  "wholeReference": {
+    "files": 1,
+    "lines": 979,
+    "bytes": 34889,
+    "dataRefAttributes": 27,
+    "scenarios": 11,
+    "actions": 19,
+    "harnessRoots": 1
+  },
+  "partialReferences": {
+    "files": 2,
+    "lines": 609,
+    "bytes": 27713,
+    "lineChangePercent": -37.8,
+    "byteChangePercent": -20.6,
+    "dataRefAttributes": 21,
+    "semanticObservations": 6,
+    "totalObservations": 27,
+    "scenarios": 11,
+    "actions": 21,
+    "harnessRoots": 2,
+    "commonShellLines": 354,
+    "searchWorkspaceLines": 255
+  },
+  "duplication": {
+    "uniqueCssDeclarations": {
+      "commonShell": 127,
+      "searchWorkspace": 126,
+      "shared": 50,
+      "sharedDesignTokens": 8
+    },
+    "uniqueJavaScriptLines": {
+      "commonShell": 60,
+      "searchWorkspace": 32,
+      "shared": 3
+    },
+    "uniqueMarkupLines": {
+      "commonShell": 62,
+      "searchWorkspace": 65,
+      "shared": 13
+    }
+  },
+  "target": {
+    "files": 1,
+    "lines": 453,
+    "bytes": 23043,
+    "explicitKeys": 21,
+    "semanticKeys": 6,
+    "totalObservations": 27,
+    "sharedClassTokens": 0,
+    "sharedLocalIds": 0,
+    "scenarioHarnessRoots": 0
+  },
+  "core": {
+    "preExperimentSha256": "D382601184DED6D351D2BBF5B6213013791AD4A59E0E9DB853B9E68754B59A76",
+    "postExperimentSha256": "E62FD23295EFF665B8EC280B55AF4D40DD4E3B4063F5B40DAFA224ECA46C506F",
+    "addedConditions": 1,
+    "purpose": "Apply whole-document h1 count only when an observed product main exists."
+  }
+}

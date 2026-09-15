@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><title>共通シェル新規作成テスト</title>
+<style>body{font-family:system-ui,sans-serif;margin:40px;background:#f4f7fb;color:#10213a}pre{white-space:pre-wrap;background:#fff6d9;padding:20px;border-left:5px solid #b68400}.runs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.run{background:#fff;border:1px solid #ccd8e8;border-radius:12px;padding:20px}.run img{width:100%;border:1px solid #ccd8e8}</style>
+<h1>共通シェル新規作成テスト：Terra medium 3回比較</h1>
+<p>同じ凍結Manifest snapshot、implementation constraints、固定プロンプトだけから独立に生成しました。過去の画面・PNG・比較・レビューは生成入力に含めていません。</p>
+<p>生成モデル：gpt-5.6-terra / reasoning effort：medium。初期表示：Light / Drawer表示。viewport：1440×1200。</p>
+<h2>固定プロンプト全文</h2>
+<pre>共通のHeaderとDrawer、およびスクロール検証用の中立workspaceだけを新規作成してください。テーマは標準のLight/Dark値を用い、URL queryでDrawer表示・非表示とテーマを切り替えます。Drawerには検索欄、親グループ、子項目、通常項目を含め、現在位置は選択状態で表します。製品画面、route、業務データは作成しません。</pre>
+<div class="runs">
+<section class="run"><h2>Run 1</h2><p><a href="runs/run-1/index.html?drawer=open&amp;theme=light">画面を開く</a></p><img src="evidence-captures/run-1/desktop-open-light.png" alt="Run 1"></section>
+<section class="run"><h2>Run 2</h2><p><a href="runs/run-2/index.html?drawer=open&amp;theme=light">画面を開く</a></p><img src="evidence-captures/run-2/desktop-open-light.png" alt="Run 2"></section>
+<section class="run"><h2>Run 3</h2><p><a href="runs/run-3/index.html?drawer=open&amp;theme=light">画面を開く</a></p><img src="evidence-captures/run-3/desktop-open-light.png" alt="Run 3"></section>
+</div>
+</html>

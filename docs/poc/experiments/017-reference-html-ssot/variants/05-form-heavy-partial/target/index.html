@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create credit adjustment</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      --canvas: #f3f6fa;
+      --surface: #ffffff;
+      --surface-muted: #edf3f9;
+      --surface-selected: #dceafb;
+      --text: #101d2f;
+      --muted: #54657a;
+      --border: #c6d2df;
+      --header: #173f67;
+      --header-border: #0d3153;
+      --header-control: #6f93b8;
+      --accent: #1d73b7;
+      --focus: #86b9ee;
+    }
+
+    body[data-theme="dark"] {
+      color-scheme: dark;
+      --canvas: #101923;
+      --surface: #172431;
+      --surface-muted: #203243;
+      --surface-selected: #254b6d;
+      --text: #f3f7fb;
+      --muted: #b6c2cf;
+      --border: #3e5368;
+      --header: #0e2b47;
+      --header-border: #395a79;
+      --header-control: #7896b3;
+      --accent: #68aee7;
+      --focus: #9acbff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html, body { width: 100%; height: 100%; margin: 0; }
+    body {
+      min-width: 960px;
+      overflow: hidden;
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background-color: var(--canvas);
+    }
+
+    :is(button, input, select, textarea, a):focus-visible {
+      outline-color: var(--focus);
+      outline-style: solid;
+      outline-width: 3px;
+      outline-offset: 2px;
+    }
+
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+
+    .frame-topbar {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      min-height: 64px;
+      padding: 0 24px;
+      align-items: center;
+      justify-content: space-between;
+      color: #ffffff;
+      background-color: var(--header);
+      border-bottom-color: var(--header-border);
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+
+    .frame-brand, .frame-tools { display: flex; align-items: center; gap: 12px; }
+    .frame-product { font-size: 19px; font-weight: 700; }
+    .frame-icon {
+      display: inline-grid;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      place-items: center;
+      color: #ffffff;
+      background-color: transparent;
+      border-color: var(--header-control);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 7px;
+    }
+
+    .frame-icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    .frame-account { position: relative; }
+    .frame-menu {
+      position: absolute;
+      z-index: 4;
+      top: 50px;
+      right: 0;
+      width: 220px;
+      padding: 12px;
+      color: var(--text);
+      background-color: var(--surface);
+      border-color: var(--border);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(8, 26, 44, 0.2);
+    }
+
+    .frame-menu p { margin: 0; }
+    .frame-user { font-weight: 700; }
+    .frame-role { margin: 2px 0 12px !important; color: var(--muted); font-size: 14px; }
+    .frame-signout {
+      width: 100%;
+      min-height: 38px;
+      padding: 0 12px;
+      color: var(--text);
+      text-align: left;
+      background-color: var(--surface);
+      border-color: #91a5b9;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 6px;
+    }
+
+    .frame-layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); height: calc(100vh - 64px); }
+    .frame-layout[data-navigation-open="false"] { grid-template-columns: 0 minmax(0, 1fr); }
+    .frame-rail {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--text);
+      background-color: var(--surface);
+      border-right-color: var(--border);
+      border-right-style: solid;
+      border-right-width: 1px;
+    }
+
+    .frame-filter { display: grid; gap: 6px; padding: 18px 18px 12px; color: var(--muted); font-size: 14px; font-weight: 650; }
+    .frame-filter input {
+      min-height: 42px;
+      padding: 0 12px;
+      color: var(--text);
+      background-color: var(--surface);
+      border-color: #94a8bd;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 6px;
+    }
+
+    .frame-scroll { min-height: 0; padding: 8px 12px 24px; overflow-y: auto; }
+    .frame-tree, .frame-children { margin: 0; padding: 0; list-style: none; }
+    .frame-tree { display: grid; gap: 4px; }
+    .frame-children { display: grid; gap: 2px; }
+    .frame-link, .frame-parent {
+      display: flex;
+      width: 100%;
+      min-height: 44px;
+      padding: 0 12px;
+      align-items: center;
+      color: var(--text);
+      text-align: left;
+      text-decoration: none;
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .frame-parent { justify-content: space-between; }
+    .frame-parent svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 2; transition: transform 120ms ease; }
+    .frame-parent[aria-expanded="true"] svg { transform: rotate(90deg); }
+    .frame-children .frame-link { padding-left: 34px; }
+    .frame-link[aria-current="page"] { color: #0e4f84; font-weight: 700; background-color: var(--surface-selected); box-shadow: inset 4px 0 0 var(--accent); }
+    body[data-theme="dark"] .frame-link[aria-current="page"] { color: #e5f3ff; }
+
+    .frame-link:hover, .frame-parent:hover { background-color: var(--surface-muted); }
+    .frame-empty { margin: 12px; padding: 14px; color: var(--muted); background-color: var(--surface-muted); border-radius: 6px; }
+
+    .frame-content { min-width: 0; overflow-y: auto; background-color: var(--canvas); }
+    .entry-page {
+      display: block;
+      width: min(1060px, calc(100% - 56px));
+      min-height: calc(100vh - 64px);
+      margin: 0 auto;
+      padding: 28px 0 44px;
+      color: #10253d;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+      background-color: transparent;
+      --text: #10253d;
+      --muted: #52647a;
+      --border: #c7d4e2;
+      --primary: #1d70b3;
+      --primary-border: #155b92;
+      --danger: #b42318;
+      --danger-surface: #fff3f1;
+    }
+
+    .entry-heading { margin-bottom: 22px; }
+    h1 { margin: 0; color: var(--text); font-size: 30px; line-height: 1.2; }
+    .entry-heading p { margin: 7px 0 0; color: var(--muted); }
+
+    .entry-card, .entry-review {
+      overflow: hidden;
+      background-color: var(--surface);
+      border-color: var(--border);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 8px;
+    }
+
+    .entry-card-head {
+      min-height: 62px;
+      padding: 17px 20px;
+      border-bottom-color: #d5dee8;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+
+    .entry-card-head h2 { margin: 0; font-size: 20px; }
+    .entry-card-head p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+
+    .entry-errors {
+      margin: 20px 20px 0;
+      padding: 14px 16px;
+      color: #7a2018;
+      background-color: var(--danger-surface);
+      border-top-color: #e5aaa4;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-right-color: #e5aaa4;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-bottom-color: #e5aaa4;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-left-color: var(--danger);
+      border-left-style: solid;
+      border-left-width: 4px;
+      border-radius: 0;
+    }
+
+    .entry-errors strong { display: block; margin-bottom: 3px; }
+    .entry-errors p { margin: 0; }
+    .entry-body { padding: 20px; }
+    .entry-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px; }
+    .entry-control { display: grid; align-content: start; gap: 6px; }
+    .entry-control.entry-wide { grid-column: 1 / -1; }
+    .entry-control label, .entry-choice legend { color: #394b60; font-size: 14px; font-weight: 650; }
+    .entry-required { color: var(--danger); }
+    .entry-control :is(input, select, textarea) {
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 11px;
+      color: var(--text);
+      background-color: var(--surface);
+      border-color: #94a8bd;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 6px;
+    }
+
+    .entry-control textarea { min-height: 104px; resize: vertical; }
+    .entry-control :is(input, select, textarea)[aria-invalid="true"] { border-width: 2px; border-color: var(--danger); }
+    .entry-message { margin: 0; color: var(--danger); font-size: 14px; font-weight: 650; }
+
+    .entry-choice { min-width: 0; margin: 0; padding: 0; border: 0; }
+    .entry-choice legend { margin-bottom: 8px; }
+    .entry-options { display: flex; min-height: 42px; align-items: center; gap: 22px; }
+    .entry-options label { display: inline-flex; align-items: center; gap: 7px; color: var(--text); font-size: 16px; font-weight: 400; }
+    .entry-options input { width: 18px; height: 18px; margin: 0; accent-color: var(--primary); }
+
+    .entry-actions {
+      display: flex;
+      min-height: 72px;
+      padding: 15px 20px;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      background-color: var(--surface);
+      border-top-color: #d5dee8;
+      border-top-style: solid;
+      border-top-width: 1px;
+    }
+
+    .entry-primary, .entry-secondary { min-height: 40px; padding: 0 16px; border-radius: 6px; }
+    .entry-primary {
+      color: #ffffff;
+      font-weight: 700;
+      background-color: var(--primary);
+      border-color: var(--primary-border);
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    .entry-secondary {
+      color: #183653;
+      background-color: var(--surface);
+      border-color: #8ea2b9;
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    .entry-review-body { padding: 20px; }
+    .entry-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid #d9e2eb; }
+    .entry-summary-item { padding: 14px 0; border-bottom: 1px solid #d9e2eb; }
+    .entry-summary-item:nth-child(odd) { padding-right: 20px; }
+    .entry-summary-item dt { color: var(--muted); font-size: 13px; font-weight: 700; text-transform: uppercase; }
+    .entry-summary-item dd { margin: 4px 0 0; color: var(--text); }
+
+    body[data-theme="dark"] .entry-page {
+      color: #f4f8fc;
+      --text: #f4f8fc;
+      --muted: #c3d1df;
+      --border: #49647d;
+      --primary: #1d70b3;
+      --primary-border: #5fa7db;
+      --danger: #ffb4aa;
+      --danger-surface: #41231f;
+    }
+    body[data-theme="dark"] .entry-control label,
+    body[data-theme="dark"] .entry-choice legend { color: #d7e4f0; }
+    body[data-theme="dark"] .entry-secondary { color: #f4f8fc; border-color: #7690a8; }
+    body[data-theme="dark"] .entry-errors { color: #ffd7d2; border-top-color: #a85f57; border-right-color: #a85f57; border-bottom-color: #a85f57; }
+    body[data-theme="dark"] .entry-card-head,
+    body[data-theme="dark"] .entry-actions { border-color: #49647d; }
+  </style>
+</head>
+<body data-theme="light">
+  <header class="frame-topbar">
+    <div class="frame-brand">
+      <button class="frame-icon" type="button" data-ref="navigation-toggle" aria-controls="credit-navigation" aria-expanded="true" aria-label="Hide navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"></rect><path d="M9 4v16m6-11-3 3 3 3"></path></svg>
+      </button>
+      <span class="frame-product">Revenue Desk</span>
+    </div>
+    <div class="frame-tools">
+      <button class="frame-icon" type="button" data-ref="theme-toggle" aria-pressed="false" aria-label="Use dark theme">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"></path></svg>
+      </button>
+      <div class="frame-account">
+        <button class="frame-icon" type="button" data-ref="user-menu-toggle" aria-controls="credit-user-menu" aria-expanded="false" aria-haspopup="menu" aria-label="Open user menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg>
+        </button>
+        <div class="frame-menu" id="credit-user-menu" role="menu" hidden>
+          <p class="frame-user">Dana Brooks</p>
+          <p class="frame-role">Revenue operations</p>
+          <button class="frame-signout" type="button" role="menuitem" data-ref="sign-out-action">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="frame-layout" data-navigation-open="true">
+    <nav class="frame-rail" id="credit-navigation" aria-label="Primary navigation">
+      <label class="frame-filter" for="credit-navigation-filter">Filter navigation
+        <input id="credit-navigation-filter" type="search" data-ref="navigation-filter" autocomplete="off" placeholder="Find a menu item">
+      </label>
+      <div class="frame-scroll">
+        <ul class="frame-tree">
+          <li data-credit-navigation-item><a class="frame-link" href="#overview">Overview</a></li>
+          <li data-credit-navigation-item>
+            <button class="frame-parent" type="button" data-ref="navigation-parent" aria-expanded="true" aria-controls="credit-navigation-children">
+              <span>Account operations</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 9 5 5 5-5"></path></svg>
+            </button>
+            <ul class="frame-children" id="credit-navigation-children">
+              <li data-credit-navigation-item><a class="frame-link" href="#adjustment" data-ref="navigation-current" aria-current="page">Credit adjustments</a></li>
+              <li data-credit-navigation-item><a class="frame-link" href="#refunds" data-ref="navigation-secondary">Refund reviews</a></li>
+            </ul>
+          </li>
+          <li data-credit-navigation-item><a class="frame-link" href="#customers">Customer accounts</a></li>
+          <li data-credit-navigation-item><a class="frame-link" href="#invoices">Invoices</a></li>
+          <li data-credit-navigation-item><a class="frame-link" href="#disputes">Disputes</a></li>
+          <li data-credit-navigation-item><a class="frame-link" href="#collections">Collections</a></li>
+          <li data-credit-navigation-item><a class="frame-link" href="#tax">Tax profiles</a></li>
+          <li data-credit-navigation-item><a class="frame-link" href="#reports">Reports</a></li>
+          <li data-credit-navigation-item><a class="frame-link" href="#exports">Exports</a></li>
+          <li data-credit-navigation-item><a class="frame-link" href="#settings">Settings</a></li>
+        </ul>
+        <p class="frame-empty" data-ref="navigation-empty" hidden>No navigation items found.</p>
+      </div>
+    </nav>
+
+    <div class="frame-content">
+      <main class="entry-page">
+        <div class="entry-heading">
+          <h1>Create credit adjustment</h1>
+          <p>Capture the reason and approver before reviewing the adjustment.</p>
+        </div>
+
+        <form class="entry-card" id="credit-adjustment-form" aria-labelledby="credit-form-heading" novalidate>
+          <div class="entry-card-head">
+            <h2 id="credit-form-heading">Adjustment details</h2>
+            <p>Fields marked with an asterisk are required.</p>
+          </div>
+
+          <div class="entry-errors" data-ref="form-error-summary" role="alert" hidden>
+            <strong>Check the required information</strong>
+            <p>Correct the highlighted fields, then review again.</p>
+          </div>
+
+          <div class="entry-body">
+            <div class="entry-grid">
+              <div class="entry-control">
+                <label for="credit-reason">Adjustment reason <span class="entry-required" aria-hidden="true">*</span></label>
+                <input id="credit-reason" data-ref="form-primary-field" type="text" autocomplete="off" required>
+                <p id="credit-reason-error" class="entry-message" data-ref="form-primary-error" hidden>Enter an adjustment reason.</p>
+              </div>
+
+              <div class="entry-control">
+                <label for="credit-segment">Account segment</label>
+                <select id="credit-segment" data-ref="form-select-field">
+                  <option>Enterprise</option>
+                  <option>Mid-market</option>
+                  <option>Small business</option>
+                </select>
+              </div>
+
+              <div class="entry-control">
+                <label for="credit-effective-date">Effective date</label>
+                <input id="credit-effective-date" data-ref="form-date-field" type="date" value="2026-10-01">
+              </div>
+
+              <div class="entry-control">
+                <label for="credit-approver">Approver email <span class="entry-required" aria-hidden="true">*</span></label>
+                <input id="credit-approver" data-ref="form-contact-field" type="email" autocomplete="off" required>
+                <p id="credit-approver-error" class="entry-message" data-ref="form-contact-error" hidden>Enter a valid approver email.</p>
+              </div>
+
+              <fieldset class="entry-choice entry-wide" data-ref="form-choice-group">
+                <legend>Adjustment type</legend>
+                <div class="entry-options">
+                  <label><input type="radio" name="credit-type" value="credit" checked> Credit</label>
+                  <label><input type="radio" name="credit-type" value="debit"> Debit</label>
+                  <label><input type="radio" name="credit-type" value="fee"> Fee correction</label>
+                </div>
+              </fieldset>
+
+              <div class="entry-control entry-wide">
+                <label for="credit-note">Internal note</label>
+                <textarea id="credit-note" data-ref="form-notes-field">Apply after the September invoice closes.</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="entry-actions" data-ref="form-actions">
+            <button class="entry-secondary" type="button" data-ref="cancel-action">Cancel</button>
+            <button class="entry-primary" type="submit" data-ref="review-action">Review</button>
+          </div>
+        </form>
+
+        <section class="entry-review" data-ref="form-review-region" aria-labelledby="credit-review-heading" hidden>
+          <div class="entry-card-head">
+            <h2 id="credit-review-heading" data-ref="form-review-heading" tabindex="-1">Review credit adjustment</h2>
+            <p>Confirm the information before submitting the adjustment.</p>
+          </div>
+          <div class="entry-review-body">
+            <dl class="entry-summary">
+              <div class="entry-summary-item"><dt>Reason</dt><dd data-credit-review="primary"></dd></div>
+              <div class="entry-summary-item"><dt>Account segment</dt><dd data-credit-review="segment"></dd></div>
+              <div class="entry-summary-item"><dt>Effective date</dt><dd data-credit-review="date"></dd></div>
+              <div class="entry-summary-item"><dt>Approver</dt><dd data-credit-review="contact"></dd></div>
+              <div class="entry-summary-item"><dt>Type</dt><dd data-credit-review="type"></dd></div>
+              <div class="entry-summary-item"><dt>Internal note</dt><dd data-credit-review="note"></dd></div>
+            </dl>
+          </div>
+          <div class="entry-actions" data-ref="review-actions">
+            <button class="entry-secondary" type="button" data-ref="edit-action">Back to edit</button>
+            <button class="entry-primary" type="button" data-ref="confirm-action">Submit</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const body = document.body;
+      const layout = document.querySelector('.frame-layout');
+      const navigation = document.querySelector('#credit-navigation');
+      const navigationToggle = document.querySelector('[data-ref="navigation-toggle"]');
+      const navigationParent = document.querySelector('[data-ref="navigation-parent"]');
+      const navigationChildren = document.querySelector('#credit-navigation-children');
+      const navigationFilter = document.querySelector('[data-ref="navigation-filter"]');
+      const navigationItems = [...document.querySelectorAll('[data-credit-navigation-item]')];
+      const navigationEmpty = document.querySelector('[data-ref="navigation-empty"]');
+      const navigationLinks = [...document.querySelectorAll('.frame-link')];
+      const themeToggle = document.querySelector('[data-ref="theme-toggle"]');
+      const userMenuToggle = document.querySelector('[data-ref="user-menu-toggle"]');
+      const userMenu = document.querySelector('#credit-user-menu');
+      const signOut = document.querySelector('[data-ref="sign-out-action"]');
+
+      function setNavigation(open) {
+        layout.dataset.navigationOpen = String(open);
+        navigationToggle.setAttribute('aria-expanded', String(open));
+        navigationToggle.setAttribute('aria-label', open ? 'Hide navigation' : 'Show navigation');
+        navigation.hidden = !open;
+      }
+
+      function setNavigationParent(open) {
+        navigationParent.setAttribute('aria-expanded', String(open));
+        navigationChildren.hidden = !open;
+      }
+
+      function filterNavigation() {
+        const query = navigationFilter.value.trim().toLowerCase();
+        let visibleCount = 0;
+        navigationItems.forEach((item) => {
+          const link = item.querySelector(':scope > .frame-link');
+          if (!link) return;
+          const visible = !query || link.textContent.toLowerCase().includes(query);
+          item.hidden = !visible;
+          if (visible) visibleCount += 1;
+        });
+        const childVisible = [...navigationChildren.children].some((item) => !item.hidden);
+        navigationParent.closest('li').hidden = Boolean(query) && !childVisible;
+        if (query && childVisible) setNavigationParent(true);
+        navigationEmpty.hidden = visibleCount > 0;
+      }
+
+      function setUserMenu(open, restoreFocus = false) {
+        userMenuToggle.setAttribute('aria-expanded', String(open));
+        userMenuToggle.setAttribute('aria-label', open ? 'Close user menu' : 'Open user menu');
+        userMenu.hidden = !open;
+        if (open) signOut.focus();
+        else if (restoreFocus) userMenuToggle.focus();
+      }
+
+      navigationToggle.addEventListener('click', () => setNavigation(navigationToggle.getAttribute('aria-expanded') !== 'true'));
+      navigationParent.addEventListener('click', () => setNavigationParent(navigationParent.getAttribute('aria-expanded') !== 'true'));
+      navigationFilter.addEventListener('input', filterNavigation);
+      navigationLinks.forEach((link) => link.addEventListener('click', (event) => {
+        event.preventDefault();
+        navigationLinks.forEach((candidate) => candidate.removeAttribute('aria-current'));
+        link.setAttribute('aria-current', 'page');
+      }));
+      themeToggle.addEventListener('click', () => {
+        const dark = themeToggle.getAttribute('aria-pressed') !== 'true';
+        themeToggle.setAttribute('aria-pressed', String(dark));
+        themeToggle.setAttribute('aria-label', dark ? 'Use light theme' : 'Use dark theme');
+        body.dataset.theme = dark ? 'dark' : 'light';
+      });
+      userMenuToggle.addEventListener('click', () => setUserMenu(userMenuToggle.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && userMenuToggle.getAttribute('aria-expanded') === 'true') setUserMenu(false, true);
+      });
+
+      const form = document.querySelector('#credit-adjustment-form');
+      const primary = document.querySelector('[data-ref="form-primary-field"]');
+      const contact = document.querySelector('[data-ref="form-contact-field"]');
+      const primaryError = document.querySelector('[data-ref="form-primary-error"]');
+      const contactError = document.querySelector('[data-ref="form-contact-error"]');
+      const errorSummary = document.querySelector('[data-ref="form-error-summary"]');
+      const review = document.querySelector('[data-ref="form-review-region"]');
+      const reviewHeading = document.querySelector('[data-ref="form-review-heading"]');
+      const editAction = document.querySelector('[data-ref="edit-action"]');
+
+      function markInvalid(control, message, invalid) {
+        if (invalid) {
+          control.setAttribute('aria-invalid', 'true');
+          control.setAttribute('aria-describedby', message.id);
+        } else {
+          control.removeAttribute('aria-invalid');
+          control.removeAttribute('aria-describedby');
+        }
+        message.hidden = !invalid;
+      }
+
+      function updateErrorSummary() {
+        errorSummary.hidden = !form.querySelector('[aria-invalid="true"]');
+      }
+
+      function checkEntry() {
+        const missingReason = !primary.value.trim();
+        const invalidApprover = !contact.value.trim() || !contact.validity.valid;
+        markInvalid(primary, primaryError, missingReason);
+        markInvalid(contact, contactError, invalidApprover);
+        updateErrorSummary();
+        if (missingReason) primary.focus();
+        else if (invalidApprover) contact.focus();
+        return !missingReason && !invalidApprover;
+      }
+
+      function openEditor(restoreFocus = false) {
+        review.hidden = true;
+        form.hidden = false;
+        if (restoreFocus) primary.focus();
+      }
+
+      function openReview() {
+        const summary = {
+          primary: primary.value,
+          segment: document.querySelector('[data-ref="form-select-field"]').value,
+          date: document.querySelector('[data-ref="form-date-field"]').value,
+          contact: contact.value,
+          type: form.querySelector('input[name="credit-type"]:checked').nextSibling.textContent.trim(),
+          note: document.querySelector('[data-ref="form-notes-field"]').value
+        };
+        Object.entries(summary).forEach(([name, value]) => {
+          document.querySelector(`[data-credit-review="${name}"]`).textContent = value || 'Not provided';
+        });
+        form.hidden = true;
+        review.hidden = false;
+        reviewHeading.focus();
+      }
+
+      primary.addEventListener('input', () => {
+        if (primary.value.trim()) markInvalid(primary, primaryError, false);
+        updateErrorSummary();
+      });
+      contact.addEventListener('input', () => {
+        if (contact.value.trim() && contact.validity.valid) markInvalid(contact, contactError, false);
+        updateErrorSummary();
+      });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (checkEntry()) openReview();
+      });
+      editAction.addEventListener('click', () => openEditor(true));
+    })();
+  </script>
+</body>
+</html>

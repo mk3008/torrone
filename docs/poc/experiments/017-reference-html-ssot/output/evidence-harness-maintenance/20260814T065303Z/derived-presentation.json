@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "authority": "non-authoritative-derived-presentation",
+  "results": [
+    {
+      "status": "written",
+      "rawReport": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\partial-reference\\target-shell.report.json",
+      "rawSha256": "833DB640FC2C4AA6E4D8D16EC3F7298D4EE686AF38213B7F4E776C35A5A8E720",
+      "outputJson": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\part-to-integrated-reviewer\\partial-shell.json",
+      "outputMarkdown": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\part-to-integrated-reviewer\\partial-shell.md"
+    },
+    {
+      "status": "written",
+      "rawReport": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\partial-reference\\target-workspace.report.json",
+      "rawSha256": "71C6B4BBB7A2E1D41651AC75F61938923DAADFBD982191B5A2C4AA6E2F0A6ADE",
+      "outputJson": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\part-to-integrated-reviewer\\partial-workspace.json",
+      "outputMarkdown": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\part-to-integrated-reviewer\\partial-workspace.md"
+    },
+    {
+      "status": "written",
+      "rawReport": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\form-heavy-partial\\target-shell.report.json",
+      "rawSha256": "E7A975CE96552851FD5D69DB5B4B3F880CD0C7AC7CA135A35558A11CB5E47213",
+      "outputJson": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\part-to-integrated-reviewer\\form-shell.json",
+      "outputMarkdown": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\part-to-integrated-reviewer\\form-shell.md"
+    },
+    {
+      "status": "written",
+      "rawReport": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\form-heavy-partial\\target-form.report.json",
+      "rawSha256": "D208532EFB4D812AB2AFA0897C39A2DEA085D8B67D95D4CC85559C98014F5923",
+      "outputJson": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\part-to-integrated-reviewer\\form-workflow.json",
+      "outputMarkdown": "C:\\Users\\mssgm\\github\\ui-design-manifest\\docs\\poc\\experiments\\017-reference-html-ssot\\output\\evidence-harness-maintenance\\20260814T065303Z\\part-to-integrated-reviewer\\form-workflow.md"
+    }
+  ]
+}

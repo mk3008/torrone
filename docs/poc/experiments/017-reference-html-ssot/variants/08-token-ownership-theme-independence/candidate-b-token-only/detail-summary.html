@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Shipment exception summary reference</title>
+  <link rel="stylesheet" href="shared-tokens.css">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      --surface-muted: #edf3f9;
+      --text: #101d2f;
+      --muted: #54657a;
+      --border: #c6d2df;
+      --status-accent: #1d73b7;
+      --status-surface: #e1edf9;
+      --timeline-line: #9eb5cc;
+    }
+
+    body[data-theme="dark"] {
+      color-scheme: dark;
+      --surface-muted: #203243;
+      --text: #f3f7fb;
+      --muted: #b6c2cf;
+      --border: #3e5368;
+      --status-accent: #68aee7;
+      --status-surface: #1b3852;
+      --timeline-line: #58738e;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body {
+      min-width: 760px;
+      color: var(--text);
+      background: var(--canvas);
+      font: 16px/1.5 "Segoe UI", system-ui, sans-serif;
+    }
+    summary { cursor: pointer; }
+    summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+    .workspace { width: min(960px, calc(100% - 56px)); margin: 0 auto; padding: 36px 0 48px; }
+    .page-heading { margin-bottom: 22px; }
+    h1 { margin: 0; font-size: 30px; line-height: 1.2; }
+    .page-heading p { margin: 7px 0 0; color: var(--muted); }
+
+    .record-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .record-header {
+      display: flex;
+      min-height: 74px;
+      padding: 18px 22px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .record-id { margin: 0; font-size: 21px; }
+    .record-caption { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+    .status-badge {
+      display: inline-flex;
+      min-height: 32px;
+      padding: 4px 11px;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      background: var(--status-surface);
+      border: 1px solid var(--status-accent);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .status-dot { width: 8px; height: 8px; background: var(--status-accent); border-radius: 50%; }
+
+    .record-section { padding: 22px; }
+    .record-section + .record-section { border-top: 1px solid var(--border); }
+    h2 { margin: 0 0 16px; font-size: 18px; }
+    .facts { display: grid; margin: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 32px; }
+    .fact { min-width: 0; }
+    dt { margin-bottom: 3px; color: var(--muted); font-size: 14px; font-weight: 600; }
+    dd { margin: 0; overflow-wrap: anywhere; }
+
+    .timeline { margin: 0; padding: 0; list-style: none; }
+    .timeline li { position: relative; min-height: 58px; padding: 0 0 20px 28px; }
+    .timeline li:last-child { min-height: 0; padding-bottom: 0; }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      background: var(--status-accent);
+      border-radius: 50%;
+    }
+    .timeline li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      bottom: 2px;
+      left: 7px;
+      width: 2px;
+      background: var(--timeline-line);
+    }
+    .event-time { display: block; color: var(--muted); font-size: 14px; }
+    .event-text { margin: 2px 0 0; }
+
+    .processing-notes {
+      background: var(--surface-muted);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .processing-notes summary { padding: 13px 16px; font-weight: 700; }
+    .processing-notes[open] summary { box-shadow: inset 0 -1px 0 var(--border); }
+    .processing-notes p { margin: 0; padding: 14px 16px 16px; color: var(--muted); }
+  </style>
+</head>
+<body data-theme="light">
+  <main class="workspace">
+    <header class="page-heading">
+      <h1>Shipment exception</h1>
+      <p>Current routing and handoff status for a delayed shipment.</p>
+    </header>
+
+    <article class="record-card" data-ref="record-summary" aria-labelledby="shipment-heading">
+      <header class="record-header">
+        <div>
+          <h2 class="record-id" id="shipment-heading">SH-2084</h2>
+          <p class="record-caption">Outbound shipment · Priority service</p>
+        </div>
+        <span class="status-badge" data-ref="record-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          Awaiting carrier
+        </span>
+      </header>
+
+      <section class="record-section" aria-labelledby="shipment-facts-heading">
+        <h2 id="shipment-facts-heading">Shipment facts</h2>
+        <dl class="facts">
+          <div class="fact"><dt>Current location</dt><dd>North distribution center</dd></div>
+          <div class="fact"><dt>Carrier</dt><dd>BlueLine Freight</dd></div>
+          <div class="fact"><dt>Promised delivery</dt><dd>18 August 2026</dd></div>
+          <div class="fact"><dt>Exception owner</dt><dd>Regional logistics desk</dd></div>
+        </dl>
+      </section>
+
+      <section class="record-section" data-ref="activity-timeline" aria-labelledby="activity-heading">
+        <h2 id="activity-heading">Latest activity</h2>
+        <ol class="timeline">
+          <li>
+            <time class="event-time" datetime="2026-08-13T09:40">13 August, 09:40</time>
+            <p class="event-text">Carrier pickup window was missed.</p>
+          </li>
+          <li>
+            <time class="event-time" datetime="2026-08-13T10:15">13 August, 10:15</time>
+            <p class="event-text">Logistics desk requested a replacement vehicle.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="record-section">
+        <details class="processing-notes" data-ref="processing-notes">
+          <summary data-ref="processing-notes-toggle">Processing notes</summary>
+          <p>The shipment remains at the distribution center until the carrier confirms a new pickup window.</p>
+        </details>
+      </section>
+    </article>
+  </main>
+
+  <script type="application/json" data-reference-scenarios>
+    {
+      "version": 1,
+      "scenarios": [
+        {
+          "name": "processing notes round trip",
+          "steps": [
+            { "action": "press", "target": "processing-notes-toggle", "key": "Space" },
+            { "action": "press", "target": "processing-notes-toggle", "key": "Space" }
+          ]
+        }
+      ]
+    }
+  </script>
+</body>
+</html>

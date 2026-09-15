@@ -1,0 +1,26 @@
+{
+  "tool": "@playwright/cli via localhost static server",
+  "runs": [
+    {
+      "run": 1,
+      "filter_match": "01-01 => グループ 01 / 項目 01-01",
+      "filter_no_match": "zzzz => no-match state",
+      "after_drawer_wheel": { "header_top": 0, "drawer_scroll": 259, "workspace_scroll": 0 },
+      "after_workspace_wheel": { "header_top": 0, "drawer_scroll": 259, "workspace_scroll": 720 }
+    },
+    {
+      "run": 2,
+      "filter_match": "01-01 => グループ 01 / 項目 01-01",
+      "filter_no_match": "zzzz => no-match state",
+      "after_drawer_wheel": { "header_top": 0, "drawer_scroll": 94, "workspace_scroll": 0 },
+      "after_workspace_wheel": { "header_top": 0, "drawer_scroll": 94, "workspace_scroll": 720 }
+    },
+    {
+      "run": 3,
+      "filter_match": "01-01 => グループ 01 / 項目 01-01",
+      "filter_no_match": "zzzz => no-match state",
+      "after_drawer_wheel": { "header_top": 0, "drawer_scroll": 145, "workspace_scroll": 0 },
+      "after_workspace_wheel": { "header_top": 0, "drawer_scroll": 145, "workspace_scroll": 720 }
+    }
+  ]
+}

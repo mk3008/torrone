@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Single date picker human-adjusted candidate</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #fff; --text: #101d2f; --muted: #54657a; --border: #94a8bd; --accent: #1d73b7; --focus: #86b9ee; --danger: #b42318; --danger-bg: #fff7f6; --disabled-bg: #eef2f6; --disabled-text: #4f6072; --sunday: #b42318; --sunday-muted: #8f4139; --saturday: #155b92; --saturday-muted: #466b8c; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 720px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: not-allowed; }
+    [hidden] { display: none !important; }
+    :is(button, input):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .reference-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .sample { width: min(660px, calc(100% - 48px)); margin: 48px auto; padding: 24px; background: var(--surface); border: 1px solid #c6d2df; border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .sample h2 { margin: 0 0 6px; font-size: 22px; }
+    .support { margin: 0 0 20px; color: var(--muted); }
+    .field-label { display: block; margin-bottom: 4px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .field-hint { margin: 0 0 7px; color: var(--muted); font-size: 14px; }
+    .control-stack { position: relative; width: 336px; max-width: 100%; }
+    .date-field { position: relative; display: flex; min-height: 44px; overflow: visible; align-items: stretch; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+    .date-field[data-invalid="true"] { background: var(--danger-bg); border-color: var(--danger); box-shadow: 0 0 0 1px var(--danger); }
+    .date-value { min-width: 0; flex: 1; padding: 8px 55px 8px 11px; color: var(--text); background: transparent; border: 0; border-radius: 5px 0 0 5px; }
+    .date-value:focus-visible { outline: none; }
+    .date-field:has(.date-value:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .date-value::placeholder { color: #687a8f; opacity: 1; }
+    .field-action { display: grid; width: 44px; min-width: 44px; padding: 0; place-items: center; color: #183653; background: var(--surface); border: 0; border-left: 1px solid var(--border); }
+    .field-action:last-child { border-radius: 0 5px 5px 0; }
+    .field-action:hover { background: #edf3f9; }
+    .field-action:focus-visible { outline-offset: -4px; }
+    .clear-action { position: absolute; z-index: 2; top: 0; right: 44px; bottom: 0; }
+    .field-action svg, .icon-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+    .error { margin: 7px 0 0; color: var(--danger); font-size: 14px; font-weight: 650; }
+    .picker { position: absolute; z-index: 10; top: calc(100% + 10px); left: 0; width: 336px; padding: 12px; background: var(--surface); border: 1px solid #98aabc; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
+    .picker-header { display: grid; grid-template-columns: auto minmax(104px, 1fr) auto auto; margin-bottom: 8px; align-items: center; gap: 4px; }
+    .nav-group { display: flex; gap: 2px; }
+    .nav-group:last-of-type { justify-content: flex-end; }
+    .month-heading { margin: 0; font-size: 15px; text-align: center; }
+    .icon-button { display: grid; width: 30px; height: 30px; padding: 0; place-items: center; color: #183653; background: var(--surface); border: 1px solid transparent; border-radius: 4px; }
+    .icon-button:hover { background: #edf3f9; }
+    .icon-button svg { width: 16px; height: 16px; }
+    .close-calendar { width: 30px; height: 30px; margin-left: 1px; border-color: var(--border); }
+    .calendar { width: 100%; border-collapse: separate; border-spacing: 2px; table-layout: fixed; }
+    .calendar th { height: 24px; color: var(--muted); font-size: 12px; font-weight: 700; text-align: center; }
+    .calendar th:first-child { color: var(--sunday); }
+    .calendar th:last-child { color: var(--saturday); }
+    .calendar abbr { text-decoration: none; }
+    .calendar td { height: 34px; padding: 0; text-align: center; }
+    .calendar td:has(.day:disabled) { cursor: not-allowed; }
+    .day { width: 34px; height: 34px; padding: 0; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; }
+    .day:hover:not(:disabled) { background: #edf3f9; }
+    .day.outside-month { color: var(--muted); }
+    .calendar td:first-child .day:not(:disabled):not([aria-pressed="true"]) { color: var(--sunday); }
+    .calendar td:last-child .day:not(:disabled):not([aria-pressed="true"]) { color: var(--saturday); }
+    .calendar td:first-child .day.outside-month:not(:disabled):not([aria-pressed="true"]) { color: var(--sunday-muted); }
+    .calendar td:last-child .day.outside-month:not(:disabled):not([aria-pressed="true"]) { color: var(--saturday-muted); }
+    .day[aria-current="date"] { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .day[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: #155b92; font-weight: 700; }
+    .day:disabled { color: var(--disabled-text); background: var(--disabled-bg); border-color: #d7dfe8; pointer-events: none; }
+    .calendar-note { margin: 8px 2px 0; color: var(--muted); font-size: 13px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body>
+  <div class="reference-note" data-reference-harness="reference-label">Human-adjusted draft · single date · fixed review fixture: today = 2026-08-14</div>
+  <section class="sample" aria-labelledby="single-date-heading">
+    <h2 id="single-date-heading">Expense transaction date</h2>
+    <p class="support">Record the date on which the expense occurred.</p>
+    <label class="field-label" id="date-label" for="transaction-date">Transaction date</label>
+    <p class="field-hint" id="date-hint">Format: yyyy-mm-dd. You can also enter yyyymmdd.</p>
+    <div class="control-stack" data-ref="date-control">
+      <div class="date-field" data-invalid="false">
+        <input
+          class="date-value"
+          id="transaction-date"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          placeholder="yyyy-mm-dd"
+          role="combobox"
+          aria-autocomplete="none"
+          aria-haspopup="dialog"
+          aria-controls="date-picker-popup"
+          aria-expanded="false"
+          aria-invalid="false"
+          aria-describedby="date-hint"
+          aria-errormessage="date-error"
+          data-ref="date-input">
+        <button class="field-action clear-action" type="button" data-ref="date-clear" aria-label="Clear date" title="Clear date" aria-hidden="true" tabindex="-1" hidden disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <button class="field-action calendar-action" type="button" data-ref="date-trigger" aria-label="Open calendar" title="Open calendar" aria-controls="date-picker-popup" aria-expanded="false" tabindex="-1">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2v4M16 2v4M3 9h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2z"></path></svg>
+        </button>
+      </div>
+      <p class="error" id="date-error" data-ref="date-error" role="alert" hidden>Enter a real date as yyyy-mm-dd or yyyymmdd.</p>
+      <div class="picker" id="date-picker-popup" data-ref="date-popup" role="dialog" aria-label="Choose transaction date" hidden>
+        <div class="picker-header">
+          <div class="nav-group">
+            <button class="icon-button" type="button" data-ref="date-prev-year" aria-label="Previous year" title="Previous year">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m11 17-5-5 5-5M18 17l-5-5 5-5"></path></svg>
+            </button>
+            <button class="icon-button" type="button" data-ref="date-prev-month" aria-label="Previous month" title="Previous month">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+          </div>
+          <h3 class="month-heading" id="date-month-heading" data-ref="date-month-heading" aria-live="polite">August 2026</h3>
+          <div class="nav-group">
+            <button class="icon-button" type="button" data-ref="date-next-month" aria-label="Next month" title="Next month">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"></path></svg>
+            </button>
+            <button class="icon-button" type="button" data-ref="date-next-year" aria-label="Next year" title="Next year">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 17 5-5-5-5M13 17l5-5-5-5"></path></svg>
+            </button>
+          </div>
+          <button class="icon-button close-calendar" type="button" data-ref="date-close" aria-label="Close calendar" title="Close calendar">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
+        </div>
+        <table class="calendar" data-ref="date-grid" role="grid" aria-labelledby="date-month-heading">
+          <thead>
+            <tr>
+              <th scope="col"><abbr title="Sunday">Su</abbr></th>
+              <th scope="col"><abbr title="Monday">Mo</abbr></th>
+              <th scope="col"><abbr title="Tuesday">Tu</abbr></th>
+              <th scope="col"><abbr title="Wednesday">We</abbr></th>
+              <th scope="col"><abbr title="Thursday">Th</abbr></th>
+              <th scope="col"><abbr title="Friday">Fr</abbr></th>
+              <th scope="col"><abbr title="Saturday">Sa</abbr></th>
+            </tr>
+          </thead>
+          <tbody id="date-grid-body"></tbody>
+        </table>
+        <p class="calendar-note">Future dates are unavailable.</p>
+        <p class="sr-only" id="date-keyboard-help">Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.</p>
+      </div>
+    </div>
+    <p class="sr-only" data-ref="date-selection" aria-live="polite">No date selected.</p>
+  </section>
+
+  <script type="application/json" data-reference-scenarios>
+    {"version":1,"scenarios":[
+      {"name":"input focus opens calendar","steps":[{"action":"click","target":"date-input"}]},
+      {"name":"tab leaves input and closes calendar","steps":[{"action":"press","target":"date-input","key":"Tab"}]},
+      {"name":"calendar icon toggle","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-trigger"}]},
+      {"name":"month navigation","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-next-month"},{"action":"click","target":"date-prev-month"}]},
+      {"name":"year navigation","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-prev-year"},{"action":"click","target":"date-next-year"}]},
+      {"name":"pointer date selection","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-day"}]},
+      {"name":"keyboard date selection","steps":[{"action":"press","target":"date-trigger","key":"Space"},{"action":"press","target":"date-day","key":"ArrowRight"},{"action":"press","target":"date-next-day","key":"Enter"}]},
+      {"name":"disabled future date","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-disabled-day"}]},
+      {"name":"compact manual input","steps":[{"action":"fill","target":"date-input","value":"20260812"},{"action":"press","target":"date-input","key":"Escape"}]},
+      {"name":"invalid manual input","steps":[{"action":"fill","target":"date-input","value":"20260230"},{"action":"press","target":"date-input","key":"Escape"}]},
+      {"name":"future manual input","steps":[{"action":"fill","target":"date-input","value":"20260818"},{"action":"press","target":"date-input","key":"Escape"}]},
+      {"name":"correct future manual input","steps":[{"action":"fill","target":"date-input","value":"20260818"},{"action":"fill","target":"date-input","value":"20260812"},{"action":"press","target":"date-input","key":"Escape"}]},
+      {"name":"escape closes calendar","steps":[{"action":"click","target":"date-trigger"},{"action":"press","target":"date-day","key":"Escape"}]},
+      {"name":"close button closes calendar","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-close"}]},
+      {"name":"clear and reopen","steps":[{"action":"click","target":"date-trigger"},{"action":"click","target":"date-day"},{"action":"click","target":"date-clear"},{"action":"click","target":"date-trigger"}]}
+    ]}
+  </script>
+  <script>
+    (() => {
+      const fixedToday = '2026-08-14';
+      const control = document.querySelector('[data-ref="date-control"]');
+      const field = control.querySelector('.date-field');
+      const input = document.querySelector('[data-ref="date-input"]');
+      const trigger = document.querySelector('[data-ref="date-trigger"]');
+      const clear = document.querySelector('[data-ref="date-clear"]');
+      const popup = document.querySelector('[data-ref="date-popup"]');
+      const closeButton = document.querySelector('[data-ref="date-close"]');
+      const monthHeading = document.querySelector('[data-ref="date-month-heading"]');
+      const gridBody = document.getElementById('date-grid-body');
+      const error = document.querySelector('[data-ref="date-error"]');
+      const selection = document.querySelector('[data-ref="date-selection"]');
+      const nav = {
+        previousYear: document.querySelector('[data-ref="date-prev-year"]'),
+        previousMonth: document.querySelector('[data-ref="date-prev-month"]'),
+        nextMonth: document.querySelector('[data-ref="date-next-month"]'),
+        nextYear: document.querySelector('[data-ref="date-next-year"]')
+      };
+      const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+      const dayFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+      let viewYear = 2026;
+      let viewMonth = 7;
+      let selectedIso = null;
+      let suppressFocusOpen = false;
+      let pointerDownInside = false;
+
+      const pad = (value) => String(value).padStart(2, '0');
+      const toIso = (date) => `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}`;
+      const fromIso = (iso) => {
+        const [year, month, day] = iso.split('-').map(Number);
+        return new Date(Date.UTC(year, month - 1, day));
+      };
+      const shiftIso = (iso, days) => {
+        const date = fromIso(iso);
+        date.setUTCDate(date.getUTCDate() + days);
+        return toIso(date);
+      };
+      const isAllowed = (iso) => iso <= fixedToday;
+
+      const setExpanded = (expanded) => {
+        input.setAttribute('aria-expanded', String(expanded));
+        trigger.setAttribute('aria-expanded', String(expanded));
+        trigger.setAttribute('aria-label', expanded ? 'Close calendar' : 'Open calendar');
+        trigger.title = expanded ? 'Close calendar' : 'Open calendar';
+      };
+
+      const focusWithoutOpening = (element) => {
+        suppressFocusOpen = element === input;
+        element.focus();
+        setTimeout(() => { suppressFocusOpen = false; }, 0);
+      };
+
+      const setViewFromIso = (iso) => {
+        const date = fromIso(iso);
+        viewYear = date.getUTCFullYear();
+        viewMonth = date.getUTCMonth();
+      };
+
+      const keyForDate = (iso) => {
+        if (iso === '2026-08-10') return 'date-day';
+        if (iso === '2026-08-11') return 'date-next-day';
+        if (iso === '2026-08-15') return 'date-disabled-day';
+        return null;
+      };
+
+      const visibleGridRange = () => {
+        const first = new Date(Date.UTC(viewYear, viewMonth, 1));
+        const start = new Date(first);
+        start.setUTCDate(start.getUTCDate() - start.getUTCDay());
+        const end = new Date(start);
+        end.setUTCDate(end.getUTCDate() + 41);
+        return { start: toIso(start), end: toIso(end) };
+      };
+
+      const rovingIso = () => {
+        const range = visibleGridRange();
+        if (selectedIso && isAllowed(selectedIso) && selectedIso >= range.start && selectedIso <= range.end) return selectedIso;
+        if (fixedToday >= range.start && fixedToday <= range.end) return fixedToday;
+        const firstOfMonth = `${viewYear}-${pad(viewMonth + 1)}-01`;
+        if (isAllowed(firstOfMonth)) return firstOfMonth;
+        return null;
+      };
+
+      const dayLabel = (iso, disabled) => {
+        const date = fromIso(iso);
+        const parts = [dayFormatter.format(date)];
+        if (iso === fixedToday) parts.push('today');
+        if (disabled) parts.push('unavailable, future date');
+        return parts.join(', ');
+      };
+
+      const chooseIso = (iso) => {
+        if (!isAllowed(iso)) return;
+        input.value = iso;
+        selectedIso = iso;
+        setViewFromIso(iso);
+        setValidity(true);
+        showClear(true);
+        renderCalendar();
+        selection.textContent = `Selected date: ${iso}.`;
+        close({ restoreFocus: input });
+      };
+
+      const focusDate = (iso) => {
+        if (!isAllowed(iso)) return;
+        setViewFromIso(iso);
+        renderCalendar();
+        const target = gridBody.querySelector(`[data-date="${iso}"]`);
+        if (target) target.focus();
+      };
+
+      const moveByMonth = (iso, delta) => {
+        const date = fromIso(iso);
+        const originalDay = date.getUTCDate();
+        const target = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + delta, 1));
+        const lastDay = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth() + 1, 0)).getUTCDate();
+        target.setUTCDate(Math.min(originalDay, lastDay));
+        return toIso(target);
+      };
+
+      const handleDayKey = (event, iso) => {
+        let destination = null;
+        if (event.key === 'ArrowRight') destination = shiftIso(iso, 1);
+        if (event.key === 'ArrowLeft') destination = shiftIso(iso, -1);
+        if (event.key === 'ArrowDown') destination = shiftIso(iso, 7);
+        if (event.key === 'ArrowUp') destination = shiftIso(iso, -7);
+        if (event.key === 'Home') destination = shiftIso(iso, -fromIso(iso).getUTCDay());
+        if (event.key === 'End') destination = shiftIso(iso, 6 - fromIso(iso).getUTCDay());
+        if (event.key === 'PageUp') destination = moveByMonth(iso, event.shiftKey ? -12 : -1);
+        if (event.key === 'PageDown') destination = moveByMonth(iso, event.shiftKey ? 12 : 1);
+        if (destination) {
+          event.preventDefault();
+          if (isAllowed(destination)) focusDate(destination);
+        }
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          chooseIso(iso);
+        }
+      };
+
+      const renderCalendar = () => {
+        monthHeading.textContent = monthFormatter.format(new Date(Date.UTC(viewYear, viewMonth, 1)));
+        gridBody.replaceChildren();
+        const first = new Date(Date.UTC(viewYear, viewMonth, 1));
+        const cursor = new Date(first);
+        cursor.setUTCDate(cursor.getUTCDate() - cursor.getUTCDay());
+        const activeIso = rovingIso();
+        for (let week = 0; week < 6; week += 1) {
+          const row = document.createElement('tr');
+          for (let weekday = 0; weekday < 7; weekday += 1) {
+            const iso = toIso(cursor);
+            const disabled = !isAllowed(iso);
+            const cell = document.createElement('td');
+            cell.setAttribute('role', 'gridcell');
+            cell.setAttribute('aria-selected', String(iso === selectedIso));
+            const button = document.createElement('button');
+            button.className = `day${cursor.getUTCMonth() === viewMonth ? '' : ' outside-month'}`;
+            button.type = 'button';
+            button.textContent = String(cursor.getUTCDate());
+            button.dataset.date = iso;
+            button.tabIndex = iso === activeIso ? 0 : -1;
+            button.disabled = disabled;
+            button.setAttribute('aria-label', dayLabel(iso, disabled));
+            button.setAttribute('aria-describedby', 'date-keyboard-help');
+            if (iso === fixedToday) button.setAttribute('aria-current', 'date');
+            if (iso === selectedIso) button.setAttribute('aria-pressed', 'true');
+            const key = keyForDate(iso);
+            if (key) button.dataset.ref = key;
+            button.addEventListener('click', () => chooseIso(iso));
+            button.addEventListener('keydown', (event) => handleDayKey(event, iso));
+            cell.append(button);
+            row.append(cell);
+            cursor.setUTCDate(cursor.getUTCDate() + 1);
+          }
+          gridBody.append(row);
+        }
+      };
+
+      const open = ({ focusDay = false } = {}) => {
+        setViewFromIso(selectedIso || fixedToday);
+        renderCalendar();
+        popup.hidden = false;
+        setExpanded(true);
+        if (focusDay) {
+          requestAnimationFrame(() => {
+            const target = gridBody.querySelector('.day[tabindex="0"]');
+            if (target) target.focus();
+          });
+        }
+      };
+
+      const close = ({ restoreFocus = null } = {}) => {
+        popup.hidden = true;
+        setExpanded(false);
+        if (restoreFocus) focusWithoutOpening(restoreFocus);
+      };
+
+      const showClear = (show) => {
+        clear.hidden = !show;
+        clear.disabled = !show;
+        clear.setAttribute('aria-hidden', String(!show));
+        clear.tabIndex = -1;
+      };
+
+      const setValidity = (valid, message = 'Enter a real date as yyyy-mm-dd or yyyymmdd.') => {
+        input.setAttribute('aria-invalid', String(!valid));
+        input.setAttribute('aria-describedby', valid ? 'date-hint' : 'date-hint date-error');
+        field.dataset.invalid = String(!valid);
+        error.textContent = message;
+        error.hidden = valid;
+      };
+
+      const normalizeDate = (raw) => {
+        const value = raw.trim();
+        const compact = /^(\d{4})(\d{2})(\d{2})$/.exec(value);
+        const dashed = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+        const match = compact || dashed;
+        if (!match) return null;
+        const year = Number(match[1]);
+        const month = Number(match[2]);
+        const day = Number(match[3]);
+        if (year < 1 || month < 1 || month > 12 || day < 1) return null;
+        const lastDay = new Date(Date.UTC(year, month, 0)).getUTCDate();
+        if (day > lastDay) return null;
+        return `${match[1]}-${match[2]}-${match[3]}`;
+      };
+
+      const clearValue = () => {
+        input.value = '';
+        selectedIso = null;
+        setValidity(true);
+        showClear(false);
+        renderCalendar();
+        selection.textContent = 'No date selected.';
+      };
+
+      const commitInput = () => {
+        if (!input.value.trim()) {
+          clearValue();
+          return true;
+        }
+        const normalized = normalizeDate(input.value);
+        if (!normalized) {
+          selectedIso = null;
+          setValidity(false);
+          showClear(true);
+          renderCalendar();
+          selection.textContent = 'Invalid date.';
+          return false;
+        }
+        if (!isAllowed(normalized)) {
+          selectedIso = null;
+          setValidity(false, 'Enter a date on or before 2026-08-14.');
+          showClear(true);
+          renderCalendar();
+          selection.textContent = 'Future date is unavailable.';
+          return false;
+        }
+        input.value = normalized;
+        selectedIso = normalized;
+        setViewFromIso(normalized);
+        setValidity(true);
+        showClear(true);
+        renderCalendar();
+        selection.textContent = `Selected date: ${normalized}.`;
+        return true;
+      };
+
+      input.addEventListener('focus', () => {
+        if (suppressFocusOpen) return;
+        open({ focusDay: false });
+      });
+      input.addEventListener('input', () => showClear(Boolean(input.value)));
+      input.addEventListener('change', commitInput);
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab' && !popup.hidden) close();
+        if (event.key === 'ArrowDown' || (event.altKey && event.key === 'ArrowDown')) {
+          event.preventDefault();
+          open({ focusDay: true });
+        }
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          if (commitInput()) close({ restoreFocus: input });
+        }
+      });
+      trigger.addEventListener('click', () => {
+        if (popup.hidden) open({ focusDay: true });
+        else close({ restoreFocus: trigger });
+      });
+      closeButton.addEventListener('click', () => close({ restoreFocus: input }));
+      clear.addEventListener('click', () => { clearValue(); close({ restoreFocus: input }); });
+      nav.previousYear.addEventListener('click', () => { viewYear -= 1; renderCalendar(); });
+      nav.previousMonth.addEventListener('click', () => {
+        viewMonth -= 1;
+        if (viewMonth < 0) { viewMonth = 11; viewYear -= 1; }
+        renderCalendar();
+      });
+      nav.nextMonth.addEventListener('click', () => {
+        viewMonth += 1;
+        if (viewMonth > 11) { viewMonth = 0; viewYear += 1; }
+        renderCalendar();
+      });
+      nav.nextYear.addEventListener('click', () => { viewYear += 1; renderCalendar(); });
+      control.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !popup.hidden) {
+          event.preventDefault();
+          close({ restoreFocus: input });
+        }
+      });
+      control.addEventListener('focusout', () => {
+        requestAnimationFrame(() => {
+          if (!pointerDownInside && !control.contains(document.activeElement) && !popup.hidden) close();
+        });
+      });
+      document.addEventListener('mousedown', (event) => {
+        pointerDownInside = control.contains(event.target);
+        const disabledCell = event.target.closest('td');
+        if (pointerDownInside && (event.target.closest('.day:disabled') || disabledCell?.querySelector('.day:disabled'))) event.preventDefault();
+        if (!pointerDownInside && !popup.hidden) close();
+      }, true);
+      document.addEventListener('mouseup', () => {
+        requestAnimationFrame(() => { pointerDownInside = false; });
+      });
+      renderCalendar();
+    })();
+  </script>
+</body>
+</html>

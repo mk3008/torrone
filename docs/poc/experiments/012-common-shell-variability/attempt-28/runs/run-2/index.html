@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell" id="shell">
+      <header class="app-header">
+        <button class="icon-button" id="drawer-toggle" type="button" aria-controls="drawer" aria-expanded="true" title="Drawerを閉じる">
+          <img id="drawer-icon" src="icons/panel-left-close.svg" alt="" />
+          <span class="sr-only" id="drawer-label">Drawerを閉じる</span>
+        </button>
+        <p class="workspace-name">業務ワークスペース</p>
+        <button class="icon-button" id="theme-toggle" type="button" title="ダークテーマに切り替える">
+          <img id="theme-icon" src="icons/moon.svg" alt="" />
+          <span class="sr-only" id="theme-label">ダークテーマに切り替える</span>
+        </button>
+      </header>
+      <div class="shell-body">
+        <aside class="drawer" id="drawer" aria-label="ナビゲーション">
+          <div class="drawer-search">
+            <label for="nav-search">メニューを検索</label>
+            <div class="search-field"><img src="icons/search.svg" alt="" /><input id="nav-search" type="search" placeholder="項目を検索" autocomplete="off" /></div>
+          </div>
+          <nav class="navigation" aria-label="メニュー"><ul id="navigation-list"></ul></nav>
+        </aside>
+        <main class="workspace" id="workspace" tabindex="-1">
+          <section class="workspace-content" aria-label="スクロール検証用ダミーコンテンツ">
+            <h1>スクロール検証用ダミーコンテンツ</h1>
+            <ol class="number-list" id="number-list" aria-label="連番"></ol>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

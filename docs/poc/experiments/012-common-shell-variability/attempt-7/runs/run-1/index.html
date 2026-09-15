@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>業務ワークスペース</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell" data-theme="light">
+      <header class="app-header">
+        <button class="icon-button" id="drawer-toggle" type="button" aria-controls="drawer" aria-expanded="true" aria-label="Close navigation" title="Close navigation">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v13H4zM9 5.5v13M12 9l3 3-3 3"/></svg>
+        </button>
+        <div class="workspace-name">業務ワークスペース</div>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.3A8.5 8.5 0 0 1 8.7 4 8.5 8.5 0 1 0 20 15.3Z"/></svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+      </header>
+      <div class="shell-body">
+        <aside class="drawer" id="drawer" aria-label="ナビゲーション">
+          <div class="drawer-search">
+            <label for="menu-search">メニューを検索</label>
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="5.8"/><path d="m15.2 15.2 4.3 4.3"/></svg>
+              <input id="menu-search" type="search" placeholder="項目を検索" autocomplete="off">
+              <button class="clear-search" type="button" aria-label="検索をクリア" title="検索をクリア" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>
+              </button>
+            </div>
+          </div>
+          <nav class="navigation-list" aria-label="メニュー">
+            <div class="nav-group" data-parent="グループ 01">
+              <button class="nav-item nav-parent" type="button" aria-expanded="true">
+                <span>グループ 01</span>
+                <svg class="disclosure" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg>
+              </button>
+              <div class="nav-children">
+                <a class="nav-item nav-child selected" href="#item-01-01" aria-current="page"><span class="selection-marker" aria-hidden="true"></span><span>項目 01-01</span></a>
+                <a class="nav-item nav-child" href="#item-01-02">項目 01-02</a>
+              </div>
+            </div>
+            <div class="nav-leaves" id="nav-leaves"></div>
+            <p class="no-matches" hidden>一致する項目はありません</p>
+          </nav>
+        </aside>
+        <main class="workspace" id="workspace">
+          <h1>スクロール検証用ダミーコンテンツ</h1>
+          <ol class="dummy-list" id="dummy-list" aria-label="スクロール検証用ダミーコンテンツ"></ol>
+        </main>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

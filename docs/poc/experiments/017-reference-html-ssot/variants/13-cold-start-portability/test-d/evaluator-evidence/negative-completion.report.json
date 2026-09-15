@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "reference-range.html",
+    "digest": "c3da9d700071b7bb39e3f400686ec24e29c397d5e0ca76b296bbf397864517fe",
+    "files": [
+      {
+        "path": "reference-range.html",
+        "bytes": 17042,
+        "sha256": "e9211b3924a15ad39efcffddf0e98001cc2f81ea4eeba93772ef0614c83c754b"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "negative/index.html",
+    "digest": "3a089066ddbdaffe7719dbf3b6e0ddd07889c485321107fa36a065c3a2182c3f",
+    "files": [
+      {
+        "path": "negative/index.html",
+        "bytes": 5313,
+        "sha256": "070395604da01a1dd43902eaae6065db351428b726438f467c67f0ae2d715985"
+      },
+      {
+        "path": "target/target.css",
+        "bytes": 3225,
+        "sha256": "7fade6298db40c8d766dffdc38d6101a623f798026774b44266f8f48651e6d8c"
+      },
+      {
+        "path": "target/target.js",
+        "bytes": 6672,
+        "sha256": "8ab9ac11cd49edb83957b7ad46e832d5ea6442b5fe3a5de6cafcb5600a399040"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "start-only partial",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start",
+            "value": "20261003"
+          }
+        ]
+      },
+      {
+        "name": "end-only partial",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": "20261018"
+          }
+        ]
+      },
+      {
+        "name": "manual range completion",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start",
+            "value": "20261003"
+          },
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": "2026-10-18"
+          }
+        ]
+      },
+      {
+        "name": "one-click boundary selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          }
+        ]
+      },
+      {
+        "name": "invalid reversed range",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start",
+            "value": "2026-10-18"
+          },
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": "2026-10-03"
+          }
+        ]
+      },
+      {
+        "name": "future boundary unavailable",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-start"
+          },
+          {
+            "action": "click",
+            "target": "range-future"
+          }
+        ]
+      },
+      {
+        "name": "escape closes boundary calendar",
+        "steps": [
+          {
+            "action": "press",
+            "target": "range-start",
+            "key": "ArrowRight"
+          },
+          {
+            "action": "press",
+            "target": "range-start",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "clear one boundary returns to partial",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "range-start",
+            "value": "2026-10-03"
+          },
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": "2026-10-18"
+          },
+          {
+            "action": "fill",
+            "target": "range-end",
+            "value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 24,
+    "uniqueErrorCount": 8,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.range-end-day.visible",
+        "count": 3
+      },
+      {
+        "path": "elements.range-end.attributes.aria-expanded",
+        "count": 3
+      },
+      {
+        "path": "elements.range-future.visible",
+        "count": 3
+      },
+      {
+        "path": "elements.range-midday.visible",
+        "count": 3
+      },
+      {
+        "path": "elements.range-start-day.visible",
+        "count": 3
+      },
+      {
+        "path": "elements.semantic:role:dialog.attributes.hidden",
+        "count": 3
+      },
+      {
+        "path": "elements.semantic:role:dialog.styles.display",
+        "count": 3
+      },
+      {
+        "path": "elements.semantic:role:dialog.visible",
+        "count": 3
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "scenarios.manual range completion.step-2.elements.range-end.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.manual range completion.step-2.elements.range-end-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.manual range completion.step-2.elements.range-future.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.manual range completion.step-2.elements.range-midday.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.manual range completion.step-2.elements.range-start-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.manual range completion.step-2.elements.semantic:role:dialog.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.manual range completion.step-2.elements.semantic:role:dialog.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.manual range completion.step-2.elements.semantic:role:dialog.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.one-click boundary selection.step-4.elements.range-end.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.one-click boundary selection.step-4.elements.range-end-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.one-click boundary selection.step-4.elements.range-future.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.one-click boundary selection.step-4.elements.range-midday.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.one-click boundary selection.step-4.elements.range-start-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.one-click boundary selection.step-4.elements.semantic:role:dialog.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.one-click boundary selection.step-4.elements.semantic:role:dialog.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.one-click boundary selection.step-4.elements.semantic:role:dialog.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear one boundary returns to partial.step-2.elements.range-end.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear one boundary returns to partial.step-2.elements.range-end-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear one boundary returns to partial.step-2.elements.range-future.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear one boundary returns to partial.step-2.elements.range-midday.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear one boundary returns to partial.step-2.elements.range-start-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear one boundary returns to partial.step-2.elements.semantic:role:dialog.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear one boundary returns to partial.step-2.elements.semantic:role:dialog.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear one boundary returns to partial.step-2.elements.semantic:role:dialog.styles.display",
+      "expected": "none",
+      "actual": "block"
+    }
+  ]
+}

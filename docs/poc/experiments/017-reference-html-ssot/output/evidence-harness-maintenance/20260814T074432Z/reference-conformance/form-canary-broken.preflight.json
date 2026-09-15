@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "form-canary-reference.html",
+    "digest": "4cb47db0fdf8589023e405c5b830aa66346838ada89ad1259bea880a5b7666ad",
+    "files": [
+      {
+        "path": "form-canary-reference.html",
+        "bytes": 15938,
+        "sha256": "91fb9cd6d46c2b15b6fe6d11c429290770e8cf44d68cec7bb2b3b212dd2f1244"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 3,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 11
+  },
+  "errors": [
+    {
+      "source": "cross-state",
+      "code": "contradictory-aria-invalid-state",
+      "state": "scenarios.invalid email correction.step-3",
+      "target": "form-contact-field",
+      "detail": "The scenario introduced a visible described-by message for a natively invalid control while aria-invalid remained false-equivalent."
+    },
+    {
+      "source": "cross-state",
+      "code": "contradictory-aria-invalid-state",
+      "state": "scenarios.missing required fields.step-1",
+      "target": "form-contact-field",
+      "detail": "The scenario introduced a visible described-by message for a natively invalid control while aria-invalid remained false-equivalent."
+    },
+    {
+      "source": "cross-state",
+      "code": "contradictory-aria-invalid-state",
+      "state": "scenarios.missing required fields.step-1",
+      "target": "form-primary-field",
+      "detail": "The scenario introduced a visible described-by message for a natively invalid control while aria-invalid remained false-equivalent."
+    }
+  ]
+}

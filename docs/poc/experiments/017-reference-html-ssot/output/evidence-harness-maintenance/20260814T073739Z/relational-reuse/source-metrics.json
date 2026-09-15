@@ -1,0 +1,39 @@
+{
+  "reference": {
+    "dataRefAttributes": 6,
+    "ariaControlsRelationships": 2,
+    "classTokens": 23,
+    "localIds": 3,
+    "lines": 279,
+    "styleSha256": "06214CAF10486F47AA0BB795CC2F563F8BAF9F236243DE5E33B2E28DA5BAED87"
+  },
+  "target": {
+    "dataRefAttributes": 6,
+    "ariaControlsRelationships": 2,
+    "classTokens": 25,
+    "localIds": 4,
+    "lines": 186,
+    "styleSha256": "4566FEFF4D50757BC482A5933DA3483B4C23EA17A835667F0A33B4CB150BED3F",
+    "sharedClassTokens": 0,
+    "sharedLocalIds": 0,
+    "scenarioHarnessRoots": 0
+  },
+  "identity": {
+    "totalObservations": 10,
+    "explicitObservations": 6,
+    "nativeSemanticObservations": 2,
+    "relationalSemanticObservations": 2,
+    "priorRelationalCandidates": 4,
+    "naturallyReusedRelationalIdentities": 2,
+    "addedHeuristics": 0,
+    "explicitAlternativeAttributes": 8,
+    "ambiguousProbeCandidates": 2
+  },
+  "fixedInputs": {
+    "acceptedReferenceSha256": "868983B43CBE50BE0D9EBA952AD34C87922194167BCBCAF7A4C0163D30D52056",
+    "coreSha256": "E62FD23295EFF665B8EC280B55AF4D40DD4E3B4063F5B40DAFA224ECA46C506F",
+    "cliSha256": "19872837F9F7BEDE66F64C8F6C30AE20B769097E2C5374377394BBC7C4C07271",
+    "transferabilityPacketSha256": "96457B6FFEEFC5BABFD15FF97DDF781A740C919A04266DD7D769DA438129EFFF",
+    "mixedPacketSha256": "819FBCD6FA157E033E72A3E45FF7ACD5A9CDA51C7DC5730066CB357643010658"
+  }
+}

@@ -1,0 +1,2898 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "1e320bef1cb11534e32d2810c6e57adfcd8ac9fc55a6a642acc083a0381c1fd6",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 34670,
+        "sha256": "f87b30ef6293f2dfc230cd2613485816a3708e9e929b5166f3323b47fc2a8787"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "a17a7d766ecdf4970bc844683499529df187e4c5c765027ef119ff4309b8a9d7",
+    "files": [
+      {
+        "path": "assets/index-BXoPfGm2.css",
+        "bytes": 8981,
+        "sha256": "3abf1902c21194ae54adc78297e673b6da8f0f995917a73d3542c647e6a7d80b"
+      },
+      {
+        "path": "assets/index-C90bvLV5.js",
+        "bytes": 197752,
+        "sha256": "3189a866a6ff61c159b282b688705efea660332aa02a1c3e420762f57bef9e9d"
+      },
+      {
+        "path": "index.html",
+        "bytes": 466,
+        "sha256": "522dea3e1d0a2820dddecd86c0062892f26bed3a964ca173651b8bf6c645e1f7"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "navigation round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          },
+          {
+            "action": "click",
+            "target": "navigation-toggle"
+          }
+        ]
+      },
+      {
+        "name": "navigation parent round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          },
+          {
+            "action": "click",
+            "target": "navigation-parent"
+          }
+        ]
+      },
+      {
+        "name": "navigation selection round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "navigation-leaf-action"
+          },
+          {
+            "action": "click",
+            "target": "navigation-child-action"
+          }
+        ]
+      },
+      {
+        "name": "navigation filter round trip",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "routing"
+          },
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "name": "navigation filter no results",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "navigation-filter",
+            "value": "missing"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "theme change",
+        "steps": [
+          {
+            "action": "click",
+            "target": "theme-toggle"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "key": "Escape"
+          }
+        ]
+      },
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "free-text-filter",
+            "value": "No matching person"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 343,
+    "uniqueErrorCount": 48,
+    "diagnosticCount": 74,
+    "errorSignatures": [
+      {
+        "path": "action",
+        "count": 11
+      },
+      {
+        "path": "document.activeRef",
+        "count": 11
+      },
+      {
+        "path": "elements.clear-action",
+        "count": 12
+      },
+      {
+        "path": "elements.filter-actions",
+        "count": 12
+      },
+      {
+        "path": "elements.filter-toggle",
+        "count": 12
+      },
+      {
+        "path": "elements.free-text-filter",
+        "count": 12
+      },
+      {
+        "path": "elements.navigation-child-action",
+        "count": 12
+      },
+      {
+        "path": "elements.navigation-empty",
+        "count": 12
+      },
+      {
+        "path": "elements.navigation-filter",
+        "count": 12
+      },
+      {
+        "path": "elements.navigation-leaf-action",
+        "count": 12
+      },
+      {
+        "path": "elements.navigation-parent",
+        "count": 12
+      },
+      {
+        "path": "elements.navigation-toggle",
+        "count": 12
+      },
+      {
+        "path": "elements.new-request-action",
+        "count": 12
+      },
+      {
+        "path": "elements.result-empty",
+        "count": 12
+      },
+      {
+        "path": "elements.result-initial",
+        "count": 12
+      },
+      {
+        "path": "elements.result-pagination",
+        "count": 12
+      },
+      {
+        "path": "elements.result-summary",
+        "count": 12
+      },
+      {
+        "path": "elements.result-table",
+        "count": 12
+      },
+      {
+        "path": "elements.search-action",
+        "count": 12
+      },
+      {
+        "path": "elements.semantic:controlled-by:filter-toggle",
+        "count": 12
+      },
+      {
+        "path": "elements.semantic:controlled-by:navigation-parent",
+        "count": 12
+      },
+      {
+        "path": "elements.semantic:controlled-by:navigation-toggle",
+        "count": 12
+      },
+      {
+        "path": "elements.semantic:controlled-by:user-menu-toggle",
+        "count": 12
+      },
+      {
+        "path": "elements.semantic:role:banner.styles.backgroundColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:banner.styles.borderBottomColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:banner.styles.borderLeftColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:banner.styles.borderRightColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:banner.styles.borderTopColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:banner.styles.color",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:banner.styles.outlineColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:main.styles.borderBottomColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:main.styles.borderLeftColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:main.styles.borderRightColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:main.styles.borderTopColor",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:main.styles.color",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:role:main.styles.outlineColor",
+        "count": 1
+      },
+      {
+        "path": "elements.sign-out-action",
+        "count": 12
+      },
+      {
+        "path": "elements.status-badge",
+        "count": 12
+      },
+      {
+        "path": "elements.theme-toggle",
+        "count": 12
+      },
+      {
+        "path": "elements.user-menu-toggle",
+        "count": 12
+      },
+      {
+        "path": "scenarios.filter keyboard round trip.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.navigation filter round trip.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.navigation parent round trip.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.navigation round trip.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.navigation selection round trip.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.search clear to initial.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.search empty.step-2",
+        "count": 1
+      },
+      {
+        "path": "scenarios.user menu escape.step-2",
+        "count": 1
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "initial.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "initial.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.action",
+      "expected": "success",
+      "actual": "navigation-toggle: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:role:main.box.x",
+      "expected": 0,
+      "actual": 248,
+      "delta": 248
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:role:main.box.width",
+      "expected": 1440,
+      "actual": 1192,
+      "delta": 248
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation round trip.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-1.document.activeRef",
+      "expected": "navigation-toggle",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation round trip.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.action",
+      "expected": "success",
+      "actual": "navigation-parent: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation parent round trip.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-1.document.activeRef",
+      "expected": "navigation-parent",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation parent round trip.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.action",
+      "expected": "success",
+      "actual": "navigation-leaf-action: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation selection round trip.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-1.document.activeRef",
+      "expected": "navigation-leaf-action",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation selection round trip.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.action",
+      "expected": "success",
+      "actual": "navigation-filter: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter round trip.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-1.document.activeRef",
+      "expected": "navigation-filter",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter round trip.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.action",
+      "expected": "success",
+      "actual": "navigation-filter: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.navigation filter no results.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.navigation filter no results.step-1.document.activeRef",
+      "expected": "navigation-filter",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.action",
+      "expected": "success",
+      "actual": "filter-toggle: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.filter keyboard round trip.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-1.document.activeRef",
+      "expected": "filter-toggle",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.filter keyboard round trip.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.action",
+      "expected": "success",
+      "actual": "theme-toggle: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:banner.styles.backgroundColor",
+      "expected": "rgb(13, 40, 68)",
+      "actual": "rgb(23, 59, 99)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:banner.styles.borderBottomColor",
+      "expected": "rgb(8, 30, 53)",
+      "actual": "rgb(15, 47, 82)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:banner.styles.borderLeftColor",
+      "expected": "rgb(244, 248, 252)",
+      "actual": "rgb(255, 255, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:banner.styles.borderRightColor",
+      "expected": "rgb(244, 248, 252)",
+      "actual": "rgb(255, 255, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:banner.styles.borderTopColor",
+      "expected": "rgb(244, 248, 252)",
+      "actual": "rgb(255, 255, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:banner.styles.color",
+      "expected": "rgb(244, 248, 252)",
+      "actual": "rgb(255, 255, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:banner.styles.outlineColor",
+      "expected": "rgb(244, 248, 252)",
+      "actual": "rgb(255, 255, 255)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:main.styles.borderBottomColor",
+      "expected": "rgb(237, 244, 251)",
+      "actual": "rgb(23, 32, 51)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:main.styles.borderLeftColor",
+      "expected": "rgb(237, 244, 251)",
+      "actual": "rgb(23, 32, 51)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:main.styles.borderRightColor",
+      "expected": "rgb(237, 244, 251)",
+      "actual": "rgb(23, 32, 51)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:main.styles.borderTopColor",
+      "expected": "rgb(237, 244, 251)",
+      "actual": "rgb(23, 32, 51)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:main.styles.color",
+      "expected": "rgb(237, 244, 251)",
+      "actual": "rgb(23, 32, 51)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:main.styles.outlineColor",
+      "expected": "rgb(237, 244, 251)",
+      "actual": "rgb(23, 32, 51)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.theme change.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.theme change.step-1.document.activeRef",
+      "expected": "theme-toggle",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.action",
+      "expected": "success",
+      "actual": "user-menu-toggle: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.user menu escape.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-1.document.activeRef",
+      "expected": "sign-out-action",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.user menu escape.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.action",
+      "expected": "success",
+      "actual": "search-action: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search results.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search results.step-1.document.activeRef",
+      "expected": "search-action",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.action",
+      "expected": "success",
+      "actual": "free-text-filter: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search empty.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-1.document.activeRef",
+      "expected": "free-text-filter",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search empty.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.action",
+      "expected": "success",
+      "actual": "search-action: missing target"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.clear-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.filter-actions",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.free-text-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-child-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-filter",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-leaf-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.new-request-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.result-empty",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.result-initial",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.result-pagination",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.result-summary",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.result-table",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.search-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:controlled-by:filter-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:controlled-by:navigation-parent",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:controlled-by:navigation-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:controlled-by:user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.sign-out-action",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.status-badge",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.theme-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.elements.user-menu-toggle",
+      "expected": "present",
+      "actual": "missing"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:aria-live:polite",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:role:button:aria-pressed",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:role:form",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:role:menu",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:role:menuitem",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.search clear to initial.step-1.elements.semantic:role:table",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-1.document.activeRef",
+      "expected": "search-action",
+      "actual": null
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.search clear to initial.step-2",
+      "expected": "captured state",
+      "actual": "missing"
+    }
+  ]
+}

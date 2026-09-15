@@ -1,0 +1,272 @@
+{
+  "historicalWholeReference": {
+    "lines": 979,
+    "bytes": 34889,
+    "note": "Different-content historical baseline, not a form-equivalent source."
+  },
+  "currentWholeScreenProxy": {
+    "lines": 631,
+    "bytes": 27033,
+    "note": "Integrated Target source used only as current whole-screen review-surface proxy."
+  },
+  "newFormReference": {
+    "files": 1,
+    "lines": 440,
+    "bytes": 15931,
+    "explicitKeys": 17,
+    "semanticKeys": 2,
+    "totalObservations": 19,
+    "scenarios": 3,
+    "actions": 10,
+    "harnessRoots": 1,
+    "harnessButtons": 3,
+    "uniqueJavaScriptLines": 74
+  },
+  "reusedCommonShell": {
+    "lines": 354,
+    "bytes": 15436,
+    "changedFiles": 0
+  },
+  "currentPartialLibrary": {
+    "referenceFiles": 3,
+    "sharedFocusTokenFiles": 3
+  },
+  "cssRecurrence": {
+    "formUniqueDeclarations": 117,
+    "exactDeclarationsSharedWithShell": 40,
+    "exactDeclarationsSharedWithSearch": 59,
+    "tokenNamesSharedWithPriorPartials": 7,
+    "tokens": [
+      {
+        "name": "--border",
+        "formValues": [
+          "#c7d4e2"
+        ],
+        "shellValues": [
+          "#c6d2df",
+          "#3e5368"
+        ],
+        "searchValues": [
+          "#c6d2df"
+        ],
+        "sameInShell": false,
+        "sameInSearch": false
+      },
+      {
+        "name": "--canvas",
+        "formValues": [
+          "#f3f6fa"
+        ],
+        "shellValues": [
+          "#f3f6fa",
+          "#101923"
+        ],
+        "searchValues": [
+          "#f3f6fa"
+        ],
+        "sameInShell": false,
+        "sameInSearch": true
+      },
+      {
+        "name": "--focus",
+        "formValues": [
+          "#86b9ee"
+        ],
+        "shellValues": [
+          "#86b9ee",
+          "#9acbff"
+        ],
+        "searchValues": [
+          "#86b9ee"
+        ],
+        "sameInShell": false,
+        "sameInSearch": true
+      },
+      {
+        "name": "--muted",
+        "formValues": [
+          "#52647a"
+        ],
+        "shellValues": [
+          "#54657a",
+          "#b6c2cf"
+        ],
+        "searchValues": [
+          "#54657a"
+        ],
+        "sameInShell": false,
+        "sameInSearch": false
+      },
+      {
+        "name": "--surface",
+        "formValues": [
+          "#ffffff"
+        ],
+        "shellValues": [
+          "#ffffff",
+          "#172431"
+        ],
+        "searchValues": [
+          "#ffffff"
+        ],
+        "sameInShell": false,
+        "sameInSearch": true
+      },
+      {
+        "name": "--surface-muted",
+        "formValues": [
+          "#edf3f8"
+        ],
+        "shellValues": [
+          "#edf3f9",
+          "#203243"
+        ],
+        "searchValues": [
+          "#edf3f9"
+        ],
+        "sameInShell": false,
+        "sameInSearch": false
+      },
+      {
+        "name": "--text",
+        "formValues": [
+          "#10253d"
+        ],
+        "shellValues": [
+          "#101d2f",
+          "#f3f7fb"
+        ],
+        "searchValues": [
+          "#101d2f"
+        ],
+        "sameInShell": false,
+        "sameInSearch": false
+      }
+    ],
+    "exactSharedWithShell": [
+      "--canvas:#f3f6fa",
+      "--focus:#86b9ee",
+      "--surface:#ffffff",
+      "align-content:start",
+      "align-items:center",
+      "background:transparent",
+      "background:var(--canvas)",
+      "background:var(--surface)",
+      "border-radius:0",
+      "border-radius:6px",
+      "border-radius:8px",
+      "border:0",
+      "border:1px solid #94a8bd",
+      "border:1px solid var(--border)",
+      "box-sizing:border-box",
+      "color-scheme:light",
+      "color:#ffffff",
+      "color:var(--muted)",
+      "color:var(--text)",
+      "cursor:pointer",
+      "display:flex",
+      "display:grid",
+      "display:none !important",
+      "font-size:14px",
+      "font-weight:650",
+      "font-weight:700",
+      "font:inherit",
+      "gap:6px",
+      "justify-content:space-between",
+      "letter-spacing:.04em",
+      "margin:0",
+      "min-height:42px",
+      "min-width:0",
+      "outline-offset:2px",
+      "outline:3px solid var(--focus)",
+      "overflow:hidden",
+      "padding:0",
+      "text-transform:uppercase",
+      "width:100%",
+      "width:18px"
+    ],
+    "exactSharedWithSearch": [
+      "--canvas:#f3f6fa",
+      "--focus:#86b9ee",
+      "--surface:#ffffff",
+      "align-items:center",
+      "background:transparent",
+      "background:var(--canvas)",
+      "background:var(--surface)",
+      "border-bottom:1px solid #d5dee8",
+      "border-bottom:1px solid #d9e2eb",
+      "border-radius:6px",
+      "border-radius:8px",
+      "border-top:1px solid #d5dee8",
+      "border:0",
+      "border:1px solid #8ea2b9",
+      "border:1px solid #94a8bd",
+      "border:1px solid transparent",
+      "border:1px solid var(--border)",
+      "box-sizing:border-box",
+      "color-scheme:light",
+      "color:#183653",
+      "color:#394b60",
+      "color:#ffffff",
+      "color:var(--muted)",
+      "color:var(--text)",
+      "cursor:pointer",
+      "display:block",
+      "display:flex",
+      "display:grid",
+      "display:none !important",
+      "font-size:13px",
+      "font-size:14px",
+      "font-size:20px",
+      "font-size:30px",
+      "font-weight:650",
+      "font-weight:700",
+      "font:inherit",
+      "gap:10px",
+      "gap:20px",
+      "justify-content:space-between",
+      "letter-spacing:.04em",
+      "line-height:1.2",
+      "margin-bottom:22px",
+      "margin:0",
+      "margin:7px 0 0",
+      "min-height:34px",
+      "min-height:40px",
+      "min-height:42px",
+      "min-height:54px",
+      "min-height:62px",
+      "outline-offset:2px",
+      "outline:3px solid var(--focus)",
+      "overflow:hidden",
+      "padding:0",
+      "padding:0 11px",
+      "padding:0 16px",
+      "padding:14px 16px",
+      "padding:8px 24px",
+      "text-transform:uppercase",
+      "width:100%"
+    ]
+  },
+  "javascriptRecurrence": {
+    "formUniqueLines": 74,
+    "exactLinesSharedWithShell": 4,
+    "exactLinesSharedWithSearch": 5
+  },
+  "target": {
+    "files": 2,
+    "htmlLines": 631,
+    "overrideLines": 29,
+    "explicitKeys": 26,
+    "semanticKeys": 6,
+    "totalObservations": 32,
+    "sharedClassTokens": 0,
+    "sharedLocalIds": 0,
+    "harnessRoots": 0
+  },
+  "coreCli": {
+    "coreChanged": false,
+    "cliChanged": false,
+    "newHeuristics": 0,
+    "newCompositionFeatures": 0
+  }
+}

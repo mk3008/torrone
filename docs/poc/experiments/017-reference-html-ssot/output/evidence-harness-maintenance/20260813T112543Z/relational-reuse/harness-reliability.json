@@ -1,0 +1,44 @@
+{
+  "browser": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "gateAttempts": 5,
+  "gateTimeouts": 0,
+  "gateRetries": 0,
+  "events": [
+    {
+      "label": "Relational Reference snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3266
+    },
+    {
+      "label": "Relational Reference repeat snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3235
+    },
+    {
+      "label": "Relational Target snapshot",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2130
+    },
+    {
+      "label": "Relational Target verification",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 3242
+    },
+    {
+      "label": "Relational ambiguity probe",
+      "attempt": 1,
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedMilliseconds": 2045
+    }
+  ],
+  "note": "Development-phase attempts are recorded in the verification record, not added to these final Gate counters."
+}

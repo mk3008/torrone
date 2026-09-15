@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="target.css">
+  <title>Equipment inspection finding queue</title>
+</head>
+<body data-skin="day">
+  <header class="toprail">
+    <section class="product-identity" aria-label="Application identity">
+      <button class="rail-control" type="button" data-ref="navigation-toggle" aria-controls="inspection-sections" aria-expanded="true" aria-label="Collapse navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M9 4v16M15 9l-3 3 3 3" /></svg>
+      </button>
+      <span class="product-title">Field Assurance</span>
+    </section>
+    <section class="operator-tools" aria-label="Operator tools">
+      <button class="rail-control" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.3A8.5 8.5 0 0 1 8.7 4a8.5 8.5 0 1 0 11.3 11.3Z" /></svg>
+      </button>
+      <div class="operator-profile">
+        <button class="rail-control" type="button" data-ref="user-menu-toggle" aria-controls="inspection-operator-menu" aria-expanded="false" aria-haspopup="menu" aria-label="Show operator menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+        </button>
+        <div class="operator-menu" id="inspection-operator-menu" role="menu" hidden>
+          <p class="operator-name">Marcus Lee</p>
+          <p class="operator-role">Inspection program manager</p>
+          <button class="operator-command" type="button" role="menuitem">Log out</button>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <div class="inspection-layout">
+    <nav class="section-drawer" id="inspection-sections" aria-label="Workspace sections">
+      <div class="drawer-query">
+        <label for="inspection-nav-query">Filter navigation</label>
+        <input id="inspection-nav-query" type="search" data-ref="navigation-filter" autocomplete="off" placeholder="Find a section">
+      </div>
+      <div class="drawer-body">
+        <ul class="section-list">
+          <li data-drawer-entry><a class="section-link" href="#dashboard">Dashboard</a></li>
+          <li data-drawer-entry>
+            <button class="section-parent" type="button" data-ref="navigation-parent" aria-expanded="true" aria-controls="inspection-section-children">
+              <span>Inspection work</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+            <ul class="section-children" id="inspection-section-children">
+              <li data-drawer-entry><a class="section-link" href="#findings" data-ref="navigation-current" aria-current="page">Finding queue</a></li>
+              <li data-drawer-entry><a class="section-link" href="#visits" data-ref="navigation-secondary">Scheduled visits</a></li>
+            </ul>
+          </li>
+          <li data-drawer-entry><a class="section-link" href="#equipment">Equipment</a></li>
+          <li data-drawer-entry><a class="section-link" href="#sites">Sites</a></li>
+          <li data-drawer-entry><a class="section-link" href="#inspectors">Inspectors</a></li>
+          <li data-drawer-entry><a class="section-link" href="#standards">Standards</a></li>
+          <li data-drawer-entry><a class="section-link" href="#evidence">Evidence</a></li>
+          <li data-drawer-entry><a class="section-link" href="#history">Change history</a></li>
+          <li data-drawer-entry><a class="section-link" href="#analytics">Analytics</a></li>
+          <li data-drawer-entry><a class="section-link" href="#admin">Administration</a></li>
+        </ul>
+        <p class="drawer-empty" data-ref="navigation-empty" hidden>No sections match your filter.</p>
+      </div>
+    </nav>
+
+    <main class="finding-workspace">
+      <header class="workspace-intro">
+        <h1>Equipment inspection findings</h1>
+        <p>Locate recorded findings that require assessment and assignment.</p>
+      </header>
+
+      <section class="query-card" aria-labelledby="inspection-query-title">
+        <div class="card-bar">
+          <h2 id="inspection-query-title">Finding filters</h2>
+          <button class="quiet-action" type="button" data-ref="filters-toggle" aria-controls="inspection-query-form" aria-expanded="true">Hide filters</button>
+        </div>
+        <form id="inspection-query-form" aria-labelledby="inspection-query-title">
+          <div class="query-grid">
+            <label>Equipment or finding
+              <input type="search" data-ref="search-query" autocomplete="off" placeholder="Equipment name or finding ID">
+            </label>
+            <label>Site
+              <select><option>All sites</option><option>Riverside Plant</option><option>North Yard</option><option>Coastal Depot</option></select>
+            </label>
+            <label>Severity
+              <select><option>All severities</option><option>Critical</option><option>Major</option><option>Minor</option></select>
+            </label>
+          </div>
+          <footer class="query-actions">
+            <button class="strong-action" type="submit" data-ref="search-action">Search</button>
+            <button class="quiet-action" type="reset" data-ref="clear-action">Clear</button>
+          </footer>
+        </form>
+      </section>
+
+      <section class="queue-card" aria-labelledby="inspection-queue-title">
+        <div class="card-bar">
+          <h2 id="inspection-queue-title">Inspection finding queue</h2>
+          <button class="strong-action" type="button" data-ref="primary-action">New inspection finding</button>
+        </div>
+        <p class="screen-reader-note" aria-live="polite">Search has not been run.</p>
+        <div class="queue-message" data-ref="result-initial">
+          <div><h3>Search for inspection findings</h3><p>Choose filters if needed, then select Search.</p></div>
+        </div>
+        <div class="queue-message" data-ref="result-empty" hidden>
+          <div><h3>No inspection findings found</h3><p>Change the filters and run the search again.</p></div>
+        </div>
+        <div class="finding-table-scroll" hidden>
+          <table>
+            <thead>
+              <tr><th>Finding ID</th><th>Equipment</th><th>Site</th><th>Severity</th><th>Observed</th><th>Inspector</th></tr>
+            </thead>
+            <tbody data-finding-page="1">
+              <tr><td><a href="#">FND-7782</a></td><td>Boiler Feed Pump 3</td><td>Riverside Plant</td><td><span class="finding-risk" data-ref="risk-badge">Critical</span></td><td>Aug 13, 2026</td><td>Nora Patel</td></tr>
+              <tr><td><a href="#">FND-7769</a></td><td>Loading Bay Lift 2</td><td>North Yard</td><td>Major</td><td>Aug 11, 2026</td><td>Caleb Morris</td></tr>
+              <tr><td><a href="#">FND-7754</a></td><td>Cooling Fan A7</td><td>Coastal Depot</td><td>Minor</td><td>Aug 8, 2026</td><td>Sofia Kim</td></tr>
+            </tbody>
+            <tbody data-finding-page="2" hidden>
+              <tr><td><a href="#">FND-7738</a></td><td>Conveyor Guard 5</td><td>Riverside Plant</td><td>Critical</td><td>Aug 6, 2026</td><td>Owen Price</td></tr>
+              <tr><td><a href="#">FND-7721</a></td><td>Generator Panel B</td><td>North Yard</td><td>Major</td><td>Aug 4, 2026</td><td>Lina Gomez</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <nav class="queue-pager" data-ref="result-pagination" aria-label="Inspection finding result pages" hidden>
+          <p class="pager-guidance">Additional findings may be available. Use filters to narrow the queue.</p>
+          <div class="pager-buttons">
+            <button type="button" data-ref="page-previous" disabled>Previous</button>
+            <span class="active-page">Page 1</span>
+            <button type="button" data-ref="page-next">Next</button>
+          </div>
+        </nav>
+      </section>
+    </main>
+  </div>
+  <script src="target.js"></script>
+</body>
+</html>

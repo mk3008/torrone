@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reference conformance fixture</title>
+  <style>
+    body { margin: 0; color: #172033; background: #ffffff; font: 16px/1.5 system-ui, sans-serif; }
+    main { width: min(42rem, calc(100% - 3rem)); margin: 3rem auto; }
+    form { display: grid; gap: 1rem; }
+    label { font-weight: 600; }
+    input, button { box-sizing: border-box; min-height: 2.75rem; padding: 0.625rem 0.75rem; font: inherit; }
+    button { justify-self: start; color: #ffffff; background: #165ea8; border: 1px solid #165ea8; }
+    [data-reference-harness] { position: fixed; right: 1rem; bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Record lookup</h1>
+    <form aria-labelledby="lookup-heading" data-ref="lookup-form">
+      <h2 id="lookup-heading">Lookup criteria</h2>
+      <label id="query-label" for="reference-query">Record query</label>
+      <input
+        id="reference-query"
+        data-ref="query-field"
+        type="text"
+        aria-labelledby="query-label"
+        aria-describedby="query-help"
+        aria-invalid=""
+      >
+      <p id="query-help">Use a name or identifier.</p>
+      <button type="button" data-ref="lookup-action">Lookup</button>
+      <output id="lookup-status" data-ref="lookup-status" aria-live="polite">Not searched</output>
+    </form>
+  </main>
+
+  <aside data-reference-harness aria-label="Reference controls" hidden>
+    <button id="reference-control" type="button" data-reference-state="ready">Ready state</button>
+  </aside>
+
+  <script type="application/json" data-reference-scenarios>
+    {
+      "version": 1,
+      "scenarios": [
+        {
+          "name": "lookup",
+          "steps": [
+            { "action": "click", "target": "lookup-action" }
+          ]
+        }
+      ]
+    }
+  </script>
+  <script>
+    (() => {
+      const action = document.querySelector('[data-ref="lookup-action"]');
+      const status = document.querySelector('[data-ref="lookup-status"]');
+      action.addEventListener('click', () => {
+        status.textContent = 'Lookup complete';
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業務ワークスペース</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell" id="shell" data-theme="light">
+    <header class="app-header">
+      <button class="icon-button" id="drawer-toggle" type="button" aria-controls="drawer" aria-expanded="true" aria-label="Close navigation" title="Close navigation">
+        <svg class="panel-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"></rect><path d="M9 5v14"></path><path id="panel-chevron" d="m15 8-4 4 4 4"></path></svg>
+      </button>
+      <div class="workspace-name">業務ワークスペース</div>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg id="theme-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"></path></svg>
+      </button>
+    </header>
+
+    <div class="shell-body">
+      <aside class="drawer" id="drawer" aria-label="Navigation">
+        <div class="drawer-search">
+          <label for="nav-search">メニューを検索</label>
+          <div class="search-control">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"></circle><path d="m15 15 5 5"></path></svg>
+            <input id="nav-search" type="search" autocomplete="off" placeholder="固定項目を検索">
+            <button class="clear-search" id="clear-search" type="button" aria-label="検索をクリア" title="検索をクリア" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg>
+            </button>
+          </div>
+        </div>
+        <nav class="navigation-list" id="navigation-list" aria-label="固定ナビゲーション"></nav>
+      </aside>
+      <main class="workspace" aria-label="Workspace">
+        <section class="dummy-content" aria-labelledby="workspace-heading">
+          <h1 id="workspace-heading">スクロール検証用ダミーコンテンツ</h1>
+          <ol id="number-list" aria-label="1から80までの連番"></ol>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

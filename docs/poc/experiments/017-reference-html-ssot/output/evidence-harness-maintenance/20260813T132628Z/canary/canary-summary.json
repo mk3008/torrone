@@ -1,0 +1,81 @@
+{
+  "status": "pass",
+  "staleShaStops": [
+    {
+      "gate": "relational-reuse",
+      "status": "reproduced",
+      "oldEntryPointExit": 1,
+      "historicalCoreSha256": "D382601184DED6D351D2BBF5B6213013791AD4A59E0E9DB853B9E68754B59A76",
+      "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+      "log": "canary/relational-reuse-stale-sha.log"
+    },
+    {
+      "gate": "partial-reference",
+      "status": "reproduced",
+      "oldEntryPointExit": 1,
+      "historicalCoreSha256": "14BB52C2C60B9DA9A27B7593C772B09E18A2DA2A79AD7C129827330C0D4077EA",
+      "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+      "log": "canary/partial-reference-stale-sha.log"
+    },
+    {
+      "gate": "form-heavy-partial",
+      "status": "reproduced",
+      "oldEntryPointExit": 1,
+      "historicalCoreSha256": "14BB52C2C60B9DA9A27B7593C772B09E18A2DA2A79AD7C129827330C0D4077EA",
+      "currentCoreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+      "log": "canary/form-heavy-partial-stale-sha.log"
+    }
+  ],
+  "focusCount": {
+    "status": "reproduced-and-repaired",
+    "historicalRaw": {
+      "path": "output/diagnostic-review/injected-focus.report.json",
+      "sha256": "F59CC94303BCD780441D93330188195CE281A022C25E13CB3C50BBC4959CF80B",
+      "errorCount": 2
+    },
+    "strengthenedSavedRaw": {
+      "path": "output/diagnostic-adoption/established-regression/injected-focus.report.json",
+      "sha256": "FF48CC538FF74747C2392AFA5F5FA535E803804761B314D63F3385748869E360",
+      "errorCount": 3,
+      "normalizedErrorPaths": [
+        "elements.filter-toggle.styles.outlineColor",
+        "elements.query-filter.styles.outlineColor"
+      ]
+    },
+    "oldRawAssertionWouldPass": false,
+    "oldPresentationAssertionWouldPass": false,
+    "boundedContract": {
+      "status": "pass",
+      "contract": "required-historical-signature-plus-focus-mutation-bounded-additions",
+      "requiredSignatures": [
+        "elements.filter-toggle.styles.outlineColor"
+      ],
+      "observedSignatures": [
+        "elements.filter-toggle.styles.outlineColor",
+        "elements.query-filter.styles.outlineColor"
+      ],
+      "additionalSignatures": [
+        "elements.query-filter.styles.outlineColor"
+      ],
+      "rawErrorCount": 3,
+      "rawErrorIndexes": [
+        45,
+        163,
+        183
+      ],
+      "allowedObservation": {
+        "normalizedPathPattern": "^elements\\.[^.]+\\.styles\\.outlineColor$",
+        "expected": [
+          "rgb(16, 29, 47)",
+          "rgb(134, 185, 238)"
+        ],
+        "actual": "rgb(255, 0, 170)"
+      },
+      "presentationChecked": true,
+      "rawReport": "C:/Users/mssgm/github/ui-design-manifest/docs/poc/experiments/017-reference-html-ssot/output/diagnostic-adoption/established-regression/injected-focus.report.json",
+      "rawSha256": "FF48CC538FF74747C2392AFA5F5FA535E803804761B314D63F3385748869E360"
+    },
+    "fixtureTestCount": 9,
+    "fixtureTestsPassed": 9
+  }
+}

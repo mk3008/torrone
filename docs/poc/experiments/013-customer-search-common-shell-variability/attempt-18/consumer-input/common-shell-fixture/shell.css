@@ -1,0 +1,137 @@
+:root {
+  --page-background: #F4F7FA;
+  --surface-background: #FFFFFF;
+  --table-header-background: #E7F1FC;
+  --table-header-foreground: #172033;
+  --text-primary: #172033;
+  --text-muted: #52657A;
+  --border-subtle: #C7D2DF;
+  --border-interactive: #75889C;
+  --selection-background: #E7F1FC;
+  --selection-foreground: #172033;
+  --selection-indicator: #0B5CAD;
+  --action-background: #0B5CAD;
+  --action-foreground: #FFFFFF;
+  --link: #0B5CAD;
+  --focus-ring: #3B82F6;
+}
+
+.shared-shell[data-theme="dark"] {
+  --page-background: #101820;
+  --surface-background: #1B2632;
+  --table-header-background: #203E5A;
+  --table-header-foreground: #F4F7FA;
+  --text-primary: #F4F7FA;
+  --text-muted: #BAC6D2;
+  --border-subtle: #516273;
+  --border-interactive: #91A3B5;
+  --selection-background: #203E5A;
+  --selection-foreground: #F4F7FA;
+  --selection-indicator: #74B7F5;
+  --action-background: #74B7F5;
+  --action-foreground: #07131E;
+  --link: #8BC4FF;
+  --focus-ring: #FFD54A;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.shared-shell {
+  min-height: 100vh;
+  background: var(--page-background);
+  color: var(--text-primary);
+}
+
+.shared-shell > .shell-header {
+  align-items: center;
+  background: var(--surface-background);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  display: flex;
+  gap: 12px;
+  min-height: 56px;
+  padding: 8px 16px;
+}
+
+.shared-shell .shell-workspace-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.shared-shell .shell-icon-button {
+  align-items: center;
+  background: var(--surface-background);
+  border: 1px solid var(--border-interactive);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  height: 36px;
+  justify-content: center;
+  width: 36px;
+}
+
+.shared-shell .shell-theme-button { margin-left: auto; }
+
+.shared-shell .shell-icon-button:focus-visible,
+.shared-shell .shell-drawer a:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.shared-shell > .shell-body { display: flex; }
+
+.shared-shell .shell-drawer {
+  background: var(--surface-background);
+  border-right: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  flex: 0 0 240px;
+  min-height: calc(100vh - 56px);
+  padding: 12px 0;
+}
+
+.shared-shell .shell-drawer-list,
+.shared-shell .shell-drawer-children {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shared-shell .shell-drawer-list > li { position: relative; }
+
+.shared-shell .shell-drawer a {
+  color: var(--text-primary);
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.shared-shell .shell-drawer-parent > a { padding-right: 42px; }
+
+.shared-shell .shell-disclosure {
+  color: var(--text-muted);
+  pointer-events: none;
+  position: absolute;
+  right: 16px;
+  top: 10px;
+}
+
+.shared-shell .shell-drawer-children a { padding-left: 32px; }
+
+.shared-shell .shell-drawer a.current {
+  background: var(--selection-background);
+  border-left: 4px solid var(--selection-indicator);
+  color: var(--selection-foreground);
+  font-weight: 700;
+  padding-left: 28px;
+}
+
+.shared-shell .shell-workspace { flex: 1 1 0; min-inline-size: 0; }
+
+.shared-shell[data-drawer="hidden"] .shell-drawer { display: none; }

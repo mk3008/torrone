@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "search-workspace.html",
+    "digest": "2e6f1a4ae8a04764a8d7f0eff0b6e597b4aaab3bb5f8f5a04fe36b8ad88f2f45",
+    "files": [
+      {
+        "path": "search-workspace.html",
+        "bytes": 12277,
+        "sha256": "3078962d0880a28658691922d2f6cb6e9e3a9239bce735994ec71ababbfd4c3b"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "search-workspace.html",
+    "digest": "b1d2000b23f48cb51ac347343b04db4ca6023570cb196595efc43d94daaf79e9",
+    "files": [
+      {
+        "path": "search-workspace.html",
+        "bytes": 12255,
+        "sha256": "5e0ca48182e169988cadfd4282cf9f6a3b9da57e433459ed72eb452846791ef9"
+      },
+      {
+        "path": "shared-tokens.css",
+        "bytes": 165,
+        "sha256": "8e1e66299c9144ccb495a1a4b6aa77aa53a87025ceaa73f1a56f965cc7c87abc"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "search results",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "search empty",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "query-filter",
+            "value": "No match"
+          },
+          {
+            "action": "click",
+            "target": "search-action"
+          }
+        ]
+      },
+      {
+        "name": "clear to initial",
+        "steps": [
+          {
+            "action": "click",
+            "target": "search-action"
+          },
+          {
+            "action": "click",
+            "target": "clear-action"
+          }
+        ]
+      },
+      {
+        "name": "filter pointer round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "filter-toggle"
+          },
+          {
+            "action": "click",
+            "target": "filter-toggle"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 0,
+    "errorSignatures": []
+  },
+  "differences": []
+}

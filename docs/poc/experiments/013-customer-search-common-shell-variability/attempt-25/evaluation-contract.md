@@ -1,0 +1,42 @@
+---
+type: PoC experiment contract
+title: Customer-search composition with Common-shell Attempt 22 Run 1, attempt 25
+status: completed
+source: authored
+---
+
+# Purpose
+
+Measure whether the current frozen Manifest, the fixed reusable common shell
+from Common-shell Attempt 22 Run 1, and a fixed product-specific prompt
+produce comparable customer-search pages across three independent runs.
+
+This is a Manifest-plus-prompt test. The supplied common shell is reused and
+not reinterpreted. A generated output is never repaired; an input correction
+requires a fresh set of all three runs.
+
+# Frozen inputs
+
+1. `consumer-input/design-manifest/` — complete current Manifest snapshot.
+2. `consumer-input/common-shell-fixture/` — immutable shell derived from
+   Common-shell Attempt 22 Run 1.
+3. `consumer-input/user-prompt-ja.md` — fixed customer-search product facts.
+
+# Immutable shell boundary
+
+Copy the fixture template to `index.html`, copy `shell.css` and `shell.js`
+byte-for-byte, and insert only page content in `<!-- PAGE_SLOT -->`. Add
+page-specific styling only in `page.css` and page behavior only in `page.js`.
+Header, Drawer, navigation, theme control, and markup outside the page slot
+must remain unchanged.
+
+# Execution matrix
+
+| Item | Value |
+| --- | --- |
+| Model | `gpt-5.6-terra` |
+| Reasoning effort | `medium` |
+| Implementations | `3` |
+| Cross-run communication | prohibited |
+| Desktop viewport | `1440x1200` |
+| Narrow viewport | `720x1200` |

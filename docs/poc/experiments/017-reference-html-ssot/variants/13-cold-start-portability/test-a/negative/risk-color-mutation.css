@@ -1,0 +1,4 @@
+/* Intentional, isolated negative: change one material observed property. */
+.finding-risk {
+  background-color: #dff4ff;
+}

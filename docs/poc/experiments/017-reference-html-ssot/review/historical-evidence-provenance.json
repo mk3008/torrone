@@ -1,0 +1,120 @@
+{
+  "responsibility": "immutable-historical-evidence-record",
+  "note": "These hashes identify evidence and entry points as they existed before the Evidence Harness Maintenance Gate. They are not requirements for current implementation bytes.",
+  "gates": {
+    "relational-reuse": {
+      "entryPoint": {
+        "path": "verify-relational-reuse.ps1",
+        "sha256": "EC3CFB8B4D1125FFFFF8503A5B5236F68FE7484193A0A50181331B2CE36C1EE6"
+      },
+      "verificationRecord": {
+        "path": "relational-reuse-verification-record.md",
+        "sha256": "9BBE7D2AB12128E52EF253C63E0766919C41ED4F65D8159C782FD08E264396EB"
+      },
+      "implementation": {
+        "coreSha256": "D382601184DED6D351D2BBF5B6213013791AD4A59E0E9DB853B9E68754B59A76",
+        "cliSha256": "7109A169EB8F6EA7C1483B2C14C8A9711560667ECD80DFDCCCC19380E38A8837"
+      },
+      "output": {
+        "path": "output/relational-reuse",
+        "fileCount": 29,
+        "sha256": "BF1AB0C8A30A039A258FDD144AFF63EF4450011D9F332482415CE75BC88D1FD9"
+      }
+    },
+    "partial-reference": {
+      "entryPoint": {
+        "path": "verify-partial-reference.ps1",
+        "sha256": "D68C733C3EFC94A511AA1CB1FF2E9B436FF6662132DA0852FE8C5BD74B677B1A"
+      },
+      "verificationRecord": {
+        "path": "partial-reference-verification-record.md",
+        "sha256": "334D89D9634C2D0016B7D71A6AEB89F25B9CA1222E8857116750373BAAB86F6F"
+      },
+      "implementation": {
+        "coreSha256": "14BB52C2C60B9DA9A27B7593C772B09E18A2DA2A79AD7C129827330C0D4077EA",
+        "cliSha256": "7109A169EB8F6EA7C1483B2C14C8A9711560667ECD80DFDCCCC19380E38A8837"
+      },
+      "output": {
+        "path": "output/partial-reference",
+        "fileCount": 87,
+        "sha256": "B12EC6E37D9FFB17689B45D556F9561C3F0345D2963F20248F35C4C5545F4F5E"
+      }
+    },
+    "form-heavy-partial": {
+      "entryPoint": {
+        "path": "verify-form-heavy-partial.ps1",
+        "sha256": "80EEC72277BAF57D7CFAA9B0109FEF5B5A7E87FCB1FAC680509D34259D938501"
+      },
+      "verificationRecord": {
+        "path": "form-partial-verification-record.md",
+        "sha256": "A0D3BBC53249F51603DB9ABFBDFB9438C7284C1390677C623C0911DFAA14754D"
+      },
+      "implementation": {
+        "coreSha256": "14BB52C2C60B9DA9A27B7593C772B09E18A2DA2A79AD7C129827330C0D4077EA",
+        "cliSha256": "7109A169EB8F6EA7C1483B2C14C8A9711560667ECD80DFDCCCC19380E38A8837"
+      },
+      "output": {
+        "path": "output/form-heavy-partial",
+        "fileCount": 88,
+        "sha256": "ED837E7E65E77DD400AE9F85554B3F561AC1847FBC48DE051BE0D352D0FEEA45"
+      }
+    },
+    "diagnostic-review": {
+      "entryPoint": {
+        "path": "verify-diagnostic-review.ps1",
+        "sha256": "5F46B9945EB7210D35737C2A0006F172D2D3A3728B687EB60EB5D93B44D3D482"
+      },
+      "verificationRecord": {
+        "path": "diagnostic-review-verification-record.md",
+        "sha256": "F2842B56174CADD7833D33F23690A7DA2961FE83D23C4CFE5CDBDDE4A0ED9FF0"
+      },
+      "implementation": {
+        "coreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+        "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8"
+      },
+      "output": {
+        "path": "output/diagnostic-review",
+        "fileCount": 44,
+        "sha256": "4634AE368A7B96CB09BB1D1A5A2B15840B4C819B69789F04781272873EDEC578"
+      }
+    },
+    "reference-conformance": {
+      "entryPoint": {
+        "path": "verify-reference-conformance.ps1",
+        "sha256": "E179461E45F6406160BED52CB252BC7E0FF61C409C9F3AF74006FC1D19E29A58"
+      },
+      "verificationRecord": {
+        "path": "reference-conformance-verification-record.md",
+        "sha256": "985103E04A13E757C94564CAFF9A467ED41470A10AC874AB28184FC563998328"
+      },
+      "implementation": {
+        "coreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+        "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8"
+      },
+      "output": {
+        "path": "output/reference-conformance",
+        "fileCount": 56,
+        "sha256": "E2D84F1C5A3C6721BA0632A386431F73B0C206F3472B754477B6137C7BCEAABE"
+      }
+    },
+    "diagnostic-adoption": {
+      "entryPoint": {
+        "path": "verify-diagnostic-adoption.ps1",
+        "sha256": "B838CB50E09653011ACC0914F081B8AE267FC28B26343E0250D6C3ACAEAD826D"
+      },
+      "verificationRecord": {
+        "path": "diagnostic-adoption-verification-record.md",
+        "sha256": "E87013067D5DC4CA22C12D7197EA1670E713BAE7FBB9F121DF9F191C00367E8A"
+      },
+      "implementation": {
+        "coreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8",
+        "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8"
+      },
+      "output": {
+        "path": "output/diagnostic-adoption",
+        "fileCount": 109,
+        "sha256": "53A79EA18174E375068D64CA6AB02E7421DE9BD52A39EB0815AEFDAECB68D500"
+      }
+    }
+  }
+}

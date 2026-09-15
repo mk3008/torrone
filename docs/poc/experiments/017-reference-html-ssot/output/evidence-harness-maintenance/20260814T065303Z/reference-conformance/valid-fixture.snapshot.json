@@ -1,0 +1,908 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "entry": "valid.html",
+    "digest": "24aec1aef295f021dccbd962c9c4072834b9830a7e85872d67cc8b2e897dbf5d",
+    "files": [
+      {
+        "path": "valid.html",
+        "bytes": 2194,
+        "sha256": "d8d6c85da0b5e4197e87986f5d13f1e97ff1e201bd9b1d2c7f638d0c3d3b54fd"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "lookup",
+        "steps": [
+          {
+            "action": "click",
+            "target": "lookup-action"
+          }
+        ]
+      }
+    ]
+  },
+  "initial": {
+    "mode": "mixed-data-ref-semantic",
+    "contract": {
+      "version": 1,
+      "scenarios": [
+        {
+          "name": "lookup",
+          "steps": [
+            {
+              "action": "click",
+              "target": "lookup-action"
+            }
+          ]
+        }
+      ],
+      "parseError": null
+    },
+    "document": {
+      "title": "Reference conformance fixture",
+      "lang": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "activeRef": null,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Record lookup"
+        },
+        {
+          "level": 2,
+          "text": "Lookup criteria"
+        }
+      ],
+      "landmarks": {
+        "banner": 0,
+        "navigation": 0,
+        "main": 1,
+        "form": 1,
+        "table": 0,
+        "dialog": 0
+      }
+    },
+    "observationBoundary": {
+      "excludedHarnessRoots": 1,
+      "axExcludedHarnessRoots": 1,
+      "axExcludedNodeCount": 0
+    },
+    "duplicateKeys": [],
+    "semanticAmbiguities": [],
+    "semanticInventory": {
+      "button": 1,
+      "form": 1,
+      "main": 1,
+      "textbox": 1
+    },
+    "elements": {
+      "lookup-form": {
+        "key": "lookup-form",
+        "tag": "form",
+        "role": "form",
+        "name": "Lookup criteria",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "grid",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(23, 32, 51)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(23, 32, 51)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(23, 32, 51)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(23, 32, 51)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(23, 32, 51)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "16px",
+          "rowGap": "16px",
+          "columnGap": "16px",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(23, 32, 51)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 384,
+          "y": 117.44,
+          "width": 672,
+          "height": 353.81
+        }
+      },
+      "query-field": {
+        "key": "query-field",
+        "tag": "input",
+        "role": "textbox",
+        "name": "Record query",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": "",
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": "query-help",
+          "disabled": false,
+          "hidden": false,
+          "open": false,
+          "checked": false
+        },
+        "relationships": {
+          "describedBy": [
+            "unkeyed:describedBy:p:none:visible"
+          ]
+        },
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "clip",
+          "overflowY": "clip",
+          "fontFamily": "system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "2px",
+          "borderTopStyle": "inset",
+          "borderTopColor": "rgb(118, 118, 118)",
+          "borderRightWidth": "2px",
+          "borderRightStyle": "inset",
+          "borderRightColor": "rgb(118, 118, 118)",
+          "borderBottomWidth": "2px",
+          "borderBottomStyle": "inset",
+          "borderBottomColor": "rgb(118, 118, 118)",
+          "borderLeftWidth": "2px",
+          "borderLeftStyle": "inset",
+          "borderLeftColor": "rgb(118, 118, 118)",
+          "borderRadius": "0px",
+          "paddingTop": "10px",
+          "paddingRight": "12px",
+          "paddingBottom": "10px",
+          "paddingLeft": "12px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(0, 0, 0)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "text"
+        },
+        "box": {
+          "x": 384,
+          "y": 249.25,
+          "width": 672,
+          "height": 48
+        }
+      },
+      "lookup-action": {
+        "key": "lookup-action",
+        "tag": "button",
+        "role": "button",
+        "name": "Lookup",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(22, 94, 168)",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(22, 94, 168)",
+          "borderRightWidth": "1px",
+          "borderRightStyle": "solid",
+          "borderRightColor": "rgb(22, 94, 168)",
+          "borderBottomWidth": "1px",
+          "borderBottomStyle": "solid",
+          "borderBottomColor": "rgb(22, 94, 168)",
+          "borderLeftWidth": "1px",
+          "borderLeftStyle": "solid",
+          "borderLeftColor": "rgb(22, 94, 168)",
+          "borderRadius": "0px",
+          "paddingTop": "10px",
+          "paddingRight": "12px",
+          "paddingBottom": "10px",
+          "paddingLeft": "12px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(255, 255, 255)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "default"
+        },
+        "box": {
+          "x": 384,
+          "y": 385.25,
+          "width": 78.7,
+          "height": 46
+        }
+      },
+      "lookup-status": {
+        "key": "lookup-status",
+        "tag": "output",
+        "role": "",
+        "name": "Not searched",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(23, 32, 51)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(23, 32, 51)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(23, 32, 51)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(23, 32, 51)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(23, 32, 51)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(23, 32, 51)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 384,
+          "y": 447.25,
+          "width": 672,
+          "height": 24
+        }
+      },
+      "semantic:role:main": {
+        "key": "semantic:role:main",
+        "tag": "main",
+        "role": "main",
+        "name": "Record lookup Lookup criteria Record query Use a name or identifier. Lookup Not searched",
+        "visible": true,
+        "attributes": {
+          "aria-expanded": null,
+          "aria-pressed": null,
+          "aria-current": null,
+          "aria-selected": null,
+          "aria-checked": null,
+          "aria-invalid": null,
+          "aria-modal": null,
+          "aria-controls": null,
+          "aria-describedby": null,
+          "disabled": false,
+          "hidden": false,
+          "open": false
+        },
+        "relationships": {},
+        "styles": {
+          "display": "block",
+          "position": "static",
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "fontFamily": "system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(23, 32, 51)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderTopColor": "rgb(23, 32, 51)",
+          "borderRightWidth": "0px",
+          "borderRightStyle": "none",
+          "borderRightColor": "rgb(23, 32, 51)",
+          "borderBottomWidth": "0px",
+          "borderBottomStyle": "none",
+          "borderBottomColor": "rgb(23, 32, 51)",
+          "borderLeftWidth": "0px",
+          "borderLeftStyle": "none",
+          "borderLeftColor": "rgb(23, 32, 51)",
+          "borderRadius": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "rowGap": "normal",
+          "columnGap": "normal",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "boxShadow": "none",
+          "outlineColor": "rgb(23, 32, 51)",
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "opacity": "1",
+          "cursor": "auto"
+        },
+        "box": {
+          "x": 384,
+          "y": 48,
+          "width": 672,
+          "height": 423.25
+        }
+      }
+    },
+    "accessibilityIssues": [],
+    "accessibilityTree": {
+      "nodeCount": 23,
+      "roles": {
+        "button": 1,
+        "form": 1,
+        "generic": 1,
+        "heading": 2,
+        "InlineTextBox": 6,
+        "LabelText": 1,
+        "main": 1,
+        "paragraph": 1,
+        "RootWebArea": 1,
+        "StaticText": 6,
+        "status": 1,
+        "textbox": 1
+      },
+      "unnamedInteractive": {}
+    }
+  },
+  "scenarios": [
+    {
+      "name": "lookup",
+      "loadConsoleErrors": [],
+      "steps": [
+        {
+          "action": {
+            "action": "click",
+            "target": "lookup-action"
+          },
+          "actionError": null,
+          "consoleErrors": [],
+          "screenshot": "lookup-01.png",
+          "state": {
+            "mode": "mixed-data-ref-semantic",
+            "contract": {
+              "version": 1,
+              "scenarios": [
+                {
+                  "name": "lookup",
+                  "steps": [
+                    {
+                      "action": "click",
+                      "target": "lookup-action"
+                    }
+                  ]
+                }
+              ],
+              "parseError": null
+            },
+            "document": {
+              "title": "Reference conformance fixture",
+              "lang": "en",
+              "viewport": {
+                "width": 1440,
+                "height": 900
+              },
+              "activeRef": "lookup-action",
+              "headings": [
+                {
+                  "level": 1,
+                  "text": "Record lookup"
+                },
+                {
+                  "level": 2,
+                  "text": "Lookup criteria"
+                }
+              ],
+              "landmarks": {
+                "banner": 0,
+                "navigation": 0,
+                "main": 1,
+                "form": 1,
+                "table": 0,
+                "dialog": 0
+              }
+            },
+            "observationBoundary": {
+              "excludedHarnessRoots": 1,
+              "axExcludedHarnessRoots": 1,
+              "axExcludedNodeCount": 0
+            },
+            "duplicateKeys": [],
+            "semanticAmbiguities": [],
+            "semanticInventory": {
+              "button": 1,
+              "form": 1,
+              "main": 1,
+              "textbox": 1
+            },
+            "elements": {
+              "lookup-form": {
+                "key": "lookup-form",
+                "tag": "form",
+                "role": "form",
+                "name": "Lookup criteria",
+                "visible": true,
+                "attributes": {
+                  "aria-expanded": null,
+                  "aria-pressed": null,
+                  "aria-current": null,
+                  "aria-selected": null,
+                  "aria-checked": null,
+                  "aria-invalid": null,
+                  "aria-modal": null,
+                  "aria-controls": null,
+                  "aria-describedby": null,
+                  "disabled": false,
+                  "hidden": false,
+                  "open": false
+                },
+                "relationships": {},
+                "styles": {
+                  "display": "grid",
+                  "position": "static",
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "fontFamily": "system-ui, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "24px",
+                  "color": "rgb(23, 32, 51)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "borderTopWidth": "0px",
+                  "borderTopStyle": "none",
+                  "borderTopColor": "rgb(23, 32, 51)",
+                  "borderRightWidth": "0px",
+                  "borderRightStyle": "none",
+                  "borderRightColor": "rgb(23, 32, 51)",
+                  "borderBottomWidth": "0px",
+                  "borderBottomStyle": "none",
+                  "borderBottomColor": "rgb(23, 32, 51)",
+                  "borderLeftWidth": "0px",
+                  "borderLeftStyle": "none",
+                  "borderLeftColor": "rgb(23, 32, 51)",
+                  "borderRadius": "0px",
+                  "paddingTop": "0px",
+                  "paddingRight": "0px",
+                  "paddingBottom": "0px",
+                  "paddingLeft": "0px",
+                  "gap": "16px",
+                  "rowGap": "16px",
+                  "columnGap": "16px",
+                  "alignItems": "normal",
+                  "justifyContent": "normal",
+                  "boxShadow": "none",
+                  "outlineColor": "rgb(23, 32, 51)",
+                  "outlineStyle": "none",
+                  "outlineWidth": "3px",
+                  "opacity": "1",
+                  "cursor": "auto"
+                },
+                "box": {
+                  "x": 384,
+                  "y": 117.44,
+                  "width": 672,
+                  "height": 353.81
+                }
+              },
+              "query-field": {
+                "key": "query-field",
+                "tag": "input",
+                "role": "textbox",
+                "name": "Record query",
+                "visible": true,
+                "attributes": {
+                  "aria-expanded": null,
+                  "aria-pressed": null,
+                  "aria-current": null,
+                  "aria-selected": null,
+                  "aria-checked": null,
+                  "aria-invalid": "",
+                  "aria-modal": null,
+                  "aria-controls": null,
+                  "aria-describedby": "query-help",
+                  "disabled": false,
+                  "hidden": false,
+                  "open": false,
+                  "checked": false
+                },
+                "relationships": {
+                  "describedBy": [
+                    "unkeyed:describedBy:p:none:visible"
+                  ]
+                },
+                "styles": {
+                  "display": "block",
+                  "position": "static",
+                  "overflowX": "clip",
+                  "overflowY": "clip",
+                  "fontFamily": "system-ui, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "24px",
+                  "color": "rgb(0, 0, 0)",
+                  "backgroundColor": "rgb(255, 255, 255)",
+                  "borderTopWidth": "2px",
+                  "borderTopStyle": "inset",
+                  "borderTopColor": "rgb(118, 118, 118)",
+                  "borderRightWidth": "2px",
+                  "borderRightStyle": "inset",
+                  "borderRightColor": "rgb(118, 118, 118)",
+                  "borderBottomWidth": "2px",
+                  "borderBottomStyle": "inset",
+                  "borderBottomColor": "rgb(118, 118, 118)",
+                  "borderLeftWidth": "2px",
+                  "borderLeftStyle": "inset",
+                  "borderLeftColor": "rgb(118, 118, 118)",
+                  "borderRadius": "0px",
+                  "paddingTop": "10px",
+                  "paddingRight": "12px",
+                  "paddingBottom": "10px",
+                  "paddingLeft": "12px",
+                  "gap": "normal",
+                  "rowGap": "normal",
+                  "columnGap": "normal",
+                  "alignItems": "normal",
+                  "justifyContent": "normal",
+                  "boxShadow": "none",
+                  "outlineColor": "rgb(0, 0, 0)",
+                  "outlineStyle": "none",
+                  "outlineWidth": "3px",
+                  "opacity": "1",
+                  "cursor": "text"
+                },
+                "box": {
+                  "x": 384,
+                  "y": 249.25,
+                  "width": 672,
+                  "height": 48
+                }
+              },
+              "lookup-action": {
+                "key": "lookup-action",
+                "tag": "button",
+                "role": "button",
+                "name": "Lookup",
+                "visible": true,
+                "attributes": {
+                  "aria-expanded": null,
+                  "aria-pressed": null,
+                  "aria-current": null,
+                  "aria-selected": null,
+                  "aria-checked": null,
+                  "aria-invalid": null,
+                  "aria-modal": null,
+                  "aria-controls": null,
+                  "aria-describedby": null,
+                  "disabled": false,
+                  "hidden": false,
+                  "open": false
+                },
+                "relationships": {},
+                "styles": {
+                  "display": "block",
+                  "position": "static",
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "fontFamily": "system-ui, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "24px",
+                  "color": "rgb(255, 255, 255)",
+                  "backgroundColor": "rgb(22, 94, 168)",
+                  "borderTopWidth": "1px",
+                  "borderTopStyle": "solid",
+                  "borderTopColor": "rgb(22, 94, 168)",
+                  "borderRightWidth": "1px",
+                  "borderRightStyle": "solid",
+                  "borderRightColor": "rgb(22, 94, 168)",
+                  "borderBottomWidth": "1px",
+                  "borderBottomStyle": "solid",
+                  "borderBottomColor": "rgb(22, 94, 168)",
+                  "borderLeftWidth": "1px",
+                  "borderLeftStyle": "solid",
+                  "borderLeftColor": "rgb(22, 94, 168)",
+                  "borderRadius": "0px",
+                  "paddingTop": "10px",
+                  "paddingRight": "12px",
+                  "paddingBottom": "10px",
+                  "paddingLeft": "12px",
+                  "gap": "normal",
+                  "rowGap": "normal",
+                  "columnGap": "normal",
+                  "alignItems": "normal",
+                  "justifyContent": "normal",
+                  "boxShadow": "none",
+                  "outlineColor": "rgb(255, 255, 255)",
+                  "outlineStyle": "none",
+                  "outlineWidth": "3px",
+                  "opacity": "1",
+                  "cursor": "default"
+                },
+                "box": {
+                  "x": 384,
+                  "y": 385.25,
+                  "width": 78.7,
+                  "height": 46
+                }
+              },
+              "lookup-status": {
+                "key": "lookup-status",
+                "tag": "output",
+                "role": "",
+                "name": "Lookup complete",
+                "visible": true,
+                "attributes": {
+                  "aria-expanded": null,
+                  "aria-pressed": null,
+                  "aria-current": null,
+                  "aria-selected": null,
+                  "aria-checked": null,
+                  "aria-invalid": null,
+                  "aria-modal": null,
+                  "aria-controls": null,
+                  "aria-describedby": null,
+                  "disabled": false,
+                  "hidden": false,
+                  "open": false
+                },
+                "relationships": {},
+                "styles": {
+                  "display": "block",
+                  "position": "static",
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "fontFamily": "system-ui, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "24px",
+                  "color": "rgb(23, 32, 51)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "borderTopWidth": "0px",
+                  "borderTopStyle": "none",
+                  "borderTopColor": "rgb(23, 32, 51)",
+                  "borderRightWidth": "0px",
+                  "borderRightStyle": "none",
+                  "borderRightColor": "rgb(23, 32, 51)",
+                  "borderBottomWidth": "0px",
+                  "borderBottomStyle": "none",
+                  "borderBottomColor": "rgb(23, 32, 51)",
+                  "borderLeftWidth": "0px",
+                  "borderLeftStyle": "none",
+                  "borderLeftColor": "rgb(23, 32, 51)",
+                  "borderRadius": "0px",
+                  "paddingTop": "0px",
+                  "paddingRight": "0px",
+                  "paddingBottom": "0px",
+                  "paddingLeft": "0px",
+                  "gap": "normal",
+                  "rowGap": "normal",
+                  "columnGap": "normal",
+                  "alignItems": "normal",
+                  "justifyContent": "normal",
+                  "boxShadow": "none",
+                  "outlineColor": "rgb(23, 32, 51)",
+                  "outlineStyle": "none",
+                  "outlineWidth": "3px",
+                  "opacity": "1",
+                  "cursor": "auto"
+                },
+                "box": {
+                  "x": 384,
+                  "y": 447.25,
+                  "width": 672,
+                  "height": 24
+                }
+              },
+              "semantic:role:main": {
+                "key": "semantic:role:main",
+                "tag": "main",
+                "role": "main",
+                "name": "Record lookup Lookup criteria Record query Use a name or identifier. Lookup Lookup complete",
+                "visible": true,
+                "attributes": {
+                  "aria-expanded": null,
+                  "aria-pressed": null,
+                  "aria-current": null,
+                  "aria-selected": null,
+                  "aria-checked": null,
+                  "aria-invalid": null,
+                  "aria-modal": null,
+                  "aria-controls": null,
+                  "aria-describedby": null,
+                  "disabled": false,
+                  "hidden": false,
+                  "open": false
+                },
+                "relationships": {},
+                "styles": {
+                  "display": "block",
+                  "position": "static",
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "fontFamily": "system-ui, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "24px",
+                  "color": "rgb(23, 32, 51)",
+                  "backgroundColor": "rgba(0, 0, 0, 0)",
+                  "borderTopWidth": "0px",
+                  "borderTopStyle": "none",
+                  "borderTopColor": "rgb(23, 32, 51)",
+                  "borderRightWidth": "0px",
+                  "borderRightStyle": "none",
+                  "borderRightColor": "rgb(23, 32, 51)",
+                  "borderBottomWidth": "0px",
+                  "borderBottomStyle": "none",
+                  "borderBottomColor": "rgb(23, 32, 51)",
+                  "borderLeftWidth": "0px",
+                  "borderLeftStyle": "none",
+                  "borderLeftColor": "rgb(23, 32, 51)",
+                  "borderRadius": "0px",
+                  "paddingTop": "0px",
+                  "paddingRight": "0px",
+                  "paddingBottom": "0px",
+                  "paddingLeft": "0px",
+                  "gap": "normal",
+                  "rowGap": "normal",
+                  "columnGap": "normal",
+                  "alignItems": "normal",
+                  "justifyContent": "normal",
+                  "boxShadow": "none",
+                  "outlineColor": "rgb(23, 32, 51)",
+                  "outlineStyle": "none",
+                  "outlineWidth": "3px",
+                  "opacity": "1",
+                  "cursor": "auto"
+                },
+                "box": {
+                  "x": 384,
+                  "y": 48,
+                  "width": 672,
+                  "height": 423.25
+                }
+              }
+            },
+            "accessibilityIssues": [],
+            "accessibilityTree": {
+              "nodeCount": 23,
+              "roles": {
+                "button": 1,
+                "form": 1,
+                "generic": 1,
+                "heading": 2,
+                "InlineTextBox": 6,
+                "LabelText": 1,
+                "main": 1,
+                "paragraph": 1,
+                "RootWebArea": 1,
+                "StaticText": 6,
+                "status": 1,
+                "textbox": 1
+              },
+              "unnamedInteractive": {}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

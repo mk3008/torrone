@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Transfer exception consumer</title>
+  <style>
+    body { margin: 0; font: 14px/1.4 system-ui, sans-serif; color: #172033; background: #f4f6f9; }
+    header { min-height: 52px; display: flex; align-items: center; padding: 0 20px; color: white; background: #173b63; }
+    main { padding: 24px; }
+    form, table { width: 100%; background: white; border: 1px solid #cbd4df; border-radius: 8px; }
+    form { box-sizing: border-box; display: flex; gap: 12px; padding: 16px; }
+    label { display: grid; gap: 4px; }
+    table { margin-top: 16px; border-collapse: separate; border-spacing: 0; overflow: hidden; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #e1e6ed; text-align: left; }
+    button { min-height: 36px; padding: 0 12px; }
+  </style>
+</head>
+<body>
+  <header id="inventory-header"><strong>Inventory workspace</strong></header>
+  <main id="transfer-exception-workspace">
+    <h1>Transfer exceptions</h1>
+    <form id="transfer-filter-form">
+      <label>Warehouse <select id="warehouse" name="warehouse"><option>East hub</option></select></label>
+      <label>Severity <select id="severity" name="severity"><option>High</option></select></label>
+      <label>Owner <input id="exception-owner" name="owner"></label>
+      <button type="submit">Find exceptions</button>
+    </form>
+    <table id="transfer-results">
+      <caption>4 transfer exceptions</caption>
+      <thead><tr><th>Exception</th><th>Item</th><th>Route</th><th>Severity</th><th>Action</th></tr></thead>
+      <tbody><tr><td>TX-204</td><td>Valve kit</td><td>East to North</td><td>High</td><td><button type="button">Review exception</button></td></tr></tbody>
+    </table>
+  </main>
+</body>
+</html>

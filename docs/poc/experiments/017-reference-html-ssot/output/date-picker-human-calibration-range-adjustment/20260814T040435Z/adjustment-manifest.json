@@ -1,0 +1,38 @@
+{
+  "responsibility": "human-calibration-date-range-adjustment-evidence",
+  "status": "adjusted-candidate-awaiting-human-confirmation",
+  "runId": "20260814T040435Z",
+  "adjusted": {
+    "path": "review/date-picker-human-calibration/adjusted/date-range.html",
+    "sha256": "13A3FCA62260DB863869FA3FE9CB37CDEBDF9AD30C163F76746448DB1205EE78"
+  },
+  "preserved": {
+    "baselineRangeSha256": "DA068C8BB35EC3B0AF8108DF4EB72A17201886BF56B6CDFCB4B0EA58A18A9C94",
+    "acceptedSingleSha256": "254E3BA5B2ECD1E2A1677DD5C4FC8FA95224FCB605A74387300E47BFA40102B7",
+    "cliSha256": "968DCCE9EE4487D834CFB35EA2B219457AFD06BCD661A621777E43C2815130F8",
+    "coreSha256": "62F3267026D307BD39D7D592B784160901513568B95C299F6938ADCFAA1F96B8"
+  },
+  "checks": {
+    "conformanceStates": 49,
+    "scenarios": 18,
+    "observedElements": 23,
+    "consoleErrors": 0,
+    "externalRequests": 0,
+    "failedRequests": 0,
+    "boundedAccessibilityIssues": 0,
+    "duplicateKeys": 0,
+    "semanticAmbiguities": 0,
+    "pageTabStopsInRange": 2,
+    "popupAnchorStableDuringPartialSelection": true,
+    "endpointAndInteriorStylesDistinct": true,
+    "monthAndYearNavigation": true,
+    "futureDatesUnavailable": true,
+    "compactBoundaryWidth": 280,
+    "compactPopupWidth": 336,
+    "compactPopupHeightBelow": 365,
+    "inlineActionDividers": true,
+    "weekendColumnColor": true
+  },
+  "observationGap": "The current Core does not capture editable input values or unkeyed range-cell relationships directly; live state, keyed dates, source assertions, and rendered evidence cover this candidate.",
+  "next": "Human confirmation before Target transfer, observation classification, or any long-lived Reference guidance."
+}

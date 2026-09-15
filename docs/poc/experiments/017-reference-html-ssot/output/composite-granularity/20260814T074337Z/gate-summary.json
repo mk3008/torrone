@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "gate": "Composite UI Reference Granularity Gate",
+  "runId": "20260814T074337Z",
+  "status": "pass",
+  "authority": {
+    "conformance": "Reference preflight reports only",
+    "comparison": "Reference snapshot versus independent Target verify reports only",
+    "presentation": "This summary and the gate result document are nonauthoritative"
+  },
+  "implementation": {
+    "cliSha256": "19872837F9F7BEDE66F64C8F6C30AE20B769097E2C5374377394BBC7C4C07271",
+    "coreSha256": "E62FD23295EFF665B8EC280B55AF4D40DD4E3B4063F5B40DAFA224ECA46C506F",
+    "cliCoreChanged": false,
+    "acceptedReferenceSha256": "868983B43CBE50BE0D9EBA952AD34C87922194167BCBCAF7A4C0163D30D52056",
+    "acceptedReferenceChanged": false,
+    "historicalEvidenceChanged": false
+  },
+  "references": [
+    {
+      "name": "date-picker",
+      "preflight": "pass",
+      "snapshot": "pass"
+    },
+    {
+      "name": "date-range-picker",
+      "preflight": "pass",
+      "snapshot": "pass"
+    },
+    {
+      "name": "date-picker-family-sheet",
+      "preflight": "pass",
+      "snapshot": "pass"
+    },
+    {
+      "name": "entity-autocomplete",
+      "preflight": "pass",
+      "snapshot": "pass"
+    },
+    {
+      "name": "entity-dialog-lookup",
+      "preflight": "pass",
+      "snapshot": "pass"
+    }
+  ],
+  "targets": [
+    {
+      "name": "date-range-target",
+      "status": "pass",
+      "errorCount": 0
+    },
+    {
+      "name": "entity-autocomplete-target",
+      "status": "pass",
+      "errorCount": 0
+    }
+  ],
+  "negativeChecks": {
+    "familySheetAgainstSingleVariantTarget": {
+      "status": "fail",
+      "errorCount": 108,
+      "signatures": [
+        {
+          "path": "action",
+          "count": 3
+        },
+        {
+          "path": "document.activeRef",
+          "count": 3
+        },
+        {
+          "path": "elements.date-clear",
+          "count": 16
+        },
+        {
+          "path": "elements.date-day",
+          "count": 16
+        },
+        {
+          "path": "elements.date-next-day",
+          "count": 16
+        },
+        {
+          "path": "elements.date-selection",
+          "count": 16
+        },
+        {
+          "path": "elements.date-trigger",
+          "count": 16
+        },
+        {
+          "path": "elements.semantic:controlled-by:date-trigger",
+          "count": 16
+        },
+        {
+          "path": "scenarios.family single clear.step-2",
+          "count": 1
+        },
+        {
+          "path": "scenarios.family single clear.step-3",
+          "count": 1
+        },
+        {
+          "path": "scenarios.family single clear.step-4",
+          "count": 1
+        },
+        {
+          "path": "scenarios.family single keyboard.step-2",
+          "count": 1
+        },
+        {
+          "path": "scenarios.family single keyboard.step-3",
+          "count": 1
+        },
+        {
+          "path": "scenarios.family single pointer.step-2",
+          "count": 1
+        }
+      ]
+    },
+    "dateCompletion": {
+      "status": "fail",
+      "errorCount": 39,
+      "signatures": [
+        {
+          "path": "document.activeRef",
+          "count": 3
+        },
+        {
+          "path": "elements.range-end-day.styles.outlineColor",
+          "count": 1
+        },
+        {
+          "path": "elements.range-end-day.styles.outlineStyle",
+          "count": 1
+        },
+        {
+          "path": "elements.range-end-day.visible",
+          "count": 4
+        },
+        {
+          "path": "elements.range-next-day.visible",
+          "count": 4
+        },
+        {
+          "path": "elements.range-start-day.visible",
+          "count": 4
+        },
+        {
+          "path": "elements.range-status.visible",
+          "count": 4
+        },
+        {
+          "path": "elements.range-trigger.attributes.aria-expanded",
+          "count": 4
+        },
+        {
+          "path": "elements.range-trigger.styles.outlineColor",
+          "count": 1
+        },
+        {
+          "path": "elements.range-trigger.styles.outlineStyle",
+          "count": 1
+        },
+        {
+          "path": "elements.semantic:controlled-by:range-trigger.attributes.hidden",
+          "count": 4
+        },
+        {
+          "path": "elements.semantic:controlled-by:range-trigger.styles.display",
+          "count": 4
+        },
+        {
+          "path": "elements.semantic:controlled-by:range-trigger.visible",
+          "count": 4
+        }
+      ]
+    },
+    "entityCss": {
+      "status": "fail",
+      "errorCount": 10,
+      "signatures": {
+        "path": "elements.entity-option-primary.styles.borderRadius",
+        "count": 10
+      }
+    },
+    "entityRelationshipConformance": {
+      "status": "error",
+      "errorCount": 18,
+      "signatures": "missing-aria-controls-target"
+    }
+  },
+  "complexity": [
+    {
+      "name": "date-picker",
+      "path": "variants/11-composite-granularity/references/date-picker.html",
+      "sourceFiles": 1,
+      "totalLines": 95,
+      "nonblankLines": 93,
+      "cssLines": 24,
+      "javascriptLines": 21,
+      "scenarioCount": 3,
+      "scenarioActionCount": 9,
+      "checkedStateCount": 10,
+      "fixtureItemCount": 7,
+      "explicitIdentityCount": 5,
+      "explicitIdentityOccurrences": 5,
+      "semanticIdentityCount": 1,
+      "observedElementCount": 6,
+      "harnessRootCount": 1,
+      "scenarioMetadataRootCount": 1,
+      "validationOnlyAnnotationCount": 7
+    },
+    {
+      "name": "date-range-picker",
+      "path": "variants/11-composite-granularity/references/date-range-picker.html",
+      "sourceFiles": 1,
+      "totalLines": 106,
+      "nonblankLines": 104,
+      "cssLines": 25,
+      "javascriptLines": 30,
+      "scenarioCount": 3,
+      "scenarioActionCount": 12,
+      "checkedStateCount": 13,
+      "fixtureItemCount": 7,
+      "explicitIdentityCount": 7,
+      "explicitIdentityOccurrences": 7,
+      "semanticIdentityCount": 1,
+      "observedElementCount": 8,
+      "harnessRootCount": 1,
+      "scenarioMetadataRootCount": 1,
+      "validationOnlyAnnotationCount": 9
+    },
+    {
+      "name": "date-picker-family-sheet",
+      "path": "variants/11-composite-granularity/date-picker-family-sheet.html",
+      "sourceFiles": 1,
+      "totalLines": 103,
+      "nonblankLines": 100,
+      "cssLines": 26,
+      "javascriptLines": 24,
+      "scenarioCount": 6,
+      "scenarioActionCount": 21,
+      "checkedStateCount": 22,
+      "fixtureItemCount": 14,
+      "explicitIdentityCount": 12,
+      "explicitIdentityOccurrences": 12,
+      "semanticIdentityCount": 2,
+      "observedElementCount": 14,
+      "harnessRootCount": 1,
+      "scenarioMetadataRootCount": 1,
+      "validationOnlyAnnotationCount": 14
+    },
+    {
+      "name": "entity-autocomplete",
+      "path": "variants/11-composite-granularity/references/entity-autocomplete.html",
+      "sourceFiles": 1,
+      "totalLines": 84,
+      "nonblankLines": 82,
+      "cssLines": 22,
+      "javascriptLines": 20,
+      "scenarioCount": 4,
+      "scenarioActionCount": 9,
+      "checkedStateCount": 10,
+      "fixtureItemCount": 5,
+      "explicitIdentityCount": 5,
+      "explicitIdentityOccurrences": 5,
+      "semanticIdentityCount": 1,
+      "observedElementCount": 6,
+      "harnessRootCount": 1,
+      "scenarioMetadataRootCount": 1,
+      "validationOnlyAnnotationCount": 7
+    },
+    {
+      "name": "entity-dialog-lookup",
+      "path": "variants/11-composite-granularity/references/entity-dialog-lookup.html",
+      "sourceFiles": 1,
+      "totalLines": 101,
+      "nonblankLines": 98,
+      "cssLines": 30,
+      "javascriptLines": 24,
+      "scenarioCount": 5,
+      "scenarioActionCount": 17,
+      "checkedStateCount": 18,
+      "fixtureItemCount": 2,
+      "explicitIdentityCount": 8,
+      "explicitIdentityOccurrences": 8,
+      "semanticIdentityCount": 1,
+      "observedElementCount": 9,
+      "harnessRootCount": 1,
+      "scenarioMetadataRootCount": 1,
+      "validationOnlyAnnotationCount": 10
+    },
+    {
+      "name": "date-range-target",
+      "path": "variants/11-composite-granularity/targets/date-range/index.html",
+      "sourceFiles": 1,
+      "totalLines": 102,
+      "nonblankLines": 100,
+      "cssLines": 27,
+      "javascriptLines": 26,
+      "scenarioCount": 0,
+      "scenarioActionCount": 0,
+      "checkedStateCount": 0,
+      "fixtureItemCount": 7,
+      "explicitIdentityCount": 7,
+      "explicitIdentityOccurrences": 7,
+      "semanticIdentityCount": 0,
+      "observedElementCount": 0,
+      "harnessRootCount": 0,
+      "scenarioMetadataRootCount": 0,
+      "validationOnlyAnnotationCount": 7
+    },
+    {
+      "name": "entity-autocomplete-target",
+      "path": "variants/11-composite-granularity/targets/entity-autocomplete/index.html",
+      "sourceFiles": 1,
+      "totalLines": 88,
+      "nonblankLines": 86,
+      "cssLines": 24,
+      "javascriptLines": 30,
+      "scenarioCount": 0,
+      "scenarioActionCount": 0,
+      "checkedStateCount": 0,
+      "fixtureItemCount": 4,
+      "explicitIdentityCount": 5,
+      "explicitIdentityOccurrences": 5,
+      "semanticIdentityCount": 0,
+      "observedElementCount": 0,
+      "harnessRootCount": 0,
+      "scenarioMetadataRootCount": 0,
+      "validationOnlyAnnotationCount": 5
+    }
+  ],
+  "independence": {
+    "dateRange": {
+      "referenceStyleSha256": "63C97E3F8EDC5E635A5CBF3F53EB598E60BECE7509E6A14473D39D6F7A610EFB",
+      "targetStyleSha256": "B0A7969CD1B83C315006270220A8096957ECAF36DCF863AF04CC2730D266979C",
+      "sharedStylesheetImports": 0,
+      "sharedClassTokens": [],
+      "sharedLocalIds": [],
+      "leakedReferenceTerms": [],
+      "targetHarnessRoots": 0,
+      "targetHasMainWorkspace": true,
+      "referenceHasMainWorkspace": false
+    },
+    "entityAutocomplete": {
+      "referenceStyleSha256": "A32F91D81CF5BF439E64418B96C8CF5E73DFA1FAAB9D74B4CEC5654D78E58138",
+      "targetStyleSha256": "077B4E62F68DD81E96C3D348EDC859774014E981E7DF3BFCE77DF45288AB0564",
+      "sharedStylesheetImports": 0,
+      "sharedClassTokens": [],
+      "sharedLocalIds": [],
+      "leakedReferenceTerms": [],
+      "targetHarnessRoots": 0,
+      "targetHasMainWorkspace": true,
+      "referenceHasMainWorkspace": false
+    }
+  },
+  "network": {
+    "externalRequestCount": 0,
+    "failedRequestCount": 0,
+    "consoleErrorCount": 0
+  }
+}

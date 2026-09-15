@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>共通シェル新規作成テスト: Terra medium 3回比較</title>
+  <link rel="stylesheet" href="comparison.css">
+</head>
+<body>
+  <main>
+    <h1>共通シェル新規作成テスト: Terra medium 3回比較</h1>
+    <p>3件とも、同じManifest snapshotと同じ日本語の共通シェル要件だけから新規に作成しました。過去の画面、PNG、比較結果、テストは生成入力に含めていません。</p>
+    <div class="note">比較対象は Light / Drawer表示の固定初期表示です。現在位置はfixtureが供給する値であり、Drawerの既定項目ではありません。子項目の文字は兄弟と同じ字下げを保ち、選択アクセントだけがDrawer左端に配置されます。親の開閉は現在位置を変更せず、再展開時に同じ子項目の選択表現を復元します。ほかの状態は各Runのリンクから確認できます。</div>
+    <section class="runs" aria-label="3つの生成結果">
+      <article class="run">
+        <h2>Run 1</h2>
+        <div class="links"><a href="runs/run-1/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-1/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-1/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-1/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div>
+        <img src="runs/run-1/shell-open-light.png" alt="Run 1 のLightテーマ・Drawer表示の共通シェル">
+      </article>
+      <article class="run">
+        <h2>Run 2</h2>
+        <div class="links"><a href="runs/run-2/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-2/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-2/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-2/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div>
+        <img src="runs/run-2/shell-open-light.png" alt="Run 2 のLightテーマ・Drawer表示の共通シェル">
+      </article>
+      <article class="run">
+        <h2>Run 3</h2>
+        <div class="links"><a href="runs/run-3/index.html?drawer=open&amp;theme=light">Light / Drawer表示</a><a href="runs/run-3/index.html?drawer=hidden&amp;theme=light">Light / Drawer非表示</a><a href="runs/run-3/index.html?drawer=open&amp;theme=dark">Dark / Drawer表示</a><a href="runs/run-3/index.html?drawer=hidden&amp;theme=dark">Dark / Drawer非表示</a></div>
+        <img src="runs/run-3/shell-open-light.png" alt="Run 3 のLightテーマ・Drawer表示の共通シェル">
+      </article>
+    </section>
+  </main>
+</body>
+</html>

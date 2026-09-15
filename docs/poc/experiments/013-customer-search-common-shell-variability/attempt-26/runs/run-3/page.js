@@ -1,0 +1,1 @@
+(() => { const form=document.querySelector('#search-form'); const grid=document.querySelector('#grid-scroll'); form.addEventListener('submit', event=>event.preventDefault()); grid.addEventListener('scroll',()=>grid.classList.toggle('scrolled',grid.scrollLeft>0),{passive:true}); })();

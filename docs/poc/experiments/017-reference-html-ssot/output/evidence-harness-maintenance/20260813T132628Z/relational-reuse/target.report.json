@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "baseline": {
+    "entry": "index.html",
+    "digest": "f3772cdb55c3709d8eea41132797f95c9a10d9befc7222e65d33449e8f30de82",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 10330,
+        "sha256": "e1da71e7321c14bb4abbc06cbc1d174b803d0cbc9cb3ecc88ea06c05432a038f"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "index.html",
+    "digest": "08eae20e1992e2ecef503704e1b7e5dd57da641d7602b4bf3bdcde77cbf88916",
+    "files": [
+      {
+        "path": "index.html",
+        "bytes": 10127,
+        "sha256": "ec5c8b2cfb20659b86490e9cf77f49cd0cd9f5602c4f84be226b83a62278207b"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Edg/151.0.4129.78",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "filter pointer round trip",
+        "steps": [
+          {
+            "action": "click",
+            "target": "filter-toggle"
+          },
+          {
+            "action": "click",
+            "target": "filter-toggle"
+          }
+        ]
+      },
+      {
+        "name": "filter keyboard round trip",
+        "steps": [
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "filter-toggle",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "user menu escape",
+        "steps": [
+          {
+            "action": "click",
+            "target": "user-menu-toggle"
+          },
+          {
+            "action": "press",
+            "target": "user-menu-toggle",
+            "key": "Escape"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 0,
+    "uniqueErrorCount": 0,
+    "diagnosticCount": 0,
+    "errorSignatures": []
+  },
+  "differences": []
+}

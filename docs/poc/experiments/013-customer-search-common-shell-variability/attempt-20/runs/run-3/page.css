@@ -1,0 +1,53 @@
+.customer-search {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 32px clamp(16px, 3vw, 48px) 48px;
+}
+
+.customer-search, .customer-search * { box-sizing: border-box; }
+
+.page-heading { margin-bottom: 34px; }
+.page-heading h1, .page-heading h2, .page-heading p { margin: 0; }
+.page-heading h1 { font-size: clamp(1.75rem, 3vw, 2.25rem); letter-spacing: -0.02em; }
+.page-heading p { color: var(--text-muted); margin-top: 8px; }
+
+.conditions-pane { max-inline-size: 760px; width: 100%; }
+.conditions-pane h2, .results-pane h2 { font-size: 1.125rem; margin: 0; }
+.conditions-pane form { margin-top: 14px; }
+.condition-fields { display: grid; gap: 16px 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.condition-fields label { color: var(--text-primary); display: grid; font-size: .875rem; font-weight: 700; gap: 7px; min-inline-size: 0; }
+.condition-fields input { background: var(--surface-background); border: 1px solid var(--border-interactive); border-radius: 2px; color: var(--text-primary); font: inherit; inline-size: 100%; min-inline-size: 0; min-block-size: 42px; padding: 8px 10px; }
+.condition-fields input::placeholder { color: var(--text-muted); opacity: .8; }
+.condition-fields input:focus-visible, .button:focus-visible, .grid-scroll:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+.condition-toolbar { display: flex; inline-size: 100%; justify-content: flex-end; margin-top: 20px; }
+.button-group { display: flex; gap: 10px; }
+.button { align-items: center; background: var(--surface-background); border: 1px solid var(--border-interactive); border-radius: 2px; color: var(--text-primary); cursor: pointer; display: inline-flex; font: inherit; font-weight: 700; justify-content: center; min-block-size: 40px; padding: 8px 16px; white-space: nowrap; }
+.button-primary { background: var(--action-background); border-color: var(--action-background); color: var(--action-foreground); }
+.button:disabled { cursor: not-allowed; opacity: .55; }
+
+.results-pane { margin-top: 52px; min-inline-size: 0; width: 100%; }
+.result-header { align-items: end; display: flex; gap: 18px; justify-content: space-between; margin-bottom: 14px; min-inline-size: 0; }
+.results-pane h2 span { color: var(--text-muted); font-size: 1rem; font-weight: 500; margin-inline-start: 8px; }
+.result-toolbar { flex: 0 0 auto; }
+
+.grid-scroll { inline-size: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+.grid-scroll table { border-collapse: collapse; min-inline-size: 1120px; table-layout: fixed; width: 100%; }
+.grid-scroll th, .grid-scroll td { border-bottom: 1px solid var(--border-subtle); padding: 13px 14px; text-align: start; vertical-align: top; }
+.grid-scroll th { background-color: var(--table-header-background); color: var(--table-header-foreground); font-size: .875rem; font-weight: 700; white-space: nowrap; }
+.grid-scroll td { background-color: var(--surface-background); color: var(--text-primary); line-height: 1.45; }
+.grid-scroll a { color: var(--link); font-weight: 700; text-underline-offset: 2px; }
+.grid-scroll .pinned { inset-inline-start: 0; position: sticky; z-index: 1; }
+.grid-scroll th.pinned { box-shadow: 2px 0 0 var(--border-subtle); z-index: 2; }
+.grid-scroll td.pinned { box-shadow: 2px 0 0 var(--border-subtle); }
+.identity-column { inline-size: 118px; }.name-column { inline-size: 132px; }.date-column { inline-size: 126px; }.address-column { inline-size: 270px; }.phone-column { inline-size: 148px; }.email-column { inline-size: 250px; }.notes-column { inline-size: 220px; }
+
+.pagination-footer { align-items: center; display: flex; gap: 12px; inline-size: 100%; justify-content: flex-end; margin-top: 16px; }
+.pagination-footer span { display: inline-flex; font-weight: 700; justify-content: center; min-inline-size: 20px; }
+
+@media (max-width: 680px) {
+  .customer-search { padding: 24px 16px 36px; }
+  .condition-fields { grid-template-columns: minmax(0, 1fr); }
+  .result-header { align-items: flex-start; flex-direction: column; }
+  .result-toolbar { align-self: flex-end; }
+}

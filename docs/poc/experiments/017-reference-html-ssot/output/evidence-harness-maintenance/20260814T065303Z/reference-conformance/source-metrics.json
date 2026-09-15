@@ -1,0 +1,13 @@
+{
+  "approvedReferenceFilesChanged": 0,
+  "consumerFilesChanged": 0,
+  "validConformanceFixturesAdded": 1,
+  "validFixtureLines": 64,
+  "referenceMetadataAdded": 0,
+  "dependenciesAdded": 0,
+  "coreInspectFunctionCount": 1,
+  "cliPreflightBranchCount": 1,
+  "positiveReferenceShapes": 8,
+  "reversibleProbeFamilies": 9,
+  "reportKind": "pass-or-error; no score"
+}

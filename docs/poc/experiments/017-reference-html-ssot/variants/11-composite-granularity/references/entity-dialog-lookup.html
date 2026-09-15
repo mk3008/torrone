@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Entity dialog lookup reference</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #fff; --text: #101d2f; --muted: #54657a; --border: #c6d2df; --accent: #1d73b7; --focus: #86b9ee; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 760px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :is(button, input):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .reference-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .sample { width: min(620px, calc(100% - 48px)); margin: 48px auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .sample h2 { margin: 0 0 6px; font-size: 22px; }
+    .support { margin: 0 0 20px; color: var(--muted); }
+    .lookup, .secondary { min-height: 42px; padding: 0 14px; color: #183653; background: var(--surface); border: 1px solid #8ea2b9; border-radius: 6px; }
+    .selection { display: flex; min-height: 58px; margin-top: 14px; padding: 10px 12px; align-items: center; justify-content: space-between; gap: 16px; background: #edf5fd; border: 1px solid #9ebbd5; border-radius: 6px; }
+    .selection p { margin: 0; }
+    .entity-id { color: var(--muted); font-size: 13px; }
+    dialog { width: min(680px, calc(100% - 48px)); padding: 0; color: var(--text); background: var(--surface); border: 1px solid #98aabc; border-radius: 10px; box-shadow: 0 18px 54px rgb(18 32 48 / 28%); }
+    dialog::backdrop { background: rgb(16 29 47 / 38%); }
+    .dialog-heading { padding: 18px 20px; border-bottom: 1px solid var(--border); }
+    .dialog-heading h3 { margin: 0; font-size: 20px; }
+    .dialog-body { padding: 20px; }
+    .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .query { width: 100%; min-height: 42px; padding: 8px 11px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
+    .results { display: grid; gap: 6px; margin-top: 12px; }
+    .result { display: grid; min-height: 56px; padding: 8px 10px; align-content: center; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; text-align: left; }
+    .result:hover, .result[aria-selected="true"] { background: #e5f0fb; border-color: #9ebbd5; }
+    .empty { margin: 12px 0 0; padding: 14px; color: var(--muted); background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; }
+    .dialog-actions { display: flex; padding: 14px 20px; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--border); }
+    .primary { min-height: 42px; padding: 0 16px; color: #fff; font-weight: 700; background: #1d70b3; border: 1px solid #155b92; border-radius: 6px; }
+    .primary:disabled { color: #526579; background: #edf2f6; border-color: #b9c5d1; cursor: default; }
+  </style>
+</head>
+<body>
+  <div class="reference-note" data-reference-harness="reference-label">Reference part · entity dialog lookup</div>
+  <section class="sample" aria-labelledby="lookup-heading">
+    <h2 id="lookup-heading">Service location</h2>
+    <p class="support">Choose the location where the work will be performed.</p>
+    <button class="lookup" type="button" data-ref="lookup-trigger" aria-controls="location-dialog" aria-expanded="false">Find location</button>
+    <div class="selection" data-ref="lookup-selection" hidden><p><strong>North Distribution Center</strong><br><span class="entity-id">Location LC-031</span></p><button class="secondary" type="button" data-ref="lookup-clear">Clear</button></div>
+  </section>
+
+  <dialog id="location-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-heading"><h3 id="dialog-title">Find service location</h3></div>
+    <div class="dialog-body">
+      <label class="field-label" for="lookup-query">Location ID or name</label>
+      <input class="query" id="lookup-query" data-ref="lookup-query" autocomplete="off">
+      <div class="results" role="listbox" aria-label="Matching service locations">
+        <button class="result" type="button" role="option" data-ref="lookup-option-primary" aria-selected="false"><span>North Distribution Center</span><span class="entity-id">Location LC-031</span></button>
+        <button class="result" type="button" role="option" aria-selected="false"><span>Riverside Depot</span><span class="entity-id">Location LC-044</span></button>
+      </div>
+      <p class="empty" data-ref="lookup-empty" role="status" aria-live="polite" hidden>No matching locations. Change the ID or name.</p>
+    </div>
+    <div class="dialog-actions"><button class="secondary" type="button" data-ref="lookup-cancel">Cancel</button><button class="primary" type="button" data-ref="lookup-confirm" disabled>Select</button></div>
+  </dialog>
+
+  <script type="application/json" data-reference-scenarios>
+    {"version":1,"scenarios":[
+      {"name":"pointer dialog selection","steps":[{"action":"click","target":"lookup-trigger"},{"action":"fill","target":"lookup-query","value":"a"},{"action":"click","target":"lookup-option-primary"},{"action":"click","target":"lookup-confirm"}]},
+      {"name":"keyboard dialog selection","steps":[{"action":"press","target":"lookup-trigger","key":" "},{"action":"fill","target":"lookup-query","value":"a"},{"action":"press","target":"lookup-query","key":"Tab"},{"action":"press","target":"lookup-option-primary","key":"Enter"},{"action":"press","target":"lookup-confirm","key":" "}]},
+      {"name":"dialog no results","steps":[{"action":"click","target":"lookup-trigger"},{"action":"fill","target":"lookup-query","value":"zzz"}]},
+      {"name":"cancel lookup","steps":[{"action":"click","target":"lookup-trigger"},{"action":"click","target":"lookup-cancel"}]},
+      {"name":"clear lookup selection","steps":[{"action":"click","target":"lookup-trigger"},{"action":"click","target":"lookup-option-primary"},{"action":"click","target":"lookup-confirm"},{"action":"click","target":"lookup-clear"}]}
+    ]}
+  </script>
+  <script>
+    (() => {
+      const trigger = document.querySelector('[data-ref="lookup-trigger"]');
+      const dialog = document.getElementById('location-dialog');
+      const query = document.querySelector('[data-ref="lookup-query"]');
+      const results = dialog.querySelector('.results');
+      const option = document.querySelector('[data-ref="lookup-option-primary"]');
+      const empty = document.querySelector('[data-ref="lookup-empty"]');
+      const confirm = document.querySelector('[data-ref="lookup-confirm"]');
+      const cancel = document.querySelector('[data-ref="lookup-cancel"]');
+      const selection = document.querySelector('[data-ref="lookup-selection"]');
+      const clear = document.querySelector('[data-ref="lookup-clear"]');
+      const resetDialog = () => { query.value = ''; results.hidden = false; empty.hidden = true; option.setAttribute('aria-selected', 'false'); confirm.disabled = true; };
+      const selectOption = () => { option.setAttribute('aria-selected', 'true'); confirm.disabled = false; };
+      const open = () => { resetDialog(); trigger.setAttribute('aria-expanded', 'true'); dialog.showModal(); query.focus(); };
+      const close = () => { dialog.close(); trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); };
+      trigger.addEventListener('click', open);
+      query.addEventListener('input', () => { const noMatch = query.value.trim().toLowerCase() === 'zzz'; results.hidden = noMatch; empty.hidden = !noMatch; option.setAttribute('aria-selected', 'false'); confirm.disabled = true; });
+      option.addEventListener('click', selectOption);
+      option.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectOption(); } });
+      confirm.addEventListener('click', () => { selection.hidden = false; close(); });
+      cancel.addEventListener('click', close);
+      dialog.addEventListener('cancel', (event) => { event.preventDefault(); close(); });
+      clear.addEventListener('click', () => { selection.hidden = true; trigger.focus(); });
+    })();
+  </script>
+</body>
+</html>

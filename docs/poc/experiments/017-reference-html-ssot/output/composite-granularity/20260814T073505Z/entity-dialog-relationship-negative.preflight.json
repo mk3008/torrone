@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "entity-dialog-relationship-negative.html",
+    "digest": "1e367733902980512f3744d49ba453818a0fb4ddce07833397c210c674a0945a",
+    "files": [
+      {
+        "path": "entity-dialog-relationship-negative.html",
+        "bytes": 8703,
+        "sha256": "568e983dd3bad22f954556360926ea276670337c7f3f201798f0d3b0d2790979"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 18,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 18
+  },
+  "errors": [
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "initial",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.cancel lookup.step-1",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.cancel lookup.step-2",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.clear lookup selection.step-1",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.clear lookup selection.step-2",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.clear lookup selection.step-3",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.clear lookup selection.step-4",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.dialog no results.step-1",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.dialog no results.step-2",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.keyboard dialog selection.step-1",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.keyboard dialog selection.step-2",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.keyboard dialog selection.step-3",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.keyboard dialog selection.step-4",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.keyboard dialog selection.step-5",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.pointer dialog selection.step-1",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.pointer dialog selection.step-2",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.pointer dialog selection.step-3",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    },
+    {
+      "source": "bounded-accessibility",
+      "code": "missing-aria-controls-target",
+      "state": "scenarios.pointer dialog selection.step-4",
+      "target": "lookup-trigger",
+      "detail": "No element has id missing-location-dialog."
+    }
+  ]
+}

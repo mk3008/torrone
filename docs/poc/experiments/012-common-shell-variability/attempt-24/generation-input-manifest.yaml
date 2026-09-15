@@ -1,0 +1,22 @@
+manifest_version: 1
+consumer_rule: "A Run consumer must use only the two paths in included_inputs."
+included_inputs:
+  - "frozen-input/design-manifest plus its linked frozen-input/local-overrides/theme-colors.example.yaml support file"
+  - frozen-input/fixed-user-prompt-ja.md
+excluded_inputs:
+  - runs/**
+  - comparisons/**
+  - "**/*.png"
+  - "**/selected-common-shell/**"
+  - "**/*evaluation*"
+  - tests/**
+  - docs/poc/experiments/012-common-shell-variability/attempt-23/**
+  - any other prior generated Run, capture, comparison, rubric, or selected reference
+fixture_contract:
+  present: false
+  classification: greenfield-manifest
+independence:
+  run_count: 3
+  model: gpt-5.6-terra
+  reasoning_effort: medium
+  output_isolation: "No Run can read another Run output."

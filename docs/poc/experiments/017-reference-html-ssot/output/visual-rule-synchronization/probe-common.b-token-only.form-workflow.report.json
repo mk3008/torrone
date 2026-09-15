@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "form-workflow.html",
+    "digest": "a403a13b83a22fc3511d59f1a6cce878fcc625f044a834283affefd3214e167c",
+    "files": [
+      {
+        "path": "form-workflow.html",
+        "bytes": 15931,
+        "sha256": "a4e3f072767604623763a8841aabe41780531865d7136e8df19475e1eda1b1f4"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "form-workflow.html",
+    "digest": "90f5737a2ad3fc16233872005e441b6209421310d39eeec99eeb52b6bb394df4",
+    "files": [
+      {
+        "path": "form-workflow.html",
+        "bytes": 15907,
+        "sha256": "85ba83e2e860cfde9d2bea4131ea30ec58db277e49853cdd32c2184da71859a6"
+      },
+      {
+        "path": "shared-tokens.css",
+        "bytes": 76,
+        "sha256": "3840956893909b22c089af0b9b53bc05fdfc2a8f5783b3d09852d0054e485b84"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "missing required fields",
+        "steps": [
+          {
+            "action": "click",
+            "target": "review-action"
+          }
+        ]
+      },
+      {
+        "name": "invalid email correction",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "form-primary-field",
+            "value": "Replace dock leveler"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "not-an-email"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "morgan.lee@example.com"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          }
+        ]
+      },
+      {
+        "name": "review and edit",
+        "steps": [
+          {
+            "action": "fill",
+            "target": "form-primary-field",
+            "value": "Replace dock leveler"
+          },
+          {
+            "action": "fill",
+            "target": "form-contact-field",
+            "value": "morgan.lee@example.com"
+          },
+          {
+            "action": "click",
+            "target": "review-action"
+          },
+          {
+            "action": "click",
+            "target": "edit-action"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 4,
+    "uniqueErrorCount": 2,
+    "diagnosticCount": 0,
+    "errorSignatures": [
+      {
+        "path": "elements.form-contact-field.styles.outlineColor",
+        "count": 2
+      },
+      {
+        "path": "elements.form-primary-field.styles.outlineColor",
+        "count": 2
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "error",
+      "path": "scenarios.missing required fields.step-1.elements.form-primary-field.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(255, 0, 170)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-3.elements.form-contact-field.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(255, 0, 170)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.invalid email correction.step-4.elements.form-contact-field.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(255, 0, 170)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.review and edit.step-4.elements.form-primary-field.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(255, 0, 170)"
+    }
+  ]
+}

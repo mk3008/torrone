@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "baseline": {
+    "entry": "date-range-picker.html",
+    "digest": "ce2603f8996f4a3a57f767990fe654329baa8b13c15e2d788b4cf45d1882bacd",
+    "files": [
+      {
+        "path": "date-range-picker.html",
+        "bytes": 7751,
+        "sha256": "82e6769e5a75ed8e86205164bc857030fb7484d57950de1558b039095a0efa64"
+      }
+    ]
+  },
+  "actual": {
+    "entry": "date-range-negative.html",
+    "digest": "c074cc5c5a24b7ed07c288bc9d0bb7f3cc9dbfe12486008cc95da6521619d002",
+    "files": [
+      {
+        "path": "date-range-negative.html",
+        "bytes": 7322,
+        "sha256": "34573dcc6c22add9a0c9b5f71f378aeab8272a4c071e4e57e32367f28339734e"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "contract": {
+    "version": 1,
+    "scenarios": [
+      {
+        "name": "pointer range selection",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          }
+        ]
+      },
+      {
+        "name": "keyboard range selection",
+        "steps": [
+          {
+            "action": "press",
+            "target": "range-trigger",
+            "key": " "
+          },
+          {
+            "action": "press",
+            "target": "range-start-day",
+            "key": "ArrowRight"
+          },
+          {
+            "action": "press",
+            "target": "range-next-day",
+            "key": "Enter"
+          },
+          {
+            "action": "press",
+            "target": "range-end-day",
+            "key": "Enter"
+          }
+        ]
+      },
+      {
+        "name": "clear and reselect range",
+        "steps": [
+          {
+            "action": "click",
+            "target": "range-trigger"
+          },
+          {
+            "action": "click",
+            "target": "range-start-day"
+          },
+          {
+            "action": "click",
+            "target": "range-end-day"
+          },
+          {
+            "action": "click",
+            "target": "range-clear"
+          },
+          {
+            "action": "click",
+            "target": "range-trigger"
+          }
+        ]
+      }
+    ]
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 39,
+    "uniqueErrorCount": 13,
+    "diagnosticCount": 13,
+    "errorSignatures": [
+      {
+        "path": "document.activeRef",
+        "count": 3
+      },
+      {
+        "path": "elements.range-end-day.styles.outlineColor",
+        "count": 1
+      },
+      {
+        "path": "elements.range-end-day.styles.outlineStyle",
+        "count": 1
+      },
+      {
+        "path": "elements.range-end-day.visible",
+        "count": 4
+      },
+      {
+        "path": "elements.range-next-day.visible",
+        "count": 4
+      },
+      {
+        "path": "elements.range-start-day.visible",
+        "count": 4
+      },
+      {
+        "path": "elements.range-status.visible",
+        "count": 4
+      },
+      {
+        "path": "elements.range-trigger.attributes.aria-expanded",
+        "count": 4
+      },
+      {
+        "path": "elements.range-trigger.styles.outlineColor",
+        "count": 1
+      },
+      {
+        "path": "elements.range-trigger.styles.outlineStyle",
+        "count": 1
+      },
+      {
+        "path": "elements.semantic:controlled-by:range-trigger.attributes.hidden",
+        "count": 4
+      },
+      {
+        "path": "elements.semantic:controlled-by:range-trigger.styles.display",
+        "count": 4
+      },
+      {
+        "path": "elements.semantic:controlled-by:range-trigger.visible",
+        "count": 4
+      }
+    ]
+  },
+  "differences": [
+    {
+      "severity": "info",
+      "path": "initial.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-end-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-next-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-start-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-status.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.range-trigger.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.semantic:controlled-by:range-trigger.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.semantic:controlled-by:range-trigger.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.elements.semantic:controlled-by:range-trigger.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.pointer range selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.pointer range selection.step-3.document.activeRef",
+      "expected": "range-trigger",
+      "actual": "range-end-day"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-end-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-end-day.styles.outlineColor",
+      "expected": "rgb(255, 255, 255)",
+      "actual": "rgb(134, 185, 238)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-end-day.styles.outlineStyle",
+      "expected": "none",
+      "actual": "solid"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-next-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-start-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-status.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-trigger.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-trigger.styles.outlineColor",
+      "expected": "rgb(134, 185, 238)",
+      "actual": "rgb(24, 54, 83)"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.range-trigger.styles.outlineStyle",
+      "expected": "solid",
+      "actual": "none"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.semantic:controlled-by:range-trigger.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.semantic:controlled-by:range-trigger.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.elements.semantic:controlled-by:range-trigger.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.keyboard range selection.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.keyboard range selection.step-4.document.activeRef",
+      "expected": "range-trigger",
+      "actual": "range-end-day"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-1.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-2.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.elements.range-end-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.elements.range-next-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.elements.range-start-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.elements.range-status.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.elements.range-trigger.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.elements.semantic:controlled-by:range-trigger.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.elements.semantic:controlled-by:range-trigger.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.elements.semantic:controlled-by:range-trigger.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-3.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-3.document.activeRef",
+      "expected": "range-trigger",
+      "actual": "range-end-day"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-4.elements.range-end-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-4.elements.range-next-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-4.elements.range-start-day.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-4.elements.range-status.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-4.elements.range-trigger.attributes.aria-expanded",
+      "expected": "false",
+      "actual": "true"
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-4.elements.semantic:controlled-by:range-trigger.visible",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-4.elements.semantic:controlled-by:range-trigger.attributes.hidden",
+      "expected": true,
+      "actual": false
+    },
+    {
+      "severity": "error",
+      "path": "scenarios.clear and reselect range.step-4.elements.semantic:controlled-by:range-trigger.styles.display",
+      "expected": "none",
+      "actual": "block"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-4.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    },
+    {
+      "severity": "info",
+      "path": "scenarios.clear and reselect range.step-5.elements.semantic:role:main",
+      "expected": "<not present>",
+      "actual": "extra annotated element"
+    }
+  ]
+}

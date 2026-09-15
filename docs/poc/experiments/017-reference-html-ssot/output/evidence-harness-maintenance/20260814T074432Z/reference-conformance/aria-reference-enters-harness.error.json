@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "responsibility": "reference-library-only",
+  "status": "error",
+  "source": {
+    "entry": "aria-reference-enters-harness.html",
+    "digest": "63b9406f7e3f4e8eb0f2356e4863b38a908597564f4abad2e5dbe3f57696a54b",
+    "files": [
+      {
+        "path": "aria-reference-enters-harness.html",
+        "bytes": 2204,
+        "sha256": "76bf61c163e4734aac9a39b81d6ed64d46cec45a508d40803099ea7b0ab6c090"
+      }
+    ]
+  },
+  "browser": {
+    "name": "Chrome/151.0.7922.109",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "network": {
+    "externalRequests": [],
+    "failedRequestCount": 0
+  },
+  "console": {
+    "errorCount": 0,
+    "errors": []
+  },
+  "summary": {
+    "errorCount": 2,
+    "uniqueErrorCount": 1,
+    "warningCount": 0,
+    "checkedStateCount": 2
+  },
+  "errors": [
+    {
+      "source": "absolute-dom",
+      "code": "aria-reference-enters-harness",
+      "state": "initial",
+      "target": "query-field",
+      "detail": "aria-describedby references excluded harness id reference-control."
+    },
+    {
+      "source": "absolute-dom",
+      "code": "aria-reference-enters-harness",
+      "state": "scenarios.lookup.step-1",
+      "target": "query-field",
+      "detail": "aria-describedby references excluded harness id reference-control."
+    }
+  ]
+}
