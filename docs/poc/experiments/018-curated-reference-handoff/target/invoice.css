@@ -34,6 +34,7 @@ nav { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 12
 .weekdays, #date-options { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; }
 .weekdays { font-size: .8rem; color: #52625b; }
 #date-options button { min-width: 0; width: 100%; border: 1px solid transparent; border-radius: 0; }
+#date-options button:focus-visible { position: relative; z-index: 1; outline-offset: -3px; }
 #date-options .spill { color: #64776e; }
 #date-options .between { background: #d8e9c8; }
 #date-options [aria-pressed="true"] { background: #244c40; color: white; border-radius: 8px; font-weight: 700; }

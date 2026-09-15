@@ -97,6 +97,7 @@
   limits.forEach((limit, index) => {
     limit.input.addEventListener('focus', () => {
       if (restoring) return;
+      owner = index;
       if (narrow.matches) dismiss(); else open(index, false);
     });
     limit.input.addEventListener('input', () => {
@@ -114,7 +115,16 @@
     limit.input.addEventListener('keydown', event => {
       if (event.key === 'Tab') dismiss();
       if (event.key === 'ArrowDown') { event.preventDefault(); open(index, true); }
-      if (event.key === 'Enter') { event.preventDefault(); if (validate()) dismiss(true); }
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        if (!validate()) return;
+        dismiss();
+        // Follow the same left-to-right, top-to-bottom DOM order as Tab.
+        // Calendar return-focus state must not control manual-entry navigation.
+        const sequence = [...document.querySelector('form').querySelectorAll('input, button')]
+          .filter(element => !element.disabled && !element.hidden && !element.closest('[hidden]'));
+        sequence[sequence.indexOf(limit.input) + 1]?.focus();
+      }
       if (event.key === 'Escape') { validate(); dismiss(); }
     });
     limit.browse.addEventListener('click', () => {

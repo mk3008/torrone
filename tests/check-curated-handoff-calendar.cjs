@@ -29,6 +29,8 @@ function setup() {
     return section;
   });
   nodes['#issue-window'].children.push(...sections);
+  const search = new Element();
+  nodes.form.querySelectorAll = () => [...sections.flatMap(section => ['input','[data-action="erase"]','[data-action="browse"]'].map(key => section.selectors[key])), search];
   const popup = nodes['#date-browser'], options = nodes['#date-options'];
   popup.hidden = true;
   popup.children.push(options);
@@ -42,7 +44,7 @@ function setup() {
     matchMedia: () => ({ matches: true, addEventListener() {} }),
     queueMicrotask: fn => microtasks.push(fn), requestAnimationFrame: fn => frames.push(fn)
   });
-  return { doc, nodes, sections, popup, options, microtasks, frames, Element };
+  return { doc, nodes, sections, popup, options, microtasks, frames, Element, search };
 }
 const flush = queue => { while (queue.length) queue.shift()(); };
 for (const owner of [0,1]) {
@@ -83,3 +85,21 @@ for (const owner of [0,1]) {
   assert.equal(f.popup.hidden, true);
 }
 console.log('PASS: both calendar boundaries commit after focus transition; null destination, focus return, disabled dates, outside dismissal');
+
+// Manual entry must follow visual/DOM order, independent of the last calendar owner.
+for (const index of [0, 1]) {
+  const f = setup(), controls = f.sections[index].selectors;
+  f.sections[1-index].selectors['[data-action="browse"]'].fire('click');
+  controls.input.focus(); controls.input.fire('focus');
+  controls.input.value = '20260910';
+  controls.input.fire('keydown', { key: 'Enter', preventDefault() {} });
+  assert.equal(f.doc.activeElement, controls['[data-action="erase"]'], 'Enter moves right to visible Clear');
+  assert.equal(f.popup.hidden, true);
+  controls.input.focus(); controls.input.fire('focus'); controls.input.value = '';
+  controls.input.fire('keydown', { key: 'Enter', preventDefault() {} });
+  assert.equal(f.doc.activeElement, controls['[data-action="browse"]'], 'Blank input skips hidden Clear');
+  controls.input.focus(); controls.input.fire('focus'); controls.input.value = 'bad';
+  controls.input.fire('keydown', { key: 'Enter', preventDefault() {} });
+  assert.equal(f.doc.activeElement, controls.input, 'Invalid input keeps focus for recovery');
+}
+console.log('PASS: manual Enter follows left-to-right controls for either boundary regardless of prior calendar owner');

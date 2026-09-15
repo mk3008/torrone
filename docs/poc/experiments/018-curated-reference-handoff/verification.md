@@ -62,3 +62,13 @@ The owner reported that tapping a calendar day did not populate the input after 
 The dismissal handler now uses `FocusEvent.relatedTarget` when available. If the destination is absent, it checks after the focus transition on the next animation frame, instead of in a microtask. Calendar-internal focus movement no longer closes the calendar; leaving the owning control still does.
 
 `node tests/check-curated-handoff-calendar.cjs` failed on the previous code with `boundary 0: calendar closed before day click`, then passed after the fix. The test exercises the actual calendar handlers for both boundaries, single-boundary completion, null focus destinations, focus return, unavailable dates and real control exit. Existing entry-visibility, date and package checks also pass. The fixture models DOM event order; it does not establish real-device browser behavior. The owner's exact phone scenario still needs confirmation on the updated snapshot. The earlier isolated entry-visibility checks did not cover this calendar/dismissal interaction.
+
+## Follow-up: focus order and intermittent focus-ring clipping
+
+The owner reported that Enter in the latest-date field returned focus to the earliest calendar icon, and supplied `Screenshot_20260916_082752.jpg` showing a selected day's focus outline cut off on its right edge.
+
+The Enter defect was reproduced in the actual-handler event fixture: manual entry reused the last calendar owner when restoring focus. Manual focus now updates its boundary, and valid Enter advances through the visible form controls in DOM/visual order, matching Tab: input, Clear when visible, calendar action, then the next boundary or search control. Invalid input retains focus. Calendar completion still returns to the owning boundary as before. Tests cover both boundaries after operating the opposite calendar, visible/hidden Clear, and invalid recovery; they fail before the correction and pass afterward.
+
+For the supplied rendering symptom, date-cell focus outlines now draw inside the cell and above adjacent cells. This removes the external overlap that could hide part of the ring. This is a targeted CSS correction based on the screenshot; intermittent real-phone rendering has not been verified or declared fully resolved. Other unshown rendering failures are not assumed to share this cause.
+
+The calendar, manual-entry visibility, date arithmetic and packaging checks pass. Actual browser/phone verification remains pending; the prior evidence and limitations are retained.
