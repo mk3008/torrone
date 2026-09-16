@@ -29,7 +29,12 @@ npm test
 
 Playwright is a pinned, test-only dependency in this directory; the Reference remains buildless. The configuration serves only `review/references`. The workflow follows [Playwright's CI setup](https://playwright.dev/docs/ci-intro). Execution results belong to the exact PR commit's Actions check and its report artifact, not the presence of this test file.
 
-The active Work browser's Issue #5 local-preview URL-policy block remains unchanged; no local workaround is used. CI executes the regression suite in its own runner. Viewport resizing does not reproduce a phone's software keyboard, browser chrome, IME or embedded host: actual-device footer/results visibility with the keyboard open remains a human-review item. Passing native browser regressions does not approve this draft. At the modal document boundary, native traversal may visit browser chrome (the document loses focus or reports BODY as active) before re-entering; the keyboard test permits this single neutral step but still requires the next control to be Close/Select and rejects focus on background page controls. The first browser run exposed an overly strict immediate-wrap assertion, not a requested custom focus trap; native behavior remains unchanged.
+The active Work browser's Issue #5 local-preview URL-policy block remains unchanged; no local workaround is used. CI executes the regression suite in its own runner. Viewport resizing does not reproduce a phone's software keyboard, browser chrome, IME or embedded host: actual-device footer/results visibility with the keyboard open remains a human-review item. Passing native browser regressions does not approve this draft.
+
+### Native boundary evidence
+
+[CI diagnostic run](https://github.com/mk3008/torrone/actions/runs/35164264825) recorded actual active elements after repeated Tab operations. In these pinned headless engines, Chromium visits BODY/browser chrome before Close; WebKit also visits the dialog element; Firefox remains on Select at the forward boundary. Immediate wrapping is therefore not asserted as a universal native behavior. The regression asserts these observed boundaries, rejects unexpected background controls, and checks reverse traversal and Close reachability from the query on every desktop engine. No custom focus trap is introduced to satisfy a test assumption. This is environment-bounded evidence, not a new application-wide navigation policy.
+
 
 ## General policy finding
 

@@ -125,24 +125,36 @@ for (const activation of ['Enter', 'Space']) {
     await expect(c.cancel).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(c.confirm).toBeFocused();
-    // Record native document-boundary behavior without changing page focus.
-    for (let i = 0; i < 3; i++) {
+    // Observed native engine boundaries: Firefox stays at the last action;
+    // Chromium/WebKit visit browser chrome (WebKit also visits the dialog).
+    // Assert every step; never silently skip an unexpected page control.
+    if (info.project.name === 'firefox') {
       await page.keyboard.press('Tab');
-      console.log('boundary-forward', info.project.name, i, await page.evaluate(() => ({ focused: document.hasFocus(), active: document.activeElement.outerHTML.slice(0,250) })));
-      if (await c.close.evaluate(el => el === document.activeElement)) break;
+      await expect(c.confirm).toBeFocused();
+    } else {
+      const boundary = async (key, destination) => {
+        for (let i = 0; i < 3; i++) {
+          await page.keyboard.press(key);
+          if (await destination.evaluate(el => el === document.activeElement)) break;
+          await expect.poll(() => page.evaluate(() =>
+            document.activeElement === document.body ||
+            document.activeElement === document.getElementById('location-dialog')
+          )).toBe(true);
+        }
+        await expect(destination).toBeFocused();
+      };
+      await boundary('Tab', c.close);
+      await boundary('Shift+Tab', c.confirm);
     }
-    await expect(c.close).toBeFocused();
-    for (let i = 0; i < 3; i++) {
-      await page.keyboard.press('Shift+Tab');
-      console.log('boundary-reverse', info.project.name, i, await page.evaluate(() => ({ focused: document.hasFocus(), active: document.activeElement.outerHTML.slice(0,250) })));
-      if (await c.confirm.evaluate(el => el === document.activeElement)) break;
-    }
-    await expect(c.confirm).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(c.cancel).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(c.radio(records[1])).toBeFocused();
     await page.keyboard.press('Shift+Tab');
+    await expect(c.query).toBeFocused();
+    await page.keyboard.press('Shift+Tab');
+    await expect(c.close).toBeFocused();
+    await page.keyboard.press('Tab');
     await expect(c.query).toBeFocused();
     await page.keyboard.press('Tab');
     await page.keyboard.press('Tab');
