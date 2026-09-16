@@ -1,0 +1,796 @@
+[
+  {
+    "name": "D00 initial",
+    "time": "2026-09-16T00:35:24.571Z",
+    "state": {
+      "focus": {
+        "id": "",
+        "label": null,
+        "tag": "BODY"
+      },
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "viewport": {
+        "height": 936,
+        "width": 1363
+      }
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\"\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\"\n  - button \"Open calendar for end date\":\n  - paragraph: No range selected."
+  },
+  {
+    "name": "D01 start focus",
+    "time": "2026-09-16T00:35:24.856Z",
+    "state": {
+      "focus": {
+        "id": "range-start-input",
+        "label": null,
+        "tag": "INPUT"
+      },
+      "inputs": [
+        {
+          "expanded": "true",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "viewport": {
+        "height": 936,
+        "width": 1363
+      }
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [expanded] [active]\n  - button \"Close calendar for start date\" [expanded]:\n  - generic: to\n  - generic: End date\n  - combobox \"End date\"\n  - button \"Open calendar for end date\":\n  - dialog \"Choose start date\":\n    - button \"Previous year\":\n    - button \"Previous month\":\n    - heading \"August 2026\" [level=3]\n    - button \"Next month\":\n    - button \"Next year\":\n    - button \"Close calendar\":\n    - paragraph: Choose start date.\n    - grid \"August 2026\":\n      - rowgroup:\n        - row \"Su Mo Tu We Th Fr Sa\":\n          - columnheader \"Su\"\n          - columnheader \"Mo\"\n          - columnheader \"Tu\"\n          - columnheader \"We\"\n          - columnheader \"Th\"\n          - columnheader \"Fr\"\n          - columnheader \"Sa\"\n      - rowgroup:\n        - row \"July 26, 2026 July 27, 2026 July 28, 2026 July 29, 2026 July 30, 2026 July 31, 2026 August 1, 2026\":\n          - gridcell \"July 26, 2026\":\n            - button \"July 26, 2026\": \"26\"\n          - gridcell \"July 27, 2026\":\n            - button \"July 27, 2026\": \"27\"\n          - gridcell \"July 28, 2026\":\n            - button \"July 28, 2026\": \"28\"\n          - gridcell \"July 29, 2026\":\n            - button \"July 29, 2026\": \"29\"\n          - gridcell \"July 30, 2026\":\n            - button \"July 30, 2026\": \"30\"\n          - gridcell \"July 31, 2026\":\n            - button \"July 31, 2026\": \"31\"\n          - gridcell \"August 1, 2026\":\n            - button \"August 1, 2026\": \"1\"\n        - row \"August 2, 2026 August 3, 2026 August 4, 2026 August 5, 2026 August 6, 2026 August 7, 2026 August 8, 2026\":\n          - gridcell \"August 2, 2026\":\n            - button \"August 2, 2026\": \"2\"\n          - gridcell \"August 3, 2026\":\n            - button \"August 3, 2026\": \"3\"\n          - gridcell \"August 4, 2026\":\n            - button \"August 4, 2026\": \"4\"\n          - gridcell \"August 5, 2026\":\n            - button \"August 5, 2026\": \"5\"\n          - gridcell \"August 6, 2026\":\n            - button \"August 6, 2026\": \"6\"\n          - gridcell \"August 7, 2026\":\n            - button \"August 7, 2026\": \"7\"\n          - gridcell \"August 8, 2026\":\n            - button \"August 8, 2026\": \"8\"\n        - row \"August 9, 2026 August 10, 2026 August 11, 2026 August 12, 2026 August 13, 2026 August 14, 2026, today August 15, 2026, unavailable, future date\":\n          - gridcell \"August 9, 2026\":\n            - button \"August 9, 2026\": \"9\"\n          - gridcell \"August 10, 2026\":\n            - button \"August 10, 2026\": \"10\"\n          - gridcell \"August 11, 2026\":\n            - button \"August 11, 2026\": \"11\"\n          - gridcell \"August 12, 2026\":\n            - button \"August 12, 2026\": \"12\"\n          - gridcell \"August 13, 2026\":\n            - button \"August 13, 2026\": \"13\"\n          - gridcell \"August 14, 2026, today\":\n            - button \"August 14, 2026, today\": \"14\"\n          - gridcell \"August 15, 2026, unavailable, future date\":\n            - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n        - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n          - gridcell \"August 16, 2026, unavailable, future date\":\n            - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n          - gridcell \"August 17, 2026, unavailable, future date\":\n            - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n          - gridcell \"August 18, 2026, unavailable, future date\":\n            - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n          - gridcell \"August 19, 2026, unavailable, future date\":\n            - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n          - gridcell \"August 20, 2026, unavailable, future date\":\n            - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n          - gridcell \"August 21, 2026, unavailable, future date\":\n            - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n          - gridcell \"August 22, 2026, unavailable, future date\":\n            - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n        - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n          - gridcell \"August 23, 2026, unavailable, future date\":\n            - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n          - gridcell \"August 24, 2026, unavailable, future date\":\n            - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n          - gridcell \"August 25, 2026, unavailable, future date\":\n            - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n          - gridcell \"August 26, 2026, unavailable, future date\":\n            - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n          - gridcell \"August 27, 2026, unavailable, future date\":\n            - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n          - gridcell \"August 28, 2026, unavailable, future date\":\n            - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n          - gridcell \"August 29, 2026, unavailable, future date\":\n            - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n        - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n          - gridcell \"August 30, 2026, unavailable, future date\":\n            - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n          - gridcell \"August 31, 2026, unavailable, future date\":\n            - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n          - gridcell \"September 1, 2026, unavailable, future date\":\n            - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n          - gridcell \"September 2, 2026, unavailable, future date\":\n            - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n          - gridcell \"September 3, 2026, unavailable, future date\":\n            - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n          - gridcell \"September 4, 2026, unavailable, future date\":\n            - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n          - gridcell \"September 5, 2026, unavailable, future date\":\n            - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n    - paragraph: Available through 2026-08-14.\n    - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n  - paragraph: No range selected."
+  },
+  {
+    "name": "D02 click start August 10",
+    "time": "2026-09-16T00:35:38.184Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-10\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\"\n  - button \"Open calendar for end date\":\n  - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "D03 focus end after start",
+    "time": "2026-09-16T00:35:38.485Z",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "true",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\": 2026-08-10\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [expanded] [active]\n  - button \"Close calendar for end date\" [expanded]:\n  - dialog \"Choose end date\":\n    - button \"Previous year\":\n    - button \"Previous month\":\n    - heading \"August 2026\" [level=3]\n    - button \"Next month\":\n    - button \"Next year\":\n    - button \"Close calendar\":\n    - paragraph: Choose end date.\n    - grid \"August 2026\":\n      - rowgroup:\n        - row \"Su Mo Tu We Th Fr Sa\":\n          - columnheader \"Su\"\n          - columnheader \"Mo\"\n          - columnheader \"Tu\"\n          - columnheader \"We\"\n          - columnheader \"Th\"\n          - columnheader \"Fr\"\n          - columnheader \"Sa\"\n      - rowgroup:\n        - row \"July 26, 2026, unavailable, before the current start date July 27, 2026, unavailable, before the current start date July 28, 2026, unavailable, before the current start date July 29, 2026, unavailable, before the current start date July 30, 2026, unavailable, before the current start date July 31, 2026, unavailable, before the current start date August 1, 2026, unavailable, before the current start date\":\n          - gridcell \"July 26, 2026, unavailable, before the current start date\":\n            - button \"July 26, 2026, unavailable, before the current start date\" [disabled]: \"26\"\n          - gridcell \"July 27, 2026, unavailable, before the current start date\":\n            - button \"July 27, 2026, unavailable, before the current start date\" [disabled]: \"27\"\n          - gridcell \"July 28, 2026, unavailable, before the current start date\":\n            - button \"July 28, 2026, unavailable, before the current start date\" [disabled]: \"28\"\n          - gridcell \"July 29, 2026, unavailable, before the current start date\":\n            - button \"July 29, 2026, unavailable, before the current start date\" [disabled]: \"29\"\n          - gridcell \"July 30, 2026, unavailable, before the current start date\":\n            - button \"July 30, 2026, unavailable, before the current start date\" [disabled]: \"30\"\n          - gridcell \"July 31, 2026, unavailable, before the current start date\":\n            - button \"July 31, 2026, unavailable, before the current start date\" [disabled]: \"31\"\n          - gridcell \"August 1, 2026, unavailable, before the current start date\":\n            - button \"August 1, 2026, unavailable, before the current start date\" [disabled]: \"1\"\n        - row \"August 2, 2026, unavailable, before the current start date August 3, 2026, unavailable, before the current start date August 4, 2026, unavailable, before the current start date August 5, 2026, unavailable, before the current start date August 6, 2026, unavailable, before the current start date August 7, 2026, unavailable, before the current start date August 8, 2026, unavailable, before the current start date\":\n          - gridcell \"August 2, 2026, unavailable, before the current start date\":\n            - button \"August 2, 2026, unavailable, before the current start date\" [disabled]: \"2\"\n          - gridcell \"August 3, 2026, unavailable, before the current start date\":\n            - button \"August 3, 2026, unavailable, before the current start date\" [disabled]: \"3\"\n          - gridcell \"August 4, 2026, unavailable, before the current start date\":\n            - button \"August 4, 2026, unavailable, before the current start date\" [disabled]: \"4\"\n          - gridcell \"August 5, 2026, unavailable, before the current start date\":\n            - button \"August 5, 2026, unavailable, before the current start date\" [disabled]: \"5\"\n          - gridcell \"August 6, 2026, unavailable, before the current start date\":\n            - button \"August 6, 2026, unavailable, before the current start date\" [disabled]: \"6\"\n          - gridcell \"August 7, 2026, unavailable, before the current start date\":\n            - button \"August 7, 2026, unavailable, before the current start date\" [disabled]: \"7\"\n          - gridcell \"August 8, 2026, unavailable, before the current start date\":\n            - button \"August 8, 2026, unavailable, before the current start date\" [disabled]: \"8\"\n        - row \"August 9, 2026, unavailable, before the current start date August 10, 2026, range start August 11, 2026 August 12, 2026 August 13, 2026 August 14, 2026, today August 15, 2026, unavailable, future date\":\n          - gridcell \"August 9, 2026, unavailable, before the current start date\":\n            - button \"August 9, 2026, unavailable, before the current start date\" [disabled]: \"9\"\n          - gridcell \"August 10, 2026, range start\":\n            - button \"August 10, 2026, range start\" [pressed]: \"10\"\n          - gridcell \"August 11, 2026\":\n            - button \"August 11, 2026\": \"11\"\n          - gridcell \"August 12, 2026\":\n            - button \"August 12, 2026\": \"12\"\n          - gridcell \"August 13, 2026\":\n            - button \"August 13, 2026\": \"13\"\n          - gridcell \"August 14, 2026, today\":\n            - button \"August 14, 2026, today\": \"14\"\n          - gridcell \"August 15, 2026, unavailable, future date\":\n            - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n        - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n          - gridcell \"August 16, 2026, unavailable, future date\":\n            - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n          - gridcell \"August 17, 2026, unavailable, future date\":\n            - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n          - gridcell \"August 18, 2026, unavailable, future date\":\n            - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n          - gridcell \"August 19, 2026, unavailable, future date\":\n            - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n          - gridcell \"August 20, 2026, unavailable, future date\":\n            - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n          - gridcell \"August 21, 2026, unavailable, future date\":\n            - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n          - gridcell \"August 22, 2026, unavailable, future date\":\n            - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n        - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n          - gridcell \"August 23, 2026, unavailable, future date\":\n            - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n          - gridcell \"August 24, 2026, unavailable, future date\":\n            - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n          - gridcell \"August 25, 2026, unavailable, future date\":\n            - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n          - gridcell \"August 26, 2026, unavailable, future date\":\n            - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n          - gridcell \"August 27, 2026, unavailable, future date\":\n            - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n          - gridcell \"August 28, 2026, unavailable, future date\":\n            - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n          - gridcell \"August 29, 2026, unavailable, future date\":\n            - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n        - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n          - gridcell \"August 30, 2026, unavailable, future date\":\n            - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n          - gridcell \"August 31, 2026, unavailable, future date\":\n            - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n          - gridcell \"September 1, 2026, unavailable, future date\":\n            - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n          - gridcell \"September 2, 2026, unavailable, future date\":\n            - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n          - gridcell \"September 3, 2026, unavailable, future date\":\n            - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n          - gridcell \"September 4, 2026, unavailable, future date\":\n            - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n          - gridcell \"September 5, 2026, unavailable, future date\":\n            - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n    - paragraph: \"Available dates: 2026-08-10 to 2026-08-14.\"\n    - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n  - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "D04 complete end August 12",
+    "time": "2026-09-16T00:35:45.781Z",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-12"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\": 2026-08-10\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [active]: 2026-08-12\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-10 through 2026-08-12.\""
+  },
+  {
+    "name": "D05 impossible start date Enter",
+    "time": "2026-09-16T00:35:45.843Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "true",
+          "id": "range-start-input",
+          "invalid": "true",
+          "value": "20260230"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-12"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [expanded] [active]: \"20260230\"\n  - button \"Clear start date\":\n  - button \"Close calendar for start date\" [expanded]:\n  - alert: Enter a real date as yyyy-mm-dd or yyyymmdd.\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-12\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - dialog \"Choose start date\":\n    - button \"Previous year\":\n    - button \"Previous month\":\n    - heading \"August 2026\" [level=3]\n    - button \"Next month\":\n    - button \"Next year\":\n    - button \"Close calendar\":\n    - paragraph: Choose start date.\n    - grid \"August 2026\":\n      - rowgroup:\n        - row \"Su Mo Tu We Th Fr Sa\":\n          - columnheader \"Su\"\n          - columnheader \"Mo\"\n          - columnheader \"Tu\"\n          - columnheader \"We\"\n          - columnheader \"Th\"\n          - columnheader \"Fr\"\n          - columnheader \"Sa\"\n      - rowgroup:\n        - row \"July 26, 2026 July 27, 2026 July 28, 2026 July 29, 2026 July 30, 2026 July 31, 2026 August 1, 2026\":\n          - gridcell \"July 26, 2026\":\n            - button \"July 26, 2026\": \"26\"\n          - gridcell \"July 27, 2026\":\n            - button \"July 27, 2026\": \"27\"\n          - gridcell \"July 28, 2026\":\n            - button \"July 28, 2026\": \"28\"\n          - gridcell \"July 29, 2026\":\n            - button \"July 29, 2026\": \"29\"\n          - gridcell \"July 30, 2026\":\n            - button \"July 30, 2026\": \"30\"\n          - gridcell \"July 31, 2026\":\n            - button \"July 31, 2026\": \"31\"\n          - gridcell \"August 1, 2026\":\n            - button \"August 1, 2026\": \"1\"\n        - row \"August 2, 2026 August 3, 2026 August 4, 2026 August 5, 2026 August 6, 2026 August 7, 2026 August 8, 2026\":\n          - gridcell \"August 2, 2026\":\n            - button \"August 2, 2026\": \"2\"\n          - gridcell \"August 3, 2026\":\n            - button \"August 3, 2026\": \"3\"\n          - gridcell \"August 4, 2026\":\n            - button \"August 4, 2026\": \"4\"\n          - gridcell \"August 5, 2026\":\n            - button \"August 5, 2026\": \"5\"\n          - gridcell \"August 6, 2026\":\n            - button \"August 6, 2026\": \"6\"\n          - gridcell \"August 7, 2026\":\n            - button \"August 7, 2026\": \"7\"\n          - gridcell \"August 8, 2026\":\n            - button \"August 8, 2026\": \"8\"\n        - row \"August 9, 2026 August 10, 2026 August 11, 2026 August 12, 2026, range end August 13, 2026, unavailable, after the current end date August 14, 2026, today, unavailable, after the current end date August 15, 2026, unavailable, future date\":\n          - gridcell \"August 9, 2026\":\n            - button \"August 9, 2026\": \"9\"\n          - gridcell \"August 10, 2026\":\n            - button \"August 10, 2026\": \"10\"\n          - gridcell \"August 11, 2026\":\n            - button \"August 11, 2026\": \"11\"\n          - gridcell \"August 12, 2026, range end\":\n            - button \"August 12, 2026, range end\" [pressed]: \"12\"\n          - gridcell \"August 13, 2026, unavailable, after the current end date\":\n            - button \"August 13, 2026, unavailable, after the current end date\" [disabled]: \"13\"\n          - gridcell \"August 14, 2026, today, unavailable, after the current end date\":\n            - button \"August 14, 2026, today, unavailable, after the current end date\" [disabled]: \"14\"\n          - gridcell \"August 15, 2026, unavailable, future date\":\n            - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n        - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n          - gridcell \"August 16, 2026, unavailable, future date\":\n            - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n          - gridcell \"August 17, 2026, unavailable, future date\":\n            - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n          - gridcell \"August 18, 2026, unavailable, future date\":\n            - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n          - gridcell \"August 19, 2026, unavailable, future date\":\n            - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n          - gridcell \"August 20, 2026, unavailable, future date\":\n            - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n          - gridcell \"August 21, 2026, unavailable, future date\":\n            - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n          - gridcell \"August 22, 2026, unavailable, future date\":\n            - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n        - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n          - gridcell \"August 23, 2026, unavailable, future date\":\n            - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n          - gridcell \"August 24, 2026, unavailable, future date\":\n            - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n          - gridcell \"August 25, 2026, unavailable, future date\":\n            - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n          - gridcell \"August 26, 2026, unavailable, future date\":\n            - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n          - gridcell \"August 27, 2026, unavailable, future date\":\n            - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n          - gridcell \"August 28, 2026, unavailable, future date\":\n            - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n          - gridcell \"August 29, 2026, unavailable, future date\":\n            - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n        - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n          - gridcell \"August 30, 2026, unavailable, future date\":\n            - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n          - gridcell \"August 31, 2026, unavailable, future date\":\n            - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n          - gridcell \"September 1, 2026, unavailable, future date\":\n            - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n          - gridcell \"September 2, 2026, unavailable, future date\":\n            - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n          - gridcell \"September 3, 2026, unavailable, future date\":\n            - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n          - gridcell \"September 4, 2026, unavailable, future date\":\n            - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n          - gridcell \"September 5, 2026, unavailable, future date\":\n            - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n    - paragraph: Available through 2026-08-12.\n    - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n  - paragraph: \"End date selected: 2026-08-12. Start date is not selected.\""
+  },
+  {
+    "name": "D06 repair start",
+    "time": "2026-09-16T00:35:57.727Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-12"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-10\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-12\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-10 through 2026-08-12.\""
+  },
+  {
+    "name": "D07 reversed range end August 8",
+    "time": "2026-09-16T00:35:57.793Z",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "true",
+          "id": "range-end-input",
+          "invalid": "true",
+          "value": "20260808"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\": 2026-08-10\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [expanded] [active]: \"20260808\"\n  - button \"Clear end date\":\n  - button \"Close calendar for end date\" [expanded]:\n  - alert: End date must be on or after start date.\n  - dialog \"Choose end date\":\n    - button \"Previous year\":\n    - button \"Previous month\":\n    - heading \"August 2026\" [level=3]\n    - button \"Next month\":\n    - button \"Next year\":\n    - button \"Close calendar\":\n    - paragraph: Choose end date.\n    - grid \"August 2026\":\n      - rowgroup:\n        - row \"Su Mo Tu We Th Fr Sa\":\n          - columnheader \"Su\"\n          - columnheader \"Mo\"\n          - columnheader \"Tu\"\n          - columnheader \"We\"\n          - columnheader \"Th\"\n          - columnheader \"Fr\"\n          - columnheader \"Sa\"\n      - rowgroup:\n        - row \"July 26, 2026, unavailable, before the current start date July 27, 2026, unavailable, before the current start date July 28, 2026, unavailable, before the current start date July 29, 2026, unavailable, before the current start date July 30, 2026, unavailable, before the current start date July 31, 2026, unavailable, before the current start date August 1, 2026, unavailable, before the current start date\":\n          - gridcell \"July 26, 2026, unavailable, before the current start date\":\n            - button \"July 26, 2026, unavailable, before the current start date\" [disabled]: \"26\"\n          - gridcell \"July 27, 2026, unavailable, before the current start date\":\n            - button \"July 27, 2026, unavailable, before the current start date\" [disabled]: \"27\"\n          - gridcell \"July 28, 2026, unavailable, before the current start date\":\n            - button \"July 28, 2026, unavailable, before the current start date\" [disabled]: \"28\"\n          - gridcell \"July 29, 2026, unavailable, before the current start date\":\n            - button \"July 29, 2026, unavailable, before the current start date\" [disabled]: \"29\"\n          - gridcell \"July 30, 2026, unavailable, before the current start date\":\n            - button \"July 30, 2026, unavailable, before the current start date\" [disabled]: \"30\"\n          - gridcell \"July 31, 2026, unavailable, before the current start date\":\n            - button \"July 31, 2026, unavailable, before the current start date\" [disabled]: \"31\"\n          - gridcell \"August 1, 2026, unavailable, before the current start date\":\n            - button \"August 1, 2026, unavailable, before the current start date\" [disabled]: \"1\"\n        - row \"August 2, 2026, unavailable, before the current start date August 3, 2026, unavailable, before the current start date August 4, 2026, unavailable, before the current start date August 5, 2026, unavailable, before the current start date August 6, 2026, unavailable, before the current start date August 7, 2026, unavailable, before the current start date August 8, 2026, unavailable, before the current start date\":\n          - gridcell \"August 2, 2026, unavailable, before the current start date\":\n            - button \"August 2, 2026, unavailable, before the current start date\" [disabled]: \"2\"\n          - gridcell \"August 3, 2026, unavailable, before the current start date\":\n            - button \"August 3, 2026, unavailable, before the current start date\" [disabled]: \"3\"\n          - gridcell \"August 4, 2026, unavailable, before the current start date\":\n            - button \"August 4, 2026, unavailable, before the current start date\" [disabled]: \"4\"\n          - gridcell \"August 5, 2026, unavailable, before the current start date\":\n            - button \"August 5, 2026, unavailable, before the current start date\" [disabled]: \"5\"\n          - gridcell \"August 6, 2026, unavailable, before the current start date\":\n            - button \"August 6, 2026, unavailable, before the current start date\" [disabled]: \"6\"\n          - gridcell \"August 7, 2026, unavailable, before the current start date\":\n            - button \"August 7, 2026, unavailable, before the current start date\" [disabled]: \"7\"\n          - gridcell \"August 8, 2026, unavailable, before the current start date\":\n            - button \"August 8, 2026, unavailable, before the current start date\" [disabled]: \"8\"\n        - row \"August 9, 2026, unavailable, before the current start date August 10, 2026, range start August 11, 2026 August 12, 2026 August 13, 2026 August 14, 2026, today August 15, 2026, unavailable, future date\":\n          - gridcell \"August 9, 2026, unavailable, before the current start date\":\n            - button \"August 9, 2026, unavailable, before the current start date\" [disabled]: \"9\"\n          - gridcell \"August 10, 2026, range start\":\n            - button \"August 10, 2026, range start\" [pressed]: \"10\"\n          - gridcell \"August 11, 2026\":\n            - button \"August 11, 2026\": \"11\"\n          - gridcell \"August 12, 2026\":\n            - button \"August 12, 2026\": \"12\"\n          - gridcell \"August 13, 2026\":\n            - button \"August 13, 2026\": \"13\"\n          - gridcell \"August 14, 2026, today\":\n            - button \"August 14, 2026, today\": \"14\"\n          - gridcell \"August 15, 2026, unavailable, future date\":\n            - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n        - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n          - gridcell \"August 16, 2026, unavailable, future date\":\n            - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n          - gridcell \"August 17, 2026, unavailable, future date\":\n            - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n          - gridcell \"August 18, 2026, unavailable, future date\":\n            - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n          - gridcell \"August 19, 2026, unavailable, future date\":\n            - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n          - gridcell \"August 20, 2026, unavailable, future date\":\n            - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n          - gridcell \"August 21, 2026, unavailable, future date\":\n            - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n          - gridcell \"August 22, 2026, unavailable, future date\":\n            - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n        - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n          - gridcell \"August 23, 2026, unavailable, future date\":\n            - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n          - gridcell \"August 24, 2026, unavailable, future date\":\n            - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n          - gridcell \"August 25, 2026, unavailable, future date\":\n            - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n          - gridcell \"August 26, 2026, unavailable, future date\":\n            - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n          - gridcell \"August 27, 2026, unavailable, future date\":\n            - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n          - gridcell \"August 28, 2026, unavailable, future date\":\n            - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n          - gridcell \"August 29, 2026, unavailable, future date\":\n            - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n        - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n          - gridcell \"August 30, 2026, unavailable, future date\":\n            - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n          - gridcell \"August 31, 2026, unavailable, future date\":\n            - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n          - gridcell \"September 1, 2026, unavailable, future date\":\n            - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n          - gridcell \"September 2, 2026, unavailable, future date\":\n            - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n          - gridcell \"September 3, 2026, unavailable, future date\":\n            - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n          - gridcell \"September 4, 2026, unavailable, future date\":\n            - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n          - gridcell \"September 5, 2026, unavailable, future date\":\n            - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n    - paragraph: \"Available dates: 2026-08-10 to 2026-08-14.\"\n    - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n  - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "D08 repair range by changing opposite boundary to August 6",
+    "time": "2026-09-16T00:35:57.835Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-06"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "true",
+          "value": "20260808"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-06\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": \"20260808\"\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - alert: End date must be on or after start date.\n  - paragraph: \"Start date selected: 2026-08-06. End date is not selected.\""
+  },
+  {
+    "name": "D09 recommit unchanged end recovers",
+    "time": "2026-09-16T00:36:06.640Z",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-06"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\": 2026-08-06\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [active]: 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-06 through 2026-08-08.\""
+  },
+  {
+    "name": "D10 clear start leaves end-only",
+    "time": "2026-09-16T00:36:06.951Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"End date selected: 2026-08-08. Start date is not selected.\""
+  },
+  {
+    "name": "D11 Tab start to end",
+    "time": "2026-09-16T00:36:28.185Z",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "true",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\"\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [expanded] [active]: 2026-08-08\n  - button \"Clear end date\":\n  - button \"Close calendar for end date\" [expanded]:\n  - dialog \"Choose end date\":\n    - button \"Previous year\":\n    - button \"Previous month\":\n    - heading \"August 2026\" [level=3]\n    - button \"Next month\":\n    - button \"Next year\":\n    - button \"Close calendar\":\n    - paragraph: Choose end date.\n    - grid \"August 2026\":\n      - rowgroup:\n        - row \"Su Mo Tu We Th Fr Sa\":\n          - columnheader \"Su\"\n          - columnheader \"Mo\"\n          - columnheader \"Tu\"\n          - columnheader \"We\"\n          - columnheader \"Th\"\n          - columnheader \"Fr\"\n          - columnheader \"Sa\"\n      - rowgroup:\n        - row \"July 26, 2026 July 27, 2026 July 28, 2026 July 29, 2026 July 30, 2026 July 31, 2026 August 1, 2026\":\n          - gridcell \"July 26, 2026\":\n            - button \"July 26, 2026\": \"26\"\n          - gridcell \"July 27, 2026\":\n            - button \"July 27, 2026\": \"27\"\n          - gridcell \"July 28, 2026\":\n            - button \"July 28, 2026\": \"28\"\n          - gridcell \"July 29, 2026\":\n            - button \"July 29, 2026\": \"29\"\n          - gridcell \"July 30, 2026\":\n            - button \"July 30, 2026\": \"30\"\n          - gridcell \"July 31, 2026\":\n            - button \"July 31, 2026\": \"31\"\n          - gridcell \"August 1, 2026\":\n            - button \"August 1, 2026\": \"1\"\n        - row \"August 2, 2026 August 3, 2026 August 4, 2026 August 5, 2026 August 6, 2026 August 7, 2026 August 8, 2026, range end\":\n          - gridcell \"August 2, 2026\":\n            - button \"August 2, 2026\": \"2\"\n          - gridcell \"August 3, 2026\":\n            - button \"August 3, 2026\": \"3\"\n          - gridcell \"August 4, 2026\":\n            - button \"August 4, 2026\": \"4\"\n          - gridcell \"August 5, 2026\":\n            - button \"August 5, 2026\": \"5\"\n          - gridcell \"August 6, 2026\":\n            - button \"August 6, 2026\": \"6\"\n          - gridcell \"August 7, 2026\":\n            - button \"August 7, 2026\": \"7\"\n          - gridcell \"August 8, 2026, range end\":\n            - button \"August 8, 2026, range end\" [pressed]: \"8\"\n        - row \"August 9, 2026 August 10, 2026 August 11, 2026 August 12, 2026 August 13, 2026 August 14, 2026, today August 15, 2026, unavailable, future date\":\n          - gridcell \"August 9, 2026\":\n            - button \"August 9, 2026\": \"9\"\n          - gridcell \"August 10, 2026\":\n            - button \"August 10, 2026\": \"10\"\n          - gridcell \"August 11, 2026\":\n            - button \"August 11, 2026\": \"11\"\n          - gridcell \"August 12, 2026\":\n            - button \"August 12, 2026\": \"12\"\n          - gridcell \"August 13, 2026\":\n            - button \"August 13, 2026\": \"13\"\n          - gridcell \"August 14, 2026, today\":\n            - button \"August 14, 2026, today\": \"14\"\n          - gridcell \"August 15, 2026, unavailable, future date\":\n            - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n        - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n          - gridcell \"August 16, 2026, unavailable, future date\":\n            - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n          - gridcell \"August 17, 2026, unavailable, future date\":\n            - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n          - gridcell \"August 18, 2026, unavailable, future date\":\n            - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n          - gridcell \"August 19, 2026, unavailable, future date\":\n            - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n          - gridcell \"August 20, 2026, unavailable, future date\":\n            - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n          - gridcell \"August 21, 2026, unavailable, future date\":\n            - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n          - gridcell \"August 22, 2026, unavailable, future date\":\n            - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n        - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n          - gridcell \"August 23, 2026, unavailable, future date\":\n            - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n          - gridcell \"August 24, 2026, unavailable, future date\":\n            - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n          - gridcell \"August 25, 2026, unavailable, future date\":\n            - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n          - gridcell \"August 26, 2026, unavailable, future date\":\n            - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n          - gridcell \"August 27, 2026, unavailable, future date\":\n            - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n          - gridcell \"August 28, 2026, unavailable, future date\":\n            - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n          - gridcell \"August 29, 2026, unavailable, future date\":\n            - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n        - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n          - gridcell \"August 30, 2026, unavailable, future date\":\n            - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n          - gridcell \"August 31, 2026, unavailable, future date\":\n            - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n          - gridcell \"September 1, 2026, unavailable, future date\":\n            - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n          - gridcell \"September 2, 2026, unavailable, future date\":\n            - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n          - gridcell \"September 3, 2026, unavailable, future date\":\n            - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n          - gridcell \"September 4, 2026, unavailable, future date\":\n            - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n          - gridcell \"September 5, 2026, unavailable, future date\":\n            - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n    - paragraph: Available through 2026-08-14.\n    - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n  - paragraph: \"End date selected: 2026-08-08. Start date is not selected.\""
+  },
+  {
+    "name": "D12 reverse Tab end to start",
+    "time": "2026-09-16T00:36:28.219Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"End date selected: 2026-08-08. Start date is not selected.\""
+  },
+  {
+    "name": "D13 enter calendar with ArrowDown",
+    "time": "2026-09-16T00:36:28.254Z",
+    "state": {
+      "focus": "August 8, 2026, range end",
+      "inputs": [
+        {
+          "expanded": "true",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [expanded]\n  - button \"Close calendar for start date\" [expanded]:\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - dialog \"Choose start date\":\n    - button \"Previous year\":\n    - button \"Previous month\":\n    - heading \"August 2026\" [level=3]\n    - button \"Next month\":\n    - button \"Next year\":\n    - button \"Close calendar\":\n    - paragraph: Choose start date.\n    - grid \"August 2026\":\n      - rowgroup:\n        - row \"Su Mo Tu We Th Fr Sa\":\n          - columnheader \"Su\"\n          - columnheader \"Mo\"\n          - columnheader \"Tu\"\n          - columnheader \"We\"\n          - columnheader \"Th\"\n          - columnheader \"Fr\"\n          - columnheader \"Sa\"\n      - rowgroup:\n        - row \"July 26, 2026 July 27, 2026 July 28, 2026 July 29, 2026 July 30, 2026 July 31, 2026 August 1, 2026\":\n          - gridcell \"July 26, 2026\":\n            - button \"July 26, 2026\": \"26\"\n          - gridcell \"July 27, 2026\":\n            - button \"July 27, 2026\": \"27\"\n          - gridcell \"July 28, 2026\":\n            - button \"July 28, 2026\": \"28\"\n          - gridcell \"July 29, 2026\":\n            - button \"July 29, 2026\": \"29\"\n          - gridcell \"July 30, 2026\":\n            - button \"July 30, 2026\": \"30\"\n          - gridcell \"July 31, 2026\":\n            - button \"July 31, 2026\": \"31\"\n          - gridcell \"August 1, 2026\":\n            - button \"August 1, 2026\": \"1\"\n        - row \"August 2, 2026 August 3, 2026 August 4, 2026 August 5, 2026 August 6, 2026 August 7, 2026 August 8, 2026, range end\":\n          - gridcell \"August 2, 2026\":\n            - button \"August 2, 2026\": \"2\"\n          - gridcell \"August 3, 2026\":\n            - button \"August 3, 2026\": \"3\"\n          - gridcell \"August 4, 2026\":\n            - button \"August 4, 2026\": \"4\"\n          - gridcell \"August 5, 2026\":\n            - button \"August 5, 2026\": \"5\"\n          - gridcell \"August 6, 2026\":\n            - button \"August 6, 2026\": \"6\"\n          - gridcell \"August 7, 2026\":\n            - button \"August 7, 2026\": \"7\"\n          - gridcell \"August 8, 2026, range end\":\n            - button \"August 8, 2026, range end\" [active] [pressed]: \"8\"\n        - row \"August 9, 2026, unavailable, after the current end date August 10, 2026, unavailable, after the current end date August 11, 2026, unavailable, after the current end date August 12, 2026, unavailable, after the current end date August 13, 2026, unavailable, after the current end date August 14, 2026, today, unavailable, after the current end date August 15, 2026, unavailable, future date\":\n          - gridcell \"August 9, 2026, unavailable, after the current end date\":\n            - button \"August 9, 2026, unavailable, after the current end date\" [disabled]: \"9\"\n          - gridcell \"August 10, 2026, unavailable, after the current end date\":\n            - button \"August 10, 2026, unavailable, after the current end date\" [disabled]: \"10\"\n          - gridcell \"August 11, 2026, unavailable, after the current end date\":\n            - button \"August 11, 2026, unavailable, after the current end date\" [disabled]: \"11\"\n          - gridcell \"August 12, 2026, unavailable, after the current end date\":\n            - button \"August 12, 2026, unavailable, after the current end date\" [disabled]: \"12\"\n          - gridcell \"August 13, 2026, unavailable, after the current end date\":\n            - button \"August 13, 2026, unavailable, after the current end date\" [disabled]: \"13\"\n          - gridcell \"August 14, 2026, today, unavailable, after the current end date\":\n            - button \"August 14, 2026, today, unavailable, after the current end date\" [disabled]: \"14\"\n          - gridcell \"August 15, 2026, unavailable, future date\":\n            - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n        - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n          - gridcell \"August 16, 2026, unavailable, future date\":\n            - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n          - gridcell \"August 17, 2026, unavailable, future date\":\n            - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n          - gridcell \"August 18, 2026, unavailable, future date\":\n            - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n          - gridcell \"August 19, 2026, unavailable, future date\":\n            - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n          - gridcell \"August 20, 2026, unavailable, future date\":\n            - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n          - gridcell \"August 21, 2026, unavailable, future date\":\n            - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n          - gridcell \"August 22, 2026, unavailable, future date\":\n            - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n        - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n          - gridcell \"August 23, 2026, unavailable, future date\":\n            - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n          - gridcell \"August 24, 2026, unavailable, future date\":\n            - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n          - gridcell \"August 25, 2026, unavailable, future date\":\n            - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n          - gridcell \"August 26, 2026, unavailable, future date\":\n            - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n          - gridcell \"August 27, 2026, unavailable, future date\":\n            - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n          - gridcell \"August 28, 2026, unavailable, future date\":\n            - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n          - gridcell \"August 29, 2026, unavailable, future date\":\n            - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n        - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n          - gridcell \"August 30, 2026, unavailable, future date\":\n            - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n          - gridcell \"August 31, 2026, unavailable, future date\":\n            - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n          - gridcell \"September 1, 2026, unavailable, future date\":\n            - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n          - gridcell \"September 2, 2026, unavailable, future date\":\n            - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n          - gridcell \"September 3, 2026, unavailable, future date\":\n            - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n          - gridcell \"September 4, 2026, unavailable, future date\":\n            - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n          - gridcell \"September 5, 2026, unavailable, future date\":\n            - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n    - paragraph: Available through 2026-08-08.\n    - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n  - paragraph: \"End date selected: 2026-08-08. Start date is not selected.\""
+  },
+  {
+    "name": "D14 ArrowLeft moves to August 7",
+    "time": "2026-09-16T00:36:43.943Z",
+    "state": {
+      "focus": "August 7, 2026",
+      "inputs": [
+        {
+          "expanded": "true",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [expanded]\n  - button \"Close calendar for start date\" [expanded]:\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - dialog \"Choose start date\":\n    - button \"Previous year\":\n    - button \"Previous month\":\n    - heading \"August 2026\" [level=3]\n    - button \"Next month\":\n    - button \"Next year\":\n    - button \"Close calendar\":\n    - paragraph: Choose start date.\n    - grid \"August 2026\":\n      - rowgroup:\n        - row \"Su Mo Tu We Th Fr Sa\":\n          - columnheader \"Su\"\n          - columnheader \"Mo\"\n          - columnheader \"Tu\"\n          - columnheader \"We\"\n          - columnheader \"Th\"\n          - columnheader \"Fr\"\n          - columnheader \"Sa\"\n      - rowgroup:\n        - row \"July 26, 2026 July 27, 2026 July 28, 2026 July 29, 2026 July 30, 2026 July 31, 2026 August 1, 2026\":\n          - gridcell \"July 26, 2026\":\n            - button \"July 26, 2026\": \"26\"\n          - gridcell \"July 27, 2026\":\n            - button \"July 27, 2026\": \"27\"\n          - gridcell \"July 28, 2026\":\n            - button \"July 28, 2026\": \"28\"\n          - gridcell \"July 29, 2026\":\n            - button \"July 29, 2026\": \"29\"\n          - gridcell \"July 30, 2026\":\n            - button \"July 30, 2026\": \"30\"\n          - gridcell \"July 31, 2026\":\n            - button \"July 31, 2026\": \"31\"\n          - gridcell \"August 1, 2026\":\n            - button \"August 1, 2026\": \"1\"\n        - row \"August 2, 2026 August 3, 2026 August 4, 2026 August 5, 2026 August 6, 2026 August 7, 2026 August 8, 2026, range end\":\n          - gridcell \"August 2, 2026\":\n            - button \"August 2, 2026\": \"2\"\n          - gridcell \"August 3, 2026\":\n            - button \"August 3, 2026\": \"3\"\n          - gridcell \"August 4, 2026\":\n            - button \"August 4, 2026\": \"4\"\n          - gridcell \"August 5, 2026\":\n            - button \"August 5, 2026\": \"5\"\n          - gridcell \"August 6, 2026\":\n            - button \"August 6, 2026\": \"6\"\n          - gridcell \"August 7, 2026\":\n            - button \"August 7, 2026\" [active]: \"7\"\n          - gridcell \"August 8, 2026, range end\":\n            - button \"August 8, 2026, range end\" [pressed]: \"8\"\n        - row \"August 9, 2026, unavailable, after the current end date August 10, 2026, unavailable, after the current end date August 11, 2026, unavailable, after the current end date August 12, 2026, unavailable, after the current end date August 13, 2026, unavailable, after the current end date August 14, 2026, today, unavailable, after the current end date August 15, 2026, unavailable, future date\":\n          - gridcell \"August 9, 2026, unavailable, after the current end date\":\n            - button \"August 9, 2026, unavailable, after the current end date\" [disabled]: \"9\"\n          - gridcell \"August 10, 2026, unavailable, after the current end date\":\n            - button \"August 10, 2026, unavailable, after the current end date\" [disabled]: \"10\"\n          - gridcell \"August 11, 2026, unavailable, after the current end date\":\n            - button \"August 11, 2026, unavailable, after the current end date\" [disabled]: \"11\"\n          - gridcell \"August 12, 2026, unavailable, after the current end date\":\n            - button \"August 12, 2026, unavailable, after the current end date\" [disabled]: \"12\"\n          - gridcell \"August 13, 2026, unavailable, after the current end date\":\n            - button \"August 13, 2026, unavailable, after the current end date\" [disabled]: \"13\"\n          - gridcell \"August 14, 2026, today, unavailable, after the current end date\":\n            - button \"August 14, 2026, today, unavailable, after the current end date\" [disabled]: \"14\"\n          - gridcell \"August 15, 2026, unavailable, future date\":\n            - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n        - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n          - gridcell \"August 16, 2026, unavailable, future date\":\n            - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n          - gridcell \"August 17, 2026, unavailable, future date\":\n            - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n          - gridcell \"August 18, 2026, unavailable, future date\":\n            - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n          - gridcell \"August 19, 2026, unavailable, future date\":\n            - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n          - gridcell \"August 20, 2026, unavailable, future date\":\n            - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n          - gridcell \"August 21, 2026, unavailable, future date\":\n            - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n          - gridcell \"August 22, 2026, unavailable, future date\":\n            - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n        - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n          - gridcell \"August 23, 2026, unavailable, future date\":\n            - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n          - gridcell \"August 24, 2026, unavailable, future date\":\n            - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n          - gridcell \"August 25, 2026, unavailable, future date\":\n            - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n          - gridcell \"August 26, 2026, unavailable, future date\":\n            - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n          - gridcell \"August 27, 2026, unavailable, future date\":\n            - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n          - gridcell \"August 28, 2026, unavailable, future date\":\n            - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n          - gridcell \"August 29, 2026, unavailable, future date\":\n            - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n        - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n          - gridcell \"August 30, 2026, unavailable, future date\":\n            - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n          - gridcell \"August 31, 2026, unavailable, future date\":\n            - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n          - gridcell \"September 1, 2026, unavailable, future date\":\n            - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n          - gridcell \"September 2, 2026, unavailable, future date\":\n            - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n          - gridcell \"September 3, 2026, unavailable, future date\":\n            - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n          - gridcell \"September 4, 2026, unavailable, future date\":\n            - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n          - gridcell \"September 5, 2026, unavailable, future date\":\n            - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n    - paragraph: Available through 2026-08-08.\n    - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n  - paragraph: \"End date selected: 2026-08-08. Start date is not selected.\""
+  },
+  {
+    "name": "D15 keyboard selects start",
+    "time": "2026-09-16T00:36:43.972Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-07"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-07\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-07 through 2026-08-08.\""
+  },
+  {
+    "name": "D16 close returns to end",
+    "time": "2026-09-16T00:36:44.533Z",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-07"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\": 2026-08-07\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [active]: 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-07 through 2026-08-08.\""
+  },
+  {
+    "name": "D17 reopen opposite then Escape",
+    "time": "2026-09-16T00:36:44.822Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-07"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-07\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-07 through 2026-08-08.\""
+  },
+  {
+    "name": "D18 clean reload reproduces stale error",
+    "time": "2026-09-16T00:36:44.962Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-06"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "true",
+          "value": "20260808"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-06\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": \"20260808\"\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - alert: End date must be on or after start date.\n  - paragraph: \"Start date selected: 2026-08-06. End date is not selected.\""
+  },
+  {
+    "name": "N00 narrow text focus does not open calendar",
+    "time": "2026-09-16T00:37:06.377Z",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\" [active]\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\":\n    - paragraph: No range selected."
+  },
+  {
+    "name": "N01 explicit narrow calendar open",
+    "time": "2026-09-16T00:37:06.679Z",
+    "state": {
+      "focus": "August 14, 2026, today",
+      "inputs": [
+        {
+          "expanded": "true",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": ""
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 390
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\" [expanded]\n    - button \"Close calendar for start date\" [expanded]:\n    - dialog \"Choose start date\":\n      - button \"Previous year\":\n      - button \"Previous month\":\n      - heading \"August 2026\" [level=3]\n      - button \"Next month\":\n      - button \"Next year\":\n      - button \"Close calendar\":\n      - paragraph: Choose start date.\n      - grid \"August 2026\":\n        - rowgroup:\n          - row \"Su Mo Tu We Th Fr Sa\":\n            - columnheader \"Su\"\n            - columnheader \"Mo\"\n            - columnheader \"Tu\"\n            - columnheader \"We\"\n            - columnheader \"Th\"\n            - columnheader \"Fr\"\n            - columnheader \"Sa\"\n        - rowgroup:\n          - row \"July 26, 2026 July 27, 2026 July 28, 2026 July 29, 2026 July 30, 2026 July 31, 2026 August 1, 2026\":\n            - gridcell \"July 26, 2026\":\n              - button \"July 26, 2026\": \"26\"\n            - gridcell \"July 27, 2026\":\n              - button \"July 27, 2026\": \"27\"\n            - gridcell \"July 28, 2026\":\n              - button \"July 28, 2026\": \"28\"\n            - gridcell \"July 29, 2026\":\n              - button \"July 29, 2026\": \"29\"\n            - gridcell \"July 30, 2026\":\n              - button \"July 30, 2026\": \"30\"\n            - gridcell \"July 31, 2026\":\n              - button \"July 31, 2026\": \"31\"\n            - gridcell \"August 1, 2026\":\n              - button \"August 1, 2026\": \"1\"\n          - row \"August 2, 2026 August 3, 2026 August 4, 2026 August 5, 2026 August 6, 2026 August 7, 2026 August 8, 2026\":\n            - gridcell \"August 2, 2026\":\n              - button \"August 2, 2026\": \"2\"\n            - gridcell \"August 3, 2026\":\n              - button \"August 3, 2026\": \"3\"\n            - gridcell \"August 4, 2026\":\n              - button \"August 4, 2026\": \"4\"\n            - gridcell \"August 5, 2026\":\n              - button \"August 5, 2026\": \"5\"\n            - gridcell \"August 6, 2026\":\n              - button \"August 6, 2026\": \"6\"\n            - gridcell \"August 7, 2026\":\n              - button \"August 7, 2026\": \"7\"\n            - gridcell \"August 8, 2026\":\n              - button \"August 8, 2026\": \"8\"\n          - row \"August 9, 2026 August 10, 2026 August 11, 2026 August 12, 2026 August 13, 2026 August 14, 2026, today August 15, 2026, unavailable, future date\":\n            - gridcell \"August 9, 2026\":\n              - button \"August 9, 2026\": \"9\"\n            - gridcell \"August 10, 2026\":\n              - button \"August 10, 2026\": \"10\"\n            - gridcell \"August 11, 2026\":\n              - button \"August 11, 2026\": \"11\"\n            - gridcell \"August 12, 2026\":\n              - button \"August 12, 2026\": \"12\"\n            - gridcell \"August 13, 2026\":\n              - button \"August 13, 2026\": \"13\"\n            - gridcell \"August 14, 2026, today\":\n              - button \"August 14, 2026, today\" [active]: \"14\"\n            - gridcell \"August 15, 2026, unavailable, future date\":\n              - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n          - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n            - gridcell \"August 16, 2026, unavailable, future date\":\n              - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n            - gridcell \"August 17, 2026, unavailable, future date\":\n              - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n            - gridcell \"August 18, 2026, unavailable, future date\":\n              - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n            - gridcell \"August 19, 2026, unavailable, future date\":\n              - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n            - gridcell \"August 20, 2026, unavailable, future date\":\n              - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n            - gridcell \"August 21, 2026, unavailable, future date\":\n              - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n            - gridcell \"August 22, 2026, unavailable, future date\":\n              - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n          - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n            - gridcell \"August 23, 2026, unavailable, future date\":\n              - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n            - gridcell \"August 24, 2026, unavailable, future date\":\n              - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n            - gridcell \"August 25, 2026, unavailable, future date\":\n              - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n            - gridcell \"August 26, 2026, unavailable, future date\":\n              - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n            - gridcell \"August 27, 2026, unavailable, future date\":\n              - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n            - gridcell \"August 28, 2026, unavailable, future date\":\n              - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n            - gridcell \"August 29, 2026, unavailable, future date\":\n              - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n          - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n            - gridcell \"August 30, 2026, unavailable, future date\":\n              - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n            - gridcell \"August 31, 2026, unavailable, future date\":\n              - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n            - gridcell \"September 1, 2026, unavailable, future date\":\n              - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n            - gridcell \"September 2, 2026, unavailable, future date\":\n              - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n            - gridcell \"September 3, 2026, unavailable, future date\":\n              - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n            - gridcell \"September 4, 2026, unavailable, future date\":\n              - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n            - gridcell \"September 5, 2026, unavailable, future date\":\n              - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n      - paragraph: Available through 2026-08-14.\n      - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\":\n    - paragraph: No range selected."
+  },
+  {
+    "name": "N02 select narrow start returns to trigger",
+    "time": "2026-09-16T00:37:16.508Z",
+    "state": {
+      "focus": "Open calendar for start date",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\" [active]:\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\":\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N03 switch to end calendar",
+    "time": "2026-09-16T00:37:16.808Z",
+    "state": {
+      "focus": "August 10, 2026, range start",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "true",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 390
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\" [expanded]\n    - button \"Close calendar for end date\" [expanded]:\n    - dialog \"Choose end date\":\n      - button \"Previous year\":\n      - button \"Previous month\":\n      - heading \"August 2026\" [level=3]\n      - button \"Next month\":\n      - button \"Next year\":\n      - button \"Close calendar\":\n      - paragraph: Choose end date.\n      - grid \"August 2026\":\n        - rowgroup:\n          - row \"Su Mo Tu We Th Fr Sa\":\n            - columnheader \"Su\"\n            - columnheader \"Mo\"\n            - columnheader \"Tu\"\n            - columnheader \"We\"\n            - columnheader \"Th\"\n            - columnheader \"Fr\"\n            - columnheader \"Sa\"\n        - rowgroup:\n          - row \"July 26, 2026, unavailable, before the current start date July 27, 2026, unavailable, before the current start date July 28, 2026, unavailable, before the current start date July 29, 2026, unavailable, before the current start date July 30, 2026, unavailable, before the current start date July 31, 2026, unavailable, before the current start date August 1, 2026, unavailable, before the current start date\":\n            - gridcell \"July 26, 2026, unavailable, before the current start date\":\n              - button \"July 26, 2026, unavailable, before the current start date\" [disabled]: \"26\"\n            - gridcell \"July 27, 2026, unavailable, before the current start date\":\n              - button \"July 27, 2026, unavailable, before the current start date\" [disabled]: \"27\"\n            - gridcell \"July 28, 2026, unavailable, before the current start date\":\n              - button \"July 28, 2026, unavailable, before the current start date\" [disabled]: \"28\"\n            - gridcell \"July 29, 2026, unavailable, before the current start date\":\n              - button \"July 29, 2026, unavailable, before the current start date\" [disabled]: \"29\"\n            - gridcell \"July 30, 2026, unavailable, before the current start date\":\n              - button \"July 30, 2026, unavailable, before the current start date\" [disabled]: \"30\"\n            - gridcell \"July 31, 2026, unavailable, before the current start date\":\n              - button \"July 31, 2026, unavailable, before the current start date\" [disabled]: \"31\"\n            - gridcell \"August 1, 2026, unavailable, before the current start date\":\n              - button \"August 1, 2026, unavailable, before the current start date\" [disabled]: \"1\"\n          - row \"August 2, 2026, unavailable, before the current start date August 3, 2026, unavailable, before the current start date August 4, 2026, unavailable, before the current start date August 5, 2026, unavailable, before the current start date August 6, 2026, unavailable, before the current start date August 7, 2026, unavailable, before the current start date August 8, 2026, unavailable, before the current start date\":\n            - gridcell \"August 2, 2026, unavailable, before the current start date\":\n              - button \"August 2, 2026, unavailable, before the current start date\" [disabled]: \"2\"\n            - gridcell \"August 3, 2026, unavailable, before the current start date\":\n              - button \"August 3, 2026, unavailable, before the current start date\" [disabled]: \"3\"\n            - gridcell \"August 4, 2026, unavailable, before the current start date\":\n              - button \"August 4, 2026, unavailable, before the current start date\" [disabled]: \"4\"\n            - gridcell \"August 5, 2026, unavailable, before the current start date\":\n              - button \"August 5, 2026, unavailable, before the current start date\" [disabled]: \"5\"\n            - gridcell \"August 6, 2026, unavailable, before the current start date\":\n              - button \"August 6, 2026, unavailable, before the current start date\" [disabled]: \"6\"\n            - gridcell \"August 7, 2026, unavailable, before the current start date\":\n              - button \"August 7, 2026, unavailable, before the current start date\" [disabled]: \"7\"\n            - gridcell \"August 8, 2026, unavailable, before the current start date\":\n              - button \"August 8, 2026, unavailable, before the current start date\" [disabled]: \"8\"\n          - row \"August 9, 2026, unavailable, before the current start date August 10, 2026, range start August 11, 2026 August 12, 2026 August 13, 2026 August 14, 2026, today August 15, 2026, unavailable, future date\":\n            - gridcell \"August 9, 2026, unavailable, before the current start date\":\n              - button \"August 9, 2026, unavailable, before the current start date\" [disabled]: \"9\"\n            - gridcell \"August 10, 2026, range start\":\n              - button \"August 10, 2026, range start\" [active] [pressed]: \"10\"\n            - gridcell \"August 11, 2026\":\n              - button \"August 11, 2026\": \"11\"\n            - gridcell \"August 12, 2026\":\n              - button \"August 12, 2026\": \"12\"\n            - gridcell \"August 13, 2026\":\n              - button \"August 13, 2026\": \"13\"\n            - gridcell \"August 14, 2026, today\":\n              - button \"August 14, 2026, today\": \"14\"\n            - gridcell \"August 15, 2026, unavailable, future date\":\n              - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n          - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n            - gridcell \"August 16, 2026, unavailable, future date\":\n              - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n            - gridcell \"August 17, 2026, unavailable, future date\":\n              - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n            - gridcell \"August 18, 2026, unavailable, future date\":\n              - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n            - gridcell \"August 19, 2026, unavailable, future date\":\n              - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n            - gridcell \"August 20, 2026, unavailable, future date\":\n              - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n            - gridcell \"August 21, 2026, unavailable, future date\":\n              - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n            - gridcell \"August 22, 2026, unavailable, future date\":\n              - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n          - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n            - gridcell \"August 23, 2026, unavailable, future date\":\n              - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n            - gridcell \"August 24, 2026, unavailable, future date\":\n              - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n            - gridcell \"August 25, 2026, unavailable, future date\":\n              - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n            - gridcell \"August 26, 2026, unavailable, future date\":\n              - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n            - gridcell \"August 27, 2026, unavailable, future date\":\n              - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n            - gridcell \"August 28, 2026, unavailable, future date\":\n              - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n            - gridcell \"August 29, 2026, unavailable, future date\":\n              - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n          - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n            - gridcell \"August 30, 2026, unavailable, future date\":\n              - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n            - gridcell \"August 31, 2026, unavailable, future date\":\n              - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n            - gridcell \"September 1, 2026, unavailable, future date\":\n              - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n            - gridcell \"September 2, 2026, unavailable, future date\":\n              - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n            - gridcell \"September 3, 2026, unavailable, future date\":\n              - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n            - gridcell \"September 4, 2026, unavailable, future date\":\n              - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n            - gridcell \"September 5, 2026, unavailable, future date\":\n              - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n      - paragraph: \"Available dates: 2026-08-10 to 2026-08-14.\"\n      - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N04 close narrow end returns to trigger",
+    "time": "2026-09-16T00:37:17.103Z",
+    "state": {
+      "focus": "Open calendar for end date",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\" [active]:\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N05 reopen end",
+    "time": "2026-09-16T00:37:29.079Z",
+    "state": {
+      "focus": "August 10, 2026, range start",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "true",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 390
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\" [expanded]\n    - button \"Close calendar for end date\" [expanded]:\n    - dialog \"Choose end date\":\n      - button \"Previous year\":\n      - button \"Previous month\":\n      - heading \"August 2026\" [level=3]\n      - button \"Next month\":\n      - button \"Next year\":\n      - button \"Close calendar\":\n      - paragraph: Choose end date.\n      - grid \"August 2026\":\n        - rowgroup:\n          - row \"Su Mo Tu We Th Fr Sa\":\n            - columnheader \"Su\"\n            - columnheader \"Mo\"\n            - columnheader \"Tu\"\n            - columnheader \"We\"\n            - columnheader \"Th\"\n            - columnheader \"Fr\"\n            - columnheader \"Sa\"\n        - rowgroup:\n          - row \"July 26, 2026, unavailable, before the current start date July 27, 2026, unavailable, before the current start date July 28, 2026, unavailable, before the current start date July 29, 2026, unavailable, before the current start date July 30, 2026, unavailable, before the current start date July 31, 2026, unavailable, before the current start date August 1, 2026, unavailable, before the current start date\":\n            - gridcell \"July 26, 2026, unavailable, before the current start date\":\n              - button \"July 26, 2026, unavailable, before the current start date\" [disabled]: \"26\"\n            - gridcell \"July 27, 2026, unavailable, before the current start date\":\n              - button \"July 27, 2026, unavailable, before the current start date\" [disabled]: \"27\"\n            - gridcell \"July 28, 2026, unavailable, before the current start date\":\n              - button \"July 28, 2026, unavailable, before the current start date\" [disabled]: \"28\"\n            - gridcell \"July 29, 2026, unavailable, before the current start date\":\n              - button \"July 29, 2026, unavailable, before the current start date\" [disabled]: \"29\"\n            - gridcell \"July 30, 2026, unavailable, before the current start date\":\n              - button \"July 30, 2026, unavailable, before the current start date\" [disabled]: \"30\"\n            - gridcell \"July 31, 2026, unavailable, before the current start date\":\n              - button \"July 31, 2026, unavailable, before the current start date\" [disabled]: \"31\"\n            - gridcell \"August 1, 2026, unavailable, before the current start date\":\n              - button \"August 1, 2026, unavailable, before the current start date\" [disabled]: \"1\"\n          - row \"August 2, 2026, unavailable, before the current start date August 3, 2026, unavailable, before the current start date August 4, 2026, unavailable, before the current start date August 5, 2026, unavailable, before the current start date August 6, 2026, unavailable, before the current start date August 7, 2026, unavailable, before the current start date August 8, 2026, unavailable, before the current start date\":\n            - gridcell \"August 2, 2026, unavailable, before the current start date\":\n              - button \"August 2, 2026, unavailable, before the current start date\" [disabled]: \"2\"\n            - gridcell \"August 3, 2026, unavailable, before the current start date\":\n              - button \"August 3, 2026, unavailable, before the current start date\" [disabled]: \"3\"\n            - gridcell \"August 4, 2026, unavailable, before the current start date\":\n              - button \"August 4, 2026, unavailable, before the current start date\" [disabled]: \"4\"\n            - gridcell \"August 5, 2026, unavailable, before the current start date\":\n              - button \"August 5, 2026, unavailable, before the current start date\" [disabled]: \"5\"\n            - gridcell \"August 6, 2026, unavailable, before the current start date\":\n              - button \"August 6, 2026, unavailable, before the current start date\" [disabled]: \"6\"\n            - gridcell \"August 7, 2026, unavailable, before the current start date\":\n              - button \"August 7, 2026, unavailable, before the current start date\" [disabled]: \"7\"\n            - gridcell \"August 8, 2026, unavailable, before the current start date\":\n              - button \"August 8, 2026, unavailable, before the current start date\" [disabled]: \"8\"\n          - row \"August 9, 2026, unavailable, before the current start date August 10, 2026, range start August 11, 2026 August 12, 2026 August 13, 2026 August 14, 2026, today August 15, 2026, unavailable, future date\":\n            - gridcell \"August 9, 2026, unavailable, before the current start date\":\n              - button \"August 9, 2026, unavailable, before the current start date\" [disabled]: \"9\"\n            - gridcell \"August 10, 2026, range start\":\n              - button \"August 10, 2026, range start\" [active] [pressed]: \"10\"\n            - gridcell \"August 11, 2026\":\n              - button \"August 11, 2026\": \"11\"\n            - gridcell \"August 12, 2026\":\n              - button \"August 12, 2026\": \"12\"\n            - gridcell \"August 13, 2026\":\n              - button \"August 13, 2026\": \"13\"\n            - gridcell \"August 14, 2026, today\":\n              - button \"August 14, 2026, today\": \"14\"\n            - gridcell \"August 15, 2026, unavailable, future date\":\n              - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n          - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n            - gridcell \"August 16, 2026, unavailable, future date\":\n              - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n            - gridcell \"August 17, 2026, unavailable, future date\":\n              - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n            - gridcell \"August 18, 2026, unavailable, future date\":\n              - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n            - gridcell \"August 19, 2026, unavailable, future date\":\n              - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n            - gridcell \"August 20, 2026, unavailable, future date\":\n              - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n            - gridcell \"August 21, 2026, unavailable, future date\":\n              - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n            - gridcell \"August 22, 2026, unavailable, future date\":\n              - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n          - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n            - gridcell \"August 23, 2026, unavailable, future date\":\n              - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n            - gridcell \"August 24, 2026, unavailable, future date\":\n              - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n            - gridcell \"August 25, 2026, unavailable, future date\":\n              - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n            - gridcell \"August 26, 2026, unavailable, future date\":\n              - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n            - gridcell \"August 27, 2026, unavailable, future date\":\n              - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n            - gridcell \"August 28, 2026, unavailable, future date\":\n              - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n            - gridcell \"August 29, 2026, unavailable, future date\":\n              - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n          - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n            - gridcell \"August 30, 2026, unavailable, future date\":\n              - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n            - gridcell \"August 31, 2026, unavailable, future date\":\n              - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n            - gridcell \"September 1, 2026, unavailable, future date\":\n              - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n            - gridcell \"September 2, 2026, unavailable, future date\":\n              - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n            - gridcell \"September 3, 2026, unavailable, future date\":\n              - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n            - gridcell \"September 4, 2026, unavailable, future date\":\n              - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n            - gridcell \"September 5, 2026, unavailable, future date\":\n              - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n      - paragraph: \"Available dates: 2026-08-10 to 2026-08-14.\"\n      - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N06 cross to wide while calendar open",
+    "time": "2026-09-16T00:37:29.383Z",
+    "state": {
+      "focus": "BODY",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 900,
+      "width": 900
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\" [active]\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: to\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\":\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N07 cross back to 320",
+    "time": "2026-09-16T00:37:29.687Z",
+    "state": {
+      "focus": "BODY",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\" [active]\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\":\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N08 reopen at 320",
+    "time": "2026-09-16T00:37:29.998Z",
+    "state": {
+      "focus": "August 10, 2026, range start",
+      "inputs": [
+        {
+          "expanded": "true",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 305,
+      "width": 320
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\" [expanded]\n    - button \"Clear start date\":\n    - button \"Close calendar for start date\" [expanded]:\n    - dialog \"Choose start date\":\n      - button \"Previous year\":\n      - button \"Previous month\":\n      - heading \"August 2026\" [level=3]\n      - button \"Next month\":\n      - button \"Next year\":\n      - button \"Close calendar\":\n      - paragraph: Choose start date.\n      - grid \"August 2026\":\n        - rowgroup:\n          - row \"Su Mo Tu We Th Fr Sa\":\n            - columnheader \"Su\"\n            - columnheader \"Mo\"\n            - columnheader \"Tu\"\n            - columnheader \"We\"\n            - columnheader \"Th\"\n            - columnheader \"Fr\"\n            - columnheader \"Sa\"\n        - rowgroup:\n          - row \"July 26, 2026 July 27, 2026 July 28, 2026 July 29, 2026 July 30, 2026 July 31, 2026 August 1, 2026\":\n            - gridcell \"July 26, 2026\":\n              - button \"July 26, 2026\": \"26\"\n            - gridcell \"July 27, 2026\":\n              - button \"July 27, 2026\": \"27\"\n            - gridcell \"July 28, 2026\":\n              - button \"July 28, 2026\": \"28\"\n            - gridcell \"July 29, 2026\":\n              - button \"July 29, 2026\": \"29\"\n            - gridcell \"July 30, 2026\":\n              - button \"July 30, 2026\": \"30\"\n            - gridcell \"July 31, 2026\":\n              - button \"July 31, 2026\": \"31\"\n            - gridcell \"August 1, 2026\":\n              - button \"August 1, 2026\": \"1\"\n          - row \"August 2, 2026 August 3, 2026 August 4, 2026 August 5, 2026 August 6, 2026 August 7, 2026 August 8, 2026\":\n            - gridcell \"August 2, 2026\":\n              - button \"August 2, 2026\": \"2\"\n            - gridcell \"August 3, 2026\":\n              - button \"August 3, 2026\": \"3\"\n            - gridcell \"August 4, 2026\":\n              - button \"August 4, 2026\": \"4\"\n            - gridcell \"August 5, 2026\":\n              - button \"August 5, 2026\": \"5\"\n            - gridcell \"August 6, 2026\":\n              - button \"August 6, 2026\": \"6\"\n            - gridcell \"August 7, 2026\":\n              - button \"August 7, 2026\": \"7\"\n            - gridcell \"August 8, 2026\":\n              - button \"August 8, 2026\": \"8\"\n          - row \"August 9, 2026 August 10, 2026, range start August 11, 2026 August 12, 2026 August 13, 2026 August 14, 2026, today August 15, 2026, unavailable, future date\":\n            - gridcell \"August 9, 2026\":\n              - button \"August 9, 2026\": \"9\"\n            - gridcell \"August 10, 2026, range start\":\n              - button \"August 10, 2026, range start\" [active] [pressed]: \"10\"\n            - gridcell \"August 11, 2026\":\n              - button \"August 11, 2026\": \"11\"\n            - gridcell \"August 12, 2026\":\n              - button \"August 12, 2026\": \"12\"\n            - gridcell \"August 13, 2026\":\n              - button \"August 13, 2026\": \"13\"\n            - gridcell \"August 14, 2026, today\":\n              - button \"August 14, 2026, today\": \"14\"\n            - gridcell \"August 15, 2026, unavailable, future date\":\n              - button \"August 15, 2026, unavailable, future date\" [disabled]: \"15\"\n          - row \"August 16, 2026, unavailable, future date August 17, 2026, unavailable, future date August 18, 2026, unavailable, future date August 19, 2026, unavailable, future date August 20, 2026, unavailable, future date August 21, 2026, unavailable, future date August 22, 2026, unavailable, future date\":\n            - gridcell \"August 16, 2026, unavailable, future date\":\n              - button \"August 16, 2026, unavailable, future date\" [disabled]: \"16\"\n            - gridcell \"August 17, 2026, unavailable, future date\":\n              - button \"August 17, 2026, unavailable, future date\" [disabled]: \"17\"\n            - gridcell \"August 18, 2026, unavailable, future date\":\n              - button \"August 18, 2026, unavailable, future date\" [disabled]: \"18\"\n            - gridcell \"August 19, 2026, unavailable, future date\":\n              - button \"August 19, 2026, unavailable, future date\" [disabled]: \"19\"\n            - gridcell \"August 20, 2026, unavailable, future date\":\n              - button \"August 20, 2026, unavailable, future date\" [disabled]: \"20\"\n            - gridcell \"August 21, 2026, unavailable, future date\":\n              - button \"August 21, 2026, unavailable, future date\" [disabled]: \"21\"\n            - gridcell \"August 22, 2026, unavailable, future date\":\n              - button \"August 22, 2026, unavailable, future date\" [disabled]: \"22\"\n          - row \"August 23, 2026, unavailable, future date August 24, 2026, unavailable, future date August 25, 2026, unavailable, future date August 26, 2026, unavailable, future date August 27, 2026, unavailable, future date August 28, 2026, unavailable, future date August 29, 2026, unavailable, future date\":\n            - gridcell \"August 23, 2026, unavailable, future date\":\n              - button \"August 23, 2026, unavailable, future date\" [disabled]: \"23\"\n            - gridcell \"August 24, 2026, unavailable, future date\":\n              - button \"August 24, 2026, unavailable, future date\" [disabled]: \"24\"\n            - gridcell \"August 25, 2026, unavailable, future date\":\n              - button \"August 25, 2026, unavailable, future date\" [disabled]: \"25\"\n            - gridcell \"August 26, 2026, unavailable, future date\":\n              - button \"August 26, 2026, unavailable, future date\" [disabled]: \"26\"\n            - gridcell \"August 27, 2026, unavailable, future date\":\n              - button \"August 27, 2026, unavailable, future date\" [disabled]: \"27\"\n            - gridcell \"August 28, 2026, unavailable, future date\":\n              - button \"August 28, 2026, unavailable, future date\" [disabled]: \"28\"\n            - gridcell \"August 29, 2026, unavailable, future date\":\n              - button \"August 29, 2026, unavailable, future date\" [disabled]: \"29\"\n          - row \"August 30, 2026, unavailable, future date August 31, 2026, unavailable, future date September 1, 2026, unavailable, future date September 2, 2026, unavailable, future date September 3, 2026, unavailable, future date September 4, 2026, unavailable, future date September 5, 2026, unavailable, future date\":\n            - gridcell \"August 30, 2026, unavailable, future date\":\n              - button \"August 30, 2026, unavailable, future date\" [disabled]: \"30\"\n            - gridcell \"August 31, 2026, unavailable, future date\":\n              - button \"August 31, 2026, unavailable, future date\" [disabled]: \"31\"\n            - gridcell \"September 1, 2026, unavailable, future date\":\n              - button \"September 1, 2026, unavailable, future date\" [disabled]: \"1\"\n            - gridcell \"September 2, 2026, unavailable, future date\":\n              - button \"September 2, 2026, unavailable, future date\" [disabled]: \"2\"\n            - gridcell \"September 3, 2026, unavailable, future date\":\n              - button \"September 3, 2026, unavailable, future date\" [disabled]: \"3\"\n            - gridcell \"September 4, 2026, unavailable, future date\":\n              - button \"September 4, 2026, unavailable, future date\" [disabled]: \"4\"\n            - gridcell \"September 5, 2026, unavailable, future date\":\n              - button \"September 5, 2026, unavailable, future date\" [disabled]: \"5\"\n      - paragraph: Available through 2026-08-14.\n      - paragraph: Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\":\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N09 switch directly from calendar to other text field",
+    "time": "2026-09-16T00:37:30.300Z",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\" [active]\n    - button \"Open calendar for end date\":\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N10 narrow manual completion",
+    "time": "2026-09-16T00:37:30.365Z",
+    "state": {
+      "focus": "Open calendar for end date",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-12"
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Clear end date\":\n    - button \"Open calendar for end date\" [active]:\n    - paragraph: \"Selected range: 2026-08-10 through 2026-08-12.\""
+  },
+  {
+    "name": "N11 clear end and retain start",
+    "time": "2026-09-16T00:37:44.444Z",
+    "state": {
+      "focus": "Open calendar for end date",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\" [active]:\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N12 reselect end after clear",
+    "time": "2026-09-16T00:37:45.012Z",
+    "state": {
+      "focus": "Open calendar for end date",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": "2026-08-12"
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Clear end date\":\n    - button \"Open calendar for end date\" [active]:\n    - paragraph: \"Selected range: 2026-08-10 through 2026-08-12.\""
+  },
+  {
+    "name": "N13 future date rejected",
+    "time": "2026-09-16T00:37:45.064Z",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "true",
+          "value": "20260818"
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\" [active]\n    - button \"Clear end date\":\n    - button \"Open calendar for end date\":\n    - alert: Enter a date on or before 2026-08-14.\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "N14 clear invalid end recovers",
+    "time": "2026-09-16T00:37:45.368Z",
+    "state": {
+      "focus": "Open calendar for end date",
+      "inputs": [
+        {
+          "expanded": "false",
+          "id": "range-start-input",
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "expanded": "false",
+          "id": "range-end-input",
+          "invalid": "false",
+          "value": ""
+        }
+      ],
+      "scrollWidth": 320,
+      "width": 320
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Responsive working draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Open calendar for end date\" [active]:\n    - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  }
+]
