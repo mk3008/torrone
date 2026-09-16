@@ -27,7 +27,7 @@ Do not silently edit an approved design original and keep calling it approved.
 
 When the executable Reference or a material preserved behavior changes, treat the change as a draft until a human reviewer explicitly accepts the new version. Approval does not transfer automatically.
 
-For ordinary revisions with the same responsibility and operation model, edit the canonical Reference and its curation entry on a branch/PR. The unapproved PR changes are the candidate; do not maintain a second curated “next-version candidate” alongside the approved Reference on main. After explicit human adoption, update the canonical Reference and its exact approval identity/evidence, retaining the previous version and its required approval evidence in history.
+For ordinary revisions with the same responsibility and operation model, edit the canonical Reference and its curation entry on a branch/PR. The unapproved PR changes are the candidate; do not maintain a second curated “next-version candidate” alongside the approved Reference on main. After explicit human adoption, update the canonical Reference and its exact approval identity/evidence. Preserve prior approval identity and evidence so the previous approved artifact remains traceable; Git history is sufficient when it provides that traceability. Do not create archival copies solely to preserve an old version.
 
 Splitting an issue does not split a Reference. Return a separate issue's result to the original PR/Reference when it belongs to the same responsibility. Create a separate Reference when there is a material difference in responsibility, operation model or conditions of use that justifies keeping both after approval; the icon-button responsibility is distinct from Date range composition.
 
