@@ -125,9 +125,19 @@ for (const activation of ['Enter', 'Space']) {
     await expect(c.cancel).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(c.confirm).toBeFocused();
+    // Native dialogs may visit browser chrome at the document boundary.
+    // Permit only that neutral BODY state, never a background page control.
     await page.keyboard.press('Tab');
+    if (await page.evaluate(() => document.activeElement === document.body)) {
+      await expect(c.dialog).toBeVisible();
+      await page.keyboard.press('Tab');
+    }
     await expect(c.close).toBeFocused();
     await page.keyboard.press('Shift+Tab');
+    if (await page.evaluate(() => document.activeElement === document.body)) {
+      await expect(c.dialog).toBeVisible();
+      await page.keyboard.press('Shift+Tab');
+    }
     await expect(c.confirm).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(c.cancel).toBeFocused();

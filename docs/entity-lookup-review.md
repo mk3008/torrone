@@ -29,7 +29,7 @@ npm test
 
 Playwright is a pinned, test-only dependency in this directory; the Reference remains buildless. The configuration serves only `review/references`. The workflow follows [Playwright's CI setup](https://playwright.dev/docs/ci-intro). Execution results belong to the exact PR commit's Actions check and its report artifact, not the presence of this test file.
 
-The active Work browser's Issue #5 local-preview URL-policy block remains unchanged; no local workaround is used. CI executes the regression suite in its own runner. Viewport resizing does not reproduce a phone's software keyboard, browser chrome, IME or embedded host: actual-device footer/results visibility with the keyboard open remains a human-review item. Passing native browser regressions does not approve this draft.
+The active Work browser's Issue #5 local-preview URL-policy block remains unchanged; no local workaround is used. CI executes the regression suite in its own runner. Viewport resizing does not reproduce a phone's software keyboard, browser chrome, IME or embedded host: actual-device footer/results visibility with the keyboard open remains a human-review item. Passing native browser regressions does not approve this draft. At the modal document boundary, native traversal may visit browser chrome (the page reports BODY as active) before re-entering; the keyboard test permits this single neutral step but still requires the next control to be Close/Select and rejects focus on background page controls. The first browser run exposed an overly strict immediate-wrap assertion, not a requested custom focus trap; native behavior remains unchanged.
 
 ## General policy finding
 
