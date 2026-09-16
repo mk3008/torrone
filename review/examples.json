@@ -1,27 +1,19 @@
 [
   {
     "id": "icon-button-draft",
-    "title": "Flat icon buttons \u2014 draft",
+    "title": "Flat icon buttons",
     "source": "review/references/icon-button-draft.html",
     "guidance": "Review normal, hover, pressed, keyboard focus and disabled states. Activate with pointer, Enter and Space.",
-    "status": "Draft; human design decision pending.",
+    "status": "Approved by explicit PR #19 human review.",
     "evidence": "references/icon-button.md"
   },
   {
     "id": "date-range",
-    "title": "Date range picker",
+    "title": "Date range",
     "source": "review/references/date-range.html",
-    "guidance": "Review independent Start and End selection, partial ranges, manual input, invalid input recovery, clearing, dismissal, and the separation between typing and calendar operation. The fixed today fixture is historical, not the current date.",
-    "status": "Earlier approved snapshot; known gaps are addressed in the next-version candidate. Retained for comparison.",
-    "evidence": "docs/mobile-review-decisions.md"
-  },
-  {
-    "id": "date-range-recovery-draft",
-    "title": "Date range \u2014 shared next-version candidate",
-    "source": "review/references/date-range-recovery-draft.html",
-    "guidance": "Review reconciled Enter, mobile input visibility, header/navigation, Sunday cue and then opposite-boundary recovery. This is the single shared Date range next version.",
-    "status": "Draft next version; PoC 018 review findings returned to the shared Reference. Human approval pending.",
-    "evidence": "references/date-range-recovery.md"
+    "guidance": "Review the adopted optional date filter, dependent recovery, calendar navigation and flat icon buttons.",
+    "status": "Approved by explicit PR #19 human review.",
+    "evidence": "references/date-range.md"
   },
   {
     "id": "entity-lookup",

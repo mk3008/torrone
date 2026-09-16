@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-const source = fs.readFileSync(process.argv[2] || 'review/references/date-range-recovery-draft.html', 'utf8');
+const source = fs.readFileSync(process.argv[2] || 'review/references/date-range.html', 'utf8');
 function fixture() {
   const boundary = () => ({ input: { value: '', attrs: {}, setAttribute(k,v) { this.attrs[k]=v; } }, field: {dataset:{}}, error: {} });
   const state = {start:null,end:null};

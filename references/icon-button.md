@@ -1,13 +1,15 @@
 ---
 id: icon-button
-status: draft
+status: approved
+approved_git_blob: b8e039b8dbee39ccd668d3936be60abffe1fa447
+approval_evidence: https://github.com/mk3008/torrone/pull/19#issuecomment-5704820948
 responsibility: flat icon-only command buttons
 reference: ../review/references/icon-button-draft.html
 ---
 
 # Flat icon buttons
 
-Candidate for [Issue #15](https://github.com/mk3008/torrone/issues/15). The requested direction is flat calendar navigation and Close controls; this executable treatment still requires human acceptance or rejection with a reason. No approval is inferred from implementation or merge.
+Adopted explicitly in [PR #19 review](https://github.com/mk3008/torrone/pull/19#issuecomment-5704820948) for flat icon-only command appearance and states. Approval identifies the exact Git blob above. The executable retains its reviewed draft labels and filename for byte identity; they are not its current curation status.
 
 ## Preserve
 
@@ -23,6 +25,6 @@ Colors, corner radius, glyph implementation and CSS organization may fit the con
 
 ## Application and review
 
-The example reports activation for demonstration; it does not pretend to implement calendar navigation. The [Date range candidate](date-range-recovery.md) applies the same treatment to previous/next month/year and Close. Its existing interaction policy, header, one-row navigation and focus return remain authoritative for that composition. Field Clear/calendar triggers and day cells are outside this change.
+The example reports activation for demonstration; it does not pretend to implement calendar navigation. The [Date range Reference](date-range.md) applies the same treatment to previous/next month/year and Close. Its existing interaction policy, header, one-row navigation and focus return remain authoritative for that composition. Field Clear/calendar triggers and day cells are outside this change.
 
-Review at narrow widths, with pointer and keyboard, including disabled controls. Human decision is pending on Issue #15; the implementing task must record the review result there. Verification and remaining limitations are in [the implementation notes](../docs/icon-button-review.md).
+Review at narrow widths, with pointer and keyboard, including disabled controls. The adoption decision is the review linked above; verification limitations remain recorded. Verification and remaining limitations are in [the implementation notes](../docs/icon-button-review.md).
