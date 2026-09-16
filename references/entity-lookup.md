@@ -34,3 +34,5 @@ Apply [application interaction requirements](../docs/application-interaction.md)
 ## Review scope clarification
 
 This example demonstrates a dialog lookup operation, not a recommendation that every entity search must first open a dialog. The owner explicitly retained this sample's operation model while noting that a textbox-integrated autocomplete may better fit simple ID/name selection. No autocomplete implementation is requested here. Close applies the [approved flat icon-button Reference](icon-button.md), retaining its accessible name, 44px target and existing cancellation/focus-return semantics.
+
+The owner removed explanatory copy that repeated the radio group and Select/Cancel controls. For this lookup, communicate single choice and completion through the controls themselves; add explanatory prose only for meaning the GUI cannot adequately convey.
