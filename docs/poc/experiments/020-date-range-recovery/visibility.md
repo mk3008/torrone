@@ -11,3 +11,7 @@ The generic handler compares editable text input/textarea and associated-label g
 The photographed ChatGPT viewer embeds the site. The child's own VisualViewport cannot reliably describe outer keyboard occlusion. The handler skips embedded windows rather than guessing. It therefore does not claim to fix the photographed overlap inside ChatGPT. Standalone opening can use the correction; embedded support requires an advertised host viewport/scroll integration unavailable in this repository. Standalone scrolling is also constrained by available document scroll range; no arbitrary padding is introduced. Viewport-taller textarea caret visibility is outside this bounded example.
 
 Exact current identity: visibility-identity.json. Human review remains required.
+
+## Direction follow-up
+
+Owner reported unwanted backward scrolling. The execution guard now ignores negative/zero correction deltas regardless of visibility calculation, retaining positive lower-edge correction. The regression expects no movement for a negative upper-edge result and still verifies a positive 22px adjustment. Entry and recovery checks pass. This supersedes the earlier upper-clipping expectation; no new phone verification is claimed. Current identity: visibility-direction-identity.json.

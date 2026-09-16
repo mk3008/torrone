@@ -4,7 +4,7 @@ status: draft
 responsibility: opposite-boundary recovery for independently optional date filters
 reference: ../review/references/date-range-recovery-draft.html
 base_approved_git_blob: d2be91d512ac310cb306adfe0e9bfe556ec2bca8
-draft_identity: ../docs/poc/experiments/020-date-range-recovery/visibility-identity.json
+draft_identity: ../docs/poc/experiments/020-date-range-recovery/visibility-direction-identity.json
 decision_source: https://github.com/mk3008/torrone/issues/13
 ---
 
@@ -68,3 +68,5 @@ The owner clarified that tapping a visible text editor must not trigger applicat
 The owner's next clarification permits the minimum correction when keyboard occlusion actually clips the active editor. Follow [shared text-entry visibility](../docs/application-interaction.md#shared-text-entry-visibility). The candidate includes a generic handler for text inputs and textarea, independent of calendar state; it preserves native focus and makes no movement when the label/editor fit.
 
 The current handler operates only in a top-level window with usable viewport geometry. In the ChatGPT embedded viewer it deliberately does not guess keyboard occlusion; open the review site as a standalone browser page to exercise the correction. A host integration is required to provide the same guarantee inside an opaque embedding. No such host contract is available in this repository. [Verification and limits](../docs/poc/experiments/020-date-range-recovery/visibility.md).
+
+Textbox correction is one-directional: only positive scroll deltas may lift the editor above the keyboard. Ignore negative corrections; upper-edge/label clipping must not move the page backward automatically.

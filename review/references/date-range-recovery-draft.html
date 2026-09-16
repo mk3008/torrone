@@ -707,7 +707,8 @@
     const bounds = { top: Math.min(editor.top, ...labels.map(r => r.top)), bottom: editor.bottom };
     const target = bounds.bottom - bounds.top <= bottom - top - 16 ? bounds : editor;
     const delta = correction(target, top, bottom);
-    if (Math.abs(delta) >= 1) window.scrollBy({ top: delta, left: 0, behavior: 'instant' });
+    // Never reverse the user's scroll position to recover the upper edge.
+    if (delta >= 1) window.scrollBy({ top: delta, left: 0, behavior: 'instant' });
   }
   function schedule() {
     cancelAnimationFrame(frame);
