@@ -1,3 +1,4 @@
+// Historical test for commit c6b613cc5aa51f8182d478dcc189c37442928218; not an active gate.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');

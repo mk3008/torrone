@@ -3,6 +3,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const html = fs.readFileSync('review/references/date-range-recovery-draft.html', 'utf8');
+assert.ok(!html.includes('window.visualViewport'), 'Withdrawn keyboard-following helper must not return');
+assert.ok(!html.includes('window.scrollBy'), 'No independent textbox scroll correction');
 assert.ok(!html.includes('manual-entry'), 'No focus-dependent document padding');
 assert.ok(!html.includes('installEntryVisibility'), 'No delayed input scrolling');
 function fixture(narrow) {

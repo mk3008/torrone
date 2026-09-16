@@ -4,13 +4,13 @@ status: draft
 responsibility: opposite-boundary recovery for independently optional date filters
 reference: ../review/references/date-range-recovery-draft.html
 base_approved_git_blob: d2be91d512ac310cb306adfe0e9bfe556ec2bca8
-draft_identity: ../docs/poc/experiments/020-date-range-recovery/visibility-trigger-identity.json
+draft_identity: ../docs/poc/experiments/020-date-range-recovery/withdrawal-identity.json
 decision_source: https://github.com/mk3008/torrone/issues/13
 ---
 
 # Date range — shared next-version candidate
 
-This is a separate draft of the [approved Date range](date-range.md). Approval does not transfer. The original executable, curation and approval evidence remain unchanged. The owner must decide whether to approve this recovery policy and the exact candidate above.
+This is a separate draft of the [approved Date range](date-range.md). Approval does not transfer. The original executable, curation and approval evidence remain unchanged. The owner accepted the remaining behavior when withdrawing keyboard-scroll correction; see the bounded review record below. Historical exact-version approval is not rewritten.
 
 ## Proposed contract
 
@@ -43,15 +43,15 @@ Source: [owner review](https://github.com/mk3008/torrone/pull/14#pullrequestrevi
 | PoC 018 finding | Classification | Required shared behavior |
 | --- | --- | --- |
 | Irregular Enter focus | Reference gap and target defect | Manual Enter normalizes/validates in place for either field, valid/invalid/empty. Composition Enter is untouched. Calendar completion has a separate return path. |
-| Keyboard hides editor | Reference gap exposed by transfer | Keep manual entry in normal document flow: no unconditional scrolling, delayed retries or focus-dependent padding on editor focus/blur. Apply the shared measured-occlusion correction only when needed. The browser may perform its native keyboard accommodation. On calendar opening, reveal the owning label/editor followed by the calendar header, without transferring focus to the other editor. |
+| Keyboard hides editor | Reference gap exposed by transfer | Keep manual entry in normal document flow: no application scrolling, delayed retries or focus-dependent padding on editor focus/blur or keyboard viewport changes. The browser may perform its native keyboard accommodation. On calendar opening, reveal the owning label/editor followed by the calendar header, without transferring focus to the other editor. |
 | Tapped day fails to commit | Target event-order defect | Available day activation completes its owning boundary before dismissal; preserve this across typing/calendar switches. |
 | Clipped focus ring | Target rendering defect | A focused day remains visible above neighboring cells; preserve focus styling and verify actual rendering. |
 | Month navigation wastes height | Reference layout gap | Previous year, previous month, month/year, next month, next year occupy one row at ordinary phone widths. Label may wrap inside its cell; controls retain usable targets. |
 | Sunday orientation | Reference design decision | Sunday heading and ordinary Sunday dates are red; heading remains bold/textual. Derive date styling from weekday. Selected and disabled states take priority; Saturday is neutral. |
 | Active-boundary label placement | Reference ambiguity | First row: active boundary name left, Close right. Second row: month/year navigation. Then weekday headings and days. DOM and visual order agree. |
-| Different navigation expressions | Reference ambiguity | Bordered 44px single-chevron month buttons and double-chevron year buttons, in chronological order around the month heading, with explicit accessible names and titles. |
+| Different navigation expressions | Reference ambiguity | 44px single-chevron month buttons and double-chevron year buttons, in chronological order around the month heading, with explicit accessible names and titles. |
 
-Navigation comparison: text labels (“Previous year/month”) are explicit but make four touch targets plus the month heading too wide. Font glyphs are compact but their weight and alignment vary. Fixed SVG single/double chevrons give consistent geometry; visible borders identify the touch area, while accessible names distinguish month/year. This retains a recognizable existing Reference expression with stronger affordance, rather than copying the PoC font glyphs. Human visual review is still required.
+Navigation comparison: text labels (“Previous year/month”) are explicit but make four touch targets plus the month heading too wide. Font glyphs are compact but their weight and alignment vary. Fixed SVG single/double chevrons give consistent geometry; accessible names distinguish month/year. The current borders are provisional button styling, not a Date range invariant. This retains a recognizable existing Reference expression with stronger affordance, rather than copying the PoC font glyphs. Human visual review is still required.
 
 The old mobile header put the month first and target name after the controls. Target-first makes the scope clear before the user navigates; Close stays in the top-right header, outside chronological navigation. The hierarchy is required; exact colors, fonts and spacing remain flexible.
 
@@ -59,16 +59,9 @@ Tab/Shift+Tab traverse visible enabled controls in DOM/visual order: editor, con
 
 See [reconciliation verification](../docs/poc/experiments/020-date-range-recovery/reconciliation.md) for current evidence. Earlier PoC 020 evidence identifies the earlier candidate only and does not validate this revision.
 
-## Follow-up: scroll only when opening the calendar
 
-The owner clarified that tapping a visible text editor must not trigger application scrolling. Remove the former manual-entry scroll/padding workaround rather than postponing it. Outside taps must not select the other boundary. Calendar opening requests contextual scrolling on narrow screens, anchored at the owning boundary stack so its label/editor and the calendar header remain in sequence. Do not align the calendar alone and hide its editor. A tall calendar may still require normal user scrolling. Internal focus changes use preventScroll to avoid competing movements. This supersedes the earlier reconciliation visibility implementation, not the requirement that manual input remain usable. [Current verification](../docs/poc/experiments/020-date-range-recovery/scroll-correction.md).
+## Keyboard-scroll withdrawal and owner review
 
-## Measured text-entry occlusion
+On 2026-09-16 the owner explicitly agreed to withdraw the independent keyboard-following scroll correction and stated that the remaining behavior had no problems. Preserve that bounded acceptance. The [withdrawal decision](../docs/decisions/2026-09-16-withdraw-keyboard-scroll.md) supersedes the earlier visibility policies and their test claims. The candidate now uses normal textbox behavior; only calendar disclosure explicitly reveals its owning input/calendar context.
 
-The owner's next clarification permits the minimum correction when keyboard occlusion actually clips the active editor. Follow [shared text-entry visibility](../docs/application-interaction.md#shared-text-entry-visibility). The candidate includes a generic handler for text inputs and textarea, independent of calendar state; it preserves native focus and makes no movement when the label/editor fit.
-
-The current handler operates only in a top-level window with usable viewport geometry. In the ChatGPT embedded viewer it deliberately does not guess keyboard occlusion; open the review site as a standalone browser page to exercise the correction. A host integration is required to provide the same guarantee inside an opaque embedding. No such host contract is available in this repository. [Verification and limits](../docs/poc/experiments/020-date-range-recovery/visibility.md).
-
-Textbox correction is one-directional: only positive scroll deltas may lift the editor above the keyboard. Ignore negative corrections; upper-edge/label clipping must not move the page backward automatically.
-
-Only a decrease in visible viewport height may initiate textbox correction. Focusing/tapping an editor, switching fields, scrolling manually or increasing viewport height must not initiate it. Browser-native keyboard/focus scrolling remains outside this guarantee.
+The owner prefers flat month/year navigation and Close buttons. Their reusable surface/state treatment belongs to a bounded icon-button Reference (ordinary, hover/pressed, focus, disabled, target area, accessible name). Date range owns their meaning, grouping, order, placement and return paths. This preference is recorded for that future work; no button-style change or new Reference is introduced here. Flat does not mean removing keyboard focus or shrinking the hit area.
