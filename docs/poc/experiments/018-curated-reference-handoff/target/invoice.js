@@ -70,7 +70,7 @@
       button.textContent = date(value).getUTCDate();
       const endpoint = limits.some(limit => limit.value === value);
       const between = limits[0].value && limits[1].value && value > limits[0].value && value < limits[1].value;
-      button.className = [value.slice(0, 7) !== page.slice(0, 7) ? 'spill' : '', between ? 'between' : ''].join(' ');
+      button.className = [date(value).getUTCDay() === 0 ? 'sunday' : '', value.slice(0, 7) !== page.slice(0, 7) ? 'spill' : '', between ? 'between' : ''].join(' ');
       const reason = unavailable(value);
       button.disabled = Boolean(reason);
       button.tabIndex = value === cursor ? 0 : -1;

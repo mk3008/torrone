@@ -33,3 +33,9 @@ The current change adds management and review guidance only; it changes no HTML,
 The owner requested less unused vertical space in the month navigation. The candidate now places previous-year, previous-month, month heading, next-month and next-year in one grid row, in that DOM order. Buttons retain 44 by 44 CSS pixel minimum targets. At very narrow widths or enlarged text the heading may wrap inside its center cell rather than shrinking the controls or overflowing the calendar. No key handler or shared Enter policy changes. Native Tab order among these four buttons is unchanged.
 
 Static source inspection confirms the visual/DOM order and target sizing; the calendar handler and static bundle checks pass. Browser rendering at phone widths and enlarged text remains unverified. This is a candidate layout change, not approval of the complete UI.
+
+## Sunday orientation cue
+
+At the owner's request, both boundary calendars mark the Sunday heading and ordinary Sunday dates in dark red as an orientation cue. The heading is also bold and retains its weekday text. This is an Invoice desk display choice, not an international convention, a holiday/non-working-day rule, or a universal Torrone requirement. Sunday is derived from each date, including adjacent-month dates, rather than from its column position. The existing Sunday-first layout is unchanged; no configurable week-start feature is introduced.
+
+Selected endpoints retain their white-on-green state and unavailable dates retain their muted/hatch state, taking precedence over the Sunday color. Range and hover backgrounds retain readable red text. Navigation, focus, selection and Enter behavior are unchanged. The approved Reference is untouched. Existing calendar handler and static bundle checks pass; source inspection checks state precedence and computed contrast is above 4.5:1 on ordinary, range and hover backgrounds. Actual phone visual review remains pending.

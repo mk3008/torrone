@@ -36,6 +36,8 @@ nav { display: grid; grid-template-columns: 44px 44px minmax(0, 1fr) 44px 44px; 
 #date-options button { min-width: 0; width: 100%; border: 1px solid transparent; border-radius: 0; }
 #date-options button:focus-visible { position: relative; z-index: 1; outline-offset: -3px; }
 #date-options .spill { color: #64776e; }
+.weekdays .sunday { color: #a12626; font-weight: 700; }
+#date-options .sunday { color: #a12626; }
 #date-options .between { background: #d8e9c8; }
 #date-options [aria-pressed="true"] { background: #244c40; color: white; border-radius: 8px; font-weight: 700; }
 #date-options [aria-current="date"] { text-decoration: underline; text-underline-offset: 4px; }
