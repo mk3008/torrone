@@ -57,7 +57,7 @@ This rule lives with the Reference lifecycle because it governs explaining adopt
 
 ## Using curated References
 
-Before implementing a recurring UI responsibility, check this directory first.
+Before implementing a recurring UI responsibility, check this directory first. Apply the Product Foundation’s [interaction-before-instructions principle](../docs/product-foundation.md#communicate-through-interaction-before-instructions) when authoring and reviewing product UI copy and controls.
 
 Also identify the consuming application's shared interaction requirements using [Application interaction requirements](../docs/application-interaction.md). A bounded Reference is one input to the composed screen, not the complete application contract. Check compatibility before implementation and record cross-control coverage at handoff; do not infer a global keyboard policy from an isolated example.
 
