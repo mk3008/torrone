@@ -45,10 +45,14 @@
     .nav-group { display: flex; gap: 2px; }
     .nav-group:last-of-type { justify-content: flex-end; }
     .month-heading { margin: 0; font-size: 15px; text-align: center; }
-    .icon-button { display: grid; width: 44px; height: 44px; padding: 0; place-items: center; color: #183653; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; }
-    .icon-button:hover { background: #edf3f9; }
+    .icon-button { display: grid; width: 44px; height: 44px; padding: 0; place-items: center; color: #183653; background: transparent; border: 1px solid transparent; border-radius: 4px; }
+    .icon-button:hover:not(:disabled) { background: #edf3f9; }
+    .icon-button:active:not(:disabled) { background: #d7e5f3; }
+    .icon-button:focus-visible { outline: 2px solid #1d73b7; outline-offset: -3px; }
+    .icon-button:disabled { color: #7b8794; background: transparent; cursor: not-allowed; }
+    @media (forced-colors: active) { .icon-button:focus-visible { outline-color: Highlight; } .icon-button:disabled { color: GrayText; } }
     .icon-button svg { width: 16px; height: 16px; }
-    .close-calendar { width: 44px; height: 44px; margin-left: 1px; border-color: var(--border); }
+    .close-calendar { width: 44px; height: 44px; margin-left: 1px; }
     .range-status { min-height: 20px; margin: 0 2px 4px; color: var(--muted); font-size: 13px; }
     .calendar { width: 100%; border-collapse: separate; border-spacing: 0 2px; table-layout: fixed; }
     .calendar th { height: 24px; color: var(--muted); font-size: 12px; font-weight: 700; text-align: center; }

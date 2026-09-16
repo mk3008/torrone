@@ -1,5 +1,13 @@
 [
   {
+    "id": "icon-button-draft",
+    "title": "Flat icon buttons \u2014 draft",
+    "source": "review/references/icon-button-draft.html",
+    "guidance": "Review normal, hover, pressed, keyboard focus and disabled states. Activate with pointer, Enter and Space.",
+    "status": "Draft; human design decision pending.",
+    "evidence": "references/icon-button.md"
+  },
+  {
     "id": "date-range",
     "title": "Date range picker",
     "source": "review/references/date-range.html",

@@ -65,3 +65,7 @@ See [reconciliation verification](../docs/poc/experiments/020-date-range-recover
 On 2026-09-16 the owner explicitly agreed to withdraw the independent keyboard-following scroll correction and stated that the remaining behavior had no problems. Preserve that bounded acceptance. The [withdrawal decision](../docs/decisions/2026-09-16-withdraw-keyboard-scroll.md) supersedes the earlier visibility policies and their test claims. The candidate now uses normal textbox behavior; only calendar disclosure explicitly reveals its owning input/calendar context.
 
 Flat icon-button definition and its application to these controls are tracked in [Issue #15](https://github.com/mk3008/torrone/issues/15), separately from #13. That issue owns implementation scope, responsibility and the adoption decision.
+
+## Flat icon-button candidate
+
+The navigation and Close controls apply the [flat icon-button draft](icon-button.md). This changes visual states only; Date range retains placement, order and focus semantics. The treatment awaits human review in [Issue #15](https://github.com/mk3008/torrone/issues/15); see [verification and limits](../docs/icon-button-review.md).

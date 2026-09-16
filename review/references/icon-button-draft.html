@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Flat icon buttons — draft</title><style>
+body {font:16px/1.5 system-ui;color:#101d2f;background:#fff;margin:24px;} main {max-width:640px;margin:auto;} .controls {display:flex;gap:8px;flex-wrap:wrap;} button {font:inherit;}
+    .icon-button { display: grid; width: 44px; height: 44px; padding: 0; place-items: center; color: #183653; background: transparent; border: 1px solid transparent; border-radius: 4px; }
+    .icon-button:hover:not(:disabled) { background: #edf3f9; }
+    .icon-button:active:not(:disabled) { background: #d7e5f3; }
+    .icon-button:focus-visible { outline: 2px solid #1d73b7; outline-offset: -3px; }
+    .icon-button:disabled { color: #7b8794; background: transparent; cursor: not-allowed; }
+    @media (forced-colors: active) { .icon-button:focus-visible { outline-color: Highlight; } .icon-button:disabled { color: GrayText; } }
+    .icon-button svg { width: 16px; height: 16px; }
+    .icon-button { width: 44px; height: 44px; }
+.icon-button {box-sizing:border-box;cursor:pointer;} .icon-button svg {fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}</style><main><h1>Flat icon buttons</h1><p>Try pointer, Tab, Enter and Space. The message confirms activation; these sample controls do not navigate a calendar.</p><div class="controls"><button class="icon-button close-calendar" type="button" aria-label="Close calendar" title="Close calendar">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button><button class="icon-button" type="button" aria-label="Previous year" title="Previous year">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m11 17-5-5 5-5M18 17l-5-5 5-5"></path></svg>
+            </button><button class="icon-button" type="button" aria-label="Previous month" title="Previous month">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"></path></svg>
+            </button><button class="icon-button" type="button" aria-label="Next month" title="Next month">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"></path></svg>
+            </button><button class="icon-button" type="button" aria-label="Next year" title="Next year">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 17 5-5-5-5M13 17l5-5-5-5"></path></svg>
+            </button></div><h2>Unavailable action</h2><button class="icon-button" type="button" disabled aria-label="Previous year" title="Previous year">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m11 17-5-5 5-5M18 17l-5-5 5-5"></path></svg>
+            </button><p role="status">No action yet.</p><p>Draft for human review. Native disabled buttons are skipped by Tab.</p></main><script>document.querySelectorAll('button').forEach(button => button.addEventListener('click', () => { document.querySelector('[role="status"]').textContent = button.getAttribute('aria-label') + ' activated.'; }));</script></html>

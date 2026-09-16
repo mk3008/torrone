@@ -55,6 +55,8 @@ Historical material under `docs/poc/` is research evidence. Working copies under
 
 ## Current curated References
 
+- [Flat icon buttons](icon-button.md) — draft for icon-only command appearance and states.
+
 - [Date range filter](date-range.md) — **approved** for a filter-style date range with independently optional Start and End boundaries.
 - [Date range dependent recovery](date-range-recovery.md) — **draft next version** combining reconciled PoC 018 review requirements and opposite-boundary recovery; original approval remains unchanged.
 - PoC 018 findings feed the shared Date range next version; [the former Invoice entry](invoice-date-range.md) is a historical redirect, not another design original.
