@@ -22,7 +22,8 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium firefox webkit
       - name: Handler regression
-        run: node ../check-entity-lookup.cjs
+        working-directory: .
+        run: node tests/check-entity-lookup.cjs
       - name: Native browser regression
         run: npm test
       - uses: actions/upload-artifact@v4
