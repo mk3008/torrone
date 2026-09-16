@@ -75,8 +75,6 @@
 
     @media (max-width: 800px) {
       body { min-width: 0; }
-      body.manual-entry { padding-bottom: 100vh; }
-      .boundary-stack { scroll-margin-top: 12px; }
       .reference-note { padding: 10px 16px; }
       .sample { width: calc(100% - 24px); margin: 16px auto; padding: 16px; }
       .range-fields { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 8px; }
@@ -575,7 +573,7 @@
 
       const open = (position, { focusDay = false } = {}) => {
         // Move focus off editable input synchronously to dismiss the mobile keyboard.
-        if (separateDateInput.matches) boundaries[position].trigger.focus();
+        if (separateDateInput.matches) boundaries[position].trigger.focus({ preventScroll: true });
         popupOwner = position;
         control.dataset.anchor = position;
         placeCalendar(position);
@@ -587,8 +585,8 @@
           requestAnimationFrame(() => {
             if (popup.hidden) return;
             const target = gridBody.querySelector('.day[tabindex="0"]');
-            if (target) target.focus();
-            if (separateDateInput.matches) popup.scrollIntoView({ block: 'nearest' });
+            if (target) target.focus({ preventScroll: true });
+            if (separateDateInput.matches) boundaries[position].stack.scrollIntoView({ block: 'start', inline: 'nearest' });
           });
         }
       };
@@ -680,61 +678,6 @@
       renderCalendar();
     })();
   </script>
-<script>
-// Keep manual entry visible even when an embedding host does not resize our viewport.
-(function (root) {
-  function installEntryVisibility(win, doc, inputs, narrow) {
-    let retries = [];
-    let pointerHeld = false;
-    let pointerRelease;
-    const activeInput = () => narrow.matches && inputs.includes(doc.activeElement) ? doc.activeElement : null;
-    function reveal() {
-      const input = activeInput();
-      if (!input) return;
-      // Reserve scroll room even for the last field in a short document. Position
-      // its label and editor near the top, not the keyboard-obscured bottom edge.
-      doc.body.classList.add('manual-entry');
-      input.closest('.boundary-stack').scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'instant' });
-    }
-    function cancelRetries() {
-      retries.forEach(id => win.clearTimeout(id));
-      retries = [];
-    }
-    function sync() {
-      cancelRetries();
-      if (!activeInput()) {
-        if (!pointerHeld) doc.body.classList.remove('manual-entry');
-        return;
-      }
-      reveal();
-      // Keyboard opening can finish after focus, including in an iframe that
-      // receives no resize event. Every retry rechecks the current focus.
-      retries = [100, 350, 700].map(delay => win.setTimeout(reveal, delay));
-    }
-    // Do not collapse scroll space between pointerdown focus and the click:
-    // that can move a Clear/calendar button away from the user's finger.
-    doc.addEventListener('pointerdown', () => { win.clearTimeout(pointerRelease); pointerHeld = true; }, true);
-    doc.addEventListener('pointerup', () => {
-      pointerRelease = win.setTimeout(() => { pointerHeld = false; if (!activeInput()) sync(); }, 200);
-    }, true);
-    ['click', 'pointercancel'].forEach(event => doc.addEventListener(event, () => {
-      win.clearTimeout(pointerRelease);
-      pointerHeld = false;
-      win.requestAnimationFrame(() => { if (!activeInput()) sync(); });
-    }, true));
-    doc.addEventListener('focusin', sync);
-    doc.addEventListener('focusout', () => win.requestAnimationFrame(() => {
-      if (!activeInput()) sync();
-    }));
-    win.addEventListener('resize', reveal);
-    win.visualViewport?.addEventListener('resize', reveal);
-    narrow.addEventListener('change', sync);
-  }
-  if (typeof module !== 'undefined' && module.exports) module.exports = installEntryVisibility;
-  else installEntryVisibility(root, root.document,
-    [...root.document.querySelectorAll('.boundary-stack input')], root.matchMedia('(max-width: 800px)'));
-})(typeof window === 'undefined' ? {} : window);
 
-</script>
 </body>
 </html>

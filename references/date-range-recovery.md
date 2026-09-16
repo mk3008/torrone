@@ -4,7 +4,7 @@ status: draft
 responsibility: opposite-boundary recovery for independently optional date filters
 reference: ../review/references/date-range-recovery-draft.html
 base_approved_git_blob: d2be91d512ac310cb306adfe0e9bfe556ec2bca8
-draft_identity: ../docs/poc/experiments/020-date-range-recovery/reconciliation-identity.json
+draft_identity: ../docs/poc/experiments/020-date-range-recovery/scroll-correction-identity.json
 decision_source: https://github.com/mk3008/torrone/issues/13
 ---
 
@@ -43,7 +43,7 @@ Source: [owner review](https://github.com/mk3008/torrone/pull/14#pullrequestrevi
 | PoC 018 finding | Classification | Required shared behavior |
 | --- | --- | --- |
 | Irregular Enter focus | Reference gap and target defect | Manual Enter normalizes/validates in place for either field, valid/invalid/empty. Composition Enter is untouched. Calendar completion has a separate return path. |
-| Keyboard hides editor | Reference gap exposed by transfer | On narrow screens reserve scroll room and reveal the active label/editor when focusing or viewport changes. Cancel delayed work when editing ends; never displace a pressed target before activation. |
+| Keyboard hides editor | Reference gap exposed by transfer | Keep manual entry in normal document flow: no application-requested scrolling, delayed retries or focus-dependent padding on editor focus/blur. The browser may perform its native keyboard accommodation. On calendar opening, reveal the owning label/editor followed by the calendar header, without transferring focus to the other editor. |
 | Tapped day fails to commit | Target event-order defect | Available day activation completes its owning boundary before dismissal; preserve this across typing/calendar switches. |
 | Clipped focus ring | Target rendering defect | A focused day remains visible above neighboring cells; preserve focus styling and verify actual rendering. |
 | Month navigation wastes height | Reference layout gap | Previous year, previous month, month/year, next month, next year occupy one row at ordinary phone widths. Label may wrap inside its cell; controls retain usable targets. |
@@ -58,3 +58,7 @@ The old mobile header put the month first and target name after the controls. Ta
 Tab/Shift+Tab traverse visible enabled controls in DOM/visual order: editor, conditional Clear, calendar action, then the next boundary. No positive tabindex. Opening by ArrowDown focuses a selectable day. On narrow screens calendar completion/Clear returns to the owning calendar action to avoid reopening the keyboard; manual Enter never uses that return routine. These are this filter's shared baseline, not a universal Enter policy for every app.
 
 See [reconciliation verification](../docs/poc/experiments/020-date-range-recovery/reconciliation.md) for current evidence. Earlier PoC 020 evidence identifies the earlier candidate only and does not validate this revision.
+
+## Follow-up: scroll only when opening the calendar
+
+The owner clarified that tapping a text editor must not trigger application scrolling. Remove the former manual-entry scroll/padding workaround rather than postponing it. Outside taps must not select the other boundary. Calendar opening alone requests scrolling on narrow screens, anchored at the owning boundary stack so its label/editor and the calendar header remain in sequence. Do not align the calendar alone and hide its editor. A tall calendar may still require normal user scrolling. Internal focus changes use preventScroll to avoid competing movements. This supersedes the earlier reconciliation visibility implementation, not the requirement that manual input remain usable. [Current verification](../docs/poc/experiments/020-date-range-recovery/scroll-correction.md).
