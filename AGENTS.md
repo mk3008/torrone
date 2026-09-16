@@ -12,3 +12,5 @@
 - Match verification effort to change risk and impact. Use focused checks for documentation or mechanical cleanup, and broader verification when behavior, Reference semantics, comparison logic, or evidence handling changes. Do not weaken checks merely to obtain a passing result.
 - When requirements conflict or a material product decision is missing, preserve the gap and report it instead of inventing a new product-wide convention.
 - Do not restore Manifest/OKF-era workflows, skills, schemas, or orchestration as active repository requirements unless a new product decision explicitly calls for them.
+
+- For transfer PoCs, classify human findings as target implementation defects or Reference gaps. Return Reference-level decisions to its next-version candidate; do not invent PoC-specific product requirements or curated variants. Follow `references/README.md` and retain historical evidence.

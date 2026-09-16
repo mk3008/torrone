@@ -42,7 +42,11 @@ Historical material under `docs/poc/` is research evidence. Working copies under
 ## Current curated References
 
 - [Date range filter](date-range.md) — **approved** for a filter-style date range with independently optional Start and End boundaries.
-- [Date range dependent recovery](date-range-recovery.md) — **draft** correction for opposite-boundary validation; original approval remains unchanged.
-- [Invoice date range review requirements](invoice-date-range.md) — **draft** refinement preserving owner review requirements and the accepted Sunday cue; whole-candidate approval remains pending. Use it for continued Invoice desk work alongside the base Reference.
+- [Date range dependent recovery](date-range-recovery.md) — **draft next version** combining reconciled PoC 018 review requirements and opposite-boundary recovery; original approval remains unchanged.
+- PoC 018 findings feed the shared Date range next version; [the former Invoice entry](invoice-date-range.md) is a historical redirect, not another design original.
 
 This directory is a curation pilot. Its file layout and metadata are not a frozen Torrone profile or public API.
+
+## Transfer PoC feedback
+
+A transfer PoC has no independent product owner or product-specific preferences. Classify review findings as implementation departures from the Reference or gaps/ambiguities in the Reference. Fix departures in the target; return design findings to the shared Reference next version before using that baseline in later work. Record the classification and affected paths. Preserve original evidence, but do not create a PoC-specific Reference to isolate feedback. Explicit real-product requirements may justify a separate variant.

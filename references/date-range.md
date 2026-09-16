@@ -12,6 +12,8 @@ historical_approval_evidence: ../docs/poc/experiments/017-reference-html-ssot/da
 
 # Date range filter
 
+> This exact approved snapshot predates the PoC 018 corrections. For continued Date range work, also apply the owner-required corrections in the [single next-version candidate](date-range-recovery.md). The old snapshot is preserved for provenance, not permission to repeat known gaps. Next-version approval remains pending.
+
 This entry is Torrone's current human-approved design original for a filter-style Date range control. It builds on the earlier human-approved desktop Reference and now includes the responsive derivative that was reviewed on a phone on 2026-09-16.
 
 The current approved executable is `review/references/date-range.html`. Approval applies to the exact content identified by Git blob `d2be91d512ac310cb306adfe0e9bfe556ec2bca8`. The earlier desktop-only approval remains preserved as provenance and evidence rather than being rewritten.
