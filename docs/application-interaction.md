@@ -47,3 +47,9 @@ PoC 018 exposed a handoff gap: the Foundation named application consistency, but
 The corrective controls are the required AGENTS entry, the curation/workflow links, and the PR applicability/evidence section. They expose an omission for review; a filled table is not proof of usability and cannot guarantee that no defect escapes. [Issue #9](https://github.com/mk3008/torrone/issues/9) separately evaluates the value of AI browser review; this policy neither assumes its result nor selects its tooling.
 
 The [PoC 018 application record](poc/experiments/018-curated-reference-handoff/application-interaction.md) applies this check retrospectively. Its current Enter choice is still a candidate, not a Torrone-wide convention or a human-approved design.
+
+## Shared text-entry visibility
+
+Use ordinary browser text-entry behavior. Do not add application scrolling on editor focus, field switching or keyboard viewport changes as a default Reference requirement. Preserve manual scrolling, reachable editors and focus. Calendar disclosure may reveal its owning input and calendar context; this is a separate responsibility.
+
+The attempted generic keyboard-following correction was withdrawn by the owner on 2026-09-16 after repeated unwanted movement. See the [decision, evidence and reopening conditions](decisions/2026-09-16-withdraw-keyboard-scroll.md). This does not reject input visibility as a usability goal or guarantee that native keyboard behavior is identical across hosts. Environment-specific treatment belongs to a bounded consuming-product decision with actual device verification.

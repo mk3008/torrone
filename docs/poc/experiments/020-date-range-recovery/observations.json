@@ -1,0 +1,189 @@
+[
+  {
+    "name": "R01 reversed End",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "invalid": "true",
+          "value": "20260808"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\": 2026-08-10\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [active]: \"20260808\"\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - alert: End date must be on or after start date.\n  - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "R02 opposite Start repair",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-06"
+        },
+        {
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-06\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-06 through 2026-08-08.\""
+  },
+  {
+    "name": "R03 reversed Start",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "invalid": "true",
+          "value": "20260812"
+        },
+        {
+          "invalid": "false",
+          "value": "2026-08-10"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: \"20260812\"\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - alert: Start date must be on or before end date.\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-10\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"End date selected: 2026-08-10. Start date is not selected.\""
+  },
+  {
+    "name": "R04 opposite End repair",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-12"
+        },
+        {
+          "invalid": "false",
+          "value": "2026-08-14"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\": 2026-08-12\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [active]: 2026-08-14\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-12 through 2026-08-14.\""
+  },
+  {
+    "name": "R05 calendar repairs End",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-06"
+        },
+        {
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-06\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-06 through 2026-08-08.\""
+  },
+  {
+    "name": "R06 new reversed Start",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "invalid": "true",
+          "value": "20260810"
+        },
+        {
+          "invalid": "false",
+          "value": "2026-08-08"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: \"20260810\"\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - alert: Start date must be on or before end date.\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-08\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"End date selected: 2026-08-08. Start date is not selected.\""
+  },
+  {
+    "name": "R07 Clear End repairs Start to partial",
+    "state": {
+      "focus": "range-end-input",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-10"
+        },
+        {
+          "invalid": "false",
+          "value": ""
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\": 2026-08-10\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\" [active]\n  - button \"Open calendar for end date\":\n  - paragraph: \"Start date selected: 2026-08-10. End date is not selected.\""
+  },
+  {
+    "name": "R08 format error survives opposite edit",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-06"
+        },
+        {
+          "invalid": "true",
+          "value": "20260230"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-06\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": \"20260230\"\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - alert: Enter a real date as yyyy-mm-dd or yyyymmdd.\n  - paragraph: \"Start date selected: 2026-08-06. End date is not selected.\""
+  },
+  {
+    "name": "R09 future error survives opposite edit",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-05"
+        },
+        {
+          "invalid": "true",
+          "value": "20260818"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-05\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": \"20260818\"\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - alert: Enter a date on or before 2026-08-14.\n  - paragraph: \"Start date selected: 2026-08-05. End date is not selected.\""
+  },
+  {
+    "name": "R10 repeated recovery",
+    "state": {
+      "focus": "range-start-input",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-03"
+        },
+        {
+          "invalid": "false",
+          "value": "2026-08-04"
+        }
+      ]
+    },
+    "snapshot": "- generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n- region \"Transaction date filter\":\n  - heading \"Transaction date filter\" [level=2]\n  - paragraph: Filter recorded transactions by date.\n  - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n  - generic: Start date\n  - combobox \"Start date\" [active]: 2026-08-03\n  - button \"Clear start date\":\n  - button \"Open calendar for start date\":\n  - generic: to\n  - generic: End date\n  - combobox \"End date\": 2026-08-04\n  - button \"Clear end date\":\n  - button \"Open calendar for end date\":\n  - paragraph: \"Selected range: 2026-08-03 through 2026-08-04.\""
+  },
+  {
+    "name": "R11 narrow 320px: calendar End14 recovers invalid Start12",
+    "state": {
+      "focus": "",
+      "inputs": [
+        {
+          "invalid": "false",
+          "value": "2026-08-12"
+        },
+        {
+          "invalid": "false",
+          "value": "2026-08-14"
+        }
+      ]
+    },
+    "snapshot": "- paragraph: Width fixture, not phone emulation\n- button \"320 CSS pixels\"\n- button \"390 CSS pixels\"\n- button \"900 CSS pixels\"\n- paragraph:\n  - link \"Unframed Reference\":\n    - /url: /date-range.html\n- iframe [active]:\n  - generic: \"Recovery policy draft · date range · fixed review fixture: today = 2026-08-14\"\n  - region \"Transaction date filter\":\n    - heading \"Transaction date filter\" [level=2]\n    - paragraph: Filter recorded transactions by date.\n    - paragraph: \"Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.\"\n    - generic: Start date\n    - combobox \"Start date\"\n    - button \"Clear start date\":\n    - button \"Open calendar for start date\":\n    - generic: End date\n    - combobox \"End date\"\n    - button \"Clear end date\":\n    - button \"Open calendar for end date\" [active]:\n    - paragraph: \"Selected range: 2026-08-12 through 2026-08-14.\""
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "source": "review/references/date-range-recovery-draft.html",
+  "git_blob": "f0fc7afa5e719891ac291e5a69ce5a579d69717f",
+  "sha256": "971ffe6c3698b9980121acbe8a0cf68853eba94597d112b0bea337524fd5d107",
+  "base_commit": "d7e8bba23697e7ee41b1901aea5ceb6616d3b5ab",
+  "note": "Isolated PoC 019 width fixture with served date-range.html replaced by exact draft bytes. No source instrumentation. Width is not phone emulation.",
+  "evidence_sha256": {
+    "observations.json": "0f05f0c1d53f29ef716d885782e2db359e1c30d46ce8dd689fd2c8c0bf5ea453",
+    "narrow-recovered.jpg": "11c8a09c2ac83c801c3051053fa6a8bae4849b96a0f84dc606e1f477fc719457"
+  }
+}

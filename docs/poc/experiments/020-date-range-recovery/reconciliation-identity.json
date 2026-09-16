@@ -1,0 +1,12 @@
+{
+  "source": "review/references/date-range-recovery-draft.html",
+  "git_blob": "542e994d1315badff5460127d8a758fcfaa81c77",
+  "sha256": "66a94e47f7e0761188b27d6c4b7aafd709f641075c33699f45ba03401c5b1cdc",
+  "baseline_sha256": "bb688abce35d652fb14a1fc3d7619b5175d6812b35cf1687592d39163e7310bd",
+  "evidence_sha256": {
+    "baseline.patch": "a657b20a1b020cdde191c174b16f7eb8a2dac06913727198013b82c79d46f409",
+    "recovery.patch": "c97d7f58e03b46a6d9de9f2dc85d4bea7f3ccc7f1c9c04f271434a323699964b",
+    "reconciled-observations.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "reconciled-390.jpg": "f5d7bdc93e92855e8279ee124fd1fa50ee5ccd3a2db0153f41d1f5cabc2d2d02"
+  }
+}

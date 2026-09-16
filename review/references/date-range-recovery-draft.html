@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <link rel="icon" href="data:,">
+  <title>Date range — next Reference candidate</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #fff; --text: #101d2f; --muted: #54657a; --border: #94a8bd; --accent: #1d73b7; --focus: #86b9ee; --danger: #b42318; --danger-bg: #fff7f6; --disabled-text: #5f6f82; --sunday: #b42318; --sunday-muted: #8f4139; --saturday: #155b92; --saturday-muted: #466b8c; --range-bg: #d7ebff; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body { min-width: 720px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: not-allowed; }
+    [hidden] { display: none !important; }
+    :is(button, input):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .reference-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .sample { width: min(680px, calc(100% - 48px)); margin: 48px auto; padding: 24px; background: var(--surface); border: 1px solid #c6d2df; border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .sample h2 { margin: 0 0 6px; font-size: 22px; }
+    .support { margin: 0 0 14px; color: var(--muted); }
+    .range-hint { margin: 0 0 8px; color: var(--muted); font-size: 14px; }
+    .range-fields { position: relative; display: grid; width: max-content; max-width: 100%; grid-template-columns: 280px 24px 280px; align-items: start; gap: 12px; }
+    .range-separator { margin-top: 32px; color: var(--muted); text-align: center; }
+    .boundary-stack { width: 280px; }
+    .field-label { display: block; margin-bottom: 4px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .date-field { position: relative; display: flex; min-height: 44px; overflow: visible; align-items: stretch; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+    .date-field[data-invalid="true"] { background: var(--danger-bg); border-color: var(--danger); box-shadow: 0 0 0 1px var(--danger); }
+    .date-value { min-width: 0; flex: 1; padding: 8px 55px 8px 11px; color: var(--text); background: transparent; border: 0; border-radius: 5px 0 0 5px; }
+    .date-value:focus-visible { outline: none; }
+    .date-field:has(.date-value:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .date-value::placeholder { color: #687a8f; opacity: 1; }
+    .field-action { display: grid; width: 44px; min-width: 44px; padding: 0; place-items: center; color: #183653; background: var(--surface); border: 0; border-left: 1px solid var(--border); }
+    .field-action:last-child { border-radius: 0 5px 5px 0; }
+    .field-action:hover { background: #edf3f9; }
+    .field-action:focus-visible { outline-offset: -4px; }
+    .clear-action { position: absolute; z-index: 2; top: 0; right: 44px; bottom: 0; }
+    .field-action svg, .icon-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+    .error { min-height: 21px; margin: 7px 0 0; color: var(--danger); font-size: 14px; font-weight: 650; }
+    .picker { position: absolute; z-index: 10; top: calc(100% + 10px); left: 0; width: 336px; padding: 12px; background: var(--surface); border: 1px solid #98aabc; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
+    .range-fields[data-anchor="end"] .picker { right: 0; left: auto; }
+    .picker-header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; margin-bottom: 6px; align-items: center; gap: 4px; }
+    .picker-title { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+    .picker-title .range-status { margin: 0; font-size: 15px; font-weight: 650; color: var(--text); }
+    .nav-group { display: flex; gap: 2px; }
+    .nav-group:last-of-type { justify-content: flex-end; }
+    .month-heading { margin: 0; font-size: 15px; text-align: center; }
+    .icon-button { display: grid; width: 44px; height: 44px; padding: 0; place-items: center; color: #183653; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; }
+    .icon-button:hover { background: #edf3f9; }
+    .icon-button svg { width: 16px; height: 16px; }
+    .close-calendar { width: 44px; height: 44px; margin-left: 1px; border-color: var(--border); }
+    .range-status { min-height: 20px; margin: 0 2px 4px; color: var(--muted); font-size: 13px; }
+    .calendar { width: 100%; border-collapse: separate; border-spacing: 0 2px; table-layout: fixed; }
+    .calendar th { height: 24px; color: var(--muted); font-size: 12px; font-weight: 700; text-align: center; }
+    .calendar th.sunday { color: var(--sunday); }
+    .calendar abbr { text-decoration: none; }
+    .calendar td { height: 34px; padding: 0; text-align: center; }
+    .calendar td:has(.day:disabled) { background: transparent; cursor: not-allowed; }
+    .calendar td.in-range-cell { background: var(--range-bg); }
+    .calendar td.in-range-cell .day:not([aria-pressed="true"]) { background: var(--range-bg); }
+    .calendar td.range-start-cell { border-radius: 17px 0 0 17px; }
+    .calendar td.range-end-cell { border-radius: 0 17px 17px 0; }
+    .calendar td.range-start-cell.range-end-cell { border-radius: 17px; }
+    .day { position: relative; z-index: 1; width: 34px; height: 34px; padding: 0; color: var(--text); background: transparent; border: 1px solid transparent; border-radius: 50%; }
+    .day:focus-visible { z-index: 2; outline-offset: -3px; }
+    .day:hover:not(:disabled):not([aria-pressed="true"]) { background: #edf3f9; }
+    .day.outside-month { color: var(--muted); }
+    .calendar .day.sunday:not(:disabled):not([aria-pressed="true"]) { color: var(--sunday); }
+    .calendar .day.sunday.outside-month:not(:disabled):not([aria-pressed="true"]) { color: var(--sunday-muted); }
+    .day[aria-current="date"] { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .day[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: #155b92; border-radius: 50%; font-weight: 700; }
+    .day:disabled { color: var(--disabled-text); background: transparent; border-color: transparent; pointer-events: none; }
+    .calendar-note { margin: 8px 2px 0; color: var(--muted); font-size: 13px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    @media (max-width: 800px) {
+      body { min-width: 0; }
+      .reference-note { padding: 10px 16px; }
+      .sample { width: calc(100% - 24px); margin: 16px auto; padding: 16px; }
+      .range-fields { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+      .boundary-stack { width: 100%; min-width: 0; }
+      .range-separator { display: none; }
+      .picker, .range-fields[data-anchor="end"] .picker { position: static; width: 100%; margin-top: 8px; padding: 8px; box-shadow: none; }
+      .picker-header { gap: 4px; }
+      .month-heading { overflow-wrap: anywhere; font-size: 15px; }
+      .icon-button { width: 44px; height: 44px; }
+      .calendar td { height: 44px; }
+      .day { width: 100%; max-width: 44px; height: 44px; }
+      .date-value { font-size: 16px; }
+    }
+    @media (max-width: 360px) {
+      .sample { width: calc(100% - 12px); padding: 8px; }
+      .picker { padding: 6px; }
+      .picker-header { gap: 2px; }
+      .nav-group { gap: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reference-note" data-reference-harness="reference-label">Next Reference candidate · date range · fixed review fixture: today = 2026-08-14</div>
+  <section class="sample" aria-labelledby="range-heading">
+    <h2 id="range-heading">Transaction date filter</h2>
+    <p class="support">Filter recorded transactions by date.</p>
+    <p class="range-hint" id="range-hint">Format: yyyy-mm-dd or yyyymmdd. Either date may be blank. On a phone, type a date or use its calendar button.</p>
+    <div class="range-fields" data-ref="range-control" data-anchor="start">
+      <div class="boundary-stack" data-boundary="start">
+        <label class="field-label" id="range-start-label" for="range-start-input">Start date</label>
+        <div class="date-field" data-invalid="false">
+          <input
+            class="date-value"
+            id="range-start-input"
+            type="text"
+            inputmode="numeric" enterkeyhint="done"
+            autocomplete="off"
+            placeholder="yyyy-mm-dd"
+            role="combobox"
+            aria-autocomplete="none"
+            aria-haspopup="dialog"
+            aria-controls="range-picker-popup"
+            aria-expanded="false"
+            aria-invalid="false"
+            aria-describedby="range-hint"
+            aria-errormessage="range-start-error"
+            data-ref="range-start-input">
+          <button class="field-action clear-action" type="button" data-ref="range-start-clear" aria-label="Clear start date" title="Clear start date" aria-hidden="true" hidden disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
+          <button class="field-action calendar-action" type="button" data-ref="range-start-trigger" aria-label="Open calendar for start date" title="Open calendar for start date" aria-controls="range-picker-popup" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2v4M16 2v4M3 9h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2z"></path></svg>
+          </button>
+        </div>
+        <p class="error" id="range-start-error" data-ref="range-start-error" role="alert" hidden>Enter a real date as yyyy-mm-dd or yyyymmdd.</p>
+      </div>
+
+      <span class="range-separator" aria-hidden="true">to</span>
+
+      <div class="boundary-stack" data-boundary="end">
+        <label class="field-label" id="range-end-label" for="range-end-input">End date</label>
+        <div class="date-field" data-invalid="false">
+          <input
+            class="date-value"
+            id="range-end-input"
+            type="text"
+            inputmode="numeric" enterkeyhint="done"
+            autocomplete="off"
+            placeholder="yyyy-mm-dd"
+            role="combobox"
+            aria-autocomplete="none"
+            aria-haspopup="dialog"
+            aria-controls="range-picker-popup"
+            aria-expanded="false"
+            aria-invalid="false"
+            aria-describedby="range-hint"
+            aria-errormessage="range-end-error"
+            data-ref="range-end-input">
+          <button class="field-action clear-action" type="button" data-ref="range-end-clear" aria-label="Clear end date" title="Clear end date" aria-hidden="true" hidden disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
+          <button class="field-action calendar-action" type="button" data-ref="range-end-trigger" aria-label="Open calendar for end date" title="Open calendar for end date" aria-controls="range-picker-popup" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2v4M16 2v4M3 9h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2z"></path></svg>
+          </button>
+        </div>
+        <p class="error" id="range-end-error" data-ref="range-end-error" role="alert" hidden>Enter a real date as yyyy-mm-dd or yyyymmdd.</p>
+      </div>
+
+      <div class="picker" id="range-picker-popup" data-ref="range-popup" role="dialog" aria-labelledby="range-owner" hidden>
+        <div class="picker-title">
+        <p class="range-status" id="range-owner" data-ref="range-status" aria-live="polite">Choose start date.</p>
+          <button class="icon-button close-calendar" type="button" data-ref="range-close" aria-label="Close calendar" title="Close calendar">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
+        </div>
+        <div class="picker-header">
+          <div class="nav-group">
+            <button class="icon-button" type="button" data-ref="range-prev-year" aria-label="Previous year" title="Previous year">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m11 17-5-5 5-5M18 17l-5-5 5-5"></path></svg>
+            </button>
+            <button class="icon-button" type="button" data-ref="range-prev-month" aria-label="Previous month" title="Previous month">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+          </div>
+          <h3 class="month-heading" id="range-month-heading" data-ref="range-month-heading" aria-live="polite">August 2026</h3>
+          <div class="nav-group">
+            <button class="icon-button" type="button" data-ref="range-next-month" aria-label="Next month" title="Next month">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"></path></svg>
+            </button>
+            <button class="icon-button" type="button" data-ref="range-next-year" aria-label="Next year" title="Next year">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 17 5-5-5-5M13 17l5-5-5-5"></path></svg>
+            </button>
+          </div>
+
+        </div>
+
+        <table class="calendar" data-ref="range-grid" role="grid" aria-labelledby="range-month-heading">
+          <thead>
+            <tr>
+              <th scope="col" class="sunday"><abbr title="Sunday">Su</abbr></th>
+              <th scope="col"><abbr title="Monday">Mo</abbr></th>
+              <th scope="col"><abbr title="Tuesday">Tu</abbr></th>
+              <th scope="col"><abbr title="Wednesday">We</abbr></th>
+              <th scope="col"><abbr title="Thursday">Th</abbr></th>
+              <th scope="col"><abbr title="Friday">Fr</abbr></th>
+              <th scope="col"><abbr title="Saturday">Sa</abbr></th>
+            </tr>
+          </thead>
+          <tbody id="range-grid-body"></tbody>
+        </table>
+        <p class="calendar-note" data-ref="range-note">Available through 2026-08-14.</p>
+        <p class="sr-only" id="range-keyboard-help">Use arrow keys to move by day or week. Use Page Up and Page Down to move by month; add Shift to move by year.</p>
+      </div>
+    </div>
+    <p class="sr-only" data-ref="range-selection" aria-live="polite">No range selected.</p>
+  </section>
+
+  <script type="application/json" data-reference-scenarios>
+    {"version":1,"scenarios":[
+      {"name":"start input focus opens calendar","steps":[{"action":"click","target":"range-start-input"}]},
+      {"name":"start input tab closes calendar","steps":[{"action":"press","target":"range-start-input","key":"Tab"}]},
+      {"name":"start calendar icon toggle","steps":[{"action":"click","target":"range-start-trigger"},{"action":"click","target":"range-start-trigger"}]},
+      {"name":"end calendar anchor","steps":[{"action":"click","target":"range-end-trigger"}]},
+      {"name":"month navigation","steps":[{"action":"click","target":"range-start-trigger"},{"action":"click","target":"range-next-month"},{"action":"click","target":"range-prev-month"}]},
+      {"name":"year navigation","steps":[{"action":"click","target":"range-start-trigger"},{"action":"click","target":"range-prev-year"},{"action":"click","target":"range-next-year"}]},
+      {"name":"single-click start selection","steps":[{"action":"click","target":"range-start-trigger"},{"action":"click","target":"range-start-day"}]},
+      {"name":"single-click end selection","steps":[{"action":"click","target":"range-end-trigger"},{"action":"click","target":"range-end-day"}]},
+      {"name":"pointer range selection","steps":[{"action":"click","target":"range-start-trigger"},{"action":"click","target":"range-start-day"},{"action":"click","target":"range-end-trigger"},{"action":"click","target":"range-end-day"}]},
+      {"name":"completed range reopen","steps":[{"action":"click","target":"range-start-trigger"},{"action":"click","target":"range-start-day"},{"action":"click","target":"range-end-trigger"},{"action":"click","target":"range-end-day"},{"action":"click","target":"range-end-trigger"}]},
+      {"name":"keyboard range selection","steps":[{"action":"press","target":"range-start-input","key":"ArrowDown"},{"action":"press","target":"range-start-day","key":"Enter"},{"action":"press","target":"range-end-input","key":"ArrowDown"},{"action":"press","target":"range-end-day","key":"Enter"}]},
+      {"name":"disabled future date","steps":[{"action":"click","target":"range-start-trigger"},{"action":"click","target":"range-disabled-day"}]},
+      {"name":"compact manual range","steps":[{"action":"fill","target":"range-start-input","value":"20260810"},{"action":"fill","target":"range-end-input","value":"20260812"},{"action":"press","target":"range-end-input","key":"Escape"}]},
+      {"name":"invalid manual start","steps":[{"action":"fill","target":"range-start-input","value":"20260230"},{"action":"press","target":"range-start-input","key":"Escape"}]},
+      {"name":"future manual end","steps":[{"action":"fill","target":"range-start-input","value":"20260810"},{"action":"fill","target":"range-end-input","value":"20260818"},{"action":"press","target":"range-end-input","key":"Escape"}]},
+      {"name":"reversed manual range","steps":[{"action":"fill","target":"range-start-input","value":"20260812"},{"action":"fill","target":"range-end-input","value":"20260810"},{"action":"press","target":"range-end-input","key":"Escape"}]},
+      {"name":"correct reversed range","steps":[{"action":"fill","target":"range-start-input","value":"20260812"},{"action":"fill","target":"range-end-input","value":"20260810"},{"action":"fill","target":"range-start-input","value":"20260810"},{"action":"fill","target":"range-end-input","value":"20260812"},{"action":"press","target":"range-end-input","key":"Escape"}]},
+      {"name":"escape closes calendar","steps":[{"action":"click","target":"range-start-trigger"},{"action":"press","target":"range-start-day","key":"Escape"}]},
+      {"name":"close button closes calendar","steps":[{"action":"click","target":"range-start-trigger"},{"action":"click","target":"range-close"}]},
+      {"name":"clear end and reopen","steps":[{"action":"fill","target":"range-start-input","value":"20260810"},{"action":"fill","target":"range-end-input","value":"20260812"},{"action":"click","target":"range-end-clear"},{"action":"click","target":"range-end-trigger"}]},
+      {"name":"end-only manual period","steps":[{"action":"fill","target":"range-end-input","value":"20260812"},{"action":"press","target":"range-end-input","key":"Escape"}]},
+      {"name":"start-only manual period","steps":[{"action":"fill","target":"range-start-input","value":"20260810"},{"action":"press","target":"range-start-input","key":"Escape"}]}
+    ]}
+  </script>
+  <script>
+    (() => {
+      const fixedToday = '2026-08-14';
+      const control = document.querySelector('[data-ref="range-control"]');
+      const popup = document.querySelector('[data-ref="range-popup"]');
+      const closeButton = document.querySelector('[data-ref="range-close"]');
+      const monthHeading = document.querySelector('[data-ref="range-month-heading"]');
+      const gridBody = document.getElementById('range-grid-body');
+      const status = document.querySelector('[data-ref="range-status"]');
+      const calendarNote = document.querySelector('[data-ref="range-note"]');
+      const selection = document.querySelector('[data-ref="range-selection"]');
+      const nav = {
+        previousYear: document.querySelector('[data-ref="range-prev-year"]'),
+        previousMonth: document.querySelector('[data-ref="range-prev-month"]'),
+        nextMonth: document.querySelector('[data-ref="range-next-month"]'),
+        nextYear: document.querySelector('[data-ref="range-next-year"]')
+      };
+      const boundaries = Object.fromEntries(['start', 'end'].map((position) => {
+        const input = document.querySelector(`[data-ref="range-${position}-input"]`);
+        return [position, {
+          position,
+          stack: input.closest('.boundary-stack'),
+          field: input.closest('.date-field'),
+          input,
+          clear: document.querySelector(`[data-ref="range-${position}-clear"]`),
+          trigger: document.querySelector(`[data-ref="range-${position}-trigger"]`),
+          error: document.querySelector(`[data-ref="range-${position}-error"]`)
+        }];
+      }));
+      const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+      const dayFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+      let viewYear = 2026;
+      let viewMonth = 7;
+      let startIso = null;
+      let endIso = null;
+      let popupOwner = 'start';
+      let suppressFocusOpen = false;
+      let suppressFocusClose = false;
+      let pointerDownInside = false;
+
+      const pad = (value) => String(value).padStart(2, '0');
+      const toIso = (date) => `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}`;
+      const fromIso = (iso) => {
+        const [year, month, day] = iso.split('-').map(Number);
+        return new Date(Date.UTC(year, month - 1, day));
+      };
+      const shiftIso = (iso, days) => {
+        const date = fromIso(iso);
+        date.setUTCDate(date.getUTCDate() + days);
+        return toIso(date);
+      };
+      const isAllowed = (iso) => iso <= fixedToday;
+      const valueFor = (position) => position === 'start' ? startIso : endIso;
+      const setValueFor = (position, value) => {
+        if (position === 'start') startIso = value;
+        else endIso = value;
+      };
+
+      const setExpanded = (expanded) => {
+        Object.values(boundaries).forEach(({ input, trigger, position }) => {
+          const ownsPopup = position === popupOwner;
+          input.setAttribute('aria-expanded', String(expanded && ownsPopup));
+          trigger.setAttribute('aria-expanded', String(expanded && ownsPopup));
+          const label = expanded && ownsPopup ? `Close calendar for ${position} date` : `Open calendar for ${position} date`;
+          trigger.setAttribute('aria-label', label);
+          trigger.title = label;
+        });
+      };
+
+      const separateDateInput = matchMedia('(max-width: 800px)');
+      const focusWithoutOpening = (element) => {
+        if (separateDateInput.matches) {
+          const boundary = Object.values(boundaries).find(({ input }) => input === element);
+          if (boundary) element = boundary.trigger;
+        }
+        suppressFocusOpen = Object.values(boundaries).some(({ input }) => input === element);
+        element.focus();
+        setTimeout(() => { suppressFocusOpen = false; }, 0);
+      };
+
+      const setViewFromIso = (iso) => {
+        const date = fromIso(iso);
+        viewYear = date.getUTCFullYear();
+        viewMonth = date.getUTCMonth();
+      };
+
+      const keyForDate = (iso) => {
+        if (iso === '2026-08-09') return 'range-before-start-day';
+        if (iso === '2026-08-10') return 'range-start-day';
+        if (iso === '2026-08-11') return 'range-next-day';
+        if (iso === '2026-08-12') return 'range-end-day';
+        if (iso === '2026-08-15') return 'range-disabled-day';
+        return null;
+      };
+
+      const visibleGridRange = () => {
+        const first = new Date(Date.UTC(viewYear, viewMonth, 1));
+        const start = new Date(first);
+        start.setUTCDate(start.getUTCDate() - start.getUTCDay());
+        const end = new Date(start);
+        end.setUTCDate(end.getUTCDate() + 41);
+        return { start: toIso(start), end: toIso(end) };
+      };
+
+      const unavailableReason = (iso) => {
+        if (!isAllowed(iso)) return 'future date';
+        if (popupOwner === 'start' && endIso && iso > endIso) return 'after the current end date';
+        if (popupOwner === 'end' && startIso && iso < startIso) return 'before the current start date';
+        return null;
+      };
+
+      const isCalendarSelectable = (iso) => !unavailableReason(iso);
+
+      const rovingIso = () => {
+        const range = visibleGridRange();
+        const candidates = [
+          valueFor(popupOwner),
+          popupOwner === 'start' ? endIso : startIso,
+          fixedToday,
+          `${viewYear}-${pad(viewMonth + 1)}-01`
+        ];
+        for (const candidate of candidates) {
+          if (candidate && isCalendarSelectable(candidate) && candidate >= range.start && candidate <= range.end) return candidate;
+        }
+        const firstOfMonth = `${viewYear}-${pad(viewMonth + 1)}-01`;
+        if (isCalendarSelectable(firstOfMonth)) return firstOfMonth;
+        return null;
+      };
+
+      const isInRange = (iso) => Boolean(startIso && endIso && iso >= startIso && iso <= endIso);
+
+      const dayLabel = (iso, reason) => {
+        const parts = [dayFormatter.format(fromIso(iso))];
+        if (iso === fixedToday) parts.push('today');
+        if (iso === startIso) parts.push('range start');
+        else if (iso === endIso) parts.push('range end');
+        else if (isInRange(iso)) parts.push('in selected range');
+        if (reason) parts.push(`unavailable, ${reason}`);
+        return parts.join(', ');
+      };
+
+      const updateSelection = () => {
+        if (startIso && endIso) selection.textContent = `Selected range: ${startIso} through ${endIso}.`;
+        else if (startIso) selection.textContent = `Start date selected: ${startIso}. End date is not selected.`;
+        else if (endIso) selection.textContent = `End date selected: ${endIso}. Start date is not selected.`;
+        else selection.textContent = 'No range selected.';
+      };
+
+      const showClear = (boundary, show) => {
+        boundary.clear.hidden = !show;
+        boundary.clear.disabled = !show;
+        boundary.clear.setAttribute('aria-hidden', String(!show));
+        boundary.clear.tabIndex = show ? 0 : -1;
+      };
+
+      const setValidity = (boundary, valid, message = 'Enter a real date as yyyy-mm-dd or yyyymmdd.', kind = 'value') => {
+        boundary.errorKind = valid ? null : kind;
+        boundary.input.setAttribute('aria-invalid', String(!valid));
+        boundary.input.setAttribute('aria-describedby', valid ? 'range-hint' : `range-hint range-${boundary.position}-error`);
+        boundary.field.dataset.invalid = String(!valid);
+        boundary.error.textContent = message;
+        boundary.error.hidden = valid;
+      };
+
+      const normalizeDate = (raw) => {
+        const value = raw.trim();
+        const compact = /^(\d{4})(\d{2})(\d{2})$/.exec(value);
+        const dashed = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+        const match = compact || dashed;
+        if (!match) return null;
+        const year = Number(match[1]);
+        const month = Number(match[2]);
+        const day = Number(match[3]);
+        if (year < 1 || month < 1 || month > 12 || day < 1) return null;
+        const lastDay = new Date(Date.UTC(year, month, 0)).getUTCDate();
+        if (day > lastDay) return null;
+        return `${match[1]}-${match[2]}-${match[3]}`;
+      };
+
+      const commitBoundary = (position, { revalidate = true, refresh = true } = {}) => {
+        const finish = (valid) => {
+          const other = position === 'start' ? 'end' : 'start';
+          if (revalidate && boundaries[other].errorKind === 'order') {
+            commitBoundary(other, { revalidate: false, refresh: false });
+          }
+          if (refresh) {
+            if (valueFor(position)) setViewFromIso(valueFor(position));
+            updateSelection(); renderCalendar();
+          }
+          return valid;
+        };
+        const boundary = boundaries[position];
+        if (!boundary.input.value.trim()) {
+          setValueFor(position, null);
+          setValidity(boundary, true);
+          showClear(boundary, false);
+          return finish(true);
+        }
+        const normalized = normalizeDate(boundary.input.value);
+        if (!normalized) {
+          setValueFor(position, null);
+          setValidity(boundary, false);
+          showClear(boundary, true);
+          return finish(false);
+        }
+        if (!isAllowed(normalized)) {
+          setValueFor(position, null);
+          setValidity(boundary, false, 'Enter a date on or before 2026-08-14.');
+          showClear(boundary, true);
+          return finish(false);
+        }
+        if (position === 'start' && endIso && normalized > endIso) {
+          setValueFor(position, null);
+          setValidity(boundary, false, 'Start date must be on or before end date.', 'order');
+          showClear(boundary, true);
+          return finish(false);
+        }
+        if (position === 'end' && startIso && normalized < startIso) {
+          setValueFor(position, null);
+          setValidity(boundary, false, 'End date must be on or after start date.', 'order');
+          showClear(boundary, true);
+          return finish(false);
+        }
+        boundary.input.value = normalized;
+        setValueFor(position, normalized);
+        setViewFromIso(normalized);
+        setValidity(boundary, true);
+        showClear(boundary, true);
+        return finish(true);
+      };
+
+      const chooseIso = (iso) => {
+        if (!isCalendarSelectable(iso)) return;
+        const boundary = boundaries[popupOwner];
+        boundary.input.value = iso;
+        if (commitBoundary(popupOwner)) close({ restoreFocus: boundary.input });
+      };
+
+      const focusDate = (iso) => {
+        if (!isCalendarSelectable(iso)) return;
+        setViewFromIso(iso);
+        renderCalendar();
+        const target = gridBody.querySelector(`[data-date="${iso}"]`);
+        if (target) target.focus();
+      };
+
+      const moveByMonth = (iso, delta) => {
+        const date = fromIso(iso);
+        const originalDay = date.getUTCDate();
+        const target = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + delta, 1));
+        const lastDay = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth() + 1, 0)).getUTCDate();
+        target.setUTCDate(Math.min(originalDay, lastDay));
+        return toIso(target);
+      };
+
+      const handleDayKey = (event, iso) => {
+        let destination = null;
+        if (event.key === 'ArrowRight') destination = shiftIso(iso, 1);
+        if (event.key === 'ArrowLeft') destination = shiftIso(iso, -1);
+        if (event.key === 'ArrowDown') destination = shiftIso(iso, 7);
+        if (event.key === 'ArrowUp') destination = shiftIso(iso, -7);
+        if (event.key === 'Home') destination = shiftIso(iso, -fromIso(iso).getUTCDay());
+        if (event.key === 'End') destination = shiftIso(iso, 6 - fromIso(iso).getUTCDay());
+        if (event.key === 'PageUp') destination = moveByMonth(iso, event.shiftKey ? -12 : -1);
+        if (event.key === 'PageDown') destination = moveByMonth(iso, event.shiftKey ? 12 : 1);
+        if (destination) {
+          event.preventDefault();
+          if (isCalendarSelectable(destination)) focusDate(destination);
+        }
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          chooseIso(iso);
+        }
+      };
+
+      function renderCalendar() {
+        monthHeading.textContent = monthFormatter.format(new Date(Date.UTC(viewYear, viewMonth, 1)));
+        status.textContent = `Choose ${popupOwner} date.`;
+        popup.setAttribute('aria-label', `Choose ${popupOwner} date`);
+        if (popupOwner === 'start' && endIso) {
+          calendarNote.textContent = `Available through ${endIso}.`;
+        } else if (popupOwner === 'end' && startIso) {
+          calendarNote.textContent = `Available dates: ${startIso} to ${fixedToday}.`;
+        } else {
+          calendarNote.textContent = 'Available through 2026-08-14.';
+        }
+        gridBody.replaceChildren();
+        const first = new Date(Date.UTC(viewYear, viewMonth, 1));
+        const cursor = new Date(first);
+        cursor.setUTCDate(cursor.getUTCDate() - cursor.getUTCDay());
+        const activeIso = rovingIso();
+        for (let week = 0; week < 6; week += 1) {
+          const row = document.createElement('tr');
+          for (let weekday = 0; weekday < 7; weekday += 1) {
+            const iso = toIso(cursor);
+            const reason = unavailableReason(iso);
+            const disabled = Boolean(reason);
+            const inRange = isInRange(iso);
+            const cell = document.createElement('td');
+            cell.setAttribute('role', 'gridcell');
+            cell.setAttribute('aria-selected', String(inRange));
+            if (inRange) cell.classList.add('in-range-cell');
+            if (iso === startIso) cell.classList.add('range-start-cell');
+            if (iso === endIso) cell.classList.add('range-end-cell');
+            const button = document.createElement('button');
+            button.className = `day${cursor.getUTCMonth() === viewMonth ? '' : ' outside-month'}`;
+            button.type = 'button';
+            button.textContent = String(cursor.getUTCDate());
+            button.dataset.date = iso;
+            if (cursor.getUTCDay() === 0) button.classList.add('sunday');
+            button.tabIndex = iso === activeIso ? 0 : -1;
+            button.disabled = disabled;
+            button.setAttribute('aria-label', dayLabel(iso, reason));
+            button.setAttribute('aria-describedby', 'range-keyboard-help');
+            if (iso === fixedToday) button.setAttribute('aria-current', 'date');
+            if (iso === startIso || iso === endIso) button.setAttribute('aria-pressed', 'true');
+            const key = keyForDate(iso);
+            if (key) button.dataset.ref = key;
+            button.addEventListener('click', () => chooseIso(iso));
+            button.addEventListener('keydown', (event) => handleDayKey(event, iso));
+            cell.append(button);
+            row.append(cell);
+            cursor.setUTCDate(cursor.getUTCDate() + 1);
+          }
+          gridBody.append(row);
+        }
+      }
+
+      const placeCalendar = (position) => {
+        const parent = separateDateInput.matches ? boundaries[position].stack : control;
+        parent.append(popup);
+      };
+
+      const open = (position, { focusDay = false } = {}) => {
+        // Move focus off editable input synchronously to dismiss the mobile keyboard.
+        if (separateDateInput.matches) boundaries[position].trigger.focus({ preventScroll: true });
+        popupOwner = position;
+        control.dataset.anchor = position;
+        placeCalendar(position);
+        setViewFromIso(valueFor(position) || startIso || endIso || fixedToday);
+        renderCalendar();
+        popup.hidden = false;
+        setExpanded(true);
+        if (focusDay) {
+          requestAnimationFrame(() => {
+            if (popup.hidden) return;
+            const target = gridBody.querySelector('.day[tabindex="0"]');
+            if (target) target.focus({ preventScroll: true });
+            if (separateDateInput.matches) boundaries[position].stack.scrollIntoView({ block: 'start', inline: 'nearest' });
+          });
+        }
+      };
+
+      function close({ restoreFocus = null } = {}) {
+        popup.hidden = true;
+        setExpanded(false);
+        if (restoreFocus) focusWithoutOpening(restoreFocus);
+      }
+
+      const clearBoundary = (position) => {
+        const boundary = boundaries[position];
+        boundary.input.value = '';
+        popupOwner = position;
+        commitBoundary(position);
+        close({ restoreFocus: boundary.input });
+      };
+
+      separateDateInput.addEventListener('change', () => {
+        const restoreFocus = !popup.hidden && popup.contains(document.activeElement) ? boundaries[popupOwner].input : null;
+        close({ restoreFocus });
+        placeCalendar(popupOwner);
+      });
+
+      Object.values(boundaries).forEach((boundary) => {
+        boundary.input.addEventListener('focus', () => {
+          if (suppressFocusOpen) return;
+          if (separateDateInput.matches) { close(); return; }
+          open(boundary.position, { focusDay: false });
+        });
+        boundary.input.addEventListener('input', () => showClear(boundary, Boolean(boundary.input.value)));
+        boundary.input.addEventListener('change', () => commitBoundary(boundary.position));
+        boundary.input.addEventListener('keydown', (event) => {
+          if (event.key === 'Tab' && !popup.hidden) {
+            suppressFocusOpen = true;
+            close();
+            setTimeout(() => { suppressFocusOpen = false; }, 0);
+          }
+          if (event.key === 'ArrowDown' || (event.altKey && event.key === 'ArrowDown')) {
+            event.preventDefault();
+            open(boundary.position, { focusDay: true });
+          }
+          if (event.key === 'Enter') {
+            if (event.isComposing || event.keyCode === 229) return;
+            event.preventDefault();
+            if (commitBoundary(boundary.position)) close();
+          }
+        });
+        boundary.trigger.addEventListener('click', () => {
+          if (popup.hidden || popupOwner !== boundary.position) open(boundary.position, { focusDay: true });
+          else close({ restoreFocus: boundary.input });
+        });
+        boundary.clear.addEventListener('click', () => clearBoundary(boundary.position));
+      });
+
+      closeButton.addEventListener('click', () => close({ restoreFocus: boundaries[popupOwner].input }));
+      nav.previousYear.addEventListener('click', () => { viewYear -= 1; renderCalendar(); });
+      nav.previousMonth.addEventListener('click', () => {
+        viewMonth -= 1;
+        if (viewMonth < 0) { viewMonth = 11; viewYear -= 1; }
+        renderCalendar();
+      });
+      nav.nextMonth.addEventListener('click', () => {
+        viewMonth += 1;
+        if (viewMonth > 11) { viewMonth = 0; viewYear += 1; }
+        renderCalendar();
+      });
+      nav.nextYear.addEventListener('click', () => { viewYear += 1; renderCalendar(); });
+      control.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !popup.hidden) {
+          event.preventDefault();
+          close({ restoreFocus: boundaries[popupOwner].input });
+        }
+      });
+      control.addEventListener('focusout', () => {
+        requestAnimationFrame(() => {
+          if (!suppressFocusClose && !pointerDownInside && !control.contains(document.activeElement) && !popup.hidden) close();
+        });
+      });
+      document.addEventListener('mousedown', (event) => {
+        pointerDownInside = control.contains(event.target);
+        const disabledCell = event.target.closest('td');
+        if (pointerDownInside && (event.target.closest('.day:disabled') || disabledCell?.querySelector('.day:disabled'))) event.preventDefault();
+        if (!pointerDownInside && !popup.hidden) close();
+      }, true);
+      document.addEventListener('mouseup', () => {
+        requestAnimationFrame(() => { pointerDownInside = false; });
+      });
+      renderCalendar();
+    })();
+  </script>
+
+
+</body>
+</html>

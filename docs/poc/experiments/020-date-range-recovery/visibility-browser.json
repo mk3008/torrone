@@ -1,0 +1,30 @@
+[
+  {
+    "name": "initial",
+    "state": {
+      "active": "BODY",
+      "scrollY": 0
+    }
+  },
+  {
+    "name": "visible Start focus",
+    "state": {
+      "active": "range-start-input",
+      "scrollY": 0
+    }
+  },
+  {
+    "name": "outside click",
+    "state": {
+      "active": "BODY",
+      "scrollY": 0
+    }
+  },
+  {
+    "name": "visible End focus",
+    "state": {
+      "active": "range-end-input",
+      "scrollY": 0
+    }
+  }
+]

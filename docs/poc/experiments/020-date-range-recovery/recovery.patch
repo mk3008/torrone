@@ -1,0 +1,118 @@
+--- baseline.html
++++ candidate.html
+@@ -395,7 +395,8 @@
+         boundary.clear.tabIndex = show ? 0 : -1;
+       };
+ 
+-      const setValidity = (boundary, valid, message = 'Enter a real date as yyyy-mm-dd or yyyymmdd.') => {
++      const setValidity = (boundary, valid, message = 'Enter a real date as yyyy-mm-dd or yyyymmdd.', kind = 'value') => {
++        boundary.errorKind = valid ? null : kind;
+         boundary.input.setAttribute('aria-invalid', String(!valid));
+         boundary.input.setAttribute('aria-describedby', valid ? 'range-hint' : `range-hint range-${boundary.position}-error`);
+         boundary.field.dataset.invalid = String(!valid);
+@@ -418,70 +419,63 @@
+         return `${match[1]}-${match[2]}-${match[3]}`;
+       };
+ 
+-      const commitBoundary = (position) => {
++      const commitBoundary = (position, { revalidate = true, refresh = true } = {}) => {
++        const finish = (valid) => {
++          const other = position === 'start' ? 'end' : 'start';
++          if (revalidate && boundaries[other].errorKind === 'order') {
++            commitBoundary(other, { revalidate: false, refresh: false });
++          }
++          if (refresh) {
++            if (valueFor(position)) setViewFromIso(valueFor(position));
++            updateSelection(); renderCalendar();
++          }
++          return valid;
++        };
+         const boundary = boundaries[position];
+         if (!boundary.input.value.trim()) {
+           setValueFor(position, null);
+           setValidity(boundary, true);
+           showClear(boundary, false);
+-          updateSelection();
+-          renderCalendar();
+-          return true;
++          return finish(true);
+         }
+         const normalized = normalizeDate(boundary.input.value);
+         if (!normalized) {
+           setValueFor(position, null);
+           setValidity(boundary, false);
+           showClear(boundary, true);
+-          updateSelection();
+-          renderCalendar();
+-          return false;
++          return finish(false);
+         }
+         if (!isAllowed(normalized)) {
+           setValueFor(position, null);
+           setValidity(boundary, false, 'Enter a date on or before 2026-08-14.');
+           showClear(boundary, true);
+-          updateSelection();
+-          renderCalendar();
+-          return false;
++          return finish(false);
+         }
+         if (position === 'start' && endIso && normalized > endIso) {
+           setValueFor(position, null);
+-          setValidity(boundary, false, 'Start date must be on or before end date.');
++          setValidity(boundary, false, 'Start date must be on or before end date.', 'order');
+           showClear(boundary, true);
+-          updateSelection();
+-          renderCalendar();
+-          return false;
++          return finish(false);
+         }
+         if (position === 'end' && startIso && normalized < startIso) {
+           setValueFor(position, null);
+-          setValidity(boundary, false, 'End date must be on or after start date.');
++          setValidity(boundary, false, 'End date must be on or after start date.', 'order');
+           showClear(boundary, true);
+-          updateSelection();
+-          renderCalendar();
+-          return false;
++          return finish(false);
+         }
+         boundary.input.value = normalized;
+         setValueFor(position, normalized);
+         setViewFromIso(normalized);
+         setValidity(boundary, true);
+         showClear(boundary, true);
+-        updateSelection();
+-        renderCalendar();
+-        return true;
++        return finish(true);
+       };
+ 
+       const chooseIso = (iso) => {
+         if (!isCalendarSelectable(iso)) return;
+         const boundary = boundaries[popupOwner];
+-        setValueFor(popupOwner, iso);
+         boundary.input.value = iso;
+-        setValidity(boundary, true);
+-        showClear(boundary, true);
+-        setViewFromIso(iso);
+-        updateSelection();
+-        renderCalendar();
+-        close({ restoreFocus: boundary.input });
++        if (commitBoundary(popupOwner)) close({ restoreFocus: boundary.input });
+       };
+ 
+       const focusDate = (iso) => {
+@@ -608,12 +602,8 @@
+       const clearBoundary = (position) => {
+         const boundary = boundaries[position];
+         boundary.input.value = '';
+-        setValueFor(position, null);
+-        setValidity(boundary, true);
+-        showClear(boundary, false);
+         popupOwner = position;
+-        updateSelection();
+-        renderCalendar();
++        commitBoundary(position);
+         close({ restoreFocus: boundary.input });
+       };
+ 
