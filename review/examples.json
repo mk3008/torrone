@@ -8,6 +8,14 @@
     "evidence": "docs/mobile-review-decisions.md"
   },
   {
+    "id": "date-range-recovery-draft",
+    "title": "Date range \u2014 dependent recovery draft",
+    "source": "review/references/date-range-recovery-draft.html",
+    "guidance": "Compare with the approved Date range. Enter Start Aug 10, End Aug 8, then repair Start to Aug 6; also try the symmetric case, calendar repair and Clear. Review errors, partial selection and focus.",
+    "status": "Draft recovery policy for Issue #13; not approved. Original remains unchanged.",
+    "evidence": "references/date-range-recovery.md"
+  },
+  {
     "id": "entity-lookup",
     "title": "Entity dialog lookup",
     "source": "review/references/entity-lookup.html",
