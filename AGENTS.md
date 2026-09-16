@@ -14,3 +14,5 @@
 - Do not restore Manifest/OKF-era workflows, skills, schemas, or orchestration as active repository requirements unless a new product decision explicitly calls for them.
 
 - For transfer PoCs, classify human findings as target implementation defects or Reference gaps. Return Reference-level decisions to its next-version candidate; do not invent PoC-specific product requirements or curated variants. Follow `references/README.md` and retain historical evidence.
+
+- Before handing off GUI work, apply [Disposition of GUI findings](docs/development-workflow.md#disposition-of-gui-findings); link each material finding to its outcome or report the unresolved blocker.
