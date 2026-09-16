@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="icon" href="data:,">
-  <title>Date range — next Reference candidate</title>
+  <title>Date range picker responsive working draft</title>
   <style>
     :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #fff; --text: #101d2f; --muted: #54657a; --border: #94a8bd; --accent: #1d73b7; --focus: #86b9ee; --danger: #b42318; --danger-bg: #fff7f6; --disabled-text: #5f6f82; --sunday: #b42318; --sunday-muted: #8f4139; --saturday: #155b92; --saturday-muted: #466b8c; --range-bg: #d7ebff; }
     * { box-sizing: border-box; }
@@ -39,20 +39,19 @@
     .error { min-height: 21px; margin: 7px 0 0; color: var(--danger); font-size: 14px; font-weight: 650; }
     .picker { position: absolute; z-index: 10; top: calc(100% + 10px); left: 0; width: 336px; padding: 12px; background: var(--surface); border: 1px solid #98aabc; border-radius: 8px; box-shadow: 0 12px 28px rgb(27 45 65 / 16%); }
     .range-fields[data-anchor="end"] .picker { right: 0; left: auto; }
-    .picker-header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; margin-bottom: 6px; align-items: center; gap: 4px; }
-    .picker-title { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
-    .picker-title .range-status { margin: 0; font-size: 15px; font-weight: 650; color: var(--text); }
+    .picker-header { display: grid; grid-template-columns: auto minmax(104px, 1fr) auto auto; margin-bottom: 6px; align-items: center; gap: 4px; }
     .nav-group { display: flex; gap: 2px; }
     .nav-group:last-of-type { justify-content: flex-end; }
     .month-heading { margin: 0; font-size: 15px; text-align: center; }
-    .icon-button { display: grid; width: 44px; height: 44px; padding: 0; place-items: center; color: #183653; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; }
+    .icon-button { display: grid; width: 30px; height: 30px; padding: 0; place-items: center; color: #183653; background: var(--surface); border: 1px solid transparent; border-radius: 4px; }
     .icon-button:hover { background: #edf3f9; }
     .icon-button svg { width: 16px; height: 16px; }
-    .close-calendar { width: 44px; height: 44px; margin-left: 1px; border-color: var(--border); }
+    .close-calendar { width: 30px; height: 30px; margin-left: 1px; border-color: var(--border); }
     .range-status { min-height: 20px; margin: 0 2px 4px; color: var(--muted); font-size: 13px; }
     .calendar { width: 100%; border-collapse: separate; border-spacing: 0 2px; table-layout: fixed; }
     .calendar th { height: 24px; color: var(--muted); font-size: 12px; font-weight: 700; text-align: center; }
-    .calendar th.sunday { color: var(--sunday); }
+    .calendar th:first-child { color: var(--sunday); }
+    .calendar th:last-child { color: var(--saturday); }
     .calendar abbr { text-decoration: none; }
     .calendar td { height: 34px; padding: 0; text-align: center; }
     .calendar td:has(.day:disabled) { background: transparent; cursor: not-allowed; }
@@ -62,11 +61,12 @@
     .calendar td.range-end-cell { border-radius: 0 17px 17px 0; }
     .calendar td.range-start-cell.range-end-cell { border-radius: 17px; }
     .day { position: relative; z-index: 1; width: 34px; height: 34px; padding: 0; color: var(--text); background: transparent; border: 1px solid transparent; border-radius: 50%; }
-    .day:focus-visible { z-index: 2; outline-offset: -3px; }
     .day:hover:not(:disabled):not([aria-pressed="true"]) { background: #edf3f9; }
     .day.outside-month { color: var(--muted); }
-    .calendar .day.sunday:not(:disabled):not([aria-pressed="true"]) { color: var(--sunday); }
-    .calendar .day.sunday.outside-month:not(:disabled):not([aria-pressed="true"]) { color: var(--sunday-muted); }
+    .calendar td:first-child .day:not(:disabled):not([aria-pressed="true"]) { color: var(--sunday); }
+    .calendar td:last-child .day:not(:disabled):not([aria-pressed="true"]) { color: var(--saturday); }
+    .calendar td:first-child .day.outside-month:not(:disabled):not([aria-pressed="true"]) { color: var(--sunday-muted); }
+    .calendar td:last-child .day.outside-month:not(:disabled):not([aria-pressed="true"]) { color: var(--saturday-muted); }
     .day[aria-current="date"] { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
     .day[aria-pressed="true"] { color: #fff; background: var(--accent); border-color: #155b92; border-radius: 50%; font-weight: 700; }
     .day:disabled { color: var(--disabled-text); background: transparent; border-color: transparent; pointer-events: none; }
@@ -81,23 +81,17 @@
       .boundary-stack { width: 100%; min-width: 0; }
       .range-separator { display: none; }
       .picker, .range-fields[data-anchor="end"] .picker { position: static; width: 100%; margin-top: 8px; padding: 8px; box-shadow: none; }
-      .picker-header { gap: 4px; }
-      .month-heading { overflow-wrap: anywhere; font-size: 15px; }
+      .picker-header { grid-template-columns: 1fr 1fr auto; gap: 4px; }
+      .month-heading { grid-column: 1 / -1; grid-row: 1; padding: 8px 0; font-size: 17px; }
       .icon-button { width: 44px; height: 44px; }
       .calendar td { height: 44px; }
       .day { width: 100%; max-width: 44px; height: 44px; }
       .date-value { font-size: 16px; }
     }
-    @media (max-width: 360px) {
-      .sample { width: calc(100% - 12px); padding: 8px; }
-      .picker { padding: 6px; }
-      .picker-header { gap: 2px; }
-      .nav-group { gap: 0; }
-    }
   </style>
 </head>
 <body>
-  <div class="reference-note" data-reference-harness="reference-label">Next Reference candidate · date range · fixed review fixture: today = 2026-08-14</div>
+  <div class="reference-note" data-reference-harness="reference-label">Responsive working draft · date range · fixed review fixture: today = 2026-08-14</div>
   <section class="sample" aria-labelledby="range-heading">
     <h2 id="range-heading">Transaction date filter</h2>
     <p class="support">Filter recorded transactions by date.</p>
@@ -110,7 +104,7 @@
             class="date-value"
             id="range-start-input"
             type="text"
-            inputmode="numeric" enterkeyhint="done"
+            inputmode="numeric"
             autocomplete="off"
             placeholder="yyyy-mm-dd"
             role="combobox"
@@ -122,10 +116,10 @@
             aria-describedby="range-hint"
             aria-errormessage="range-start-error"
             data-ref="range-start-input">
-          <button class="field-action clear-action" type="button" data-ref="range-start-clear" aria-label="Clear start date" title="Clear start date" aria-hidden="true" hidden disabled>
+          <button class="field-action clear-action" type="button" data-ref="range-start-clear" aria-label="Clear start date" title="Clear start date" aria-hidden="true" tabindex="-1" hidden disabled>
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
           </button>
-          <button class="field-action calendar-action" type="button" data-ref="range-start-trigger" aria-label="Open calendar for start date" title="Open calendar for start date" aria-controls="range-picker-popup" aria-expanded="false">
+          <button class="field-action calendar-action" type="button" data-ref="range-start-trigger" aria-label="Open calendar for start date" title="Open calendar for start date" aria-controls="range-picker-popup" aria-expanded="false" tabindex="-1">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2v4M16 2v4M3 9h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2z"></path></svg>
           </button>
         </div>
@@ -141,7 +135,7 @@
             class="date-value"
             id="range-end-input"
             type="text"
-            inputmode="numeric" enterkeyhint="done"
+            inputmode="numeric"
             autocomplete="off"
             placeholder="yyyy-mm-dd"
             role="combobox"
@@ -153,23 +147,17 @@
             aria-describedby="range-hint"
             aria-errormessage="range-end-error"
             data-ref="range-end-input">
-          <button class="field-action clear-action" type="button" data-ref="range-end-clear" aria-label="Clear end date" title="Clear end date" aria-hidden="true" hidden disabled>
+          <button class="field-action clear-action" type="button" data-ref="range-end-clear" aria-label="Clear end date" title="Clear end date" aria-hidden="true" tabindex="-1" hidden disabled>
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
           </button>
-          <button class="field-action calendar-action" type="button" data-ref="range-end-trigger" aria-label="Open calendar for end date" title="Open calendar for end date" aria-controls="range-picker-popup" aria-expanded="false">
+          <button class="field-action calendar-action" type="button" data-ref="range-end-trigger" aria-label="Open calendar for end date" title="Open calendar for end date" aria-controls="range-picker-popup" aria-expanded="false" tabindex="-1">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2v4M16 2v4M3 9h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2z"></path></svg>
           </button>
         </div>
         <p class="error" id="range-end-error" data-ref="range-end-error" role="alert" hidden>Enter a real date as yyyy-mm-dd or yyyymmdd.</p>
       </div>
 
-      <div class="picker" id="range-picker-popup" data-ref="range-popup" role="dialog" aria-labelledby="range-owner" hidden>
-        <div class="picker-title">
-        <p class="range-status" id="range-owner" data-ref="range-status" aria-live="polite">Choose start date.</p>
-          <button class="icon-button close-calendar" type="button" data-ref="range-close" aria-label="Close calendar" title="Close calendar">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-          </button>
-        </div>
+      <div class="picker" id="range-picker-popup" data-ref="range-popup" role="dialog" aria-label="Choose start date" hidden>
         <div class="picker-header">
           <div class="nav-group">
             <button class="icon-button" type="button" data-ref="range-prev-year" aria-label="Previous year" title="Previous year">
@@ -188,13 +176,15 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 17 5-5-5-5M13 17l5-5-5-5"></path></svg>
             </button>
           </div>
-
+          <button class="icon-button close-calendar" type="button" data-ref="range-close" aria-label="Close calendar" title="Close calendar">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
         </div>
-
+        <p class="range-status" data-ref="range-status" aria-live="polite">Choose start date.</p>
         <table class="calendar" data-ref="range-grid" role="grid" aria-labelledby="range-month-heading">
           <thead>
             <tr>
-              <th scope="col" class="sunday"><abbr title="Sunday">Su</abbr></th>
+              <th scope="col"><abbr title="Sunday">Su</abbr></th>
               <th scope="col"><abbr title="Monday">Mo</abbr></th>
               <th scope="col"><abbr title="Tuesday">Tu</abbr></th>
               <th scope="col"><abbr title="Wednesday">We</abbr></th>
@@ -390,11 +380,10 @@
         boundary.clear.hidden = !show;
         boundary.clear.disabled = !show;
         boundary.clear.setAttribute('aria-hidden', String(!show));
-        boundary.clear.tabIndex = show ? 0 : -1;
+        boundary.clear.tabIndex = -1;
       };
 
-      const setValidity = (boundary, valid, message = 'Enter a real date as yyyy-mm-dd or yyyymmdd.', kind = 'value') => {
-        boundary.errorKind = valid ? null : kind;
+      const setValidity = (boundary, valid, message = 'Enter a real date as yyyy-mm-dd or yyyymmdd.') => {
         boundary.input.setAttribute('aria-invalid', String(!valid));
         boundary.input.setAttribute('aria-describedby', valid ? 'range-hint' : `range-hint range-${boundary.position}-error`);
         boundary.field.dataset.invalid = String(!valid);
@@ -417,63 +406,70 @@
         return `${match[1]}-${match[2]}-${match[3]}`;
       };
 
-      const commitBoundary = (position, { revalidate = true, refresh = true } = {}) => {
-        const finish = (valid) => {
-          const other = position === 'start' ? 'end' : 'start';
-          if (revalidate && boundaries[other].errorKind === 'order') {
-            commitBoundary(other, { revalidate: false, refresh: false });
-          }
-          if (refresh) {
-            if (valueFor(position)) setViewFromIso(valueFor(position));
-            updateSelection(); renderCalendar();
-          }
-          return valid;
-        };
+      const commitBoundary = (position) => {
         const boundary = boundaries[position];
         if (!boundary.input.value.trim()) {
           setValueFor(position, null);
           setValidity(boundary, true);
           showClear(boundary, false);
-          return finish(true);
+          updateSelection();
+          renderCalendar();
+          return true;
         }
         const normalized = normalizeDate(boundary.input.value);
         if (!normalized) {
           setValueFor(position, null);
           setValidity(boundary, false);
           showClear(boundary, true);
-          return finish(false);
+          updateSelection();
+          renderCalendar();
+          return false;
         }
         if (!isAllowed(normalized)) {
           setValueFor(position, null);
           setValidity(boundary, false, 'Enter a date on or before 2026-08-14.');
           showClear(boundary, true);
-          return finish(false);
+          updateSelection();
+          renderCalendar();
+          return false;
         }
         if (position === 'start' && endIso && normalized > endIso) {
           setValueFor(position, null);
-          setValidity(boundary, false, 'Start date must be on or before end date.', 'order');
+          setValidity(boundary, false, 'Start date must be on or before end date.');
           showClear(boundary, true);
-          return finish(false);
+          updateSelection();
+          renderCalendar();
+          return false;
         }
         if (position === 'end' && startIso && normalized < startIso) {
           setValueFor(position, null);
-          setValidity(boundary, false, 'End date must be on or after start date.', 'order');
+          setValidity(boundary, false, 'End date must be on or after start date.');
           showClear(boundary, true);
-          return finish(false);
+          updateSelection();
+          renderCalendar();
+          return false;
         }
         boundary.input.value = normalized;
         setValueFor(position, normalized);
         setViewFromIso(normalized);
         setValidity(boundary, true);
         showClear(boundary, true);
-        return finish(true);
+        updateSelection();
+        renderCalendar();
+        return true;
       };
 
       const chooseIso = (iso) => {
         if (!isCalendarSelectable(iso)) return;
         const boundary = boundaries[popupOwner];
+        setValueFor(popupOwner, iso);
         boundary.input.value = iso;
-        if (commitBoundary(popupOwner)) close({ restoreFocus: boundary.input });
+        setValidity(boundary, true);
+        showClear(boundary, true);
+        setViewFromIso(iso);
+        updateSelection();
+        renderCalendar();
+        close({ restoreFocus: boundary.input });
       };
 
       const focusDate = (iso) => {
@@ -547,7 +543,6 @@
             button.type = 'button';
             button.textContent = String(cursor.getUTCDate());
             button.dataset.date = iso;
-            if (cursor.getUTCDay() === 0) button.classList.add('sunday');
             button.tabIndex = iso === activeIso ? 0 : -1;
             button.disabled = disabled;
             button.setAttribute('aria-label', dayLabel(iso, reason));
@@ -573,7 +568,7 @@
 
       const open = (position, { focusDay = false } = {}) => {
         // Move focus off editable input synchronously to dismiss the mobile keyboard.
-        if (separateDateInput.matches) boundaries[position].trigger.focus({ preventScroll: true });
+        if (separateDateInput.matches) boundaries[position].trigger.focus();
         popupOwner = position;
         control.dataset.anchor = position;
         placeCalendar(position);
@@ -585,8 +580,8 @@
           requestAnimationFrame(() => {
             if (popup.hidden) return;
             const target = gridBody.querySelector('.day[tabindex="0"]');
-            if (target) target.focus({ preventScroll: true });
-            if (separateDateInput.matches) boundaries[position].stack.scrollIntoView({ block: 'start', inline: 'nearest' });
+            if (target) target.focus();
+            if (separateDateInput.matches) popup.scrollIntoView({ block: 'nearest' });
           });
         }
       };
@@ -600,8 +595,12 @@
       const clearBoundary = (position) => {
         const boundary = boundaries[position];
         boundary.input.value = '';
+        setValueFor(position, null);
+        setValidity(boundary, true);
+        showClear(boundary, false);
         popupOwner = position;
-        commitBoundary(position);
+        updateSelection();
+        renderCalendar();
         close({ restoreFocus: boundary.input });
       };
 
@@ -630,9 +629,8 @@
             open(boundary.position, { focusDay: true });
           }
           if (event.key === 'Enter') {
-            if (event.isComposing || event.keyCode === 229) return;
             event.preventDefault();
-            if (commitBoundary(boundary.position)) close();
+            if (commitBoundary(boundary.position)) close({ restoreFocus: boundary.input });
           }
         });
         boundary.trigger.addEventListener('click', () => {
@@ -678,7 +676,5 @@
       renderCalendar();
     })();
   </script>
-
-
 </body>
 </html>
