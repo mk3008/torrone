@@ -42,5 +42,6 @@ Historical material under `docs/poc/` is research evidence. Working copies under
 ## Current curated References
 
 - [Date range filter](date-range.md) — **approved** for a filter-style date range with independently optional Start and End boundaries.
+- [Invoice date range review requirements](invoice-date-range.md) — **draft** refinement preserving owner review requirements and the accepted Sunday cue; whole-candidate approval remains pending. Use it for continued Invoice desk work alongside the base Reference.
 
 This directory is a curation pilot. Its file layout and metadata are not a frozen Torrone profile or public API.
