@@ -73,6 +73,12 @@ That explicit human review promotes the responsive derivative from working draft
 
 This entry does not make these choices universal DatePicker rules. It curates one bounded design original for the stated responsibility.
 
+## Design rationale trace
+
+For the exact approved snapshot identified above, the existing [mobile review record](../docs/mobile-review-decisions.md#chosen-behavior) explains the narrow-screen inline calendar choice and the local nature of the layout threshold. Its [keyboard/calendar collision follow-up](../docs/mobile-review-decisions.md#follow-up-keyboard-and-calendar-collision) explains separating typing from calendar operation and returning focus to the calendar button; its [calendar ownership follow-up](../docs/mobile-review-decisions.md#follow-up-calendar-ownership) explains placement next to the active boundary. The [human review log](../docs/mobile-review-decisions.md#human-review-log) records the bounded phone acceptance, with exact artifact identity retained in this entry.
+
+These links apply the decision-recording rule to existing evidence; they add no new approval or retrospective rationale. Other surfaces described in that mixed review document are outside this Date range approval. For later corrections and decisions, follow the [next-version curation entry](date-range-recovery.md), which links its own reconciliation and keyboard-scroll withdrawal evidence. Historical review statements do not establish the current policy of that candidate.
+
 ## Provenance
 
 Current approved executable:

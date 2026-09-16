@@ -29,6 +29,20 @@ When the executable Reference or a material preserved behavior changes, treat th
 
 Changes that only clarify wording without changing the approved design meaning should still be reviewed proportionally, but do not require inventing a new lifecycle state.
 
+## Material UI design decisions
+
+Preserve the reason for a human-adopted UI choice when losing it would make a future implementer unable to distinguish intended behavior from an incidental detail, or unable to judge its scope. Examples include completion/recovery semantics, focus return, scroll responsibility, valid partial states and responsive changes to the operation model. Routine reversible HTML/CSS cleanup, class names and incidental pixel values need no decision record. Do not document every implementation choice or retain an AI reasoning transcript.
+
+Keep the explanation in the applicable curation entry, or link from that entry to an existing review/decision document when the explanation already lives there. One concise paragraph can suffice; a separate file, template, schema or registry is not required. Reference HTML and Preserve / May vary still define the design; the explanation supplies its rationale rather than a competing specification.
+
+When proposing a material change, identify the choice, why it is needed and preferred, its bounded responsibility/conditions, and supporting evidence. Include a credible alternative or reconsideration condition only when needed to understand or revisit the choice. Mark proposals and inferences as such. AI may prepare the explanation, but only explicit human review establishes adoption; tests, browser observations and PR merge do not do so.
+
+At curation or material revision, the author checks that a reader can follow the entry to the relevant rationale and human-approval evidence for the exact reviewed artifact and scope. Record the human decision faithfully, including partial acceptance and unverified conditions. An adopted individual choice does not approve an entire candidate. If the reason or approval evidence is missing, state that gap; do not invent retrospective rationale or claim approval to complete the record. Handle required unresolved work through [finding disposition](../docs/development-workflow.md#disposition-of-gui-findings).
+
+When a choice is superseded, update the affected curation entry to point to the replacement and explain the changed scope or reason. Preserve prior approval identities and historical evidence; do not rewrite them to match the new policy. Check these links when changing the relevant design, not by synchronizing status tables elsewhere. Older records may remain in their existing form: add traceability where needed without bulk migration or fabricated evidence.
+
+This rule lives with the Reference lifecycle because it governs explaining adopted design. The workflow governs what happens to findings, including rejection and deferral; it can link to the same explanation without requiring a duplicate record. Existing curation and review documents provide both roles with less maintenance than a new decision-record system.
+
 ## Using curated References
 
 Before implementing a recurring UI responsibility, check this directory first.
