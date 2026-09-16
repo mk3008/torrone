@@ -4,7 +4,7 @@ Date: 2026-09-16. Status: decided by the repository owner in the PR #14 Work rev
 
 ## Decision
 
-Remove the custom textbox visibility helper from the Date range next candidate and retire it as a shared Reference requirement. Keep browser-native text entry and user-controlled scrolling. Keep calendar-disclosure context adjustment separate. The owner explicitly agreed to withdrawal and said the other behavior had no problems; they also expressed a flat icon-button preference, recorded separately without changing styling in this revision.
+Remove the custom textbox visibility helper from the Date range next candidate and retire it as a shared Reference requirement. Keep browser-native text entry and user-controlled scrolling. Keep calendar-disclosure context adjustment separate. The owner explicitly agreed to withdrawal and said the other behavior had no problems; flat icon-button work is assigned to [follow-up Issue #15](https://github.com/mk3008/torrone/issues/15), which owns its scope and disposition.
 
 ## Why
 

@@ -14,3 +14,5 @@
 - Do not restore Manifest/OKF-era workflows, skills, schemas, or orchestration as active repository requirements unless a new product decision explicitly calls for them.
 
 - For transfer PoCs, classify human findings as target implementation defects or Reference gaps. Return Reference-level decisions to its next-version candidate; do not invent PoC-specific product requirements or curated variants. Follow `references/README.md` and retain historical evidence.
+
+- Disposition review findings explicitly: adopt or reject with a reason, or track separate work in an issue with scope, owner and completion conditions. Do not leave unowned preference/TODO notes in maintained Reference guidance; link the owning issue instead.
