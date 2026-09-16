@@ -1,0 +1,78 @@
+# PoC 018 — verification and review handoff
+
+## Evidence boundary
+
+Initial target implementation was committed as `71ce423e2f6b9f5e3f22b769f8f6c6b329d53761` before reading review infrastructure. Integration then read only `review/examples.json`, `review/index.template.html`, `tools/build-review.py`, and `docs/development-workflow.md` (plus the current README's review pointers). No historical experiment implementation or result was consulted. The date-only helper was subsequently extracted to support focused tests.
+
+## Completed checks
+
+Run from the repository root, with Node and Python 3.10+:
+
+```sh
+node tests/check-curated-handoff-dates.cjs
+node tests/check-curated-handoff.cjs --static-only
+node --check docs/poc/experiments/018-curated-reference-handoff/target/invoice.js
+git diff --check
+```
+
+- Date tests passed: 21 accepted/rejected format cases, 6 date arithmetic boundaries, optional/partial and equal boundaries, future cutoff, reversed-range feedback, and recovery after editing/clearing the opposite boundary.
+- Review packaging passed: the new entry is an implementation candidate in its own section, every selected HTML and explicitly included CSS/JS asset matches its source bytes and recorded SHA-256.
+- Syntax and whitespace checks passed.
+- The approved Date range executable remains Git blob `d2be91d512ac310cb306adfe0e9bfe556ec2bca8`; its curation entry is unchanged. No prior experiment output was edited.
+
+## Browser verification not completed here
+
+The standalone browser runner could not launch because Chromium was unavailable; the official Playwright browser download timed out. The environment's managed browser rejected the local review address (`net::ERR_BLOCKED_BY_CLIENT`). No browser behavior, screenshot, responsive-layout or real-device pass is claimed.
+
+A focused reproducible browser check is included for an environment with Playwright and its Chromium installed:
+
+```sh
+node tests/check-curated-handoff.cjs
+```
+
+Make Playwright available through that environment's normal Node module resolution (or `NODE_PATH`). The script checks 1280, 390 and 320 px viewports, partial ranges, normalization, calendar-based invalid recovery, future and reversed constraints, range styling, Clear, focus return, dismissal, Tab, keyboard/month/year navigation, and generated bundle links. It leaves screenshots beside its disposable review bundle. This runner has **not passed in this environment** and needs execution before relying on those interaction assertions.
+
+## Human review requested
+
+Open the existing Torrone Reference Review surface and choose **Implementation candidates → Invoice issued-date filter — PoC 018**. The PR records the deployed snapshot revision and publication result.
+
+Operate the candidate first without the original side-by-side:
+
+1. Does each visible boundary read as one integrated operation? Is its relationship to the same Reference operation model recognizable?
+2. Try earliest-only and latest-only dates, by typing and calendar selection. A single calendar choice completes only its owning boundary.
+3. Enter an impossible date or reversed interval; correct it manually, choose a valid calendar date, or clear a boundary. Is the recovery path credible?
+4. Try Clear, Escape, close, click outside, Tab/Shift+Tab and reopen. Are the active boundary and return focus understandable?
+5. On a real phone, type first, then open the calendar. Does the keyboard recede, does the calendar sit immediately below the active boundary, and do completion and dismissal avoid reopening the keyboard?
+6. Review local choices recorded in `handoff-notes.md`, especially tab-reachable actions and dependent-boundary revalidation. If those expose missing curation guidance, record that separately instead of changing the approved Reference here.
+
+Human recognition, actual software-keyboard behavior, assistive technology, cross-browser behavior and design quality remain unevaluated. No score or approval is assigned. A later reviewer may inspect historical research; this implementation did not require it.
+
+## Follow-up: real-phone keyboard obstruction
+
+The owner tested snapshot `570d35ac6eb7d67bbf4aa2d5923de48760aa3ed2` in the ChatGPT-embedded review surface on an Android phone. The supplied screenshots (`Screenshot_20260916_075517.jpg` and `Screenshot_20260916_075524.jpg`) show the software keyboard covering the earliest-date editor. The owner also reported that the latest-date editor was completely invisible. This is observed usability failure, not approval; it supersedes the earlier lack of phone observations.
+
+The candidate previously only dismissed the calendar when an input received focus. It did not reserve scroll space or reposition the editable control. The correction adds temporary bottom scroll space while a narrow-screen date field is focused, then brings that field's label/editor to the top. Bounded retries accommodate keyboard animation when the embedding host does not deliver a child viewport resize; viewport resize events also recheck the current input. Moving focus to calendar/Clear/elsewhere cancels retries and removes the space. Desktop behavior and the approved Reference are unchanged.
+
+`node tests/check-curated-handoff-entry.cjs` passes checks of both fields, delayed opening without resize, resize handling with/without VisualViewport, switching fields, blur/calendar cleanup, and desktop isolation. The existing date and packaging checks also pass. These are event-level tests, not a real browser/keyboard simulation. The initial browser-verification limitation remains; confirm the corrected display on the same phone after reopening the updated review surface.
+
+## Follow-up: calendar tap did not commit
+
+The owner reported that tapping a calendar day did not populate the input after the keyboard-visibility update. An event-order regression test running the real `invoice.js` handlers reproduced a premature dismissal: a focusout microtask could see a temporarily empty/outside `activeElement` and hide the calendar before the pending date click.
+
+The dismissal handler now uses `FocusEvent.relatedTarget` when available. If the destination is absent, it checks after the focus transition on the next animation frame, instead of in a microtask. Calendar-internal focus movement no longer closes the calendar; leaving the owning control still does.
+
+`node tests/check-curated-handoff-calendar.cjs` failed on the previous code with `boundary 0: calendar closed before day click`, then passed after the fix. The test exercises the actual calendar handlers for both boundaries, single-boundary completion, null focus destinations, focus return, unavailable dates and real control exit. Existing entry-visibility, date and package checks also pass. The fixture models DOM event order; it does not establish real-device browser behavior. The owner's exact phone scenario still needs confirmation on the updated snapshot. The earlier isolated entry-visibility checks did not cover this calendar/dismissal interaction.
+
+## Follow-up: focus order and intermittent focus-ring clipping
+
+The owner reported that Enter in the latest-date field returned focus to the earliest calendar icon, and supplied `Screenshot_20260916_082752.jpg` showing a selected day's focus outline cut off on its right edge.
+
+The Enter defect was reproduced in the actual-handler event fixture: manual entry reused the last calendar owner when restoring focus. Manual focus now updates its boundary, and valid Enter advances through the visible form controls in DOM/visual order, matching Tab: input, Clear when visible, calendar action, then the next boundary or search control. Invalid input retains focus. Calendar completion still returns to the owning boundary as before. Tests cover both boundaries after operating the opposite calendar, visible/hidden Clear, and invalid recovery; they fail before the correction and pass afterward.
+
+For the supplied rendering symptom, date-cell focus outlines now draw inside the cell and above adjacent cells. This removes the external overlap that could hide part of the ring. This is a targeted CSS correction based on the screenshot; intermittent real-phone rendering has not been verified or declared fully resolved. Other unshown rendering failures are not assumed to share this cause.
+
+The calendar, manual-entry visibility, date arithmetic and packaging checks pass. Actual browser/phone verification remains pending; the prior evidence and limitations are retained.
+
+## Superseding decision: consistent manual Enter behavior
+
+After further phone feedback, the owner requested a literature-based rule instead of more ad hoc focus transfers. See [keyboard-policy.md](keyboard-policy.md) for primary sources, their limits and the local decision. The preceding Enter-as-Tab behavior is superseded: both fields now confirm in place, while Tab remains sequential navigation. Both request the Done virtual-keyboard label. Composition Enter is not intercepted. Calendar completion retains its separate return path. The actual-handler and existing focused checks pass; the owner's IME has not been verified here.

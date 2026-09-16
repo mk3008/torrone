@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+<link rel="icon" href="data:,">
+<title>Invoice desk — issued-date filter candidate</title>
+<link rel="stylesheet" href="invoice.css">
+<header><strong>Invoice desk</strong><span>Implementation candidate · awaiting human review</span></header>
+<main>
+  <h1>Find issued invoices</h1>
+  <p>Limit the ledger by issue date. Leave either boundary empty for an open-ended search.</p>
+  <form novalidate>
+    <fieldset id="issue-window">
+      <legend>Issued date</legend>
+      <p id="date-format">Use YYYY-MM-DD or YYYYMMDD. Enter confirms the current field; Tab moves between controls. Review date: 2026-09-16; later issue dates are unavailable.</p>
+      <div class="limits">
+        <section class="limit" data-side="after">
+          <label for="issued-after">Issued on or after <small>(optional)</small></label>
+          <div class="editor">
+            <input id="issued-after" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" placeholder="YYYY-MM-DD" aria-describedby="date-format after-problem" aria-invalid="false" aria-controls="date-browser" aria-expanded="false" aria-haspopup="dialog">
+            <button type="button" data-action="erase" aria-label="Clear earliest issue date" hidden>×</button>
+            <button type="button" data-action="browse" aria-label="Calendar for earliest issue date" aria-controls="date-browser" aria-expanded="false">▦</button>
+          </div>
+          <p id="after-problem" class="problem" role="alert" hidden></p>
+        </section>
+        <section class="limit" data-side="before">
+          <label for="issued-before">Issued on or before <small>(optional)</small></label>
+          <div class="editor">
+            <input id="issued-before" type="text" inputmode="numeric" enterkeyhint="done" autocomplete="off" placeholder="YYYY-MM-DD" aria-describedby="date-format before-problem" aria-invalid="false" aria-controls="date-browser" aria-expanded="false" aria-haspopup="dialog">
+            <button type="button" data-action="erase" aria-label="Clear latest issue date" hidden>×</button>
+            <button type="button" data-action="browse" aria-label="Calendar for latest issue date" aria-controls="date-browser" aria-expanded="false">▦</button>
+          </div>
+          <p id="before-problem" class="problem" role="alert" hidden></p>
+        </section>
+      </div>
+    </fieldset>
+    <p id="ledger-scope" role="status">All issue dates.</p>
+    <button type="submit" class="search">Show invoices</button>
+    <p id="search-result" role="status"></p>
+  </form>
+</main>
+<aside id="date-browser" role="dialog" aria-labelledby="editing-label" aria-describedby="date-keys" hidden>
+  <div class="browser-title"><strong id="editing-label"></strong><button type="button" data-action="dismiss" aria-label="Dismiss date calendar">×</button></div>
+  <nav aria-label="Calendar navigation">
+    <button type="button" data-shift="-12" aria-label="Back one year">«</button>
+    <button type="button" data-shift="-1" aria-label="Back one month">‹</button>
+    <h2 id="display-month" aria-live="polite"></h2>
+    <button type="button" data-shift="1" aria-label="Forward one month">›</button>
+    <button type="button" data-shift="12" aria-label="Forward one year">»</button>
+  </nav>
+  <div class="weekdays" aria-hidden="true"><span class="sunday">Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+  <div id="date-options" role="group" aria-labelledby="display-month"></div>
+  <p id="availability"></p>
+  <p id="date-keys">Arrow keys move by day/week. Page Up/Down changes month (Shift: year). Escape closes.</p>
+</aside>
+<script src="invoice-dates.js"></script>
+<script src="invoice.js"></script>
+<script src="invoice-entry.js"></script>
+</html>

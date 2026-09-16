@@ -17,6 +17,8 @@ When that reference is absent, new screens copy different predecessors and drift
 
 Shared CSS and component libraries reduce some visual drift, but they do not by themselves define composition, responsibility, state transitions, focus behavior, or the intended operation model of a screen or interaction.
 
+Application-wide interaction requirements are explicit design inputs alongside bounded References. The consuming application owns such decisions as sequential navigation, Enter/submit behavior, focus return, error recovery, and keyboard/scroll relationships. A component Reference demonstrates its local responsibility; its approval does not establish those policies for every screen. Torrone must carry the applicable shared requirements into implementation and review rather than leave their application to memory. See [Application interaction requirements](application-interaction.md) for the lightweight handoff and coverage check.
+
 ## Why documentation alone was insufficient
 
 Torrone originally explored natural-language and structured design knowledge, including DESIGN-style Markdown and an OKF-compatible Markdown/YAML Manifest.

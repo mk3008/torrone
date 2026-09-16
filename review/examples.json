@@ -22,5 +22,20 @@
     "guidance": "Open and dismiss navigation, filter requests, and review results. On phones, navigation overlays the workspace and results scroll horizontally within their own region.",
     "status": "Responsive working draft; mobile changes await human approval.",
     "evidence": "docs/poc/experiments/017-reference-html-ssot/README.md"
+  },
+  {
+    "id": "invoice-issued-date",
+    "title": "Invoice issued-date filter \u2014 PoC 018",
+    "source": "docs/poc/experiments/018-curated-reference-handoff/target/index.html",
+    "assets": [
+      "invoice.css",
+      "invoice-dates.js",
+      "invoice.js",
+      "invoice-entry.js"
+    ],
+    "implementation_candidate": true,
+    "guidance": "Try earliest-only and latest-only issue dates, manual correction, Clear, calendar completion and dismissal. On a phone, switch between typing and the inline calendar. Does the operation model feel coherent?",
+    "status": "Independent implementation candidate; not an approved or curated Reference. Human handoff/design review is pending.",
+    "evidence": "docs/poc/experiments/018-curated-reference-handoff/handoff-notes.md"
   }
 ]

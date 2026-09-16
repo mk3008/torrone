@@ -33,6 +33,8 @@ Changes that only clarify wording without changing the approved design meaning s
 
 Before implementing a recurring UI responsibility, check this directory first.
 
+Also identify the consuming application's shared interaction requirements using [Application interaction requirements](../docs/application-interaction.md). A bounded Reference is one input to the composed screen, not the complete application contract. Check compatibility before implementation and record cross-control coverage at handoff; do not infer a global keyboard policy from an isolated example.
+
 Use an approved Reference only within its stated scope. Product requirements may override a Reference, but the difference should be explicit rather than silently interpreted as a new application-wide convention. If the required operation model materially differs, use or create a different Reference instead of stretching an existing one beyond its meaning.
 
 Historical material under `docs/poc/` is research evidence. Working copies under `review/` are review surfaces. Neither is canonical merely because it exists. A curation entry makes the current design-original relationship explicit.
@@ -40,5 +42,6 @@ Historical material under `docs/poc/` is research evidence. Working copies under
 ## Current curated References
 
 - [Date range filter](date-range.md) — **approved** for a filter-style date range with independently optional Start and End boundaries.
+- [Invoice date range review requirements](invoice-date-range.md) — **draft** refinement preserving owner review requirements and the accepted Sunday cue; whole-candidate approval remains pending. Use it for continued Invoice desk work alongside the base Reference.
 
 This directory is a curation pilot. Its file layout and metadata are not a frozen Torrone profile or public API.
