@@ -78,13 +78,13 @@ The workflow is the single home for this handoff rule. AGENTS and the PR templat
 
 ### Bounded check against Date range review
 
-The following existing cases exercise the outcomes; they are not new design approvals or rewritten historical evidence.
+The following cases record how findings were dispositioned at the PR #14 handoff. They are historical application examples, not current-status records or new design approvals. Consult the linked issue, decision or curation entry for its current state; this table requires no status synchronization.
 
 | Finding | Disposition and trace | Handoff result |
 | --- | --- | --- |
-| PoC 018 findings were isolated in an Invoice-specific Reference | Addressed in [PR #14](https://github.com/mk3008/torrone/pull/14); the [shared candidate](../references/date-range-recovery.md#reconciled-baseline-before-issue-13-recovery) records classification and verification links | The correction is traceable; the candidate's explicit approval status still governs use. |
-| Generic keyboard-following correction caused unwanted movement | Not pursued, with reason, scope, retained evidence and reopening conditions in the [withdrawal decision](decisions/2026-09-16-withdraw-keyboard-scroll.md) | The attempt is closed by an explicit decision, not left as an unexplained future improvement. |
-| Flat navigation and Close buttons introduce a button Reference responsibility | Deferred to [Issue #15](https://github.com/mk3008/torrone/issues/15), with scope and completion conditions for the next practitioner | The work remains outstanding and discoverable without assigning a person or expanding #14. |
+| PoC 018 findings were isolated in an Invoice-specific Reference | Addressed in [PR #14](https://github.com/mk3008/torrone/pull/14); the [shared candidate](../references/date-range-recovery.md#reconciled-baseline-before-issue-13-recovery) records classification and verification links | At handoff, the correction and its evidence were linked to the shared candidate without transferring historical approval. |
+| Generic keyboard-following correction caused unwanted movement | Not pursued, with reason, scope, retained evidence and reopening conditions in the [withdrawal decision](decisions/2026-09-16-withdraw-keyboard-scroll.md) | At handoff, the withdrawal decision explained why the attempt was not pursued and when it could be reconsidered. |
+| Flat navigation and Close buttons introduce a button Reference responsibility | Deferred to [Issue #15](https://github.com/mk3008/torrone/issues/15), with scope and completion conditions for the next practitioner | At handoff, #15 established a traceable destination for deferred work without assigning a person or expanding #14; its current status belongs to that issue. |
 
 This checks traceability in one review sequence, not universal process effectiveness. No UI behavior or application interaction policy changes as a result of this documentation rule.
 
