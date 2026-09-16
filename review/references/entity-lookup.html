@@ -42,7 +42,12 @@
     .primary:disabled { color: #526579; background: #edf2f6; border-color: #b9c5d1; cursor: default; }
 
     .dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .dialog-close { min-height: 44px; padding: 8px 12px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+    .dialog-close { display: grid; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; place-items: center; color: #183653; background: transparent; border: 1px solid transparent; border-radius: 4px; }
+    .dialog-close:hover:not(:disabled) { background: #edf3f9; }
+    .dialog-close:active:not(:disabled) { background: #d7e5f3; }
+    .dialog-close:focus-visible { outline: 2px solid #1d73b7; outline-offset: -3px; }
+    .dialog-close svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+    @media (forced-colors: active) { .dialog-close:focus-visible { outline-color: Highlight; } }
     dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; max-height: calc(100dvh - 48px); }
     .dialog-body { min-height: 0; overflow: auto; }
     body:has(dialog[open]) { overflow: hidden; }
@@ -75,7 +80,7 @@
   </section>
 
   <dialog id="location-dialog" aria-labelledby="dialog-title">
-    <div class="dialog-heading"><h3 id="dialog-title" tabindex="-1">Find service location</h3><button class="dialog-close" type="button" aria-label="Close location search">Close</button></div>
+    <div class="dialog-heading"><h3 id="dialog-title" tabindex="-1">Find service location</h3><button class="dialog-close" type="button" aria-label="Close location search" title="Close location search"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5L5 15"/></svg></button></div>
     <div class="dialog-body">
       <label class="field-label" for="lookup-query">Location ID or name</label>
       <input class="query" id="lookup-query" data-ref="lookup-query" autocomplete="off">

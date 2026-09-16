@@ -30,3 +30,7 @@ The top REFERENCE FIXTURE note is review guidance, not required consuming-produc
 A native radio group communicates single selection and supplies standard keyboard behavior without a custom listbox framework. The parent value and pending dialog choice are distinct so cancellation has a stable meaning. These are proposals for this bounded lookup, not global application conventions. Labels, records, styling and implementation may vary; a required multi-selection or immediate-commit lookup needs a different operation model.
 
 Apply [application interaction requirements](../docs/application-interaction.md). The policy and coverage for this standalone fixture are recorded above and in [verification notes](../docs/entity-lookup-review.md). Human review must decide whether to adopt it; preserve the draft until explicit acceptance.
+
+## Review scope clarification
+
+This example demonstrates a dialog lookup operation, not a recommendation that every entity search must first open a dialog. The owner explicitly retained this sample's operation model while noting that a textbox-integrated autocomplete may better fit simple ID/name selection. No autocomplete implementation is requested here. Close applies the [approved flat icon-button Reference](icon-button.md), retaining its accessible name, 44px target and existing cancellation/focus-return semantics.
