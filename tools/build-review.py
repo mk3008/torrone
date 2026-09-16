@@ -1,4 +1,4 @@
-"""Package selected References and implementation candidates for review; never modify their sources."""
+"""Package current review targets; historical evidence stays in docs/poc."""
 import argparse
 import hashlib
 import html
@@ -72,7 +72,7 @@ def build():
     template = (ROOT / 'review/index.template.html').read_text(encoding='utf-8')
     sections = '<section aria-labelledby="references-heading"><h2 id="references-heading">References and working drafts</h2>' + '\n'.join(cards) + '</section>'
     if candidate_cards:
-        sections += '<section aria-labelledby="candidates-heading"><h2 id="candidates-heading">Implementation candidates</h2><p>Independent consuming-product examples. These are not curated References and have no design approval.</p>' + '\n'.join(candidate_cards) + '</section>'
+        sections += '<section aria-labelledby="candidates-heading"><h2 id="candidates-heading">Active implementation candidates</h2><p>Temporary consuming-product examples with an unfinished review purpose. Remove completed, integrated or discarded candidates from <code>review/examples.json</code>; preserve historical evidence under <code>docs/poc/</code>.</p>' + '\n'.join(candidate_cards) + '</section>'
     page = template.replace('{{cards}}', sections).replace('{{revision}}', revision)
     page = page.replace('{{state}}', 'Uncommitted working-tree snapshot' if dirty else 'Committed snapshot')
     (output / 'index.html').write_text(page, encoding='utf-8')
