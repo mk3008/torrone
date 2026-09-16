@@ -690,6 +690,7 @@
     return 0;
   }
   let frame = 0, pressed = false;
+  let previousHeight = window.visualViewport?.height || window.innerHeight;
   function reveal() {
     frame = 0;
     const input = document.activeElement;
@@ -716,13 +717,18 @@
   }
   document.addEventListener('pointerdown', () => { pressed = true; cancelAnimationFrame(frame); }, true);
   ['pointerup', 'pointercancel'].forEach(type => document.addEventListener(type, () => { pressed = false; }, true));
-  // Click runs after the pointer has completed; never move its pending target.
-  document.addEventListener('click', schedule);
-  document.addEventListener('focusin', schedule);
+  // Switching editors and user scrolling must not trigger visibility corrections.
+  document.addEventListener('focusin', () => cancelAnimationFrame(frame));
   document.addEventListener('focusout', () => cancelAnimationFrame(frame));
-  window.addEventListener('resize', schedule);
-  window.visualViewport?.addEventListener('resize', schedule);
-  window.visualViewport?.addEventListener('scroll', schedule);
+  function viewportChanged() {
+    const height = window.visualViewport?.height || window.innerHeight;
+    const shrank = height < previousHeight - 1;
+    previousHeight = height;
+    cancelAnimationFrame(frame);
+    if (shrank) schedule();
+  }
+  window.addEventListener('resize', viewportChanged);
+  window.visualViewport?.addEventListener('resize', viewportChanged);
 })();
 </script>
 </body>

@@ -59,3 +59,5 @@ The [Date range next candidate](../references/date-range-recovery.md) demonstrat
 Reference: [VisualViewport](https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport). The API geometry is distinct from the policy decision above.
 
 Follow-up direction constraint: textbox visibility correction may only advance the scroll position to lift an editor above the lower obstruction. Ignore zero or negative deltas, even if the upper-edge visibility calculation requests them. Do not automatically scroll backward to recover a label or undo a prior adjustment. Calendar disclosure is a separate behavior.
+
+Minimal-trigger refinement: automatic textbox correction runs only after the visible viewport height decreases. Focus/click, switching between editors, manual scroll and viewport growth do not initiate correction. A queued correction is canceled on focus change. This reduces competing adjustments; native browser focus/keyboard scrolling is separate and is not claimed suppressed.

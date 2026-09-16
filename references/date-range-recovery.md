@@ -4,7 +4,7 @@ status: draft
 responsibility: opposite-boundary recovery for independently optional date filters
 reference: ../review/references/date-range-recovery-draft.html
 base_approved_git_blob: d2be91d512ac310cb306adfe0e9bfe556ec2bca8
-draft_identity: ../docs/poc/experiments/020-date-range-recovery/visibility-direction-identity.json
+draft_identity: ../docs/poc/experiments/020-date-range-recovery/visibility-trigger-identity.json
 decision_source: https://github.com/mk3008/torrone/issues/13
 ---
 
@@ -70,3 +70,5 @@ The owner's next clarification permits the minimum correction when keyboard occl
 The current handler operates only in a top-level window with usable viewport geometry. In the ChatGPT embedded viewer it deliberately does not guess keyboard occlusion; open the review site as a standalone browser page to exercise the correction. A host integration is required to provide the same guarantee inside an opaque embedding. No such host contract is available in this repository. [Verification and limits](../docs/poc/experiments/020-date-range-recovery/visibility.md).
 
 Textbox correction is one-directional: only positive scroll deltas may lift the editor above the keyboard. Ignore negative corrections; upper-edge/label clipping must not move the page backward automatically.
+
+Only a decrease in visible viewport height may initiate textbox correction. Focusing/tapping an editor, switching fields, scrolling manually or increasing viewport height must not initiate it. Browser-native keyboard/focus scrolling remains outside this guarantee.

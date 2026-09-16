@@ -15,3 +15,7 @@ Exact current identity: visibility-identity.json. Human review remains required.
 ## Direction follow-up
 
 Owner reported unwanted backward scrolling. The execution guard now ignores negative/zero correction deltas regardless of visibility calculation, retaining positive lower-edge correction. The regression expects no movement for a negative upper-edge result and still verifies a positive 22px adjustment. Entry and recovery checks pass. This supersedes the earlier upper-clipping expectation; no new phone verification is claimed. Current identity: visibility-direction-identity.json.
+
+## Minimal trigger follow-up
+
+Owner observed reverse movement when tapping End after scrolling to the bottom with the keyboard already open. The prior positive-delta guard does not control native browser scrolling. Removed all click/focusin/visualViewport-scroll correction triggers. Only a viewport height decrease can now queue a measured, positive correction; focus changes cancel pending work. Tests cover switching editors with unchanged height, viewport growth, pointer activity during shrink, and retained lower-edge correction. Actual Android reproduction remains unavailable; this change removes competing application triggers but does not claim the photographed symptom fully resolved. Current identity: visibility-trigger-identity.json.
