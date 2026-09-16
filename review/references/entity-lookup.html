@@ -30,8 +30,12 @@
     .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
     .query { width: 100%; min-height: 42px; padding: 8px 11px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
     .results { display: grid; gap: 6px; margin-top: 12px; }
-    .result { display: grid; min-height: 56px; padding: 8px 10px; align-content: center; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; text-align: left; }
-    .result:hover, .result[aria-selected="true"] { background: #e5f0fb; border-color: #9ebbd5; }
+    .result { display: flex; gap: 12px; align-items: center; cursor: pointer; min-height: 56px; padding: 8px 10px; align-content: center; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; text-align: left; }
+    .result:hover, .result:has(input:checked) { background: #e5f0fb; border-color: #9ebbd5; }
+    .result input { width: 20px; height: 20px; min-height: 20px; flex: 0 0 20px; accent-color: var(--accent); }
+    .result:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: -3px; }
+    .result-copy { display: grid; }
+    .fixture-note { margin: 0; padding: 10px 24px; color: var(--muted); font-size: 14px; border-bottom: 1px dashed var(--border); }
     .empty { margin: 12px 0 0; padding: 14px; color: var(--muted); background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; }
     .dialog-actions { display: flex; padding: 14px 20px; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--border); }
     .primary { min-height: 42px; padding: 0 16px; color: #fff; font-weight: 700; background: #1d70b3; border: 1px solid #155b92; border-radius: 6px; }
@@ -53,7 +57,7 @@
       .dialog-heading { padding: max(12px, env(safe-area-inset-top)) 16px 12px; }
       .dialog-heading h3 { font-size: 18px; }
       .dialog-body { display: flex; flex-direction: column; padding: 16px; overflow: hidden; }
-      .dialog-body > label, .dialog-body > input, .empty { flex-shrink: 0; }
+      .dialog-body > label, .dialog-body > input, .dialog-body > p, .empty { flex-shrink: 0; }
       .results { overflow: auto; min-height: 0; align-content: start; overscroll-behavior: contain; }
       .dialog-actions { padding: 12px 16px max(12px, env(safe-area-inset-bottom)); }
       .dialog-actions button { flex: 1; }
@@ -61,12 +65,13 @@
   </style>
 </head>
 <body>
-  <div class="reference-note" data-reference-harness="reference-label">Reference part · entity dialog lookup</div>
+  <div class="reference-note" data-reference-harness="reference-label">Reference part · entity dialog lookup · draft</div>
+  <p class="fixture-note" data-reference-harness="fixture-boundary">REFERENCE FIXTURE: two local locations; filtering, single selection, confirmation, cancellation and clearing work. No server, persistence, latency, authorization, pagination or backend-error simulation. This note is review guidance, not product UI.</p>
   <section class="sample" aria-labelledby="lookup-heading">
     <h2 id="lookup-heading">Service location</h2>
     <p class="support">Choose the location where the work will be performed.</p>
     <button class="lookup" type="button" data-ref="lookup-trigger" aria-controls="location-dialog" aria-expanded="false">Find location</button>
-    <div class="selection" data-ref="lookup-selection" hidden><p><strong>North Distribution Center</strong><br><span class="entity-id">Location LC-031</span></p><button class="secondary" type="button" data-ref="lookup-clear">Clear</button></div>
+    <div class="selection" data-ref="lookup-selection" hidden><p><strong data-ref="selected-name"></strong><br><span class="entity-id" data-ref="selected-id"></span></p><button class="secondary" type="button" data-ref="lookup-clear">Clear</button></div>
   </section>
 
   <dialog id="location-dialog" aria-labelledby="dialog-title">
@@ -74,10 +79,8 @@
     <div class="dialog-body">
       <label class="field-label" for="lookup-query">Location ID or name</label>
       <input class="query" id="lookup-query" data-ref="lookup-query" autocomplete="off">
-      <div class="results" role="listbox" aria-label="Matching service locations">
-        <button class="result" type="button" role="option" data-ref="lookup-option-primary" aria-selected="false"><span>North Distribution Center</span><span class="entity-id">Location LC-031</span></button>
-        <button class="result" type="button" role="option" aria-selected="false"><span>Riverside Depot</span><span class="entity-id">Location LC-044</span></button>
-      </div>
+      <p id="selection-help">Choose one location, then Select to confirm. Cancel leaves the current location unchanged.</p>
+      <div class="results" role="radiogroup" aria-label="Matching service locations" aria-describedby="selection-help"></div>
       <p class="empty" data-ref="lookup-empty" role="status" aria-live="polite" hidden>No matching locations. Change the ID or name.</p>
     </div>
     <div class="dialog-actions"><button class="secondary" type="button" data-ref="lookup-cancel">Cancel</button><button class="primary" type="button" data-ref="lookup-confirm" disabled>Select</button></div>
@@ -86,7 +89,7 @@
   <script type="application/json" data-reference-scenarios>
     {"version":1,"scenarios":[
       {"name":"pointer dialog selection","steps":[{"action":"click","target":"lookup-trigger"},{"action":"fill","target":"lookup-query","value":"a"},{"action":"click","target":"lookup-option-primary"},{"action":"click","target":"lookup-confirm"}]},
-      {"name":"keyboard dialog selection","steps":[{"action":"press","target":"lookup-trigger","key":" "},{"action":"fill","target":"lookup-query","value":"a"},{"action":"press","target":"lookup-query","key":"Tab"},{"action":"press","target":"lookup-option-primary","key":"Enter"},{"action":"press","target":"lookup-confirm","key":" "}]},
+      {"name":"keyboard dialog selection","steps":[{"action":"press","target":"lookup-trigger","key":" "},{"action":"fill","target":"lookup-query","value":"a"},{"action":"press","target":"lookup-query","key":"Tab"},{"action":"press","target":"lookup-option-primary","key":" "},{"action":"press","target":"lookup-confirm","key":" "}]},
       {"name":"dialog no results","steps":[{"action":"click","target":"lookup-trigger"},{"action":"fill","target":"lookup-query","value":"zzz"}]},
       {"name":"cancel lookup","steps":[{"action":"click","target":"lookup-trigger"},{"action":"click","target":"lookup-cancel"}]},
       {"name":"clear lookup selection","steps":[{"action":"click","target":"lookup-trigger"},{"action":"click","target":"lookup-option-primary"},{"action":"click","target":"lookup-confirm"},{"action":"click","target":"lookup-clear"}]}
@@ -98,16 +101,59 @@
       const dialog = document.getElementById('location-dialog');
       const query = document.querySelector('[data-ref="lookup-query"]');
       const results = dialog.querySelector('.results');
-      const option = document.querySelector('[data-ref="lookup-option-primary"]');
+      const locations = [
+        { id: 'LC-031', name: 'North Distribution Center' },
+        { id: 'LC-044', name: 'Riverside Depot' }
+      ];
+      let pendingId = null;
+      let committedId = null;
       const empty = document.querySelector('[data-ref="lookup-empty"]');
       const confirm = document.querySelector('[data-ref="lookup-confirm"]');
       const cancel = document.querySelector('[data-ref="lookup-cancel"]');
       const selection = document.querySelector('[data-ref="lookup-selection"]');
       const clear = document.querySelector('[data-ref="lookup-clear"]');
-      const resetDialog = () => { query.value = ''; results.hidden = false; empty.hidden = true; option.setAttribute('aria-selected', 'false'); confirm.disabled = true; };
-      const selectOption = () => { option.setAttribute('aria-selected', 'true'); confirm.disabled = false; };
+      const renderResults = () => {
+        const term = query.value.trim().toLowerCase();
+        const matches = locations.filter(item => item.id.toLowerCase().includes(term) || item.name.toLowerCase().includes(term));
+        results.replaceChildren();
+        for (const item of matches) {
+          const label = document.createElement('label');
+          label.className = 'result';
+          const radio = document.createElement('input');
+          radio.type = 'radio';
+          radio.name = 'location-choice';
+          radio.value = item.id;
+          radio.checked = item.id === pendingId;
+          radio.dataset.ref = item.id === locations[0].id ? 'lookup-option-primary' : 'lookup-option-secondary';
+          radio.addEventListener('change', () => {
+            if (!radio.checked) return;
+            pendingId = item.id;
+            confirm.disabled = false;
+          });
+          const copy = document.createElement('span');
+          copy.className = 'result-copy';
+          const name = document.createElement('span');
+          name.textContent = item.name;
+          const id = document.createElement('span');
+          id.className = 'entity-id';
+          id.textContent = 'Location ' + item.id;
+          copy.append(name, id);
+          label.append(radio, copy);
+          results.append(label);
+        }
+        results.hidden = matches.length === 0;
+        empty.hidden = matches.length !== 0;
+        confirm.disabled = pendingId === null;
+      };
+      const resetDialog = () => { query.value = ''; pendingId = null; renderResults(); };
       const open = () => { resetDialog(); trigger.setAttribute('aria-expanded', 'true'); dialog.showModal(); if (matchMedia('(max-width: 800px)').matches) document.getElementById('dialog-title').focus(); else query.focus(); };
-      const close = () => { dialog.close(); trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); };
+      const close = () => { pendingId = null; confirm.disabled = true; dialog.close(); trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); };
+      const renderSelection = () => {
+        const item = locations.find(item => item.id === committedId);
+        selection.hidden = !item;
+        selection.querySelector('[data-ref="selected-name"]').textContent = item?.name || '';
+        selection.querySelector('[data-ref="selected-id"]').textContent = item ? 'Location ' + item.id : '';
+      };
       const fitViewport = () => {
         const view = window.visualViewport;
         dialog.style.setProperty('--dialog-height', (view ? view.height : innerHeight) + 'px');
@@ -119,13 +165,17 @@
       fitViewport();
       dialog.querySelector('.dialog-close').addEventListener('click', close);
       trigger.addEventListener('click', open);
-      query.addEventListener('input', () => { const noMatch = query.value.trim().toLowerCase() === 'zzz'; results.hidden = noMatch; empty.hidden = !noMatch; option.setAttribute('aria-selected', 'false'); confirm.disabled = true; });
-      option.addEventListener('click', selectOption);
-      option.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectOption(); } });
-      confirm.addEventListener('click', () => { selection.hidden = false; close(); });
+      query.addEventListener('input', () => { pendingId = null; renderResults(); });
+      query.addEventListener('keydown', event => { if (event.key === 'Enter' && !event.isComposing) event.preventDefault(); });
+      confirm.addEventListener('click', () => {
+        if (confirm.disabled || !locations.some(item => item.id === pendingId)) return;
+        committedId = pendingId;
+        renderSelection();
+        close();
+      });
       cancel.addEventListener('click', close);
       dialog.addEventListener('cancel', (event) => { event.preventDefault(); close(); });
-      clear.addEventListener('click', () => { selection.hidden = true; trigger.focus(); });
+      clear.addEventListener('click', () => { committedId = null; renderSelection(); trigger.focus(); });
     })();
   </script>
 </body>

@@ -35,6 +35,12 @@ A large, long-running or staged change may exceptionally need a temporary candid
 
 Changes that only clarify wording without changing the approved design meaning should still be reviewed proportionally, but do not require inventing a new lifecycle state.
 
+## Executable behavior and mock boundaries
+
+A Reference should execute the user-observable operation model of its bounded responsibility. External systems may use fixed local fixtures; do not mock away cheap-to-model local interactions that communicate the design. Production completeness is not required: state in guidance and the review surface what works, what is deliberately simplified and what is not modeled. A visible affordance must perform its implied action unless its limitation is explicitly part of the reviewed design.
+
+Review-only scenario controls may inject otherwise expensive states, but must be visibly or structurally separated and identified as review aids, not required product UI. They do not replace ordinary interactions that can be modeled locally; injected states obey the same visible invariants, and harness-only transitions do not verify product paths. Keep this lightweight: no mock framework or scenario schema is required.
+
 ## Material UI design decisions
 
 Preserve the reason for a human-adopted UI choice when losing it would make a future implementer unable to distinguish intended behavior from an incidental detail, or unable to judge its scope. Examples include completion/recovery semantics, focus return, scroll responsibility, valid partial states and responsive changes to the operation model. Routine reversible HTML/CSS cleanup, class names and incidental pixel values need no decision record. Do not document every implementation choice or retain an AI reasoning transcript.
@@ -60,6 +66,8 @@ Use an approved Reference only within its stated scope. Product requirements may
 Historical material under `docs/poc/` is research evidence. Working copies under `review/` are review surfaces. Neither is canonical merely because it exists. A curation entry makes the current design-original relationship explicit.
 
 ## Current curated References
+
+- [Entity dialog lookup](entity-lookup.md) — draft single-selection lookup with explicit confirmation.
 
 - [Flat icon buttons](icon-button.md) — approved for icon-only command appearance and states.
 
