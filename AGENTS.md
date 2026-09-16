@@ -16,3 +16,5 @@
 - For transfer PoCs, classify human findings as target implementation defects or Reference gaps. Return Reference-level decisions to its next-version candidate; do not invent PoC-specific product requirements or curated variants. Follow `references/README.md` and retain historical evidence.
 
 - Before handing off GUI work, apply [Disposition of GUI findings](docs/development-workflow.md#disposition-of-gui-findings); link each material finding to its outcome or report the unresolved blocker.
+
+- For material UI design choices, follow [Material UI design decisions](references/README.md#material-ui-design-decisions) when proposing, curating or revising a Reference.

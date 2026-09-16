@@ -54,7 +54,9 @@ If a material behavior or the executable Reference later changes, the changed ve
 
 Before implementing a recurring UI responsibility, humans and AI should check `references/` first. An applicable approved entry is the design original; historical PoC files and responsive working copies are not canonical by existence alone.
 
-The first curation pilot is the existing human-approved [Date range filter](../references/date-range.md). Its responsive working copy remains a separate draft and is not covered by the historical approval.
+For the Date range pilot, follow the [curation entry](../references/date-range.md) for exact approval scope and the linked next-version candidate; do not duplicate its current status here.
+
+At curation and material revision, apply [Material UI design decisions](../references/README.md#material-ui-design-decisions) to retain traceable rationale and approval evidence without creating a second specification.
 
 ## Disposition of GUI findings
 
@@ -72,7 +74,7 @@ Stop expanding the current task when a finding introduces a separate responsibil
 
 ### Relationship to design decisions and Reference lifecycle
 
-This check answers **what happens to the finding**. [Issue #11](https://github.com/mk3008/torrone/issues/11) separately addresses **why an adopted material UI design was chosen, its scope and evidence**. A disposition link can point to that same decision record; it does not require another document or establish #11's recording format. Closing an issue, recording a disposition or merging a PR is not human design approval. Continue to follow the [Reference lifecycle](../references/README.md#lifecycle), and preserve unresolved design choices rather than promoting them to conventions.
+This check answers **what happens to the finding**. [Material UI design decisions](../references/README.md#material-ui-design-decisions) separately address **why an adopted material UI design was chosen, its scope and evidence**. A disposition link can point to that same decision record; it does not require another document or replace the Reference lifecycle. Closing an issue, recording a disposition or merging a PR is not human design approval. Continue to follow the [Reference lifecycle](../references/README.md#lifecycle), and preserve unresolved design choices rather than promoting them to conventions.
 
 The workflow is the single home for this handoff rule. AGENTS and the PR template link here so it is encountered during work and at handoff. Existing discussions, issues and decision records are sufficient; no finding registry, new lifecycle state or automated completeness claim is needed.
 
