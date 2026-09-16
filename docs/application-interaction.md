@@ -47,3 +47,13 @@ PoC 018 exposed a handoff gap: the Foundation named application consistency, but
 The corrective controls are the required AGENTS entry, the curation/workflow links, and the PR applicability/evidence section. They expose an omission for review; a filled table is not proof of usability and cannot guarantee that no defect escapes. [Issue #9](https://github.com/mk3008/torrone/issues/9) separately evaluates the value of AI browser review; this policy neither assumes its result nor selects its tooling.
 
 The [PoC 018 application record](poc/experiments/018-curated-reference-handoff/application-interaction.md) applies this check retrospectively. Its current Enter choice is still a candidate, not a Torrone-wide convention or a human-approved design.
+
+## Shared text-entry visibility
+
+Owner clarification (2026-09-16, PR #14 follow-up): text inputs are ordinary editors. Focus is not an instruction to reposition the page. If the active editor and its label are already visible, leave scrolling unchanged. When a keyboard/viewport change obscures them, correct only the measured overlap plus a small clearance. Preserve focus and value; never select the next field. Cancel pending work when editing ends or the focused field changes, and do not move a target during pointer activation.
+
+This applies across text inputs, not only calendar controls. Calendar disclosure has a separate context rule: keep its owning label/editor and calendar header together. Neither responsibility authorizes unconditional focus scrolling, arbitrary keyboard-height guesses, or focus-dependent page padding.
+
+The [Date range next candidate](../references/date-range-recovery.md) demonstrates a small generic text-entry handler using the top-level VisualViewport. This is an example, not a required runtime dependency. The host that owns the visible viewport must own any equivalent policy in an embedded application. A child iframe's viewport cannot reliably describe keyboard occlusion outside it; without a supported host viewport contract, do not claim that the child alone solves the problem. Test both standalone and actual embedding conditions. An editor taller than the available viewport needs caret-aware treatment and is outside this bounded example.
+
+Reference: [VisualViewport](https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport). The API geometry is distinct from the policy decision above.

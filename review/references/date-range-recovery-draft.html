@@ -679,5 +679,50 @@
     })();
   </script>
 
+<script>
+// Shared textbox visibility policy; no calendar state or focus transfer.
+(function () {
+  const editable = el => el?.matches('textarea, input:not([type]), input[type="text"], input[type="search"], input[type="email"], input[type="url"], input[type="tel"], input[type="password"], input[type="number"]') && !el.disabled && !el.readOnly;
+  function correction(rect, top, bottom, margin = 8) {
+    // If the label/editor group cannot fit, the caller prioritizes the editor.
+    if (rect.bottom > bottom - margin) return rect.bottom - bottom + margin;
+    if (rect.top < top + margin) return rect.top - top - margin;
+    return 0;
+  }
+  let frame = 0, pressed = false;
+  function reveal() {
+    frame = 0;
+    const input = document.activeElement;
+    if (pressed || !editable(input)) return;
+    // An embedded document cannot infer keyboard occlusion from its own viewport.
+    // Do not guess at an unavailable cross-origin host's visible region.
+    if (window !== window.top) return;
+    const viewport = window.visualViewport;
+    const top = viewport?.offsetTop || 0;
+    const bottom = top + (viewport?.height || window.innerHeight);
+    const editor = input.getBoundingClientRect();
+    // A viewport-taller editor needs caret-aware handling, not oscillating edge alignment.
+    if (editor.bottom - editor.top > bottom - top - 16) return;
+    const labels = [...(input.labels || [])].map(label => label.getBoundingClientRect());
+    const bounds = { top: Math.min(editor.top, ...labels.map(r => r.top)), bottom: editor.bottom };
+    const target = bounds.bottom - bounds.top <= bottom - top - 16 ? bounds : editor;
+    const delta = correction(target, top, bottom);
+    if (Math.abs(delta) >= 1) window.scrollBy({ top: delta, left: 0, behavior: 'instant' });
+  }
+  function schedule() {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(reveal);
+  }
+  document.addEventListener('pointerdown', () => { pressed = true; cancelAnimationFrame(frame); }, true);
+  ['pointerup', 'pointercancel'].forEach(type => document.addEventListener(type, () => { pressed = false; }, true));
+  // Click runs after the pointer has completed; never move its pending target.
+  document.addEventListener('click', schedule);
+  document.addEventListener('focusin', schedule);
+  document.addEventListener('focusout', () => cancelAnimationFrame(frame));
+  window.addEventListener('resize', schedule);
+  window.visualViewport?.addEventListener('resize', schedule);
+  window.visualViewport?.addEventListener('scroll', schedule);
+})();
+</script>
 </body>
 </html>
