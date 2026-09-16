@@ -58,6 +58,14 @@ The first curation pilot is the existing human-approved [Date range filter](../r
 
 ## Verification and preserved gaps
 
+### Optional AI browser evidence pass
+
+When a change's risk involves dynamic interaction, a bounded AI-operated browser pass can supplement source checks and human review. [PoC 019](poc/experiments/019-ai-browser-review/README.md) observed useful focus/state evidence and a reproducible recovery discrepancy; it did not establish a mandatory Gate or automatic design approval.
+
+Identify the exact Reference and applicable application requirements, operate a representative normal path plus an order change or interruption that could expose inconsistent state, and retain actions, observations and execution conditions. Repeat a surprising result before treating it as a finding. Separate verified behavior, requirement ambiguities and unexecuted cases. A narrow viewport/frame does not verify mobile keyboard or touch behavior. Keep the method/tooling proportional to the risk; [the experiment protocol](poc/experiments/019-ai-browser-review/protocol.md) is one replayable example, not a universal scenario checklist.
+
+Report findings against approved References for a scoped decision and draft correction; do not silently edit an approved executable or infer approval from a browser pass. If the browser cannot run, preserve the limitation rather than relabel static checks as E2E evidence.
+
 For UI changes, complete the pre-implementation and handoff checks in [Application interaction requirements](application-interaction.md). Link one application-owned decision record and its affected-path evidence from the PR; the [PR template](../.github/pull_request_template.md) prompts for this even when the change appears confined to a component. Missing shared requirements are explicit gaps, and unexecuted paths remain unverified. Non-UI changes need only a brief applicability explanation. Do not call application interaction verification complete while relevant rows remain unresolved or unverified.
 
 Check that generated HTML matches the selected source bytes, links resolve, the index works at phone width, and the relevant example interaction still operates. Inspect the diff to confirm historical sources and outputs were not modified. New previews do not need a rerun of all old experiments.

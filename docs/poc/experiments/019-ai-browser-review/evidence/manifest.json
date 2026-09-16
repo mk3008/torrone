@@ -1,0 +1,10 @@
+{
+  "source_revision": "05079c1df9713d5ecbea5aeeb147138827526a03",
+  "reference_blob": "d2be91d512ac310cb306adfe0e9bfe556ec2bca8",
+  "reference_sha256": "b47a9da58e95b393a7d9c1aae087f0f5e4c458544f555133720a9e489975e172",
+  "files": {
+    "D08-stale-error.jpg": "4955d6287bad5b3e0a41427c8a0dd488ee5562eea405fa500aeca618680633a8",
+    "N01-narrow-calendar.jpg": "6c4c248d86eabfc2f42c211dc23442c562516f5eb73a01fd0717847b4f1f2c91",
+    "observations.json": "7105c33a1f9950f508fab906eab4c1152cf2fff1d36ecea611e28432c7202a61"
+  }
+}
