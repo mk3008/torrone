@@ -55,6 +55,16 @@ Exact dimensions, pixel values, DOM shape, CSS architecture, framework APIs, and
 
 The preferred unit is a complete causal UI responsibility rather than an arbitrary visual fragment. If initiation, meaningful intermediate state, completion, clearing, reselection, or focus return form one operation model, they should normally remain reviewable together.
 
+## Communicate through interaction before instructions
+
+Communicate operation through GUI structure and interaction constraints first. Use explanatory prose to supplement meaning the GUI cannot adequately convey. Prefer familiar controls, clear grouping and action placement, visible state and appropriate constraints over instructions that compensate for ambiguous interaction. For example, native radio buttons express a single choice; an unavailable confirmation action prevents completion without a selection.
+
+This is an adopted Torrone design principle, requested in the Entity lookup review. It synthesizes established usability guidance: Nielsen Norman Group's [usability heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/) emphasize error prevention, recognition, minimalism and help when needed. It is not a universal prohibition on text or a requirement for icon-only or flat controls.
+
+Retain meaningful visible labels, accessible control names and information users cannot infer, including necessary formats, consequences and error recovery. [WCAG's labels or instructions guidance](https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html) remains applicable. An unfamiliar icon is not an adequate replacement for a clear label merely because it saves text.
+
+During authoring and review, ask whether each operation instruction duplicates what the controls already communicate, supplies necessary missing meaning, or compensates for a design ambiguity. Remove duplication, retain necessary meaning, and resolve ambiguity in the interaction before adding prose. Reference curation and review-only fixture notes serve implementers and reviewers; keep them separate from product UI instead of deleting useful scope information under this principle.
+
 ## Review is a primary product requirement
 
 Torrone is not only a handoff mechanism for implementers. It is intended to make UI design itself cheaper to review.
