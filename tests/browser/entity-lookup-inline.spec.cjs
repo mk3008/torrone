@@ -23,6 +23,23 @@ async function committed(page, item) {
 }
 test.beforeEach(async ({ page }) => page.goto('/entity-lookup-inline.html'));
 
+test('textbox surface stays consistent across empty, searching and committed states', async ({ page }) => {
+  const c = ui(page);
+  const surface = () => c.field.evaluate(field => {
+    const style = getComputedStyle(field);
+    return { background: style.backgroundColor, border: style.borderColor };
+  });
+  const empty = await surface();
+  await c.input.fill('north');
+  expect(await surface()).toEqual(empty);
+  await c.option(records[0]).click();
+  await committed(page, records[0]);
+  expect(await surface()).toEqual(empty);
+  await expect(c.field).toHaveCSS('outline-style', 'solid');
+  await c.clear.click();
+  expect(await surface()).toEqual(empty);
+});
+
 test('pointer search, selection, cancellation, clear and reselection', async ({ page }) => {
   const c = ui(page);
   await c.input.click();
