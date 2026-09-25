@@ -1,19 +1,22 @@
 const { test, expect } = require('@playwright/test');
 const records = [
-  { id: 'LC-031', name: 'North Distribution Center', filter: ' north ' },
-  { id: 'LC-044', name: 'Riverside Depot', filter: 'lc-044' },
+  { id: 'LC-031', name: 'North Distribution Center', region: 'North', type: 'Distribution center', filter: ' lc-031 ' },
+  { id: 'LC-044', name: 'Riverside Depot', region: 'West', type: 'Depot', filter: 'lc-044' },
 ];
+const northService = { id: 'LC-033', name: 'North Service Point' };
 function controls(page) {
   return {
-    trigger: page.getByRole('button', { name: 'Find location', exact: true }),
+    trigger: page.getByRole('button', { name: 'Choose location', exact: true }),
     dialog: page.getByRole('dialog'),
     query: page.getByRole('textbox', { name: 'Location ID or name' }),
+    region: page.getByRole('combobox', { name: 'Region' }),
+    type: page.getByRole('combobox', { name: 'Facility type' }),
     confirm: page.getByRole('button', { name: 'Select', exact: true }),
     cancel: page.getByRole('button', { name: 'Cancel', exact: true }),
-    close: page.getByRole('button', { name: 'Close location search' }),
+    close: page.getByRole('button', { name: 'Close location chooser' }),
     clear: page.getByRole('button', { name: 'Clear selected location' }),
     selection: page.locator('[data-ref="lookup-selection"]'),
-    radio: record => page.getByRole('radio', { name: `${record.name} Location ${record.id}`, exact: true }),
+    radio: record => page.locator(`input[type="radio"][value="${record.id}"]`),
   };
 }
 async function committed(page, record) {
@@ -35,46 +38,89 @@ async function select(page, record) {
 }
 test.beforeEach(async ({ page }) => { await page.goto('/entity-lookup.html'); });
 
-test('desktop dialog and actions remain fixed across 2, 1, 0, 2 results', async ({ page }, info) => {
+test('independent conditions narrow comparable rows and changing one clears pending choice', async ({ page }) => {
+  const c = controls(page);
+  await c.trigger.click();
+  await expect(page.getByRole('radio')).toHaveCount(10);
+  await c.query.fill('service point');
+  await expect(page.getByRole('radio')).toHaveCount(3);
+  await c.region.selectOption('East');
+  await expect(page.getByRole('radio')).toHaveCount(1);
+  await expect(c.radio({ id: 'LC-052' })).toBeVisible();
+  await expect(c.radio({ id: 'LC-052' }).locator('..')).toContainText('East');
+  await expect(c.radio({ id: 'LC-052' }).locator('..')).toContainText('Service point');
+  await c.radio({ id: 'LC-052' }).click();
+  await expect(c.confirm).toBeEnabled();
+  await c.type.selectOption('Depot');
+  await expect(page.getByRole('radio')).toHaveCount(0);
+  await expect(c.confirm).toBeDisabled();
+  await c.type.selectOption('Service point');
+  await expect(page.getByRole('radio')).toHaveCount(1);
+  await expect(c.radio({ id: 'LC-052' })).not.toBeChecked();
+  await c.radio({ id: 'LC-052' }).click();
+  await c.confirm.click();
+  await committed(page, { id: 'LC-052', name: 'Harbor Service Point' });
+  await c.trigger.click();
+  await expect(c.query).toHaveValue('');
+  await expect(c.region).toHaveValue('');
+  await expect(c.type).toHaveValue('');
+  await expect(c.confirm).toBeDisabled();
+});
+
+test('desktop dialog and actions remain fixed across 10, 2, 0, 10 results', async ({ page }, info) => {
   test.skip(info.project.name.startsWith('mobile'), 'Desktop dialog geometry; mobile remains fullscreen.');
   const c = controls(page);
   await c.trigger.click();
   const results = page.locator('.results');
   const geometry = async () => {
-    const [dialog, area, cancel, confirm] = await Promise.all([
-      c.dialog.boundingBox(), results.boundingBox(), c.cancel.boundingBox(), c.confirm.boundingBox(),
+    const [dialog, header, conditions, resultHead, area, footer, cancel, confirm] = await Promise.all([
+      c.dialog.boundingBox(), page.locator('.dialog-heading').boundingBox(),
+      page.locator('.conditions').boundingBox(), page.locator('.result-head').boundingBox(),
+      results.boundingBox(), page.locator('.dialog-actions').boundingBox(),
+      c.cancel.boundingBox(), c.confirm.boundingBox(),
     ]);
-    return { dialog, area, cancel, confirm };
+    return { dialog, header, conditions, resultHead, area, footer, cancel, confirm };
   };
   const original = await geometry();
-  for (const [term, count] of [['north', 1], ['no-such-location', 0], ['', 2]]) {
-    await c.query.fill(term);
+  const fifth = await page.locator('.result').nth(4).boundingBox();
+  expect(fifth.y + fifth.height, 'at least five complete comparison rows fit without scrolling').toBeLessThanOrEqual(original.area.y + original.area.height + 1);
+  expect(original.area.height).toBeGreaterThan(original.header.height);
+  expect(original.area.height).toBeGreaterThan(original.conditions.height);
+  expect(original.area.y).toBeGreaterThanOrEqual(original.resultHead.y + original.resultHead.height);
+  expect(original.area.y + original.area.height).toBeLessThanOrEqual(original.footer.y + 1);
+  for (const [region, type, count] of [['North', '', 2], ['East', 'Distribution center', 0], ['', '', 10]]) {
+    await c.region.selectOption(region);
+    await c.type.selectOption(type);
     await expect(page.getByRole('radio')).toHaveCount(count);
     if (count === 0) await expect(page.getByRole('status')).toBeVisible();
     else await expect(page.getByRole('status')).toBeHidden();
     const current = await geometry();
-    for (const part of ['dialog', 'area', 'cancel', 'confirm']) {
+    for (const part of ['dialog', 'header', 'conditions', 'resultHead', 'area', 'footer', 'cancel', 'confirm']) {
       for (const axis of ['x', 'y', 'width', 'height']) {
         expect(Math.abs(current[part][axis] - original[part][axis]), `${part}.${axis} after ${count} results`).toBeLessThan(1);
       }
     }
   }
   await expect(results).toHaveCSS('overflow-y', 'auto');
-  // Exercise overflow geometry without changing the two-record product fixture.
-  await results.evaluate(area => {
-    for (let i = 0; i < 20; i++) {
-      const row = document.createElement('div');
-      row.className = 'result';
-      row.textContent = `Overflow probe ${i}`;
-      area.append(row);
-    }
-  });
+  // The fixture extends beyond the visible rows and scrolls inside the fixed dialog.
   await expect.poll(() => results.evaluate(area => area.scrollHeight > area.clientHeight)).toBe(true);
   await results.evaluate(area => { area.scrollTop = area.scrollHeight; });
   await expect.poll(() => results.evaluate(area => area.scrollTop > 0)).toBe(true);
   const overflow = await geometry();
   expect(overflow.dialog).toEqual(original.dialog);
   expect(overflow.confirm).toEqual(original.confirm);
+});
+
+test('tall desktop gives the result region room for at least eight complete rows', async ({ page }, info) => {
+  test.skip(info.project.name.startsWith('mobile'), 'Desktop comparison density only.');
+  await page.setViewportSize({ width: 1280, height: 1000 });
+  const c = controls(page);
+  await c.trigger.click();
+  const dialog = await c.dialog.boundingBox();
+  const area = await page.locator('.results').boundingBox();
+  const eighth = await page.locator('.result').nth(7).boundingBox();
+  expect(dialog.height).toBeLessThan(1000 * .8);
+  expect(eighth.y + eighth.height).toBeLessThanOrEqual(area.y + area.height + 1);
 });
 
 for (const record of records) {
@@ -102,7 +148,7 @@ test('filter clears pending choice, empty results recover and replacement commit
   await expect(page.getByRole('status')).toContainText('No matching locations');
   await expect(c.confirm).toBeDisabled();
   await c.query.fill('');
-  await expect(page.getByRole('radio')).toHaveCount(2);
+  await expect(page.getByRole('radio')).toHaveCount(10);
   for (const record of records) await expect(c.radio(record)).not.toBeChecked();
   await expect(c.confirm).toBeDisabled();
   await c.radio(records[0]).click();
@@ -125,6 +171,8 @@ for (const exit of ['Cancel', 'Close', 'Escape']) {
     await committed(page, records[0]);
     await c.trigger.click();
     await expect(c.query).toHaveValue('');
+    await expect(c.region).toHaveValue('');
+    await expect(c.type).toHaveValue('');
     await expect(c.confirm).toBeDisabled();
     for (const record of records) await expect(c.radio(record)).not.toBeChecked();
   });
@@ -151,14 +199,28 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Enter');
     await expect(c.query).toBeFocused();
     await expect(c.dialog).toBeVisible();
+    await c.query.fill('North');
+    await expect(page.getByRole('radio')).toHaveCount(2);
     await page.keyboard.press('Tab');
+    await expect(c.region).toBeFocused();
+    await page.keyboard.press('Tab');
+    await expect(c.type).toBeFocused();
+    await page.keyboard.press('Tab');
+    const results = page.getByRole('radiogroup', { name: 'Matching service locations' });
+    const regionFocused = await results.evaluate(area => area === document.activeElement);
+    if (regionFocused) {
+      // Firefox includes the result region when it needs internal scrolling.
+      expect(info.project.name).toBe('firefox');
+      expect(await results.evaluate(area => area.scrollHeight > area.clientHeight)).toBe(true);
+      await page.keyboard.press('Tab');
+    }
     await expect(c.radio(records[0])).toBeFocused();
     await page.keyboard.press('Space');
     await expect(c.radio(records[0])).toBeChecked();
     await expect(c.confirm).toBeEnabled();
     await page.keyboard.press('ArrowDown');
-    await expect(c.radio(records[1])).toBeFocused();
-    await expect(c.radio(records[1])).toBeChecked();
+    await expect(c.radio(northService)).toBeFocused();
+    await expect(c.radio(northService)).toBeChecked();
     await expect(c.radio(records[0])).not.toBeChecked();
     await page.keyboard.press('ArrowUp');
     await expect(c.radio(records[0])).toBeChecked();
@@ -191,7 +253,15 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Shift+Tab');
     await expect(c.cancel).toBeFocused();
     await page.keyboard.press('Shift+Tab');
-    await expect(c.radio(records[1])).toBeFocused();
+    await expect(c.radio(northService)).toBeFocused();
+    await page.keyboard.press('Shift+Tab');
+    if (regionFocused) {
+      await expect(results).toBeFocused();
+      await page.keyboard.press('Shift+Tab');
+    }
+    await expect(c.type).toBeFocused();
+    await page.keyboard.press('Shift+Tab');
+    await expect(c.region).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(c.query).toBeFocused();
     await page.keyboard.press('Shift+Tab');
@@ -199,11 +269,21 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Tab');
     await expect(c.query).toBeFocused();
     await page.keyboard.press('Tab');
+    await expect(c.region).toBeFocused();
     await page.keyboard.press('Tab');
+    await expect(c.type).toBeFocused();
+    if (regionFocused) {
+      await page.keyboard.press('Tab');
+      await expect(results).toBeFocused();
+    }
+    await page.keyboard.press('Tab');
+    await expect(c.radio(northService)).toBeFocused();
+    await page.keyboard.press('Tab');
+    await expect(c.cancel).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(c.confirm).toBeFocused();
     await page.keyboard.press(activation);
-    await committed(page, records[1]);
+    await committed(page, northService);
     await page.keyboard.press('Tab');
     await expect(c.clear).toBeFocused();
     await page.keyboard.press(activation);
@@ -222,6 +302,16 @@ test('mobile fullscreen keeps results and footer actionable after viewport resiz
       const b = await c.dialog.boundingBox();
       return b && Math.abs(b.x) < 1 && Math.abs(b.y) < 1 && Math.abs(b.width - 390) < 1 && Math.abs(b.height - height) < 1;
     }).toBe(true);
+    const [header, conditions, results, footer] = await Promise.all([
+      page.locator('.dialog-heading').boundingBox(), page.locator('.conditions').boundingBox(),
+      page.locator('.results').boundingBox(), page.locator('.dialog-actions').boundingBox(),
+    ]);
+    expect(header.y + header.height).toBeLessThanOrEqual(conditions.y);
+    expect(conditions.y + conditions.height).toBeLessThanOrEqual(results.y);
+    expect(results.height).toBeGreaterThan(0);
+    expect(results.y + results.height).toBeLessThanOrEqual(footer.y + 1);
+    expect(footer.y + footer.height).toBeLessThanOrEqual(height + 1);
+    await expect(page.locator('.results')).toHaveCSS('overflow-y', 'auto');
     await c.query.fill('');
     await c.radio(records[1]).tap();
     await expect(c.radio(records[1])).toBeChecked();

@@ -26,7 +26,7 @@ const open=()=>e('lookup-trigger').fire('click');
 const filter=text=>{e('lookup-query').value=text;e('lookup-query').fire('input');};
 const choose=i=>{const radios=results.children.map(x=>x.children[0]);radios.forEach((r,n)=>r.checked=n===i);radios[i].fire('change');};
 const committed=()=>[e('selected-name').textContent,e('selected-id').textContent];
-open();assert.equal(results.children.length,2);assert.equal(e('lookup-confirm').disabled,true);
+open();assert.equal(results.children.length,10);assert.equal(e('lookup-confirm').disabled,true);
 filter(' lc-044 ');assert.equal(results.children.length,1);choose(0);assert.equal(e('lookup-confirm').disabled,false);e('lookup-confirm').fire('click');assert.deepEqual(committed(),['Riverside Depot','Location LC-044']);assert.equal(active,e('lookup-trigger'));
 for(const mode of ['cancel','close','escape']) {
  open();choose(0);
@@ -39,5 +39,10 @@ for(const mode of ['cancel','close','escape']) {
 filter('north');choose(0);filter('not a location');assert.equal(results.children.length,0);assert.equal(e('lookup-empty').hidden,false);assert.equal(e('lookup-confirm').disabled,true);e('lookup-confirm').fire('click');assert.deepEqual(committed(),['Riverside Depot','Location LC-044']);
 filter('DISTRIBUTION');choose(0);e('lookup-confirm').fire('click');assert.deepEqual(committed(),['North Distribution Center','Location LC-031']);
 e('lookup-clear').fire('click');assert.equal(e('lookup-selection').hidden,true);assert.deepEqual(committed(),['','']);assert.equal(active,e('lookup-trigger'));
-open();choose(0);choose(1);e('lookup-confirm').fire('click');assert.deepEqual(committed(),['Riverside Depot','Location LC-044']);
-console.log('PASS: fixture filtering, both commits, selection replacement, empty/filter reset, all cancellation paths, Clear and reselection. Handler fixture only; native radio/dialog keyboard behavior requires browser review.');
+open();choose(0);choose(2);e('lookup-confirm').fire('click');assert.deepEqual(committed(),['Riverside Depot','Location LC-044']);
+open();filter('service point');assert.equal(results.children.length,3);
+e('lookup-region').value='East';e('lookup-region').fire('change');assert.equal(results.children.length,1);
+choose(0);assert.equal(e('lookup-confirm').disabled,false);
+e('lookup-type').value='Depot';e('lookup-type').fire('change');assert.equal(results.children.length,0);assert.equal(e('lookup-confirm').disabled,true);
+e('lookup-cancel').fire('click');open();assert.equal(e('lookup-region').value,'');assert.equal(e('lookup-type').value,'');assert.equal(results.children.length,10);
+console.log('PASS: combined conditions, pending reset, commits, cancellation paths, Clear and reselection. Handler fixture only; native radio/dialog keyboard behavior requires browser review.');
