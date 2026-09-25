@@ -73,12 +73,21 @@ test('desktop dialog and actions remain fixed across 6, 2, 0, 6 results', async 
   await c.trigger.click();
   const results = page.locator('.results');
   const geometry = async () => {
-    const [dialog, area, cancel, confirm] = await Promise.all([
-      c.dialog.boundingBox(), results.boundingBox(), c.cancel.boundingBox(), c.confirm.boundingBox(),
+    const [dialog, header, conditions, resultHead, area, footer, cancel, confirm] = await Promise.all([
+      c.dialog.boundingBox(), page.locator('.dialog-heading').boundingBox(),
+      page.locator('.conditions').boundingBox(), page.locator('.result-head').boundingBox(),
+      results.boundingBox(), page.locator('.dialog-actions').boundingBox(),
+      c.cancel.boundingBox(), c.confirm.boundingBox(),
     ]);
-    return { dialog, area, cancel, confirm };
+    return { dialog, header, conditions, resultHead, area, footer, cancel, confirm };
   };
   const original = await geometry();
+  const third = await page.locator('.result').nth(2).boundingBox();
+  expect(third.y + third.height, 'several complete comparison rows fit without scrolling').toBeLessThanOrEqual(original.area.y + original.area.height + 1);
+  expect(original.area.height).toBeGreaterThan(original.header.height);
+  expect(original.area.height).toBeGreaterThan(original.conditions.height);
+  expect(original.area.y).toBeGreaterThanOrEqual(original.resultHead.y + original.resultHead.height);
+  expect(original.area.y + original.area.height).toBeLessThanOrEqual(original.footer.y + 1);
   for (const [region, type, count] of [['North', '', 2], ['East', 'Distribution center', 0], ['', '', 6]]) {
     await c.region.selectOption(region);
     await c.type.selectOption(type);
@@ -86,7 +95,7 @@ test('desktop dialog and actions remain fixed across 6, 2, 0, 6 results', async 
     if (count === 0) await expect(page.getByRole('status')).toBeVisible();
     else await expect(page.getByRole('status')).toBeHidden();
     const current = await geometry();
-    for (const part of ['dialog', 'area', 'cancel', 'confirm']) {
+    for (const part of ['dialog', 'header', 'conditions', 'resultHead', 'area', 'footer', 'cancel', 'confirm']) {
       for (const axis of ['x', 'y', 'width', 'height']) {
         expect(Math.abs(current[part][axis] - original[part][axis]), `${part}.${axis} after ${count} results`).toBeLessThan(1);
       }
@@ -278,6 +287,16 @@ test('mobile fullscreen keeps results and footer actionable after viewport resiz
       const b = await c.dialog.boundingBox();
       return b && Math.abs(b.x) < 1 && Math.abs(b.y) < 1 && Math.abs(b.width - 390) < 1 && Math.abs(b.height - height) < 1;
     }).toBe(true);
+    const [header, conditions, results, footer] = await Promise.all([
+      page.locator('.dialog-heading').boundingBox(), page.locator('.conditions').boundingBox(),
+      page.locator('.results').boundingBox(), page.locator('.dialog-actions').boundingBox(),
+    ]);
+    expect(header.y + header.height).toBeLessThanOrEqual(conditions.y);
+    expect(conditions.y + conditions.height).toBeLessThanOrEqual(results.y);
+    expect(results.height).toBeGreaterThan(0);
+    expect(results.y + results.height).toBeLessThanOrEqual(footer.y + 1);
+    expect(footer.y + footer.height).toBeLessThanOrEqual(height + 1);
+    await expect(page.locator('.results')).toHaveCSS('overflow-y', 'auto');
     await c.query.fill('');
     await c.radio(records[1]).tap();
     await expect(c.radio(records[1])).toBeChecked();
