@@ -34,11 +34,13 @@
     .result-head, .result { display: grid; grid-template-columns: 24px minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: 10px; align-items: center; }
     .result-head { flex: 0 0 auto; margin-top: 10px; padding: 0 10px 5px; color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--border); }
     .results { display: grid; flex: 1; min-height: 0; gap: 6px; margin-top: 4px; overflow: auto; align-content: start; overscroll-behavior: contain; }
-    .result { cursor: pointer; min-height: 56px; padding: 8px 10px; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; text-align: left; }
+    .result { cursor: pointer; min-height: 40px; padding: 5px 10px; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; text-align: left; }
     .result:hover, .result:has(input:checked) { background: #e5f0fb; border-color: #9ebbd5; }
     .result input { width: 20px; height: 20px; min-height: 20px; flex: 0 0 20px; accent-color: var(--accent); }
     .result:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: -3px; }
-    .result-copy { display: grid; min-width: 0; }
+    .result-copy { display: flex; align-items: baseline; gap: 8px; min-width: 0; white-space: nowrap; font-size: 14px; }
+    .result-copy > :first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+    .result-copy .entity-id { flex: 0 0 auto; }
     .result-detail { font-size: 14px; }
     .mobile-label { display: none; }
     .fixture-note { margin: 0; padding: 10px 24px; color: var(--muted); font-size: 14px; border-bottom: 1px dashed var(--border); }
@@ -55,6 +57,7 @@
     .icon-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
     @media (forced-colors: active) { .icon-button:focus-visible { outline-color: Highlight; } }
     dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: min(600px, calc(100dvh - 48px)); }
+    @media (min-width: 801px) and (min-height: 950px) { dialog[open] { height: min(700px, calc(100dvh - 96px)); } }
     .dialog-body { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
     body:has(dialog[open]) { overflow: hidden; }
     @media (max-width: 800px) {
@@ -69,7 +72,9 @@
       .dialog-heading h3 { font-size: 18px; }
       .dialog-body { padding: 16px; }
       .result-head { display: none; }
-      .result { grid-template-columns: 24px minmax(0, 1fr); gap: 4px 10px; }
+      .result { grid-template-columns: 24px minmax(0, 1fr); gap: 4px 10px; min-height: 56px; padding: 8px 10px; }
+      .result-copy { display: grid; white-space: normal; font-size: 16px; }
+      .result-copy > :first-child { overflow: visible; text-overflow: clip; }
       .result-detail { grid-column: 2; }
       .mobile-label { display: inline; color: var(--muted); }
       .dialog-actions { padding: 12px 16px max(12px, env(safe-area-inset-bottom)); }
@@ -79,7 +84,7 @@
 </head>
 <body>
   <div class="reference-note" data-reference-harness="reference-label">Reference part · entity chooser dialog · draft</div>
-  <p class="fixture-note" data-reference-harness="fixture-boundary">REFERENCE FIXTURE: six local locations. Combined ID/name, region and facility-type filtering, comparison, single pending choice, confirmation, cancellation and clearing work. No server, persistence, latency, authorization, pagination or backend-error simulation. This note is review guidance, not product UI.</p>
+  <p class="fixture-note" data-reference-harness="fixture-boundary">REFERENCE FIXTURE: ten local locations. Combined ID/name, region and facility-type filtering, comparison, single pending choice, confirmation, cancellation and clearing work. No server, persistence, latency, authorization, pagination or backend-error simulation. This note is review guidance, not product UI.</p>
   <section class="sample" aria-labelledby="lookup-heading">
     <h2 id="lookup-heading">Service location</h2>
     <p class="support">Choose the location where the work will be performed.</p>
@@ -92,7 +97,7 @@
     <div class="dialog-body">
       <div class="conditions">
         <div class="condition-name"><label class="field-label" for="lookup-query">Location ID or name</label><input class="query" id="lookup-query" data-ref="lookup-query" autocomplete="off"></div>
-        <div><label class="field-label" for="lookup-region">Region</label><select class="query" id="lookup-region" data-ref="lookup-region"><option value="">All regions</option><option value="North">North</option><option value="West">West</option><option value="East">East</option></select></div>
+        <div><label class="field-label" for="lookup-region">Region</label><select class="query" id="lookup-region" data-ref="lookup-region"><option value="">All regions</option><option value="North">North</option><option value="West">West</option><option value="East">East</option><option value="South">South</option><option value="Central">Central</option></select></div>
         <div><label class="field-label" for="lookup-type">Facility type</label><select class="query" id="lookup-type" data-ref="lookup-type"><option value="">All types</option><option value="Distribution center">Distribution center</option><option value="Depot">Depot</option><option value="Service point">Service point</option></select></div>
       </div>
       <div class="result-head" aria-hidden="true"><span></span><span>Location / ID</span><span>Region</span><span>Facility type</span></div>
@@ -123,7 +128,11 @@
         { id: 'LC-044', name: 'Riverside Depot', region: 'West', type: 'Depot' },
         { id: 'LC-045', name: 'Riverside Service Point', region: 'West', type: 'Service point' },
         { id: 'LC-052', name: 'Harbor Service Point', region: 'East', type: 'Service point' },
-        { id: 'LC-057', name: 'Harbor Depot', region: 'East', type: 'Depot' }
+        { id: 'LC-057', name: 'Harbor Depot', region: 'East', type: 'Depot' },
+        { id: 'LC-061', name: 'South Logistics Center', region: 'South', type: 'Distribution center' },
+        { id: 'LC-064', name: 'South Rail Depot', region: 'South', type: 'Depot' },
+        { id: 'LC-072', name: 'Central Operations Center', region: 'Central', type: 'Distribution center' },
+        { id: 'LC-075', name: 'Central Field Depot', region: 'Central', type: 'Depot' }
       ];
       const region = document.querySelector('[data-ref="lookup-region"]');
       const type = document.querySelector('[data-ref="lookup-type"]');
@@ -164,7 +173,7 @@
           name.textContent = item.name;
           const id = document.createElement('span');
           id.className = 'entity-id';
-          id.textContent = 'Location ' + item.id;
+          id.textContent = item.id;
           copy.append(name, id);
           const regionDetail = document.createElement('span');
           regionDetail.className = 'result-detail';

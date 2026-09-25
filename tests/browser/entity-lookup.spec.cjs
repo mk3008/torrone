@@ -41,7 +41,7 @@ test.beforeEach(async ({ page }) => { await page.goto('/entity-lookup.html'); })
 test('independent conditions narrow comparable rows and changing one clears pending choice', async ({ page }) => {
   const c = controls(page);
   await c.trigger.click();
-  await expect(page.getByRole('radio')).toHaveCount(6);
+  await expect(page.getByRole('radio')).toHaveCount(10);
   await c.query.fill('service point');
   await expect(page.getByRole('radio')).toHaveCount(3);
   await c.region.selectOption('East');
@@ -67,7 +67,7 @@ test('independent conditions narrow comparable rows and changing one clears pend
   await expect(c.confirm).toBeDisabled();
 });
 
-test('desktop dialog and actions remain fixed across 6, 2, 0, 6 results', async ({ page }, info) => {
+test('desktop dialog and actions remain fixed across 10, 2, 0, 10 results', async ({ page }, info) => {
   test.skip(info.project.name.startsWith('mobile'), 'Desktop dialog geometry; mobile remains fullscreen.');
   const c = controls(page);
   await c.trigger.click();
@@ -82,13 +82,13 @@ test('desktop dialog and actions remain fixed across 6, 2, 0, 6 results', async 
     return { dialog, header, conditions, resultHead, area, footer, cancel, confirm };
   };
   const original = await geometry();
-  const third = await page.locator('.result').nth(2).boundingBox();
-  expect(third.y + third.height, 'several complete comparison rows fit without scrolling').toBeLessThanOrEqual(original.area.y + original.area.height + 1);
+  const fifth = await page.locator('.result').nth(4).boundingBox();
+  expect(fifth.y + fifth.height, 'at least five complete comparison rows fit without scrolling').toBeLessThanOrEqual(original.area.y + original.area.height + 1);
   expect(original.area.height).toBeGreaterThan(original.header.height);
   expect(original.area.height).toBeGreaterThan(original.conditions.height);
   expect(original.area.y).toBeGreaterThanOrEqual(original.resultHead.y + original.resultHead.height);
   expect(original.area.y + original.area.height).toBeLessThanOrEqual(original.footer.y + 1);
-  for (const [region, type, count] of [['North', '', 2], ['East', 'Distribution center', 0], ['', '', 6]]) {
+  for (const [region, type, count] of [['North', '', 2], ['East', 'Distribution center', 0], ['', '', 10]]) {
     await c.region.selectOption(region);
     await c.type.selectOption(type);
     await expect(page.getByRole('radio')).toHaveCount(count);
@@ -102,13 +102,25 @@ test('desktop dialog and actions remain fixed across 6, 2, 0, 6 results', async 
     }
   }
   await expect(results).toHaveCSS('overflow-y', 'auto');
-  // Six real fixture rows must scroll inside the fixed dialog.
+  // The fixture extends beyond the visible rows and scrolls inside the fixed dialog.
   await expect.poll(() => results.evaluate(area => area.scrollHeight > area.clientHeight)).toBe(true);
   await results.evaluate(area => { area.scrollTop = area.scrollHeight; });
   await expect.poll(() => results.evaluate(area => area.scrollTop > 0)).toBe(true);
   const overflow = await geometry();
   expect(overflow.dialog).toEqual(original.dialog);
   expect(overflow.confirm).toEqual(original.confirm);
+});
+
+test('tall desktop gives the result region room for at least eight complete rows', async ({ page }, info) => {
+  test.skip(info.project.name.startsWith('mobile'), 'Desktop comparison density only.');
+  await page.setViewportSize({ width: 1280, height: 1000 });
+  const c = controls(page);
+  await c.trigger.click();
+  const dialog = await c.dialog.boundingBox();
+  const area = await page.locator('.results').boundingBox();
+  const eighth = await page.locator('.result').nth(7).boundingBox();
+  expect(dialog.height).toBeLessThan(1000 * .8);
+  expect(eighth.y + eighth.height).toBeLessThanOrEqual(area.y + area.height + 1);
 });
 
 for (const record of records) {
@@ -136,7 +148,7 @@ test('filter clears pending choice, empty results recover and replacement commit
   await expect(page.getByRole('status')).toContainText('No matching locations');
   await expect(c.confirm).toBeDisabled();
   await c.query.fill('');
-  await expect(page.getByRole('radio')).toHaveCount(6);
+  await expect(page.getByRole('radio')).toHaveCount(10);
   for (const record of records) await expect(c.radio(record)).not.toBeChecked();
   await expect(c.confirm).toBeDisabled();
   await c.radio(records[0]).click();
