@@ -185,6 +185,11 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Tab');
     await expect(c.type).toBeFocused();
     await page.keyboard.press('Tab');
+    if (info.project.name === 'firefox') {
+      // Firefox includes the scrollable result region in native Tab order.
+      await expect(page.getByRole('radiogroup', { name: 'Matching service locations' })).toBeFocused();
+      await page.keyboard.press('Tab');
+    }
     await expect(c.radio(records[0])).toBeFocused();
     await page.keyboard.press('Space');
     await expect(c.radio(records[0])).toBeChecked();
@@ -226,6 +231,10 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Shift+Tab');
     await expect(c.radio(northService)).toBeFocused();
     await page.keyboard.press('Shift+Tab');
+    if (info.project.name === 'firefox') {
+      await expect(page.getByRole('radiogroup', { name: 'Matching service locations' })).toBeFocused();
+      await page.keyboard.press('Shift+Tab');
+    }
     await expect(c.type).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(c.region).toBeFocused();
@@ -236,9 +245,17 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Tab');
     await expect(c.query).toBeFocused();
     await page.keyboard.press('Tab');
+    await expect(c.region).toBeFocused();
     await page.keyboard.press('Tab');
+    await expect(c.type).toBeFocused();
+    if (info.project.name === 'firefox') {
+      await page.keyboard.press('Tab');
+      await expect(page.getByRole('radiogroup', { name: 'Matching service locations' })).toBeFocused();
+    }
     await page.keyboard.press('Tab');
+    await expect(c.radio(northService)).toBeFocused();
     await page.keyboard.press('Tab');
+    await expect(c.cancel).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(c.confirm).toBeFocused();
     await page.keyboard.press(activation);

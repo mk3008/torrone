@@ -7,7 +7,7 @@ The [draft Reference](../references/entity-lookup.md) is a standalone parent-and
 | ID/name, region and type combined filtering; comparison and empty recovery | Real textbox/select changes and six visible fixture rows in Chromium, Firefox, WebKit and mobile Chromium | Local fixture only; no remote search, paging or latency |
 | Pending choice, condition change, explicit Select and parent commitment | Native radio actions and disabled Select assertions | No persistence or host form submission |
 | Cancel, Close, Escape, Clear and replacement | Modal exit paths, focus return and reopening reset | Host-specific focus policy needs composed-screen review |
-| Tab/Shift+Tab, radio arrows/Space and action activation | Native desktop keyboard steps across the added conditions; no injected focus | Actual assistive technology and physical keyboard remain unverified |
+| Tab/Shift+Tab, radio arrows/Space and action activation | Native desktop keyboard steps across the added conditions; Firefox also includes the scrollable result region as a Tab stop, which the test checks explicitly | Actual assistive technology and physical keyboard remain unverified |
 | Stable desktop outer geometry and internally scrolling results; mobile fullscreen layout | Bounds across 6 → 2 → 0 → 6 actual results, overflow measurement and mobile touch at two heights | Real phone keyboard, browser chrome and IME remain unverified |
 
 `tests/browser/entity-lookup.spec.cjs` runs in the existing pinned browser Gate. `tests/check-entity-lookup.cjs` is a handler-only supplement. CI results belong to the exact commit; passing checks do not approve the design.
