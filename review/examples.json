@@ -24,6 +24,14 @@
     "evidence": "references/entity-lookup.md"
   },
   {
+    "id": "entity-lookup-inline",
+    "title": "Inline Entity lookup",
+    "source": "review/references/entity-lookup-inline.html",
+    "guidance": "Type an ID/name, use a suggestion, clear and reselect. Try arrows/Enter, Escape, Tab and mobile sizing. The fixture note marks mocked boundaries.",
+    "status": "Draft non-dialog single-entity lookup; human review pending.",
+    "evidence": "references/entity-lookup-inline.md"
+  },
+  {
     "id": "access-review",
     "title": "Access review workspace",
     "source": "review/references/access-review.html",

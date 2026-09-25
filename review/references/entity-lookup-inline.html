@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="data:,">
+  <title>Inline Entity lookup reference</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #fff; --text: #101d2f; --muted: #54657a; --border: #b9c9d9; --accent: #1d73b7; --focus: #86b9ee; }
+    * { box-sizing: border-box; }
+    body { min-height: 100dvh; margin: 0; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    [hidden] { display: none !important; }
+    .reference-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .fixture-note { margin: 0; padding: 10px 24px; color: var(--muted); font-size: 14px; border-bottom: 1px dashed var(--border); }
+    .sample { width: min(620px, calc(100% - 32px)); margin: 48px auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
+    .sample h2 { margin: 0 0 20px; font-size: 22px; }
+    .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .lookup { position: relative; }
+    .field { display: flex; align-items: center; min-height: 44px; background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
+    .field:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .query { width: 100%; min-width: 0; min-height: 42px; padding: 8px 11px; color: var(--text); background: transparent; border: 0; outline: none; font: inherit; }
+    .query:focus { outline: none; }
+    .clear { display: grid; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; place-items: center; color: #183653; background: transparent; border: 0; border-radius: 4px; cursor: pointer; }
+    .clear:hover { background: #dcebf8; }
+    .clear:focus-visible { outline: 2px solid #1d73b7; outline-offset: -3px; }
+    .clear svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+    .selected-id { min-height: 21px; margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+    .popup { position: absolute; z-index: 2; top: calc(100% + 4px); left: 0; right: 0; max-height: min(248px, 38dvh); overflow: auto; overscroll-behavior: contain; padding: 4px; background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; box-shadow: 0 8px 24px rgb(18 32 48 / 18%); }
+    .option { display: block; width: 100%; padding: 8px 10px; border-radius: 4px; cursor: pointer; }
+    .option[data-active="true"], .option:hover { color: #103d65; background: #e5f0fb; }
+    .option-name { display: block; }
+    .option-id { display: block; color: var(--muted); font-size: 13px; }
+    .empty { padding: 12px; color: var(--muted); }
+    @media (max-width: 800px) {
+      .reference-note, .fixture-note { padding-left: 16px; padding-right: 16px; }
+      .sample { margin: 16px auto; padding: 16px; }
+      .popup { max-height: min(224px, 35dvh); }
+    }
+  </style>
+</head>
+<body>
+  <div class="reference-note" data-reference-harness="reference-label">Reference part · inline entity lookup · draft</div>
+  <p class="fixture-note" data-reference-harness="fixture-boundary">REFERENCE FIXTURE: three local locations. Search, selection, cancellation of an unfinished search, clearing and reselection work. No server, persistence, latency, authorization, pagination or backend-error simulation. This note is review guidance, not product UI.</p>
+  <section class="sample" aria-labelledby="heading">
+    <h2 id="heading">Service location</h2>
+    <label class="field-label" for="location-query">Location ID or name</label>
+    <div class="lookup">
+      <div class="field" data-ref="lookup-field" data-selected="false">
+        <input id="location-query" class="query" data-ref="lookup-query" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-options" autocomplete="off" placeholder="Search locations">
+        <button class="clear" type="button" data-ref="lookup-clear" aria-label="Clear selected location" title="Clear selected location" tabindex="-1" hidden><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+      </div>
+      <div id="location-options" class="popup" role="listbox" aria-label="Matching service locations" hidden></div>
+    </div>
+    <p class="selected-id" data-ref="selected-id" hidden></p>
+  </section>
+  <script>
+    (() => {
+      const locations = [
+        { id: 'LC-031', name: 'North Distribution Center' },
+        { id: 'LC-044', name: 'Riverside Depot' },
+        { id: 'LC-052', name: 'Harbor Service Point' }
+      ];
+      const lookup = document.querySelector('.lookup');
+      const field = document.querySelector('[data-ref="lookup-field"]');
+      const query = document.querySelector('[data-ref="lookup-query"]');
+      const clear = document.querySelector('[data-ref="lookup-clear"]');
+      const popup = document.getElementById('location-options');
+      const selectedId = document.querySelector('[data-ref="selected-id"]');
+      let committedId = null;
+      let searching = false;
+      let edited = false;
+      let matches = [];
+      let active = -1;
+
+      const renderCommitted = () => {
+        const item = locations.find(location => location.id === committedId);
+        query.value = item ? item.name : '';
+        field.dataset.selected = String(!!item);
+        clear.hidden = !item;
+        selectedId.hidden = !item;
+        selectedId.textContent = item ? `Location ${item.id}` : '';
+      };
+      const closePopup = () => {
+        popup.hidden = true;
+        query.setAttribute('aria-expanded', 'false');
+        query.removeAttribute('aria-activedescendant');
+        active = -1;
+      };
+      const setActive = index => {
+        active = index;
+        for (const [i, option] of [...popup.querySelectorAll('[role="option"]')].entries()) {
+          option.dataset.active = String(i === active);
+          option.setAttribute('aria-selected', String(i === active));
+          if (i === active) option.scrollIntoView({ block: 'nearest' });
+        }
+        if (active < 0) query.removeAttribute('aria-activedescendant');
+        else query.setAttribute('aria-activedescendant', `location-option-${active}`);
+      };
+      const positionPopup = () => {
+        if (popup.hidden) return;
+        const viewport = window.visualViewport;
+        const top = viewport ? viewport.offsetTop : 0;
+        const bottom = top + (viewport ? viewport.height : innerHeight);
+        const fieldBounds = field.getBoundingClientRect();
+        const below = bottom - fieldBounds.bottom - 4;
+        const above = fieldBounds.top - top - 4;
+        const useAbove = below < Math.min(150, popup.scrollHeight) && above > below;
+        popup.style.top = useAbove ? 'auto' : 'calc(100% + 4px)';
+        popup.style.bottom = useAbove ? 'calc(100% + 4px)' : 'auto';
+        popup.style.maxHeight = `${Math.max(0, Math.min(matchMedia('(max-width: 800px)').matches ? 224 : 248, useAbove ? above : below))}px`;
+      };
+      const showMatches = () => {
+        const term = query.value.trim().toLowerCase();
+        matches = locations.filter(item => item.id.toLowerCase().includes(term) || item.name.toLowerCase().includes(term));
+        popup.replaceChildren();
+        matches.forEach((item, index) => {
+          const option = document.createElement('div');
+          option.id = `location-option-${index}`;
+          option.className = 'option';
+          option.setAttribute('role', 'option');
+          option.setAttribute('aria-selected', 'false');
+          option.dataset.active = 'false';
+          const name = document.createElement('span');
+          name.className = 'option-name';
+          name.textContent = item.name;
+          const id = document.createElement('span');
+          id.className = 'option-id';
+          id.textContent = `Location ${item.id}`;
+          option.append(name, id);
+          option.addEventListener('pointerdown', event => event.preventDefault());
+          option.addEventListener('click', () => commit(item));
+          popup.append(option);
+        });
+        if (!matches.length) {
+          const empty = document.createElement('div');
+          empty.className = 'empty';
+          empty.textContent = 'No matching locations';
+          popup.append(empty);
+        }
+        popup.hidden = false;
+        query.setAttribute('aria-expanded', 'true');
+        setActive(-1);
+        positionPopup();
+      };
+      const commit = item => {
+        committedId = item.id;
+        searching = false;
+        edited = false;
+        closePopup();
+        renderCommitted();
+        query.focus();
+      };
+      const restore = () => {
+        searching = false;
+        edited = false;
+        closePopup();
+        renderCommitted();
+      };
+      const leave = () => {
+        if (edited) committedId = null;
+        restore();
+      };
+      query.addEventListener('focus', () => {
+        if (committedId && !searching) query.select();
+        else { searching = true; showMatches(); }
+      });
+      query.addEventListener('input', () => {
+        searching = true;
+        edited = true;
+        if (query.value.trim() === '') committedId = null;
+        field.dataset.selected = 'false';
+        clear.hidden = true;
+        selectedId.hidden = true;
+        showMatches();
+      });
+      query.addEventListener('keydown', event => {
+        if (event.isComposing) return;
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          if (!searching) { searching = true; showMatches(); }
+          if (matches.length) setActive(active < 0 ? (event.key === 'ArrowDown' ? 0 : matches.length - 1) : (active + (event.key === 'ArrowDown' ? 1 : -1) + matches.length) % matches.length);
+        } else if (event.key === 'Enter' && !popup.hidden) {
+          event.preventDefault();
+          if (active >= 0) commit(matches[active]);
+        } else if (event.key === 'Escape' && searching) {
+          event.preventDefault();
+          restore();
+        } else if (event.key === 'Tab' && searching) {
+          leave();
+        }
+      });
+      clear.addEventListener('click', () => {
+        committedId = null;
+        searching = true;
+        edited = false;
+        renderCommitted();
+        query.focus();
+        showMatches();
+      });
+      document.addEventListener('pointerdown', event => {
+        if (!lookup.contains(event.target) && searching) leave();
+      });
+      lookup.addEventListener('focusout', event => {
+        if (!lookup.contains(event.relatedTarget) && searching) leave();
+      });
+      window.addEventListener('resize', positionPopup);
+      window.visualViewport?.addEventListener('resize', positionPopup);
+      window.visualViewport?.addEventListener('scroll', positionPopup);
+      renderCommitted();
+    })();
+  </script>
+</body>
+</html>
