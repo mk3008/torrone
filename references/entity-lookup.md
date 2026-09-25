@@ -1,43 +1,28 @@
 ---
 id: entity-lookup
 status: draft
-responsibility: single-selection dialog lookup with explicit confirmation
+responsibility: choose one Entity from combined search conditions and comparable results in a parent-dependent modal
 reference: ../review/references/entity-lookup.html
-decision_source: https://github.com/mk3008/torrone/issues/21
+decision_source: https://github.com/mk3008/torrone/issues/28
 ---
 
-# Entity dialog lookup
+# Entity Chooser Dialog
 
-This branch revises the existing executable in place for human review. Issue #21 specifies the proposed operation model; implementation and tests do not approve it.
+This is an unapproved candidate for choosing one service location as part of a parent task. The [inline Entity lookup](entity-lookup-inline.md) is the separate draft for a compact ID/name search. The original one-field dialog and its correction history remain in [Issue #21](https://github.com/mk3008/torrone/issues/21) and [PR #26](https://github.com/mk3008/torrone/pull/26). This redesign does not transfer approval from that history.
 
-## Preserve
+## Proposed responsibility
 
-- Open a modal lookup; filter the local records by ID or name (case-insensitive substring, surrounding whitespace ignored). Empty query shows all fixture records; no matches is derived from the data.
-- Native radios make one pending choice explicit. Select is enabled only after a choice; it commits that exact ID/name and closes the dialog. Picking another radio replaces the choice.
-- Editing the query clears the pending choice, even if it would still match, so invisible or stale selection cannot be confirmed. Enter in the query does not commit or advance focus; native radio arrows/Space choose, and Enter/Space on action buttons activate them.
-- Cancel, Close and Escape discard pending changes and leave the committed parent value intact. Reopening starts with an empty filter and no pending choice; the previously committed value remains unchanged until explicit confirmation.
-- Clear removes the committed value. Completion, cancellation and Clear return focus to Find location. Desktop opening focuses the query; narrow opening focuses the title to avoid summoning the keyboard immediately.
-- Narrow screens retain the existing fullscreen dialog, scrolling results and persistent actions. No independent textbox scrolling is added.
-- On desktop, the dialog keeps a bounded, stable outer height while filtering; the result area absorbs 2/1/0 result changes and scrolls internally when full. The empty state occupies that same area, leaving Select and Cancel in place.
+- Open from the parent; search by ID/name, region and facility type. Conditions combine, and empty conditions include all six fixture locations. A result shows name, ID, region and type for comparison. Filtering is local and immediate; an empty result follows from the conditions.
+- Native radios make one pending choice explicit. Select commits the exact chosen Entity to the parent and closes the dialog. Changing any search condition clears the pending choice, even when its row would still match; Select remains disabled until a new choice. Reopening resets all conditions and the pending choice.
+- Cancel, Close and Escape discard pending changes without changing the committed parent value. Clear removes the committed value. Completion, cancellation and Clear return focus to the parent trigger. Desktop opening focuses ID/name; narrow opening focuses the title to avoid invoking the keyboard immediately. Enter in ID/name alone does not select or advance focus.
+- The desktop dialog retains its fixed outer height and footer while the results scroll inside. Narrow screens retain a fullscreen dialog, compact paired conditions, readable labeled result details and persistent actions. The earlier geometry correction remains observable under a larger real fixture.
 
-## Real behavior, mocks and limits
+## Why a dialog here
 
-Filtering, pending/committed selection, confirmation, cancellation, clearing and empty results execute locally. The two locations are a single fixed fixture; API/DB/auth, persistence across reload, latency, server errors and pagination are outside this responsibility. No visible production action stands in for an unimplemented search.
+Combined independent conditions narrow a candidate set, while region and facility type in each row support comparison before an explicit confirmation. These are the proposed reasons to use a modal chooser instead of the one-field inline lookup. The dialog remains subordinate to the parent task and returns one Entity. If the task requires paging, substantial sorting, navigating to details, editing, export or bulk actions, evaluate a Search Screen instead of extending this modal. These boundaries follow [Issue #28](https://github.com/mk3008/torrone/issues/28) and await human judgment on whether the richer chooser is genuinely useful.
 
-The top REFERENCE FIXTURE note is review guidance, not required consuming-product UI. The JSON scenario descriptions are replay metadata, not state injection or evidence that a browser path passed. There are no scenario buttons or injected result states: reviewers reach results/empty through normal filtering.
+## Fixture and handoff
 
-## Rationale and freedom
+Six locations, condition filtering, pending/committed selection, confirmation, cancellation, clearing and empty results execute locally. The records and labels are examples. API/DB/auth, persistence, latency, loading, server errors, pagination and large data sets are outside the fixture. The REFERENCE FIXTURE note is review guidance, not product UI. JSON scenario descriptions are replay hints, not an implementation or design approval.
 
-A native radio group communicates single selection and supplies standard keyboard behavior without a custom listbox framework. The parent value and pending dialog choice are distinct so cancellation has a stable meaning. These are proposals for this bounded lookup, not global application conventions. Labels, records, styling and implementation may vary; a required multi-selection or immediate-commit lookup needs a different operation model.
-
-Apply [application interaction requirements](../docs/application-interaction.md). The policy and coverage for this standalone fixture are recorded above and in [verification notes](../docs/entity-lookup-review.md). Human review must decide whether to adopt it; preserve the draft until explicit acceptance.
-
-## Review scope clarification
-
-This example demonstrates a dialog lookup operation, not a recommendation that every entity search must first open a dialog. The owner explicitly retained this sample's operation model while noting that a textbox-integrated autocomplete may better fit simple ID/name selection. No autocomplete implementation is requested here. Close and parent selection Clear apply the [approved flat icon-button Reference](icon-button.md), retaining distinct accessible action names, 44px targets and their existing cancellation/clearing and focus-return semantics. Both use a flat × icon; their placement identifies the affected dialog or selected value.
-
-The owner removed explanatory copy that repeated the radio group and Select/Cancel controls. This applies the [interaction-before-instructions principle](../docs/product-foundation.md#communicate-through-interaction-before-instructions); the radio group and Select/Cancel controls carry that operation meaning.
-
-## Pending geometry review
-
-The owner's [human finding](https://github.com/mk3008/torrone/issues/21#issuecomment-5831053714) identified the desktop dialog resizing as a material design problem. This correction keeps the dialog and footer stable across 2 → 1 → 0 → 2 results, with internal overflow and the mobile fullscreen model retained. Browser checks verify geometry and operation, but the corrected design still needs a new human review. Status remains draft.
+Preserve the local relationship between conditions, comparable results, pending radio choice, explicit confirmation, cancellation, parent value and focus return if accepted. Exact records, styling, DOM and framework may vary. The [flat icon-button Reference](icon-button.md) applies to Close and parent Clear. A consuming application must supply its own shared navigation and submission policy; see [application interaction requirements](../docs/application-interaction.md) and the [browser verification notes](../docs/entity-lookup-review.md). Keep this Reference `draft` until explicit human approval of this redesigned version.

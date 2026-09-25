@@ -17,10 +17,10 @@
   },
   {
     "id": "entity-lookup",
-    "title": "Entity dialog lookup",
+    "title": "Entity Chooser Dialog",
     "source": "review/references/entity-lookup.html",
-    "guidance": "Filter by ID/name, choose either radio result, confirm, cancel a replacement, clear and reselect. Empty results derive from the filter. The fixture note explains mocked boundaries.",
-    "status": "Draft single-selection operation model; human approval pending.",
+    "guidance": "Combine ID/name, region and facility type; compare rows, choose one radio result, confirm or cancel, then clear and reselect. Check stable geometry and mobile sizing.",
+    "status": "Draft bounded Entity Chooser Dialog; human review pending.",
     "evidence": "references/entity-lookup.md"
   },
   {

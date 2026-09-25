@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="icon" href="data:,">
-  <title>Entity dialog lookup reference</title>
+  <title>Entity Chooser Dialog reference</title>
   <style>
     :root { color-scheme: light; font-family: "Segoe UI", system-ui, sans-serif; --canvas: #f3f6fa; --surface: #fff; --text: #101d2f; --muted: #54657a; --border: #c6d2df; --accent: #1d73b7; --focus: #86b9ee; }
     * { box-sizing: border-box; }
     html, body { min-height: 100%; margin: 0; }
     body { min-width: 760px; color: var(--text); background: var(--canvas); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
-    button, input { font: inherit; }
+    button, input, select { font: inherit; }
     button { cursor: pointer; }
     [hidden] { display: none !important; }
-    :is(button, input):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    :is(button, input, select):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
     .reference-note { padding: 10px 24px; color: #405267; background: #f8fbfe; border-bottom: 1px dashed #9cafc1; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
     .sample { width: min(620px, calc(100% - 48px)); margin: 48px auto; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgb(37 55 75 / 8%); }
     .sample h2 { margin: 0 0 6px; font-size: 22px; }
@@ -28,13 +28,19 @@
     .dialog-heading h3 { margin: 0; font-size: 20px; }
     .dialog-body { padding: 20px; }
     .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
+    .conditions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+    .condition-name { grid-column: 1 / -1; }
     .query { width: 100%; min-height: 42px; padding: 8px 11px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
-    .results { display: grid; flex: 1; min-height: 0; gap: 6px; margin-top: 12px; overflow: auto; align-content: start; overscroll-behavior: contain; }
-    .result { display: flex; gap: 12px; align-items: center; cursor: pointer; min-height: 56px; padding: 8px 10px; align-content: center; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; text-align: left; }
+    .result-head, .result { display: grid; grid-template-columns: 24px minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: 10px; align-items: center; }
+    .result-head { margin-top: 14px; padding: 0 10px 5px; color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--border); }
+    .results { display: grid; flex: 1; min-height: 0; gap: 6px; margin-top: 4px; overflow: auto; align-content: start; overscroll-behavior: contain; }
+    .result { cursor: pointer; min-height: 56px; padding: 8px 10px; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; text-align: left; }
     .result:hover, .result:has(input:checked) { background: #e5f0fb; border-color: #9ebbd5; }
     .result input { width: 20px; height: 20px; min-height: 20px; flex: 0 0 20px; accent-color: var(--accent); }
     .result:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: -3px; }
-    .result-copy { display: grid; }
+    .result-copy { display: grid; min-width: 0; }
+    .result-detail { font-size: 14px; }
+    .mobile-label { display: none; }
     .fixture-note { margin: 0; padding: 10px 24px; color: var(--muted); font-size: 14px; border-bottom: 1px dashed var(--border); }
     .empty { margin: 0; padding: 14px; color: var(--muted); background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; }
     .dialog-actions { display: flex; padding: 14px 20px; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--border); }
@@ -62,27 +68,35 @@
       .dialog-heading { padding: max(12px, env(safe-area-inset-top)) 16px 12px; }
       .dialog-heading h3 { font-size: 18px; }
       .dialog-body { padding: 16px; }
+      .result-head { display: none; }
+      .result { grid-template-columns: 24px minmax(0, 1fr); gap: 4px 10px; }
+      .result-detail { grid-column: 2; }
+      .mobile-label { display: inline; color: var(--muted); }
       .dialog-actions { padding: 12px 16px max(12px, env(safe-area-inset-bottom)); }
       .dialog-actions button { flex: 1; }
     }
   </style>
 </head>
 <body>
-  <div class="reference-note" data-reference-harness="reference-label">Reference part · entity dialog lookup · draft</div>
-  <p class="fixture-note" data-reference-harness="fixture-boundary">REFERENCE FIXTURE: two local locations; filtering, single selection, confirmation, cancellation and clearing work. No server, persistence, latency, authorization, pagination or backend-error simulation. This note is review guidance, not product UI.</p>
+  <div class="reference-note" data-reference-harness="reference-label">Reference part · entity chooser dialog · draft</div>
+  <p class="fixture-note" data-reference-harness="fixture-boundary">REFERENCE FIXTURE: six local locations. Combined ID/name, region and facility-type filtering, comparison, single pending choice, confirmation, cancellation and clearing work. No server, persistence, latency, authorization, pagination or backend-error simulation. This note is review guidance, not product UI.</p>
   <section class="sample" aria-labelledby="lookup-heading">
     <h2 id="lookup-heading">Service location</h2>
     <p class="support">Choose the location where the work will be performed.</p>
-    <button class="lookup" type="button" data-ref="lookup-trigger" aria-controls="location-dialog" aria-expanded="false">Find location</button>
+    <button class="lookup" type="button" data-ref="lookup-trigger" aria-controls="location-dialog" aria-expanded="false">Choose location</button>
     <div class="selection" data-ref="lookup-selection" hidden><p><strong data-ref="selected-name"></strong><br><span class="entity-id" data-ref="selected-id"></span></p><button class="icon-button" type="button" data-ref="lookup-clear" aria-label="Clear selected location" title="Clear selected location"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5L5 15"/></svg></button></div>
   </section>
 
   <dialog id="location-dialog" aria-labelledby="dialog-title">
-    <div class="dialog-heading"><h3 id="dialog-title" tabindex="-1">Find service location</h3><button class="dialog-close icon-button" type="button" aria-label="Close location search" title="Close location search"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5L5 15"/></svg></button></div>
+    <div class="dialog-heading"><h3 id="dialog-title" tabindex="-1">Choose service location</h3><button class="dialog-close icon-button" type="button" aria-label="Close location chooser" title="Close location chooser"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5L5 15"/></svg></button></div>
     <div class="dialog-body">
-      <label class="field-label" for="lookup-query">Location ID or name</label>
-      <input class="query" id="lookup-query" data-ref="lookup-query" autocomplete="off">
-      <div class="results" role="radiogroup" aria-label="Matching service locations"><p class="empty" data-ref="lookup-empty" role="status" aria-live="polite" hidden>No matching locations. Change the ID or name.</p></div>
+      <div class="conditions">
+        <div class="condition-name"><label class="field-label" for="lookup-query">Location ID or name</label><input class="query" id="lookup-query" data-ref="lookup-query" autocomplete="off"></div>
+        <div><label class="field-label" for="lookup-region">Region</label><select class="query" id="lookup-region" data-ref="lookup-region"><option value="">All regions</option><option value="North">North</option><option value="West">West</option><option value="East">East</option></select></div>
+        <div><label class="field-label" for="lookup-type">Facility type</label><select class="query" id="lookup-type" data-ref="lookup-type"><option value="">All types</option><option value="Distribution center">Distribution center</option><option value="Depot">Depot</option><option value="Service point">Service point</option></select></div>
+      </div>
+      <div class="result-head" aria-hidden="true"><span></span><span>Location / ID</span><span>Region</span><span>Facility type</span></div>
+      <div class="results" role="radiogroup" aria-label="Matching service locations"><p class="empty" data-ref="lookup-empty" role="status" aria-live="polite" hidden>No matching locations. Change the search conditions.</p></div>
     </div>
     <div class="dialog-actions"><button class="secondary" type="button" data-ref="lookup-cancel">Cancel</button><button class="primary" type="button" data-ref="lookup-confirm" disabled>Select</button></div>
   </dialog>
@@ -90,7 +104,8 @@
   <script type="application/json" data-reference-scenarios>
     {"version":1,"scenarios":[
       {"name":"pointer dialog selection","steps":[{"action":"click","target":"lookup-trigger"},{"action":"fill","target":"lookup-query","value":"a"},{"action":"click","target":"lookup-option-primary"},{"action":"click","target":"lookup-confirm"}]},
-      {"name":"keyboard dialog selection","steps":[{"action":"press","target":"lookup-trigger","key":" "},{"action":"fill","target":"lookup-query","value":"a"},{"action":"press","target":"lookup-query","key":"Tab"},{"action":"press","target":"lookup-option-primary","key":" "},{"action":"press","target":"lookup-confirm","key":" "}]},
+      {"name":"keyboard dialog selection","steps":[{"action":"press","target":"lookup-trigger","key":" "},{"action":"fill","target":"lookup-query","value":"LC-031"},{"action":"press","target":"lookup-query","key":"Tab"},{"action":"press","target":"lookup-region","key":"Tab"},{"action":"press","target":"lookup-type","key":"Tab"},{"action":"press","target":"lookup-option-primary","key":" "},{"action":"press","target":"lookup-confirm","key":" "}]},
+      {"name":"combined conditions","steps":[{"action":"click","target":"lookup-trigger"},{"action":"fill","target":"lookup-query","value":"service point"},{"action":"select","target":"lookup-region","value":"East"},{"action":"click","target":"lookup-option-east"},{"action":"click","target":"lookup-confirm"}]},
       {"name":"dialog no results","steps":[{"action":"click","target":"lookup-trigger"},{"action":"fill","target":"lookup-query","value":"zzz"}]},
       {"name":"cancel lookup","steps":[{"action":"click","target":"lookup-trigger"},{"action":"click","target":"lookup-cancel"}]},
       {"name":"clear lookup selection","steps":[{"action":"click","target":"lookup-trigger"},{"action":"click","target":"lookup-option-primary"},{"action":"click","target":"lookup-confirm"},{"action":"click","target":"lookup-clear"}]}
@@ -103,9 +118,15 @@
       const query = document.querySelector('[data-ref="lookup-query"]');
       const results = dialog.querySelector('.results');
       const locations = [
-        { id: 'LC-031', name: 'North Distribution Center' },
-        { id: 'LC-044', name: 'Riverside Depot' }
+        { id: 'LC-031', name: 'North Distribution Center', region: 'North', type: 'Distribution center' },
+        { id: 'LC-033', name: 'North Service Point', region: 'North', type: 'Service point' },
+        { id: 'LC-044', name: 'Riverside Depot', region: 'West', type: 'Depot' },
+        { id: 'LC-045', name: 'Riverside Service Point', region: 'West', type: 'Service point' },
+        { id: 'LC-052', name: 'Harbor Service Point', region: 'East', type: 'Service point' },
+        { id: 'LC-057', name: 'Harbor Depot', region: 'East', type: 'Depot' }
       ];
+      const region = document.querySelector('[data-ref="lookup-region"]');
+      const type = document.querySelector('[data-ref="lookup-type"]');
       let pendingId = null;
       let committedId = null;
       const empty = document.querySelector('[data-ref="lookup-empty"]');
@@ -115,7 +136,11 @@
       const clear = document.querySelector('[data-ref="lookup-clear"]');
       const renderResults = () => {
         const term = query.value.trim().toLowerCase();
-        const matches = locations.filter(item => item.id.toLowerCase().includes(term) || item.name.toLowerCase().includes(term));
+        const matches = locations.filter(item =>
+          (item.id.toLowerCase().includes(term) || item.name.toLowerCase().includes(term)) &&
+          (!region.value || item.region === region.value) &&
+          (!type.value || item.type === type.value)
+        );
         results.replaceChildren(empty);
         for (const item of matches) {
           const label = document.createElement('label');
@@ -125,7 +150,9 @@
           radio.name = 'location-choice';
           radio.value = item.id;
           radio.checked = item.id === pendingId;
-          radio.dataset.ref = item.id === locations[0].id ? 'lookup-option-primary' : 'lookup-option-secondary';
+          if (item === locations[0]) radio.dataset.ref = 'lookup-option-primary';
+          if (item === locations[2]) radio.dataset.ref = 'lookup-option-secondary';
+          if (item.id === 'LC-052') radio.dataset.ref = 'lookup-option-east';
           radio.addEventListener('change', () => {
             if (!radio.checked) return;
             pendingId = item.id;
@@ -139,13 +166,29 @@
           id.className = 'entity-id';
           id.textContent = 'Location ' + item.id;
           copy.append(name, id);
-          label.append(radio, copy);
+          const regionDetail = document.createElement('span');
+          regionDetail.className = 'result-detail';
+          const regionLabel = document.createElement('span');
+          regionLabel.className = 'mobile-label';
+          regionLabel.textContent = 'Region: ';
+          const regionValue = document.createElement('span');
+          regionValue.textContent = item.region;
+          regionDetail.append(regionLabel, regionValue);
+          const typeDetail = document.createElement('span');
+          typeDetail.className = 'result-detail';
+          const typeLabel = document.createElement('span');
+          typeLabel.className = 'mobile-label';
+          typeLabel.textContent = 'Type: ';
+          const typeValue = document.createElement('span');
+          typeValue.textContent = item.type;
+          typeDetail.append(typeLabel, typeValue);
+          label.append(radio, copy, regionDetail, typeDetail);
           results.append(label);
         }
         empty.hidden = matches.length !== 0;
         confirm.disabled = pendingId === null;
       };
-      const resetDialog = () => { query.value = ''; pendingId = null; renderResults(); };
+      const resetDialog = () => { query.value = ''; region.value = ''; type.value = ''; pendingId = null; renderResults(); };
       const open = () => { resetDialog(); trigger.setAttribute('aria-expanded', 'true'); dialog.showModal(); if (matchMedia('(max-width: 800px)').matches) document.getElementById('dialog-title').focus(); else query.focus(); };
       const close = () => { pendingId = null; confirm.disabled = true; dialog.close(); trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); };
       const renderSelection = () => {
@@ -166,6 +209,7 @@
       dialog.querySelector('.dialog-close').addEventListener('click', close);
       trigger.addEventListener('click', open);
       query.addEventListener('input', () => { pendingId = null; renderResults(); });
+      for (const condition of [region, type]) condition.addEventListener('change', () => { pendingId = null; renderResults(); });
       query.addEventListener('keydown', event => { if (event.key === 'Enter' && !event.isComposing) event.preventDefault(); });
       confirm.addEventListener('click', () => {
         if (confirm.disabled || !locations.some(item => item.id === pendingId)) return;

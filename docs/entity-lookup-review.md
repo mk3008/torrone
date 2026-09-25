@@ -1,46 +1,15 @@
-# Entity lookup correction — Issue #21
+# Entity Chooser Dialog — Issue #28 review record
 
-Based on main `26baca8` including PR #23's removal of historical PoC 018 from the active review surface. That boundary and the owner's Reference lifecycle edits are retained. Exact changed sources are identified by the implementation PR commit and generated review-build.json; earlier mobile review evidence is not evidence for this new version.
+The [draft Reference](../references/entity-lookup.md) is a standalone parent-and-dialog fixture, not a consuming application. It has no application-specific shared interaction record to claim. A consumer must apply its own navigation, form submission and cross-control requirements before asserting application coverage.
 
-## Coverage
-
-Policy source: [Entity lookup draft](../references/entity-lookup.md), proposed under Issue #21. Shared rules: [Application interaction requirements](application-interaction.md). No existing approved Entity entry was found. No application-wide policy is inferred from this fixture.
-
-| Path and expected result | Regression coverage | Execution boundary |
+| Path | Browser evidence | Remaining boundary |
 | --- | --- | --- |
-| ID/name filtering and either actual record committed | Browser: one filtered commit case per record; handler fixture retained | Real label click, checked radio and enabled Select asserted before confirmation |
-| Empty results recover; query clears pending; replacement is exclusive | Browser: empty-to-results and replacement case | Native input/change delivery, no state injection |
-| Cancel/Close/Escape retain committed value; reopening resets pending | Browser: separate case per exit | Real modal close/cancel and focus return |
-| Clear empties parent and permits reselection | Browser: Clear/reselection case | Actual active element checked |
-| Tab/Shift+Tab, radio arrows/Space, action Enter/Space | Browser: keyboard-only desktop cases | Chromium, Firefox and WebKit; no locator focus or event dispatch shortcuts |
-| Fullscreen mobile result and footer operation | Browser: touch case at 390×640 and 390×400 | Chromium touch/viewport emulation, not a physical keyboard test |
-| Stable desktop dialog geometry across 2 → 1 → 0 → 2 results; internal overflow | Browser: outer, result area and action bounds measured after each filter, with an overflow probe | Chromium, Firefox and WebKit; injected overflow rows exercise layout only, not product fixture behavior |
+| ID/name, region and type combined filtering; comparison and empty recovery | Real textbox/select changes and six visible fixture rows in Chromium, Firefox, WebKit and mobile Chromium | Local fixture only; no remote search, paging or latency |
+| Pending choice, condition change, explicit Select and parent commitment | Native radio actions and disabled Select assertions | No persistence or host form submission |
+| Cancel, Close, Escape, Clear and replacement | Modal exit paths, focus return and reopening reset | Host-specific focus policy needs composed-screen review |
+| Tab/Shift+Tab, radio arrows/Space and action activation | Native desktop keyboard steps across the added conditions; no injected focus | Actual assistive technology and physical keyboard remain unverified |
+| Stable desktop outer geometry and internally scrolling results; mobile fullscreen layout | Bounds across 6 → 2 → 0 → 6 actual results, overflow measurement and mobile touch at two heights | Real phone keyboard, browser chrome and IME remain unverified |
 
-## Browser Gate
+`tests/browser/entity-lookup.spec.cjs` runs in the existing pinned browser Gate. `tests/check-entity-lookup.cjs` is a handler-only supplement. CI results belong to the exact commit; passing checks do not approve the design.
 
-The owner requested native browser coverage in [PR #24](https://github.com/mk3008/torrone/pull/24#issuecomment-5706158971). `tests/browser/entity-lookup.spec.cjs` loads the unchanged Reference through HTTP and operates actual native controls. `.github/workflows/entity-lookup-browser.yml` runs the handler check and browser tests for PRs and main, with zero retries and retained HTML reports plus failure traces/screenshots. A checked radio paired with a disabled Select fails before any attempt to confirm. This is an operation-regression Gate, not human design approval or a repository branch-protection change.
-
-Reproduce from `tests/browser`:
-
-```sh
-npm ci
-npx playwright install --with-deps chromium firefox webkit
-npm test
-```
-
-Playwright is a pinned, test-only dependency in this directory; the Reference remains buildless. The configuration serves only `review/references`. The workflow follows [Playwright's CI setup](https://playwright.dev/docs/ci-intro). Execution results belong to the exact PR commit's Actions check and its report artifact, not the presence of this test file.
-
-The active Work browser's Issue #5 local-preview URL-policy block remains unchanged; no local workaround is used. CI executes the regression suite in its own runner. Viewport resizing does not reproduce a phone's software keyboard, browser chrome, IME or embedded host: actual-device footer/results visibility with the keyboard open remains a human-review item. Passing native browser regressions does not approve this draft.
-
-### Native boundary evidence
-
-[CI diagnostic run](https://github.com/mk3008/torrone/actions/runs/35164264825) recorded actual active elements after repeated Tab operations. In these pinned headless engines, Chromium visits BODY/browser chrome before Close; WebKit also visits the dialog element; Firefox remains on Select at the forward boundary. Immediate wrapping is therefore not asserted as a universal native behavior. The regression asserts these observed boundaries, rejects unexpected background controls, and checks reverse traversal and Close reachability from the query on every desktop engine. No custom focus trap is introduced to satisfy a test assumption. This is environment-bounded evidence, not a new application-wide navigation policy.
-
-
-## General policy finding
-
-This example supports a bounded rule: cheap local interaction semantics must work even when external I/O is mocked. A single two-record fixture suffices; no API or simulation framework is needed. The authoritative wording is proposed in references/README.md and remains subject to this PR's review. Harness guidance is conditional; no state-injection harness was needed or validated here. A harness-only transition must never stand in for this example's real filtering/confirmation.
-
-No new unrelated GUI findings were opened. Actual-device keyboard visibility and human adoption remain explicit review limits of Issue #21.
-
-The owner's [geometry finding](https://github.com/mk3008/torrone/issues/21#issuecomment-5831053714) is addressed in the current draft by a bounded desktop dialog height and an internally scrolling result area that also holds the empty state. The mobile fullscreen model retains its viewport height. The measured browser regression does not replace the required human rereview; approval remains pending.
+Issue #21 and PR #26 established the prior dialog operation and fixed its changing outer geometry. This candidate changes that dialog's responsibility to a multi-condition chooser under Issue #28. Review whether the additional conditions and result columns justify a modal, whether comparison and explicit confirmation help the parent task, and whether the boundary with a full Search Screen is clear. Keep the curation entry draft until human review accepts this specific version.

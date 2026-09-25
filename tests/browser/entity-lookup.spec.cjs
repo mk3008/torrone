@@ -1,19 +1,21 @@
 const { test, expect } = require('@playwright/test');
 const records = [
-  { id: 'LC-031', name: 'North Distribution Center', filter: ' north ' },
-  { id: 'LC-044', name: 'Riverside Depot', filter: 'lc-044' },
+  { id: 'LC-031', name: 'North Distribution Center', region: 'North', type: 'Distribution center', filter: ' lc-031 ' },
+  { id: 'LC-044', name: 'Riverside Depot', region: 'West', type: 'Depot', filter: 'lc-044' },
 ];
 function controls(page) {
   return {
-    trigger: page.getByRole('button', { name: 'Find location', exact: true }),
+    trigger: page.getByRole('button', { name: 'Choose location', exact: true }),
     dialog: page.getByRole('dialog'),
     query: page.getByRole('textbox', { name: 'Location ID or name' }),
+    region: page.getByRole('combobox', { name: 'Region' }),
+    type: page.getByRole('combobox', { name: 'Facility type' }),
     confirm: page.getByRole('button', { name: 'Select', exact: true }),
     cancel: page.getByRole('button', { name: 'Cancel', exact: true }),
-    close: page.getByRole('button', { name: 'Close location search' }),
+    close: page.getByRole('button', { name: 'Close location chooser' }),
     clear: page.getByRole('button', { name: 'Clear selected location' }),
     selection: page.locator('[data-ref="lookup-selection"]'),
-    radio: record => page.getByRole('radio', { name: `${record.name} Location ${record.id}`, exact: true }),
+    radio: record => page.locator(`input[type="radio"][value="${record.id}"]`),
   };
 }
 async function committed(page, record) {
@@ -35,7 +37,36 @@ async function select(page, record) {
 }
 test.beforeEach(async ({ page }) => { await page.goto('/entity-lookup.html'); });
 
-test('desktop dialog and actions remain fixed across 2, 1, 0, 2 results', async ({ page }, info) => {
+test('independent conditions narrow comparable rows and changing one clears pending choice', async ({ page }) => {
+  const c = controls(page);
+  await c.trigger.click();
+  await expect(page.getByRole('radio')).toHaveCount(6);
+  await c.query.fill('service point');
+  await expect(page.getByRole('radio')).toHaveCount(3);
+  await c.region.selectOption('East');
+  await expect(page.getByRole('radio')).toHaveCount(1);
+  await expect(c.radio({ id: 'LC-052' })).toBeVisible();
+  await expect(c.radio({ id: 'LC-052' }).locator('..')).toContainText('East');
+  await expect(c.radio({ id: 'LC-052' }).locator('..')).toContainText('Service point');
+  await c.radio({ id: 'LC-052' }).click();
+  await expect(c.confirm).toBeEnabled();
+  await c.type.selectOption('Depot');
+  await expect(page.getByRole('radio')).toHaveCount(0);
+  await expect(c.confirm).toBeDisabled();
+  await c.type.selectOption('Service point');
+  await expect(page.getByRole('radio')).toHaveCount(1);
+  await expect(c.radio({ id: 'LC-052' })).not.toBeChecked();
+  await c.radio({ id: 'LC-052' }).click();
+  await c.confirm.click();
+  await committed(page, { id: 'LC-052', name: 'Harbor Service Point' });
+  await c.trigger.click();
+  await expect(c.query).toHaveValue('');
+  await expect(c.region).toHaveValue('');
+  await expect(c.type).toHaveValue('');
+  await expect(c.confirm).toBeDisabled();
+});
+
+test('desktop dialog and actions remain fixed across 6, 2, 0, 6 results', async ({ page }, info) => {
   test.skip(info.project.name.startsWith('mobile'), 'Desktop dialog geometry; mobile remains fullscreen.');
   const c = controls(page);
   await c.trigger.click();
@@ -47,8 +78,9 @@ test('desktop dialog and actions remain fixed across 2, 1, 0, 2 results', async 
     return { dialog, area, cancel, confirm };
   };
   const original = await geometry();
-  for (const [term, count] of [['north', 1], ['no-such-location', 0], ['', 2]]) {
-    await c.query.fill(term);
+  for (const [region, type, count] of [['North', '', 2], ['East', 'Distribution center', 0], ['', '', 6]]) {
+    await c.region.selectOption(region);
+    await c.type.selectOption(type);
     await expect(page.getByRole('radio')).toHaveCount(count);
     if (count === 0) await expect(page.getByRole('status')).toBeVisible();
     else await expect(page.getByRole('status')).toBeHidden();
@@ -60,15 +92,7 @@ test('desktop dialog and actions remain fixed across 2, 1, 0, 2 results', async 
     }
   }
   await expect(results).toHaveCSS('overflow-y', 'auto');
-  // Exercise overflow geometry without changing the two-record product fixture.
-  await results.evaluate(area => {
-    for (let i = 0; i < 20; i++) {
-      const row = document.createElement('div');
-      row.className = 'result';
-      row.textContent = `Overflow probe ${i}`;
-      area.append(row);
-    }
-  });
+  // Six real fixture rows must scroll inside the fixed dialog.
   await expect.poll(() => results.evaluate(area => area.scrollHeight > area.clientHeight)).toBe(true);
   await results.evaluate(area => { area.scrollTop = area.scrollHeight; });
   await expect.poll(() => results.evaluate(area => area.scrollTop > 0)).toBe(true);
@@ -102,7 +126,7 @@ test('filter clears pending choice, empty results recover and replacement commit
   await expect(page.getByRole('status')).toContainText('No matching locations');
   await expect(c.confirm).toBeDisabled();
   await c.query.fill('');
-  await expect(page.getByRole('radio')).toHaveCount(2);
+  await expect(page.getByRole('radio')).toHaveCount(6);
   for (const record of records) await expect(c.radio(record)).not.toBeChecked();
   await expect(c.confirm).toBeDisabled();
   await c.radio(records[0]).click();
@@ -125,6 +149,8 @@ for (const exit of ['Cancel', 'Close', 'Escape']) {
     await committed(page, records[0]);
     await c.trigger.click();
     await expect(c.query).toHaveValue('');
+    await expect(c.region).toHaveValue('');
+    await expect(c.type).toHaveValue('');
     await expect(c.confirm).toBeDisabled();
     for (const record of records) await expect(c.radio(record)).not.toBeChecked();
   });
@@ -151,6 +177,10 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Enter');
     await expect(c.query).toBeFocused();
     await expect(c.dialog).toBeVisible();
+    await page.keyboard.press('Tab');
+    await expect(c.region).toBeFocused();
+    await page.keyboard.press('Tab');
+    await expect(c.type).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(c.radio(records[0])).toBeFocused();
     await page.keyboard.press('Space');
@@ -193,11 +223,17 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Shift+Tab');
     await expect(c.radio(records[1])).toBeFocused();
     await page.keyboard.press('Shift+Tab');
+    await expect(c.type).toBeFocused();
+    await page.keyboard.press('Shift+Tab');
+    await expect(c.region).toBeFocused();
+    await page.keyboard.press('Shift+Tab');
     await expect(c.query).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(c.close).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(c.query).toBeFocused();
+    await page.keyboard.press('Tab');
+    await page.keyboard.press('Tab');
     await page.keyboard.press('Tab');
     await page.keyboard.press('Tab');
     await page.keyboard.press('Tab');
