@@ -41,10 +41,60 @@ test('pointer search, selection, cancellation, clear and reselection', async ({ 
   await expect(c.input).toHaveValue('');
   await expect(c.input).toBeFocused();
   await expect(c.id).toBeHidden();
+  await expect(c.field).toHaveAttribute('data-selected', 'false');
   await expect(c.popup).toBeVisible();
   await c.input.fill('harbor');
   await c.option(records[2]).click();
   await committed(page, records[2]);
+});
+
+test('full deletion clears commitment and cannot be undone by blur or Tab', async ({ page }) => {
+  const c = ui(page);
+  await c.input.fill('north');
+  await c.option(records[0]).click();
+  await committed(page, records[0]);
+  await c.input.press('Control+A');
+  await c.input.press('Backspace');
+  await expect(c.input).toHaveValue('');
+  await expect(c.field).toHaveAttribute('data-selected', 'false');
+  await expect(c.id).toBeHidden();
+  await expect(c.clear).toBeHidden();
+  await page.locator('#heading').click();
+  await expect(c.input).toHaveValue('');
+  await expect(c.popup).toBeHidden();
+
+  await c.input.fill('riverside');
+  await c.option(records[1]).click();
+  await committed(page, records[1]);
+  await c.input.fill('');
+  await page.keyboard.press('Tab');
+  await expect(c.input).toHaveValue('');
+  await expect(c.id).toBeHidden();
+  await expect(c.field).toHaveAttribute('data-selected', 'false');
+  await expect(c.popup).toBeHidden();
+  await c.input.focus();
+  await page.keyboard.press('Escape');
+  await expect(c.input).toHaveValue('');
+  await expect(c.id).toBeHidden();
+
+  await c.input.fill('harbor');
+  await c.option(records[2]).click();
+  await committed(page, records[2]);
+  await c.input.fill('   ');
+  await page.keyboard.press('Escape');
+  await expect(c.input).toHaveValue('');
+  await expect(c.id).toBeHidden();
+});
+
+test('replacement search commits another candidate without Clear', async ({ page }) => {
+  const c = ui(page);
+  await c.input.fill('north');
+  await c.option(records[0]).click();
+  await committed(page, records[0]);
+  await c.input.fill('riverside');
+  await expect(c.id).toBeHidden();
+  await c.option(records[1]).click();
+  await committed(page, records[1]);
 });
 
 test('empty result, recovery and unfinished query restore on leaving', async ({ page }) => {
@@ -76,8 +126,10 @@ test('keyboard highlights, commits and cancels without accepting free text', asy
   await page.keyboard.press('Enter');
   await committed(page, records[1]);
   await page.keyboard.press('ArrowUp');
-  await expect(c.input).toHaveValue('');
-  await expect(c.input).toHaveAttribute('aria-activedescendant', 'location-option-2');
+  await expect(c.input).toHaveValue(records[1].name);
+  await expect(c.input).toHaveAttribute('aria-activedescendant', 'location-option-0');
+  await c.input.fill('harbor');
+  await page.keyboard.press('ArrowDown');
   await page.keyboard.press('Enter');
   await committed(page, records[2]);
   await c.input.fill('nonsense');
