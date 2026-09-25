@@ -96,6 +96,19 @@
         if (active < 0) query.removeAttribute('aria-activedescendant');
         else query.setAttribute('aria-activedescendant', `location-option-${active}`);
       };
+      const positionPopup = () => {
+        if (popup.hidden) return;
+        const viewport = window.visualViewport;
+        const top = viewport ? viewport.offsetTop : 0;
+        const bottom = top + (viewport ? viewport.height : innerHeight);
+        const fieldBounds = field.getBoundingClientRect();
+        const below = bottom - fieldBounds.bottom - 4;
+        const above = fieldBounds.top - top - 4;
+        const useAbove = below < Math.min(150, popup.scrollHeight) && above > below;
+        popup.style.top = useAbove ? 'auto' : 'calc(100% + 4px)';
+        popup.style.bottom = useAbove ? 'calc(100% + 4px)' : 'auto';
+        popup.style.maxHeight = `${Math.max(0, Math.min(matchMedia('(max-width: 800px)').matches ? 224 : 248, useAbove ? above : below))}px`;
+      };
       const showMatches = () => {
         const term = query.value.trim().toLowerCase();
         matches = locations.filter(item => item.id.toLowerCase().includes(term) || item.name.toLowerCase().includes(term));
@@ -127,6 +140,7 @@
         popup.hidden = false;
         query.setAttribute('aria-expanded', 'true');
         setActive(-1);
+        positionPopup();
       };
       const commit = item => {
         committedId = item.id;
@@ -180,6 +194,9 @@
       lookup.addEventListener('focusout', event => {
         if (!lookup.contains(event.relatedTarget) && searching) restore();
       });
+      window.addEventListener('resize', positionPopup);
+      window.visualViewport?.addEventListener('resize', positionPopup);
+      window.visualViewport?.addEventListener('scroll', positionPopup);
       renderCommitted();
     })();
   </script>

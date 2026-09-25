@@ -106,6 +106,7 @@ test('mobile popup remains within viewport and accepts touch selection', async (
     expect(bounds.x).toBeGreaterThanOrEqual(0);
     expect(bounds.x + bounds.width).toBeLessThanOrEqual(390);
     expect(bounds.y + bounds.height).toBeLessThanOrEqual(height);
+    if (height === 400) expect(bounds.y + bounds.height).toBeLessThanOrEqual((await c.input.boundingBox()).y);
     await c.input.fill('riverside');
     await c.option(records[1]).tap();
     await committed(page, records[1]);

@@ -15,7 +15,7 @@ This is a distinct, unapproved operation model for a simple ID/name selection. I
 - Focusing an empty field shows all fixture candidates. Typing filters ID or name case-insensitively; surrounding whitespace is ignored. No matches appears in the same popup. Pointer click or Arrow keys and Enter choose one candidate; the selected name fills the field, its ID appears below it, and focus remains in the field. The popup closes.
 - Focusing an already selected field selects its displayed name for replacement but does not open the popup. Typing starts a tentative search and hides the selected appearance. Arrow Down or Up from a committed value starts a fresh empty search. The prior committed value is retained until another candidate is chosen or Clear is used.
 - Escape, Tab, or leaving an unfinished search restores the prior committed display (or the empty field) and closes the popup. Enter without a highlighted candidate never commits arbitrary text. Clear removes the commitment, focuses the empty input and opens all candidates; selecting another item completes reselection.
-- The popup scrolls inside a bounded region and stays attached to the field on narrow screens. A real mobile keyboard and embedded host still need device review.
+- The popup scrolls inside a bounded region and stays attached to the field on narrow screens; it opens above the field when the visible viewport has insufficient space below. A real mobile keyboard and embedded host still need device review.
 
 ## Why this candidate
 
