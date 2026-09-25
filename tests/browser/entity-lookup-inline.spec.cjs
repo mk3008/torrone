@@ -97,7 +97,7 @@ test('replacement search commits another candidate without Clear', async ({ page
   await committed(page, records[1]);
 });
 
-test('empty result, recovery and unfinished query restore on leaving', async ({ page }) => {
+test('empty result, recovery and partial edit clear on outside click', async ({ page }) => {
   const c = ui(page);
   await c.input.fill('no-such-location');
   await expect(page.getByRole('option')).toHaveCount(0);
@@ -108,9 +108,35 @@ test('empty result, recovery and unfinished query restore on leaving', async ({ 
   await committed(page, records[0]);
   await c.input.fill('riverside');
   await page.locator('#heading').click();
+  await expect(c.input).toHaveValue('');
+  await expect(c.id).toBeHidden();
+  await expect(c.field).toHaveAttribute('data-selected', 'false');
+  await expect(c.popup).toBeHidden();
+});
+
+test('partial edit clears on Tab, unchanged committed value survives Tab', async ({ page }, info) => {
+  test.skip(info.project.name.startsWith('mobile'), 'Desktop native Tab traversal.');
+  const c = ui(page);
+  await c.input.fill('north');
+  await c.option(records[0]).click();
+  await committed(page, records[0]);
+  await page.keyboard.press('Tab');
+  await expect(c.clear).toBeFocused();
   await expect(c.input).toHaveValue(records[0].name);
   await expect(c.id).toHaveText(`Location ${records[0].id}`);
+  await c.input.click();
+  await page.keyboard.press('ArrowDown');
+  await expect(c.popup).toBeVisible();
+  await page.keyboard.press('Tab');
+  await expect(c.input).toHaveValue(records[0].name);
+  await expect(c.id).toHaveText(`Location ${records[0].id}`);
+  await c.input.fill('North Distribution Cente');
+  await page.keyboard.press('Tab');
+  await expect(c.input).toHaveValue('');
+  await expect(c.id).toBeHidden();
+  await expect(c.field).toHaveAttribute('data-selected', 'false');
   await expect(c.popup).toBeHidden();
+  await expect(c.clear).toBeHidden();
 });
 
 test('keyboard highlights, commits and cancels without accepting free text', async ({ page }, info) => {
@@ -137,9 +163,13 @@ test('keyboard highlights, commits and cancels without accepting free text', asy
   await expect(c.popup).toBeVisible();
   await expect(c.input).toHaveValue('nonsense');
   await page.keyboard.press('Tab');
-  await expect(c.input).toHaveValue(records[2].name);
-  await expect(c.id).toHaveText(`Location ${records[2].id}`);
+  await expect(c.input).toHaveValue('');
+  await expect(c.id).toBeHidden();
   await expect(c.popup).toBeHidden();
+  await c.input.fill('harbor');
+  await c.option(records[2]).click();
+  await committed(page, records[2]);
+  await page.keyboard.press('Tab');
   await expect(c.clear).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(c.input).toHaveValue('');

@@ -69,6 +69,7 @@
       const selectedId = document.querySelector('[data-ref="selected-id"]');
       let committedId = null;
       let searching = false;
+      let edited = false;
       let matches = [];
       let active = -1;
 
@@ -145,14 +146,20 @@
       const commit = item => {
         committedId = item.id;
         searching = false;
+        edited = false;
         closePopup();
         renderCommitted();
         query.focus();
       };
       const restore = () => {
         searching = false;
+        edited = false;
         closePopup();
         renderCommitted();
+      };
+      const leave = () => {
+        if (edited) committedId = null;
+        restore();
       };
       query.addEventListener('focus', () => {
         if (committedId && !searching) query.select();
@@ -160,6 +167,7 @@
       });
       query.addEventListener('input', () => {
         searching = true;
+        edited = true;
         if (query.value.trim() === '') committedId = null;
         field.dataset.selected = 'false';
         clear.hidden = true;
@@ -179,21 +187,22 @@
           event.preventDefault();
           restore();
         } else if (event.key === 'Tab' && searching) {
-          restore();
+          leave();
         }
       });
       clear.addEventListener('click', () => {
         committedId = null;
         searching = true;
+        edited = false;
         renderCommitted();
         query.focus();
         showMatches();
       });
       document.addEventListener('pointerdown', event => {
-        if (!lookup.contains(event.target) && searching) restore();
+        if (!lookup.contains(event.target) && searching) leave();
       });
       lookup.addEventListener('focusout', event => {
-        if (!lookup.contains(event.relatedTarget) && searching) restore();
+        if (!lookup.contains(event.relatedTarget) && searching) leave();
       });
       window.addEventListener('resize', positionPopup);
       window.visualViewport?.addEventListener('resize', positionPopup);
