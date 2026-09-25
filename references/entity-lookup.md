@@ -18,6 +18,7 @@ This branch revises the existing executable in place for human review. Issue #21
 - Cancel, Close and Escape discard pending changes and leave the committed parent value intact. Reopening starts with an empty filter and no pending choice; the previously committed value remains unchanged until explicit confirmation.
 - Clear removes the committed value. Completion, cancellation and Clear return focus to Find location. Desktop opening focuses the query; narrow opening focuses the title to avoid summoning the keyboard immediately.
 - Narrow screens retain the existing fullscreen dialog, scrolling results and persistent actions. No independent textbox scrolling is added.
+- On desktop, the dialog keeps a bounded, stable outer height while filtering; the result area absorbs 2/1/0 result changes and scrolls internally when full. The empty state occupies that same area, leaving Select and Cancel in place.
 
 ## Real behavior, mocks and limits
 
@@ -36,3 +37,7 @@ Apply [application interaction requirements](../docs/application-interaction.md)
 This example demonstrates a dialog lookup operation, not a recommendation that every entity search must first open a dialog. The owner explicitly retained this sample's operation model while noting that a textbox-integrated autocomplete may better fit simple ID/name selection. No autocomplete implementation is requested here. Close and parent selection Clear apply the [approved flat icon-button Reference](icon-button.md), retaining distinct accessible action names, 44px targets and their existing cancellation/clearing and focus-return semantics. Both use a flat × icon; their placement identifies the affected dialog or selected value.
 
 The owner removed explanatory copy that repeated the radio group and Select/Cancel controls. This applies the [interaction-before-instructions principle](../docs/product-foundation.md#communicate-through-interaction-before-instructions); the radio group and Select/Cancel controls carry that operation meaning.
+
+## Pending geometry review
+
+The owner's [human finding](https://github.com/mk3008/torrone/issues/21#issuecomment-5831053714) identified the desktop dialog resizing as a material design problem. This correction keeps the dialog and footer stable across 2 → 1 → 0 → 2 results, with internal overflow and the mobile fullscreen model retained. Browser checks verify geometry and operation, but the corrected design still needs a new human review. Status remains draft.

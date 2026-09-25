@@ -29,14 +29,14 @@
     .dialog-body { padding: 20px; }
     .field-label { display: block; margin-bottom: 6px; color: #394b60; font-size: 14px; font-weight: 650; }
     .query { width: 100%; min-height: 42px; padding: 8px 11px; color: var(--text); background: var(--surface); border: 1px solid #94a8bd; border-radius: 6px; }
-    .results { display: grid; gap: 6px; margin-top: 12px; }
+    .results { display: grid; flex: 1; min-height: 0; gap: 6px; margin-top: 12px; overflow: auto; align-content: start; overscroll-behavior: contain; }
     .result { display: flex; gap: 12px; align-items: center; cursor: pointer; min-height: 56px; padding: 8px 10px; align-content: center; color: var(--text); background: var(--surface); border: 1px solid transparent; border-radius: 6px; text-align: left; }
     .result:hover, .result:has(input:checked) { background: #e5f0fb; border-color: #9ebbd5; }
     .result input { width: 20px; height: 20px; min-height: 20px; flex: 0 0 20px; accent-color: var(--accent); }
     .result:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: -3px; }
     .result-copy { display: grid; }
     .fixture-note { margin: 0; padding: 10px 24px; color: var(--muted); font-size: 14px; border-bottom: 1px dashed var(--border); }
-    .empty { margin: 12px 0 0; padding: 14px; color: var(--muted); background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; }
+    .empty { margin: 0; padding: 14px; color: var(--muted); background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; }
     .dialog-actions { display: flex; padding: 14px 20px; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--border); }
     .primary { min-height: 42px; padding: 0 16px; color: #fff; font-weight: 700; background: #1d70b3; border: 1px solid #155b92; border-radius: 6px; }
     .primary:disabled { color: #526579; background: #edf2f6; border-color: #b9c5d1; cursor: default; }
@@ -48,8 +48,8 @@
     .icon-button:focus-visible { outline: 2px solid #1d73b7; outline-offset: -3px; }
     .icon-button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
     @media (forced-colors: active) { .icon-button:focus-visible { outline-color: Highlight; } }
-    dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; max-height: calc(100dvh - 48px); }
-    .dialog-body { min-height: 0; overflow: auto; }
+    dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: min(480px, calc(100dvh - 48px)); }
+    .dialog-body { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
     body:has(dialog[open]) { overflow: hidden; }
     @media (max-width: 800px) {
       body { min-width: 0; }
@@ -58,12 +58,10 @@
       .selection { flex-wrap: wrap; gap: 12px; }
       button, .query { min-height: 44px; }
       dialog { inset: var(--dialog-top, 0px) 0 auto; width: 100%; max-width: none; height: var(--dialog-height, 100dvh); margin: 0; border: 0; border-radius: 0; }
-      dialog[open] { max-height: none; }
+      dialog[open] { height: var(--dialog-height, 100dvh); max-height: none; }
       .dialog-heading { padding: max(12px, env(safe-area-inset-top)) 16px 12px; }
       .dialog-heading h3 { font-size: 18px; }
-      .dialog-body { display: flex; flex-direction: column; padding: 16px; overflow: hidden; }
-      .dialog-body > label, .dialog-body > input, .dialog-body > p, .empty { flex-shrink: 0; }
-      .results { overflow: auto; min-height: 0; align-content: start; overscroll-behavior: contain; }
+      .dialog-body { padding: 16px; }
       .dialog-actions { padding: 12px 16px max(12px, env(safe-area-inset-bottom)); }
       .dialog-actions button { flex: 1; }
     }
@@ -84,8 +82,7 @@
     <div class="dialog-body">
       <label class="field-label" for="lookup-query">Location ID or name</label>
       <input class="query" id="lookup-query" data-ref="lookup-query" autocomplete="off">
-      <div class="results" role="radiogroup" aria-label="Matching service locations"></div>
-      <p class="empty" data-ref="lookup-empty" role="status" aria-live="polite" hidden>No matching locations. Change the ID or name.</p>
+      <div class="results" role="radiogroup" aria-label="Matching service locations"><p class="empty" data-ref="lookup-empty" role="status" aria-live="polite" hidden>No matching locations. Change the ID or name.</p></div>
     </div>
     <div class="dialog-actions"><button class="secondary" type="button" data-ref="lookup-cancel">Cancel</button><button class="primary" type="button" data-ref="lookup-confirm" disabled>Select</button></div>
   </dialog>
@@ -119,7 +116,7 @@
       const renderResults = () => {
         const term = query.value.trim().toLowerCase();
         const matches = locations.filter(item => item.id.toLowerCase().includes(term) || item.name.toLowerCase().includes(term));
-        results.replaceChildren();
+        results.replaceChildren(empty);
         for (const item of matches) {
           const label = document.createElement('label');
           label.className = 'result';
@@ -145,7 +142,6 @@
           label.append(radio, copy);
           results.append(label);
         }
-        results.hidden = matches.length === 0;
         empty.hidden = matches.length !== 0;
         confirm.disabled = pendingId === null;
       };

@@ -35,6 +35,48 @@ async function select(page, record) {
 }
 test.beforeEach(async ({ page }) => { await page.goto('/entity-lookup.html'); });
 
+test('desktop dialog and actions remain fixed across 2, 1, 0, 2 results', async ({ page }, info) => {
+  test.skip(info.project.name.startsWith('mobile'), 'Desktop dialog geometry; mobile remains fullscreen.');
+  const c = controls(page);
+  await c.trigger.click();
+  const results = page.locator('.results');
+  const geometry = async () => {
+    const [dialog, area, cancel, confirm] = await Promise.all([
+      c.dialog.boundingBox(), results.boundingBox(), c.cancel.boundingBox(), c.confirm.boundingBox(),
+    ]);
+    return { dialog, area, cancel, confirm };
+  };
+  const original = await geometry();
+  for (const [term, count] of [['north', 1], ['no-such-location', 0], ['', 2]]) {
+    await c.query.fill(term);
+    await expect(page.getByRole('radio')).toHaveCount(count);
+    if (count === 0) await expect(page.getByRole('status')).toBeVisible();
+    else await expect(page.getByRole('status')).toBeHidden();
+    const current = await geometry();
+    for (const part of ['dialog', 'area', 'cancel', 'confirm']) {
+      for (const axis of ['x', 'y', 'width', 'height']) {
+        expect(Math.abs(current[part][axis] - original[part][axis]), `${part}.${axis} after ${count} results`).toBeLessThan(1);
+      }
+    }
+  }
+  await expect(results).toHaveCSS('overflow-y', 'auto');
+  // Exercise overflow geometry without changing the two-record product fixture.
+  await results.evaluate(area => {
+    for (let i = 0; i < 20; i++) {
+      const row = document.createElement('div');
+      row.className = 'result';
+      row.textContent = `Overflow probe ${i}`;
+      area.append(row);
+    }
+  });
+  await expect.poll(() => results.evaluate(area => area.scrollHeight > area.clientHeight)).toBe(true);
+  await results.evaluate(area => { area.scrollTop = area.scrollHeight; });
+  await expect.poll(() => results.evaluate(area => area.scrollTop > 0)).toBe(true);
+  const overflow = await geometry();
+  expect(overflow.dialog).toEqual(original.dialog);
+  expect(overflow.confirm).toEqual(original.confirm);
+});
+
 for (const record of records) {
   test(`filter and commit actual ${record.id}`, async ({ page }) => {
     const c = controls(page);

@@ -14,6 +14,7 @@ Policy source: [Entity lookup draft](../references/entity-lookup.md), proposed u
 | Clear empties parent and permits reselection | Browser: Clear/reselection case | Actual active element checked |
 | Tab/Shift+Tab, radio arrows/Space, action Enter/Space | Browser: keyboard-only desktop cases | Chromium, Firefox and WebKit; no locator focus or event dispatch shortcuts |
 | Fullscreen mobile result and footer operation | Browser: touch case at 390×640 and 390×400 | Chromium touch/viewport emulation, not a physical keyboard test |
+| Stable desktop dialog geometry across 2 → 1 → 0 → 2 results; internal overflow | Browser: outer, result area and action bounds measured after each filter, with an overflow probe | Chromium, Firefox and WebKit; injected overflow rows exercise layout only, not product fixture behavior |
 
 ## Browser Gate
 
@@ -41,3 +42,5 @@ The active Work browser's Issue #5 local-preview URL-policy block remains unchan
 This example supports a bounded rule: cheap local interaction semantics must work even when external I/O is mocked. A single two-record fixture suffices; no API or simulation framework is needed. The authoritative wording is proposed in references/README.md and remains subject to this PR's review. Harness guidance is conditional; no state-injection harness was needed or validated here. A harness-only transition must never stand in for this example's real filtering/confirmation.
 
 No new unrelated GUI findings were opened. Actual-device keyboard visibility and human adoption remain explicit review limits of Issue #21.
+
+The owner's [geometry finding](https://github.com/mk3008/torrone/issues/21#issuecomment-5831053714) is addressed in the current draft by a bounded desktop dialog height and an internally scrolling result area that also holds the empty state. The mobile fullscreen model retains its viewport height. The measured browser regression does not replace the required human rereview; approval remains pending.
