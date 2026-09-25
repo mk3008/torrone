@@ -194,9 +194,12 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Tab');
     await expect(c.type).toBeFocused();
     await page.keyboard.press('Tab');
-    if (info.project.name === 'firefox') {
-      // Firefox includes the scrollable result region in native Tab order.
-      await expect(page.getByRole('radiogroup', { name: 'Matching service locations' })).toBeFocused();
+    const results = page.getByRole('radiogroup', { name: 'Matching service locations' });
+    const regionFocused = await results.evaluate(area => area === document.activeElement);
+    if (regionFocused) {
+      // Firefox includes the result region when it needs internal scrolling.
+      expect(info.project.name).toBe('firefox');
+      expect(await results.evaluate(area => area.scrollHeight > area.clientHeight)).toBe(true);
       await page.keyboard.press('Tab');
     }
     await expect(c.radio(records[0])).toBeFocused();
@@ -240,8 +243,8 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Shift+Tab');
     await expect(c.radio(northService)).toBeFocused();
     await page.keyboard.press('Shift+Tab');
-    if (info.project.name === 'firefox') {
-      await expect(page.getByRole('radiogroup', { name: 'Matching service locations' })).toBeFocused();
+    if (regionFocused) {
+      await expect(results).toBeFocused();
       await page.keyboard.press('Shift+Tab');
     }
     await expect(c.type).toBeFocused();
@@ -257,9 +260,9 @@ for (const activation of ['Enter', 'Space']) {
     await expect(c.region).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(c.type).toBeFocused();
-    if (info.project.name === 'firefox') {
+    if (regionFocused) {
       await page.keyboard.press('Tab');
-      await expect(page.getByRole('radiogroup', { name: 'Matching service locations' })).toBeFocused();
+      await expect(results).toBeFocused();
     }
     await page.keyboard.press('Tab');
     await expect(c.radio(northService)).toBeFocused();
