@@ -3,6 +3,7 @@ const records = [
   { id: 'LC-031', name: 'North Distribution Center', region: 'North', type: 'Distribution center', filter: ' lc-031 ' },
   { id: 'LC-044', name: 'Riverside Depot', region: 'West', type: 'Depot', filter: 'lc-044' },
 ];
+const northService = { id: 'LC-033', name: 'North Service Point' };
 function controls(page) {
   return {
     trigger: page.getByRole('button', { name: 'Choose location', exact: true }),
@@ -177,6 +178,8 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Enter');
     await expect(c.query).toBeFocused();
     await expect(c.dialog).toBeVisible();
+    await c.query.fill('North');
+    await expect(page.getByRole('radio')).toHaveCount(2);
     await page.keyboard.press('Tab');
     await expect(c.region).toBeFocused();
     await page.keyboard.press('Tab');
@@ -187,8 +190,8 @@ for (const activation of ['Enter', 'Space']) {
     await expect(c.radio(records[0])).toBeChecked();
     await expect(c.confirm).toBeEnabled();
     await page.keyboard.press('ArrowDown');
-    await expect(c.radio(records[1])).toBeFocused();
-    await expect(c.radio(records[1])).toBeChecked();
+    await expect(c.radio(northService)).toBeFocused();
+    await expect(c.radio(northService)).toBeChecked();
     await expect(c.radio(records[0])).not.toBeChecked();
     await page.keyboard.press('ArrowUp');
     await expect(c.radio(records[0])).toBeChecked();
@@ -221,7 +224,7 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Shift+Tab');
     await expect(c.cancel).toBeFocused();
     await page.keyboard.press('Shift+Tab');
-    await expect(c.radio(records[1])).toBeFocused();
+    await expect(c.radio(northService)).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(c.type).toBeFocused();
     await page.keyboard.press('Shift+Tab');
@@ -239,7 +242,7 @@ for (const activation of ['Enter', 'Space']) {
     await page.keyboard.press('Tab');
     await expect(c.confirm).toBeFocused();
     await page.keyboard.press(activation);
-    await committed(page, records[1]);
+    await committed(page, northService);
     await page.keyboard.press('Tab');
     await expect(c.clear).toBeFocused();
     await page.keyboard.press(activation);
