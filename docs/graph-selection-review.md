@@ -47,9 +47,9 @@ The distinction between amber selection / relation endpoints and blue keyboard f
 
 ## Verification
 
-Evidence is recorded below after operating the final HTML. Run the focused regression with `node tests/check-graph-selection.cjs` (Playwright and Chromium available in the test environment); it writes screenshots and a JSON result under ignored `tmp/graph-selection-evidence/`.
+Evidence below separates local infrastructure failures from the successful GitHub Actions browser run. Run the focused regression with `node tests/check-graph-selection.cjs` (Playwright and Chromium available in the test environment); it writes screenshots and a JSON result under ignored `tmp/graph-selection-evidence/`.
 
-### 2026-10-05 execution results
+### 2026-10-05 local execution attempts
 
 | Source / path | Evidence and conditions | Result / gap |
 | --- | --- | --- |
@@ -60,4 +60,20 @@ Evidence is recorded below after operating the final HTML. Run the focused regre
 | Cloud-browser local review | File protocol and loopback URL attempted | Blocked by browser runtime URL policy. No bypass attempted. |
 | Narrow / desktop screenshots and real keyboard traversal | No rendered Reference reached in the available test browser | Unverified. No screenshot or browser-pass claim is made. |
 
-Human review can proceed by opening the self-contained HTML in a desktop browser. The current candidate has source/state checks but still needs rendered visual, native keyboard and accessibility review. A failure to run browser infrastructure does not establish a UI defect or UI correctness.
+### 2026-10-05 browser verification
+
+The subsequent [Graph Reference browser run](https://github.com/mk3008/torrone/actions/runs/37326476948) passed on source revision `322d9afbaca72dd0eabc9c2117dafea75f419dab`, using Playwright 1.58.2 and Chromium 145.0.7632.6 on Ubuntu. The HTML bytes are unchanged from `3f69fd9daaa3c7bfb12b52af6e2b1891b8df7499`: SHA-256 `f638d4146dd36f5f29fb42b841da7a1d4c08cf4e83836972c984db6d1b13fae9`.
+
+| Candidate path | Browser evidence | Result / limit |
+| --- | --- | --- |
+| Node → Detail → either omitted Read → Back | Both paired Reads revealed separately; 4 → 5 → 4 rendered strokes; heading focus and return to originating relation button | Passed |
+| Relation → different node / Clear / Escape | Temporary Read disappears, graph and Detail agree, focus returns to the appropriate node or viewport | Passed |
+| Native keyboard across controls | Enter / Space activation, Tab / Shift+Tab between nodes, View details then Tab into Read, Escape recovery | Passed for the exercised paths, not a whole-Viewer keyboard policy |
+| Order change and mode interruption | Repeated reselection, different source node, All lines / representative change, blank-canvas clear | Passed |
+| Input-only and business Exception | Retained across target changes; distinct Exception description | Passed |
+| Desktop 1440×1000 and narrow 390×844 | Five PNGs in the [browser evidence artifact](https://github.com/mk3008/torrone/actions/runs/37326476948/artifacts/11351813704); overview, omitted Read, Exception, narrow node Detail and narrow return inspected | Passed for these rendered states; narrow screen is not a real mobile-device test |
+| Runtime | No page errors and no external requests from the standalone HTML | Passed |
+
+The initial browser test used Playwright `:visible` to count SVG paths; a vertical path has a zero-width geometric box even when its stroke is rendered. That test false negative was corrected by checking rendered stroke styles. Browser cleanup now also occurs after a failed assertion. Neither correction changed the Reference HTML. These findings are addressed in the regression and retained in CI history.
+
+Artifacts expire after 14 days; the test script reproduces them. Screenshots are also supplied with the human-review handoff. The sample is still a draft: screen readers, real touch / mobile keyboard, other browsers and whole-Viewer density remain unverified. Only human review can adopt this design.
