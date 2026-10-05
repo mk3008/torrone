@@ -29,7 +29,7 @@ Preserve the local relationship between conditions, comparable results, pending 
 
 ## Approval and exact artifact
 
-The repository owner explicitly accepted the Torrone screen review on 2026-10-05 and authorized the review-finalization merge. Approval is bounded to the responsibility and preserved behavior above.
+The repository owner explicitly accepted the Torrone screen review on 2026-10-05 and authorized the review-finalization merge; see the [human decision record in PR #31](https://github.com/mk3008/torrone/pull/31). Approval is bounded to the responsibility and preserved behavior above.
 
 - Approved executable: [review/references/entity-lookup.html](https://github.com/mk3008/torrone/blob/5574ba4f8f6007f81ca7c1d7dac394fc5cd82acc/review/references/entity-lookup.html)
 - Git blob: `b28487af5c464d119099fd7cf12a1432a2dae512`
