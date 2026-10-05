@@ -48,3 +48,16 @@ The distinction between amber selection / relation endpoints and blue keyboard f
 ## Verification
 
 Evidence is recorded below after operating the final HTML. Run the focused regression with `node tests/check-graph-selection.cjs` (Playwright and Chromium available in the test environment); it writes screenshots and a JSON result under ignored `tmp/graph-selection-evidence/`.
+
+### 2026-10-05 execution results
+
+| Source / path | Evidence and conditions | Result / gap |
+| --- | --- | --- |
+| Exact Viewer fixture subset | Embedded JSON compared with the four-node source subset | Passed: four exact nodes and six exact relations |
+| Reference syntax / review bundle | JavaScript compilation, `git diff --check`, `python3 tools/build-review.py` | Passed; self-contained HTML copied without modification |
+| Candidate state and recovery | `node tests/check-graph-selection-state.cjs` | Passed: both omitted Reads, target switching, Back, Clear, Escape, mode resets, repeated selection, Input-only / Exception retention and blank-canvas clear. Simulated handlers only. |
+| Native interaction / rendered layout | `node tests/check-graph-selection.cjs`, Linux Chromium; ordinary and approved elevated execution attempted | Blocked before page load: environment rejected Chromium socket creation. Browser regression did not run. |
+| Cloud-browser local review | File protocol and loopback URL attempted | Blocked by browser runtime URL policy. No bypass attempted. |
+| Narrow / desktop screenshots and real keyboard traversal | No rendered Reference reached in the available test browser | Unverified. No screenshot or browser-pass claim is made. |
+
+Human review can proceed by opening the self-contained HTML in a desktop browser. The current candidate has source/state checks but still needs rendered visual, native keyboard and accessibility review. A failure to run browser infrastructure does not establish a UI defect or UI correctness.
