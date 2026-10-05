@@ -10,7 +10,10 @@ let browser;
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(!r.url().startsWith('file:'))requests.push(r.url());});
  const url='file://'+path.resolve('review/references/graph-selection-draft.html');await page.goto(url);
  const node=id=>page.locator(`.node[data-node="${id}"]`),read=i=>page.locator(`.relation-item[data-relation="${i}"]`),edge=i=>page.locator(`.edge-hit[data-relation="${i}"]`);
- const visible=()=>page.locator('.edge-hit:visible').count();
+ // Vertical SVG paths have a zero-width geometric box; Playwright :visible
+ // can omit them even though their nonzero stroke is rendered.
+ const visible=()=>page.locator('.edge').evaluateAll(paths=>paths.filter(p=>getComputedStyle(p).display!=='none' && getComputedStyle(p).visibility==='visible' && Number.parseFloat(getComputedStyle(p).strokeWidth)>0).length);
+ await page.screenshot({path:path.join(directory,'desktop-overview.png'),fullPage:true});
  assert.equal(await node('業務設計').count(),1);assert.equal(await page.locator('.node').count(),4);assert.equal(await visible(),4);
  await page.screenshot({path:path.join(directory,'desktop-overview.png'),fullPage:true});
  for(const i of [1,3]){
