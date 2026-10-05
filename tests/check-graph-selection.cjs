@@ -2,9 +2,10 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+let browser;
 (async()=>{
  const directory=path.resolve('tmp/graph-selection-evidence');fs.mkdirSync(directory,{recursive:true});
- const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
+ browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
  const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[],requests=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(!r.url().startsWith('file:'))requests.push(r.url());});
  const url='file://'+path.resolve('review/references/graph-selection-draft.html');await page.goto(url);
@@ -46,4 +47,4 @@ const path = require('node:path');
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
  const result={status:'PASS',browser:await browser.version(),desktop:[1440,1000],narrow:[390,844],pageErrors:errors,externalRequests:requests,checks:['four nodes/six retained relations','paired Reads temporarily reveal separately','Input-only and Exception always present','Back restores initiating control','node switch clears temporary edge','Clear/Escape reset focus','Enter/Space activation','Tab/Shift+Tab traversal','View details cross-region focus','mode change clears selection','repeated/order-changed flows','blank canvas clear','narrow reachability/no page overflow'],limits:['Human design approval pending','No screen reader, real touch/mobile keyboard, other browsers, or whole-Viewer verification']};
  fs.writeFileSync(path.join(directory,'result.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));await browser.close();
-})().catch(e=>{console.error(e);process.exitCode=1;});
+})().catch(async e=>{console.error(e);await browser?.close();process.exitCode=1;});
