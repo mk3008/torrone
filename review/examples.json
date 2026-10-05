@@ -38,5 +38,13 @@
     "guidance": "Open and dismiss navigation, filter requests, and review results. On phones, navigation overlays the workspace and results scroll horizontally within their own region.",
     "status": "Responsive working draft; mobile changes await human approval.",
     "evidence": "docs/poc/experiments/017-reference-html-ssot/README.md"
+  },
+  {
+    "id": "graph-selection-draft",
+    "title": "Graph selection and omitted Reads",
+    "source": "review/references/graph-selection-draft.html",
+    "guidance": "Select a node, inspect Read / Write, reveal an omitted Read, then switch target or clear. Compare all lines and check keyboard paths.",
+    "status": "Draft four-node study; human design review pending.",
+    "evidence": "docs/graph-selection-review.md"
   }
 ]
