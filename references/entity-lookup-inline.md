@@ -29,7 +29,7 @@ Preserve the observable relationship between field, suggestions, committed name/
 
 ## Approval and exact artifact
 
-The repository owner explicitly accepted the Torrone screen review on 2026-10-05 and authorized the review-finalization merge. Approval is bounded to the responsibility and preserved behavior above.
+The repository owner explicitly accepted the Torrone screen review on 2026-10-05 and authorized the review-finalization merge; see the [human decision record in PR #31](https://github.com/mk3008/torrone/pull/31). Approval is bounded to the responsibility and preserved behavior above.
 
 - Approved executable: [review/references/entity-lookup-inline.html](https://github.com/mk3008/torrone/blob/5574ba4f8f6007f81ca7c1d7dac394fc5cd82acc/review/references/entity-lookup-inline.html)
 - Git blob: `0c0eb19a4dccf897d73dcdf8c26751215bbc8a97`
