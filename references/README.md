@@ -67,8 +67,8 @@ Historical material under `docs/poc/` is research evidence. Working copies under
 
 ## Current curated References
 
-- [Entity dialog lookup](entity-lookup.md) — draft single-selection lookup with explicit confirmation.
-- [Inline Entity lookup](entity-lookup-inline.md) — draft searchable single-entity field without a dialog.
+- [Entity Chooser Dialog](entity-lookup.md) — approved parent-dependent selection with combined conditions, comparable results and explicit confirmation.
+- [Inline Entity lookup](entity-lookup-inline.md) — approved searchable single-entity field without a dialog.
 
 - [Flat icon buttons](icon-button.md) — approved for icon-only command appearance and states.
 
