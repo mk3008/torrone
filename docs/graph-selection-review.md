@@ -1,5 +1,7 @@
 # Graph selection and omitted Reads
 
+**Optional composition evidence.** Start with the [graph components](graph-components-review.md) for current component-level review. This preserved four-node / six-relation HTML is useful only when a graph / Detail coordination question remains; a full-page mock is not a required deliverable. The original scope and verification record below are retained.
+
 Status: **draft**. Human design review is pending. No design adoption, production Viewer change, or merge is implied.
 
 ## Open and operate

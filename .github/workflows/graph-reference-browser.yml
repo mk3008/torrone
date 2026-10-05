@@ -3,7 +3,8 @@ on:
   pull_request:
     paths:
       - 'review/references/graph-selection-draft.html'
-      - 'tests/check-graph-selection*.cjs'
+      - 'review/references/graph-components-draft.html'
+      - 'tests/check-graph-*.cjs'
       - '.github/workflows/graph-reference-browser.yml'
 jobs:
   graph-reference:
@@ -29,9 +30,12 @@ jobs:
           export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
           node tests/check-graph-selection-state.cjs
           node tests/check-graph-selection.cjs
+          node tests/check-graph-components.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: graph-reference-browser-evidence
-          path: tmp/graph-selection-evidence/
+          path: |
+            tmp/graph-selection-evidence/
+            tmp/graph-components-evidence/
           retention-days: 14
