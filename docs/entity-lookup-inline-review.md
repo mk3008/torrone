@@ -1,5 +1,12 @@
 # Inline Entity lookup — Issue #27 review record
 
+## Final disposition — 2026-10-05
+
+The owner accepted this bounded Reference and authorized review finalization; [PR #31](https://github.com/mk3008/torrone/pull/31) records the human decision and pins the approved executable in curation. The implementation and browser evidence below are the historical pre-acceptance review record. Their requests to keep the Reference draft are superseded by this explicit decision; their unverified device, assistive-technology and consuming-application boundaries remain. No new browser pass is claimed.
+
+## Historical verification record
+
+
 This is a standalone draft Reference, not a consuming application. Its proposed local interaction policy is in [curation](../references/entity-lookup-inline.md). There is no application-specific shared interaction source or approved Entity lookup contract to claim. A consumer must supply its own application policy and verify cross-control navigation, form submission, scroll and mobile keyboard behavior.
 
 | Path | Browser evidence | Remaining boundary |
