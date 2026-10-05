@@ -53,6 +53,10 @@ Run `node tests/check-graph-components.cjs` with Playwright and Chromium. The ex
 | Syntax, whitespace and bundle | Embedded JavaScript parse, `node --check`, `git diff --check`, `python3 tools/build-review.py` | Passed locally; both HTML files copied byte-for-byte |
 | Original composition state / source | Existing deterministic handler test and SHA-256 `f638d4146dd36f5f29fb42b841da7a1d4c08cf4e83836972c984db6d1b13fae9` | Passed; original HTML unchanged |
 | Component native keyboard / rendering | Local Linux Chromium launch | Blocked before page load by environment socket restrictions; no local browser-pass claim |
-| Node selection/focus, relation open/close/return, omitted-Read reset, narrow reachability | Existing GitHub Actions workflow, component regression | Pending CI execution; native/browser results will be recorded separately |
+| Node selection/focus, relation open/close/return, omitted-Read reset, narrow reachability | [Graph browser CI](https://github.com/mk3008/torrone/actions/runs/37391011210), revision `4f7587a0446e815916999cf4a20b31c00c5bd36a`, Playwright 1.58.2 / Chromium 145.0.7632.6 / Ubuntu | Passed; native Enter/Space, Tab/Shift+Tab, Escape, switch/repeat and focus return exercised |
+| Desktop 1200×1000 and narrow 390×844 | [Four component screenshots and result JSON](https://github.com/mk3008/torrone/actions/runs/37391011210/artifacts/11380679103) inspected | Normal, selection versus focus and omitted-Read detail states legible; no page overflow in narrow check |
+| Standalone runtime | Same browser run | No page errors or external requests |
 
 Source checks are not rendered-UI evidence. The test covers the bounded component paths and interruptions above; it does not grant design approval or application-wide accessibility coverage.
+
+The component HTML reviewed in that run has SHA-256 `4aee8d7a1430344204e3c393a3e0088a6c85dbbcaaad4c7f133d83fd0ef52179`. This evidence update changes documentation only. The original composition browser regression also passed in the same run. Screenshots are individual-state evidence; human design review and the stated unverified conditions remain open.
