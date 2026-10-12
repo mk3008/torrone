@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Workspace shell — Torrone</title><link rel="stylesheet" href="../../catalog.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="top"><div class="wrap"><a class="brand" href="../../index.html">Torrone / Catalog</a><nav aria-label="Section navigation"><a href="#states">States</a><a href="#intent">Design intent</a><a href="#source">Source</a></nav></div></header>
+<main id="main" class="wrap"><header class="hero"><p class="eyebrow">Shell 01 / Research-selected example</p><h1>Workspace shell</h1>
+<p class="lead">A persistent application header, navigation drawer, and separately scrolling workspace. Compare independent states first, then adapt the relationship to the target application and platform.</p>
+<div class="tags"><span class="tag">Web-origin</span><span class="tag neutral">Header / Drawer / Main</span><span class="tag neutral">Not an approved curated Reference</span></div></header>
+<section id="states" class="section"><div class="section-head"><h2>Drawer visibility</h2><p>Light / two captures</p></div>
+<div class="gallery">
+<div class="frame"><figure><div class="image"><img src="images/drawer-open-light.png" alt="Light appearance, navigation drawer open alongside main content." loading="eager"></div><figcaption><strong>Drawer visible</strong><p>Left navigation and main workspace occupy separate regions below the header.</p></figcaption></figure></div>
+<div class="frame"><figure><div class="image"><img src="images/drawer-hidden-light.png" alt="Light appearance, drawer hidden while the workspace expands." loading="eager"></div><figcaption><strong>Drawer hidden</strong><p>The hidden drawer does not leave an unused strip in the workspace.</p></figcaption></figure></div>
+</div></section>
+<section class="section"><div class="section-head"><h2>Theme and viewport samples</h2><p>Three independent files</p></div>
+<div class="gallery">
+<div class="frame"><figure><div class="image"><img src="images/drawer-open-dark.png" alt="Dark appearance with left navigation shown." loading="lazy"></div><figcaption><strong>Dark / visible</strong><p>The same region structure in the dark palette.</p></figcaption></figure></div>
+<div class="frame"><figure><div class="image"><img src="images/drawer-hidden-dark.png" alt="Dark appearance with drawer hidden." loading="lazy"></div><figcaption><strong>Dark / hidden</strong><p>Workspace expansion is preserved.</p></figcaption></figure></div>
+<div class="frame"><figure><div class="image"><img src="images/drawer-open-light-narrow.png" alt="Narrow viewport with left navigation visible; this screenshot is not proof of real mobile usability." loading="lazy"></div><figcaption><strong>Narrow / visible</strong><p>One experimental viewport capture, not an approved mobile policy.</p></figcaption></figure></div>
+</div></section>
+<section id="intent" class="section"><div class="section-head"><h2>Design intent</h2></div><div class="notes">
+<section><h3>Relationships to preserve</h3><ul>
+<li>The application header remains identifiable while workspace content scrolls.</li>
+<li>Drawer visibility has a clear control. Hiding it gives its space back to the workspace.</li>
+<li>Navigation and workspace scroll independently when both overflow.</li>
+<li>The current navigation item is distinguishable without color alone.</li></ul></section>
+<section><h3>Decisions left to the product</h3><ul>
+<li>Real destinations, identity, permissions and business content.</li>
+<li>Whether navigation search, disclosure and palette controls are needed.</li>
+<li>Native control selection, focus behavior, responsive policy and accessibility verification.</li>
+<li>Exact colors, spacing, breakpoints, source HTML and framework.</li></ul></section></div>
+<div class="notice"><strong>Platform boundary:</strong> the source is a Web specimen. For Windows or macOS, carry over the region responsibilities and prefer standard platform controls. Do not treat these captures as a prescribed cross-platform implementation.</div></section>
+<section id="source" class="section"><div class="section-head"><h2>Provenance and review limits</h2></div>
+<p>The five pictures are copied byte-for-byte from the <a href="../../../docs/poc/experiments/012-common-shell-variability/attempt-23/selected-common-shell.md">owner-selected Attempt 23 / Run 1</a>. This is a research selection, not a newly approved general design.</p>
+<p>To inspect bounded interactions, see the <a href="../../../docs/poc/experiments/015-reference-first-common-shell/index.html?drawer=open&amp;theme=light">historical runnable example</a> and <a href="../../../docs/poc/experiments/015-reference-first-common-shell/reference-contract.md">its contract</a>. These images alone do not validate real mobile, assistive technology or native OS behaviors.</p>
+</section><footer class="footer"><a href="../../index.html">← Catalog index</a> · <a href="README.md">Capture notes</a></footer></main></body></html>

@@ -44,6 +44,7 @@ The Reference HTML research handoff and experiment archive are preserved under `
 ## Repository map
 
 - [`references/`](references/) — curated design originals. `approved` entries are the current References for their stated responsibilities and scope.
+- [`catalog/`](catalog/) — experimental visual catalog, starting with a selected application shell; separate from approved References.
 - [Development and Reference review](docs/development-workflow.md) — run a small review bundle in Work, prepare a phone-review handoff, and move an explicitly human-approved design into curation.
 - `review/` and `tools/build-review.py` — development review entry point for selected existing HTML samples; not an approval registry.
 - `docs/product-foundation.md` — product problem, principles, scope, and decision boundaries.
