@@ -25,3 +25,12 @@ figcaption{padding:15px 18px 20px}figcaption strong{display:block;margin-bottom:
 .footer{padding:26px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 .skip{position:absolute;top:-80px;left:10px;background:#fff;padding:10px}.skip:focus{top:10px;z-index:2}
 @media(max-width:730px){.gallery,.notes,.catalog-card{grid-template-columns:1fr}.catalog-card img{max-height:240px}.image{padding:6px}}
+
+/* Crop unchanged historical screenshot assets only for MENU-001 gallery presentation. */
+.menu-image{min-height:494px;align-items:flex-start}
+.menu-crop{height:470px;width:248px;max-width:100%;overflow:hidden;background:#fff;border:1px solid var(--line);flex:0 0 auto}
+.menu-crop img{display:block;width:1440px!important;height:900px!important;max-width:none!important;max-height:none!important;object-fit:none!important;transform:translateY(-56px);box-shadow:none}
+.frame figcaption a{font-size:.85rem}
+.catalog-card .menu-preview{height:320px;min-width:0;overflow:hidden;position:relative;background:#e6ece9}
+.catalog-card .menu-preview img{position:absolute;top:-56px;left:0;width:1440px;height:900px;max-height:none;object-fit:none}
+@media(max-width:730px){.catalog-card .menu-preview{height:255px}}
