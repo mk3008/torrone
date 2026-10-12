@@ -12,7 +12,7 @@ A catalog ID such as `SHELL-001` identifies one design pattern independently of 
 
 Additional categories (screens, components, topology) can be added when real examples are ready. No empty folders or custom indexing tool are required.
 
-## Menu pattern
+## Menu patterns
 
 [MENU-001](menus/one-level/index.html) collects one-level expandable menu states. Its parent expands and collapses, while current-selection styling belongs only to leaf destinations. MENU-001 describes the navigation content; SHELL-001 describes drawer visibility. Neither approval nor a universal application policy is implied.
 
