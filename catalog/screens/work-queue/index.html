@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>SCREEN-001 — Work queue with filters above results | Torrone</title><link rel="stylesheet" href="../../catalog.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="top"><div class="wrap"><a class="brand" href="../../index.html">Torrone / Catalog</a><nav aria-label="Sections"><a href="#states">States</a><a href="#intent">Intent</a><a href="#source">Source</a></nav></div></header>
+<main id="main" class="wrap"><header class="hero"><p class="eyebrow">SCREEN-001 / Screen pattern / research example</p>
+<h1>Work queue with filters above results</h1>
+<p class="lead">The screen keeps search conditions and commands in a stable upper area, with a result area that distinguishes initial, populated and empty outcomes. Reuse the <em>relationship</em> of content areas, not the demo's access-review business vocabulary or entire Application Shell.</p>
+<div class="tags"><span class="tag">Business application</span><span class="tag neutral">Web-origin</span><span class="tag neutral">Historical example · not a new approval</span></div></header>
+<section id="states" class="section"><div class="section-head"><h2>Screen states</h2><p>Three independent, full-width captures</p></div><div class="gallery gallery-full"><article class="frame"><figure><div class="image"><a href="images/initial.png" aria-label="Open Initial state full screenshot"><img src="images/initial.png" width="1440" height="900" alt="Initial state: source browser capture of the research work queue" loading="eager"></a></div><figcaption><strong>Initial state</strong><p>The filter panel and Search/Clear remain visible. The result panel describes how to begin.</p><p><a href="images/initial.png">Open full capture ↗</a></p></figcaption></figure></article>
+<article class="frame"><figure><div class="image"><a href="images/results.png" aria-label="Open Populated results full screenshot"><img src="images/results.png" width="1440" height="900" alt="Populated results: source browser capture of the research work queue" loading="lazy"></a></div><figcaption><strong>Populated results</strong><p>Comparable rows and pagination appear below the filter area, without moving search controls.</p><p><a href="images/results.png">Open full capture ↗</a></p></figcaption></figure></article>
+<article class="frame"><figure><div class="image"><a href="images/no-results.png" aria-label="Open No matching results full screenshot"><img src="images/no-results.png" width="1440" height="900" alt="No matching results: source browser capture of the research work queue" loading="lazy"></a></div><figcaption><strong>No matching results</strong><p>The result region explains the empty outcome, while filters remain visible and editable.</p><p><a href="images/no-results.png">Open full capture ↗</a></p></figcaption></figure></article></div></section>
+<section id="intent" class="section"><div class="section-head"><h2>What this design communicates</h2></div>
+<div class="notes"><section><h3>Reusable arrangement</h3><ul>
+<li>Group filter inputs, Search and Clear into one recognizable area above results.</li>
+<li>Use consistent result headings so a returned row is easy to compare.</li>
+<li>Keep results, not-yet-searched guidance and empty-result feedback within the same region.</li>
+<li>Explain how to recover from no results while leaving the filters available.</li></ul></section>
+<section><h3>Application-specific choices</h3><ul>
+<li>Which conditions, data columns and commands are required by the Business Design.</li>
+<li>Backend behavior, auth, latency, pagination, loading/error/retry and actual navigation.</li>
+<li>Whether a full page, split pane or another composition suits the user's tasks.</li>
+<li>Platform-standard controls, precise colors and geometry, keyboard/mobile/accessibility testing.</li></ul></section></div>
+<div class="notice"><strong>Research fixture boundary:</strong> the top-right “REFERENCE SCENARIO” selector exists only to exercise sample states. It is not a production UI requirement. The left navigation is outside this screen pattern; see <a href="../../menus/one-level/index.html">MENU-001</a>.</div></section>
+<section id="source" class="section"><div class="section-head"><h2>Source and limits</h2></div>
+<p>Unmodified screenshots from the historical <a href="../../../docs/poc/experiments/017-reference-html-ssot/reference/index.html">PoC 017 Reference</a> and its <a href="../../../docs/poc/experiments/017-reference-html-ssot/plan.md">study plan</a>. All three state images are separate copies of exact Git blobs, not one merged image.</p>
+<p>This is a reusable research example, not a new current approved Reference or verified product screen. In particular, these captures do not prove that the backend, application keyboard policy, real-device experience or business results are implemented.</p></section>
+<footer class="footer"><a href="../../index.html">← Catalog</a> · <a href="README.md">Source mapping</a></footer></main></body></html>
