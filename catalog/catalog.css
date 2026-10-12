@@ -34,3 +34,9 @@ figcaption{padding:15px 18px 20px}figcaption strong{display:block;margin-bottom:
 .catalog-card .menu-preview{height:320px;min-width:0;overflow:hidden;position:relative;background:#e6ece9}
 .catalog-card .menu-preview img{position:absolute;top:-56px;left:0;width:1440px;height:900px;max-height:none;object-fit:none}
 @media(max-width:730px){.catalog-card .menu-preview{height:255px}}
+
+
+/* Full-width gallery for screen pattern captures; individual assets are never recomposed. */
+.gallery-full{grid-template-columns:minmax(0,1fr)}
+.gallery-full .image img{max-height:none}
+.gallery-full .image a{display:block;width:100%;line-height:0}
