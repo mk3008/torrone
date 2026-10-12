@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Workspace shell — Torrone</title><link rel="stylesheet" href="../../catalog.css"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>SHELL-001 — Header-controlled, fully hideable left drawer — Torrone</title><link rel="stylesheet" href="../../catalog.css"></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="top"><div class="wrap"><a class="brand" href="../../index.html">Torrone / Catalog</a><nav aria-label="Section navigation"><a href="#states">States</a><a href="#intent">Design intent</a><a href="#source">Source</a></nav></div></header>
-<main id="main" class="wrap"><header class="hero"><p class="eyebrow">Shell 01 / Research-selected example</p><h1>Workspace shell</h1>
-<p class="lead">A persistent application header, navigation drawer, and separately scrolling workspace. Compare independent states first, then adapt the relationship to the target application and platform.</p>
+<main id="main" class="wrap"><header class="hero"><p class="eyebrow">SHELL-001 / Research-selected example</p><h1>Header-controlled, fully hideable left drawer</h1>
+<p class="lead">A button in the application header controls the left navigation drawer. Closing it removes the entire drawer, including its menu and icons; the main workspace takes the freed space. Unlike a compact navigation rail, nothing remains visible on the left. Compare the captures, then adapt the pattern to the target platform.</p>
 <div class="tags"><span class="tag">Web-origin</span><span class="tag neutral">Header / Drawer / Main</span><span class="tag neutral">Not an approved curated Reference</span></div></header>
 <section id="states" class="section"><div class="section-head"><h2>Drawer visibility</h2><p>Light / two captures</p></div>
 <div class="gallery">
@@ -18,7 +18,7 @@
 <section id="intent" class="section"><div class="section-head"><h2>Design intent</h2></div><div class="notes">
 <section><h3>Relationships to preserve</h3><ul>
 <li>The application header remains identifiable while workspace content scrolls.</li>
-<li>Drawer visibility has a clear control. Hiding it gives its space back to the workspace.</li>
+<li>The header owns the drawer toggle. Hiding the drawer removes all navigation UI, not just its labels, and returns the space to the workspace.</li>
 <li>Navigation and workspace scroll independently when both overflow.</li>
 <li>The current navigation item is distinguishable without color alone.</li></ul></section>
 <section><h3>Decisions left to the product</h3><ul>
