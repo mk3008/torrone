@@ -1,31 +1,56 @@
-# Torrone visual catalog (pilot)
+# Torrone visual catalog
 
-The catalog gives humans and AI **approximate visual examples** of UI patterns and their named appearance states. Use it to recognize what a part or pattern should look like, not as a pixel-accurate specification or an executable behavior contract.
+Choose a UI pattern by its responsibility, then compare its independent state images. Each entry supplies a stable ID, a recognizable name, a short explanation, source platform, provenance, visual-acceptance record and limits. Humans and AI use the same images and descriptions as design inputs.
 
-Browse the [catalog index](index.html) and [SHELL-001 — Header-controlled, fully hideable left drawer](shells/workspace/index.html).
+## Available examples
 
-## What this catalog defines
+Open an entry below to read its state list and view the PNGs directly on GitHub. These eleven entries contain 52 images. Their appearance examples have recorded human acceptance; executable behavior has its own review scope.
 
-- **Visual subject and scope:** what the example represents (Shell, Menu, Screen or Component), excluding incidental surrounding UI in a source screenshot.
-- **State-specific appearance:** one independent image per represented state where possible, with a short state name and caption (for example, ON/OFF, enabled/disabled, selected/unselected, expanded/collapsed). The images show visual differences, not the conditions or operations that produce them.
-- **Coarse visual relationships:** recognizable shape and relative arrangement needed to identify a pattern, such as the position of a switch thumb or the nesting of a menu item. These are illustrative, not exact measurements.
-- **Provenance and adoption scope:** the source, target platform where known, and whether the example is a candidate, research reference or explicitly accepted within its stated scope. A catalog ID identifies a pattern; it is not an approval status.
+| Entry | Responsibility | Images |
+| --- | --- | --- |
+| [SHELL-001 — Fully hideable left drawer](shells/workspace/README.md) | Header, drawer and workspace relationships. | 5 |
+| [MENU-001 — Navigation items](menus/one-level/README.md) | Selection emphasis, child indentation and parent arrow direction. | 9 |
+| [POPOVER-001 — Anchored panel](components/anchored-popover/README.md) | Trigger alone or with a panel below it. | 2 |
+| [ICON-BUTTON-001 — Flat icon commands](components/flat-icon-button/README.md) | Normal, hover, pressed, focus and disabled appearances. | 5 |
+| [DATE-RANGE-001 — Optional date boundaries](components/date-range/README.md) | Start/End values, local calendars and an invalid-value appearance. | 8 |
+| [INLINE-LOOKUP-001 — Searchable entity field](components/inline-entity-lookup/README.md) | Input, candidate list, emphasis and committed value. | 7 |
+| [DIALOG-001 — Dialog frame and regions](dialogs/framed/README.md) | Header, replaceable body and action area; desktop and narrow fullscreen examples. | 2 |
+| [PAGINATION-001 — Previous/current/next](components/pagination/README.md) | First, middle, last and single-page availability. | 4 |
+| [BADGE-001 — Text badges](components/text-badge/README.md) | Two example labels in rounded enclosures. | 2 |
+| [DISCLOSURE-001 — Collapsible section](components/disclosure/README.md) | Persistent heading/action with the body hidden or visible. | 2 |
+| [TEXT-BUTTON-001 — Text commands](components/text-button/README.md) | Primary/secondary examples in normal, hover and keyboard-focus appearances. | 6 |
 
-Keep images of individual parts focused on those parts. A full-page screenshot may provide historical context for a Shell or Screen, but unrelated controls and sample business content do not become part of the pattern. Do not infer unpictured states or behavior.
+For the HTML galleries, download and extract the repository ZIP or use a local checkout, then open `catalog/index.html` in a browser. The gallery needs no build or package installation. Its layout and captions organize the pictures; they are not the design being transferred. On GitHub, an HTML link opens its source view; use the entry READMEs above for direct browsing.
 
-## What this catalog does not define
+## What the images communicate
 
-- **Theme and colors:** palettes, color tokens, exact colors or theme variants. Any colors in a picture are illustrative; the consuming product's Theme decides their actual values.
-- **Typography and geometry:** font family, font size, type scale, text metrics, spacing, padding, margins, dimensions, density or pixel-level placement. Those are determined by the consuming product's styling and platform guidance.
-- **Functionality:** event handling, state changes, business logic, persistence, authorization, validation, navigation rules or other implementation behavior. A state label describes the picture; it is not a runtime contract.
-- **Implementation or complete quality requirements:** DOM/CSS/framework structure, platform-native control choice, keyboard behavior, accessibility, responsiveness or test acceptance criteria. These must come from their respective design and requirements sources where needed.
+- **Subject and responsibility:** the part or pattern being shown. A Shell's menu content does not define a Menu pattern. A dialog frame does not define its sample fields, search rules or launching screen.
+- **Named visual states:** each pictured state has its own image and short caption. Selection emphasis, focus, disabled appearance and expansion belong to distinct states where represented. A state name does not define how the application enters that state.
+- **Coarse visual relationships:** recognizable shapes, grouping, region hierarchy and relative arrangement, such as a child's indentation below its parent. Exact geometry is illustrative.
+- **Provenance and acceptance:** source-supported reconstruction, adaptation or new proposal, with links to supporting material and the human decision. A stable ID such as `MENU-001` identifies a pattern independently of its display name, directory or gallery order; the ID itself is not an approval status.
 
-Each state image remains a separate asset. Markdown (`index.md`/`README.md`) or a lightweight HTML gallery may index images and supply short captions; the gallery layout is not part of the design being transferred. Avoid deriving the entire application UI from a component image.
+A part image stays focused on that part. Some relationships need minimal context: child-menu images include a parent row to show indentation. The Shell uses the complete region to show how header, drawer and workspace relate. Incidental business content in either example remains replaceable.
 
-## Relationship to other design sources
+## Apply a pattern
 
-This is an **image-first discovery surface**, not a new approval registry, specification language, component runtime or UI-testing system. The catalog is deliberately less specific than a curated Reference: [curated References](../references/README.md) retain their own review and approval process for bounded executable interaction designs. Historical experiments remain historical material and do not become approved simply because they are cataloged.
+For a selected navigation child, open [MENU-001](menus/one-level/README.md), compare [unselected](menus/one-level/images/child-unselected.png) and [selected](menus/one-level/images/child-selected.png), and read the provenance for those rows. If that relationship fits your screen, reference the ID and images in the design brief. Decide the actual destinations, available items and navigation behavior in the consuming product.
 
-SHELL-001 is a research-selected example of a header-controlled drawer that can hide completely. Its purpose is the relationship between the header, drawer and workspace; the menu content inside the screenshot is not the Shell specification. Other patterns (including menu contents and individual components) have separate scopes.
+Use the same process for another entry: check the responsibility and platform, select the needed pictured states, read the limits, then specify the relationships your product adopts. Keep an unpictured state or missing interaction requirement explicit instead of inferring it from nearby examples.
 
-New entries should be added only as grounded, independently understandable visual subjects. Do not add empty categories, a runtime generator or new specification machinery merely to expand the catalog.
+The following remain with the consuming product and its design sources:
+
+| Decision | Image-catalog boundary |
+| --- | --- |
+| Theme/colors | Palettes, tokens and actual color values are illustrative here. |
+| Typography and geometry | Font family/size, text metrics, spacing, padding, margins, dimensions, density and exact placement are not fixed. |
+| Behavior and business rules | Events, state transitions, validation, authorization, persistence and navigation rules are not executed or specified by these pictures. |
+| Platform and quality | Native-control choice, keyboard operation, focus policy, accessibility, responsive behavior and test acceptance criteria require their own requirements and verification. |
+| Implementation | SVG artwork supports editing the pictures; HTML/CSS/DOM/framework structure is not a required component API. |
+
+## When you need an interaction model
+
+[Curated References](../references/README.md) retain executable examples, bounded preserved behavior and separate human-approval evidence. Check that responsibility and the consuming application's [interaction requirements](../docs/application-interaction.md) before implementing behavior. An accepted image does not approve a generic executable Reference, and approval of a source Reference does not automatically approve an extracted image.
+
+Source-supported pictures may be newly drawn rather than source screenshots. New proposals remain identified as proposals by origin even after visual acceptance. Historical experiments stay historical evidence. Read each entry's source and limits rather than treating a merged PR or a passing check as design approval.
+
+The list above covers the examples registered in this repository. It is not an exhaustive UI library. The previously reviewed Watch Switch images are not included because their original files have not yet been recovered for registration.

@@ -3,7 +3,7 @@
 - Catalog ID: SHELL-001 (stable across display-name and layout changes)
 - Category: Application Shell
 - Source platform: Web; desktop and one narrow viewport screenshot
-- Status: Research-selected example; catalog display is a draft and is **not** a newly approved Reference
+- Status: **Human-accepted catalog appearance and explanation.** [Visual acceptance](https://github.com/mk3008/torrone/pull/34#issuecomment-6115704526). This does not approve a new executable Reference.
 - Pattern summary: The header button toggles the left navigation drawer. When closed, the drawer disappears completely (including icons and navigation), and the main workspace expands into the available space. This is **not** the compact/icon-rail variant.
 - Responsibility: Header, left navigation drawer, main workspace, and the effect of drawer visibility
 - Excluded: business content, routes, user permissions, real-device validation, platform-specific implementation
