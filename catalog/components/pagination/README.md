@@ -4,7 +4,7 @@
 
 - Category: Component / pagination control.
 - Platform: Web-origin illustrations; native/browser rendering unverified.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/51#issuecomment-6206130758). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/51#issuecomment-6206130758). Source Reference approval remains separate.
 - Appearance: Previous and Next flank a current-page label; unavailable directions have a subdued button appearance.
 
 | Image | Current label | Previous | Next | Provenance |

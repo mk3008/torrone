@@ -4,7 +4,7 @@
 
 - Category: Component / anchored popover.
 - Platform: Web-origin illustration; native and real-device behavior unverified.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/41#issuecomment-6190373994). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/41#issuecomment-6190373994). Source Reference approval remains separate.
 - Appearance: a bounded panel below a small trigger, with their trailing edges aligned; contextual content above a separated action row.
 
 | Image | Short caption | Evidence level |

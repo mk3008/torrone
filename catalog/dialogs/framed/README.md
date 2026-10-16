@@ -4,7 +4,7 @@
 
 - Category: Dialog frame / region composition.
 - Platform: Web-origin layout examples.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/49#issuecomment-6205936168). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/49#issuecomment-6205936168). Source Reference approval remains separate.
 - Reuse: a title and Close area above a bounded body, with a separate lower action area. Content overflow belongs to the body so the title and actions can remain visible.
 
 | Image | Composition |

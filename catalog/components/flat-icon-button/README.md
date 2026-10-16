@@ -4,7 +4,7 @@
 
 - Category: Component / icon-only command button.
 - Platform: Web-origin illustration. Native, forced-colors and real-device rendering unverified.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/43#issuecomment-6191706773). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/43#issuecomment-6191706773). Source Reference approval remains separate.
 - Appearance: bare icon at rest; target fill on hover/pressed appearances; a separate inner focus outline; muted disabled icon.
 
 | State image | Short caption | Provenance |

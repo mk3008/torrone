@@ -4,7 +4,7 @@
 
 - Category: Component / filter-style date range.
 - Platform: Web-origin illustrations, including one narrow arrangement. Real browser/mobile rendering is unverified.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/45#issuecomment-6191945674). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/45#issuecomment-6191945674). Source Reference approval remains separate.
 - Appearance: two labeled date controls, each combining value, contextual Clear and calendar action; a shared calendar identifies its active boundary.
 
 | Image | Appearance | Provenance |

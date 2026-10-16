@@ -4,7 +4,7 @@
 
 - Category: Component / noninteractive text badge.
 - Platform: Web-origin illustrations; browser/native rendering unverified.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/53#issuecomment-6206299372). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/53#issuecomment-6206299372). Source Reference approval remains separate.
 - Appearance: short bold text inside a rounded, filled enclosure with a thin border. Text remains the visible meaning; color is supplementary.
 
 | Image | Appearance | Provenance |

@@ -4,7 +4,7 @@
 
 - Category: Component / inline single-entity lookup.
 - Platform: Web-origin illustrations. Browser, native/mobile and assistive-technology rendering unverified.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/47#issuecomment-6192564496). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/47#issuecomment-6192564496). Source Reference approval remains separate.
 - Appearance: one labeled field with an attached name-and-ID list; committed values show a Clear action and an ID below the field. The field surface stays the same through empty, searching and committed states.
 
 | State image | Appearance | Provenance |

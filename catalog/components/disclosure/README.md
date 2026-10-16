@@ -4,7 +4,7 @@
 
 - Category: Component / single section disclosure.
 - Platform: Web-origin illustrations; browser/native rendering unverified.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/55#issuecomment-6206673160). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/55#issuecomment-6206673160). Source Reference approval remains separate.
 - Appearance: a persistent heading and Show/Hide button, with the section body absent or visible below them.
 
 | Image | Header action | Body | Grounding |

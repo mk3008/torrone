@@ -4,7 +4,7 @@
 
 - Category: Menu items inside a left navigation drawer, separate from the Shell.
 - Platform: Web-origin illustration. No native-platform or real-device validation.
-- Status: **Human-accepted appearance examples; not merged or released.** [Visual acceptance](https://github.com/mk3008/torrone/pull/39#issuecomment-6188915992). Source Reference approval remains separate.
+- Status: **Human-accepted appearance examples.** [Visual acceptance](https://github.com/mk3008/torrone/pull/39#issuecomment-6188915992). Source Reference approval remains separate.
 - Appearance: selected rows have emphasis and a leading accent; child labels are indented; parent rows have rightward or downward arrows.
 
 These images describe approximate appearance only. Theme/colors, typography, spacing, dimensions, exact placement and fixture labels are illustrative. They do not prescribe routing, permissions, click semantics, keyboard behavior, persistence, transitions or any conditions for entering a state. A disabled picture is an appearance proposal, not a rule that such an item must exist.
