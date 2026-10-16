@@ -1,6 +1,8 @@
+> Superseded, unaccepted candidate. The owner found this eight-state chooser set too specific for a reusable dialog part. See the [scope decision](https://github.com/mk3008/torrone/pull/49#issuecomment-6205636219) and [replacement frame review](dialog-001-image-review.md). Original assets remain available at commit `2a739d2ef13d71fdabd86080735722e3380e4155`. The observations below describe that old set, not the replacement.
+
 # CHOOSER-001 image review evidence
 
-Execution: [#48](https://github.com/mk3008/torrone/issues/48). Control: [root #77](https://github.com/mk3008/root/issues/77). Date: 2026-10-15. [Eight-state matrix](../catalog/components/entity-chooser/README.md).
+Execution: [#48](https://github.com/mk3008/torrone/issues/48). Control: [root #77](https://github.com/mk3008/root/issues/77). Date: 2026-10-15. [Eight-state matrix](https://github.com/mk3008/torrone/blob/2a739d2ef13d71fdabd86080735722e3380e4155/catalog/components/entity-chooser/README.md).
 
 ## Source and scope
 
