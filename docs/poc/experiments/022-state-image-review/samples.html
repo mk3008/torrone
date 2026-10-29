@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PoC 022 controlled specimens — unreviewed</title>
+<style>
+  body { margin: 24px; color: #222; background: #fafafa; font: 16px system-ui, sans-serif; }
+  h1 { font-size: 24px; } h2 { font-size: 18px; }
+  section { margin: 28px 0; padding: 20px; border: 1px solid #aaa; background: white; max-width: 850px; }
+  .menu { width: 320px; border: 1px solid #bbb; padding: 8px; }
+  .row { padding: 12px 18px; }
+  .child { padding-left: 42px; }
+  .chosen { background: #e4edf2; border-left: 4px solid #27596c; font-weight: bold; }
+  .muted { color: #888; }
+  .other { background: #28243b; color: #eee; font-family: serif; }
+  .other .row { padding-top: 18px; padding-bottom: 18px; }
+  .other .chosen { background: #554765; border-color: #f1c5a0; }
+  .shell { height: 260px; border: 1px solid #888; display: grid; grid-template-rows: 42px 1fr; }
+  .header { background: #edf0f1; padding: 8px 12px; border-bottom: 1px solid #aaa; }
+  .work { display: flex; min-height: 0; }
+  .rail { width: 50px; flex: none; border-right: 1px solid #aaa; background: #eee; }
+  .rail button { display: block; margin: 12px auto; }
+  .canvas { flex: 1; padding: 20px; background: #f5f7f8; }
+  select { font: inherit; min-width: 260px; }
+  a { color: #165990; }
+</style>
+<h1>Controlled specimens</h1>
+<p>Research-only HTML fixtures. No browser captures, behavioral validation or design acceptance yet. The controls freeze example appearances; they do not implement a consuming application.</p>
+<p><a href="protocol.md">Prepared protocol and known expectations</a> · <a href="sources.json">Source identities</a> · <a href="../../../../catalog/menus/one-level/README.md">MENU-001 images</a> · <a href="../../../../catalog/shells/workspace/README.md">SHELL-001 images</a></p>
+<section id="C01"><h2>C01</h2><p>Target-state assignment: Child selected.</p><div class="menu"><div class="row">Parent</div><div class="row child">Child</div></div></section>
+<section id="C02"><h2>C02</h2><p>Target-state assignment: Child selected under Parent.</p><div class="menu"><div class="row">Parent</div><div class="row chosen">Child</div></div></section>
+<section id="C03"><h2>C03</h2><p>Target-state assignment: fully hidden drawer.</p><div class="shell"><div class="header">Workspace</div><div class="work"><nav class="rail" aria-label="Navigation"><button>A</button><button>B</button></nav><div class="canvas">Workspace content</div></div></div></section>
+<section id="C04"><h2>C04</h2><p>Target-state assignment: selected Child. Consuming adaptation: browser-standard grouped selector; native selection is permitted in this specimen.</p><label for="native-selection">Destination</label><br><select id="native-selection" size="4"><optgroup label="Parent"><option selected>Child</option><option>Other child</option></optgroup></select></section>
+<section id="C05"><h2>C05</h2><p>Target-state assignment: Child selected under Parent.</p><div class="menu other"><div class="row">Parent</div><div class="row child chosen">Child</div></div></section>
+<section id="C06"><h2>C06</h2><p>Target-state assignment intentionally omitted from review input.</p><div class="menu"><div class="row">Parent</div><div class="row child">Child</div></div></section>
+<section id="C07"><h2>C07</h2><p>Target-state assignment: Child selected and disabled. No consumer precedence requirement supplied.</p><div class="menu"><div class="row">Parent</div><div class="row child chosen muted">Child</div></div></section>
+<section id="C08"><h2>C08</h2><p>Target-state assignment: fully hidden drawer.</p><div class="shell"><div class="header">Workspace</div><div class="work"><div class="canvas">Workspace content</div></div></div></section>
+</html>

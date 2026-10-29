@@ -1,0 +1,67 @@
+{
+  "base_revision": "581c77f7d8d3ce3d3bcc3139c94e057f7b4888c0",
+  "status": "prepared_not_evaluated",
+  "implementation_screenshots": [],
+  "observations": [],
+  "inspected_in_this_run": [
+    "child-unselected",
+    "child-selected",
+    "drawer-hidden-light"
+  ],
+  "sources": [
+    {
+      "catalog_id": "MENU-001",
+      "state": "child-selected",
+      "path": "catalog/menus/one-level/images/child-selected.png",
+      "source_url": "https://github.com/mk3008/torrone/blob/581c77f7d8d3ce3d3bcc3139c94e057f7b4888c0/catalog/menus/one-level/images/child-selected.png",
+      "git_blob": "6e1f46490f78dc65c6ab1fdb78e50cf0b0965bdc",
+      "sha256": "9a83f89fe49d8da9197a811d0be4eea6335f4c557409fe3b23b0c56f07bac432",
+      "bytes": 5846,
+      "acceptance": "https://github.com/mk3008/torrone/pull/39#issuecomment-6188915992",
+      "acceptance_scope": "Catalog appearance only; not executable behavior",
+      "origin": "Source-supported reconstruction; new drawing"
+    },
+    {
+      "catalog_id": "MENU-001",
+      "state": "child-unselected",
+      "path": "catalog/menus/one-level/images/child-unselected.png",
+      "source_url": "https://github.com/mk3008/torrone/blob/581c77f7d8d3ce3d3bcc3139c94e057f7b4888c0/catalog/menus/one-level/images/child-unselected.png",
+      "git_blob": "823b0b8b6706199f4547e8367ece5b90c29494f3",
+      "sha256": "7fe8854859630d0ebc2c201db0379aecd3ed876f6df91b3cd0c5f3485e33114f",
+      "bytes": 5144,
+      "acceptance": "https://github.com/mk3008/torrone/pull/39#issuecomment-6188915992",
+      "acceptance_scope": "Catalog appearance only; not executable behavior",
+      "origin": "Source-supported reconstruction; new drawing"
+    },
+    {
+      "catalog_id": "MENU-001",
+      "state": "child-disabled",
+      "path": "catalog/menus/one-level/images/child-disabled.png",
+      "source_url": "https://github.com/mk3008/torrone/blob/581c77f7d8d3ce3d3bcc3139c94e057f7b4888c0/catalog/menus/one-level/images/child-disabled.png",
+      "git_blob": "6986c0fc4a7c9f4c9ea5c80da3c5fe06840f0aa9",
+      "sha256": "401f29d445cde891580b5ad983da978b5e180d83844d9a611b4e52dccd021d2f",
+      "bytes": 4904,
+      "acceptance": "https://github.com/mk3008/torrone/pull/39#issuecomment-6188915992",
+      "acceptance_scope": "Catalog appearance only; not executable behavior",
+      "origin": "New disabled-appearance proposal with human visual acceptance"
+    },
+    {
+      "catalog_id": "SHELL-001",
+      "state": "drawer-hidden-light",
+      "path": "catalog/shells/workspace/images/drawer-hidden-light.png",
+      "source_url": "https://github.com/mk3008/torrone/blob/581c77f7d8d3ce3d3bcc3139c94e057f7b4888c0/catalog/shells/workspace/images/drawer-hidden-light.png",
+      "git_blob": "df80114be8616bb48594ed565f3036c2b03c9f38",
+      "sha256": "56d7462a9434d603a86b52afddbcb27f16b5f47d65a72cd66bad85f9cca87667",
+      "bytes": 39785,
+      "acceptance": "https://github.com/mk3008/torrone/pull/34#issuecomment-6115704526",
+      "acceptance_scope": "Catalog appearance only; not executable behavior",
+      "origin": "Exact Git-blob copy of owner-selected historical screenshot"
+    }
+  ],
+  "limits": [
+    "No current production target paired with these states",
+    "No independent evaluator or measured human baseline",
+    "No successful cloud-browser capture",
+    "Selected-disabled combination is undefined in MENU-001"
+  ]
+}
