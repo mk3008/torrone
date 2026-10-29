@@ -1,8 +1,12 @@
 # Development and Reference review
 
-Use ChatGPT Work to edit a Git branch and return a PR. Use a browser to operate the exact Reference snapshot under review. A screenshot or passing comparison does not replace human design review.
+Use ChatGPT Work to edit a Git branch and return a PR. Start with the [visual catalog](../catalog/README.md), its relevant state images, captions and limits. Human visual acceptance applies to those appearances only; executable behavior needs separate requirements and verification.
 
-## Minimal environment
+For catalog work, review the independent images directly, retaining provenance, rationale, acceptance scope and evidence. SVG and optional HTML/CSS/JS can support image editing; the HTML gallery is only a browsing surface. Neither HTML authoring nor the executable review bundle below is a required stage for catalog work.
+
+When interaction itself needs review, use a browser to operate the exact executable Reference snapshot. A screenshot or passing comparison does not replace human interaction-design review. Existing approved References retain their scoped approval; catalog visual acceptance neither replaces nor inherits it.
+
+## Executable Reference review environment
 
 For the review bundle, use Git and Python 3.10 or later on Linux, macOS, or Windows. No package installation, frontend build system, database, API key, or PowerShell is needed. Existing research tools keep their own dependencies; they are not setup requirements for this loop.
 
@@ -38,7 +42,7 @@ The owner approved a private Sites review surface on 2026-09-15. Reuse [Torrone 
 
 The index and active working copies adapt to narrow screens. Historical research References retain their authored layouts, including desktop assumptions. Phone review access and responsive product design are different questions; do not silently redesign an archived Reference to fit the review device. For a design change, create a clearly identified working copy outside historical evidence and point the entry list at it.
 
-## From review to curation
+## From executable review to curation
 
 `review/` answers "what can I operate and review now?". `references/` answers "what is the current approved design original for this responsibility?". Keep those roles separate.
 
@@ -52,9 +56,9 @@ A draft does not become canonical because its tests pass, its comparison matches
 
 If a material behavior or the executable Reference later changes, the changed version is a draft until explicitly reviewed again. Do not silently carry approval forward.
 
-Before implementing a recurring UI responsibility, humans and AI should check `references/` first. An applicable approved entry is the design original; historical PoC files and responsive working copies are not canonical by existence alone.
+Before implementing a recurring UI responsibility, humans and AI start with the catalog and consult `references/` when an executable operation model is needed. An applicable approved entry is the design original; historical PoC files and responsive working copies are not canonical by existence alone.
 
-For the Date range pilot, follow the [curation entry](../references/date-range.md) for exact approval scope and the linked next-version candidate; do not duplicate its current status here.
+For the Date range pilot, follow the [curation entry](../references/date-range.md) for exact approval scope and linked prior evidence; do not duplicate its current status here.
 
 At curation and material revision, apply [Material UI design decisions](../references/README.md#material-ui-design-decisions) to retain traceable rationale and approval evidence without creating a second specification.
 
@@ -84,7 +88,7 @@ The following cases record how findings were dispositioned at the PR #14 handoff
 
 | Finding | Disposition and trace | Handoff result |
 | --- | --- | --- |
-| PoC 018 findings were isolated in an Invoice-specific Reference | Addressed in [PR #14](https://github.com/mk3008/torrone/pull/14); the [shared candidate](../references/date-range-recovery.md#reconciled-baseline-before-issue-13-recovery) records classification and verification links | At handoff, the correction and its evidence were linked to the shared candidate without transferring historical approval. |
+| PoC 018 findings were isolated in an Invoice-specific Reference | Addressed in [PR #14](https://github.com/mk3008/torrone/pull/14); the [shared candidate](history/date-range-before-pr19/candidate-curation.md#reconciled-baseline-before-issue-13-recovery) records classification and verification links | At handoff, the correction and its evidence were linked to the shared candidate without transferring historical approval. |
 | Generic keyboard-following correction caused unwanted movement | Not pursued, with reason, scope, retained evidence and reopening conditions in the [withdrawal decision](decisions/2026-09-16-withdraw-keyboard-scroll.md) | At handoff, the withdrawal decision explained why the attempt was not pursued and when it could be reconsidered. |
 | Flat navigation and Close buttons introduce a button Reference responsibility | Deferred to [Issue #15](https://github.com/mk3008/torrone/issues/15), with scope and completion conditions for the next practitioner | At handoff, #15 established a traceable destination for deferred work without assigning a person or expanding #14; its current status belongs to that issue. |
 
@@ -102,7 +106,7 @@ Report findings against approved References for a scoped decision and draft corr
 
 For UI changes, complete the pre-implementation and handoff checks in [Application interaction requirements](application-interaction.md). Link one application-owned decision record and its affected-path evidence from the PR; the [PR template](../.github/pull_request_template.md) prompts for this even when the change appears confined to a component. Missing shared requirements are explicit gaps, and unexecuted paths remain unverified. Non-UI changes need only a brief applicability explanation. Do not call application interaction verification complete while relevant rows remain unresolved or unverified.
 
-Check that generated HTML matches the selected source bytes, links resolve, the index works at phone width, and the relevant example interaction still operates. Inspect the diff to confirm historical sources and outputs were not modified. New previews do not need a rerun of all old experiments.
+For catalog documentation changes, check affected links, guidance consistency and preservation of existing images and acceptance evidence. For executable review bundles, check that generated HTML matches the selected source bytes, links resolve, the index works at phone width, and the relevant example interaction still operates. Inspect the diff to confirm historical sources and outputs were not modified. New previews do not need a rerun of all old experiments.
 
 PoC 017 remains `partial`: the historical evidence incident and its recovery requirement in [the research handoff](poc/reference-html-program-summary.md) remain unresolved. Curating an already approved Reference does not repair that evidence or accept the PoC 017 Gate. Do not run legacy conformance commands merely to launch a preview; some have a recorded history of overwriting evidence.
 

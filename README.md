@@ -27,6 +27,8 @@ Check the entry's platform, provenance, visual-acceptance record and limits befo
 
 Adapt theme/colors, typography, spacing, dimensions and exact placement to the product. Preserve only the coarse relationships you choose to adopt. Keep business rules, state-transition conditions, accessibility and shared interaction requirements explicit in their own design sources. The [catalog guide](catalog/README.md#what-the-images-communicate) explains this boundary.
 
+Prefer the target platform's standard controls, whether Web or Native. SVG artwork and optional HTML/CSS/JS sources may help edit or render images; neither those sources nor the HTML gallery prescribe the product implementation.
+
 When behavior needs a concrete example, consult the [curated References](references/README.md). An approved entry identifies an executable Reference HTML, its bounded operation model, guidance and human-approval evidence. Use it within that scope and apply the consuming application's [shared interaction requirements](docs/application-interaction.md). Catalog visual acceptance and executable Reference approval remain independent.
 
 ## Where to look next
@@ -35,7 +37,7 @@ When behavior needs a concrete example, consult the [curated References](referen
 | --- | --- |
 | [Visual catalog](catalog/README.md) | Current image examples, state lists, provenance and visual-acceptance links. |
 | [Curated References](references/README.md) | Executable interaction designs and their separate approval scopes. |
-| [Product Foundation](docs/product-foundation.md) | Product purpose and design principles, with the background of the Reference HTML approach. |
+| [Product Foundation](docs/product-foundation.md) | Current image-first direction, design principles and the roles of authoring sources and executable References. |
 | [Development and review](docs/development-workflow.md) | Authoring, review, evidence and curation procedures. |
 | [Working review surfaces](review/) | Draft or experimental examples; consult curation to identify approved originals. |
 | [Experiment archive](docs/poc/) | Historical research and verification evidence. `profile/`, `templates/` and `prompts/` preserve earlier Manifest/OKF research. |
