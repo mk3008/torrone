@@ -1,6 +1,8 @@
 # Curated References
 
-This directory answers a practical Torrone question: **which UI design original should a human or AI follow for this responsibility?**
+Start with the [visual catalog](../catalog/README.md) for reusable appearance states. This directory retains executable References and answers a narrower question: **which approved executable design original applies to this responsibility and scope?**
+
+Existing approvals, artifact identities and evidence remain valid within their recorded scopes. They do not require HTML as a consuming application's implementation technique or as a mandatory image-authoring step. Catalog visual acceptance and executable approval remain independent; neither transfers automatically to the other.
 
 Curation is intentionally small. It is not a component catalog, a schema platform, or a second design system.
 
@@ -57,11 +59,11 @@ This rule lives with the Reference lifecycle because it governs explaining adopt
 
 ## Using curated References
 
-Before implementing a recurring UI responsibility, check this directory first. Apply the Product Foundation’s [interaction-before-instructions principle](../docs/product-foundation.md#communicate-through-interaction-before-instructions) when authoring and reviewing product UI copy and controls.
+Before implementing a recurring UI responsibility, inspect the catalog entry's relevant states and limits. Consult this directory when an executable operation model is needed. Apply the Product Foundation’s [interaction-before-instructions principle](../docs/product-foundation.md#communicate-through-interaction-before-instructions) when authoring and reviewing product UI copy and controls.
 
 Also identify the consuming application's shared interaction requirements using [Application interaction requirements](../docs/application-interaction.md). A bounded Reference is one input to the composed screen, not the complete application contract. Check compatibility before implementation and record cross-control coverage at handoff; do not infer a global keyboard policy from an isolated example.
 
-Use an approved Reference only within its stated scope. Product requirements may override a Reference, but the difference should be explicit rather than silently interpreted as a new application-wide convention. If the required operation model materially differs, use or create a different Reference instead of stretching an existing one beyond its meaning.
+Use an approved Reference only within its stated scope. Product requirements may override a Reference, but the difference should be explicit rather than silently interpreted as a new application-wide convention. If the required operation model materially differs, record the gap in the application's design sources; use or create an appropriate draft Reference when interaction needs a concrete review example, rather than stretching an approved one beyond its meaning.
 
 Historical material under `docs/poc/` is research evidence. Working copies under `review/` are review surfaces. Neither is canonical merely because it exists. A curation entry makes the current design-original relationship explicit.
 

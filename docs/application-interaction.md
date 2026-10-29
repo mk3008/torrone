@@ -11,16 +11,16 @@ Keep three responsibilities distinct:
 | Level | Owns |
 | --- | --- |
 | Application | Shared navigation and action semantics, consistency across screens, and justified context-specific exceptions. |
-| Bounded Reference | The approved local operation model within its recorded responsibility and scope. |
+| Catalog example / bounded Reference | Pictured appearances and their visual-acceptance scope; an executable Reference separately owns its approved local operation model. |
 | Composed screen | Applying both inputs to real entry, completion, recovery, and exit paths across controls. |
 
 For example, Tab order and whether Enter confirms, submits, or advances must be decided in the application's context. Calendar-grid keyboard behavior is a local interaction, but entering and leaving that calendar must fit the application policy. Consistency does not mean treating multiline text, form submission, grid selection, and manual field completion as the same action.
 
-An explicit application requirement can override a Reference only with the difference recorded. If that materially changes the operation model, use or create an appropriate draft Reference. Preserve any conflict for a decision; silently choosing whichever source is convenient is not resolution. A missing material policy blocks a claim of conforming implementation; an explicitly scoped PoC may propose a reversible candidate, clearly pending human review.
+An explicit application requirement can override a Reference only with the difference recorded. If that materially changes an approved operation model, record the difference and use or create an appropriate draft Reference when a concrete interaction example is needed. Preserve any conflict for a decision; silently choosing whichever source is convenient is not resolution. A missing material policy blocks a claim of conforming implementation; an explicitly scoped PoC may propose a reversible candidate, clearly pending human review.
 
 ## Before implementation
 
-1. Identify the application requirement source and applicable approved Reference, including their scope and revision. If no application record exists, record that gap and the decisions needed; do not treat the absence as implementation freedom.
+1. Identify the application requirement source, selected catalog images and any applicable approved Reference, including their scope and revision. An executable Reference is optional; pictures alone do not define operation or accessibility requirements. If no application record exists, record that gap and the decisions needed; do not treat the absence as implementation freedom.
 2. Identify shared interactions affected by this change. Consider navigation/activation, focus return, validation/recovery, visibility/scrolling and mobile keyboard behavior where relevant. Select by impact rather than filling an exhaustive catalog.
 3. Record expected behavior across affected controls and contexts, including exceptions and conflicts. Reuse the application policy by link. Keep a proposed decision separate from accepted requirements; name what a human still needs to decide.
 
@@ -49,6 +49,8 @@ The corrective controls are the required AGENTS entry, the curation/workflow lin
 The [PoC 018 application record](poc/experiments/018-curated-reference-handoff/application-interaction.md) applies this check retrospectively. Its current Enter choice is still a candidate, not a Torrone-wide convention or a human-approved design.
 
 ## Shared text-entry visibility
+
+The following guidance applies to browser-based executable References. Native applications choose their platform controls and verify visibility and focus in their own environment; browser event/scroll mechanics are not a Native implementation contract.
 
 Use ordinary browser text-entry behavior. Do not add application scrolling on editor focus, field switching or keyboard viewport changes as a default Reference requirement. Preserve manual scrolling, reachable editors and focus. Calendar disclosure may reveal its owning input and calendar context; this is a separate responsibility.
 
