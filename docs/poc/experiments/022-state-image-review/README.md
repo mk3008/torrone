@@ -8,7 +8,7 @@ Execution: [Torrone #64](https://github.com/mk3008/torrone/issues/64). Control: 
 
 Can comparing accepted state images with implementation screenshots reveal useful discrepancies in selection visibility, hierarchy and region presence, without rejecting legitimate platform/theme differences? This is static visual-transfer research, separate from [PoC 019](../019-ai-browser-review/README.md)'s executable Reference review. It does not judge design quality or approve a design.
 
-The sources are `MENU-001` and `SHELL-001` at `581c77f7d8d3ce3d3bcc3139c94e057f7b4888c0`. See [sources.json](sources.json) for paths, Git blob identities, SHA-256 digests, provenance and acceptance links. Original assets, curation, historical evidence, main guidance and pending PR #62 remain unchanged. The pending image-first documentation alignment is tracked by [root #178](https://github.com/mk3008/root/issues/178); its unmerged status is not adoption evidence.
+The sources are `MENU-001` and `SHELL-001` at `581c77f7d8d3ce3d3bcc3139c94e057f7b4888c0`. See [sources.json](sources.json) for paths, Git blob identities, SHA-256 digests, provenance and acceptance links. Original assets, curation, historical evidence and main guidance are not modified by this experiment. During the interrupted run, the separately approved image-first documentation alignment completed via PR #62, merge `f52e38de345169bec49401f4bc74ecd474c903b1`; [root #178](https://github.com/mk3008/root/issues/178) is the status record. Source identities stay pinned to the original sampling revision. The source catalog assets are unchanged by that documentation-only merge.
 
 ## Review material
 
