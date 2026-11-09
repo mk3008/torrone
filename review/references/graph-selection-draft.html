@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Graph selection · Draft Reference</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#21332f;background:#f2f5f2;color-scheme:light;--green:#25816d;--outside:#59626b;--focus:#164fc6;--selected:#eab959}
+*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button,a,input{touch-action:manipulation}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:4px}button:disabled{cursor:default;color:#66766f;background:#edf1ee}button{color:inherit}h1,h2,h3,p{margin-top:0}[hidden]{display:none!important}
+.reference-note{padding:10px 24px;border-bottom:1px dashed #9cafc1;background:#f8fbfe;font-size:13px;color:#405267;display:flex;gap:14px;align-items:center;flex-wrap:wrap}.reference-note strong{letter-spacing:.07em;text-transform:uppercase}.reference-note a{color:#284f81;margin-left:auto}
+header{padding:22px 28px;background:#183e35;color:#f5fbf5;display:flex;justify-content:space-between;align-items:center;gap:16px}header h1{font-size:25px;margin:4px 0 0}header p{margin:0;color:#c6e5d6;font-size:14px}.eyebrow{text-transform:uppercase;letter-spacing:.1em;font-size:11px;font-weight:750;color:#317e67}header .eyebrow{color:#b7e4cc}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 360px}.graph-panel{min-width:0;padding:22px 24px}.legend{display:flex;flex-wrap:wrap;gap:12px 20px;font-size:12px;font-weight:650}.legend span{display:flex;align-items:center;gap:7px}.sample{display:inline-block;width:19px;height:14px;border:2px solid var(--green);border-radius:5px;background:#eaf7f1}.sample.object{border-radius:0;background:white;border-left-width:6px}.sample.outside{border-color:var(--outside);background:#f3f4f5}.sample.object.outside{background:white}.line{width:24px;border-top:2px solid #708b85}.line.output{border-top:3px solid #416b98}.line.exception{border-top:3px dashed #b35747}
+.toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:20px 0 12px}.toolbar fieldset{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;border:0;font-size:13px}.toolbar legend{font-weight:700;float:left;margin-right:12px}.toolbar label{white-space:nowrap}.toolbar input{accent-color:var(--green)}.toolbar a{font-size:13px;color:#285b49;margin-left:auto}.quiet-button{border:1px solid #a8bab0;border-radius:5px;padding:7px 12px;background:white;font-size:13px;min-height:36px}.quiet-button:hover:not(:disabled){background:#eaf7f1}.summary{font-size:13px;color:#526a61;min-height:20px;margin-bottom:12px}
+.viewport{overflow:auto;height:590px;border:1px solid #c5d6cb;border-radius:9px;background:#fbfcfa radial-gradient(#dce7df 1px,transparent 1px);background-size:22px 22px}.canvas{position:relative;width:820px;height:560px;margin:auto}.nodes,.edges,.captions{position:absolute;inset:0;width:100%;height:100%}.nodes,.captions{pointer-events:none}.nodes{z-index:2}.edges{z-index:1}.captions{z-index:3}.node{pointer-events:auto;position:absolute;width:210px;height:72px;padding:14px;border:2px solid var(--green);border-radius:15px;background:#eaf7f1;color:#173e32;text-align:left;box-shadow:0 3px 10px #1c3b3320}.node.object{border-radius:1px;border-left-width:8px;background:white}.node.outside{border-color:var(--outside);color:#303943}.node.business.outside{background:#f3f4f5}.node .row{display:flex;align-items:center;gap:10px}.node svg{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8}.node strong{font-size:16px}.node:hover{box-shadow:0 0 0 3px #eab95966}.node[aria-pressed="true"]{box-shadow:0 0 0 4px var(--selected)}.node.related{box-shadow:0 0 0 3px #eab95988}.node:focus-visible{outline:3px solid var(--focus);outline-offset:6px;z-index:2}
+.edge{fill:none;stroke:#708b85;stroke-width:1.8;pointer-events:none}.edge.output{stroke:#416b98;stroke-width:3}.edge.business-exception{stroke:#b35747;stroke-width:3;stroke-dasharray:8 6}.edge.selected{stroke-width:5}.edge.dim{opacity:.25}.edge-hit{fill:none;stroke:transparent;stroke-width:18;cursor:pointer}.edge-hit:focus-visible{stroke:#164fc64d;outline:none}.edge-hit[aria-pressed="true"]{stroke:#eab95960}.caption{position:absolute;pointer-events:auto;max-width:210px;border:1px solid #99b2cd;border-radius:5px;background:white;padding:7px 10px;color:#294c76;font-size:12px;line-height:1.5;text-align:center;box-shadow:0 2px 6px #263b3620}.caption[aria-pressed="true"]{box-shadow:0 0 0 3px var(--selected)}.mode-all .caption{display:none}
+.details{background:white;border-left:1px solid #d7e3da;padding:24px;max-height:790px;overflow:auto}.details-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.details-header h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin:0;color:#526a61}#detail-title{font-size:21px;line-height:1.5;overflow-wrap:anywhere;margin:8px 0 14px}.badges{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;margin-bottom:16px}.badge{padding:3px 8px;border:1px solid #bdcec2;border-radius:4px}.badge.outside{border-color:#8f98a1;color:#303943}.badge.inside{color:#17664f;border-color:#80b7a3}.detail-copy{font-size:14px;line-height:1.65;color:#52655b}.field{border-top:1px solid #e3ebe5;padding:10px 0}.field dt{font-size:11px;text-transform:uppercase;font-weight:750;color:#357661;letter-spacing:.06em}.field dd{margin:5px 0 0;font-size:13px;line-height:1.6;white-space:pre-line;overflow-wrap:anywhere}.relations-section{margin-top:22px}.relations-section h4{font-size:13px;margin:0 0 9px}.relations-section ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.relation-item{width:100%;text-align:left;border:1px solid #c8d9cf;border-radius:6px;padding:10px;background:#f8faf8}.relation-item:hover{border-color:#25816d;background:#eff8f2}.relation-item strong,.relation-item span,.relation-item small{display:block}.relation-item strong{font-size:12px}.relation-item span{font-size:13px;line-height:1.55;margin-top:4px;overflow-wrap:anywhere}.relation-item small{font-size:11px;color:#586961;margin-top:6px}.detail-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.exception-note{font-size:13px;line-height:1.6;border-left:3px dashed #b35747;padding-left:12px;color:#65443d}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.review-guidance{margin:0 24px 24px;padding:16px 20px;background:white;border:1px dashed #a9bfb2;border-radius:6px;font-size:13px;line-height:1.65}.review-guidance summary{cursor:pointer;font-weight:700}.review-guidance h3{margin:18px 0 6px;font-size:14px}.review-guidance p{margin-bottom:8px}.review-guidance a{color:#285b49}
+@media(max-width:1000px){.layout{display:block}.graph-panel{padding:18px 16px}.viewport{height:430px}.details{max-height:none;border-left:0;border-top:1px solid #d7e3da}.review-guidance{margin:0 16px 20px}header{padding:20px;align-items:start;flex-direction:column;gap:8px}.reference-note{padding:10px 16px}.reference-note a{margin-left:0}.toolbar a{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="reference-note"><strong>Draft Reference · Graph selection</strong><span>Fixed four-node study. Human design review pending.</span><a href="#review-guidance">Scope &amp; review notes</a></div>
+<header><div><span class="eyebrow">Alder Business Graph</span><h1>業務相関図 <span lang="en" style="font-size:14px;font-weight:400">/ Selection study</span></h1></div><p>4 nodes · 6 relations</p></header>
+<div class="layout">
+<main class="graph-panel" aria-label="Business graph">
+<div class="legend" aria-label="Node and relation legend"><span><i class="sample"></i>Business / In scope</span><span><i class="sample outside"></i>Business / Outside scope</span><span><i class="sample object"></i>Object / In scope</span><span><i class="sample object outside"></i>Object / Outside scope</span><span><i class="line"></i>Read / Input</span><span><i class="line output"></i>Write / Output</span><span><i class="line exception"></i>Business Exception</span></div>
+<div class="toolbar"><fieldset><legend>Relations</legend><label><input type="radio" name="mode" value="representative" checked> Output representative</label><label><input type="radio" name="mode" value="all"> All lines</label></fieldset><a href="#detail-title" id="view-details">View details</a></div>
+<p id="mode-summary" class="summary"></p>
+<div class="viewport" tabindex="0" role="region" aria-label="Scrollable graph. Nodes, then relation lines, then output captions."><div class="canvas"><div class="nodes"></div><svg class="edges" viewBox="0 0 820 560" role="group" aria-label="Relation lines"></svg><div class="captions"></div></div></div>
+</main>
+<aside class="details" aria-label="Selection details"><div class="details-header"><h2>Detail</h2><button class="quiet-button" id="clear" type="button" disabled>Clear selection</button></div><div id="detail"></div></aside>
+</div>
+<p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+<details class="review-guidance" id="review-guidance"><summary>Draft scope, keyboard behavior &amp; review notes</summary>
+<h3>Try the complete operation</h3><p>Select 業務設計, choose either Read marked “Normally omitted”, then select 実装. Check that the temporary line disappears, the Detail matches the new selection, and Input-only / Exception remain present. Compare All lines, clear, and reselect.</p>
+<h3>Candidate interaction choices</h3><p>Tab / Shift+Tab traverse controls; Enter or Space activates nodes and relation lines. “View details” moves to the Detail heading. Choosing a relation from Detail moves focus to its new heading; “Back to node” restores the originating relation button. Escape or Clear selection clears selection and temporary lines. Mode changes clear selection while focus stays on the radio. Blank graph space also clears selection. These are reversible proposals, not an approved application-wide keyboard policy.</p>
+<h3>Preserve / May vary</h3><p>Preserve independent kind and scope meaning, selectable outside-scope nodes, full relation captions, matching graph / Detail selection, and temporary Read disclosure that resets when the target changes. Business Exception is a business handoff, not a UI failure. Coordinates, sizes, DOM, framework and routing are implementation choices.</p>
+<h3>Boundaries</h3><p>One static layout, four nodes and six unmodified relations from the Viewer fixture. Japanese fixture text is retained. No arbitrary import, editing, pan / zoom, automatic layout, large-graph performance or whole-Viewer coverage. Narrow layout is a reachability check, not mobile-device or assistive-technology verification. No external requests or saved data.</p>
+<p>Sources: <a href="https://github.com/mk3008/alder_viewer/blob/394dafec1cab6823087a9d5954c9634a7eb7b446/README.md">Viewer visual grammar</a> · <a href="https://github.com/mk3008/alder_viewer/blob/394dafec1cab6823087a9d5954c9634a7eb7b446/fixtures/alder-sample-v1.json">Fixture</a> · <a href="https://github.com/mk3008/torrone/issues/32">Review issue</a></p>
+</details>
+<script id="fixture" type="application/json">{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "業務設計",
+      "type": "business",
+      "name": "業務設計",
+      "why": "業務上の意味と保証の合意",
+      "when": "目的・変更要求を受領したとき",
+      "who": "業務設計者",
+      "where": "規定なし",
+      "result": "業務上の意味・手順・業務相関が依頼者と合意され、検査項目の設計を開始できる。",
+      "scope": true
+    },
+    {
+      "id": "業務設計書",
+      "type": "object",
+      "name": "業務設計書",
+      "scope": true,
+      "icon": "file-text",
+      "information": [
+        "業務範囲・目的",
+        "業務手順・入出力",
+        "業務間の相関・例外",
+        "期待結果・未決事項"
+      ]
+    },
+    {
+      "id": "実装",
+      "type": "business",
+      "name": "実装",
+      "why": "意図した業務の実現",
+      "when": "確認済み検査項目の実装依頼を受領したとき",
+      "who": "システム開発者",
+      "where": "規定なし",
+      "result": "合意済みの業務要件と検査項目を受けた実装が用意され、製品側の検証へ進める。",
+      "scope": false
+    },
+    {
+      "id": "依頼者",
+      "type": "object",
+      "name": "依頼者",
+      "scope": false,
+      "icon": "users",
+      "information": [
+        "システム要件",
+        "フィードバック・レビュー結果",
+        "業務上の判断・承認"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "kind": "business-exception",
+      "from": "実装",
+      "to": "業務設計",
+      "label": "未決定の業務上の意味が見つかったとき"
+    },
+    {
+      "kind": "input",
+      "from": "依頼者",
+      "to": "業務設計",
+      "label": "システム要件 / レビュー結果"
+    },
+    {
+      "kind": "input",
+      "from": "業務設計書",
+      "to": "実装",
+      "label": "業務要件"
+    },
+    {
+      "kind": "input",
+      "from": "業務設計書",
+      "to": "業務設計",
+      "label": "現行業務要件 / 期待結果 / 未決事項"
+    },
+    {
+      "kind": "output",
+      "from": "業務設計",
+      "to": "依頼者",
+      "label": "業務設計案 / レビュー依頼 / 確認事項"
+    },
+    {
+      "kind": "output",
+      "from": "業務設計",
+      "to": "業務設計書",
+      "label": "業務要件 / 期待結果 / 未決事項"
+    }
+  ]
+}
+</script>
+<script>
+'use strict';
+const data = JSON.parse(document.querySelector('#fixture').textContent);
+const positions = {'業務設計':[70,170], '業務設計書':[370,400], '実装':[560,80], '依頼者':[65,420]};
+// Geometry belongs to this fixed review surface, never to Business Graph semantics.
+const routes = [
+ 'M560 116 Q360 10 220 170', // Exception: implementation -> business design
+ 'M65 450 C0 350 0 250 70 212', // requester -> business design (paired Read)
+ 'M580 436 C730 430 740 220 665 152', // document -> implementation (Input-only)
+ 'M430 400 C430 280 345 190 280 190', // document -> business design (paired Read)
+ 'M155 242 L155 420', // business design -> requester
+ 'M280 220 C330 250 320 436 370 436' // business design -> document
+];
+const nodeById = new Map(data.nodes.map(n=>[n.id,n]));
+const nodeButtons = new Map(), edgeButtons = [], edgePaths = [], captions = new Map();
+const detail = document.querySelector('#detail'), canvas = document.querySelector('.canvas');
+const edgesRoot = document.querySelector('.edges'), clearButton = document.querySelector('#clear');
+let mode='representative', selection=null, origin=null;
+const paired = new Set(data.relations.flatMap((r,i)=>r.kind==='input' && data.relations.some(o=>o.kind==='output' && o.from===r.to && o.to===r.from) ? [i] : []));
+const labelKind = k=>({'input':'Read / Input','output':'Write / Output','business-exception':'Business Exception'}[k]);
+const el=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
+const svg=tag=>document.createElementNS('http://www.w3.org/2000/svg',tag);
+function field(list,key,value){const wrap=el('div','field');wrap.append(el('dt','',key),el('dd','',Array.isArray(value)?value.join('\n'):value));list.append(wrap);}
+function heading(text,lang){const h=el('h3','',text);h.id='detail-title';h.tabIndex=-1;if(lang)h.lang=lang;return h;}
+function refresh(){
+ canvas.classList.toggle('mode-all',mode==='all');
+ let visible=0;
+ data.relations.forEach((r,i)=>{
+  const selected=selection?.type==='relation'&&selection.id===i;
+  const hidden=mode==='representative'&&paired.has(i)&&!selected;
+  edgePaths[i].style.display=hidden?'none':'';edgeButtons[i].style.display=hidden?'none':'';
+  edgeButtons[i].setAttribute('aria-pressed',String(selected));edgePaths[i].classList.toggle('selected',selected);
+  const relevant=!selection||(selection.type==='relation'?selected:r.from===selection.id||r.to===selection.id);
+  edgePaths[i].classList.toggle('dim',!relevant);
+  if(!hidden)visible++;
+  captions.get(i)?.setAttribute('aria-pressed',String(selected));
+ });
+ nodeButtons.forEach((button,id)=>{
+  button.setAttribute('aria-pressed',String(selection?.type==='node'&&selection.id===id));
+  const r=selection?.type==='relation'?data.relations[selection.id]:null;
+  button.classList.toggle('related',!!r&&(r.from===id||r.to===id));
+ });
+ const temporary=mode==='representative'&&selection?.type==='relation'&&paired.has(selection.id);
+ document.querySelector('#mode-summary').textContent=`${visible} / 6 lines visible`+(mode==='representative'?` · ${temporary?'1 Read temporarily revealed · 1 Read still omitted':'2 Reads available in Detail'}`:' · No omitted Reads');
+ clearButton.disabled=!selection;
+}
+function announce(text){document.querySelector('#announcement').textContent=text;}
+function showOverview(){detail.replaceChildren(heading('Select a node or relation'),el('p','detail-copy','Read and Write captions appear here in full. Outside-scope nodes remain selectable.'));
+ const p=el('p','detail-copy','Output representative hides two paired Reads. Their data remains available in node Detail. Input-only and business Exception stay visible.');detail.append(p);}
+function clearSelection({returnFocus=false}={}){
+ const previous=selection, previousOrigin=origin;selection=null;origin=null;refresh();showOverview();announce('Selection cleared. Temporary Read lines hidden.');
+ if(returnFocus){const button=previous?.type==='node'?nodeButtons.get(previous.id):nodeButtons.get(previousOrigin?.node);(button||document.querySelector('.viewport')).focus();}
+}
+function showNode(id,{restoreRelation=null}={}){
+ selection={type:'node',id};origin=null;const n=nodeById.get(id);refresh();
+ detail.replaceChildren(el('span','eyebrow',n.type),heading(n.name,'ja'));
+ const badges=el('div','badges');badges.append(el('span',`badge ${n.scope?'inside':'outside'}`,n.scope?'In scope':'Outside scope'));detail.append(badges);
+ const connected=data.relations.map((r,i)=>({r,i})).filter(({r})=>r.from===id||r.to===id);
+ for(const kind of ['input','output','business-exception']){
+  const items=connected.filter(({r})=>r.kind===kind);if(!items.length)continue;
+  const section=el('section','relations-section');section.append(el('h4','',labelKind(kind)));const list=el('ul');
+  items.forEach(({r,i})=>{const b=el('button','relation-item');b.type='button';b.dataset.relation=i;b.lang='ja';
+   b.append(el('strong','',`${r.from} → ${r.to}`),el('span','',r.label));
+   if(paired.has(i)&&mode==='representative'){const note=el('small','','Normally omitted · Show this Read');note.lang='en';b.append(note);}
+   b.addEventListener('click',()=>showRelation(i,{node:id,relation:i},true));const li=el('li');li.append(b);list.append(li);
+  });section.append(list);detail.append(section);
+ }
+ const metadata=el('details');metadata.style.marginTop='24px';metadata.append(el('summary','','Node information'));const dl=el('dl');
+ if(n.type==='business')for(const key of ['why','when','who','where','result'])field(dl,key,n[key]);else field(dl,'Information',n.information);
+ dl.lang='ja';metadata.append(dl);detail.append(metadata);announce(`${n.name}. ${n.type}. ${n.scope?'In scope':'Outside scope'}. Details updated.`);
+ if(restoreRelation!==null)detail.querySelector(`[data-relation="${restoreRelation}"]`)?.focus();
+}
+function showRelation(i,from=null,focusDetail=false){
+ selection={type:'relation',id:i};origin=from;refresh();const r=data.relations[i];
+ detail.replaceChildren(el('span','eyebrow',labelKind(r.kind)),heading(r.label,'ja'));
+ const dl=el('dl');dl.lang='ja';field(dl,'From',r.from);field(dl,'To',r.to);detail.append(dl);
+ if(paired.has(i)&&mode==='representative')detail.append(el('p','detail-copy','This Read is temporarily visible. Selecting another target or clearing selection restores the representative view.'));
+ if(r.kind==='business-exception')detail.append(el('p','exception-note','Business Exception: return to the preceding business when the stated condition occurs. This is not an application error.'));
+ const actions=el('div','detail-actions');
+ if(from){const back=el('button','quiet-button','Back to node');back.type='button';back.addEventListener('click',()=>showNode(from.node,{restoreRelation:from.relation}));actions.append(back);}
+ for(const id of [r.from,r.to]){const b=el('button','quiet-button',id);b.type='button';b.lang='ja';b.addEventListener('click',()=>{showNode(id);document.querySelector('#detail-title').focus();});actions.append(b);}
+ detail.append(actions);announce(`${labelKind(r.kind)}. ${r.from} to ${r.to}. Details updated.`);if(focusDetail)document.querySelector('#detail-title').focus();
+}
+const icons={business:'<rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9v9h9M9 6h9v9"/>',document:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z M14 2v6h6 M8 13h8 M8 17h8"/>',users:'<circle cx="9" cy="7" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M17 3a4 4 0 0 1 0 8M22 21v-2a7 7 0 0 0-4-6"/>'};
+data.nodes.forEach(n=>{const b=el('button',`node ${n.type} ${n.scope?'inside':'outside'}`);b.type='button';b.dataset.node=n.id;b.setAttribute('aria-pressed','false');b.setAttribute('aria-label',`${n.name}, ${n.type}, ${n.scope?'in scope':'outside scope'}`);const [x,y]=positions[n.id];b.style.left=x+'px';b.style.top=y+'px';const row=el('span','row');const icon=svg('svg');icon.setAttribute('viewBox','0 0 24 24');icon.setAttribute('aria-hidden','true');icon.innerHTML=icons[n.type==='business'?'business':n.id==='依頼者'?'users':'document'];const name=el('strong','',n.name);name.lang='ja';row.append(icon,name);b.append(row);b.addEventListener('click',()=>showNode(n.id));nodeButtons.set(n.id,b);document.querySelector('.nodes').append(b);});
+const defs=svg('defs');for(const [kind,color] of [['input','#708b85'],['output','#416b98'],['business-exception','#b35747']]){const marker=svg('marker');for(const [k,v] of Object.entries({id:`arrow-${kind}`,viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:7,markerHeight:7,orient:'auto'}))marker.setAttribute(k,v);const arrow=svg('path');arrow.setAttribute('d','M0 0 L10 5 L0 10z');arrow.setAttribute('fill',color);marker.append(arrow);defs.append(marker);}edgesRoot.append(defs);
+data.relations.forEach((r,i)=>{const path=svg('path'),hit=svg('path');path.setAttribute('d',routes[i]);path.setAttribute('class',`edge ${r.kind}`);path.setAttribute('marker-end',`url(#arrow-${r.kind})`);hit.setAttribute('d',routes[i]);hit.setAttribute('class','edge-hit');hit.dataset.relation=i;hit.setAttribute('role','button');hit.setAttribute('tabindex','0');hit.setAttribute('aria-label',`${labelKind(r.kind)}: ${r.from} → ${r.to}, ${r.label}`);hit.setAttribute('aria-pressed','false');hit.addEventListener('click',()=>showRelation(i));hit.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showRelation(i);}});edgesRoot.append(path,hit);edgePaths.push(path);edgeButtons.push(hit);
+ if(r.kind==='output'){const b=el('button','caption',r.label);b.type='button';b.lang='ja';b.setAttribute('aria-label',`Write: ${r.label}`);b.setAttribute('aria-pressed','false');const [x,y]=i===4?[24,310]:[310,293];b.style.left=x+'px';b.style.top=y+'px';b.addEventListener('click',()=>showRelation(i));document.querySelector('.captions').append(b);captions.set(i,b);}
+});
+document.querySelectorAll('input[name="mode"]').forEach(radio=>radio.addEventListener('change',()=>{if(radio.checked){mode=radio.value;clearSelection();announce(`${mode==='all'?'All six lines':'Output representative'}. Selection cleared.`);}}));
+clearButton.addEventListener('click',()=>clearSelection({returnFocus:true}));
+document.querySelector('#view-details').addEventListener('click',e=>{e.preventDefault();document.querySelector('#detail-title').focus();});
+canvas.addEventListener('click',e=>{if(e.target===canvas||e.target===edgesRoot)clearSelection();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&selection){e.preventDefault();clearSelection({returnFocus:true});}});
+refresh();showOverview();
+</script>
+</body>
+</html>

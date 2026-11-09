@@ -38,5 +38,21 @@
     "guidance": "Open and dismiss navigation, filter requests, and review results. On phones, navigation overlays the workspace and results scroll horizontally within their own region.",
     "status": "Responsive working draft; mobile changes await human approval.",
     "evidence": "docs/poc/experiments/017-reference-html-ssot/README.md"
+  },
+  {
+    "id": "graph-components-draft",
+    "title": "Graph components",
+    "source": "review/references/graph-components-draft.html",
+    "guidance": "Review node kind/scope and selection/focus, then relation direction/type, full captions and temporary Read disclosure with return.",
+    "status": "Draft component-level Reference; human design review pending.",
+    "evidence": "docs/graph-components-review.md"
+  },
+  {
+    "id": "graph-selection-draft",
+    "title": "Graph selection and omitted Reads · Optional composition",
+    "source": "review/references/graph-selection-draft.html",
+    "guidance": "Optional four-node composition evidence. Review the graph components first; open this only for a graph / Detail coordination question.",
+    "status": "Preserved draft composition; not a required page mock or an approved Reference.",
+    "evidence": "docs/graph-selection-review.md"
   }
 ]

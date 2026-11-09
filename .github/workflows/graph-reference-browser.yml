@@ -1,0 +1,41 @@
+name: Graph Reference browser checks
+on:
+  pull_request:
+    paths:
+      - 'review/references/graph-selection-draft.html'
+      - 'review/references/graph-components-draft.html'
+      - 'tests/check-graph-*.cjs'
+      - '.github/workflows/graph-reference-browser.yml'
+jobs:
+  graph-reference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: tests/browser/package-lock.json
+      - run: npm ci
+        working-directory: tests/browser
+      - run: npx playwright install --with-deps chromium
+        working-directory: tests/browser
+      - name: Check state and browser behavior
+        env:
+          NODE_PATH: ${{ github.workspace }}/tests/browser/node_modules
+        run: |
+          export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+          node tests/check-graph-selection-state.cjs
+          node tests/check-graph-selection.cjs
+          node tests/check-graph-components.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: graph-reference-browser-evidence
+          path: |
+            tmp/graph-selection-evidence/
+            tmp/graph-components-evidence/
+          retention-days: 14
