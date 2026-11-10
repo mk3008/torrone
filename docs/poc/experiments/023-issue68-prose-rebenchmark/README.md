@@ -59,6 +59,12 @@ All final deliveries failed the complete item-list interaction and long-tab hove
 
 Three width-change cases sample after two animation frames, following the historic sequence. The prose calls for prompt recalculation without giving a frame limit. A separate 180 ms probe found that both Prompt Only trial 5 and Torrone trial 4 had transitioned to the expected parent-row state by the later sample. The original results remain fixed. This timing limitation matters when interpreting those failures. [Prompt Only probe](./runs/5/prompt-only/final/resize-probe.json) · [Torrone probe](./runs/4/torrone/final/resize-probe.json)
 
+For the prose-only comparison, exclude the three fixed-frame checks from **every** submission. This retrospective exclusion leaves the sealed test files, raw 25-case results and their scorecard intact. The following subtotal avoids treating the unstated deadline as a requirement. Its ranking matches the frozen delivery score.
+
+| Scope stated in the prose | Prompt Only | Torrone | Storybook |
+| --- | ---: | ---: | ---: |
+| First → final without D03, M03 and M08 | 16/44 → 33/44 | 37/44 → 39/44 | 14/44 → 15/44 |
+
 ## Fairness and improvement decision
 
 Each trial received the same prose, data, icons, agent model and Chromium. Prior target code and images and all grading material were unavailable to the implementation commands. None of the six agents submitted a product question. No hidden result was given as repair feedback. The independent workflows differed in their assistance and in which capabilities they chose to use. See [method and provenance](./METHOD.md) and [the fixed protocol](./PROTOCOL.md).
