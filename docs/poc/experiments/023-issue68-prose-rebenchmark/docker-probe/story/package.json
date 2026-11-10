@@ -1,0 +1,5 @@
+{
+  "name": "isolated-storybook-smoke",
+  "private": true,
+  "type": "module"
+}

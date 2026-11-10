@@ -1,0 +1,47 @@
+[
+  {
+    "scenario": "parent",
+    "start": 731,
+    "target": 732,
+    "twoFrames": {
+      "tabs": 5,
+      "arrows": 2,
+      "countButton": 0
+    },
+    "later": {
+      "tabs": 5,
+      "arrows": 0,
+      "countButton": 0
+    }
+  },
+  {
+    "scenario": "fit",
+    "start": 279,
+    "target": 280,
+    "twoFrames": {
+      "tabs": 1,
+      "arrows": 0,
+      "countButton": 1
+    },
+    "later": {
+      "tabs": 2,
+      "arrows": 0,
+      "countButton": 0
+    }
+  },
+  {
+    "scenario": "both",
+    "start": 599,
+    "target": 600,
+    "twoFrames": {
+      "tabs": 1,
+      "arrows": 0,
+      "countButton": 1
+    },
+    "later": {
+      "tabs": 5,
+      "arrows": 2,
+      "countButton": 0
+    }
+  }
+]

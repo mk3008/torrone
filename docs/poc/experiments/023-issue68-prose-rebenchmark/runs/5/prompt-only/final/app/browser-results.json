@@ -1,0 +1,42 @@
+{
+  "desktop": {
+    "docTabs": 8,
+    "docArrows": 0,
+    "itemArrows": 0,
+    "h2": "請求書の明細",
+    "pageOverflow": false
+  },
+  "narrow": {
+    "docTabs": 1,
+    "itemTabs": 1,
+    "counts": [
+      "ほか4",
+      "ほか4"
+    ],
+    "gap": 6,
+    "right": 0
+  },
+  "itemList": [
+    "履歴",
+    "メモ",
+    "関連資料",
+    "承認状況"
+  ],
+  "afterItem": {
+    "h2": "請求書の履歴",
+    "focused": ""
+  },
+  "chooser": {
+    "heading": "ほかの文書（4）",
+    "cards": 4,
+    "focus": ""
+  },
+  "afterDoc": {
+    "h2": "受注管理の概要",
+    "focused": null
+  },
+  "arrowNoSelect": {
+    "selected": "true",
+    "focused": null
+  }
+}

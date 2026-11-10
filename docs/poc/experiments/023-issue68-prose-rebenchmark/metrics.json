@@ -1,0 +1,945 @@
+{
+  "1": {
+    "prompt-only": {
+      "arm": "prompt-only",
+      "trial": 1,
+      "setupStartedUtc": "2026-11-10T13:53:51.693738+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.3685469999909401,
+      "modelStartedUtc": "2026-11-10T13:53:52.062415+00:00",
+      "exitCode": 0,
+      "modelSeconds": 19.67219469998963,
+      "endedUtc": "2026-11-10T13:54:11.734624+00:00",
+      "usage": {
+        "input_tokens": 62971,
+        "cached_input_tokens": 49664,
+        "output_tokens": 698,
+        "reasoning_output_tokens": 134
+      },
+      "toolCalls": {},
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [
+        "user cancelled MCP tool call",
+        "user cancelled MCP tool call",
+        "user cancelled MCP tool call"
+      ],
+      "timeToFirstSeconds": null,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    },
+    "torrone": {
+      "arm": "torrone",
+      "trial": 1,
+      "setupStartedUtc": "2026-11-10T13:53:53.407785+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.40439600008539855,
+      "modelStartedUtc": "2026-11-10T13:53:53.812285+00:00",
+      "exitCode": 0,
+      "modelSeconds": 17.920298100216314,
+      "endedUtc": "2026-11-10T13:54:11.732599+00:00",
+      "usage": {
+        "input_tokens": 62387,
+        "cached_input_tokens": 49024,
+        "output_tokens": 627,
+        "reasoning_output_tokens": 140
+      },
+      "toolCalls": {},
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [
+        "user cancelled MCP tool call",
+        "user cancelled MCP tool call"
+      ],
+      "timeToFirstSeconds": null,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    },
+    "storybook": {
+      "arm": "storybook",
+      "trial": 1,
+      "setupStartedUtc": "2026-11-10T13:53:52.011779+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:411b9277a070615a8627797190233b7411f5a9cf2da4447210b8ff42dccd6838",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.46281319996342063,
+      "modelStartedUtc": "2026-11-10T13:53:52.474753+00:00",
+      "exitCode": 0,
+      "modelSeconds": 18.001799299847335,
+      "endedUtc": "2026-11-10T13:54:10.476572+00:00",
+      "usage": {
+        "input_tokens": 48400,
+        "cached_input_tokens": 35456,
+        "output_tokens": 552,
+        "reasoning_output_tokens": 113
+      },
+      "toolCalls": {},
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [
+        "user cancelled MCP tool call"
+      ],
+      "timeToFirstSeconds": null,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    }
+  },
+  "2": {
+    "prompt-only": {
+      "arm": "prompt-only",
+      "trial": 2,
+      "setupStartedUtc": "2026-11-10T13:55:05.153409+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.47173840017057955,
+      "modelStartedUtc": "2026-11-10T13:55:05.625289+00:00",
+      "exitCode": 4294967295,
+      "modelSeconds": 267.2345843000803,
+      "endedUtc": "2026-11-10T13:59:32.859893+00:00",
+      "usage": null,
+      "toolCalls": {
+        "shell": 5
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": null,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    },
+    "torrone": {
+      "arm": "torrone",
+      "trial": 2,
+      "setupStartedUtc": "2026-11-10T13:55:03.485900+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.4502989000175148,
+      "modelStartedUtc": "2026-11-10T13:55:03.936327+00:00",
+      "exitCode": 4294967295,
+      "modelSeconds": 268.86329709994607,
+      "endedUtc": "2026-11-10T13:59:32.799644+00:00",
+      "usage": null,
+      "toolCalls": {
+        "shell": 6
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [
+        "tool call error: tool call failed for `isolated/shell`\n\nCaused by:\n    Mcp error: -32603: 'utf-8' codec can't encode character '\\udc83' in position 376: surrogates not allowed"
+      ],
+      "timeToFirstSeconds": null,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    },
+    "storybook": {
+      "arm": "storybook",
+      "trial": 2,
+      "setupStartedUtc": "2026-11-10T13:55:05.916385+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:411b9277a070615a8627797190233b7411f5a9cf2da4447210b8ff42dccd6838",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.5018317000940442,
+      "modelStartedUtc": "2026-11-10T13:55:06.418338+00:00",
+      "exitCode": 4294967295,
+      "modelSeconds": 266.54946110001765,
+      "endedUtc": "2026-11-10T13:59:32.967818+00:00",
+      "usage": null,
+      "toolCalls": {
+        "shell": 4
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": null,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    }
+  },
+  "3": {
+    "prompt-only": {
+      "arm": "prompt-only",
+      "trial": 3,
+      "setupStartedUtc": "2026-11-10T13:55:41.954355+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.36212210007943213,
+      "modelStartedUtc": "2026-11-10T13:55:42.316591+00:00",
+      "exitCode": 4294967295,
+      "modelSeconds": 230.86481719999574,
+      "endedUtc": "2026-11-10T13:59:33.181426+00:00",
+      "usage": null,
+      "toolCalls": {
+        "shell": 2
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": null,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    },
+    "torrone": {
+      "arm": "torrone",
+      "trial": 3,
+      "setupStartedUtc": "2026-11-10T13:55:42.702048+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.3980837999843061,
+      "modelStartedUtc": "2026-11-10T13:55:43.100260+00:00",
+      "exitCode": 4294967295,
+      "modelSeconds": 230.1749826001469,
+      "endedUtc": "2026-11-10T13:59:33.275266+00:00",
+      "usage": null,
+      "toolCalls": {
+        "shell": 7,
+        "checkpoint": 1
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [
+        "tool call error: tool call failed for `isolated/shell`\n\nCaused by:\n    Mcp error: -32603: 'utf-8' codec can't encode character '\\udc83' in position 413: surrogates not allowed"
+      ],
+      "timeToFirstSeconds": 194.568923,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    },
+    "storybook": {
+      "arm": "storybook",
+      "trial": 3,
+      "setupStartedUtc": "2026-11-10T13:55:40.977462+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:411b9277a070615a8627797190233b7411f5a9cf2da4447210b8ff42dccd6838",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "setupSeconds": 0.47083509992808104,
+      "modelStartedUtc": "2026-11-10T13:55:41.448414+00:00",
+      "exitCode": 4294967295,
+      "modelSeconds": 231.63204040005803,
+      "endedUtc": "2026-11-10T13:59:33.080472+00:00",
+      "usage": null,
+      "toolCalls": {
+        "shell": 7
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": null,
+      "autonomousReviewSeconds": null,
+      "phases": {}
+    }
+  },
+  "4": {
+    "prompt-only": {
+      "arm": "prompt-only",
+      "trial": 4,
+      "setupStartedUtc": "2026-11-10T13:59:24.102943+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "utf8ShellPreflight": "passed",
+      "setupSeconds": 0.5590754000004381,
+      "modelStartedUtc": "2026-11-10T13:59:24.662113+00:00",
+      "exitCode": 0,
+      "modelSeconds": 264.98544530011714,
+      "endedUtc": "2026-11-10T14:03:49.647572+00:00",
+      "usage": {
+        "input_tokens": 441191,
+        "cached_input_tokens": 414336,
+        "output_tokens": 11865,
+        "reasoning_output_tokens": 1375
+      },
+      "toolCalls": {
+        "shell": 11,
+        "checkpoint": 2,
+        "view_image": 2
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": 156.565952,
+      "autonomousReviewSeconds": 103.497798,
+      "phases": {
+        "first": {
+          "passed": 19,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 5,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 8,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 2,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 4,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "I02",
+            "I03",
+            "I05",
+            "I06",
+            "I07",
+            "V01"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "98c708e98bafcb79a3e3893701ba7d8cda74be6c03cc2dba308e606ae2367d2a",
+          "exitCode": 1,
+          "seconds": 8.803073700051755
+        },
+        "final": {
+          "passed": 19,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 5,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 8,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 2,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 4,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "I02",
+            "I03",
+            "I05",
+            "I06",
+            "I07",
+            "V01"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "dc4313e29e0cb9fa3f42a37d739ae2ab87d43624dd6449eabca2452e302f67b0",
+          "exitCode": 1,
+          "seconds": 8.786109500098974
+        }
+      }
+    },
+    "torrone": {
+      "arm": "torrone",
+      "trial": 4,
+      "setupStartedUtc": "2026-11-10T13:59:25.289080+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "utf8ShellPreflight": "passed",
+      "setupSeconds": 0.6783853000961244,
+      "modelStartedUtc": "2026-11-10T13:59:25.967556+00:00",
+      "exitCode": 0,
+      "modelSeconds": 245.917018200038,
+      "endedUtc": "2026-11-10T14:03:31.884587+00:00",
+      "usage": {
+        "input_tokens": 567286,
+        "cached_input_tokens": 546176,
+        "output_tokens": 10435,
+        "reasoning_output_tokens": 1235
+      },
+      "toolCalls": {
+        "shell": 14,
+        "checkpoint": 2,
+        "view_image": 3
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call",
+        "todo_list"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": 135.154926,
+      "autonomousReviewSeconds": 103.477195,
+      "phases": {
+        "first": {
+          "passed": 18,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 4,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 6,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 4,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 4,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "D03",
+            "M03",
+            "M08",
+            "I03",
+            "I04",
+            "I07",
+            "V03"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "d57a6288d0c2c7f598fdf87b9816a49b7ad6fd0bed752d2063b6ddcb5ce522ee",
+          "exitCode": 1,
+          "seconds": 8.828218000009656
+        },
+        "final": {
+          "passed": 19,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 4,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 6,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 5,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 4,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "D03",
+            "M03",
+            "M08",
+            "I03",
+            "I07",
+            "V03"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "427a0c2df0014bbc39cbaa739cf4119843d658edfc3ff1b7dcd9dfdcb7432511",
+          "exitCode": 1,
+          "seconds": 9.176553800003603
+        }
+      }
+    },
+    "storybook": {
+      "arm": "storybook",
+      "trial": 4,
+      "setupStartedUtc": "2026-11-10T13:59:25.153022+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:411b9277a070615a8627797190233b7411f5a9cf2da4447210b8ff42dccd6838",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "utf8ShellPreflight": "passed",
+      "setupSeconds": 0.621316600125283,
+      "modelStartedUtc": "2026-11-10T13:59:25.774427+00:00",
+      "exitCode": 0,
+      "modelSeconds": 508.90597150009125,
+      "endedUtc": "2026-11-10T14:07:54.680411+00:00",
+      "usage": {
+        "input_tokens": 1046271,
+        "cached_input_tokens": 1010816,
+        "output_tokens": 19175,
+        "reasoning_output_tokens": 1837
+      },
+      "toolCalls": {
+        "shell": 16,
+        "checkpoint": 2,
+        "view_image": 3
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": 247.191958,
+      "autonomousReviewSeconds": 253.970672,
+      "phases": {
+        "first": {
+          "passed": 5,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 0,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 1,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 2,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 2,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "D01",
+            "D02",
+            "D03",
+            "D04",
+            "D05",
+            "M01",
+            "M02",
+            "M03",
+            "M04",
+            "M05",
+            "M06",
+            "M08",
+            "I02",
+            "I03",
+            "I04",
+            "I06",
+            "I07",
+            "V01",
+            "V02",
+            "V04"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "d924cea0ed798725a9f9114e2bf7b4ee3f3bf37db428e523386a9dd702010a59",
+          "exitCode": 1,
+          "seconds": 8.45091630006209
+        },
+        "final": {
+          "passed": 18,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 5,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 8,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 3,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 2,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "I03",
+            "I04",
+            "I06",
+            "I07",
+            "V01",
+            "V02",
+            "V04"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "c39c8ec0e668d1c76b7f78f096723ba71e2d4fcb9e09662b6908c183d77cfc0f",
+          "exitCode": 1,
+          "seconds": 8.513834699988365
+        }
+      }
+    }
+  },
+  "5": {
+    "prompt-only": {
+      "arm": "prompt-only",
+      "trial": 5,
+      "setupStartedUtc": "2026-11-10T13:59:58.572467+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "utf8ShellPreflight": "passed",
+      "setupSeconds": 0.5249914000742137,
+      "modelStartedUtc": "2026-11-10T13:59:59.097553+00:00",
+      "exitCode": 0,
+      "modelSeconds": 345.77657829993404,
+      "endedUtc": "2026-11-10T14:05:44.874143+00:00",
+      "usage": {
+        "input_tokens": 489237,
+        "cached_input_tokens": 477184,
+        "output_tokens": 16908,
+        "reasoning_output_tokens": 1816
+      },
+      "toolCalls": {
+        "shell": 14,
+        "checkpoint": 2
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": 226.641565,
+      "autonomousReviewSeconds": 113.726501,
+      "phases": {
+        "first": {
+          "passed": 0,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 0,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 0,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 0,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 0,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "D01",
+            "D02",
+            "D03",
+            "D04",
+            "D05",
+            "M01",
+            "M02",
+            "M03",
+            "M04",
+            "M05",
+            "M06",
+            "M07",
+            "M08",
+            "I01",
+            "I02",
+            "I03",
+            "I04",
+            "I05",
+            "I06",
+            "I07",
+            "V01",
+            "V02",
+            "V03",
+            "V04",
+            "V05"
+          ],
+          "pageErrors": 25,
+          "archiveSha256": "019cd7061db44bd89cc1fa7a79b1b8eb3e72dfd39f4a542e907f287728a679e3",
+          "exitCode": 1,
+          "seconds": 32.06954220007174
+        },
+        "final": {
+          "passed": 17,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 4,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 6,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 3,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 4,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "D03",
+            "M03",
+            "M08",
+            "I03",
+            "I04",
+            "I06",
+            "I07",
+            "V03"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "cf63dbde2585b8c75af34c6c26eb8937c9d3f4690bca11081b24ededa227e2a6",
+          "exitCode": 1,
+          "seconds": 8.513672000030056
+        }
+      }
+    },
+    "torrone": {
+      "arm": "torrone",
+      "trial": 5,
+      "setupStartedUtc": "2026-11-10T13:59:59.372714+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "utf8ShellPreflight": "passed",
+      "setupSeconds": 0.6429430998396128,
+      "modelStartedUtc": "2026-11-10T14:00:00.015794+00:00",
+      "exitCode": 0,
+      "modelSeconds": 326.85558690014295,
+      "endedUtc": "2026-11-10T14:05:26.871396+00:00",
+      "usage": {
+        "input_tokens": 811086,
+        "cached_input_tokens": 766592,
+        "output_tokens": 14065,
+        "reasoning_output_tokens": 1528
+      },
+      "toolCalls": {
+        "shell": 15,
+        "checkpoint": 2,
+        "view_image": 5
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": 108.656554,
+      "autonomousReviewSeconds": 213.205346,
+      "phases": {
+        "first": {
+          "passed": 22,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 5,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 8,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 4,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 5,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "I03",
+            "I04",
+            "I07"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "1632cf93ede704283ab6bd8cf559afd7eb14fa85f10dfd9695f44beb9fc56087",
+          "exitCode": 1,
+          "seconds": 8.68432670016773
+        },
+        "final": {
+          "passed": 23,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 5,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 8,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 5,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 5,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "I03",
+            "I07"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "6d860a38f4f32778cc51fbdd5317c99823c245353b9f0164c69cd19bd8ff1a45",
+          "exitCode": 1,
+          "seconds": 8.27878879988566
+        }
+      }
+    },
+    "storybook": {
+      "arm": "storybook",
+      "trial": 5,
+      "setupStartedUtc": "2026-11-10T13:59:57.111278+00:00",
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": "low",
+      "imageId": "sha256:411b9277a070615a8627797190233b7411f5a9cf2da4447210b8ff42dccd6838",
+      "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+      "utf8ShellPreflight": "passed",
+      "setupSeconds": 0.6947677000425756,
+      "modelStartedUtc": "2026-11-10T13:59:57.806141+00:00",
+      "exitCode": 0,
+      "modelSeconds": 197.82463539997116,
+      "endedUtc": "2026-11-10T14:03:15.630790+00:00",
+      "usage": {
+        "input_tokens": 310857,
+        "cached_input_tokens": 283264,
+        "output_tokens": 8504,
+        "reasoning_output_tokens": 749
+      },
+      "toolCalls": {
+        "shell": 9,
+        "checkpoint": 2
+      },
+      "sessionItemTypes": [
+        "agent_message",
+        "mcp_tool_call"
+      ],
+      "toolErrors": [],
+      "timeToFirstSeconds": 88.816679,
+      "autonomousReviewSeconds": 103.164351,
+      "phases": {
+        "first": {
+          "passed": 9,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 0,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 1,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 3,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 5,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "D01",
+            "D02",
+            "D03",
+            "D04",
+            "D05",
+            "M01",
+            "M02",
+            "M03",
+            "M04",
+            "M05",
+            "M06",
+            "M08",
+            "I02",
+            "I03",
+            "I04",
+            "I07"
+          ],
+          "pageErrors": 0,
+          "archiveSha256": "7d9da013498c8ce231654ffb0c029fc4a1ea83385331874a39603f0fb1065a12",
+          "exitCode": 1,
+          "seconds": 7.912671300116926
+        },
+        "final": {
+          "passed": 0,
+          "cases": 25,
+          "groups": {
+            "desktop": {
+              "passed": 0,
+              "cases": 5
+            },
+            "narrow": {
+              "passed": 0,
+              "cases": 8
+            },
+            "interaction": {
+              "passed": 0,
+              "cases": 7
+            },
+            "visual": {
+              "passed": 0,
+              "cases": 5
+            }
+          },
+          "failed": [
+            "D01",
+            "D02",
+            "D03",
+            "D04",
+            "D05",
+            "M01",
+            "M02",
+            "M03",
+            "M04",
+            "M05",
+            "M06",
+            "M07",
+            "M08",
+            "I01",
+            "I02",
+            "I03",
+            "I04",
+            "I05",
+            "I06",
+            "I07",
+            "V01",
+            "V02",
+            "V03",
+            "V04",
+            "V05"
+          ],
+          "pageErrors": 25,
+          "archiveSha256": "26aa67ee82bcf23d731c41cdb0d68426f6d0c31b74a2a32d4154580f68955f71",
+          "exitCode": 1,
+          "seconds": 65.81921179988421
+        }
+      }
+    }
+  }
+}

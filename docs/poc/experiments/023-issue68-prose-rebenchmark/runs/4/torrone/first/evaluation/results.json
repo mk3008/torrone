@@ -1,0 +1,331 @@
+{
+  "chromium": "158.0.8127.18",
+  "passed": 18,
+  "cases": 25,
+  "results": [
+    {
+      "id": "D01",
+      "section": "desktop",
+      "spec": "R2",
+      "scenario": "parent",
+      "width": 732,
+      "status": "pass"
+    },
+    {
+      "id": "D02",
+      "section": "desktop",
+      "spec": "R2 R3",
+      "scenario": "parent",
+      "width": 731,
+      "status": "pass"
+    },
+    {
+      "id": "D03",
+      "section": "desktop",
+      "spec": "R2",
+      "scenario": "parent",
+      "width": 731,
+      "status": "fail",
+      "detail": "parent visible scroll buttons\n\n2 !== 0\n"
+    },
+    {
+      "id": "D04",
+      "section": "desktop",
+      "spec": "R2",
+      "scenario": "pcChild",
+      "width": 704,
+      "status": "pass"
+    },
+    {
+      "id": "D05",
+      "section": "desktop",
+      "spec": "R2 R3",
+      "scenario": "pcChild",
+      "width": 703,
+      "status": "pass"
+    },
+    {
+      "id": "M01",
+      "section": "narrow",
+      "spec": "R2",
+      "scenario": "fit",
+      "width": 280,
+      "status": "pass"
+    },
+    {
+      "id": "M02",
+      "section": "narrow",
+      "spec": "R2 R4",
+      "scenario": "fit",
+      "width": 279,
+      "status": "pass"
+    },
+    {
+      "id": "M03",
+      "section": "narrow",
+      "spec": "R2",
+      "scenario": "fit",
+      "width": 279,
+      "status": "fail",
+      "detail": "parent accessible tabs\n\n1 !== 2\n"
+    },
+    {
+      "id": "M04",
+      "section": "narrow",
+      "spec": "R2",
+      "scenario": "child",
+      "width": 462,
+      "status": "pass"
+    },
+    {
+      "id": "M05",
+      "section": "narrow",
+      "spec": "R2 R4",
+      "scenario": "child",
+      "width": 461,
+      "status": "pass"
+    },
+    {
+      "id": "M06",
+      "section": "narrow",
+      "spec": "R4",
+      "scenario": "parent",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "id": "M07",
+      "section": "narrow",
+      "spec": "R4",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "id": "M08",
+      "section": "narrow",
+      "spec": "R2 R3 R4",
+      "scenario": "both",
+      "width": 599,
+      "status": "fail",
+      "detail": "parent accessible tabs\n\n1 !== 5\n"
+    },
+    {
+      "id": "I01",
+      "section": "interaction",
+      "spec": "R3",
+      "scenario": "parent",
+      "width": 731,
+      "status": "pass",
+      "observed": {
+        "right": {
+          "initial": 16,
+          "final": -7
+        },
+        "left": {
+          "initial": -7,
+          "final": 9
+        },
+        "wheel": {
+          "initial": 9,
+          "final": -8
+        }
+      }
+    },
+    {
+      "id": "I02",
+      "section": "interaction",
+      "spec": "C1 R1 R4 I3",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "id": "I03",
+      "section": "interaction",
+      "spec": "C2 I3",
+      "scenario": "both",
+      "width": 390,
+      "status": "fail",
+      "detail": "list begins beneath trigger: observed 204.1875; expected 198.1875 ± 3"
+    },
+    {
+      "id": "I04",
+      "section": "interaction",
+      "spec": "I3",
+      "scenario": "both",
+      "width": 390,
+      "status": "fail",
+      "detail": "focus returned to parent trigger"
+    },
+    {
+      "id": "I05",
+      "section": "interaction",
+      "spec": "I1 R1",
+      "scenario": "fit",
+      "width": 900,
+      "status": "pass"
+    },
+    {
+      "id": "I06",
+      "section": "interaction",
+      "spec": "I2",
+      "scenario": "fit",
+      "width": 900,
+      "status": "pass"
+    },
+    {
+      "id": "I07",
+      "section": "interaction",
+      "spec": "V3 I1 I2",
+      "scenario": "parent",
+      "width": 900,
+      "status": "fail",
+      "detail": "full name and affiliation on hover"
+    },
+    {
+      "id": "V01",
+      "section": "visual",
+      "spec": "V1 V2",
+      "scenario": "fit",
+      "width": 1280,
+      "status": "pass"
+    },
+    {
+      "id": "V02",
+      "section": "visual",
+      "spec": "V3 V4",
+      "scenario": "parent",
+      "width": 900,
+      "status": "pass",
+      "observed": {
+        "colors": [
+          [
+            229,
+            242,
+            249
+          ],
+          [
+            240,
+            233,
+            248
+          ],
+          [
+            19,
+            90,
+            210
+          ],
+          [
+            19,
+            90,
+            210
+          ],
+          [
+            240,
+            233,
+            248
+          ]
+        ]
+      }
+    },
+    {
+      "id": "V03",
+      "section": "visual",
+      "spec": "V4 I1",
+      "scenario": "fit",
+      "width": 900,
+      "status": "fail",
+      "detail": "dark dotted indicator within the focused tab"
+    },
+    {
+      "id": "V04",
+      "section": "visual",
+      "spec": "R4 V5",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass",
+      "observed": [
+        {
+          "tab": {
+            "x": 16,
+            "y": 110.1875,
+            "width": 262.296875,
+            "height": 44
+          },
+          "trigger": {
+            "x": 284.296875,
+            "y": 110.1875,
+            "width": 89.703125,
+            "height": 44
+          },
+          "gap": 6
+        },
+        {
+          "tab": {
+            "x": 16,
+            "y": 154.1875,
+            "width": 262.296875,
+            "height": 44
+          },
+          "trigger": {
+            "x": 284.296875,
+            "y": 154.1875,
+            "width": 89.703125,
+            "height": 44
+          },
+          "gap": 6
+        }
+      ]
+    },
+    {
+      "id": "V05",
+      "section": "visual",
+      "spec": "V5 C1 C2",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass",
+      "observed": [
+        {
+          "rect": {
+            "x": 233.296875,
+            "y": 112.1875,
+            "width": 44,
+            "height": 44
+          },
+          "ink": {
+            "pixels": 52,
+            "minY": 129,
+            "maxY": 138
+          }
+        },
+        {
+          "rect": {
+            "x": 284.296875,
+            "y": 110.1875,
+            "width": 89.703125,
+            "height": 44
+          },
+          "ink": {
+            "pixels": 28,
+            "minY": 127,
+            "maxY": 136
+          }
+        },
+        {
+          "rect": {
+            "x": 284.296875,
+            "y": 154.1875,
+            "width": 89.703125,
+            "height": 44
+          },
+          "ink": {
+            "pixels": 22,
+            "minY": 173,
+            "maxY": 178
+          }
+        }
+      ]
+    }
+  ],
+  "pageErrors": []
+}

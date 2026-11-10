@@ -1,0 +1,12 @@
+{"writable":true,"outsideCanariesUnavailable":true,"gitHubFetchUnavailable":true,"chromium":"158.0.8127.18","screenshot":"browser.png"}
+# Components
+
+- probe-button (probe-button)
+## Passing Stories
+
+- probe-button--toggle
+
+## Result
+
+Passed: 1 component test passed.
+Accessibility: not checked (addon-a11y is not enabled).

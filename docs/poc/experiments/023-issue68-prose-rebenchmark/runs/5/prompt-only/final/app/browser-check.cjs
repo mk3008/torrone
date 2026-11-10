@@ -1,0 +1,15 @@
+const {chromium}=require('playwright');
+const fs=require('fs');
+(async()=>{const b=await chromium.launch({headless:true}),p=await b.newPage({viewport:{width:1280,height:800}});
+let out={};
+await p.goto('http://127.0.0.1:4173/app/?case=desktop');await p.waitForSelector('[role=tab]');
+out.desktop={docTabs:await p.locator('#docrow [role=tab]').count(),docArrows:await p.locator('#docrow .scroll-button').count(),itemArrows:await p.locator('#itemrow .scroll-button').count(),h2:await p.locator('h2').textContent(),pageOverflow:await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth)};
+await p.screenshot({path:'/bench/app/evidence-desktop.png',fullPage:true});
+await p.setViewportSize({width:390,height:844});await p.goto('http://127.0.0.1:4173/app/?case=both');await p.waitForSelector('[role=tab]');
+out.narrow={docTabs:await p.locator('#docrow [role=tab]').count(),itemTabs:await p.locator('#itemrow [role=tab]').count(),counts:await p.locator('.count-button').allTextContents(),gap:await p.evaluate(()=>{let a=document.querySelector('#docrow .tab').getBoundingClientRect(),b=document.querySelector('#docrow .count-button').getBoundingClientRect();return b.left-a.right}),right:await p.evaluate(()=>{let b=document.querySelector('#docrow .count-button').getBoundingClientRect(),w=document.querySelector('.workspace').getBoundingClientRect();return w.right-16-b.right})};
+await p.locator('#itemrow .count-button').click();out.itemList=await p.locator('.item-option').allTextContents();await p.locator('.item-option').first().click();out.afterItem={h2:await p.locator('.content-panel h2').textContent(),focused:await p.evaluate(()=>document.activeElement?.className)};
+await p.locator('#docrow .count-button').click();out.chooser={heading:await p.locator('.chooser h2').textContent(),cards:await p.locator('.card').count(),focus:await p.evaluate(()=>document.activeElement?.className)};await p.screenshot({path:'/bench/app/evidence-chooser.png',fullPage:true});
+await p.locator('.card').nth(1).click();out.afterDoc={h2:await p.locator('.content-panel h2').textContent(),focused:await p.evaluate(()=>document.activeElement?.getAttribute('role'))};
+await p.locator('#docrow .tab').focus();await p.keyboard.press('ArrowRight');out.arrowNoSelect={selected:await p.locator('#docrow .tab').getAttribute('aria-selected'),focused:await p.evaluate(()=>document.activeElement?.getAttribute('aria-label'))};
+await p.screenshot({path:'/bench/app/evidence-narrow.png',fullPage:true});
+fs.writeFileSync('/bench/app/browser-results.json',JSON.stringify(out,null,2));console.log(out);await b.close()})().catch(e=>{console.error(e);process.exit(1)});

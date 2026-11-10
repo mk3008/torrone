@@ -1,0 +1,60 @@
+[
+  {
+    "check": "desktop overflow controls",
+    "docArrows": 1,
+    "itemArrows": 0,
+    "pageScroll": true
+  },
+  {
+    "check": "desktop arrow",
+    "scrollLeft": 140,
+    "selected": "請求書、東日本"
+  },
+  {
+    "check": "narrow overflow",
+    "docCount": 2,
+    "itemCount": 2,
+    "arrows": 0
+  },
+  {
+    "check": "doc chooser focus/cards",
+    "focus": "戻る",
+    "cards": 4,
+    "heading": 1
+  },
+  {
+    "check": "card selection",
+    "selected": "四半期売上の照合レポート、西日本",
+    "focusRole": "tab"
+  },
+  {
+    "check": "item menu",
+    "expanded": "true",
+    "items": [
+      "履歴",
+      "メモ",
+      "関連資料",
+      "承認状況"
+    ],
+    "alignment": [
+      374,
+      374
+    ]
+  },
+  {
+    "check": "item select focus",
+    "heading": "請求書の履歴",
+    "focus": "count-button item-count"
+  },
+  {
+    "check": "fit at 600",
+    "docArrows": 0,
+    "docTabs": 2,
+    "itemTabs": 2
+  },
+  {
+    "check": "arrow focus no activation",
+    "focused": "受注管理、東日本",
+    "selected": "請求書、東日本"
+  }
+]

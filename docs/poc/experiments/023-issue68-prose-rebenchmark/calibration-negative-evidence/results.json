@@ -1,0 +1,282 @@
+{
+  "chromium": "158.0.8127.18",
+  "passed": 21,
+  "cases": 25,
+  "results": [
+    {
+      "id": "D01",
+      "section": "desktop",
+      "spec": "R2",
+      "scenario": "parent",
+      "width": 732,
+      "status": "pass"
+    },
+    {
+      "id": "D02",
+      "section": "desktop",
+      "spec": "R2 R3",
+      "scenario": "parent",
+      "width": 731,
+      "status": "pass"
+    },
+    {
+      "id": "D03",
+      "section": "desktop",
+      "spec": "R2",
+      "scenario": "parent",
+      "width": 731,
+      "status": "pass"
+    },
+    {
+      "id": "D04",
+      "section": "desktop",
+      "spec": "R2",
+      "scenario": "pcChild",
+      "width": 704,
+      "status": "pass"
+    },
+    {
+      "id": "D05",
+      "section": "desktop",
+      "spec": "R2 R3",
+      "scenario": "pcChild",
+      "width": 703,
+      "status": "pass"
+    },
+    {
+      "id": "M01",
+      "section": "narrow",
+      "spec": "R2",
+      "scenario": "fit",
+      "width": 280,
+      "status": "pass"
+    },
+    {
+      "id": "M02",
+      "section": "narrow",
+      "spec": "R2 R4",
+      "scenario": "fit",
+      "width": 279,
+      "status": "pass"
+    },
+    {
+      "id": "M03",
+      "section": "narrow",
+      "spec": "R2",
+      "scenario": "fit",
+      "width": 279,
+      "status": "pass"
+    },
+    {
+      "id": "M04",
+      "section": "narrow",
+      "spec": "R2",
+      "scenario": "child",
+      "width": 462,
+      "status": "pass"
+    },
+    {
+      "id": "M05",
+      "section": "narrow",
+      "spec": "R2 R4",
+      "scenario": "child",
+      "width": 461,
+      "status": "pass"
+    },
+    {
+      "id": "M06",
+      "section": "narrow",
+      "spec": "R4",
+      "scenario": "parent",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "id": "M07",
+      "section": "narrow",
+      "spec": "R4",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "id": "M08",
+      "section": "narrow",
+      "spec": "R2 R3 R4",
+      "scenario": "both",
+      "width": 599,
+      "status": "pass"
+    },
+    {
+      "id": "I01",
+      "section": "interaction",
+      "spec": "R3",
+      "scenario": "parent",
+      "width": 731,
+      "status": "fail",
+      "detail": "tab moved from 17 to 17"
+    },
+    {
+      "id": "I02",
+      "section": "interaction",
+      "spec": "C1 R1 R4 I3",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "id": "I03",
+      "section": "interaction",
+      "spec": "C2 I3",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "id": "I04",
+      "section": "interaction",
+      "spec": "I3",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass"
+    },
+    {
+      "id": "I05",
+      "section": "interaction",
+      "spec": "I1 R1",
+      "scenario": "fit",
+      "width": 900,
+      "status": "fail",
+      "detail": "Expected values to be strictly equal:\n\n'false' !== 'true'\n"
+    },
+    {
+      "id": "I06",
+      "section": "interaction",
+      "spec": "I2",
+      "scenario": "fit",
+      "width": 900,
+      "status": "pass"
+    },
+    {
+      "id": "I07",
+      "section": "interaction",
+      "spec": "V3 I1 I2",
+      "scenario": "parent",
+      "width": 900,
+      "status": "pass"
+    },
+    {
+      "id": "V01",
+      "section": "visual",
+      "spec": "V1 V2",
+      "scenario": "fit",
+      "width": 1280,
+      "status": "pass"
+    },
+    {
+      "id": "V02",
+      "section": "visual",
+      "spec": "V3 V4",
+      "scenario": "parent",
+      "width": 900,
+      "status": "pass",
+      "observed": {
+        "colors": [
+          [
+            229,
+            242,
+            249
+          ],
+          [
+            240,
+            233,
+            248
+          ],
+          [
+            19,
+            90,
+            210
+          ],
+          [
+            19,
+            90,
+            210
+          ],
+          [
+            240,
+            233,
+            248
+          ]
+        ]
+      }
+    },
+    {
+      "id": "V03",
+      "section": "visual",
+      "spec": "V4 I1",
+      "scenario": "fit",
+      "width": 900,
+      "status": "fail",
+      "detail": "Expected values to be strictly equal:\n\n'false' !== 'true'\n"
+    },
+    {
+      "id": "V04",
+      "section": "visual",
+      "spec": "R4 V5",
+      "scenario": "both",
+      "width": 390,
+      "status": "fail",
+      "detail": "parent visible gap\n\n10 !== 6\n"
+    },
+    {
+      "id": "V05",
+      "section": "visual",
+      "spec": "V5 C1 C2",
+      "scenario": "both",
+      "width": 390,
+      "status": "pass",
+      "observed": [
+        {
+          "rect": {
+            "x": 239.84375,
+            "y": 73,
+            "width": 44,
+            "height": 44
+          },
+          "ink": {
+            "pixels": 42,
+            "minY": 91,
+            "maxY": 99
+          }
+        },
+        {
+          "rect": {
+            "x": 294.84375,
+            "y": 72,
+            "width": 79.15625,
+            "height": 44
+          },
+          "ink": {
+            "pixels": 8,
+            "minY": 90,
+            "maxY": 97
+          }
+        },
+        {
+          "rect": {
+            "x": 294.84375,
+            "y": 116,
+            "width": 79.15625,
+            "height": 44
+          },
+          "ink": {
+            "pixels": 8,
+            "minY": 136,
+            "maxY": 139
+          }
+        }
+      ]
+    }
+  ],
+  "pageErrors": []
+}

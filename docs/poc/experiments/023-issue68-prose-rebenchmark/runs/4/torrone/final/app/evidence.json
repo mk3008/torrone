@@ -1,0 +1,59 @@
+[
+  {
+    "desktopOverflow": {
+      "docNav": 2,
+      "itemNav": 0,
+      "docScroll": [
+        781,
+        1113
+      ],
+      "scrolled": true
+    }
+  },
+  {
+    "keyboard": {
+      "selected": "invoice",
+      "focused": "east"
+    }
+  },
+  {
+    "closeInactive": {
+      "selected": "invoice",
+      "eastExists": 0
+    }
+  },
+  {
+    "chooser": {
+      "focus": "back",
+      "cards": 4,
+      "returnFocus": "doc"
+    }
+  },
+  {
+    "itemChooser": {
+      "focus": "list-item",
+      "expanded": "true",
+      "returnFocus": "item",
+      "selectReturn": "item",
+      "heading": "請求書の履歴"
+    }
+  },
+  {
+    "geometry": {
+      "doc": {
+        "x": 16,
+        "y": 110.1875,
+        "width": 262.296875,
+        "height": 44
+      },
+      "count": {
+        "x": 284.296875,
+        "y": 110.1875,
+        "width": 89.703125,
+        "height": 44
+      },
+      "gap": 6,
+      "noPageX": true
+    }
+  }
+]

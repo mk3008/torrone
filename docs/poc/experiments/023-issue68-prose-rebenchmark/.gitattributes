@@ -1,0 +1,4 @@
+# Preserve the exact bytes of sealed submissions and evidence.
+* -text -whitespace
+/README.md text whitespace
+/.gitattributes text whitespace

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "desktop rows independent",
+    "status": "pass",
+    "detail": "document overflow only"
+  },
+  {
+    "name": "wheel scroll",
+    "status": "pass",
+    "detail": "track moved"
+  },
+  {
+    "name": "desktop exact/room fit",
+    "status": "pass",
+    "detail": "8 × 140 fits 1148 inner px"
+  },
+  {
+    "name": "narrow six pixel gap",
+    "status": "pass",
+    "detail": "gap 6"
+  },
+  {
+    "name": "item chooser focus",
+    "status": "pass",
+    "detail": "first hidden item focused"
+  },
+  {
+    "name": "item escape focus return",
+    "status": "pass",
+    "detail": "trigger focused"
+  },
+  {
+    "name": "document escape focus return",
+    "status": "pass",
+    "detail": "trigger focused"
+  },
+  {
+    "name": "inactive close preserves selection",
+    "status": "pass",
+    "detail": "selection unchanged"
+  },
+  {
+    "name": "selected close chooses following",
+    "status": "pass",
+    "detail": "following selected"
+  },
+  {
+    "name": "close focus",
+    "status": "pass",
+    "detail": "remaining tab focused"
+  },
+  {
+    "name": "item selection preserved",
+    "status": "pass",
+    "detail": "履歴 restored"
+  },
+  {
+    "name": "unknown case fallback",
+    "status": "pass",
+    "detail": "both case used"
+  }
+]

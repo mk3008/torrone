@@ -1,0 +1,7 @@
+{
+  "name": "tab-benchmark-tools",
+  "private": true,
+  "dependencies": {
+    "playwright": "1.65.0"
+  }
+}

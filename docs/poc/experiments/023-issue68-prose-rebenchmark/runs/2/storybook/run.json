@@ -1,0 +1,14 @@
+{
+  "arm": "storybook",
+  "trial": 2,
+  "setupStartedUtc": "2026-11-10T13:55:05.916385+00:00",
+  "model": "gpt-5.6-sol",
+  "reasoningEffort": "low",
+  "imageId": "sha256:411b9277a070615a8627797190233b7411f5a9cf2da4447210b8ff42dccd6838",
+  "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+  "setupSeconds": 0.5018317000940442,
+  "modelStartedUtc": "2026-11-10T13:55:06.418338+00:00",
+  "exitCode": 4294967295,
+  "modelSeconds": 266.54946110001765,
+  "endedUtc": "2026-11-10T13:59:32.967818+00:00"
+}

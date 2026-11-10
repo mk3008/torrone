@@ -1,0 +1,15 @@
+{
+  "arm": "torrone",
+  "trial": 5,
+  "setupStartedUtc": "2026-11-10T13:59:59.372714+00:00",
+  "model": "gpt-5.6-sol",
+  "reasoningEffort": "low",
+  "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+  "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+  "utf8ShellPreflight": "passed",
+  "setupSeconds": 0.6429430998396128,
+  "modelStartedUtc": "2026-11-10T14:00:00.015794+00:00",
+  "exitCode": 0,
+  "modelSeconds": 326.85558690014295,
+  "endedUtc": "2026-11-10T14:05:26.871396+00:00"
+}

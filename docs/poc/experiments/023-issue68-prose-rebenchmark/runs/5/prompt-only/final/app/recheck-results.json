@@ -1,0 +1,20 @@
+{
+  "desktopOverflow": {
+    "docArrows": 2,
+    "itemArrows": 0,
+    "before": "matrix(1, 0, 0, 1, 0, 0)",
+    "after": "matrix(1, 0, 0, 1, -140, 0)"
+  },
+  "itemFocus": {
+    "cls": "count-button",
+    "expanded": "false"
+  },
+  "chooserFocus": "back-button",
+  "chooserReturn": "count-button",
+  "close": {
+    "closed": "請求書 東日本",
+    "newLabel": "受注管理 東日本",
+    "focused": "tab"
+  },
+  "errors": []
+}

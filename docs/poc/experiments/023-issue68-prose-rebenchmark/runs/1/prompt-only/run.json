@@ -1,0 +1,14 @@
+{
+  "arm": "prompt-only",
+  "trial": 1,
+  "setupStartedUtc": "2026-11-10T13:53:51.693738+00:00",
+  "model": "gpt-5.6-sol",
+  "reasoningEffort": "low",
+  "imageId": "sha256:b689bb5e32b9b7658aa705aa41d4a591bac6b6a9e45785070aad97e784677b90",
+  "commonBriefSha256": "a851be1f3fa7a6646db80edd77e346b850edabeffd0ef6a40b6fa2c5dd91b2af",
+  "setupSeconds": 0.3685469999909401,
+  "modelStartedUtc": "2026-11-10T13:53:52.062415+00:00",
+  "exitCode": 0,
+  "modelSeconds": 19.67219469998963,
+  "endedUtc": "2026-11-10T13:54:11.734624+00:00"
+}

@@ -1,0 +1,6 @@
+import {expect,userEvent,within} from 'storybook/test';
+import './app.js';import './styles.css';import fixture from './fixture.json';
+export default {title:'Workspace/DocumentTabs',component:'order-workspace',parameters:{layout:'fullscreen'}};
+const render=()=>{const el=document.createElement('order-workspace');el.dataset.fixture=JSON.stringify(fixture);return el};
+export const Both={render,play:async({canvasElement})=>{const c=within(canvasElement);await expect(await c.findByRole('heading',{name:'請求書の明細'})).toBeVisible();const tabs=await c.findAllByRole('tab');await expect(tabs[0]).toHaveAttribute('aria-selected','true');await userEvent.click(tabs[1]);await expect(c.getByRole('tab',{name:'受注管理、東日本'})).toHaveAttribute('aria-selected','true');await expect(c.getByRole('heading',{name:'受注管理の概要'})).toBeVisible()}};
+export const CloseDocument={render,play:async({canvasElement})=>{const c=within(canvasElement);const before=(await c.findAllByRole('tab')).filter(x=>x.dataset.type==='doc').length;await userEvent.click(c.getByRole('button',{name:'請求書を閉じる'}));await expect(c.queryByRole('tab',{name:'請求書、東日本'})).not.toBeInTheDocument();await expect((await c.findAllByRole('tab')).filter(x=>x.dataset.type==='doc')).toHaveLength(before-1)}};

@@ -1,0 +1,5 @@
+import './styles.css';import './app.js';import{expect}from'storybook/test';
+export default{title:'Workspace/DocumentTabs',component:'order-workspace'};
+export const Default={render:()=>'<order-workspace></order-workspace>',play:async({canvas})=>{await expect(await canvas.findByRole('heading',{name:'受注ワークスペース'})).toBeVisible();await expect(canvas.getByRole('tablist',{name:'文書'})).toBeVisible();await expect(canvas.getByRole('heading',{name:'請求書の明細'})).toBeVisible()}};
+export const SwitchDocument={render:()=>'<order-workspace></order-workspace>',play:async({canvas,userEvent})=>{let t=await canvas.findByRole('tab',{name:'受注管理、東日本'});await userEvent.click(t);await expect(canvas.getByRole('heading',{name:'受注管理の概要'})).toBeVisible()}};
+export const KeyboardNavigation={render:()=>'<order-workspace></order-workspace>',play:async({canvas,userEvent})=>{let f=await canvas.findByRole('tab',{name:'請求書、東日本'});f.focus();await userEvent.keyboard('{ArrowRight}');await expect(canvas.getByRole('tab',{name:'受注管理、東日本'})).toHaveFocus();await expect(f).toHaveAttribute('aria-selected','true')}};
