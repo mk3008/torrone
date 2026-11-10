@@ -1,0 +1,4 @@
+# Keep submitted source and captured evidence byte-for-byte across platforms.
+* -text -whitespace
+/README.md text whitespace
+/.gitattributes text whitespace

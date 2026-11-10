@@ -1,0 +1,2 @@
+# Torrone arm
+Use support/catalog/README.md and its state images as design inputs. Apply support/SKILL.md (implementation review). The design wizard guidance is available at support/DESIGN-WIZARD-SKILL.md for any needed interpretation of draft states. The common brief owns application behavior and adoption for this experiment. Relevant approved executable document-tab References are unavailable. Return a new implementation.

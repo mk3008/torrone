@@ -1,0 +1,8 @@
+<experiment workspace>/work/issue68-greenfield/storybook/app.js:
+→ 5 stories across 1 component, distances 1..1 (d1=5)
+distance 1:
+  - `workspace-documenttabs--child-selection`: Workspace/DocumentTabs / Desktop child overflow and selection (`./workspace.stories.js`)
+  - `workspace-documenttabs--close-selected-document`: Workspace/DocumentTabs / Close selected document (`./workspace.stories.js`)
+  - `workspace-documenttabs--fits-in-both-rows`: Workspace/DocumentTabs / Both rows fit (`./workspace.stories.js`)
+  - `workspace-documenttabs--narrow-choosers`: Workspace/DocumentTabs / Narrow document and child choosers (`./workspace.stories.js`)
+  - `workspace-documenttabs--parent-overflow`: Workspace/DocumentTabs / Desktop parent overflow (`./workspace.stories.js`)

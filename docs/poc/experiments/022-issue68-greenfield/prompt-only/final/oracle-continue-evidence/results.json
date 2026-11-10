@@ -1,0 +1,191 @@
+{
+  "chromium": "158.0.8127.18",
+  "tests": [
+    {
+      "id": "PC · exact fit",
+      "status": "fail",
+      "detail": "PC · exact fit\n+ actual - expected\n\n  [\n    [\n      5,\n+     2,\n-     0,\n      ''\n    ],\n    [\n      2,\n      0,\n"
+    },
+    {
+      "id": "PC · 1px short",
+      "width": 731,
+      "rows": [
+        [
+          5,
+          2,
+          ""
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "PC · scroll retains selection",
+      "status": "fail",
+      "detail": "The expression evaluated to a falsy value:\n\n  assert.ok(await page.getByRole('tablist').first().evaluate(row=>row.scrollLeft)>0)\n"
+    },
+    {
+      "id": "PC · restored width",
+      "status": "fail",
+      "detail": "PC · restored width\n+ actual - expected\n\n  [\n    [\n      5,\n+     2,\n-     0,\n      ''\n    ],\n    [\n      2,\n      0,\n"
+    },
+    {
+      "id": "PC · child exact fit",
+      "status": "fail",
+      "detail": "PC · child exact fit\n+ actual - expected\n... Skipped lines\n\n  [\n    [\n      2,\n      0,\n      ''\n...\n      6,\n+     2,\n-     0,\n      ''\n    ]\n  ]\n"
+    },
+    {
+      "id": "PC · child only 1px short",
+      "width": 703,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          6,
+          2,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · exact fit",
+      "width": 280,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · same 2 tabs, 1px short",
+      "status": "fail",
+      "detail": "Mobile · same 2 tabs, 1px short\n+ actual - expected\n\n  [\n    [\n+     2,\n-     1,\n      0,\n+     ''\n-     'ほか1'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+    },
+    {
+      "id": "Mobile · restored width",
+      "width": 280,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · child exact fit",
+      "width": 462,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          5,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · child only 1px short",
+      "width": 461,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          1,
+          0,
+          "ほか4"
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · parent only",
+      "width": 390,
+      "rows": [
+        [
+          1,
+          0,
+          "ほか4"
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · both",
+      "width": 390,
+      "rows": [
+        [
+          1,
+          0,
+          "ほか4"
+        ],
+        [
+          1,
+          0,
+          "ほか4"
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · selected tab fills remaining width",
+      "gaps": [
+        6,
+        6
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · new document children now fit",
+      "width": 390,
+      "rows": [
+        [
+          1,
+          0,
+          "ほか4"
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Storybook arm
+Read support/ui-workflow.md and support/component-docs.md and use the installed official Storybook CLI. The config is a tooling scaffold with no stories or target code. Author the component, stories with relevant states, docs and executable interaction checks using supported APIs where feasible. Export the app mount from app.js so stories run the same implementation as the standalone app. Return complete story and config contents in the corresponding JSON fields. Record unsupported tools or commands.

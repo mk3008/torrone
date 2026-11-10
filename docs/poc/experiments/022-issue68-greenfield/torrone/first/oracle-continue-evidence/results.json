@@ -1,0 +1,176 @@
+{
+  "chromium": "158.0.8127.18",
+  "tests": [
+    {
+      "id": "PC · exact fit",
+      "width": 732,
+      "rows": [
+        [
+          5,
+          0,
+          ""
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "PC · 1px short",
+      "width": 731,
+      "rows": [
+        [
+          5,
+          2,
+          ""
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "PC · scroll retains selection",
+      "status": "fail",
+      "detail": "The expression evaluated to a falsy value:\n\n  assert.ok(await page.getByRole('tablist').first().evaluate(row=>row.scrollLeft)>0)\n"
+    },
+    {
+      "id": "PC · restored width",
+      "width": 732,
+      "rows": [
+        [
+          5,
+          0,
+          ""
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "PC · child exact fit",
+      "width": 704,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          6,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "PC · child only 1px short",
+      "width": 703,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          6,
+          2,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · exact fit",
+      "width": 280,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · same 2 tabs, 1px short",
+      "status": "fail",
+      "detail": "Mobile · same 2 tabs, 1px short\n+ actual - expected\n\n  [\n    [\n      1,\n      0,\n+     'ほか1›'\n-     'ほか1'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+    },
+    {
+      "id": "Mobile · restored width",
+      "width": 280,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          2,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · child exact fit",
+      "width": 462,
+      "rows": [
+        [
+          2,
+          0,
+          ""
+        ],
+        [
+          5,
+          0,
+          ""
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "Mobile · child only 1px short",
+      "status": "fail",
+      "detail": "Mobile · child only 1px short\n+ actual - expected\n... Skipped lines\n\n  [\n    [\n      2,\n      0,\n      ''\n...\n      0,\n+     'ほか4⌄'\n-     'ほか4'\n    ]\n  ]\n"
+    },
+    {
+      "id": "Mobile · parent only",
+      "status": "fail",
+      "detail": "Mobile · parent only\n+ actual - expected\n\n  [\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+    },
+    {
+      "id": "Mobile · both",
+      "status": "fail",
+      "detail": "Mobile · both\n+ actual - expected\n\n  [\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ],\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ]\n  ]\n"
+    },
+    {
+      "id": "Mobile · selected tab fills remaining width",
+      "status": "fail",
+      "detail": "locator.evaluateAll: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')\n    at eval (eval at evaluate (:370:30), <anonymous>:4:37)\n    at Array.map (<anonymous>)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:12)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+    },
+    {
+      "id": "Mobile · new document children now fit",
+      "status": "fail",
+      "detail": "Mobile · new document children now fit\n+ actual - expected\n\n  [\n    [\n      1,\n      0,\n+     'ほか4›'\n-     'ほか4'\n    ],\n    [\n+     1,\n-     2,\n      0,\n+     'ほか1⌄'\n-     ''\n    ]\n  ]\n"
+    }
+  ]
+}

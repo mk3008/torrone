@@ -47,6 +47,12 @@ The following remain with the consuming product and its design sources:
 | Platform and quality | Native-control choice, keyboard operation, focus policy, accessibility, responsive behavior and test acceptance criteria require their own requirements and verification. |
 | Implementation | SVG artwork supports editing the pictures; HTML/CSS/DOM/framework structure is not a required component API. |
 
+### Choose control sizes when the product leaves them open
+
+Follow explicit product dimensions first. When they are unspecified, use the consuming application's standard size for a comparable control. If the application has no comparable control, start with the platform's standard component size where available. For a custom control with no size to inherit, use nearby controls as a scale reference and allow sufficient space for the intended input, including touch.
+
+Review the result in the composed screen at the intended viewport widths. For stacked document tabs, check how much room the two rows leave for document content. Verify that labels and focus remain visible and that separate actions, such as closing a tab, have enough room to operate.
+
 ## When you need an interaction model
 
 [Curated References](../references/README.md) retain executable examples, bounded preserved behavior and separate human-approval evidence. Check that responsibility and the consuming application's [interaction requirements](../docs/application-interaction.md) before implementing behavior. An accepted image does not approve a generic executable Reference, and approval of a source Reference does not automatically approve an extracted image.

@@ -1,0 +1,1294 @@
+{
+  "prompt-only": {
+    "first": {
+      "pass": 9,
+      "fail": 6,
+      "notEvaluated": 0,
+      "tests": [
+        {
+          "id": "PC · exact fit",
+          "status": "fail",
+          "detail": "PC · exact fit\n+ actual - expected\n\n  [\n    [\n      5,\n+     2,\n-     0,\n      ''\n    ],\n    [\n      2,\n      0,\n"
+        },
+        {
+          "id": "PC · 1px short",
+          "width": 731,
+          "rows": [
+            [
+              5,
+              2,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · scroll retains selection",
+          "status": "fail",
+          "detail": "The expression evaluated to a falsy value:\n\n  assert.ok(await page.getByRole('tablist').first().evaluate(row=>row.scrollLeft)>0)\n"
+        },
+        {
+          "id": "PC · restored width",
+          "status": "fail",
+          "detail": "PC · restored width\n+ actual - expected\n\n  [\n    [\n      5,\n+     2,\n-     0,\n      ''\n    ],\n    [\n      2,\n      0,\n"
+        },
+        {
+          "id": "PC · child exact fit",
+          "status": "fail",
+          "detail": "PC · child exact fit\n+ actual - expected\n... Skipped lines\n\n  [\n    [\n      2,\n      0,\n      ''\n...\n      6,\n+     2,\n-     0,\n      ''\n    ]\n  ]\n"
+        },
+        {
+          "id": "PC · child only 1px short",
+          "width": 703,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              6,
+              2,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · exact fit",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · same 2 tabs, 1px short",
+          "status": "fail",
+          "detail": "Mobile · same 2 tabs, 1px short\n+ actual - expected\n\n  [\n    [\n+     2,\n-     1,\n      0,\n+     ''\n-     'ほか1'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+        },
+        {
+          "id": "Mobile · restored width",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child exact fit",
+          "width": 462,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              5,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child only 1px short",
+          "status": "fail",
+          "detail": "Mobile · child only 1px short\n+ actual - expected\n\n  [\n    [\n      2,\n      0,\n      ''\n    ],\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · parent only",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · both",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              1,
+              0,
+              "ほか4"
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · selected tab fills remaining width",
+          "gaps": [
+            6,
+            6
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · new document children now fit",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        }
+      ],
+      "groups": {
+        "PC fit/overflow/restore": 2,
+        "Mobile fit/overflow/restore": 5,
+        "Scroll selection retained": 0,
+        "Selected tab fills width": 1,
+        "Document switch reflows child": 1
+      },
+      "strict": "strict 1",
+      "selfCheck": {
+        "smoke": 0,
+        "seconds": 1.48441,
+        "storybookBuild": null
+      },
+      "evaluatorSeconds": 3.1043647,
+      "sourceLines": 804
+    },
+    "final": {
+      "pass": 10,
+      "fail": 5,
+      "notEvaluated": 0,
+      "tests": [
+        {
+          "id": "PC · exact fit",
+          "status": "fail",
+          "detail": "PC · exact fit\n+ actual - expected\n\n  [\n    [\n      5,\n+     2,\n-     0,\n      ''\n    ],\n    [\n      2,\n      0,\n"
+        },
+        {
+          "id": "PC · 1px short",
+          "width": 731,
+          "rows": [
+            [
+              5,
+              2,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · scroll retains selection",
+          "status": "fail",
+          "detail": "The expression evaluated to a falsy value:\n\n  assert.ok(await page.getByRole('tablist').first().evaluate(row=>row.scrollLeft)>0)\n"
+        },
+        {
+          "id": "PC · restored width",
+          "status": "fail",
+          "detail": "PC · restored width\n+ actual - expected\n\n  [\n    [\n      5,\n+     2,\n-     0,\n      ''\n    ],\n    [\n      2,\n      0,\n"
+        },
+        {
+          "id": "PC · child exact fit",
+          "status": "fail",
+          "detail": "PC · child exact fit\n+ actual - expected\n... Skipped lines\n\n  [\n    [\n      2,\n      0,\n      ''\n...\n      6,\n+     2,\n-     0,\n      ''\n    ]\n  ]\n"
+        },
+        {
+          "id": "PC · child only 1px short",
+          "width": 703,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              6,
+              2,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · exact fit",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · same 2 tabs, 1px short",
+          "status": "fail",
+          "detail": "Mobile · same 2 tabs, 1px short\n+ actual - expected\n\n  [\n    [\n+     2,\n-     1,\n      0,\n+     ''\n-     'ほか1'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+        },
+        {
+          "id": "Mobile · restored width",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child exact fit",
+          "width": 462,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              5,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child only 1px short",
+          "width": 461,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              1,
+              0,
+              "ほか4"
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · parent only",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · both",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              1,
+              0,
+              "ほか4"
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · selected tab fills remaining width",
+          "gaps": [
+            6,
+            6
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · new document children now fit",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        }
+      ],
+      "groups": {
+        "PC fit/overflow/restore": 2,
+        "Mobile fit/overflow/restore": 6,
+        "Scroll selection retained": 0,
+        "Selected tab fills width": 1,
+        "Document switch reflows child": 1
+      },
+      "strict": "strict 1",
+      "selfCheck": {
+        "smoke": 0,
+        "storybookBuild": null,
+        "seconds": 1.5136079
+      },
+      "evaluatorSeconds": 3.155442,
+      "sourceLines": 541
+    },
+    "usage": {
+      "draft": {
+        "input_tokens": 92257,
+        "cached_input_tokens": 75904,
+        "output_tokens": 9862,
+        "reasoning_output_tokens": 599
+      },
+      "repair": {
+        "input_tokens": 108794,
+        "cached_input_tokens": 57856,
+        "output_tokens": 9850,
+        "reasoning_output_tokens": 816
+      },
+      "startup": null
+    },
+    "agentSeconds": {
+      "draft": 196.7818052,
+      "repair": 191.8375398,
+      "startup": null
+    },
+    "setupSeconds": 0,
+    "feedbackRounds": 1,
+    "firstBuildRepairRounds": 0,
+    "timeToFirstSubmissionSeconds": 196.7818052,
+    "elapsedComponentsSeconds": 397.8771696,
+    "totalTokens": 220763,
+    "postHocStorybookPlayRuns": {},
+    "postHocStorybookCliSeconds": 0,
+    "measuredTrialAndStorybookPostHocSeconds": 397.8771696
+  },
+  "torrone": {
+    "first": {
+      "pass": 8,
+      "fail": 7,
+      "notEvaluated": 0,
+      "tests": [
+        {
+          "id": "PC · exact fit",
+          "width": 732,
+          "rows": [
+            [
+              5,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · 1px short",
+          "width": 731,
+          "rows": [
+            [
+              5,
+              2,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · scroll retains selection",
+          "status": "fail",
+          "detail": "The expression evaluated to a falsy value:\n\n  assert.ok(await page.getByRole('tablist').first().evaluate(row=>row.scrollLeft)>0)\n"
+        },
+        {
+          "id": "PC · restored width",
+          "width": 732,
+          "rows": [
+            [
+              5,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · child exact fit",
+          "width": 704,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              6,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · child only 1px short",
+          "width": 703,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              6,
+              2,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · exact fit",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · same 2 tabs, 1px short",
+          "status": "fail",
+          "detail": "Mobile · same 2 tabs, 1px short\n+ actual - expected\n\n  [\n    [\n      1,\n      0,\n+     'ほか1›'\n-     'ほか1'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+        },
+        {
+          "id": "Mobile · restored width",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child exact fit",
+          "width": 462,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              5,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child only 1px short",
+          "status": "fail",
+          "detail": "Mobile · child only 1px short\n+ actual - expected\n... Skipped lines\n\n  [\n    [\n      2,\n      0,\n      ''\n...\n      0,\n+     'ほか4⌄'\n-     'ほか4'\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · parent only",
+          "status": "fail",
+          "detail": "Mobile · parent only\n+ actual - expected\n\n  [\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+        },
+        {
+          "id": "Mobile · both",
+          "status": "fail",
+          "detail": "Mobile · both\n+ actual - expected\n\n  [\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ],\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · selected tab fills remaining width",
+          "status": "fail",
+          "detail": "locator.evaluateAll: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')\n    at eval (eval at evaluate (:370:30), <anonymous>:4:37)\n    at Array.map (<anonymous>)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:12)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+        },
+        {
+          "id": "Mobile · new document children now fit",
+          "status": "fail",
+          "detail": "Mobile · new document children now fit\n+ actual - expected\n\n  [\n    [\n      1,\n      0,\n+     'ほか4›'\n-     'ほか4'\n    ],\n    [\n+     1,\n-     2,\n      0,\n+     'ほか1⌄'\n-     ''\n    ]\n  ]\n"
+        }
+      ],
+      "groups": {
+        "PC fit/overflow/restore": 5,
+        "Mobile fit/overflow/restore": 3,
+        "Scroll selection retained": 0,
+        "Selected tab fills width": 0,
+        "Document switch reflows child": 0
+      },
+      "strict": "strict 1",
+      "selfCheck": {
+        "seconds": 1.5012143,
+        "storybookBuild": null,
+        "smoke": 0
+      },
+      "evaluatorSeconds": 3.0524069,
+      "sourceLines": 627
+    },
+    "final": {
+      "pass": 13,
+      "fail": 2,
+      "notEvaluated": 0,
+      "tests": [
+        {
+          "id": "PC · exact fit",
+          "width": 732,
+          "rows": [
+            [
+              5,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · 1px short",
+          "width": 731,
+          "rows": [
+            [
+              5,
+              2,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · scroll retains selection",
+          "status": "fail",
+          "detail": "The expression evaluated to a falsy value:\n\n  assert.ok(await page.getByRole('tablist').first().evaluate(row=>row.scrollLeft)>0)\n"
+        },
+        {
+          "id": "PC · restored width",
+          "width": 732,
+          "rows": [
+            [
+              5,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · child exact fit",
+          "width": 704,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              6,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · child only 1px short",
+          "width": 703,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              6,
+              2,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · exact fit",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · same 2 tabs, 1px short",
+          "width": 279,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか1"
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · restored width",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child exact fit",
+          "width": 462,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              5,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child only 1px short",
+          "width": 461,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              1,
+              0,
+              "ほか4"
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · parent only",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · both",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              1,
+              0,
+              "ほか4"
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · selected tab fills remaining width",
+          "status": "fail",
+          "detail": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   7,\n    6,\n-   6\n  ]\n"
+        },
+        {
+          "id": "Mobile · new document children now fit",
+          "width": 390,
+          "rows": [
+            [
+              1,
+              0,
+              "ほか4"
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        }
+      ],
+      "groups": {
+        "PC fit/overflow/restore": 5,
+        "Mobile fit/overflow/restore": 7,
+        "Scroll selection retained": 0,
+        "Selected tab fills width": 0,
+        "Document switch reflows child": 1
+      },
+      "strict": "strict 1",
+      "selfCheck": {
+        "seconds": 1.4679901,
+        "smoke": 0,
+        "storybookBuild": null
+      },
+      "evaluatorSeconds": 3.2167184,
+      "sourceLines": 452
+    },
+    "usage": {
+      "draft": {
+        "input_tokens": 55898,
+        "cached_input_tokens": 23936,
+        "output_tokens": 7601,
+        "reasoning_output_tokens": 399
+      },
+      "repair": {
+        "input_tokens": 68256,
+        "cached_input_tokens": 49024,
+        "output_tokens": 8219,
+        "reasoning_output_tokens": 1018
+      },
+      "startup": null
+    },
+    "agentSeconds": {
+      "draft": 145.5629684,
+      "repair": 164.0250825,
+      "startup": null
+    },
+    "setupSeconds": 0.0676516,
+    "feedbackRounds": 1,
+    "firstBuildRepairRounds": 0,
+    "timeToFirstSubmissionSeconds": 145.63062,
+    "elapsedComponentsSeconds": 318.89403219999997,
+    "totalTokens": 139974,
+    "postHocStorybookPlayRuns": {},
+    "postHocStorybookCliSeconds": 0,
+    "measuredTrialAndStorybookPostHocSeconds": 318.89403219999997
+  },
+  "storybook": {
+    "first": {
+      "pass": 6,
+      "fail": 9,
+      "notEvaluated": 0,
+      "tests": [
+        {
+          "id": "PC · exact fit",
+          "width": 732,
+          "rows": [
+            [
+              5,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · 1px short",
+          "status": "fail",
+          "detail": "PC · 1px short\n+ actual - expected\n\n  [\n    [\n      5,\n+     0,\n-     2,\n      ''\n    ],\n    [\n      2,\n      0,\n"
+        },
+        {
+          "id": "PC · scroll retains selection",
+          "status": "fail",
+          "detail": "locator.click: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '文書を右に送る' })\u001b[22m\n"
+        },
+        {
+          "id": "PC · restored width",
+          "width": 732,
+          "rows": [
+            [
+              5,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · child exact fit",
+          "width": 704,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              6,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · child only 1px short",
+          "status": "fail",
+          "detail": "PC · child only 1px short\n+ actual - expected\n... Skipped lines\n\n  [\n    [\n      2,\n      0,\n      ''\n...\n      6,\n+     0,\n-     2,\n      ''\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · exact fit",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · same 2 tabs, 1px short",
+          "status": "fail",
+          "detail": "Mobile · same 2 tabs, 1px short\n+ actual - expected\n\n  [\n    [\n+     2,\n-     1,\n      0,\n+     ''\n-     'ほか1'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+        },
+        {
+          "id": "Mobile · restored width",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child exact fit",
+          "width": 462,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              5,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child only 1px short",
+          "status": "fail",
+          "detail": "Mobile · child only 1px short\n+ actual - expected\n\n  [\n    [\n      2,\n      0,\n      ''\n    ],\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · parent only",
+          "status": "fail",
+          "detail": "Mobile · parent only\n+ actual - expected\n\n  [\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+        },
+        {
+          "id": "Mobile · both",
+          "status": "fail",
+          "detail": "Mobile · both\n+ actual - expected\n\n  [\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ],\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · selected tab fills remaining width",
+          "status": "fail",
+          "detail": "locator.evaluateAll: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')\n    at eval (eval at evaluate (:370:30), <anonymous>:4:37)\n    at Array.map (<anonymous>)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:12)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+        },
+        {
+          "id": "Mobile · new document children now fit",
+          "status": "fail",
+          "detail": "locator.tap: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /文書を切り替える/ })\u001b[22m\n"
+        }
+      ],
+      "groups": {
+        "PC fit/overflow/restore": 3,
+        "Mobile fit/overflow/restore": 3,
+        "Scroll selection retained": 0,
+        "Selected tab fills width": 0,
+        "Document switch reflows child": 0
+      },
+      "strict": "strict 1",
+      "selfCheck": {
+        "smoke": 0,
+        "storybookBuild": 0,
+        "seconds": 5.6539893
+      },
+      "evaluatorSeconds": 10.0439799,
+      "sourceLines": 684
+    },
+    "final": {
+      "pass": 6,
+      "fail": 9,
+      "notEvaluated": 0,
+      "tests": [
+        {
+          "id": "PC · exact fit",
+          "width": 732,
+          "rows": [
+            [
+              5,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · 1px short",
+          "status": "fail",
+          "detail": "PC · 1px short\n+ actual - expected\n\n  [\n    [\n      5,\n+     0,\n-     2,\n      ''\n    ],\n    [\n      2,\n      0,\n"
+        },
+        {
+          "id": "PC · scroll retains selection",
+          "status": "fail",
+          "detail": "locator.click: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '文書を右に送る' })\u001b[22m\n"
+        },
+        {
+          "id": "PC · restored width",
+          "width": 732,
+          "rows": [
+            [
+              5,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · child exact fit",
+          "width": 704,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              6,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "PC · child only 1px short",
+          "status": "fail",
+          "detail": "PC · child only 1px short\n+ actual - expected\n... Skipped lines\n\n  [\n    [\n      2,\n      0,\n      ''\n...\n      6,\n+     0,\n-     2,\n      ''\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · exact fit",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · same 2 tabs, 1px short",
+          "status": "fail",
+          "detail": "Mobile · same 2 tabs, 1px short\n+ actual - expected\n\n  [\n    [\n+     2,\n-     1,\n      0,\n+     ''\n-     'ほか1'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+        },
+        {
+          "id": "Mobile · restored width",
+          "width": 280,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              2,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child exact fit",
+          "width": 462,
+          "rows": [
+            [
+              2,
+              0,
+              ""
+            ],
+            [
+              5,
+              0,
+              ""
+            ]
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "Mobile · child only 1px short",
+          "status": "fail",
+          "detail": "Mobile · child only 1px short\n+ actual - expected\n\n  [\n    [\n      2,\n      0,\n      ''\n    ],\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · parent only",
+          "status": "fail",
+          "detail": "Mobile · parent only\n+ actual - expected\n\n  [\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ],\n    [\n      2,\n      0,\n      ''\n"
+        },
+        {
+          "id": "Mobile · both",
+          "status": "fail",
+          "detail": "Mobile · both\n+ actual - expected\n\n  [\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ],\n    [\n+     5,\n-     1,\n      0,\n+     ''\n-     'ほか4'\n    ]\n  ]\n"
+        },
+        {
+          "id": "Mobile · selected tab fills remaining width",
+          "status": "fail",
+          "detail": "locator.evaluateAll: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')\n    at eval (eval at evaluate (:370:30), <anonymous>:4:37)\n    at Array.map (<anonymous>)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:12)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+        },
+        {
+          "id": "Mobile · new document children now fit",
+          "status": "fail",
+          "detail": "locator.tap: Timeout 3500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /文書を切り替える/ })\u001b[22m\n"
+        }
+      ],
+      "groups": {
+        "PC fit/overflow/restore": 3,
+        "Mobile fit/overflow/restore": 3,
+        "Scroll selection retained": 0,
+        "Selected tab fills width": 0,
+        "Document switch reflows child": 0
+      },
+      "strict": "strict 1",
+      "selfCheck": {
+        "smoke": 0,
+        "storybookBuild": 0,
+        "seconds": 5.1321477
+      },
+      "evaluatorSeconds": 10.1556727,
+      "sourceLines": 610
+    },
+    "usage": {
+      "draft": {
+        "input_tokens": 123952,
+        "cached_input_tokens": 96768,
+        "output_tokens": 11065,
+        "reasoning_output_tokens": 847
+      },
+      "repair": {
+        "input_tokens": 233391,
+        "cached_input_tokens": 190208,
+        "output_tokens": 11520,
+        "reasoning_output_tokens": 719
+      },
+      "startup": null
+    },
+    "agentSeconds": {
+      "draft": 219.4967903,
+      "repair": 227.7833345,
+      "startup": null
+    },
+    "setupSeconds": 29.1948374,
+    "feedbackRounds": 1,
+    "firstBuildRepairRounds": 0,
+    "timeToFirstSubmissionSeconds": 248.6916277,
+    "elapsedComponentsSeconds": 507.4607517999999,
+    "totalTokens": 379928,
+    "postHocStorybookPlayRuns": {
+      "first": {
+        "seconds": 2.0468827000000003,
+        "executed": 5,
+        "passed": 1
+      },
+      "final": {
+        "seconds": 2.0535890000000006,
+        "executed": 5,
+        "passed": 1
+      }
+    },
+    "postHocStorybookCliSeconds": 39.3032818,
+    "measuredTrialAndStorybookPostHocSeconds": 550.8645052999999
+  }
+}

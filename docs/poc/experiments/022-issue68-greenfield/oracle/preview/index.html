@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文書タブの表示条件 · ドッグフーディング</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:#162235;font:15px system-ui,sans-serif}
+.reference{position:relative;max-width:1180px;min-height:100vh;margin:auto;padding:16px;background:#fff}
+header{display:flex;align-items:center;gap:14px;justify-content:space-between;margin:0 0 16px}
+h1{font-size:clamp(17px,3vw,25px);margin:0} h2{margin-top:0}
+button{font:inherit;color:inherit;background:#fff;border:1px solid #8897ac;border-radius:7px;padding:7px 10px;cursor:pointer;min-height:40px}
+button:focus-visible{outline:2px dotted #101d31;outline-offset:-4px}
+.row{position:relative;display:flex;align-items:stretch;min-width:0}
+.strip{display:flex;min-width:0;overflow:hidden;flex:0 1 auto}
+.parent{display:flex;min-width:0;align-items:stretch;flex:0 0 140px;position:relative;border:1px solid #8897ac;border-top:3px solid #286987;border-radius:8px 8px 0 0;background:#e5f2f9}
+.parent.west{border-top-color:#71469a;background:#f0e9f8}
+.parent [role=tab]{min-width:0;text-align:left;padding:0 38px 0 11px;flex:1;border:0;border-radius:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;background:transparent}
+[role=tab][aria-selected=true]{box-shadow:inset 0 -4px #135ad2;font-weight:700}
+.parent .close{position:absolute;right:0;top:50%;transform:translateY(-50%);width:36px;height:36px;min-height:0;padding:0;display:grid;place-items:center;background:transparent;border-color:transparent;visibility:hidden}
+.parent:hover .close,.parent:focus-within .close,.parent:has([aria-selected=true]) .close{visibility:visible}
+.strip>[role=tab]{flex:0 0 112px;border-radius:7px 7px 0 0}
+.row .more{display:flex;align-items:center;justify-content:center;gap:8px;margin-left:6px;white-space:nowrap}
+.more span{line-height:1.25}
+.control-icon{display:block;width:16px;height:16px;flex:none;opacity:.75;pointer-events:none}
+.more[data-popup=children][aria-expanded=true] .control-icon{transform:rotate(180deg)}
+.drop{position:absolute;right:0;top:100%;z-index:3;display:grid;width:145px;box-shadow:0 4px 10px #52657940;background:#fff;border:1px solid #8897ac;border-radius:8px;overflow:hidden}
+.drop button{text-align:left;border:0;border-bottom:1px solid #cfd6df;border-radius:0}
+section{border:1px solid #cfd6df;padding:20px;border-radius:0 0 8px 8px;min-height:210px}
+.info{position:absolute;z-index:2;top:110px;background:#fff;border:1px solid #8897ac;padding:5px 10px;max-width:265px;border-radius:5px;pointer-events:none}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cards button{text-align:left;display:grid;gap:4px}
+.cards svg{width:100%}.cards span{color:#43556c}
+@media(max-width:599px){.parent{flex-basis:124px}.strip>[role=tab]{flex-basis:86px}.row:has(.more) .strip{flex:1}.row:has(.more) .strip>*{flex:1}.parent .close{visibility:visible;width:44px;height:44px}.parent [role=tab]{padding-right:44px}.strip>[role=tab],.row .more{min-height:44px}header{justify-content:flex-start;flex-wrap:wrap}}
+
+
+.fit-probe{position:absolute;inset:0;overflow:hidden;visibility:hidden;pointer-events:none}.fit-probe .strip{width:max-content;flex:none;overflow:visible}
+</style>
+<body><script>
+const fixture = {
+  "docs": [
+    [
+      "invoice",
+      "請求書",
+      "東日本",
+      [
+        "明細",
+        "履歴",
+        "メモ",
+        "関連資料",
+        "承認状況"
+      ]
+    ],
+    [
+      "east",
+      "受注管理",
+      "東日本",
+      [
+        "概要",
+        "受注明細"
+      ]
+    ],
+    [
+      "west",
+      "受注管理",
+      "西日本",
+      [
+        "概要",
+        "見積履歴"
+      ]
+    ],
+    [
+      "report",
+      "四半期売上の照合レポート",
+      "西日本",
+      [
+        "明細",
+        "履歴"
+      ]
+    ],
+    [
+      "refund",
+      "返品処理",
+      "東日本",
+      [
+        "一覧",
+        "確認"
+      ]
+    ],
+    [
+      "payment",
+      "入金照合",
+      "西日本",
+      [
+        "概要",
+        "記録"
+      ]
+    ],
+    [
+      "audit",
+      "監査メモ",
+      "西日本",
+      [
+        "概要",
+        "記録"
+      ]
+    ],
+    [
+      "export",
+      "取引データのダウンロード",
+      "東日本",
+      [
+        "概要",
+        "記録"
+      ]
+    ]
+  ],
+  "cases": {
+    "fit": {
+      "documents": 2,
+      "initialChildren": 2
+    },
+    "parent": {
+      "documents": 5,
+      "initialChildren": 2
+    },
+    "child": {
+      "documents": 2,
+      "initialChildren": 5
+    },
+    "both": {
+      "documents": 5,
+      "initialChildren": 5
+    },
+    "desktop": {
+      "documents": 8,
+      "initialChildren": 5
+    }
+  }
+}
+;
+const closeIcon='icons/x.svg', downIcon='icons/chevron-down.svg', leftIcon='icons/chevron-left.svg', rightIcon='icons/chevron-right.svg';
+const icon = source => `<img class="control-icon" src="${source}" alt="" aria-hidden="true" draggable="false">`;
+
+const workspace = {
+  title: 'Document workspace',
+  parameters: { layout: 'fullscreen' },
+  render: ({ scenario }) => {
+    const root = document.createElement('main');
+    root.className = 'reference';
+    const config = fixture.cases[scenario];
+    let docs = fixture.docs.slice(0, config.documents);
+    let selected = docs[0][0];
+    const selections = new Map();
+    let popup = '';
+    let lastWidth = 0;
+    let hoverInfo = false;
+    const narrow = () => matchMedia('(max-width:599px)').matches;
+    const childNames = doc => doc[0] === 'invoice' ? doc[3].slice(0, config.initialChildren) : doc[3];
+    const active = () => docs.find(doc => doc[0] === selected);
+    function overflows(html) {
+      const probe = document.createElement('div');
+      probe.className = 'fit-probe';
+      probe.inert = true;
+      probe.setAttribute('aria-hidden', 'true');
+      probe.innerHTML = '<div class="strip">' + html + '</div>';
+      root.append(probe);
+      const needed = probe.firstElementChild.getBoundingClientRect().width;
+      const { paddingLeft, paddingRight } = getComputedStyle(root);
+      const available = root.clientWidth - parseFloat(paddingLeft) - parseFloat(paddingRight);
+      probe.remove();
+      return needed > available;
+    }
+    const focus = selector => root.querySelector(selector)?.focus();
+    const parentSelector = '[aria-label="文書"] [aria-selected=true]';
+    const parentTab = (doc, mobile) => `
+      <span class="parent ${doc[2] === '東日本' ? 'east' : 'west'}">
+        <button role="tab" tabindex="${doc[0] === selected ? 0 : -1}" aria-selected="${doc[0] === selected}" data-doc="${doc[0]}" aria-label="${doc[1]}、${doc[2]}" title="${doc[1]} — ${doc[2]}">${doc[1]}</button>
+        ${!mobile || doc[0] === selected ? `<button class="close" data-close="${doc[0]}" aria-label="${doc[1]}を閉じる">${icon(closeIcon)}</button>` : ''}
+      </span>`;
+    function row(name, html, side, overflow, count) {
+      const chooser = overflow && narrow();
+      return `<div class="row">
+        <div class="strip" role="tablist" aria-label="${name}">${html}</div>
+        ${chooser ? `<button data-popup="${side}" class="more" aria-label="ほか${count} ${side === 'docs' ? '文書' : '項目'}を切り替える" aria-expanded="${popup === side}"><span>ほか${count}</span>${icon(side === 'docs' ? rightIcon : downIcon)}</button>` : overflow ? `<button data-scroll="-1" aria-label="${name}を左に送る">${icon(leftIcon)}</button><button data-scroll="1" aria-label="${name}を右に送る">${icon(rightIcon)}</button>` : ''}
+        ${popup === 'children' && side === 'children' ? `<div class="drop">${childNames(active()).map((label,i) => i === (selections.get(selected) ?? 0) ? '' : `<button data-child="${i}">${label}</button>`).join('')}</div>` : ''}
+      </div>`;
+    }
+    function draw() {
+      if (!root.clientWidth) return;
+      lastWidth = root.clientWidth;
+      const doc = active();
+      const children = doc ? childNames(doc) : [];
+      const currentChild = selections.get(selected) ?? 0;
+      const mobile = narrow();
+      const fullParents = docs.map(item => parentTab(item, mobile)).join('');
+      const childTab = (label, i) => `<button role="tab" tabindex="${i === currentChild ? 0 : -1}" aria-selected="${i === currentChild}" data-child="${i}">${label}</button>`;
+      const fullChildren = children.map(childTab).join('');
+      const parentOver = overflows(fullParents);
+      const childOver = overflows(fullChildren);
+      if (popup && (!mobile || !(popup === 'docs' ? parentOver : childOver))) popup = '';
+      if (popup === 'docs') {
+        root.innerHTML = `<header><button data-back>← 戻る</button><h1>ほかの文書（${docs.length - 1}）</h1></header><div class="cards">${docs.filter(item => item[0] !== selected).map((item,i) => `<button data-doc="${item[0]}"><svg aria-hidden="true" viewBox="0 0 120 62"><rect x="0" y="0" width="120" height="62" rx="5" fill="#edf2f6"/>${Array.from({length:4},(_,j) => `<rect x="${12 + 25*j}" y="${40-(i+j)%3*10}" width="16" height="${12+(i+j)%3*10}" fill="#6d9bbc"/>`).join('')}</svg><strong>${item[1]}</strong><span>${item[2]}</span></button>`).join('')}</div>`;
+        return;
+      }
+      const scrolls = [...root.querySelectorAll('.strip')].map(strip => strip.scrollLeft);
+      root.innerHTML = `<header><h1>受注ワークスペース</h1><button data-work>作業メニュー</button></header>${doc ? row('文書',mobile && parentOver ? parentTab(doc, true) : fullParents,'docs',parentOver,docs.length-1)
+      + row('項目',mobile && childOver ? childTab(children[currentChild], currentChild) : fullChildren,'children',childOver,children.length-1)
+      + `<div class="info" hidden></div><section aria-label="文書の内容"><h2>${doc[1]}の${children[currentChild]}</h2><p>${doc[2]} · ${children[currentChild]}</p><button>内容の確認</button></section>` : '<section>開いている文書はありません。</section>'}`;
+      root.querySelectorAll('.strip').forEach((strip,i) => { strip.scrollLeft = scrolls[i] ?? 0; });
+    }
+    function dismiss() {
+      const previous = popup;
+      popup = '';
+      draw();
+      focus(`[data-popup="${previous}"]`);
+    }
+    root.addEventListener('click', event => {
+      const button = event.target.closest('button');
+      if (!button) return;
+      const data = button.dataset;
+      if (button.hasAttribute('data-back')) return dismiss();
+      if (data.popup) {
+        if (popup === data.popup) return dismiss();
+        popup = data.popup;
+        draw();
+        focus(popup === 'docs' ? '[data-back]' : '.drop button');
+      } else if (data.doc) {
+        selected = data.doc;
+        popup = '';
+        draw();
+        focus(parentSelector);
+      } else if (data.child) {
+        const fromPopup = popup === 'children';
+        selections.set(selected, Number(data.child));
+        popup = '';
+        draw();
+        focus(fromPopup ? '[data-popup="children"]' : '[aria-label="項目"] [aria-selected=true]');
+      } else if (data.close) {
+        const index = docs.findIndex(doc => doc[0] === data.close);
+        docs = docs.filter(doc => doc[0] !== data.close);
+        const replacement = docs[index] ?? docs.at(-1);
+        if (data.close === selected) selected = replacement?.[0];
+        draw();
+        const target = root.querySelector(`[role="tab"][data-doc="${replacement?.[0]}"]`) ?? root.querySelector(parentSelector) ?? root.querySelector('[data-work]');
+        target.focus();
+      } else if (data.scroll) {
+        button.closest('.row').querySelector('.strip').scrollLeft += 144 * Number(data.scroll);
+      }
+    });
+    root.addEventListener('wheel', event => {
+      const strip = event.target.closest('.strip');
+      if (strip && strip.scrollWidth > strip.clientWidth && !narrow()) {
+        event.preventDefault();
+        strip.scrollLeft += event.deltaX || event.deltaY;
+      }
+    }, { passive: false });
+    root.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        if (popup) dismiss();
+        else { hoverInfo = false; root.querySelector('.info')?.setAttribute('hidden',''); }
+      }
+      const tab = event.target.closest('[role="tab"]');
+      if (!tab || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
+      const tabs = [...tab.closest('.strip').querySelectorAll('[role="tab"]')];
+      const dir = event.key === 'ArrowRight' ? 1 : -1;
+      event.preventDefault();
+      tabs[(tabs.indexOf(tab) + tabs.length + dir) % tabs.length].focus();
+    });
+    function info(event) {
+      const target = event.target.closest('.parent [role="tab"]');
+      const card = root.querySelector('.info');
+      if (!target || !card || narrow()) return;
+      const doc = docs.find(item => item[0] === target.dataset.doc);
+      card.textContent = doc[1] + ' — ' + doc[2];
+      const tabBox = target.getBoundingClientRect();
+      const rootBox = root.getBoundingClientRect();
+      card.style.left = Math.max(16, Math.min(tabBox.left - rootBox.left, root.clientWidth - 270)) + 'px';
+      card.style.top = tabBox.bottom - rootBox.top + 4 + 'px';
+      hoverInfo = true;
+      card.hidden = false;
+    }
+    root.addEventListener('pointerover',info);
+    root.addEventListener('focusin',info);
+    const hide = () => { if (hoverInfo) root.querySelector('.info')?.setAttribute('hidden',''); };
+    root.addEventListener('pointerout',hide);
+    root.addEventListener('focusout',hide);
+    const resize = new ResizeObserver(() => { if (root.clientWidth && root.clientWidth !== lastWidth) draw(); });
+    resize.observe(root);
+    draw();
+    return root;
+  },
+};
+
+const scenario = new URLSearchParams(location.search).get('case'); document.body.append(workspace.render({scenario: Object.hasOwn(fixture.cases,scenario) ? scenario : 'both'}));
+</script></body></html>

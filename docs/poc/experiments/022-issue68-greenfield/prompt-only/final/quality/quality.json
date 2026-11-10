@@ -1,0 +1,112 @@
+{
+  "keyboard": {
+    "pass": true,
+    "focusMoved": true,
+    "selectionHeld": true,
+    "selectedAfterEnter": true,
+    "focusStyle": {
+      "outline": "none",
+      "border": "solid none none",
+      "before": "dotted",
+      "after": "none"
+    }
+  },
+  "chooserEscape": {
+    "pass": true,
+    "result": [
+      {
+        "index": 0,
+        "open": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      {
+        "index": 1,
+        "open": true,
+        "closed": true,
+        "focusReturned": true
+      }
+    ]
+  },
+  "closeSelected": {
+    "pass": true,
+    "before": 2,
+    "after": 1,
+    "focusOnSelected": true
+  },
+  "officialIcons": {
+    "sources": [
+      {
+        "src": "icons/x.svg",
+        "loaded": true
+      },
+      {
+        "src": "icons/chevron-right.svg",
+        "loaded": true
+      },
+      {
+        "src": "icons/chevron-down.svg",
+        "loaded": true
+      }
+    ],
+    "countStyles": [
+      {
+        "text": "ほか4",
+        "assets": [
+          "icons/chevron-right.svg"
+        ],
+        "inlineSvgCount": 0
+      },
+      {
+        "text": "ほか4",
+        "assets": [
+          "icons/chevron-down.svg"
+        ],
+        "inlineSvgCount": 0
+      }
+    ]
+  },
+  "scrollSurface": {
+    "arrowPresent": true,
+    "before": [
+      {
+        "className": "tab-viewport",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "tab-name",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "tab-name",
+        "role": null,
+        "left": 0
+      }
+    ],
+    "after": [
+      {
+        "className": "tab-viewport",
+        "role": null,
+        "left": 220
+      },
+      {
+        "className": "tab-name",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "tab-name",
+        "role": null,
+        "left": 0
+      }
+    ],
+    "selectionBefore": [
+      "請求書東日本"
+    ],
+    "selectionAfter": [
+      "請求書東日本"
+    ]
+  }
+}

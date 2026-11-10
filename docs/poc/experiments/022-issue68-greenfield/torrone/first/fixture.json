@@ -1,0 +1,106 @@
+{
+  "docs": [
+    [
+      "invoice",
+      "請求書",
+      "東日本",
+      [
+        "明細",
+        "履歴",
+        "メモ",
+        "関連資料",
+        "承認状況",
+        "更新記録"
+      ]
+    ],
+    [
+      "east",
+      "受注管理",
+      "東日本",
+      [
+        "概要",
+        "受注明細"
+      ]
+    ],
+    [
+      "west",
+      "受注管理",
+      "西日本",
+      [
+        "概要",
+        "見積履歴"
+      ]
+    ],
+    [
+      "report",
+      "四半期売上の照合レポート",
+      "西日本",
+      [
+        "明細",
+        "履歴"
+      ]
+    ],
+    [
+      "refund",
+      "返品処理",
+      "東日本",
+      [
+        "一覧",
+        "確認"
+      ]
+    ],
+    [
+      "payment",
+      "入金照合",
+      "西日本",
+      [
+        "概要",
+        "記録"
+      ]
+    ],
+    [
+      "audit",
+      "監査メモ",
+      "西日本",
+      [
+        "概要",
+        "記録"
+      ]
+    ],
+    [
+      "export",
+      "取引データのダウンロード",
+      "東日本",
+      [
+        "概要",
+        "記録"
+      ]
+    ]
+  ],
+  "cases": {
+    "fit": {
+      "documents": 2,
+      "initialChildren": 2
+    },
+    "parent": {
+      "documents": 5,
+      "initialChildren": 2
+    },
+    "child": {
+      "documents": 2,
+      "initialChildren": 5
+    },
+    "both": {
+      "documents": 5,
+      "initialChildren": 5
+    },
+    "desktop": {
+      "documents": 8,
+      "initialChildren": 5
+    },
+    "pcChild": {
+      "documents": 2,
+      "initialChildren": 6
+    }
+  }
+}

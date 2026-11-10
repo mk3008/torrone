@@ -1,0 +1,1 @@
+status: partial（source repaired）。FEEDBACK.md に対応し、通常行の overflow 判定からタブ間 6px を除外しました。6px は狭幅の選択タブと count ボタン間だけに適用しています。また `.reference.clientWidth` から左右 padding を差し引き、実際にタブを配置できる行幅で親子を独立判定するよう修正しました。デスクトップ矢印は即時に `scrollLeft` を更新するため、クリック直後の選択維持テストでも観測できます。既存の選択、chooser、close、キーボード、アクセシビリティ動作は維持しています。読み取り専用環境のためファイルへの反映と Chromium 実行は未実施で、tests は実行予定の手動確認手順です。

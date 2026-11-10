@@ -1,0 +1,245 @@
+{
+  "keyboard": {
+    "pass": true,
+    "focusMoved": true,
+    "selectionHeld": true,
+    "selectedAfterEnter": true,
+    "focusStyle": {
+      "outline": "none",
+      "border": "none",
+      "before": "dotted",
+      "after": "none"
+    }
+  },
+  "chooserEscape": {
+    "pass": false,
+    "result": [
+      {
+        "index": 0,
+        "open": true,
+        "closed": true,
+        "focusReturned": false
+      },
+      {
+        "index": 1,
+        "open": true,
+        "closed": true,
+        "focusReturned": false
+      }
+    ]
+  },
+  "closeSelected": {
+    "pass": true,
+    "before": 2,
+    "after": 1,
+    "focusOnSelected": true
+  },
+  "officialIcons": {
+    "sources": [],
+    "countStyles": [
+      {
+        "text": "ほか4",
+        "assets": [],
+        "inlineSvgCount": 0
+      },
+      {
+        "text": "ほか4",
+        "assets": [],
+        "inlineSvgCount": 0
+      }
+    ]
+  },
+  "scrollSurface": {
+    "arrowPresent": true,
+    "before": [
+      {
+        "className": "tabs-viewport",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "tabs-track",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-1",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-0",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-1",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-label",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-0",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-1",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-0",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-1",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-label",
+        "role": null,
+        "left": 0
+      }
+    ],
+    "after": [
+      {
+        "className": "tabs-viewport",
+        "role": null,
+        "left": 280
+      },
+      {
+        "className": "tabs-track",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-1",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-0",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-1",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-label",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-0",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-1",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-0",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-shell parent-shell group-1",
+        "role": null,
+        "left": 0
+      },
+      {
+        "className": "parent",
+        "role": "tab",
+        "left": 0
+      },
+      {
+        "className": "tab-label",
+        "role": null,
+        "left": 0
+      }
+    ],
+    "selectionBefore": [
+      "\n          請求書\n          請求書 — 東日本\n        "
+    ],
+    "selectionAfter": [
+      "\n          請求書\n          請求書 — 東日本\n        "
+    ]
+  }
+}

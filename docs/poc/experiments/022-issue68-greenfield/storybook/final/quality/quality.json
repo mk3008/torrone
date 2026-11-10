@@ -1,0 +1,61 @@
+{
+  "keyboard": {
+    "pass": true,
+    "focusMoved": true,
+    "selectionHeld": true,
+    "selectedAfterEnter": true,
+    "focusStyle": {
+      "outline": "dotted",
+      "border": "none",
+      "before": "none",
+      "after": "none"
+    }
+  },
+  "chooserEscape": {
+    "pass": false,
+    "result": [
+      {
+        "index": 0,
+        "error": "locator.click: Timeout 2000ms exceeded."
+      },
+      {
+        "index": 1,
+        "error": "locator.click: Timeout 2000ms exceeded."
+      }
+    ]
+  },
+  "closeSelected": {
+    "pass": true,
+    "before": 2,
+    "after": 1,
+    "focusOnSelected": true
+  },
+  "officialIcons": {
+    "sources": [
+      {
+        "src": "./icons/x.svg",
+        "loaded": true
+      },
+      {
+        "src": "./icons/x.svg",
+        "loaded": true
+      },
+      {
+        "src": "./icons/x.svg",
+        "loaded": true
+      },
+      {
+        "src": "./icons/x.svg",
+        "loaded": true
+      },
+      {
+        "src": "./icons/x.svg",
+        "loaded": true
+      }
+    ],
+    "countStyles": []
+  },
+  "scrollSurface": {
+    "arrowPresent": false
+  }
+}

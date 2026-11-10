@@ -1,0 +1,1 @@
+{"type":"object","properties":{"html":{"type":"string"},"js":{"type":"string"},"css":{"type":"string"},"tests":{"type":"string"},"stories":{"type":"string"},"config":{"type":"string"},"notes":{"type":"string"}},"required":["html","js","css","tests","stories","config","notes"],"additionalProperties":false}
